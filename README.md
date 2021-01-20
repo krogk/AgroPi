@@ -1,2 +1,2 @@
 # AgroPi
-Automated cultivation sytem for plants &amp; mushrooms using Raspberry Pi
+Automated cultivation sytem for plants or mushrooms using Raspberry Pi
