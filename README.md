@@ -7,6 +7,8 @@
   <p align="center">
     Learn indoor cultivation of plants & mushrooms through a Raspberry Pi enabled environment monitor & regulator. 
     <br />
+    [Website](https://agropi.co.uk)   
+    <br />
 </div>
 
 <!-- TOC -->
@@ -42,8 +44,6 @@ AgroPi is an educational Raspberry Pi driven enviroment to
 AgroPi uses a website interface which allows user display and control the conditions within your enviromental chamber in real time.
     <br />
 The information throughout your grow cycle is saved so you can share it with other users, which can copy the exact conditions you specifed within a click of a button. 
-
-Our Website: [AgroPi](https://agropi.co.uk)
 
 ### Software
 
@@ -107,11 +107,11 @@ Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 ## Contact
 
 
-[@Samuel Obosu](2607374o@student.gla.ac.uk)
+[Samuel Obosu](https://github.com/Samuel-Obosu)
 <br />
-[@Andrew Scott-George](2238090s@student.gla.ac.uk)
+[Andrew Scott-George](https://github.com/andrewsg3)
 <br />
-[@Kamil Rog](2536572r@student.gla.ac.uk)
+[Kamil Rog](https://github.com/krogk)
 
 
 
