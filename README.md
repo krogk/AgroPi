@@ -13,6 +13,8 @@
   <a href="https://github.com/krogk/AgroPi">
     <img src="media/images/icon_twitter.png" alt="Twitter"  width="64" height="64">
     <img src="media/images/icon_youtube.png" alt="YouTube"  width="64" height="64">
+  <a href="https://github.com/krogk/AgroPi">
+    <img src="media/images/icon_ig.png" alt="Instagram"  width="64" height="64">
     <img src="media/images/icon_facebook.png" alt="Facebook"  width="64" height="64">
   </a>
 
