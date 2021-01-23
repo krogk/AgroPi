@@ -172,4 +172,6 @@ Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 <!-- AgroPi Wiki -->
 ## Wiki
 
-[Wiki]()
+[Wiki](## Wiki
+
+[Wiki](https://github.com/krogk/AgroPi/wiki))
