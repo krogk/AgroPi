@@ -104,7 +104,13 @@ Schematics:
 
 [x] Github Setup
 <br />
+[] Working core prototype
+<br />
 [] Website up & running
+<br />
+[] Additional functions
+<br />
+[] Life cycle assessment & comparison
 <br />
 
 <!-- Getting Started -->
