@@ -5,7 +5,7 @@
   </a>
   
   <p align="center">
-    Learn about cultivation of plants or fungus through a Raspberry Pi enabled environment monitor & regulator. 
+    Learn about aspects of cultivating plants or fungus through a Raspberry Pi driven environmental system. 
     <br />
 </div>
 
@@ -54,11 +54,14 @@
 <!-- Project descirption -->
 ## About
 
-AgroPi is an low cost educational tool which allows user to 
+AgroPi is an educational tool which allows user to learn in detail how changes in enviroment effect plant's health.  
 <br />
-AgroPi uses a website interface which allows user display and control the conditions within your enviromental chamber in real time.
 <br />
-The information throughout your grow cycle is saved so you can share it with other users, which can copy the exact conditions you specifed within a click of a button. 
+Website interface enables user to easily display and control the conditions within enviromental chamber in real time. 
+The information throughout your grow cycle is saved in a grow log so you can share it with other users, so they can copy the exact conditions you've specifed within a click of a button. In addition a photography of the contents of your cultivation system is taken in specified intervals. 
+<br />
+<br />
+AgroPi will use AI driven image pocessing to determine whether your plants are heatlhy nad if not specify what is wrong.
 
 <div align="center">
 
@@ -72,11 +75,17 @@ The information throughout your grow cycle is saved so you can share it with oth
 
 ### Software
 
-Website Interface
-<br />
-Spoilage Recognition
-<br />
+Website interface will allow you to view:
+* Temperature
+* Humidity
+* Light Level
+* Moisture of the soil
+* Ph of the soil
+* Photography of the system
+As well as to easily set the target values for each variable for particular time of day.
 
+<br />
+Camera module  
 
 ### Hardware
 
@@ -84,45 +93,64 @@ Spoilage Recognition
 <br />
 
 Sensors:
-* [Camera]()
-* [Thermometer]()
-* [Humidity Sensor]()
+* [Camera Module - TBD]()
+* [Thermometer + Humidity - DHT22]()
+* [Light - TBD]()
+* [Soil Moisture -TBD]()
+* [Ph - TBD]()
 
 <br />
 
 Actuators:
-* [Water Pump]()
-* [Relay Board]()
+* [Camera Actuators - TBD]()
+* [Water Pump - TBD]()
+* [Fan - TBD]
+
+Misc:
+* [Relay Board - TBD]()
 
 <br />
 
 Schematics:
-* [Schematic]()
+* [System Schematic - TBC]()
 
 
 ### Roadmap
 
 [x] Github Setup
 <br />
+<br />
 [] Working core prototype
 <br />
-[] Website up & running
 <br />
-[] Additional functions
+[] Initial software release
+<br />
+<br />
+[] Website up & Running
+<br />
+<br />
+[] Image processing using AI - prototype
+<br />
+<br />
+[] Camera support software release
+<br />
 <br />
 [] Life cycle assessment & comparison
 <br />
+<br />
+
 
 <!-- Getting Started -->
 ## Getting Started
 
 ### Prerequisites
 
-Ubuntu Packages 
+...Ubuntu Packages: 
 * cmake
   ```sh
   sudo apt-get install cmake
   ```
+
 
 ### Installation
 
@@ -137,10 +165,6 @@ Ubuntu Packages
 3. Compile
     ```sh
    make 
-   ```
-4. Flashing
-    ```sh
-   upload -p /dev/ttyUSB0 --fqbn rpi4:rpi4:AgroPi
    ```
 
 
@@ -157,11 +181,19 @@ To stop software:
  agropistop.sh
  ```
 
+
 <!-- Contributing -->
 ## Contributing
 
-1. Fork this repo
+1. Fork this repository 
 <br />
+2.Create your feature branch
+<br />
+3.Commit your changes
+<br />
+4.Push the branch
+<br />
+5.Create pull request
 
 
 <!-- License -->
@@ -173,13 +205,11 @@ Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 <!-- Contact Info -->
 ## Contact
 
-
 [Samuel Obosu](https://github.com/Samuel-Obosu)
 <br />
 [Andrew Scott-George](https://github.com/andrewsg3)
 <br />
 [Kamil Rog](https://github.com/krogk)
-
 
 
 <!-- AgroPi Wiki -->
