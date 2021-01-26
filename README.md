@@ -185,8 +185,7 @@ To stop software:
 
 <!-- Contributing -->
 ## Contributing
-
-1. Fork this repository 
+1. Fork this repository
 <br />
 2. Create your feature branch
 <br />
