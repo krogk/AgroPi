@@ -10,7 +10,7 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/krogk/AgroPi">
+  <a href="https://twitter.com/agropiofficial">
     <img src="media/images/icon_twitter.png" alt="Twitter"  width="64" height="64">
   </a>
   <a href="https://github.com/krogk/AgroPi">
