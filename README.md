@@ -82,10 +82,11 @@ Website interface will allow you to view:
 * Moisture of the soil
 * Ph of the soil
 * Photography of the system
+<br />
 As well as to easily set the target values for each variable for particular time of day.
 <br />
 
-Camera module  
+Camera module:  
 
 
 ### Hardware
