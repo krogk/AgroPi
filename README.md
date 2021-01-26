@@ -71,6 +71,13 @@ AgroPi will use AI driven image pocessing to determine whether your plants are h
 [![Issues](https://img.shields.io/github/issues/krogk/AgroPi.svg?style=for-the-badge)](https://github.com/krogk/AgroPi/issues)
 [![License](https://img.shields.io/github/license/krogk/AgroPi.svg?style=for-the-badge)](https://github.com/krogk/AgroPi/blob/main/LICENSE)
 
+<br />
+
+  <a href="https://github.com/krogk/AgroPi">
+    <img src="media/images/agropitopright.PNG" alt="Concept Render" >
+  </a>
+
+
 </div>
 
 ### Software
