@@ -185,15 +185,15 @@ To stop software:
 
 <!-- Contributing -->
 ## Contributing
-1. Fork this repository
+1.Fork this repository
 <br />
-2. Create your feature branch
+2.Create your feature branch
 <br />
-3. Commit your changes
+3.Commit your changes
 <br />
-4. Push the branch
+4.Push the branch
 <br />
-5. Create pull request
+5.Create pull request
 
 
 <!-- License -->
