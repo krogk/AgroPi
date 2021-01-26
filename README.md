@@ -19,7 +19,7 @@
   <a href="https://www.instagram.com/agropiofficial/">
     <img src="media/images/icon_ig.png" alt="Instagram"  width="64" height="64">
   </a>
-  <a href="https://github.com/krogk/AgroPi">
+  <a href="https://www.facebook.com/AgroPiOfficial">
     <img src="media/images/icon_facebook.png" alt="Facebook"  width="64" height="64">
   </a>
 
