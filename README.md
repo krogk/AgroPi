@@ -61,7 +61,7 @@ Website interface enables user to easily display and control the conditions with
 The information throughout your grow cycle is saved in a grow log so you can share it with other users, so they can copy the exact conditions you've specifed within a click of a button. In addition a photography of the contents of your cultivation system is taken in specified intervals. 
 <br />
 <br />
-AgroPi will use AI driven image pocessing to determine whether your plants are heatlhy nad if not specify what is wrong.
+AgroPi will use AI driven image pocessing to determine whether your plants are heatlhy and if not specify what is wrong.
 
 <div align="center">
 
