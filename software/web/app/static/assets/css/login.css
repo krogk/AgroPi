@@ -1,0 +1,8 @@
+#login-body {
+    background: url("../img/header.jpg") no-repeat;
+    background-size: cover;
+}
+
+#login-form{
+	padding-top: 20%;
+}
