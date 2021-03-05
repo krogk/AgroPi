@@ -102,17 +102,17 @@ Camera module:
 <br />
 
 Sensors:
-* [Camera Module - TBD]()
-* [Thermometer + Humidity - DHT22]()
-* [Light - TBD]()
-* [Soil Moisture -TBD]()
-* [Ph - TBD]()
+* [Raspberry Pi Camera Rev 1.3 Lens: P5V04A, Cable: AWM 20624]()
+* [Thermometer + Humidity - SHT31D](https://github.com/krogk/AgroPi/blob/main/hardware/SHT31D/Sensirion_Humidity_SHT3x_Datasheet_digital-767294.pdf)
+* [Light - VEML7700](https://github.com/krogk/AgroPi/blob/main/hardware/VEML7700/veml7700.pdf)
+* [Gas - CCS881](https://github.com/krogk/AgroPi/blob/main/hardware/CCS881/SC-001232-DS-2-CCS811B-Datasheet-Revision-2.pdf)
+
 
 <br />
 
 Actuators:
 * [Camera Actuators - TBD]()
-* [Water Pump - TBD]()
+* [Water Pump](https://www.mybotic.com.my/products/Micro-Submersible-Water-Pump-DC-3V-5V/2778#:~:text=Suction%20Distance%3A%200.8%20meter%20)
 * [Fan - TBD]()
 
 Misc:
@@ -130,20 +130,22 @@ Schematics:
 <br />
 <br />
 [] Working core prototype
-<br />
-<br />
-[] Initial software release
-<br />
-<br />
-[] Website up & Running
+* [x] Light Sensor integrated
+* [] Camera sensor integrated
+* [] Temperature + Humidity Sensor
+* [] Gas Sensor
+* [] Web server
+* [] Real-time Adaptation
+[] Initial software release 
 <br />
 <br />
 [] Image processing using AI - prototype
+* [] Gather training dataset
+* [] Train neuralnet
+* [] Test on real samples
 <br />
 <br />
-[] Camera support software release
-<br />
-<br />
+
 [] Life cycle assessment & comparison
 <br />
 <br />
