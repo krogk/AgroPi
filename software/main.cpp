@@ -1,10 +1,15 @@
-/*
- *
- * Author: Kamil Rog
- * Version: 0.1
- * 08/02/2021 14:19
- * 
- */
+/**
+* @file
+* @author Kamil Rog
+* @version 0.1
+*
+*
+* @section DESCRIPTION
+* 
+* This is main entry for the program.
+*
+* 
+*/
 
 #include <stdio.h>
 #include "AgroPiThread.h"
