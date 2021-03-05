@@ -173,16 +173,16 @@ Schematics:
    ```
 3. Compile
     ```sh
+   cmake .
    make 
    ```
-
 
 <!-- Usage -->
 ### Usage
 
 To run the software:
   ```sh
- nohup agropistart.sh &
+  ./AgroPi 
  ```
 
 To stop software:
