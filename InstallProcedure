@@ -10,6 +10,8 @@
 	sudo apt-get install flex
 	sudo apt-get install bison
 	sudo apt-get install wiringpi
+	sudo apt-get install libboost-all-dev
+	sudo apt-get install libi2c-dev
 	``` 
 
 ~Setting Up Git Account~
@@ -20,7 +22,7 @@
 
 
 ~Setting up cmake file for wiringPi~
-make a FindWiringPi.cmake with the following and put it in /usr/share/cmake-3.x/Modules
+create a fille called FindWiringPi.cmake with the following and put it in /usr/share/cmake-3.x/Modules
 
 	``` 
 	find_library(WIRINGPI_LIBRARIES NAMES wiringPi)
@@ -53,3 +55,15 @@ make a FindWiringPi.cmake with the following and put it in /usr/share/cmake-3.x/
 ``` 
 doxygen Doxyfile 
 ``` 
+
+
+~Building project~
+1. Go to software folder
+2. Run Following set of commands
+```
+	mkdir build
+	cd build/
+	cmake ..
+	make test
+	make
+```
