@@ -7,12 +7,13 @@
 #include <wiringPiI2C.h>
 
 
-/* I2CDriver
- * 
- * Iheritance: CppThread 
- * Childs: 
- * 
- *  */
+/**
+* @brief CCS811 class
+* @author Kamil Rog
+*
+* This is class is responsilbe for handling I2C communication.
+* 
+*/
 class I2CDriver : {
 
 public:
@@ -20,10 +21,7 @@ public:
 		
 	}
 
-    void I2CDriver::I2CwriteByte(uint8_t address, uint8_t subAddress, uint8_t data);
-    uint8_t I2CDriver::I2CreadByte(uint8_t address, uint8_t subAddress);
-    uint8_t I2CDriver::I2CreadBytes(uint8_t address, uint8_t subAddress, uint8_t * dest, uint8_t count)
-    
+
 private:
 	void run();
 
