@@ -17,20 +17,16 @@
 
 void Controller::Run() {
 	printf("envData.LightIntensityTarget: %f\n",envData.LightIntensityTarget);
-	printf("envData.TempTarget: %f\n",envData.TempTarget);
+	printf("envData.TempTarget: %f\n",envData.TemperatureTarget);
 	printf("envData.HumidityTarget : %f\n",envData.HumidityTarget);
-	
-	float lux;
-	
-	printf("VEML7700 TEST");		
-	while(1) {
-		lightSensor.Get_ALS_Lux(lux);
-		printf("Get_ALS_LUX: %f\n",lux);
-		uint16_t x = 0; 
-		for(int i = 0; i<2500000; i++) {
-			x++;
-		} 
-		
-	}
-}
 
+	
+	printf("VEML7700 TEST\n");		
+	lightSensor.Get_ALS_Lux(envData.Temperature);
+	printf("Get_ALS_LUX: %f\n",envData.Temperature);
+	
+	float white; 
+	lightSensor.Get_White_Lux(white);
+	printf("Get_ALS_White: %f\n",white);
+
+}
