@@ -18,7 +18,7 @@
 #include <time.h>
 #include <unistd.h>
 
-//#include "I2CDriver.h"
+#include "I2CDriver.h"
 #include "VEML7700.h"
 #include "SHT31D.h"
 #include "Actuator.h"
@@ -34,16 +34,18 @@ using namespace std;
  * This struct conatins all enviroment data read from sensors as well as target values
  */
  typedef struct{
-  // Alternativley use triple slash for the comments
+  /// Alternativley use triple slash for the comments
+	// Env Data
   float LightIntensity; /*!< Light Intensity of the envieronment (in Lux) */	
-  float Temp; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
+  float Temperature; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
   float CO2; 					  /*!< Carbon Dioxide in air (in )*/
   float TVOC; 					/*!< Total Volatile Organic Compounds in air (in )*/
-  uint8_t Humidity;     /*!< Humidity of the environment (in Percent %)*/
+  float Humidity;     /*!< Humidity of the environment (in Percent %)*/
   
+	/// Targets
   float LightIntensityTarget; /*!< Threshold Light Intensity - Set by user */
-  float TempTarget;           /*!< Target Temperature - Set by user */		 
-  uint8_t HumidityTarget;		  /*!< Target Humidity - Set by user */	
+  float TemperatureTarget;    /*!< Target Temperature - Set by user */		 
+  float HumidityTarget;		  /*!< Target Humidity - Set by user */	
   
 } EnvironmentData;
 
@@ -71,14 +73,14 @@ public:
 		
 		/* Initialize EnvData Structure*/
 		envData.LightIntensity = 0.0; 
-		envData.Temp = 0.0; 
-		envData.Humidity = 0; 
-		envData.CO2 = 0; 
-		envData.TVOC = 0; 
+		envData.Temperature = 0.0; 
+		envData.Humidity = 0.0; 
+		envData.CO2 = 0.0; 
+		envData.TVOC = 0.0; 
 		
-		envData.LightIntensityTarget = 30000; 		
-		envData.TempTarget = 25.0; 		
-		envData.HumidityTarget = 75; 	
+		envData.LightIntensityTarget = 1000; 		
+		envData.TemperatureTarget = 25.0; 		
+		envData.HumidityTarget = 45; 	
 	}
 	
  /**
@@ -89,7 +91,7 @@ public:
 
 private:
 
-	//I2CDriver   i2cDriver;              /*!< I2C driver used for peripherials */
+	I2CDriver i2cDriver;              /*!< I2C driver used for peripherials */
 	VEML7700 	lightSensor; 				        /*!< VEML7700 Light Sensor Object */
 	SHT31D  	temperatureHumiditySensor;  /*!< SHT31D Temperature & Humidity Sensor Object */
 	CCS811		gasSensor;  				        /*!< CS811 Gas Sensor Object */

@@ -5,7 +5,7 @@
   </a>
   
   <p align="center">
-    Learn about aspects of cultivating plants or fungus through a Raspberry Pi driven environmental system. 
+    Learn cultivatiion of plants or fungus through a Raspberry Pi driven environment monitoring system. 
     <br />
 </div>
 
@@ -105,7 +105,7 @@ Sensors:
 * [Raspberry Pi Camera Rev 1.3 Lens: P5V04A, Cable: AWM 20624]()
 * [Thermometer + Humidity - SHT31D](https://github.com/krogk/AgroPi/blob/main/hardware/SHT31D/Sensirion_Humidity_SHT3x_Datasheet_digital-767294.pdf)
 * [Light - VEML7700](https://github.com/krogk/AgroPi/blob/main/hardware/VEML7700/veml7700.pdf)
-* [Gas - CCS881](https://github.com/krogk/AgroPi/blob/main/hardware/CCS881/SC-001232-DS-2-CCS811B-Datasheet-Revision-2.pdf)
+* [Gas - SGP30]()
 
 
 <br />
@@ -130,9 +130,10 @@ Schematics:
 <br />
 <br />
 [] Working core prototype
+* [x] I2C Driver
 * [x] Light Sensor integrated
+* [] Temperature + Humidity Sensor integrated
 * [] Camera sensor integrated
-* [] Temperature + Humidity Sensor
 * [] Gas Sensor
 * [] Web server
 * [] Real-time Adaptation
@@ -157,9 +158,15 @@ Schematics:
 ### Prerequisites
 
 ...Ubuntu Packages: 
-* cmake
   ```sh
-  sudo apt-get install cmake
+  sudo apt-get update
+	sudo apt-get upgrade
+	sudo apt-get install git
+	sudo apt-get install cmake
+	sudo apt-get install flex  - (Only Required for building Doxygen)
+	sudo apt-get install bison - (Only Required for building Doxygen)
+	sudo apt-get install libboost-all-dev
+	sudo apt-get install libi2c-dev
   ```
 
 
@@ -169,27 +176,22 @@ Schematics:
    ```sh
    git clone https://github.com/krogk/AgroPi
    ```
-2. Run auto configuration script
+2. Build
    ```sh
-   ./autoconf
-   ```
-3. Compile
-    ```sh
-   cmake .
-   make 
+	  mkdir build
+	  cd build/
+	  cmake ..
+	  make test ARGS="-V"  
+	  make
    ```
 
 <!-- Usage -->
 ### Usage
 
 To run the software:
+1. Go to build directory
   ```sh
-  ./AgroPi 
- ```
-
-To stop software:
-  ```sh
- agropistop.sh
+  ./src/AgroPi 
  ```
 
 
