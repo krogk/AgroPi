@@ -13,7 +13,7 @@
             <span class="navbar-toggler-bar bar3"></span>
           </button>
         </div>
-        <a class="navbar-brand" href="#pablo">Dashboard</a>
+        <a class="navbar-brand" href="#">Light Intensity</a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -33,11 +33,9 @@
         </form>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#pablo">
-              <i class="now-ui-icons media-2_sound-wave"></i>
-              <p>
-                <span class="d-lg-none d-md-block">Stats</span>
-              </p>
+            <a class="nav-link date-range" href="#">
+              <span class="day-name" id="Day_Name">Today:</span>
+              <i data-feather="calendar" class="align-self-center icon-xs ml-1"></i>
             </a>
           </li>
           <li class="nav-item dropdown">
@@ -67,7 +65,7 @@
     </nav>
     <!-- End Navbar -->
     <div class="panel-header panel-header-lg">
-    <canvas id="bigDashboardChart"></canvas>
+    <canvas id="light-intensity-chart"></canvas>
     </div>
     <div class="content">
     <div class="row">
@@ -90,7 +88,7 @@
           </div>
           <div class="card-body">
             <div class="chart-area">
-              <canvas id="lineChartExample"></canvas>
+              <canvas id="temperature-chart"></canvas>
             </div>
           </div>
           <div class="card-footer">
@@ -119,7 +117,7 @@
           </div>
           <div class="card-body">
             <div class="chart-area">
-              <canvas id="lineChartExampleWithNumbersAndGrid"></canvas>
+              <canvas id="humidity-chart"></canvas>
             </div>
           </div>
           <div class="card-footer">
@@ -137,12 +135,12 @@
           </div>
           <div class="card-body">
             <div class="chart-area">
-              <canvas id="barChartSimpleGradientsNumbers"></canvas>
+              <canvas id="water-level-chart"></canvas>
             </div>
           </div>
           <div class="card-footer">
             <div class="stats">
-              <i class="now-ui-icons ui-2_time-alarm"></i> Last 7 days
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
             </div>
           </div>
         </div>
@@ -365,13 +363,41 @@
 
 {% block scripts %}
     <!-- <script src="{{ url_for('static', filename='plugins/apex-charts/apexcharts.min.js') }}"></script> -->
-    <!-- <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/dashboard.js') }}"></script>
     <script type="text/javascript">
-        // get_dashboard_data();
-        // $('.date-range').on('apply.daterangepicker', function (ev, picker) {
-        //   get_dashboard_data();
-        // });
-        $('.nav-button').removeClass("active");
-        $('#dashboard-nav').addClass("active");
+      $(function() {
+
+        var start = moment().startOf('hour').subtract(5, 'hour');
+        var end = moment().startOf('hour');
+
+        function cb(start, end) {
+            $('.date-range span').html(start.format('MMMM D, YYYY hh:mm') + ' - ' + end.format('MMMM D, YYYY hh:mm'));
+        }
+
+        $('.date-range').daterangepicker({
+            timePicker: true,
+            startDate: start,
+            endDate: end,
+            // ranges: {
+            //    'Today': [moment(), moment()],
+            //    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            //    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            //    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            //    'This Month': [moment().startOf('month'), moment().endOf('month')],
+            //    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            // }
+        }, cb);
+
+        cb(start, end);
+
+        get_dashboard_data();
+        $('.date-range').on('apply.daterangepicker', function (ev, picker) {
+          get_dashboard_data();
+        });
+
+      });
+      $('.nav-button').removeClass("active");
+      $('#dashboard-nav').addClass("active");
     </script>
 {% endblock %}

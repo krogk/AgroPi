@@ -27,6 +27,19 @@ class Utilities:
     def format_date_string(date_string):
         return (datetime.datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S.%f")).strftime("%d %B, %Y %H:%M:%S")
 
+    @staticmethod
+    def get_dates_in_range(start_date, end_date):
+        start_date_obj = datetime.datetime.strptime(start_date, "%d/%m/%Y %H:%M")
+        end_date_obj = datetime.datetime.strptime(end_date, "%d/%m/%Y %H:%M")
+
+        dates = [datetime.datetime.strftime(start_date_obj, "%H:00")]
+        date_ = start_date_obj + datetime.timedelta(hours=1)
+        while date_ <= end_date_obj:
+            dates.append(datetime.datetime.strftime(date_, "%H:00"))
+            date_ = date_ + datetime.timedelta(hours=1)
+
+        return dates
+
 
 class SlickEnum(Enum):
 
