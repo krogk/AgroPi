@@ -13,6 +13,12 @@
 	sudo apt-get install wiringpi
 	sudo apt-get install libboost-all-dev
 	sudo apt-get install libi2c-dev
+	sudo apt-get install cppcheck
+	sudo apt-get install doxygen
+  sudo apt-get install graphviz
+	sudo apt install build-essential
+	bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+	sudo apt install lsb-release wget software-properties-common 
 	
 
 ~Setting Up Git Account~

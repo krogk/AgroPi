@@ -23,9 +23,11 @@
 * Power mode          = 00 = mode 1
 * Refresh Time        = 600 ms
 * Resolution (lx/bit) = 0.0288
+*
 * @return None
 */
-void VEML7700::Initialize() {
+void VEML7700::Initialize(I2CDriver &i2c) {
+  i2cdriv = i2c;
   // Open fd to VEML7700
   fd = i2cdriv.I2C_Setup_File(I2C_ADDRESS);
 
@@ -39,18 +41,17 @@ void VEML7700::Initialize() {
 	for (uint8_t i = 0; i < 4; i++) {
     i2cdriv.I2C_Write_16bitReg(fd, i, registerVEML7700[i]);
 	}
-
 	// Datasheet says to wait at least 2.5ms if there are any issues then try puting delay here before any write/reads
 }
 
 
-	/**
-	* Get Lux from VEML7700
-	*
-  * @param lux  Addres of lux variable to modify
-  * 
-	* @return Status 
-	*/
+/**
+* Get Lux from VEML7700
+*
+* @param lux  Addres of lux variable to modify
+* 
+* @return Status 
+*/
 uint8_t VEML7700::Get_ALS_Lux(float& lux) {
   uint16_t rawCount;
   // Get raw count 
@@ -62,13 +63,13 @@ uint8_t VEML7700::Get_ALS_Lux(float& lux) {
 }
 
 
-	/**
-	* Get raw ALS count from VEML7700
-	*
-  * @param als  Addres of als variable update with read lux value  
-  * 
-	* @return Status 
-	*/
+/**
+* Get raw ALS count from VEML7700
+*
+* @param als  Addres of als variable update with read lux value  
+* 
+* @return Status 
+*/
   uint8_t VEML7700::Get_ALS(uint16_t& als) {
   // Read
   als = i2cdriv.I2C_Read_16bitReg(fd, COMMAND_ALS);
@@ -103,14 +104,14 @@ uint8_t VEML7700::Get_White(uint16_t& white) {
 }                                                  
 
 
-	/**
-	* Compute Lux base on the raw count
-	*
-  * @param rawCount   Raw count from the sensor 
-  * @param lux        Address of lux variable to update.
-  * 
-	* @return None
-	*/
+/**
+* Compute Lux base on the raw count
+*
+* @param rawCount   Raw count from the sensor 
+* @param lux        Address of lux variable to update.
+* 
+* @return None
+*/
 void VEML7700::Compute_Lux(uint16_t rawCount, float& lux) {
   // Get Gain
   ALS_GAIN_T gain;
@@ -225,9 +226,9 @@ uint8_t VEML7700::Get_Gain(ALS_GAIN_T &gain) {
 /**
 * Set Integration time for VEML7700 
 *
-* @param integrationTime Integration time enumeration to set
+* @param integrationTime  Integration time enumeration to set
 * 
-* @return             Zero on success else negative errno 
+* @return                 Zero on success else negative errno 
 */
 uint8_t VEML7700::Set_Integration_Time(ALS_INTEGRTATION_TIME_T integrationTime) {
   // Define new register value using masks and shift new value into it
@@ -243,7 +244,7 @@ uint8_t VEML7700::Set_Integration_Time(ALS_INTEGRTATION_TIME_T integrationTime) 
 *
 * @param integrationTime Address of integration time variable to update
 * 
-* @return Status
+* @return Zero on success else negative errno
 */
 uint8_t VEML7700::Get_Integration_Time(ALS_INTEGRTATION_TIME_T& integrationTime) {
   // Update the valuee for th

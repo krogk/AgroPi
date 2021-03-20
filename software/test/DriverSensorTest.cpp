@@ -4,7 +4,7 @@
 #include "I2CDriver.h"
 #include "VEML7700.h"
 #include "SHT31D.h"
-#include "CCS811.h"
+#include "SGP30.h"
 #include "Camera.h"
 //#include "Actuator.h"
 
@@ -19,6 +19,7 @@ BOOST_AUTO_TEST_SUITE(I2C_DRIVER)
 * 
 */
 BOOST_AUTO_TEST_CASE(I2C_PLAIN_WRITE_READ){
+
     //BOOST_TEST_MESSAGE( "Testing I2C Driver:" );
     //BOOST_TEST_MESSAGE( "Variable:" << variable );
     int fd = 0;
@@ -47,10 +48,11 @@ BOOST_AUTO_TEST_SUITE(LIGHT_SENSOR)
 * 
 */
 BOOST_AUTO_TEST_CASE(VEML770_LUX_READ){
-    float lux;
+    float lux = 0.0;
+    I2CDriver driver;
     VEML7700 lightsensor;
     // Initialize sensor
-    lightsensor.Initialize();
+    lightsensor.Initialize(driver);
     //BOOST_CHECK_MESSAGE( fd != 0, "File descriptor:  " << fd << "  Incorrect Value" );
     // Attempt to read lux
     lightsensor.Get_ALS_Lux( lux );
@@ -61,25 +63,40 @@ BOOST_AUTO_TEST_CASE(VEML770_LUX_READ){
 }
 BOOST_AUTO_TEST_SUITE_END()
 
-/*
+
 // Test Temperature and Humidity Sensor
-BOOST_AUTO_TEST_SUITE(LIGHT_SENSOR)
-BOOST_AUTO_TEST_CASE( SHT31D ) {
-
-}
-BOOST_AUTO_TEST_SUITE_END()
-
-// Test Camera
-BOOST_AUTO_TEST_SUITE(CAMERA)
-BOOST_AUTO_TEST_CASE( Camera ) {
+BOOST_AUTO_TEST_SUITE(TEMP_HUM_SENSOR)
+BOOST_AUTO_TEST_CASE( SHT31D_READ ) {
+    I2CDriver driver;
+    SHT31D temperatureHumiditySensor;
+    float temp = 0, humidity = 0;
+    temperatureHumiditySensor.Initialize(driver);
+    temperatureHumiditySensor.Get_Temperature_Humidity(temp, humidity);
+    BOOST_CHECK_MESSAGE( temp > 0.0f,   "Temperature measured by SHT31D: " << temp << " C - Too Low" );
+    BOOST_CHECK_MESSAGE( temp < 50.0f,  "Temperature measured by SHT31D: " << temp << " C - Too High" );
+    BOOST_CHECK_MESSAGE( humidity > 0.0f,   "Temperature measured by SHT31D: " << humidity << " % - Too Low" );
+    BOOST_CHECK_MESSAGE( humidity < 100.0f,  "Temperature measured by SHT31D: " << humidity << " % - Too High" );
 
 }
 BOOST_AUTO_TEST_SUITE_END()
 
 // Test Gas Sensor
-BOOST_AUTO_TEST_SUITE(SGP30)
-BOOST_AUTO_TEST_CASE( SGP30 ) {
+BOOST_AUTO_TEST_SUITE(GAS_SENSOR)
+BOOST_AUTO_TEST_CASE( SGP30_READ ) {
+    I2CDriver driver;
+    SGP30 gasSensor;
+    uint16_t tvoc = 0, eco2 = 0;
+    gasSensor.Initialize(driver);
+    gasSensor.IAQ_Measure(tvoc,eco2);
+    BOOST_CHECK_MESSAGE( tvoc >= 0.0f,   "Temperature measured by SHT31D: " << tvoc << " ppb - Too Low" );
+    BOOST_CHECK_MESSAGE( eco2 > 0.0f,   "Temperature measured by SHT31D: " << eco2 << " ppm - Too Low" );
+}
+BOOST_AUTO_TEST_SUITE_END()
 
+
+/*// Test Camera
+BOOST_AUTO_TEST_SUITE(CAMERA)
+BOOST_AUTO_TEST_CASE( Camera ) {
 }
 BOOST_AUTO_TEST_SUITE_END()
 */

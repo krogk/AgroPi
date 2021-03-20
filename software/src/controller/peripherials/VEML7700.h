@@ -17,6 +17,16 @@
 #include <unistd.h>
 #include "I2CDriver.h"
 
+
+	/**
+	* Status Enumeration
+	*/		
+	enum {
+		STATUS_OK = 0, 
+		STATUS_ERROR = -1
+	};	
+
+
 /**
 * @brief VEML7700 class
 * @author Kamil Rog
@@ -51,8 +61,8 @@ public:
 	}
 
   /**
-   * Gain Setting Enumeration
-   */
+  * Gain Setting Enumeration
+  */
 	enum ALS_GAIN_T {
 		ALS_GAIN_x1 = 0x0,  /// x 1
 		ALS_GAIN_x2 = 0x1,  /// x 2
@@ -61,8 +71,8 @@ public:
 	};
 		
   /**
-   * Integration time Enumeration
-   */
+  * Integration time Enumeration
+  */
   enum ALS_INTEGRTATION_TIME_T {
 		ALS_INTEGRATION_25ms = 0xc,   /// 25 mS
 		ALS_INTEGRATION_50ms = 0x8,   /// 50 mS
@@ -93,18 +103,10 @@ public:
 	};
 
 	/**
-	* Status Enumeration
-	*/		
-	enum {
-		STATUS_OK = 0, 
-		STATUS_ERROR = -1
-	};	
-
-	/**
 	* Initialize VEML7700 with basic settings.
 	*
 	*/	
-	void Initialize();
+	void Initialize(I2CDriver &i2c);
 
 	// High Level Commands
 
@@ -118,11 +120,18 @@ public:
 	uint8_t Get_ALS_Lux(float& lux);
 	uint8_t Get_White_Lux(float& white);
 
+	// Gain Set & Get commands
+  uint8_t Set_Gain(ALS_GAIN_T gain);
+  uint8_t Get_Gain(ALS_GAIN_T &gain);
+   
+  // Integration Time Set & Get commands
+  uint8_t Set_Integration_Time(ALS_INTEGRTATION_TIME_T integrationTime);
+  uint8_t Get_Integration_Time(ALS_INTEGRTATION_TIME_T& integrationTime);
+
 
 private:
 
 	// Device commands
-
 	uint8_t Get_ALS(uint16_t& als);
   uint8_t Get_White(uint16_t& white); 
 	
@@ -158,23 +167,11 @@ private:
   // Config Regsiter
   uint16_t registerVEML7700[4];
 
-  // Gain Set & Get commands
-  uint8_t Set_Gain(ALS_GAIN_T gain);
-  uint8_t Get_Gain(ALS_GAIN_T &gain);
-   
-  // Integration Time Set & Get commands
-  uint8_t Set_Integration_Time(ALS_INTEGRTATION_TIME_T integrationTime);
-  uint8_t Get_Integration_Time(ALS_INTEGRTATION_TIME_T& integrationTime);
-
   // Integration Time Set & Get commands
   void Compute_Lux(uint16_t raw_counts, float& lux);
 
   // I2C Object instance class
   I2CDriver i2cdriv;
   int fd;
-
-
 };
-
-
 #endif

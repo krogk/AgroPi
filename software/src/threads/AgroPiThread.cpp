@@ -1,15 +1,34 @@
+/**
+* @file
+* @author Kamil Rog
+* @version 0.1
+*
+*
+* @section DESCRIPTION
+* 
+* This file contains the functions for AgroPi Thread class.
+*
+*/
 #include "AgroPiThread.h"
 #include <chrono>
 #include <thread>
+
+
 
 /**
  * Run Function
  * 
  */
 void AgroPiThread::run(void) {
-	//printf("Testing Thread %d\n",offset);
+	Controller controller;
+	// Initialize sensors
+	controller.Initialize();
+	// Start Timer with event(sampling) occuring every 250ms
+	controller.start(250000000);
+	while(1){
 
-	printf("Controller.run:\n");
-	controller.Run();
+	}
+	// Stop Timer
+	controller.stop();
 	
 }

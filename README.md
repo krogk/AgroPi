@@ -132,9 +132,9 @@ Schematics:
 [] Working core prototype
 * [x] I2C Driver
 * [x] Light Sensor integrated
-* [] Temperature + Humidity Sensor integrated
+* [x] Temperature + Humidity Sensor integrated
 * [] Camera sensor integrated
-* [] Gas Sensor
+* [x] Gas Sensor
 * [] Web server
 * [] Real-time Adaptation
 [] Initial software release 

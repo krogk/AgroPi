@@ -14,18 +14,24 @@
 #define CONTROLLER_H
 
 
+
 #include <iostream>
+#include <chrono>
+#include <thread>
+#include <stdio.h>
 #include <time.h>
 #include <unistd.h>
-
+#include "CppTimer.h"
 #include "I2CDriver.h"
 #include "VEML7700.h"
 #include "SHT31D.h"
 #include "Actuator.h"
-#include "CCS811.h"
+#include "SGP30.h"
 #include "Camera.h"
 
-using namespace std;
+
+
+
 
  
 /**
@@ -38,9 +44,11 @@ using namespace std;
 	// Env Data
   float LightIntensity; /*!< Light Intensity of the envieronment (in Lux) */	
   float Temperature; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
-  float CO2; 					  /*!< Carbon Dioxide in air (in )*/
-  float TVOC; 					/*!< Total Volatile Organic Compounds in air (in )*/
-  float Humidity;     /*!< Humidity of the environment (in Percent %)*/
+	float Humidity;     /*!< Humidity of the environment (in Percent %)*/
+  uint16_t CO2; 					  /*!< Carbon Dioxide in air (in )*/
+  uint16_t TVOC; 					/*!< Total Volatile Organic Compounds in air (in )*/
+	uint16_t RawEthanol; 
+	uint16_t RawH2; 
   
 	/// Targets
   float LightIntensityTarget; /*!< Threshold Light Intensity - Set by user */
@@ -56,45 +64,24 @@ using namespace std;
  *
  * This class is responsible for handling all measurements and controll. 
  */
-class Controller {
+class Controller : public CppTimer {
+
+	void timerEvent() {
+		Gather_Env_Data();
+		Print_Env_Data();
+	}
 
 public:
-	/**
-	 * Constructor that sets the offset for the thread to a given value.
-	 *
-	 * @todo:@param filepath  filepath for settings file.
-	 * 
-	 */
-	Controller() {
-	
-		/*Initialize Peripherials*/
-		lightSensor.Initialize();
-		
-		
-		/* Initialize EnvData Structure*/
-		envData.LightIntensity = 0.0; 
-		envData.Temperature = 0.0; 
-		envData.Humidity = 0.0; 
-		envData.CO2 = 0.0; 
-		envData.TVOC = 0.0; 
-		
-		envData.LightIntensityTarget = 1000; 		
-		envData.TemperatureTarget = 25.0; 		
-		envData.HumidityTarget = 45; 	
-	}
-	
- /**
-	* Run Function responsible for event hanlding.
-	* 
-	*/
-	void Run();
+	int Initialize();
 
 private:
+	int Gather_Env_Data();
+	int Print_Env_Data();
 
-	I2CDriver i2cDriver;              /*!< I2C driver used for peripherials */
+	I2CDriver i2cDriver;              		/*!< I2C driver used for peripherials */
 	VEML7700 	lightSensor; 				        /*!< VEML7700 Light Sensor Object */
 	SHT31D  	temperatureHumiditySensor;  /*!< SHT31D Temperature & Humidity Sensor Object */
-	CCS811		gasSensor;  				        /*!< CS811 Gas Sensor Object */
+	SGP30			gasSensor;  				        /*!< SGP30 Gas Sensor Object */
 	Camera 		camera; 					          /*!< Camera Sensor Object */
 	Actuator 	actuator; 					        /*!< Actuator Object */
 	EnvironmentData envData; 				      /*!< Current and Target Enviroment Data Struct */

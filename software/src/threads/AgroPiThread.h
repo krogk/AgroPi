@@ -26,23 +26,20 @@ class AgroPiThread : public CppThread {
 
 public:
 	/**
-	 * Constructor that sets the offset for the thread to a given value.
-	 *
-	 * @param _offset offset value
-	 * 
-	 */
+	* Constructor that sets the offset for the thread to a given value.
+	*
+	* @param _offset offset value
+	* 
+	*/
 	AgroPiThread(int _offset) {
 		offset = _offset;
 	}
 
 private:
-
-	
 	void run();
 
 private:
 	int offset; /*!< Thread Offset */
-	Controller controller; /*!< Controller Object */
 };
 
 #endif

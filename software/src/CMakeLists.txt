@@ -15,7 +15,8 @@ find_library(LIB_I2C i2c)
 
 # Set Include Directories
 set(INCLUDE_DIRS
-   ${WIRINGPI_INCLUDE_DIRS}
+   ${CMAKE_CURRENT_SOURCE_DIR}
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils
    ${CMAKE_CURRENT_SOURCE_DIR}/threads
    ${CMAKE_CURRENT_SOURCE_DIR}/controller
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials
@@ -23,11 +24,13 @@ set(INCLUDE_DIRS
 
 # Set Source files
 set(SOURCES  
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils/utils.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils/CppTimer.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/Controller.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CDriver.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SHT31D.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/Camera.cpp
-   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/CCS811.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SGP30.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/VEML7700.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/Actuator.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/threads/ServerThread.cpp
@@ -36,11 +39,14 @@ set(SOURCES
 
 # Set Header files 
 set(HEADERS
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils/utils.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils/CppTimer.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils/CppTimerCallback.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/Controller.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CDriver.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SHT31D.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/Camera.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/CCS811.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SGP30.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/VEML7700.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/Actuator.h
    ${CMAKE_CURRENT_SOURCE_DIR}/threads/ServerThread.h
@@ -50,9 +56,9 @@ set(HEADERS
 # Create library for src and test
 add_library(AgroPiLib SHARED ${SOURCES})
 target_include_directories(AgroPiLib PUBLIC ${INCLUDE_DIRS})
-target_link_libraries(AgroPiLib i2c ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(AgroPiLib i2c rt ${CMAKE_THREAD_LIBS_INIT})
 
-# Add the executable
+# Add executable
 add_executable(AgroPi main.cpp)
 
 # Link libraries to executable
