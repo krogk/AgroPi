@@ -113,11 +113,11 @@ Actuators - This is user's choice however for our demo the following are used:
 * [Heating Element - Zerodis PTC Heating Element AC/DC 12V (80 ℃ 2—5W) ](https://www.amazon.co.uk/gp/product/B07FJZQLMK/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
 * [Water Pump](https://www.mybotic.com.my/products/Micro-Submersible-Water-Pump-DC-3V-5V/2778#:~:text=Suction%20Distance%3A%200.8%20meter%20)
 * [Fan - Coolermaster A12025-12CB-3BN-F1]()
-<br />
+
 Misc:
 * [Relay Board - Elego ](https://github.com/krogk/AgroPi/blob/Software_Release_1/hardware/Relay%20Board/4%20CHANNEL%205V%2010A%20RELAY%20MODULE.pdf)
 
-<br />
+
 
 Schematics:
 * [System Schematic - TBC]()
@@ -126,8 +126,7 @@ Schematics:
 ### Roadmap
 <br />
 [x] Github Setup
-<br />
-<br />
+
 [-] Software Release 1 - Working core prototype
 * [x] I2C Driver
 * [x] Light Sensor Integrated
@@ -136,10 +135,8 @@ Schematics:
 * [-] Camera Integrated
 * [80%] Web server
 * [30%] Real-time Adaptation
-   </a>
-<br />
-<br />
-[-] Software Release 2 - Actuation & Image Processing - Detecting Mold
+
+[-] Software Release 2 Actuation & Image Processing - Detecting Mold
 * [-] Relay Board Integration
 * [-] Lighting Actuation
 * [-] Heating Actuation
@@ -149,10 +146,9 @@ Schematics:
 * [-] Gather Training Dataset
 * [-] Train neuralnet
 * [-] Test on real samples
-<br />
-<br />
+
 [-] Software Release 3 - Life cycle Assessment & Nutrient Defficiencies
-<br />
+
 <br />
 
 
