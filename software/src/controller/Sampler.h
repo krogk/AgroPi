@@ -30,9 +30,6 @@
 #include "Camera.h"
 
 
-
-
-
  
 /**
  * Environment Data Struct Definition
@@ -45,17 +42,12 @@
   float LightIntensity; /*!< Light Intensity of the envieronment (in Lux) */	
   float Temperature; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
 	float Humidity;     /*!< Humidity of the environment (in Percent %)*/
-  uint16_t CO2; 					  /*!< Carbon Dioxide in air (in )*/
-  uint16_t TVOC; 					/*!< Total Volatile Organic Compounds in air (in )*/
-	uint16_t RawEthanol; 
-	uint16_t RawH2; 
-  
-	/// Targets
-  float LightIntensityTarget; /*!< Threshold Light Intensity - Set by user */
-  float TemperatureTarget;    /*!< Target Temperature - Set by user */		 
-  float HumidityTarget;		  /*!< Target Humidity - Set by user */	
-  
+  float CO2; 					  /*!< Carbon Dioxide in air (in )*/
+  float TVOC; 					/*!< Total Volatile Organic Compounds in air (in )*/
+	float RawEthanol; 
+	float RawH2; 
 } EnvironmentData;
+
 
 
 /**
@@ -64,19 +56,35 @@
  *
  * This class is responsible for handling all measurements and controll. 
  */
-class Controller : public CppTimer {
+class Sampler : public CppTimer {
 
 	void timerEvent() {
 		Gather_Env_Data();
 		Print_Env_Data();
+		Send_Env_Data();
+		std::thread::id this_id = std::this_thread::get_id();
+    std::cout << "timerEvent() " << this_id << "\n";
+
 	}
 
 public:
-	int Initialize();
+	/**
+	* Constructor that sets the offset for the thread to a given value.
+	*
+	* @param wPipe Write pipe to server thread
+	*/
+	Sampler(int wPipe) {
+		writePipe = wPipe;
+		Initialize();
+	}
+
 
 private:
+	int Initialize();
 	int Gather_Env_Data();
 	int Print_Env_Data();
+	int Send_Env_Data();
+	int Create_Pipe_Message(const char *variableString, float value );
 
 	I2CDriver i2cDriver;              		/*!< I2C driver used for peripherials */
 	VEML7700 	lightSensor; 				        /*!< VEML7700 Light Sensor Object */
@@ -86,6 +94,7 @@ private:
 	Actuator 	actuator; 					        /*!< Actuator Object */
 	EnvironmentData envData; 				      /*!< Current and Target Enviroment Data Struct */
 	
+	int writePipe;
 };
 
 #endif

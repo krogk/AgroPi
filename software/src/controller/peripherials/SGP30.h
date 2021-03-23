@@ -34,8 +34,8 @@ public:
 	int Initialize(I2CDriver &i2c);
 	int Close_Device(int fd);
 	int Soft_Reset(void);
-	int IAQ_Measure(uint16_t &tvoc, uint16_t &eCO2);
-	int IAQ_Measure_Raw( uint16_t &rawEthanol, uint16_t &rawH2);
+	int IAQ_Measure(float &tvoc, float &eCO2);
+	int IAQ_Measure_Raw( float &rawEthanol, float &rawH2);
 	
 
 private:

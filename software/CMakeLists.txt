@@ -10,7 +10,7 @@ project(AgroPi VERSION 0.1)
 
 # Allow for static analysis options
 include(cmake/StaticAnalyzers.cmake)
-include(cppcheck.cmake)
+#include(cppcheck.cmake)
 # Include Direcotries
 add_subdirectory(src)
 add_subdirectory(docs)

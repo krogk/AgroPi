@@ -14,7 +14,7 @@
 #define AGROPI_THREAD_H
 
 #include "CppThread.h"
-#include "Controller.h"
+#include "Sampler.h"
 
 /**
 * @brief AgroPi Thread class
@@ -22,24 +22,27 @@
 *
 * This Class is responsible for
 */
-class AgroPiThread : public CppThread {
+class SamplerThread : public CppThread {
 
 public:
 	/**
 	* Constructor that sets the offset for the thread to a given value.
 	*
-	* @param _offset offset value
-	* 
+	* @param writePipe Write pipe to server thread
+	* @param ReadPipe  Read  pipe from server thread
 	*/
-	AgroPiThread(int _offset) {
-		offset = _offset;
+	SamplerThread(int wPipe, int rPipe) {
+		writePipe = wPipe;
+		ReadPipe = rPipe;
 	}
 
+	int writePipe;
 private:
 	void run();
 
 private:
-	int offset; /*!< Thread Offset */
+	
+	int ReadPipe;
 };
 
 #endif

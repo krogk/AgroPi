@@ -9,26 +9,27 @@
 * This file contains the functions for AgroPi Thread class.
 *
 */
-#include "AgroPiThread.h"
+#include "SamplerThread.h"
 #include <chrono>
 #include <thread>
-
-
 
 /**
  * Run Function
  * 
  */
-void AgroPiThread::run(void) {
-	Controller controller;
-	// Initialize sensors
-	controller.Initialize();
+void SamplerThread::run(void) {
+	Sampler sampler(writePipe);
 	// Start Timer with event(sampling) occuring every 250ms
-	controller.start(250000000);
-	while(1){
+	sampler.start(250000000);
+	std::thread::id this_id = std::this_thread::get_id();
+	std::cout << "SamplerThread thread " << this_id << "\n";
 
+	while(1){
+		
 	}
+
+
 	// Stop Timer
-	controller.stop();
+	sampler.stop();
 	
 }

@@ -15,6 +15,26 @@
 
 #include "CppThread.h"
 
+
+/**
+ * Environment Data Struct Definition
+ * 
+ * This struct conatins all enviroment data read from sensors as well as target values
+ */
+ typedef struct{
+  /// Alternativley use triple slash for the comments
+	// Env Data
+  float LightIntensity; /*!< Light Intensity of the envieronment (in Lux) */	
+  float Temperature; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
+	float Humidity;     /*!< Humidity of the environment (in Percent %)*/
+  float CO2; 					  /*!< Carbon Dioxide in air (in )*/
+  float TVOC; 					/*!< Total Volatile Organic Compounds in air (in )*/
+	float RawEthanol; 
+	float RawH2; 
+} EnvironmentDataContr;
+
+
+
 /**
  * @brief Server Thread class
  * @author Kamil Rog
@@ -31,15 +51,18 @@ public:
 	 * @param _offset  offset value
 	 * 
 	 */
-	ServerThread(int _offset) {
-		offset = _offset;
+	ServerThread(int wPipe, int rPipe) {
+		writePipe = wPipe;
+		ReadPipe = rPipe;
 	}
 
 private:
 	void run();
 
 private:
-	int offset; /*!< Thread Offset */
+	int writePipe;
+	int ReadPipe;
+	EnvironmentDataContr envData; 				      /*!< Current and Target Enviroment Data Struct */
 };
 
 #endif

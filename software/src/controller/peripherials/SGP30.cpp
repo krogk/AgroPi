@@ -27,6 +27,9 @@
 #include "SGP30.h"
 #include <sys/ioctl.h>
 
+#include <iostream>
+#include <string>
+
 
 /**
 * Initialize SHT31D 
@@ -122,15 +125,15 @@ int SGP30::Soft_Reset(void) {
 * @return Zero on success else negative error number
 * 
 */
-int SGP30::IAQ_Measure(uint16_t &tvoc, uint16_t &eCO2) {
+int SGP30::IAQ_Measure(float &tvoc, float &eCO2) {
   uint16_t buffer[2];
   uint8_t readlength = 2;
   uint8_t delay = 12;
 
   i2cdriv.Plain_I2C_Write_Read_CRC8(fd, SGP30_MEASURE_AIR_QUALITY, buffer, readlength, delay);
  
-  tvoc =  buffer[1];
-  eCO2 =  buffer[0];  
+  tvoc =  (float)buffer[1];
+  eCO2 =  (float)buffer[0];  
 
   return 0;
 }
@@ -144,16 +147,18 @@ int SGP30::IAQ_Measure(uint16_t &tvoc, uint16_t &eCO2) {
 * 
 * @return Zero on success else negative error number
 */
-int SGP30::IAQ_Measure_Raw( uint16_t &rawEthanol, uint16_t &rawH2) {
+int SGP30::IAQ_Measure_Raw( float &rawEthanol, float &rawH2) {
   uint16_t buffer[2];
   uint8_t readlen = 2;
   uint8_t delay = 10;
-  
+  uint16_t  raweth = 0, rawh2 = 0;
   // Read using command
   i2cdriv.Plain_I2C_Write_Read_CRC8(fd, SGP30_MEASURE_AIR_QUALITY, buffer, readlen, delay);
   // Put into passed adresses
-  rawH2 = buffer[0];
-  rawEthanol = buffer[1];
+  rawh2 = buffer[0];
+  raweth = buffer[1];
+  rawH2 = (float)rawh2;
+  rawEthanol = (float)raweth;
 
   return 0;
 }
