@@ -128,6 +128,7 @@ public:
   uint8_t Set_Integration_Time(ALS_INTEGRTATION_TIME_T integrationTime);
   uint8_t Get_Integration_Time(ALS_INTEGRTATION_TIME_T& integrationTime);
 
+	int Close_Device();
 
 private:
 

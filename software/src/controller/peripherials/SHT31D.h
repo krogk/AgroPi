@@ -47,7 +47,7 @@ public:
 	}
 
   void Initialize(I2CDriver &i2c);
-	int Close_Device(int fd);
+	int Close_Device();
 
 	SHT31_STATUS Get_Temperature_Humidity(float &temperature, float &humidity);
 	SHT31_STATUS Get_Status(uint16_t &returnBuffer);

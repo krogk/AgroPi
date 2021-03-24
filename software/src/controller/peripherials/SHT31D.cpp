@@ -51,7 +51,7 @@ void SHT31D::Initialize(I2CDriver &i2c) {
 * 
 * @return None
 */
-int SHT31D::Close_Device(int fd) {
+int SHT31D::Close_Device() {
   Soft_Reset();
   return close(fd);
 }

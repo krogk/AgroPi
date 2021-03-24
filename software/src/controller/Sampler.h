@@ -14,9 +14,8 @@
 #define CONTROLLER_H
 
 
-
-#include <iostream>
-#include <chrono>
+#include "Controller.h"
+//#include <iostream>
 #include <thread>
 #include <stdio.h>
 #include <time.h>
@@ -27,7 +26,7 @@
 #include "SHT31D.h"
 #include "SGP30.h"
 //#include "Camera.h"
-#include "Controller.h"
+
 
 
 /**
@@ -44,17 +43,19 @@ public:
 
 
 /**
- * @brief Controller Class
+ * @brief Sampler Class
  * @author Kamil Rog
  *
- * This class is responsible for handling all measurements and controll. 
+ * This class is responsible for taking measurements for all devices on I2C Bus. 
  */
-class Sampler : public CppTimer {
+class Sampler : public CppTimer
+{
 
-	void timerEvent() {
+	void timerEvent()
+	{
 		Gather_Env_Data();
-		std::thread::id this_id = std::this_thread::get_id();
-    std::cout << "timerEvent() " << this_id << "\n";
+		//std::thread::id this_id = std::this_thread::get_id();
+    //std::cout << "timerEvent() " << this_id << "\n";
 		if (nullptr != samplerCallback) 
 		{
 			samplerCallback->SamplerHasData(envData);
@@ -63,26 +64,31 @@ class Sampler : public CppTimer {
 	}
 
 public:
-	Sampler(Controller* cb) {
+	Sampler(Controller* cb)
+	{
 		setCallback(cb);
 		Initialize();
 	}
 
-	~Sampler() {
+	~Sampler()
+	{
 		stop();
+		CloseDevices();
 	}
 
 	/**
-	 * Sets the callback which is called whenever there is a sample
+	 * Sets the callback which is called whenever there is new data
 	 **/
-	void setCallback(Controller* cb) {
+	void setCallback(Controller* cb)
+	{
 		samplerCallback = cb;
 	}
 
 	/**
 	* Stops the data acquistion
 	**/
-	void stopSampler() {
+	void stopSampler()
+	{
 		stop();
 	}
 
@@ -91,6 +97,7 @@ private:
 	int Initialize();
 	int Gather_Env_Data();
 	int Print_Env_Data();
+	int CloseDevices();
 
 	I2CDriver i2cDriver;              		/*!< I2C driver used for peripherials */
 	VEML7700 	lightSensor; 				        /*!< VEML7700 Light Sensor Object */

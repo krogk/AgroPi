@@ -42,7 +42,6 @@ void Controller::SendDataToWebApp()
 
 void Controller::ActuatorHandler()
 {
-
 	// Light
 	if( envData.LightIntensity < targets.LightIntensityLowerThreshold )
 	{
@@ -54,8 +53,4 @@ void Controller::ActuatorHandler()
 		printf("Light Intensity :%f - Sufficient To Turn Lights off\n", envData.LightIntensity);
 		// turn lights off if On
 	}
-
-
-
-
 }

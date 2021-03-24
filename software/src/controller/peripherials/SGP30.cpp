@@ -67,7 +67,7 @@ int SGP30::Initialize(I2CDriver &i2c)
   {
     IAQ_Initialize();
     initSensor = 0;
-    i2cdriv.Delay(10000);
+    i2cdriv.Delay(15000);
   }
   return 0;
 }
@@ -98,7 +98,7 @@ int SGP30::IAQ_Initialize(void) {
 *
 * @return Status of close operation
 */
-int SGP30::Close_Device(int fd) {
+int SGP30::Close_Device() {
   Soft_Reset();
   return close(fd);
 }

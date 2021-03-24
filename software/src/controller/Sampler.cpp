@@ -42,7 +42,7 @@ int Sampler::Initialize(){
 	envData.TVOC = 0.0; 
 	envData.RawEthanol = 0.0; 
 	envData.RawH2 = 0.0; 
-	
+
 	return 0;
 }
 
@@ -62,10 +62,24 @@ int Sampler::Gather_Env_Data() {
 
 
 /**
+* Reads data from all sensors by turn.
+*
+* @return Zero On Sucess 
+*/
+int Sampler::CloseDevices() {
+	printf("Closing Devices...\n");
+	lightSensor.Close_Device();
+	temperatureHumiditySensor.Close_Device();
+	gasSensor.Close_Device();
+}
+
+
+/**
 * Prints data read by sensors by turn.
 *
 * @return Zero On Sucess 
 */
+/*
 int Sampler::Print_Env_Data(){
 	printf("\n");
 	printf("Get_ALS_LUX: %f\n",envData.LightIntensity);
@@ -77,3 +91,4 @@ int Sampler::Print_Env_Data(){
 	printf("RawH2: %d ppm\n", envData.RawH2);
 	return 0;
 }
+*/

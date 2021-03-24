@@ -10,23 +10,18 @@
 *
 * 
 */
-
-#include <stdio.h>
 #include "ControllerThread.h"
-#include <unistd.h>
-#include <fcntl.h>
-
 
 int main(int argc, const char* argv[] ){
 
 	/* Initialize thread objects */ 
-	ControllerThread controller;
-  
+	ControllerThread controllerThread;
+
 	/* Run Controller Thread */ 
-	controller.start();
+	controllerThread.start();
   
 	/* Join to the thread */
-	controller.join();
+	controllerThread.join();
   
 	return 0;
 }

@@ -44,6 +44,19 @@ void VEML7700::Initialize(I2CDriver &i2c) {
 	// Datasheet says to wait at least 2.5ms if there are any issues then try puting delay here before any write/reads
 }
 
+/**
+* Close file descriptor
+* 
+* @param fd filde descriptor to close.
+*
+* @return Status of close operation
+*/
+int VEML7700::Close_Device() {
+  //Soft_Reset();
+  return close(fd);
+}
+
+
 
 /**
 * Get Lux from VEML7700

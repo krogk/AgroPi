@@ -16,12 +16,13 @@
 #include <sys/types.h> 
 #include <sys/wait.h> 
 #include <fcntl.h>
+#include <iostream>
+#include <cstring>
 
 
 void ControllerThread::run(void) 
 {
 	printf("Controller Thread Running\n");
-	
 	// Initialize Controller
 	Controller controller;
 
@@ -37,4 +38,5 @@ void ControllerThread::run(void)
 	}
 	// Stop Sampler Timer
 	sampler.stop();
+	// delete
 }
