@@ -11,18 +11,14 @@
 * 
 */
 #include "Sampler.h"
-#include <chrono>
-#include <thread>
 #include <stdio.h>
 #include <unistd.h>
 #include <time.h>
 #include <iostream>   // std::cout
 #include <string>     // std::string, std::to_string
 #include <stdio.h>
-#include <unistd.h>
-#include <time.h>
 #include <fcntl.h>
-#include <cstring>
+
 
 
 /**
@@ -46,7 +42,7 @@ int Sampler::Initialize(){
 	envData.TVOC = 0.0; 
 	envData.RawEthanol = 0.0; 
 	envData.RawH2 = 0.0; 
-
+	
 	return 0;
 }
 
@@ -64,6 +60,7 @@ int Sampler::Gather_Env_Data() {
 	return 0;
 }
 
+
 /**
 * Prints data read by sensors by turn.
 *
@@ -79,51 +76,4 @@ int Sampler::Print_Env_Data(){
 	printf("RawEthanol: %d ppb\n", envData.RawEthanol);
 	printf("RawH2: %d ppm\n", envData.RawH2);
 	return 0;
-}
-
-
-
-/**
-* Puts float to byte array
-*
-* @return Zero On Sucess 
-*/
-void Float_To_Bytes(uint8_t buffer[4], float float_variable){ 
-  memcpy(buffer, (unsigned char*) (&float_variable), 4);
-}
-
-
-/**
-* Prints data read by sensors by turn.
-*
-* @return Zero On Sucess 
-*/
-int Sampler::Create_Pipe_Message(const char *variableString, float value) {
-
-	std::string varStr = std::to_string(value);
-
-	//Convert the string object into a character array
-	variableString = varStr.c_str();
-	return 0;
-}
-
-
-/**
-* Prints data read by sensors by turn.
-*
-* @return Zero On Sucess 
-*/
-int Sampler::Send_Env_Data(){
-
-	//Convert the string object into a character array
-	char* envDataStructBytes = reinterpret_cast<char*>(&envData);
-	const int jaja = write(writePipe, envDataStructBytes, sizeof(EnvironmentData));
-	if( jaja != sizeof(EnvironmentData)){
-			printf("CIPA len = %d ", sizeof(EnvironmentData));
-	}
-	else {
-		printf("envDataStructBytes len = %d ", sizeof(EnvironmentData));
-	}
-	
-	//Create_Pipe_Message(tempbytestr, envData.Temperature);
 }

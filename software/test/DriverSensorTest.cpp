@@ -85,7 +85,7 @@ BOOST_AUTO_TEST_SUITE(GAS_SENSOR)
 BOOST_AUTO_TEST_CASE( SGP30_READ ) {
     I2CDriver driver;
     SGP30 gasSensor;
-    float tvoc = 0, eco2 = 0;
+    uint16_t tvoc = 0, eco2 = 0;
     gasSensor.Initialize(driver);
     gasSensor.IAQ_Measure(tvoc,eco2);
     BOOST_CHECK_MESSAGE( tvoc >= 0.0f,   "Temperature measured by SHT31D: " << tvoc << " ppb - Too Low" );

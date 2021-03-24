@@ -30,11 +30,11 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CDriver.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SHT31D.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/Camera.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/RelayBoard.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SGP30.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/VEML7700.cpp
-   ${CMAKE_CURRENT_SOURCE_DIR}/controller/Actuator.cpp
-   ${CMAKE_CURRENT_SOURCE_DIR}/threads/ServerThread.cpp
-   ${CMAKE_CURRENT_SOURCE_DIR}/threads/SamplerThread.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/Controller.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/threads/ControllerThread.cpp
 )
 
 # Set Header files 
@@ -42,15 +42,17 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/utils/utils.h
    ${CMAKE_CURRENT_SOURCE_DIR}/utils/CppTimer.h
    ${CMAKE_CURRENT_SOURCE_DIR}/utils/CppTimerCallback.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils/typeDefinitions.h 
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/Sampler.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CDriver.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SHT31D.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/Camera.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/RelayBoard.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SGP30.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/VEML7700.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/controller/Actuator.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/threads/ServerThread.h
-   ${CMAKE_CURRENT_SOURCE_DIR}/threads/SamplerThread.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/Controller.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/threads/ControllerThread.h
+
 )
 
 # Create library for src and test

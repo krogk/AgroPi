@@ -34,13 +34,12 @@ public:
 	int Initialize(I2CDriver &i2c);
 	int Close_Device(int fd);
 	int Soft_Reset(void);
-	int IAQ_Measure(float &tvoc, float &eCO2);
-	int IAQ_Measure_Raw( float &rawEthanol, float &rawH2);
-	
+	int IAQ_Measure(uint16_t &tvoc, uint16_t &eCO2);
+	int IAQ_Measure_Raw( uint16_t &rawEthanol, uint16_t &rawH2);
+
 
 private:
 	int IAQ_Initialize(void);
-	uint32_t Get_Absolute_Humidity(float temperature, float humidity);
 
 	enum { I2C_ADDRESS = 0x58 };       ///< SGP30 I2C Addres
 	enum { SGP30_FEATURESET = 0x0020} ; ///< The required set for this library

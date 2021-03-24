@@ -37,7 +37,8 @@
 * 
 * @return None
 */
-int SGP30::Initialize(I2CDriver &i2c) {
+int SGP30::Initialize(I2CDriver &i2c)
+{
   i2cdriv = i2c;
   // Open fd to SHT31D
   fd = i2cdriv.I2C_Setup_File(I2C_ADDRESS);
@@ -46,24 +47,28 @@ int SGP30::Initialize(I2CDriver &i2c) {
   uint8_t readLen = 3;
   // Get Serial Number of the device
   i2cdriv.Plain_I2C_Write_Read_CRC8(fd, SGP30_GET_SERIAL_ID, serialnum,  readLen, 10);
-  //i2cdriv.Delay(10);
+  //Wait 10ms
+  i2cdriv.Delay(10);
+
   uint16_t featureset = 0;
   readLen = 2;
   // Get Feature Version Set
   i2cdriv.Plain_I2C_Write_Read_CRC8(fd, SGP30_GET_FEATURESET_VERSION, &featureset,  1, 10);
 
   // If feature set version do not match
-  if ((featureset & 0xF0) != 0x0020){
+  if ((featureset & 0xF0) != 0x0020)
+  {
     // Error
     printf(" (featureset & 0xF0) != SGP30_FEATURESET \n");
     return -1;
   }
-  //i2cdriv.Delay(10);
-  if (initSensor) {
+  i2cdriv.Delay(10);
+  if (initSensor)
+  {
     IAQ_Initialize();
     initSensor = 0;
+    i2cdriv.Delay(10000);
   }
-  i2cdriv.Delay(20000);
   return 0;
 }
 
@@ -125,15 +130,15 @@ int SGP30::Soft_Reset(void) {
 * @return Zero on success else negative error number
 * 
 */
-int SGP30::IAQ_Measure(float &tvoc, float &eCO2) {
+int SGP30::IAQ_Measure(uint16_t &tvoc, uint16_t &eCO2) {
   uint16_t buffer[2];
   uint8_t readlength = 2;
   uint8_t delay = 12;
 
   i2cdriv.Plain_I2C_Write_Read_CRC8(fd, SGP30_MEASURE_AIR_QUALITY, buffer, readlength, delay);
  
-  tvoc =  (float)buffer[1];
-  eCO2 =  (float)buffer[0];  
+  tvoc =  buffer[1];
+  eCO2 =  buffer[0];  
 
   return 0;
 }
@@ -147,18 +152,16 @@ int SGP30::IAQ_Measure(float &tvoc, float &eCO2) {
 * 
 * @return Zero on success else negative error number
 */
-int SGP30::IAQ_Measure_Raw( float &rawEthanol, float &rawH2) {
+int SGP30::IAQ_Measure_Raw( uint16_t &rawEthanol, uint16_t &rawH2) {
   uint16_t buffer[2];
   uint8_t readlen = 2;
-  uint8_t delay = 10;
+  uint8_t delay = 12;
   uint16_t  raweth = 0, rawh2 = 0;
   // Read using command
   i2cdriv.Plain_I2C_Write_Read_CRC8(fd, SGP30_MEASURE_AIR_QUALITY, buffer, readlen, delay);
   // Put into passed adresses
-  rawh2 = buffer[0];
-  raweth = buffer[1];
-  rawH2 = (float)rawh2;
-  rawEthanol = (float)raweth;
+  rawH2 = buffer[0];
+  rawEthanol = buffer[1];
 
   return 0;
 }

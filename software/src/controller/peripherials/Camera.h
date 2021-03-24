@@ -11,7 +11,7 @@
 */
 #ifndef CAMERA_H
 #define CAMERA_H
-
+//#include <raspicam/raspicam_cv.h>
 
 /**
 * @brief Camera class
@@ -28,10 +28,10 @@ public:
 	}
 
 private:
-	void run();
+	
 
 private:
-	
+	//raspicam::RaspiCam_Cv Camera;
 };
 
 #endif
