@@ -42,7 +42,7 @@ void Controller::SendDataToWebApp()
 	  { "value", 20 }
 	};
 	
-	if(auto res = cli.Post("/measurement", params)){
+	if(auto res = cli.Post("/measurements", params)){
 		printf("Response status from web app: %f\n", res->status);
 		printf("Response body from web app: %f\n", res->body);
 	}
