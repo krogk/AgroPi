@@ -6,6 +6,10 @@ cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+#Added by sam (review)
+set(cpprestsdk_DIR /usr/lib/${CMAKE_LIBRARY_ARCHITECTURE}/cmake/)
+find_package(cpprestsdk REQUIRED)
+
 # Set the project name and version
 project(AgroPi VERSION 0.1)
 
@@ -64,4 +68,4 @@ target_link_libraries(AgroPiLib i2c rt ${CMAKE_THREAD_LIBS_INIT})
 add_executable(AgroPi main.cpp)
 
 # Link libraries to executable
-target_link_libraries(AgroPi AgroPiLib)
+target_link_libraries(AgroPi AgroPiLib PRIVATE cpprestsdk::cpprest)
