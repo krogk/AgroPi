@@ -6,31 +6,66 @@
 *
 * @section DESCRIPTION
 * 
-* This file contains the function for controller class.
+* This file contains the functions for actuator class.
 *
 * 
 */
+#define CPPHTTPLIB_OPENSSL_SUPPORT
 #include "Controller.h"
-#include <chrono>
-#include <thread>
+#include <stdio.h>
+#include "../cpp-httplib/httplib.h"
 
-
-void Controller::Run() {
-	printf("envData.LightIntensityTarget: %f\n",envData.LightIntensityTarget);
-	printf("envData.TempTarget: %f\n",envData.TempTarget);
-	printf("envData.HumidityTarget : %f\n",envData.HumidityTarget);
-	
-	float lux;
-	
-	printf("VEML7700 TEST");		
-	while(1) {
-		lightSensor.Get_ALS_Lux(lux);
-		printf("Get_ALS_LUX: %f\n",lux);
-		uint16_t x = 0; 
-		for(int i = 0; i<2500000; i++) {
-			x++;
-		} 
-		
-	}
+void Controller::SamplerHasData(EnvironmentData newData)
+{
+	envData = newData;
+	printf("\n");
+	printf("Controller Thread: LUX: %f\n",envData.LightIntensity);
+	printf("Controller Thread: Temperature: %f\n",envData.Temperature);
+	printf("Controller Thread: Humidity: %f\n",envData.Humidity);
+	printf("Controller Thread: TVOC: %d ppb\n", envData.TVOC);
+	printf("Controller Thread: eCO2: %d ppm\n", envData.CO2);
+	printf("Controller Thread: RawEthanol: %d ppb\n", envData.RawEthanol);
+	printf("Controller Thread: RawH2: %d ppm\n", envData.RawH2);
+	//std::thread::id this_id = std::this_thread::get_id();
+	//std::cout << "Controller Thread " << this_id << "\n";
+	ActuatorHandler();
 }
 
+
+void Controller::SendDataToWebApp()
+{
+	//envData 
+	httplib::Client cli("http://127.0.0.1:5050");
+
+	/*httplib::Params params{
+	  { "type", "TEMPERATURE" },
+	  { "value", 20 }
+	};
+	
+	
+	if(auto res = cli.Post("/measurements", params)){
+		printf("Response status from web app: %f\n", res->status);
+		printf("Response body from web app: %f\n", res->body);
+	}*/
+	if(auto res = cli.Get("/measurement")){
+		printf("Response status from web app: %f\n", res->status);
+		printf("Response body from web app: %f\n", res->body);
+	}
+
+}
+
+
+void Controller::ActuatorHandler()
+{
+	// Light
+	if( envData.LightIntensity < targets.LightIntensityLowerThreshold )
+	{
+		printf("Light Intensity:%f Too Low\n", envData.LightIntensity);
+		// turn lights on
+	}
+	else if( envData.LightIntensity > targets.LightIntensityUpperThreshold )
+	{
+		printf("Light Intensity :%f - Sufficient To Turn Lights off\n", envData.LightIntensity);
+		// turn lights off if On
+	}
+}

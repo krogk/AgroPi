@@ -1,3 +1,4 @@
+#set( CMAKE_VERBOSE_MAKEFILE on )
 # Specify minimum CMake version
 cmake_minimum_required(VERSION 3.10)
 
@@ -8,44 +9,64 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Set the project name and version
 project(AgroPi VERSION 0.1)
 
-include_directories(threads)
-include_directories(controller) 
-include_directories(controller/peripherials)
-include_directories("./threads" "./controller")
-
-# Specify Include Paths
-#set(includes "./controller/peripherials/SHT31D.cpp" "./controller/peripherials/Camera.cpp" "./controller/peripherials/CCS811.cpp" "./controller/peripherials/VEML7700.cpp" "./controller/Controller.cpp" "./controller/Actuator.cpp" "./threads/AgroPiThread.cpp" "./threads/ServerThread.cpp") 
-#set(includes "./controller/Controller.cpp" "./controller/Actuator.cpp" "./threads/AgroPiThread.cpp" "./threads/ServerThread.cpp") 
-
-# Add libs
-add_library( SHT31D ./controller/peripherials/SHT31D.cpp ./controller/peripherials/SHT31D.h) 
-add_library( Camera ./controller/peripherials/Camera.cpp ./controller/peripherials/Camera.h) 
-add_library( CCS811 ./controller/peripherials/CCS811.cpp  ./controller/peripherials/CCS811.h)
-add_library( VEML7700 ./controller/peripherials/VEML7700.cpp ./controller/peripherials/VEML7700.h ) 
-add_library( Controller ./controller/Controller.cpp ./controller/Controller.h)
-add_library( Actuator ./controller/Actuator.cpp ./controller/Actuator.h)
-add_library( agropithreads ./threads/AgroPiThread.cpp ./threads/AgroPiThread.h ./threads/ServerThread.cpp ./threads/ServerThread.h)
-
-target_include_directories(SHT31D     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials)
-target_include_directories(Camera     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials)
-target_include_directories(CCS811     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials)
-target_include_directories(VEML7700   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials)
-target_include_directories(Controller PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/controller)
-target_include_directories(Actuator   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/controller)
-target_include_directories(agropithreads PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/threads)
+set(cpprestsdk_DIR /usr/lib/${CMAKE_LIBRARY_ARCHITECTURE}/cmake/)
+find_package(cpprestsdk REQUIRED)
 
 # Locate libraries and headers
-find_package(WiringPi REQUIRED)
-find_package(Threads REQUIRED) 
+find_package(Threads REQUIRED)
+find_library(LIB_I2C i2c)
 
-# Include headers
-include_directories(${WIRINGPI_INCLUDE_DIRS}) 
+# Set Include Directories
+set(INCLUDE_DIRS
+   ${CMAKE_CURRENT_SOURCE_DIR}
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils
+   ${CMAKE_CURRENT_SOURCE_DIR}/threads
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials
+)
 
-# Add the executable
-#add_executable(AgroPi ${includes} main.cpp)
+# Set Source files
+set(SOURCES  
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils/utils.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils/CppTimer.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/Sampler.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CDriver.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SHT31D.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/Camera.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/RelayBoard.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SGP30.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/VEML7700.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/Controller.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/threads/ControllerThread.cpp
+)
+
+# Set Header files 
+set(HEADERS
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils/utils.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils/CppTimer.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils/CppTimerCallback.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/utils/typeDefinitions.h 
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/Sampler.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CDriver.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SHT31D.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/Camera.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/RelayBoard.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SGP30.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/VEML7700.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/Controller.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/threads/ControllerThread.h
+
+)
+
+# Create library for src and test
+add_library(AgroPiLib SHARED ${SOURCES})
+target_include_directories(AgroPiLib PUBLIC ${INCLUDE_DIRS})
+target_link_libraries(AgroPiLib i2c rt ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(AgroPiLib cpprestsdk::cpprest)
+
+# Add executable
 add_executable(AgroPi main.cpp)
 
-# Link against libraries
-target_link_libraries(AgroPi  ${WIRINGPI_LIBRARIES}) 
-target_link_libraries(AgroPi  ${CMAKE_THREAD_LIBS_INIT})
-target_link_libraries(AgroPi  Actuator agropithreads  Controller  VEML7700 SHT31D Camera CCS811  )
+# Link libraries to executable
+
+target_link_libraries(AgroPi AgroPiLib)
