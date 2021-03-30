@@ -1,6 +1,0 @@
-/home/pi/http_request/cpp-httplib-master/CMakeFiles/install/strip.dir
-/home/pi/http_request/cpp-httplib-master/CMakeFiles/edit_cache.dir
-/home/pi/http_request/cpp-httplib-master/CMakeFiles/rebuild_cache.dir
-/home/pi/http_request/cpp-httplib-master/CMakeFiles/list_install_components.dir
-/home/pi/http_request/cpp-httplib-master/CMakeFiles/install.dir
-/home/pi/http_request/cpp-httplib-master/CMakeFiles/install/local.dir

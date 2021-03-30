@@ -13,7 +13,7 @@
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 #include "Controller.h"
 #include <stdio.h>
-#include "cpp-httplib-master/httplib.h"
+#include "../cpp-httplib/httplib.h"
 
 void Controller::SamplerHasData(EnvironmentData newData)
 {
@@ -37,12 +37,17 @@ void Controller::SendDataToWebApp()
 	//envData 
 	httplib::Client cli("http://127.0.0.1:5050");
 
-	httplib::Params params{
+	/*httplib::Params params{
 	  { "type", "TEMPERATURE" },
 	  { "value", 20 }
 	};
 	
+	
 	if(auto res = cli.Post("/measurements", params)){
+		printf("Response status from web app: %f\n", res->status);
+		printf("Response body from web app: %f\n", res->body);
+	}*/
+	if(auto res = cli.Get("/measurement")){
 		printf("Response status from web app: %f\n", res->status);
 		printf("Response body from web app: %f\n", res->body);
 	}
