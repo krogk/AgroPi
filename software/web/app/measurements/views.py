@@ -24,7 +24,7 @@ def add_measurement():
     request_id = Utilities.generate_session_id()
     logger = Logger(request_id).event("ADD MEASUREMENT")
     
-    params = request.form.to_dict()
+    params = request.args.to_dict()
     logger.event("request parameters: {}".format(params))
 
     return MeasurementsControllers(request_id).add_measurement(params)
