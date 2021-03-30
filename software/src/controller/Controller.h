@@ -14,7 +14,7 @@
 
 #include "typeDefinitions.h"
 #include "RelayBoard.h"
-
+#include <string>
 
 /**
 * @brief Sht class
@@ -62,7 +62,7 @@ public:
 
 
 private:
-	void SendDataToWebApp();
+	void SendDataToWebApp(std::string variable_type, float value);
 	void ActuatorHandler();
 
 private:

@@ -13,7 +13,8 @@
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 #include "Controller.h"
 #include <stdio.h>
-#include <string> 
+#include <string>
+#include <iostream>
 #include "../cpp-httplib/httplib.h"
 
 void Controller::SamplerHasData(EnvironmentData newData)
@@ -33,24 +34,14 @@ void Controller::SamplerHasData(EnvironmentData newData)
 }
 
 
-void Controller::SendDataToWebApp(string type, float value)
+void Controller::SendDataToWebApp(std::string variable_type, float value)
 {
 	//envData 
 	httplib::Client cli("http://127.0.0.1:5050");
 
-	/*httplib::Params params{
-	  { "type", "TEMPERATURE" },
-	  { "value", 20 }
-	};
-	
-	
-	if(auto res = cli.Post("/measurements", params)){
-		printf("Response status from web app: %f\n", res->status);
-		printf("Response body from web app: %f\n", res->body);
-	}*/
-
-	parameters = "?type=" + type + "&value=" + to_string(value)
-	if(auto res = cli.Get("/measurement" + parameters)){
+	std::string url = "/measurement?type=" + variable_type + "&value=" + std::to_string(value);
+	const char * urlStr = url.c_str();
+	if(auto res = cli.Get(urlStr)){
 		printf("Response status from web app: %f\n", res->status);
 		printf("Response body from web app: %f\n", res->body);
 	}

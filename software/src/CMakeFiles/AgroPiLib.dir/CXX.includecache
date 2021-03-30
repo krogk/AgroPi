@@ -11,6 +11,10 @@ Controller.h
 /home/pi/agro_pi/software/src/controller/Controller.h
 stdio.h
 -
+string
+-
+iostream
+-
 ../cpp-httplib/httplib.h
 /home/pi/agro_pi/software/src/cpp-httplib/httplib.h
 
@@ -19,6 +23,8 @@ typeDefinitions.h
 /home/pi/agro_pi/software/src/controller/typeDefinitions.h
 RelayBoard.h
 /home/pi/agro_pi/software/src/controller/RelayBoard.h
+string
+-
 
 /home/pi/agro_pi/software/src/cpp-httplib/httplib.h
 io.h
