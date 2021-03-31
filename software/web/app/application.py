@@ -4,14 +4,10 @@
 
 from flask import Flask
 from flask_mongoengine import MongoEngine
-from flask_mail import Mail
 from flask_socketio import SocketIO, emit
 
 # flask mongoengine
 db = MongoEngine()
-
-# flask mail
-mail = Mail()
 
 app = Flask(__name__)
 app.config.from_object('app.config')
@@ -19,8 +15,6 @@ app.config.from_object('app.config')
 # flask mongoengine init
 db.init_app(app)
 
-# flask mail init
-mail.init_app(app)
 
 # import blueprints
 from app.auth.views import auth_bp
