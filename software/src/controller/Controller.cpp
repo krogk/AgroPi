@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
-#include "../cpp-httplib/httplib.h"
+#include "httplib.h"
 
 void Controller::SamplerHasData(EnvironmentData newData)
 {
@@ -30,16 +30,19 @@ void Controller::SamplerHasData(EnvironmentData newData)
 	printf("Controller Thread: RawH2: %d ppm\n", envData.RawH2);
 	//std::thread::id this_id = std::this_thread::get_id();
 	//std::cout << "Controller Thread " << this_id << "\n";
+	SendDataToWebApp("TEMPERATURE", envData.Temperature);
+	SendDataToWebApp("HUMIDITY", envData.Humidity);
+	SendDataToWebApp("LIGHT_INTENSITY", envData.LightIntensity);
 	ActuatorHandler();
 }
 
 
 void Controller::SendDataToWebApp(std::string variable_type, float value)
 {
-	//envData 
+	//envData  "/measurement" http://192.168.178.41:5050
 	httplib::Client cli("http://127.0.0.1:5050");
 
-	std::string url = "/measurement?type=" + variable_type + "&value=" + std::to_string(value);
+	std::string url = "/measurements?type=" + variable_type + "&value=" + std::to_string(value);
 	const char * urlStr = url.c_str();
 	if(auto res = cli.Get(urlStr)){
 		printf("Response status from web app: %f\n", res->status);

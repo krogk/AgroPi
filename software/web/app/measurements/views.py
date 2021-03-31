@@ -17,9 +17,9 @@ def load_user():
             pass
 
 
-@measurements_bp.route('/measurements', methods=['POST'])
+@measurements_bp.route('/measurements', methods=['POST','GET'])
 # @login_required
-@required_params('type', 'value')
+#@required_params('type', 'value')
 def add_measurement():
     request_id = Utilities.generate_session_id()
     logger = Logger(request_id).event("ADD MEASUREMENT")
