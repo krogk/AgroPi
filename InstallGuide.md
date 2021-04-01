@@ -20,6 +20,14 @@
 	bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
 	sudo apt install lsb-release wget software-properties-common 
 	
+	Create Python env
+	source venv/bin/activate
+
+	Installing Server Depencencies
+	pip install -r requirements.txt
+
+	Running Server
+	python ./run.py
 
 ~Setting Up Git Account~
 	
