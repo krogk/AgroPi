@@ -120,7 +120,7 @@ Misc:
 
 
 Schematics:
-* [System Schematic - TBC]()
+* [System Schematic](https://github.com/krogk/AgroPi/blob/Software_Release_1/hardware/Schematic.svg)
 
 
 ### Roadmap
@@ -134,7 +134,7 @@ Schematics:
 * [x] Gas Sensor Integrated
 * [-] Camera Integrated
 * [80%] Web server
-* [30%] Real-time Adaptation
+* [80%] Real-time Adaptation
 
 [-] Software Release 2 Actuation & Image Processing - Detecting Mold
 * [-] Relay Board Integration
