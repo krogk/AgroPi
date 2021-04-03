@@ -6,7 +6,7 @@ from enum import Enum
 # -*- coding: utf-8 -*-
 from flask import current_app, g, jsonify
 from itsdangerous import URLSafeTimedSerializer
-from app.config import API_URL, API_HEADERS
+from app.config import API_URL, API_HEADERS, CPP_SERVER_URL
 
 
 def get_signer():
@@ -111,7 +111,7 @@ class ApiCalls:
     """
 
     @staticmethod
-    def request_api(req_params, route='', method='post', url=API_URL, headers=API_HEADERS):
+    def request_api(req_params, route='', method='post', url=CPP_SERVER_URL, headers=API_HEADERS):
         """
         This function makes and get response form fusion Virtuals account API
 
