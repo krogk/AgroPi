@@ -16,3 +16,9 @@ class ControlControllers:
         except Exception as ex:
             return Response.input_error(description="An error occurred: {}".format(str(ex)))
 
+    def update_sensor_values(self, request_data):
+        try:
+            return ApiCalls().request_api(req_params=request_data, method='post', route='/control')
+        except Exception as ex:
+            return Response.input_error(description="An error occurred: {}".format(str(ex)))
+

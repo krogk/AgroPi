@@ -26,3 +26,10 @@ def load_user():
 # @login_required
 def control_page():
     return render_template('control/control.html')
+
+@control_bp.route('/control', methods=['PUT'])
+# @login_required
+def update_values():
+    request_id = Utilities.generate_session_id()
+    params = json.loads(request.data.decode('utf-8'))
+    return ControlControllers(request_id).update_sensor_values(params)

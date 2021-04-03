@@ -40,7 +40,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="now-ui-icons location_world"></i>
               <p>
@@ -52,7 +52,7 @@
               <a class="dropdown-item" href="#">Another action</a>
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="#pablo">
               <i class="now-ui-icons users_single-02"></i>
@@ -70,7 +70,76 @@
   </div>
   <div class="content">
     <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Control</h5>
+                <p class="category">Adjust sensors</p>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-1 px-1">
+                </div>
+                <div class="col-md-4 px-1">
+                    <div class="form-group">
+                        <label>Temperature</label>
+                        <input type="text" id="temperature-slider">
+                    </div>
+                </div>
+                <div class="col-md-2 px-1">
+                </div>
+                <div class="col-md-4 px-1">
+                    <div class="form-group">
+                        <label>Humidity</label>
+                        <input type="text" id="humidity-slider">
+                    </div>
+                </div>
+                <div class="col-md-1 px-1">
+                </div>
+              </div>
+              <div class="row">
+                <hr>
+              </div>
+              <div class="row">
+                <div class="col-md-1 px-1">
+                </div>
+                <div class="col-md-4 px-1">
+                    <div class="form-group">
+                        <label>Light Intensity</label>
+                        <input type="text" id="light-slider">
+                    </div>
+                </div>
+                <div class="col-md-2 px-1">
+                </div>
+                <div class="col-md-4 px-1">
+                    <div class="form-group">
+                        <label>Water Level</label>
+                        <input type="text" id="water-level-slider">
+                    </div>
+                </div>
+                <div class="col-md-1 px-1">
+                </div>
+              </div>
+              <div class="row" style="padding-top: 50px;">
+                <div class="col-md-1 px-1">
+                </div>
+                <div class="col-md-4 px-1">
+                </div>
+                <div class="col-md-2 px-1">
+                </div>
+                <div class="col-md-4 px-1">
+                  <button class="btn btn-primary btn-round" type="button" style="float: right;">
+                    <i class="now-ui-icons arrows-1_cloud-upload-94"></i> Update
+                  </button>
+                </div>
+                <div class="col-md-1 px-1">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
+  </div>
   </div>
   <footer class="footer">
     <div class=" container-fluid ">
@@ -105,8 +174,7 @@
 {% endblock %}
 
 {% block scripts %}
-    <!-- <script src="{{ url_for('static', filename='plugins/apex-charts/apexcharts.min.js') }}"></script> -->
-    <!-- <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='assets/js/control.js') }}"></script>
     <script type="text/javascript">
       $('.nav-button').removeClass("active");
       $('#control-nav').addClass("active");
