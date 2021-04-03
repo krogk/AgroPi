@@ -132,23 +132,25 @@ Schematics:
 * [x] Light Sensor Integrated
 * [x] Temperature + Humidity Sensor Integrated
 * [x] Gas Sensor Integrated
-* [-] Camera Integrated
-* [80%] Web server
-* [80%] Real-time Adaptation
+* [x] Camera Integrated
+* [x] Web server
+* [x] Real-time Adaptation
 
-[-] Software Release 2 Actuation & Image Processing - Detecting Mold
+[-] Software Release 2 Actuation & Image Processing - Detecting Seedling/Mushroom
+* [-] Sensor Calibration
+* [-] Relay Board Driver
 * [-] Relay Board Integration
-* [-] Lighting Actuation
-* [-] Heating Actuation
-* [-] Airflow Actuation
-* [-] Watering Actuation
-* [-] Water Level Sensor Integrated
+* [-] Web-Server Improvments
 * [-] Gather Training Dataset
 * [-] Train neuralnet
 * [-] Test on real samples
 
 [-] Software Release 3 - Life cycle Assessment & Nutrient Defficiencies
-
+* [-] Light Spectrum Sensor
+* [-] ADC Integration
+* [-] Water Level Sensor
+* [-] Soil  Moisture Sensor
+* [-] Sensor-Web Integration
 <br />
 
 
