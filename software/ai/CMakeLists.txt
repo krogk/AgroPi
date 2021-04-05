@@ -1,0 +1,13 @@
+                                                    
+cmake_minimum_required(VERSION 3.1) 
+PROJECT (main) 
+find_package(OpenCV REQUIRED ) 
+find_package(raspicam REQUIRED) 
+if (OpenCV_FOUND AND raspicam_CV_FOUND) 
+MESSAGE(STATUS "COMPILING OPENCV TESTS") 
+add_executable( main main.cpp ) 
+target_link_libraries(main ${OpenCV_LIBS} ) 
+target_link_libraries(main ${raspicam_CV_LIBS}) 
+ELSE() 
+MESSAGE(FATAL_ERROR "OPENCV NOT FOUND ON YOUR SYSTEM") 
+ENDIF()
