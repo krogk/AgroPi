@@ -54,7 +54,7 @@ void Controller::SendDataToWebApp(std::string variable_type, float value)
 void Controller::StartListenerServer()
 {
 	httplib::Server svr;
-	svr.Get("/control", [](const httplib::Request &, httplib::Response &res) {
+	svr.Get("/control", [](const httplib::req &, httplib::Response &res) {
 		if (req.has_param("type")) {
 		  auto variable_type = req.get_param_value("type");
 		}
