@@ -1,0 +1,14 @@
+<map id="src/controller/peripherials/I2CDriver.h" name="src/controller/peripherials/I2CDriver.h">
+<area shape="rect" id="node2" href="$I2CDriver_8cpp.html" title="src/controller/peripherials\l/I2CDriver.cpp" alt="" coords="5,95,172,136"/>
+<area shape="rect" id="node3" href="$I2CSensor_8h.html" title="src/controller/peripherials\l/I2CSensor.h" alt="" coords="419,95,585,136"/>
+<area shape="rect" id="node5" href="$SGP30_8cpp.html" title="src/controller/peripherials\l/SGP30.cpp" alt="" coords="148,273,315,315"/>
+<area shape="rect" id="node6" href="$Sampler_8h.html" title="src/controller/Sampler.h" alt="" coords="345,281,505,307"/>
+<area shape="rect" id="node9" href="$DriverSensorTest_8cpp.html" title="test/DriverSensorTest.cpp" alt="" coords="720,281,895,307"/>
+<area shape="rect" id="node10" href="$SHT31D_8h.html" title="src/controller/peripherials\l/SHT31D.h" alt="" coords="731,184,897,225"/>
+<area shape="rect" id="node11" href="$SHT31D_8cpp.html" title="src/controller/peripherials\l/SHT31D.cpp" alt="" coords="919,273,1085,315"/>
+<area shape="rect" id="node12" href="$VEML7700_8h.html" title="src/controller/peripherials\l/VEML7700.h" alt="" coords="540,184,707,225"/>
+<area shape="rect" id="node4" href="$SGP30_8h.html" title="src/controller/peripherials\l/SGP30.h" alt="" coords="349,184,516,225"/>
+<area shape="rect" id="node7" href="$Sampler_8cpp.html" title="src/controller/Sampler.cpp" alt="" coords="229,363,404,389"/>
+<area shape="rect" id="node8" href="$ControllerThread_8cpp.html" title="src/threads/ControllerThread.cpp" alt="" coords="428,363,640,389"/>
+<area shape="rect" id="node13" href="$VEML7700_8cpp.html" title="src/controller/peripherials\l/VEML7700.cpp" alt="" coords="529,273,696,315"/>
+</map>

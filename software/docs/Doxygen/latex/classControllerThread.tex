@@ -1,0 +1,115 @@
+\hypertarget{classControllerThread}{}\section{Controller\+Thread Class Reference}
+\label{classControllerThread}\index{Controller\+Thread@{Controller\+Thread}}
+
+
+Server Thread class.  
+
+
+
+
+{\ttfamily \#include $<$Controller\+Thread.\+h$>$}
+
+
+
+Inheritance diagram for Controller\+Thread\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classControllerThread__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Controller\+Thread\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{classControllerThread__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classControllerThread_a00cd6502504f5f1e680e6be3f60a987d}{Controller\+Thread} ()
+\item 
+void \hyperlink{classCppThread_a1be46d1be000f41a763289300623c609}{start} ()
+\item 
+void \hyperlink{classCppThread_a8ff0fda6b913cc53764caef0e1200f3f}{join} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classControllerThread_ae8206a23ab1a414f2956424def2e759c}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classControllerThread_ad00ac5cba8e74a5ea69d5caace8c9954}{is\+Running}
+\item 
+int \hyperlink{classControllerThread_a5dcd0069c7d31295c7e1e598c31fadf7}{sample\+Period}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Server Thread class. 
+
+\begin{DoxyAuthor}{Author}
+Kamil Rog
+\end{DoxyAuthor}
+This is a simple class that is responsible for data handling for server and files. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classControllerThread_a00cd6502504f5f1e680e6be3f60a987d}\label{classControllerThread_a00cd6502504f5f1e680e6be3f60a987d}} 
+\index{Controller\+Thread@{Controller\+Thread}!Controller\+Thread@{Controller\+Thread}}
+\index{Controller\+Thread@{Controller\+Thread}!Controller\+Thread@{Controller\+Thread}}
+\subsubsection{\texorpdfstring{Controller\+Thread()}{ControllerThread()}}
+{\footnotesize\ttfamily Controller\+Thread\+::\+Controller\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor that sets the offset for the thread to a given value.
+
+offset value 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCppThread_a8ff0fda6b913cc53764caef0e1200f3f}\label{classCppThread_a8ff0fda6b913cc53764caef0e1200f3f}} 
+\index{Controller\+Thread@{Controller\+Thread}!join@{join}}
+\index{join@{join}!Controller\+Thread@{Controller\+Thread}}
+\subsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily void Cpp\+Thread\+::join (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+Waits for the thread to terminate. \mbox{\Hypertarget{classControllerThread_ae8206a23ab1a414f2956424def2e759c}\label{classControllerThread_ae8206a23ab1a414f2956424def2e759c}} 
+\index{Controller\+Thread@{Controller\+Thread}!run@{run}}
+\index{run@{run}!Controller\+Thread@{Controller\+Thread}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Controller\+Thread\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+This method does all the work of this thread. Overload this abstract function with a real one doing the actual work of this thread. 
+
+Implements \hyperlink{classCppThread_a792b79e72250710147c452648def4a78}{Cpp\+Thread}.
+
+\mbox{\Hypertarget{classCppThread_a1be46d1be000f41a763289300623c609}\label{classCppThread_a1be46d1be000f41a763289300623c609}} 
+\index{Controller\+Thread@{Controller\+Thread}!start@{start}}
+\index{start@{start}!Controller\+Thread@{Controller\+Thread}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Cpp\+Thread\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+Starts the thread. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classControllerThread_ad00ac5cba8e74a5ea69d5caace8c9954}\label{classControllerThread_ad00ac5cba8e74a5ea69d5caace8c9954}} 
+\index{Controller\+Thread@{Controller\+Thread}!is\+Running@{is\+Running}}
+\index{is\+Running@{is\+Running}!Controller\+Thread@{Controller\+Thread}}
+\subsubsection{\texorpdfstring{is\+Running}{isRunning}}
+{\footnotesize\ttfamily bool Controller\+Thread\+::is\+Running\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classControllerThread_a5dcd0069c7d31295c7e1e598c31fadf7}\label{classControllerThread_a5dcd0069c7d31295c7e1e598c31fadf7}} 
+\index{Controller\+Thread@{Controller\+Thread}!sample\+Period@{sample\+Period}}
+\index{sample\+Period@{sample\+Period}!Controller\+Thread@{Controller\+Thread}}
+\subsubsection{\texorpdfstring{sample\+Period}{samplePeriod}}
+{\footnotesize\ttfamily int Controller\+Thread\+::sample\+Period\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/threads/\hyperlink{ControllerThread_8h}{Controller\+Thread.\+h}\item 
+src/threads/\hyperlink{ControllerThread_8cpp}{Controller\+Thread.\+cpp}\end{DoxyCompactItemize}

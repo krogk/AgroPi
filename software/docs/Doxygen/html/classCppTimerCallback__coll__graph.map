@@ -1,0 +1,4 @@
+<map id="CppTimerCallback" name="CppTimerCallback">
+<area shape="rect" id="node2" href="$classCppTimer.html" title="{CppTimer\n||+ CppTimer()\l+ start()\l+ stop()\l+ ~CppTimer()\l# timerEvent()\l&#45; handler()\l}" alt="" coords="203,145,310,296"/>
+<area shape="rect" id="node7" href="$classCppTimerCallback_1_1Runnable.html" title="{CppTimerCallback::Runnable\n||+ run()\l}" alt="" coords="335,182,528,259"/>
+</map>

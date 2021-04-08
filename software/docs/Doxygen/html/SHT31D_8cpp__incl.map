@@ -1,0 +1,5 @@
+<map id="src/controller/peripherials/SHT31D.cpp" name="src/controller/peripherials/SHT31D.cpp">
+<area shape="rect" id="node3" href="$SHT31D_8h.html" title="SHT31D.h" alt="" coords="166,95,250,121"/>
+<area shape="rect" id="node4" href="$I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="271,244,361,271"/>
+<area shape="rect" id="node6" href="$I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="133,169,227,196"/>
+</map>

@@ -1,0 +1,281 @@
+\hypertarget{classSHT31D}{}\section{S\+H\+T31D Class Reference}
+\label{classSHT31D}\index{S\+H\+T31D@{S\+H\+T31D}}
+
+
+\hyperlink{classSHT31D}{S\+H\+T31D} class.  
+
+
+
+
+{\ttfamily \#include $<$S\+H\+T31\+D.\+h$>$}
+
+
+
+Inheritance diagram for S\+H\+T31D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classSHT31D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for S\+H\+T31D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSHT31D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSHT31D_a697a7f48dbe4c821e81de47d8fbb2c74}{S\+H\+T31D} ()
+\item 
+int \hyperlink{classSHT31D_af3ec39a4f04344a1b422761cc904343e}{Initialize} (\hyperlink{classI2CDriver}{I2\+C\+Driver} \&i2c) override
+\item 
+int \hyperlink{classSHT31D_a925cd964b0a6535d40dff588ac7d02be}{Close\+\_\+\+Device} () override
+\item 
+int \hyperlink{classSHT31D_aa5d28c2557ed05435ca9b433492b9b07}{Reset} () override
+\item 
+int \hyperlink{classSHT31D_a749e5909bbd129e6352a32f28aef96d8}{Get\+\_\+\+Temperature\+\_\+\+Humidity} (float \&temperature, float \&humidity)
+\item 
+int \hyperlink{classSHT31D_ada8e1773dee18a8a76656bb2d41b19f1}{Get\+\_\+\+Status} (uint16\+\_\+t \&return\+Buffer)
+\item 
+int \hyperlink{classSHT31D_a29d822bbc17bae95b35270128942c2ba}{Clear\+\_\+\+Status} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classSHT31D_a5810e24af0e5737b6df24089366100fea7a00c3f8439a0de223d6fe77132acc69}{S\+H\+T31\+D\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS} = 0x44
+ \}
+\item 
+enum \{ \hyperlink{classSHT31D_abcfdc15982f0b22747afa7e3c325706aa4cdf0feb8a281e9ea9b49c913666f765}{S\+H\+T31\+D\+\_\+\+R\+E\+A\+D\+\_\+\+S\+E\+R\+I\+A\+L\+NO} = 0x3780
+ \}
+\item 
+enum \{ \hyperlink{classSHT31D_aff87615787f9fd6f287b22b5f407d222a8a5caa21d4686c35ce1b7ff092c8f01d}{S\+H\+T31\+D\+\_\+\+M\+E\+A\+S\+\_\+\+M\+E\+D\+R\+EP} = 0x240B
+ \}
+\item 
+enum \{ \hyperlink{classSHT31D_a72375ee81208748cd053d13a256c25cda0c1298490bd20d683dd0a189d1f33f80}{S\+H\+T31\+D\+\_\+\+R\+E\+A\+D\+\_\+\+S\+T\+A\+T\+US} = 0x\+F32D
+ \}
+\item 
+enum \{ \hyperlink{classSHT31D_a40c567ed542f06f8cc22db0764415419ab93931def2227da6c7bcb0ec8d2ac171}{S\+H\+T31\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+S\+T\+A\+T\+US} = 0x3041
+ \}
+\item 
+enum \{ \hyperlink{classSHT31D_ae72fd59d3f80785321012a7d001a9008a8143b8b9241db83920c6fe106b9b787a}{S\+H\+T31\+D\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET} = 0x30\+A2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSHT31D_a1cb98e435a44e2b6beeb3d0226cc9ec8}{run} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classSHT31D_a2740f957337c1944421401643a6a15b6}{m\+\_\+fd}
+\item 
+\hyperlink{classI2CDriver}{I2\+C\+Driver} $\ast$ \hyperlink{classSHT31D_ad76767dc72097d43aea68675ae33e1ed}{m\+\_\+p\+I2\+Cdriver} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classSHT31D}{S\+H\+T31D} class. 
+
+\begin{DoxyAuthor}{Author}
+Kamil Rog
+\end{DoxyAuthor}
+This is class is responsilbe for the \hyperlink{classSHT31D}{S\+H\+T31D} temperature and humidity sensor.
+
+P\+R\+O\+T\+O\+C\+OL -\/ I2C 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classSHT31D_a5810e24af0e5737b6df24089366100fe}\label{classSHT31D_a5810e24af0e5737b6df24089366100fe}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+H\+T31\+D\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS@{S\+H\+T31\+D\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS}!S\+H\+T31D@{S\+H\+T31D}}\index{S\+H\+T31D@{S\+H\+T31D}!S\+H\+T31\+D\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS@{S\+H\+T31\+D\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS}}}\mbox{\Hypertarget{classSHT31D_a5810e24af0e5737b6df24089366100fea7a00c3f8439a0de223d6fe77132acc69}\label{classSHT31D_a5810e24af0e5737b6df24089366100fea7a00c3f8439a0de223d6fe77132acc69}} 
+S\+H\+T31\+D\+\_\+\+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSHT31D_abcfdc15982f0b22747afa7e3c325706a}\label{classSHT31D_abcfdc15982f0b22747afa7e3c325706a}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+H\+T31\+D\+\_\+\+R\+E\+A\+D\+\_\+\+S\+E\+R\+I\+A\+L\+NO@{S\+H\+T31\+D\+\_\+\+R\+E\+A\+D\+\_\+\+S\+E\+R\+I\+A\+L\+NO}!S\+H\+T31D@{S\+H\+T31D}}\index{S\+H\+T31D@{S\+H\+T31D}!S\+H\+T31\+D\+\_\+\+R\+E\+A\+D\+\_\+\+S\+E\+R\+I\+A\+L\+NO@{S\+H\+T31\+D\+\_\+\+R\+E\+A\+D\+\_\+\+S\+E\+R\+I\+A\+L\+NO}}}\mbox{\Hypertarget{classSHT31D_abcfdc15982f0b22747afa7e3c325706aa4cdf0feb8a281e9ea9b49c913666f765}\label{classSHT31D_abcfdc15982f0b22747afa7e3c325706aa4cdf0feb8a281e9ea9b49c913666f765}} 
+S\+H\+T31\+D\+\_\+\+R\+E\+A\+D\+\_\+\+S\+E\+R\+I\+A\+L\+NO&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSHT31D_aff87615787f9fd6f287b22b5f407d222}\label{classSHT31D_aff87615787f9fd6f287b22b5f407d222}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+H\+T31\+D\+\_\+\+M\+E\+A\+S\+\_\+\+M\+E\+D\+R\+EP@{S\+H\+T31\+D\+\_\+\+M\+E\+A\+S\+\_\+\+M\+E\+D\+R\+EP}!S\+H\+T31D@{S\+H\+T31D}}\index{S\+H\+T31D@{S\+H\+T31D}!S\+H\+T31\+D\+\_\+\+M\+E\+A\+S\+\_\+\+M\+E\+D\+R\+EP@{S\+H\+T31\+D\+\_\+\+M\+E\+A\+S\+\_\+\+M\+E\+D\+R\+EP}}}\mbox{\Hypertarget{classSHT31D_aff87615787f9fd6f287b22b5f407d222a8a5caa21d4686c35ce1b7ff092c8f01d}\label{classSHT31D_aff87615787f9fd6f287b22b5f407d222a8a5caa21d4686c35ce1b7ff092c8f01d}} 
+S\+H\+T31\+D\+\_\+\+M\+E\+A\+S\+\_\+\+M\+E\+D\+R\+EP&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSHT31D_a72375ee81208748cd053d13a256c25cd}\label{classSHT31D_a72375ee81208748cd053d13a256c25cd}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+H\+T31\+D\+\_\+\+R\+E\+A\+D\+\_\+\+S\+T\+A\+T\+US@{S\+H\+T31\+D\+\_\+\+R\+E\+A\+D\+\_\+\+S\+T\+A\+T\+US}!S\+H\+T31D@{S\+H\+T31D}}\index{S\+H\+T31D@{S\+H\+T31D}!S\+H\+T31\+D\+\_\+\+R\+E\+A\+D\+\_\+\+S\+T\+A\+T\+US@{S\+H\+T31\+D\+\_\+\+R\+E\+A\+D\+\_\+\+S\+T\+A\+T\+US}}}\mbox{\Hypertarget{classSHT31D_a72375ee81208748cd053d13a256c25cda0c1298490bd20d683dd0a189d1f33f80}\label{classSHT31D_a72375ee81208748cd053d13a256c25cda0c1298490bd20d683dd0a189d1f33f80}} 
+S\+H\+T31\+D\+\_\+\+R\+E\+A\+D\+\_\+\+S\+T\+A\+T\+US&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSHT31D_a40c567ed542f06f8cc22db0764415419}\label{classSHT31D_a40c567ed542f06f8cc22db0764415419}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+H\+T31\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+S\+T\+A\+T\+US@{S\+H\+T31\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+S\+T\+A\+T\+US}!S\+H\+T31D@{S\+H\+T31D}}\index{S\+H\+T31D@{S\+H\+T31D}!S\+H\+T31\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+S\+T\+A\+T\+US@{S\+H\+T31\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+S\+T\+A\+T\+US}}}\mbox{\Hypertarget{classSHT31D_a40c567ed542f06f8cc22db0764415419ab93931def2227da6c7bcb0ec8d2ac171}\label{classSHT31D_a40c567ed542f06f8cc22db0764415419ab93931def2227da6c7bcb0ec8d2ac171}} 
+S\+H\+T31\+D\+\_\+\+C\+L\+E\+A\+R\+\_\+\+S\+T\+A\+T\+US&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSHT31D_ae72fd59d3f80785321012a7d001a9008}\label{classSHT31D_ae72fd59d3f80785321012a7d001a9008}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+H\+T31\+D\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET@{S\+H\+T31\+D\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET}!S\+H\+T31D@{S\+H\+T31D}}\index{S\+H\+T31D@{S\+H\+T31D}!S\+H\+T31\+D\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET@{S\+H\+T31\+D\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET}}}\mbox{\Hypertarget{classSHT31D_ae72fd59d3f80785321012a7d001a9008a8143b8b9241db83920c6fe106b9b787a}\label{classSHT31D_ae72fd59d3f80785321012a7d001a9008a8143b8b9241db83920c6fe106b9b787a}} 
+S\+H\+T31\+D\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSHT31D_a697a7f48dbe4c821e81de47d8fbb2c74}\label{classSHT31D_a697a7f48dbe4c821e81de47d8fbb2c74}} 
+\index{S\+H\+T31D@{S\+H\+T31D}!S\+H\+T31D@{S\+H\+T31D}}
+\index{S\+H\+T31D@{S\+H\+T31D}!S\+H\+T31D@{S\+H\+T31D}}
+\subsubsection{\texorpdfstring{S\+H\+T31\+D()}{SHT31D()}}
+{\footnotesize\ttfamily S\+H\+T31\+D\+::\+S\+H\+T31D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSHT31D_a29d822bbc17bae95b35270128942c2ba}\label{classSHT31D_a29d822bbc17bae95b35270128942c2ba}} 
+\index{S\+H\+T31D@{S\+H\+T31D}!Clear\+\_\+\+Status@{Clear\+\_\+\+Status}}
+\index{Clear\+\_\+\+Status@{Clear\+\_\+\+Status}!S\+H\+T31D@{S\+H\+T31D}}
+\subsubsection{\texorpdfstring{Clear\+\_\+\+Status()}{Clear\_Status()}}
+{\footnotesize\ttfamily int S\+H\+T31\+D\+::\+Clear\+\_\+\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Clears status
+
+\begin{DoxyReturn}{Returns}
+Zero on success else negative error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSHT31D_a925cd964b0a6535d40dff588ac7d02be}\label{classSHT31D_a925cd964b0a6535d40dff588ac7d02be}} 
+\index{S\+H\+T31D@{S\+H\+T31D}!Close\+\_\+\+Device@{Close\+\_\+\+Device}}
+\index{Close\+\_\+\+Device@{Close\+\_\+\+Device}!S\+H\+T31D@{S\+H\+T31D}}
+\subsubsection{\texorpdfstring{Close\+\_\+\+Device()}{Close\_Device()}}
+{\footnotesize\ttfamily int S\+H\+T31\+D\+::\+Close\+\_\+\+Device (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Close \hyperlink{classSHT31D}{S\+H\+T31D} file descriptor
+
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classI2CSensor_acee1633439e97bae412441ac085fabba}{I2\+C\+Sensor}.
+
+\mbox{\Hypertarget{classSHT31D_ada8e1773dee18a8a76656bb2d41b19f1}\label{classSHT31D_ada8e1773dee18a8a76656bb2d41b19f1}} 
+\index{S\+H\+T31D@{S\+H\+T31D}!Get\+\_\+\+Status@{Get\+\_\+\+Status}}
+\index{Get\+\_\+\+Status@{Get\+\_\+\+Status}!S\+H\+T31D@{S\+H\+T31D}}
+\subsubsection{\texorpdfstring{Get\+\_\+\+Status()}{Get\_Status()}}
+{\footnotesize\ttfamily int S\+H\+T31\+D\+::\+Get\+\_\+\+Status (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \&}]{status }\end{DoxyParamCaption})}
+
+Get \hyperlink{classSHT31D}{S\+H\+T31D} Status
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & Address of status variable to update.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else negative error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSHT31D_a749e5909bbd129e6352a32f28aef96d8}\label{classSHT31D_a749e5909bbd129e6352a32f28aef96d8}} 
+\index{S\+H\+T31D@{S\+H\+T31D}!Get\+\_\+\+Temperature\+\_\+\+Humidity@{Get\+\_\+\+Temperature\+\_\+\+Humidity}}
+\index{Get\+\_\+\+Temperature\+\_\+\+Humidity@{Get\+\_\+\+Temperature\+\_\+\+Humidity}!S\+H\+T31D@{S\+H\+T31D}}
+\subsubsection{\texorpdfstring{Get\+\_\+\+Temperature\+\_\+\+Humidity()}{Get\_Temperature\_Humidity()}}
+{\footnotesize\ttfamily int S\+H\+T31\+D\+::\+Get\+\_\+\+Temperature\+\_\+\+Humidity (\begin{DoxyParamCaption}\item[{float \&}]{temperature,  }\item[{float \&}]{humidity }\end{DoxyParamCaption})}
+
+Take a single Temperature \& Humidity measurement
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & Pointer to the temperature variable to modify. \\
+\hline
+{\em humidity} & Pointer to the humidity variable to modify\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else negative error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSHT31D_af3ec39a4f04344a1b422761cc904343e}\label{classSHT31D_af3ec39a4f04344a1b422761cc904343e}} 
+\index{S\+H\+T31D@{S\+H\+T31D}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!S\+H\+T31D@{S\+H\+T31D}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily int S\+H\+T31\+D\+::\+Initialize (\begin{DoxyParamCaption}\item[{\hyperlink{classI2CDriver}{I2\+C\+Driver} \&}]{i2c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Initialize \hyperlink{classSHT31D}{S\+H\+T31D} Open file descriptor
+
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classI2CSensor_a0fb4755ddff3fe2cf5a9651d9d1fe5cd}{I2\+C\+Sensor}.
+
+\mbox{\Hypertarget{classSHT31D_aa5d28c2557ed05435ca9b433492b9b07}\label{classSHT31D_aa5d28c2557ed05435ca9b433492b9b07}} 
+\index{S\+H\+T31D@{S\+H\+T31D}!Reset@{Reset}}
+\index{Reset@{Reset}!S\+H\+T31D@{S\+H\+T31D}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily int S\+H\+T31\+D\+::\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Soft Reset
+
+\begin{DoxyReturn}{Returns}
+Zero on success else negative error number 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classI2CSensor_a0622266d335944782d2bfa6352f01095}{I2\+C\+Sensor}.
+
+\mbox{\Hypertarget{classSHT31D_a1cb98e435a44e2b6beeb3d0226cc9ec8}\label{classSHT31D_a1cb98e435a44e2b6beeb3d0226cc9ec8}} 
+\index{S\+H\+T31D@{S\+H\+T31D}!run@{run}}
+\index{run@{run}!S\+H\+T31D@{S\+H\+T31D}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void S\+H\+T31\+D\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classSHT31D_a2740f957337c1944421401643a6a15b6}\label{classSHT31D_a2740f957337c1944421401643a6a15b6}} 
+\index{S\+H\+T31D@{S\+H\+T31D}!m\+\_\+fd@{m\+\_\+fd}}
+\index{m\+\_\+fd@{m\+\_\+fd}!S\+H\+T31D@{S\+H\+T31D}}
+\subsubsection{\texorpdfstring{m\+\_\+fd}{m\_fd}}
+{\footnotesize\ttfamily int S\+H\+T31\+D\+::m\+\_\+fd\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSHT31D_ad76767dc72097d43aea68675ae33e1ed}\label{classSHT31D_ad76767dc72097d43aea68675ae33e1ed}} 
+\index{S\+H\+T31D@{S\+H\+T31D}!m\+\_\+p\+I2\+Cdriver@{m\+\_\+p\+I2\+Cdriver}}
+\index{m\+\_\+p\+I2\+Cdriver@{m\+\_\+p\+I2\+Cdriver}!S\+H\+T31D@{S\+H\+T31D}}
+\subsubsection{\texorpdfstring{m\+\_\+p\+I2\+Cdriver}{m\_pI2Cdriver}}
+{\footnotesize\ttfamily \hyperlink{classI2CDriver}{I2\+C\+Driver}$\ast$ S\+H\+T31\+D\+::m\+\_\+p\+I2\+Cdriver = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/controller/peripherials/\hyperlink{SHT31D_8h}{S\+H\+T31\+D.\+h}\item 
+src/controller/peripherials/\hyperlink{SHT31D_8cpp}{S\+H\+T31\+D.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,74 @@
+\hypertarget{classI2CSensor}{}\section{I2\+C\+Sensor Class Reference}
+\label{classI2CSensor}\index{I2\+C\+Sensor@{I2\+C\+Sensor}}
+
+
+{\ttfamily \#include $<$I2\+C\+Sensor.\+h$>$}
+
+
+
+Inheritance diagram for I2\+C\+Sensor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classI2CSensor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for I2\+C\+Sensor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{classI2CSensor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{classI2CSensor_a0fb4755ddff3fe2cf5a9651d9d1fe5cd}{Initialize} (\hyperlink{classI2CDriver}{I2\+C\+Driver} \&i2c)=0
+\item 
+virtual int \hyperlink{classI2CSensor_a0622266d335944782d2bfa6352f01095}{Reset} ()=0
+\item 
+virtual int \hyperlink{classI2CSensor_acee1633439e97bae412441ac085fabba}{Close\+\_\+\+Device} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic Sensor Class which implements function for peripherial. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classI2CSensor_acee1633439e97bae412441ac085fabba}\label{classI2CSensor_acee1633439e97bae412441ac085fabba}} 
+\index{I2\+C\+Sensor@{I2\+C\+Sensor}!Close\+\_\+\+Device@{Close\+\_\+\+Device}}
+\index{Close\+\_\+\+Device@{Close\+\_\+\+Device}!I2\+C\+Sensor@{I2\+C\+Sensor}}
+\subsubsection{\texorpdfstring{Close\+\_\+\+Device()}{Close\_Device()}}
+{\footnotesize\ttfamily virtual int I2\+C\+Sensor\+::\+Close\+\_\+\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Read Data from the sensor and Reset Sensor Close File Descriptor 
+
+Implemented in \hyperlink{classVEML7700_af4be747d3c60af76ca46c7e4fb859ec7}{V\+E\+M\+L7700}, \hyperlink{classSHT31D_a925cd964b0a6535d40dff588ac7d02be}{S\+H\+T31D}, and \hyperlink{classSGP30_a3feaf2623eb853169d14687e7ad1db24}{S\+G\+P30}.
+
+\mbox{\Hypertarget{classI2CSensor_a0fb4755ddff3fe2cf5a9651d9d1fe5cd}\label{classI2CSensor_a0fb4755ddff3fe2cf5a9651d9d1fe5cd}} 
+\index{I2\+C\+Sensor@{I2\+C\+Sensor}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!I2\+C\+Sensor@{I2\+C\+Sensor}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual int I2\+C\+Sensor\+::\+Initialize (\begin{DoxyParamCaption}\item[{\hyperlink{classI2CDriver}{I2\+C\+Driver} \&}]{i2c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Initialize sensor Assign I2C Driver Open file descriptor Initial write to sensor to set it up using appropriate driver 
+
+Implemented in \hyperlink{classVEML7700_af772ec5fe2bac04428479c9d232f1799}{V\+E\+M\+L7700}, \hyperlink{classSHT31D_af3ec39a4f04344a1b422761cc904343e}{S\+H\+T31D}, and \hyperlink{classSGP30_ad34fe8539ef007f55a0b3140889fdd6f}{S\+G\+P30}.
+
+\mbox{\Hypertarget{classI2CSensor_a0622266d335944782d2bfa6352f01095}\label{classI2CSensor_a0622266d335944782d2bfa6352f01095}} 
+\index{I2\+C\+Sensor@{I2\+C\+Sensor}!Reset@{Reset}}
+\index{Reset@{Reset}!I2\+C\+Sensor@{I2\+C\+Sensor}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily virtual int I2\+C\+Sensor\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Resets the sensor 
+
+Implemented in \hyperlink{classVEML7700_a381358f8998260f4600a0d6713f7ea2a}{V\+E\+M\+L7700}, \hyperlink{classSHT31D_aa5d28c2557ed05435ca9b433492b9b07}{S\+H\+T31D}, and \hyperlink{classSGP30_a4934ef3a64eb0782a6d956c6526e4186}{S\+G\+P30}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/controller/peripherials/\hyperlink{I2CSensor_8h}{I2\+C\+Sensor.\+h}\end{DoxyCompactItemize}

@@ -46,7 +46,7 @@ int SGP30::Initialize(I2CDriver &i2c)
   {
     IAQ_Initialize();
     m_initSensor = 0;
-    m_pI2Cdriver->Delay(15500);
+    m_pI2Cdriver->Delay(15000);
   }
   return 0;
 }

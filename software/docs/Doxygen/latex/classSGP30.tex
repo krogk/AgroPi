@@ -1,0 +1,410 @@
+\hypertarget{classSGP30}{}\section{S\+G\+P30 Class Reference}
+\label{classSGP30}\index{S\+G\+P30@{S\+G\+P30}}
+
+
+\hyperlink{classSGP30}{S\+G\+P30} class.  
+
+
+
+
+{\ttfamily \#include $<$S\+G\+P30.\+h$>$}
+
+
+
+Inheritance diagram for S\+G\+P30\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{classSGP30__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for S\+G\+P30\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSGP30__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSGP30_a995b5a2cf525479cbd930b54fb7d8f80}{S\+G\+P30} (void)
+\item 
+int \hyperlink{classSGP30_ad34fe8539ef007f55a0b3140889fdd6f}{Initialize} (\hyperlink{classI2CDriver}{I2\+C\+Driver} \&i2c) override
+\item 
+int \hyperlink{classSGP30_a4934ef3a64eb0782a6d956c6526e4186}{Reset} (void) override
+\item 
+int \hyperlink{classSGP30_a3feaf2623eb853169d14687e7ad1db24}{Close\+\_\+\+Device} (void) override
+\item 
+int \hyperlink{classSGP30_ac43bc058d733c27c6356ece89730232c}{I\+A\+Q\+\_\+\+Measure} (uint16\+\_\+t \&tvoc, uint16\+\_\+t \&e\+C\+O2)
+\item 
+int \hyperlink{classSGP30_aba7c9499ebc5a8aea6d3a5aaf23585ee}{I\+A\+Q\+\_\+\+Measure\+\_\+\+Raw} (uint16\+\_\+t \&raw\+Ethanol, uint16\+\_\+t \&raw\+H2)
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classSGP30_a5b752e81e00059c22c039ab0fa2021d0a509dbee04dff24f01fb2c7892703a3bd}{I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS} = 0x58
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_a2729a6a324c09b992fbfc46fc4bfed66ae33bc9477a75eb531e3868a02ef79c78}{S\+G\+P30\+\_\+\+F\+E\+A\+T\+U\+R\+E\+S\+ET} = 0x0020
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_aacd1f082dc76bc6251edf06f0b3832c0ace04a9903c43bc54b35a579e0c661e13}{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+ID} = 0x3682
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_aca7fa4ab06bdae25a5fb142ec20f58d3a9d732bc016196d5decb7e1dd2b1e2dd7}{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+F\+E\+A\+T\+U\+R\+E\+S\+E\+T\+\_\+\+V\+E\+R\+S\+I\+ON} = 0x202F
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_a9fab3e307da43db87a836b096151a31ca68ef1f21f1267a8b1109796eea0e19fe}{S\+G\+P30\+\_\+\+I\+N\+I\+T\+\_\+\+A\+I\+R\+\_\+\+Q\+U\+A\+L\+I\+TY} = 0x2003
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_a7dc6849851676f2dbd1e118ff782d830a1d8427617ada8d841010c43f382bccfa}{S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+A\+I\+R\+\_\+\+Q\+U\+A\+L\+I\+TY} = 0x2008
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_a6265830ddaa1c5e55a1efe326326e57ea5df373d3deebce36ee7a1c745c9c735a}{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+I\+A\+Q\+\_\+\+B\+A\+S\+E\+L\+I\+NE} = 0x2015
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_adb75f486c71b86401a9e61cf6d37449ba21711e444f927177674d89c44702904a}{S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+I\+A\+Q\+\_\+\+B\+A\+S\+E\+L\+I\+NE} = 0x201e
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_a4f249632f5e33f139cd7377c728cba1da8ad78d173fbf29a175db80bf59d8a361}{S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+H\+U\+M\+I\+D\+I\+TY} = 0x2061
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_af209e8391e943c53e3c6aa3479e4a8f9adaacf9a8f14c2f6903cdb635b3e8a1fd}{S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+T\+E\+ST} = 0x2032
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_a1d3a484196d7d31bf7d4210b410bb760a375ad7f464e6a21241bd655100a5ce94}{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+F\+E\+A\+T\+U\+R\+E\+\_\+\+S\+ET} = 0x202f
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_ae79520d1a6d2d0b51a33f66bda330426a4b9de0c35084e50e2314402541630294}{S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+R\+AW} = 0x2050
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_aa3eee88b9594f8df87e651374c4a1016ac75ca98ed28bb4b660cde006d6ea03ed}{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+T\+V\+O\+C\+\_\+\+I\+N\+C\+E\+P\+T\+I\+V\+E\+\_\+\+B\+A\+S\+E\+L\+I\+NE} = 0x20b3
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_a4a464453ec9603419c3d49ad5c3fd21ca2c77db1c8c9a871d505a7a54f13fa05f}{S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+T\+V\+O\+C\+\_\+\+B\+A\+S\+E\+L\+I\+NE} = 0x2077
+ \}
+\item 
+enum \{ \hyperlink{classSGP30_a48c35303e4f88d4b9bed717184795c2eae7362fc1d71c48cca9c68611d5348007}{S\+G\+P30\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET} = 0x0006
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classSGP30_a4419a25b8e25a133c3cfc876b3443669}{I\+A\+Q\+\_\+\+Initialize} (void)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classSGP30_a751dee30db306b3f2ff17540adb7dfc9}{m\+\_\+fd}
+\item 
+uint16\+\_\+t \hyperlink{classSGP30_a6da04f39b302756d806d36ff3aa93293}{m\+\_\+serialnum} \mbox{[}3\mbox{]}
+\item 
+\hyperlink{classI2CDriver}{I2\+C\+Driver} $\ast$ \hyperlink{classSGP30_a3be2d504b90a81a66af2bcd4fc96673b}{m\+\_\+p\+I2\+Cdriver} = nullptr
+\item 
+int \hyperlink{classSGP30_a11b0db4fcffa5e8da8982a48ae0b1456}{m\+\_\+init\+Sensor}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classSGP30}{S\+G\+P30} class. 
+
+\begin{DoxyAuthor}{Author}
+Kamil Rog
+\end{DoxyAuthor}
+This is class is responsilbe for the \hyperlink{classSGP30}{S\+G\+P30} gas sensor.
+
+P\+R\+O\+T\+O\+C\+OL -\/ I2C
+
+I2C 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classSGP30_a5b752e81e00059c22c039ab0fa2021d0}\label{classSGP30_a5b752e81e00059c22c039ab0fa2021d0}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS@{I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS@{I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS}}}\mbox{\Hypertarget{classSGP30_a5b752e81e00059c22c039ab0fa2021d0a509dbee04dff24f01fb2c7892703a3bd}\label{classSGP30_a5b752e81e00059c22c039ab0fa2021d0a509dbee04dff24f01fb2c7892703a3bd}} 
+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_a2729a6a324c09b992fbfc46fc4bfed66}\label{classSGP30_a2729a6a324c09b992fbfc46fc4bfed66}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+F\+E\+A\+T\+U\+R\+E\+S\+ET@{S\+G\+P30\+\_\+\+F\+E\+A\+T\+U\+R\+E\+S\+ET}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+F\+E\+A\+T\+U\+R\+E\+S\+ET@{S\+G\+P30\+\_\+\+F\+E\+A\+T\+U\+R\+E\+S\+ET}}}\mbox{\Hypertarget{classSGP30_a2729a6a324c09b992fbfc46fc4bfed66ae33bc9477a75eb531e3868a02ef79c78}\label{classSGP30_a2729a6a324c09b992fbfc46fc4bfed66ae33bc9477a75eb531e3868a02ef79c78}} 
+S\+G\+P30\+\_\+\+F\+E\+A\+T\+U\+R\+E\+S\+ET&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_a1d3a484196d7d31bf7d4210b410bb760}\label{classSGP30_a1d3a484196d7d31bf7d4210b410bb760}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+F\+E\+A\+T\+U\+R\+E\+\_\+\+S\+ET@{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+F\+E\+A\+T\+U\+R\+E\+\_\+\+S\+ET}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+F\+E\+A\+T\+U\+R\+E\+\_\+\+S\+ET@{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+F\+E\+A\+T\+U\+R\+E\+\_\+\+S\+ET}}}\mbox{\Hypertarget{classSGP30_a1d3a484196d7d31bf7d4210b410bb760a375ad7f464e6a21241bd655100a5ce94}\label{classSGP30_a1d3a484196d7d31bf7d4210b410bb760a375ad7f464e6a21241bd655100a5ce94}} 
+S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+F\+E\+A\+T\+U\+R\+E\+\_\+\+S\+ET&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_ae79520d1a6d2d0b51a33f66bda330426}\label{classSGP30_ae79520d1a6d2d0b51a33f66bda330426}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+R\+AW@{S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+R\+AW}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+R\+AW@{S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+R\+AW}}}\mbox{\Hypertarget{classSGP30_ae79520d1a6d2d0b51a33f66bda330426a4b9de0c35084e50e2314402541630294}\label{classSGP30_ae79520d1a6d2d0b51a33f66bda330426a4b9de0c35084e50e2314402541630294}} 
+S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+R\+AW&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_aa3eee88b9594f8df87e651374c4a1016}\label{classSGP30_aa3eee88b9594f8df87e651374c4a1016}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+T\+V\+O\+C\+\_\+\+I\+N\+C\+E\+P\+T\+I\+V\+E\+\_\+\+B\+A\+S\+E\+L\+I\+NE@{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+T\+V\+O\+C\+\_\+\+I\+N\+C\+E\+P\+T\+I\+V\+E\+\_\+\+B\+A\+S\+E\+L\+I\+NE}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+T\+V\+O\+C\+\_\+\+I\+N\+C\+E\+P\+T\+I\+V\+E\+\_\+\+B\+A\+S\+E\+L\+I\+NE@{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+T\+V\+O\+C\+\_\+\+I\+N\+C\+E\+P\+T\+I\+V\+E\+\_\+\+B\+A\+S\+E\+L\+I\+NE}}}\mbox{\Hypertarget{classSGP30_aa3eee88b9594f8df87e651374c4a1016ac75ca98ed28bb4b660cde006d6ea03ed}\label{classSGP30_aa3eee88b9594f8df87e651374c4a1016ac75ca98ed28bb4b660cde006d6ea03ed}} 
+S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+T\+V\+O\+C\+\_\+\+I\+N\+C\+E\+P\+T\+I\+V\+E\+\_\+\+B\+A\+S\+E\+L\+I\+NE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_a4a464453ec9603419c3d49ad5c3fd21c}\label{classSGP30_a4a464453ec9603419c3d49ad5c3fd21c}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+T\+V\+O\+C\+\_\+\+B\+A\+S\+E\+L\+I\+NE@{S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+T\+V\+O\+C\+\_\+\+B\+A\+S\+E\+L\+I\+NE}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+T\+V\+O\+C\+\_\+\+B\+A\+S\+E\+L\+I\+NE@{S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+T\+V\+O\+C\+\_\+\+B\+A\+S\+E\+L\+I\+NE}}}\mbox{\Hypertarget{classSGP30_a4a464453ec9603419c3d49ad5c3fd21ca2c77db1c8c9a871d505a7a54f13fa05f}\label{classSGP30_a4a464453ec9603419c3d49ad5c3fd21ca2c77db1c8c9a871d505a7a54f13fa05f}} 
+S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+T\+V\+O\+C\+\_\+\+B\+A\+S\+E\+L\+I\+NE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_a48c35303e4f88d4b9bed717184795c2e}\label{classSGP30_a48c35303e4f88d4b9bed717184795c2e}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET@{S\+G\+P30\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET@{S\+G\+P30\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET}}}\mbox{\Hypertarget{classSGP30_a48c35303e4f88d4b9bed717184795c2eae7362fc1d71c48cca9c68611d5348007}\label{classSGP30_a48c35303e4f88d4b9bed717184795c2eae7362fc1d71c48cca9c68611d5348007}} 
+S\+G\+P30\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_aacd1f082dc76bc6251edf06f0b3832c0}\label{classSGP30_aacd1f082dc76bc6251edf06f0b3832c0}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+ID@{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+ID}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+ID@{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+ID}}}\mbox{\Hypertarget{classSGP30_aacd1f082dc76bc6251edf06f0b3832c0ace04a9903c43bc54b35a579e0c661e13}\label{classSGP30_aacd1f082dc76bc6251edf06f0b3832c0ace04a9903c43bc54b35a579e0c661e13}} 
+S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+S\+E\+R\+I\+A\+L\+\_\+\+ID&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_aca7fa4ab06bdae25a5fb142ec20f58d3}\label{classSGP30_aca7fa4ab06bdae25a5fb142ec20f58d3}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+F\+E\+A\+T\+U\+R\+E\+S\+E\+T\+\_\+\+V\+E\+R\+S\+I\+ON@{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+F\+E\+A\+T\+U\+R\+E\+S\+E\+T\+\_\+\+V\+E\+R\+S\+I\+ON}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+F\+E\+A\+T\+U\+R\+E\+S\+E\+T\+\_\+\+V\+E\+R\+S\+I\+ON@{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+F\+E\+A\+T\+U\+R\+E\+S\+E\+T\+\_\+\+V\+E\+R\+S\+I\+ON}}}\mbox{\Hypertarget{classSGP30_aca7fa4ab06bdae25a5fb142ec20f58d3a9d732bc016196d5decb7e1dd2b1e2dd7}\label{classSGP30_aca7fa4ab06bdae25a5fb142ec20f58d3a9d732bc016196d5decb7e1dd2b1e2dd7}} 
+S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+F\+E\+A\+T\+U\+R\+E\+S\+E\+T\+\_\+\+V\+E\+R\+S\+I\+ON&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_a9fab3e307da43db87a836b096151a31c}\label{classSGP30_a9fab3e307da43db87a836b096151a31c}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+I\+N\+I\+T\+\_\+\+A\+I\+R\+\_\+\+Q\+U\+A\+L\+I\+TY@{S\+G\+P30\+\_\+\+I\+N\+I\+T\+\_\+\+A\+I\+R\+\_\+\+Q\+U\+A\+L\+I\+TY}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+I\+N\+I\+T\+\_\+\+A\+I\+R\+\_\+\+Q\+U\+A\+L\+I\+TY@{S\+G\+P30\+\_\+\+I\+N\+I\+T\+\_\+\+A\+I\+R\+\_\+\+Q\+U\+A\+L\+I\+TY}}}\mbox{\Hypertarget{classSGP30_a9fab3e307da43db87a836b096151a31ca68ef1f21f1267a8b1109796eea0e19fe}\label{classSGP30_a9fab3e307da43db87a836b096151a31ca68ef1f21f1267a8b1109796eea0e19fe}} 
+S\+G\+P30\+\_\+\+I\+N\+I\+T\+\_\+\+A\+I\+R\+\_\+\+Q\+U\+A\+L\+I\+TY&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_a7dc6849851676f2dbd1e118ff782d830}\label{classSGP30_a7dc6849851676f2dbd1e118ff782d830}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+A\+I\+R\+\_\+\+Q\+U\+A\+L\+I\+TY@{S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+A\+I\+R\+\_\+\+Q\+U\+A\+L\+I\+TY}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+A\+I\+R\+\_\+\+Q\+U\+A\+L\+I\+TY@{S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+A\+I\+R\+\_\+\+Q\+U\+A\+L\+I\+TY}}}\mbox{\Hypertarget{classSGP30_a7dc6849851676f2dbd1e118ff782d830a1d8427617ada8d841010c43f382bccfa}\label{classSGP30_a7dc6849851676f2dbd1e118ff782d830a1d8427617ada8d841010c43f382bccfa}} 
+S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+A\+I\+R\+\_\+\+Q\+U\+A\+L\+I\+TY&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_a6265830ddaa1c5e55a1efe326326e57e}\label{classSGP30_a6265830ddaa1c5e55a1efe326326e57e}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+I\+A\+Q\+\_\+\+B\+A\+S\+E\+L\+I\+NE@{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+I\+A\+Q\+\_\+\+B\+A\+S\+E\+L\+I\+NE}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+I\+A\+Q\+\_\+\+B\+A\+S\+E\+L\+I\+NE@{S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+I\+A\+Q\+\_\+\+B\+A\+S\+E\+L\+I\+NE}}}\mbox{\Hypertarget{classSGP30_a6265830ddaa1c5e55a1efe326326e57ea5df373d3deebce36ee7a1c745c9c735a}\label{classSGP30_a6265830ddaa1c5e55a1efe326326e57ea5df373d3deebce36ee7a1c745c9c735a}} 
+S\+G\+P30\+\_\+\+G\+E\+T\+\_\+\+I\+A\+Q\+\_\+\+B\+A\+S\+E\+L\+I\+NE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_adb75f486c71b86401a9e61cf6d37449b}\label{classSGP30_adb75f486c71b86401a9e61cf6d37449b}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+I\+A\+Q\+\_\+\+B\+A\+S\+E\+L\+I\+NE@{S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+I\+A\+Q\+\_\+\+B\+A\+S\+E\+L\+I\+NE}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+I\+A\+Q\+\_\+\+B\+A\+S\+E\+L\+I\+NE@{S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+I\+A\+Q\+\_\+\+B\+A\+S\+E\+L\+I\+NE}}}\mbox{\Hypertarget{classSGP30_adb75f486c71b86401a9e61cf6d37449ba21711e444f927177674d89c44702904a}\label{classSGP30_adb75f486c71b86401a9e61cf6d37449ba21711e444f927177674d89c44702904a}} 
+S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+I\+A\+Q\+\_\+\+B\+A\+S\+E\+L\+I\+NE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_a4f249632f5e33f139cd7377c728cba1d}\label{classSGP30_a4f249632f5e33f139cd7377c728cba1d}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+H\+U\+M\+I\+D\+I\+TY@{S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+H\+U\+M\+I\+D\+I\+TY}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+H\+U\+M\+I\+D\+I\+TY@{S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+H\+U\+M\+I\+D\+I\+TY}}}\mbox{\Hypertarget{classSGP30_a4f249632f5e33f139cd7377c728cba1da8ad78d173fbf29a175db80bf59d8a361}\label{classSGP30_a4f249632f5e33f139cd7377c728cba1da8ad78d173fbf29a175db80bf59d8a361}} 
+S\+G\+P30\+\_\+\+S\+E\+T\+\_\+\+A\+B\+S\+O\+L\+U\+T\+E\+\_\+\+H\+U\+M\+I\+D\+I\+TY&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classSGP30_af209e8391e943c53e3c6aa3479e4a8f9}\label{classSGP30_af209e8391e943c53e3c6aa3479e4a8f9}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+T\+E\+ST@{S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+T\+E\+ST}!S\+G\+P30@{S\+G\+P30}}\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+T\+E\+ST@{S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+T\+E\+ST}}}\mbox{\Hypertarget{classSGP30_af209e8391e943c53e3c6aa3479e4a8f9adaacf9a8f14c2f6903cdb635b3e8a1fd}\label{classSGP30_af209e8391e943c53e3c6aa3479e4a8f9adaacf9a8f14c2f6903cdb635b3e8a1fd}} 
+S\+G\+P30\+\_\+\+M\+E\+A\+S\+U\+R\+E\+\_\+\+T\+E\+ST&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSGP30_a995b5a2cf525479cbd930b54fb7d8f80}\label{classSGP30_a995b5a2cf525479cbd930b54fb7d8f80}} 
+\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30@{S\+G\+P30}}
+\index{S\+G\+P30@{S\+G\+P30}!S\+G\+P30@{S\+G\+P30}}
+\subsubsection{\texorpdfstring{S\+G\+P30()}{SGP30()}}
+{\footnotesize\ttfamily S\+G\+P30\+::\+S\+G\+P30 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSGP30_a3feaf2623eb853169d14687e7ad1db24}\label{classSGP30_a3feaf2623eb853169d14687e7ad1db24}} 
+\index{S\+G\+P30@{S\+G\+P30}!Close\+\_\+\+Device@{Close\+\_\+\+Device}}
+\index{Close\+\_\+\+Device@{Close\+\_\+\+Device}!S\+G\+P30@{S\+G\+P30}}
+\subsubsection{\texorpdfstring{Close\+\_\+\+Device()}{Close\_Device()}}
+{\footnotesize\ttfamily int S\+G\+P30\+::\+Close\+\_\+\+Device (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Closes device Firstly Resets the sensor and then closes file descriptor
+
+\begin{DoxyReturn}{Returns}
+Status of close operation 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classI2CSensor_acee1633439e97bae412441ac085fabba}{I2\+C\+Sensor}.
+
+\mbox{\Hypertarget{classSGP30_a4419a25b8e25a133c3cfc876b3443669}\label{classSGP30_a4419a25b8e25a133c3cfc876b3443669}} 
+\index{S\+G\+P30@{S\+G\+P30}!I\+A\+Q\+\_\+\+Initialize@{I\+A\+Q\+\_\+\+Initialize}}
+\index{I\+A\+Q\+\_\+\+Initialize@{I\+A\+Q\+\_\+\+Initialize}!S\+G\+P30@{S\+G\+P30}}
+\subsubsection{\texorpdfstring{I\+A\+Q\+\_\+\+Initialize()}{IAQ\_Initialize()}}
+{\footnotesize\ttfamily int S\+G\+P30\+::\+I\+A\+Q\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Start I\+AQ algorithm. Must be called in initalization stage.
+
+\begin{DoxyReturn}{Returns}
+Zero on success else negative errno 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSGP30_ac43bc058d733c27c6356ece89730232c}\label{classSGP30_ac43bc058d733c27c6356ece89730232c}} 
+\index{S\+G\+P30@{S\+G\+P30}!I\+A\+Q\+\_\+\+Measure@{I\+A\+Q\+\_\+\+Measure}}
+\index{I\+A\+Q\+\_\+\+Measure@{I\+A\+Q\+\_\+\+Measure}!S\+G\+P30@{S\+G\+P30}}
+\subsubsection{\texorpdfstring{I\+A\+Q\+\_\+\+Measure()}{IAQ\_Measure()}}
+{\footnotesize\ttfamily int S\+G\+P30\+::\+I\+A\+Q\+\_\+\+Measure (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \&}]{tvoc,  }\item[{uint16\+\_\+t \&}]{e\+C\+O2 }\end{DoxyParamCaption})}
+
+Take a single e\+C\+O2 \& T\+V\+OC raw measurement
+
+
+\begin{DoxyParams}{Parameters}
+{\em tvoc} & Address of the tvoc variable to modify. \\
+\hline
+{\em e\+C\+O2} & Address of the eco2 variable to modify\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else negative error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSGP30_aba7c9499ebc5a8aea6d3a5aaf23585ee}\label{classSGP30_aba7c9499ebc5a8aea6d3a5aaf23585ee}} 
+\index{S\+G\+P30@{S\+G\+P30}!I\+A\+Q\+\_\+\+Measure\+\_\+\+Raw@{I\+A\+Q\+\_\+\+Measure\+\_\+\+Raw}}
+\index{I\+A\+Q\+\_\+\+Measure\+\_\+\+Raw@{I\+A\+Q\+\_\+\+Measure\+\_\+\+Raw}!S\+G\+P30@{S\+G\+P30}}
+\subsubsection{\texorpdfstring{I\+A\+Q\+\_\+\+Measure\+\_\+\+Raw()}{IAQ\_Measure\_Raw()}}
+{\footnotesize\ttfamily int S\+G\+P30\+::\+I\+A\+Q\+\_\+\+Measure\+\_\+\+Raw (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \&}]{raw\+Ethanol,  }\item[{uint16\+\_\+t \&}]{raw\+H2 }\end{DoxyParamCaption})}
+
+Take a single H2 \& ethanol raw measurement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+Ethanol} & Address of the raw\+Ethanol variable to modify. \\
+\hline
+{\em raw\+H2} & Address of the raw\+H2 variable to modify\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else negative error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSGP30_ad34fe8539ef007f55a0b3140889fdd6f}\label{classSGP30_ad34fe8539ef007f55a0b3140889fdd6f}} 
+\index{S\+G\+P30@{S\+G\+P30}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!S\+G\+P30@{S\+G\+P30}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily int S\+G\+P30\+::\+Initialize (\begin{DoxyParamCaption}\item[{\hyperlink{classI2CDriver}{I2\+C\+Driver} \&}]{i2c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Initialize \hyperlink{classSHT31D}{S\+H\+T31D} Open file descriptor
+
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classI2CSensor_a0fb4755ddff3fe2cf5a9651d9d1fe5cd}{I2\+C\+Sensor}.
+
+\mbox{\Hypertarget{classSGP30_a4934ef3a64eb0782a6d956c6526e4186}\label{classSGP30_a4934ef3a64eb0782a6d956c6526e4186}} 
+\index{S\+G\+P30@{S\+G\+P30}!Reset@{Reset}}
+\index{Reset@{Reset}!S\+G\+P30@{S\+G\+P30}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily int S\+G\+P30\+::\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Soft Reset \hyperlink{classSGP30}{S\+G\+P30}
+
+\begin{DoxyReturn}{Returns}
+Zero on success else negative error number 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classI2CSensor_a0622266d335944782d2bfa6352f01095}{I2\+C\+Sensor}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classSGP30_a751dee30db306b3f2ff17540adb7dfc9}\label{classSGP30_a751dee30db306b3f2ff17540adb7dfc9}} 
+\index{S\+G\+P30@{S\+G\+P30}!m\+\_\+fd@{m\+\_\+fd}}
+\index{m\+\_\+fd@{m\+\_\+fd}!S\+G\+P30@{S\+G\+P30}}
+\subsubsection{\texorpdfstring{m\+\_\+fd}{m\_fd}}
+{\footnotesize\ttfamily int S\+G\+P30\+::m\+\_\+fd\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSGP30_a11b0db4fcffa5e8da8982a48ae0b1456}\label{classSGP30_a11b0db4fcffa5e8da8982a48ae0b1456}} 
+\index{S\+G\+P30@{S\+G\+P30}!m\+\_\+init\+Sensor@{m\+\_\+init\+Sensor}}
+\index{m\+\_\+init\+Sensor@{m\+\_\+init\+Sensor}!S\+G\+P30@{S\+G\+P30}}
+\subsubsection{\texorpdfstring{m\+\_\+init\+Sensor}{m\_initSensor}}
+{\footnotesize\ttfamily int S\+G\+P30\+::m\+\_\+init\+Sensor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSGP30_a3be2d504b90a81a66af2bcd4fc96673b}\label{classSGP30_a3be2d504b90a81a66af2bcd4fc96673b}} 
+\index{S\+G\+P30@{S\+G\+P30}!m\+\_\+p\+I2\+Cdriver@{m\+\_\+p\+I2\+Cdriver}}
+\index{m\+\_\+p\+I2\+Cdriver@{m\+\_\+p\+I2\+Cdriver}!S\+G\+P30@{S\+G\+P30}}
+\subsubsection{\texorpdfstring{m\+\_\+p\+I2\+Cdriver}{m\_pI2Cdriver}}
+{\footnotesize\ttfamily \hyperlink{classI2CDriver}{I2\+C\+Driver}$\ast$ S\+G\+P30\+::m\+\_\+p\+I2\+Cdriver = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSGP30_a6da04f39b302756d806d36ff3aa93293}\label{classSGP30_a6da04f39b302756d806d36ff3aa93293}} 
+\index{S\+G\+P30@{S\+G\+P30}!m\+\_\+serialnum@{m\+\_\+serialnum}}
+\index{m\+\_\+serialnum@{m\+\_\+serialnum}!S\+G\+P30@{S\+G\+P30}}
+\subsubsection{\texorpdfstring{m\+\_\+serialnum}{m\_serialnum}}
+{\footnotesize\ttfamily uint16\+\_\+t S\+G\+P30\+::m\+\_\+serialnum\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/controller/peripherials/\hyperlink{SGP30_8h}{S\+G\+P30.\+h}\item 
+src/controller/peripherials/\hyperlink{SGP30_8cpp}{S\+G\+P30.\+cpp}\end{DoxyCompactItemize}

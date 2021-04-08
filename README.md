@@ -47,7 +47,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#wiki">Wiki</a></li>
   </ol>
 </details>
 
@@ -73,8 +72,8 @@ In the near future AgroPi is going to utilize AI driven image pocessing to deter
 
 <br />
 
-  <a href="https://github.com/krogk/AgroPi">
-    <img src="media/images/agropitopright.PNG" alt="Concept Render" >
+  <!--  <a href="https://github.com/krogk/AgroPi"> -->
+  <!--  <img src="media/images/agropitopright.PNG" alt="Concept Render" >--> 
   </a>
 
 
@@ -82,16 +81,15 @@ In the near future AgroPi is going to utilize AI driven image pocessing to deter
 
 ### Software
 
-In the first software release we plan to allow you to view the following conditions on the website interface:
+v0.1 Release allows you to view the following conditions on the website interface:
 * Temperature 
 * Humidity
 * Light Intensity
-* TVOC
+* [TVOC](https://en.wikipedia.org/wiki/Volatile_organic_compound)
 * eCO2
-* Photos of your crops
 <br />
 <br />
-As well as easily set the target values for each variable for particular time of day, however, the actuation is going to be implemented in software release 2.
+As well as easily set the target values for each variable for particular time of day, however, the actuation is going to be implemented in software release v0.2.
 <br />
 
 
@@ -125,29 +123,15 @@ Schematics:
 
 ### Roadmap
 <br />
-[x] Github Setup
-
-[-] Software Release 1 - Working core prototype
-* [x] I2C Driver
-* [x] Light Sensor Integrated
-* [x] Temperature + Humidity Sensor Integrated
-* [x] Gas Sensor Integrated
+[-] Next Software Release (v0.2) - Actuation & Image Processing - Detecting Seedling/Mushroom - 16/04/2021
 * [-] Camera Integrated
-* [80%] Web server
-* [80%] Real-time Adaptation
-
-[-] Software Release 2 Actuation & Image Processing - Detecting Mold
+* [-] Sensor Calibration
+* [-] Relay Board Driver
 * [-] Relay Board Integration
-* [-] Lighting Actuation
-* [-] Heating Actuation
-* [-] Airflow Actuation
-* [-] Watering Actuation
-* [-] Water Level Sensor Integrated
+* [-] Web-Server Improvments
 * [-] Gather Training Dataset
 * [-] Train neuralnet
 * [-] Test on real samples
-
-[-] Software Release 3 - Life cycle Assessment & Nutrient Defficiencies
 
 <br />
 
@@ -156,85 +140,14 @@ Schematics:
 ## Getting Started
 
 ### Prerequisites
-1. Ubuntu Packages: 
+1. Clone the repository
 ```sh
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install git
-sudo apt-get install cmake
-sudo apt-get install flex
-sudo apt-get install bison
-sudo apt-get install wiringpi
-sudo apt-get install libboost-all-dev
-sudo apt-get install libi2c-dev
-sudo apt-get install cppcheck
-sudo apt-get install doxygen
-sudo apt-get install graphviz
-sudo apt install build-essential
+git clone https://github.com/krogk/AgroPi
 ```
-
-2. Camera Dependencies 
-Install OpenCV using following guide 
+2. Ubuntu Packages: 
 ```sh
-https://howchoo.com/pi/install-opencv-on-raspberry-pi
-
-sudo apt update
-sudo apt upgrade
-sudo apt install cmake pkg-config build-essential git
- 
-sudo apt install libwebp-dev libjasper-dev libopenexr-dev libv4l-dev libavformat-dev  
-sudo apt install libxvidcore-dev libx264-dev libdc1394-22-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev libavcodec-dev 
-sudo apt install libtiff-dev libpng-dev libjpeg-dev libswscale-dev
-sudo apt install libhdf5-dev libhdf5-103
-
-sudo apt install libgtk-3-dev libqtwebkit4 libqt4-test libqtgui4 python3-pyqt5
-
-sudo apt install python3-dev python3-pip python3-testresources python3-numpy
-
-sudo nano /etc/dphys-swapfile (then replace CONF_SWAPSIZE=100 with CONF_SWAPSIZE=2048. Ctrl + X on your keyboard, then hit the Y + Enter to exit & save)
-
-sudo systemctl restart dphys-swapfile
-
-git clone https://github.com/opencv/opencv.git
-git clone https://github.com/opencv/opencv_contrib.git
-mkdir ~/opencv/build
-cd ~/opencv/build
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
-    -D CMAKE_INSTALL_PREFIX=/usr/local \
-    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
-    -D ENABLE_NEON=ON \
-    -D ENABLE_VFPV3=ON \
-    -D BUILD_TESTS=OFF \
-    -D INSTALL_PYTHON_EXAMPLES=OFF \
-    -D OPENCV_ENABLE_NONFREE=ON \
-    -D CMAKE_SHARED_LINKER_FLAGS=-latomic \
-    -D BUILD_EXAMPLES=OFF ..
-
-make -j$(nproc)
-
-sudo make install
-sudo ldconfig
-
-sudo nano /etc/dphys-swapfile (Return CONF_SWAPSIZE=2048 back to the default CONF_SWAPSIZE=100)
-
-sudo systemctl restart dphys-swapfile
-
+./install.sh
 ```
-
-
-Install raspicam
-```sh
-git clone https://github.com/cedricve/raspicam.git
-cd raspicam
-mkdir build
-cd build
-cmake ..
-
-make
-sudo make install
-sudo ldconfig
-```
-
 3. Server Depencencies: 
 ```sh
 pip install -r requirements.txt
@@ -242,11 +155,7 @@ pip install -r requirements.txt
 
 ### Installation
 
-1. Clone the repository
-```sh
-git clone https://github.com/krogk/AgroPi
-```
-2. Build
+Build:
 ```sh
 mkdir build
 cd build/
@@ -260,9 +169,6 @@ make
 
 To run the software:
 
-
-
-
 1. Go to web directory and run server
 ```sh
 python ./run.py &
@@ -275,7 +181,7 @@ source venv/bin/activate
 ./src/AgroPi 
 ```
 
-3. Wait 20 Seconds for application to set up sensors
+3. Wait 15 Seconds for application to set up sensors
 
 <!-- Contributing -->
 ## Contributing
@@ -296,9 +202,3 @@ Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 [Andrew Scott-George - Image Processing](https://github.com/andrewsg3)
 <br />
 [Kamil Rog - Real-time Embedded Programming](https://github.com/krogk)
-
-
-<!-- AgroPi Wiki -->
-## Wiki
-
-[Wiki](https://github.com/krogk/AgroPi/wiki)

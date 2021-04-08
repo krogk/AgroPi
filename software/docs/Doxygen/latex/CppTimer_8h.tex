@@ -1,0 +1,92 @@
+\hypertarget{CppTimer_8h}{}\section{src/utils/\+Cpp\+Timer.h File Reference}
+\label{CppTimer_8h}\index{src/utils/\+Cpp\+Timer.\+h@{src/utils/\+Cpp\+Timer.\+h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Include dependency graph for Cpp\+Timer.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CppTimer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CppTimer_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCppTimer}{Cpp\+Timer}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{CppTimer_8h_a2694a39dfd1fa087ca6f9f391c91dae7}{C\+L\+O\+C\+K\+ID}~C\+L\+O\+C\+K\+\_\+\+M\+O\+N\+O\+T\+O\+N\+IC
+\item 
+\#define \hyperlink{CppTimer_8h_ad6f1d374549d22100d676d5fcac0a7e5}{S\+IG}~S\+I\+G\+R\+T\+M\+IN
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t} \hyperlink{CppTimer_8h_a108f54b7f3f493de3e2e76a813447769}{cpp\+Timer\+Type\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t} \{ \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58}{P\+E\+R\+I\+O\+D\+IC}, 
+\hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aa2724fa87f252403cd2c93f7437f34fd5}{O\+N\+E\+S\+H\+OT}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{CppTimer_8h_a2694a39dfd1fa087ca6f9f391c91dae7}\label{CppTimer_8h_a2694a39dfd1fa087ca6f9f391c91dae7}} 
+\index{Cpp\+Timer.\+h@{Cpp\+Timer.\+h}!C\+L\+O\+C\+K\+ID@{C\+L\+O\+C\+K\+ID}}
+\index{C\+L\+O\+C\+K\+ID@{C\+L\+O\+C\+K\+ID}!Cpp\+Timer.\+h@{Cpp\+Timer.\+h}}
+\subsubsection{\texorpdfstring{C\+L\+O\+C\+K\+ID}{CLOCKID}}
+{\footnotesize\ttfamily \#define C\+L\+O\+C\+K\+ID~C\+L\+O\+C\+K\+\_\+\+M\+O\+N\+O\+T\+O\+N\+IC}
+
+G\+NU G\+E\+N\+E\+R\+AL P\+U\+B\+L\+IC L\+I\+C\+E\+N\+SE Version 3, 29 June 2007
+
+(C) 2020, Bernd Porr \href{mailto:mail@bernporr.me.uk}{\tt mail@bernporr.\+me.\+uk}
+
+This is inspired by the timer\+\_\+create man page. \mbox{\Hypertarget{CppTimer_8h_ad6f1d374549d22100d676d5fcac0a7e5}\label{CppTimer_8h_ad6f1d374549d22100d676d5fcac0a7e5}} 
+\index{Cpp\+Timer.\+h@{Cpp\+Timer.\+h}!S\+IG@{S\+IG}}
+\index{S\+IG@{S\+IG}!Cpp\+Timer.\+h@{Cpp\+Timer.\+h}}
+\subsubsection{\texorpdfstring{S\+IG}{SIG}}
+{\footnotesize\ttfamily \#define S\+IG~S\+I\+G\+R\+T\+M\+IN}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{CppTimer_8h_a108f54b7f3f493de3e2e76a813447769}\label{CppTimer_8h_a108f54b7f3f493de3e2e76a813447769}} 
+\index{Cpp\+Timer.\+h@{Cpp\+Timer.\+h}!cpp\+Timer\+Type\+\_\+t@{cpp\+Timer\+Type\+\_\+t}}
+\index{cpp\+Timer\+Type\+\_\+t@{cpp\+Timer\+Type\+\_\+t}!Cpp\+Timer.\+h@{Cpp\+Timer.\+h}}
+\subsubsection{\texorpdfstring{cpp\+Timer\+Type\+\_\+t}{cppTimerType\_t}}
+{\footnotesize\ttfamily typedef enum \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t} \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t}}
+
+Enumeration of \hyperlink{classCppTimer}{Cpp\+Timer} types 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}\label{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}} 
+\index{Cpp\+Timer.\+h@{Cpp\+Timer.\+h}!cpp\+Timer\+Type\+\_\+t@{cpp\+Timer\+Type\+\_\+t}}
+\index{cpp\+Timer\+Type\+\_\+t@{cpp\+Timer\+Type\+\_\+t}!Cpp\+Timer.\+h@{Cpp\+Timer.\+h}}
+\subsubsection{\texorpdfstring{cpp\+Timer\+Type\+\_\+t}{cppTimerType\_t}}
+{\footnotesize\ttfamily enum \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t}}
+
+Enumeration of \hyperlink{classCppTimer}{Cpp\+Timer} types \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+E\+R\+I\+O\+D\+IC@{P\+E\+R\+I\+O\+D\+IC}!Cpp\+Timer.\+h@{Cpp\+Timer.\+h}}\index{Cpp\+Timer.\+h@{Cpp\+Timer.\+h}!P\+E\+R\+I\+O\+D\+IC@{P\+E\+R\+I\+O\+D\+IC}}}\mbox{\Hypertarget{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58}\label{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58}} 
+P\+E\+R\+I\+O\+D\+IC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+N\+E\+S\+H\+OT@{O\+N\+E\+S\+H\+OT}!Cpp\+Timer.\+h@{Cpp\+Timer.\+h}}\index{Cpp\+Timer.\+h@{Cpp\+Timer.\+h}!O\+N\+E\+S\+H\+OT@{O\+N\+E\+S\+H\+OT}}}\mbox{\Hypertarget{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aa2724fa87f252403cd2c93f7437f34fd5}\label{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aa2724fa87f252403cd2c93f7437f34fd5}} 
+O\+N\+E\+S\+H\+OT&\\
+\hline
+
+\end{DoxyEnumFields}
