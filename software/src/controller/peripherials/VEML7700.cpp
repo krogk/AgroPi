@@ -1,18 +1,14 @@
 /**
-* @file
+* @file VEML7700.cpp
 * @author Kamil Rog
 * @version 0.1
 *
-*
-* @section DESCRIPTION
 * 
 * This file contains the functions for VEML7700 class.
 *
 */
 #include "VEML7700.h"
 #include <cmath>
-
-
 
 /**
 * Initialize VEML7700 
@@ -26,37 +22,54 @@
 *
 * @return None
 */
-void VEML7700::Initialize(I2CDriver &i2c) {
-  i2cdriv = i2c;
+int VEML7700::Initialize(I2CDriver &i2c)
+{
+  m_pI2Cdriver = &i2c;
   // Open fd to VEML7700
-  fd = i2cdriv.I2C_Setup_File(I2C_ADDRESS);
+  m_fd = m_pI2Cdriver->I2C_Setup_File(I2C_ADDRESS);
 
 	// Formulate initial register configuration setup of VEML7700
-	registerVEML7700[0] = ( (uint16_t(ALS_GAIN_x2) << ALS_SM_SHIFT) | (uint16_t(ALS_INTEGRATION_100ms) << ALS_IT_SHIFT) |(uint16_t(ALS_PERSISTENCE_1) << ALS_PERS_SHIFT) | (uint16_t(0) << ALS_INT_EN_SHIFT) | (uint16_t(0) << ALS_SD_SHIFT) );
-	registerVEML7700[1] = 0x0000;
-	registerVEML7700[2] = 0xffff;
-	registerVEML7700[3] = ( (uint16_t(ALS_POWER_MODE_1) << PSM_SHIFT) | (uint16_t(0) << PSM_EN_SHIFT) );
+	m_registerVEML7700[0] = ( (uint16_t(ALS_GAIN_x2) << ALS_SM_SHIFT)
+                        | (uint16_t(ALS_INTEGRATION_100ms) << ALS_IT_SHIFT)
+                        | (uint16_t(ALS_PERSISTENCE_1) << ALS_PERS_SHIFT)
+                        | (uint16_t(0) << ALS_INT_EN_SHIFT)
+                        | (uint16_t(0) << ALS_SD_SHIFT) );
+	m_registerVEML7700[1] = 0x0000;
+	m_registerVEML7700[2] = 0xffff;
+	m_registerVEML7700[3] = ( (uint16_t(ALS_POWER_MODE_1) << PSM_SHIFT) 
+                        | (uint16_t(0) << PSM_EN_SHIFT) );
 
   // Setup VEML7700 with initial setting by writing data to registers.
-	for (uint8_t i = 0; i < 4; i++) {
-    i2cdriv.I2C_Write_16bitReg(fd, i, registerVEML7700[i]);
+	for (uint8_t i = 0; i < 4; i++)
+  {
+    m_pI2Cdriver->I2C_Write_16bitReg(m_fd, i, m_registerVEML7700[i]);
 	}
 	// Datasheet says to wait at least 2.5ms if there are any issues then try puting delay here before any write/reads
+  return 0;
 }
 
 /**
-* Close file descriptor
+* Close Device
+* Closes file descriptor
 * 
-* @param fd filde descriptor to close.
-*
 * @return Status of close operation
 */
-int VEML7700::Close_Device() {
-  //Soft_Reset();
-  return close(fd);
+int VEML7700::Close_Device()
+{
+  //Reset();
+  return close(m_fd);
 }
 
-
+/**
+* Reset Devide to default settings.
+*
+* @return Zero on success else negative error number 
+* 
+*/
+int VEML7700::Reset()
+{
+  return 0;
+}
 
 /**
 * Get Lux from VEML7700
@@ -65,7 +78,8 @@ int VEML7700::Close_Device() {
 * 
 * @return Status 
 */
-uint8_t VEML7700::Get_ALS_Lux(float& lux) {
+uint8_t VEML7700::Get_ALS_Lux(float& lux)
+{
   uint16_t rawCount;
   // Get raw count 
   uint8_t status = Get_ALS(rawCount);
@@ -83,9 +97,10 @@ uint8_t VEML7700::Get_ALS_Lux(float& lux) {
 * 
 * @return Status 
 */
-  uint8_t VEML7700::Get_ALS(uint16_t& als) {
+uint8_t VEML7700::Get_ALS(uint16_t& als)
+{
   // Read
-  als = i2cdriv.I2C_Read_16bitReg(fd, COMMAND_ALS);
+  als = m_pI2Cdriver->I2C_Read_16bitReg(m_fd, COMMAND_ALS);
   return STATUS_OK;
 }
 
@@ -93,11 +108,12 @@ uint8_t VEML7700::Get_ALS_Lux(float& lux) {
 /**
 * Get white lux from VEML7700
 *
-* @param als Addres of white variable update with read white value  
+* @param white Addres of white lux variable update with read white value  
 * 
 * @return Status 
 */
-uint8_t VEML7700::Get_White_Lux(float& white) {   
+uint8_t VEML7700::Get_White_Lux(float& white)
+{   
   uint16_t rawCount;     
   uint8_t status = Get_White(rawCount); 
   Compute_Lux(rawCount, white);     
@@ -111,8 +127,9 @@ uint8_t VEML7700::Get_White_Lux(float& white) {
 * 
 * @return Status 
 */
-uint8_t VEML7700::Get_White(uint16_t& white) {              
-  white = i2cdriv.I2C_Read_16bitReg(fd, COMMAND_WHITE); 
+uint8_t VEML7700::Get_White(uint16_t& white)
+{              
+  white = m_pI2Cdriver->I2C_Read_16bitReg(m_fd, COMMAND_WHITE); 
   return STATUS_OK;
 }                                                  
 
@@ -125,7 +142,8 @@ uint8_t VEML7700::Get_White(uint16_t& white) {
 * 
 * @return None
 */
-void VEML7700::Compute_Lux(uint16_t rawCount, float& lux) {
+void VEML7700::Compute_Lux(uint16_t rawCount, float& lux)
+{
   // Get Gain
   ALS_GAIN_T gain;
   Get_Gain(gain);
@@ -137,8 +155,8 @@ void VEML7700::Compute_Lux(uint16_t rawCount, float& lux) {
   float factor1 = 0.0, factor2 = 0.0;
 
   // Chose factor1 - appropriate gain
-  switch(gain & 0x3){
-
+  switch(gain & 0x3)
+  {
   case ALS_GAIN_x1:
     factor1 = 1.f;
     break;
@@ -161,8 +179,8 @@ void VEML7700::Compute_Lux(uint16_t rawCount, float& lux) {
   }
 
   // Chose factor2 - appropriate integration time
-  switch(integrationTime) {
-    
+  switch(integrationTime)
+  {
     case ALS_INTEGRATION_25ms:
       factor2 = 0.2304f;
       break;
@@ -208,18 +226,18 @@ void VEML7700::Compute_Lux(uint16_t rawCount, float& lux) {
 /**
 * Set Gain for VEML7700 
 *
-* @param rawCount 
-* @param lux          Address of lux variable to update.
+* @param gain         ALS_GAIN_T Enumeration to set the sensor to.
 * 
-* @return             Zero on success else negative errno 
+* @return             Zero on success else negative errno.
 */
-uint8_t VEML7700::Set_Gain(ALS_GAIN_T gain) {
+uint8_t VEML7700::Set_Gain(ALS_GAIN_T gain)
+{
   // Define new register value 
-	uint16_t reg = ( (registerVEML7700[COMMAND_ALS_SM] & ~ALS_SM_MASK) | ((uint16_t(gain) << ALS_SM_SHIFT) & ALS_SM_MASK) );
+	uint16_t reg = ( (m_registerVEML7700[COMMAND_ALS_SM] & ~ALS_SM_MASK) | ((uint16_t(gain) << ALS_SM_SHIFT) & ALS_SM_MASK) );
   // Update register cache variable
-  registerVEML7700[COMMAND_ALS_SM] = reg;
+  m_registerVEML7700[COMMAND_ALS_SM] = reg;
   // Update register with new value 
-	return i2cdriv.I2C_Write_16bitReg(fd, COMMAND_ALS, reg); 
+	return m_pI2Cdriver->I2C_Write_16bitReg(m_fd, COMMAND_ALS, reg); 
 }
 
 /**
@@ -229,9 +247,10 @@ uint8_t VEML7700::Set_Gain(ALS_GAIN_T gain) {
 * 
 * @return             Status
 */
-uint8_t VEML7700::Get_Gain(ALS_GAIN_T &gain) {
+uint8_t VEML7700::Get_Gain(ALS_GAIN_T &gain)
+{
   // Assing current gain set to for VEML7700
-	gain = ALS_GAIN_T((registerVEML7700[COMMAND_ALS_SM] & ALS_SM_MASK) >> ALS_SM_SHIFT );
+	gain = ALS_GAIN_T((m_registerVEML7700[COMMAND_ALS_SM] & ALS_SM_MASK) >> ALS_SM_SHIFT );
 	return STATUS_OK;
 }
 
@@ -243,13 +262,14 @@ uint8_t VEML7700::Get_Gain(ALS_GAIN_T &gain) {
 * 
 * @return                 Zero on success else negative errno 
 */
-uint8_t VEML7700::Set_Integration_Time(ALS_INTEGRTATION_TIME_T integrationTime) {
+uint8_t VEML7700::Set_Integration_Time(ALS_INTEGRTATION_TIME_T integrationTime)
+{
   // Define new register value using masks and shift new value into it
-  uint16_t reg = ( (registerVEML7700[COMMAND_ALS_IT] & ~ALS_IT_MASK) | ((uint16_t(integrationTime) << ALS_IT_SHIFT) & ALS_IT_MASK) );
+  uint16_t reg = ( (m_registerVEML7700[COMMAND_ALS_IT] & ~ALS_IT_MASK) | ((uint16_t(integrationTime) << ALS_IT_SHIFT) & ALS_IT_MASK) );
   // Update register cache variable
-  registerVEML7700[COMMAND_ALS_IT] = reg;
+  m_registerVEML7700[COMMAND_ALS_IT] = reg;
   // Update register with new value 
-  return i2cdriv.I2C_Write_16bitReg(fd, COMMAND_ALS_IT, reg);
+  return m_pI2Cdriver->I2C_Write_16bitReg(m_fd, COMMAND_ALS_IT, reg);
 }
 
 /**
@@ -259,9 +279,10 @@ uint8_t VEML7700::Set_Integration_Time(ALS_INTEGRTATION_TIME_T integrationTime) 
 * 
 * @return Zero on success else negative errno
 */
-uint8_t VEML7700::Get_Integration_Time(ALS_INTEGRTATION_TIME_T& integrationTime) {
-  // Update the valuee for th
-  integrationTime = ALS_INTEGRTATION_TIME_T( (registerVEML7700[COMMAND_ALS_IT] & ALS_IT_MASK) >> ALS_IT_SHIFT );
+uint8_t VEML7700::Get_Integration_Time(ALS_INTEGRTATION_TIME_T& integrationTime)
+{
+  // Update the value for the integration time
+  integrationTime = ALS_INTEGRTATION_TIME_T( (m_registerVEML7700[COMMAND_ALS_IT] & ALS_IT_MASK) >> ALS_IT_SHIFT );
   return STATUS_OK;
 }
 

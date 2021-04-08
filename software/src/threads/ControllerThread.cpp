@@ -1,24 +1,14 @@
 /**
-* @file
+* @file ControllerThread.cpp
 * @author Kamil Rog
 * @version 0.1
 *
-*
-* @section DESCRIPTION
-* 
 * This file contains the functions for Server Thread class.
 *
 */
 #include "ControllerThread.h"
 #include "Sampler.h"
 #include "Controller.h"
-#include <unistd.h> 
-#include <sys/types.h> 
-#include <sys/wait.h> 
-#include <fcntl.h>
-#include <iostream>
-#include <cstring>
-
 
 void ControllerThread::run(void) 
 {

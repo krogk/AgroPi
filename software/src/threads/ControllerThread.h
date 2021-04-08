@@ -1,10 +1,9 @@
 /**
-* @file
+* @file ControllerThread.h
 * @author Kamil Rog
 * @version 0.1
 *
 *
-* @section DESCRIPTION
 * 
 * This header file contains the definition for server thread for 
 *

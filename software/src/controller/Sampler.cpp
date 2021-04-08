@@ -1,23 +1,15 @@
 /**
-* @file
+* @file Sampler.cpp
 * @author Kamil Rog
 * @version 0.1
-*
-*
-* @section DESCRIPTION
 * 
 * This file contains the function for controller class.
 *
-* 
 */
 #include "Sampler.h"
 #include <stdio.h>
 #include <unistd.h>
-#include <time.h>
-#include <iostream>   // std::cout
-#include <string>     // std::string, std::to_string
 #include <stdio.h>
-#include <fcntl.h>
 
 
 
@@ -28,7 +20,7 @@
 * 
 */
 int Sampler::Initialize(){
-
+	printf("Initializing Peripherials...\n");
 	/*Initialize Peripherials*/
 	lightSensor.Initialize(i2cDriver);
 	temperatureHumiditySensor.Initialize(i2cDriver);
@@ -55,7 +47,7 @@ int Sampler::Initialize(){
 int Sampler::Gather_Env_Data() {
 	lightSensor.Get_ALS_Lux(envData.LightIntensity);
 	temperatureHumiditySensor.Get_Temperature_Humidity(envData.Temperature, envData.Humidity);
-	gasSensor.IAQ_Measure( envData.TVOC, envData.CO2);
+	gasSensor.IAQ_Measure(envData.TVOC, envData.CO2);
 	gasSensor.IAQ_Measure_Raw( envData.RawEthanol, envData.RawH2);
 	return 0;
 }
@@ -71,6 +63,7 @@ int Sampler::CloseDevices() {
 	lightSensor.Close_Device();
 	temperatureHumiditySensor.Close_Device();
 	gasSensor.Close_Device();
+	return 0;
 }
 
 

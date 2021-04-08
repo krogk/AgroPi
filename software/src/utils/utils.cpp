@@ -1,10 +1,7 @@
 /**
-* @file
+* @file utils.cpp
 * @author Kamil Rog
 * @version 0.1
-*
-*
-* @section DESCRIPTION
 * 
 * This file contains the utilities functions used in the project.
 *
@@ -12,7 +9,6 @@
 
 #include <unistd.h>
 #include <stdint.h>
-#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 

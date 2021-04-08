@@ -1,10 +1,9 @@
 /**
-* @file
+* @file Controller.cpp
 * @author Kamil Rog
 * @version 0.1
 *
 *
-* @section DESCRIPTION
 * 
 * This file contains the functions for actuator class.
 *
@@ -51,6 +50,7 @@ void Controller::SendDataToWebApp(std::string variable_type, float value)
 
 }
 
+/*
 void Controller::StartListenerServer()
 {
 	httplib::Server svr;
@@ -66,7 +66,7 @@ void Controller::StartListenerServer()
 
 	svr.listen("0.0.0.0", 8080);
 }
-
+*/
 
 void Controller::ActuatorHandler()
 {
@@ -81,4 +81,7 @@ void Controller::ActuatorHandler()
 		printf("Light Intensity :%f - Sufficient To Turn Lights off\n", envData.LightIntensity);
 		// turn lights off if On
 	}
+	// Heating
+	// Fan
+	// Watering
 }

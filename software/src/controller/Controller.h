@@ -1,23 +1,21 @@
 /**
-* @file
+* @file Controller.h
 * @author Kamil Rog
 * @version 0.1
 *
 *
 * @section DESCRIPTION
 * 
-* This header file contains the class for the Actuator
-* 
 */
-#ifndef ACTUATOR_H
-#define ACTUATOR_H
+#ifndef CONTROLLER_H
+#define CONTROLLER_H
 
 #include "typeDefinitions.h"
 #include "RelayBoard.h"
 #include <string>
 
 /**
-* @brief Sht class
+* @brief Controller class
 * @author Kamil Rog
 *
 * This is class is responsilbe for the SHT31D temperature and humidity sensor.
@@ -56,10 +54,7 @@ public:
   targets.RawH2UpperThreshold = 300; 				
 	}
 
-
-	
 	void SamplerHasData(EnvironmentData newData);
-
 
 private:
 	void SendDataToWebApp(std::string variable_type, float value);
@@ -67,11 +62,9 @@ private:
 	void StartListenerServer();
 
 private:
-	//WaterPump pump; /*!< Water Pump Object */
-	//Heater heater; /*!< Heater Actuator Object */
-		EnvironmentData envData; 				      /*!< Current and Target Enviroment Data Struct */
-		TargetEnvironmentData targets; 				      /*!< Current and Target Enviroment Data Struct */
-		RelayBoard relay;
+	EnvironmentData envData; 				      /*!< Current and Target Enviroment Data Struct */
+	TargetEnvironmentData targets; 				      /*!< Current and Target Enviroment Data Struct */
+	RelayBoard relay;
 
 };
 
