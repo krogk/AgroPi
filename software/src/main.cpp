@@ -1,10 +1,8 @@
 /**
-* @file
+* @file main.cpp
 * @author Kamil Rog
 * @version 0.1
 *
-*
-* @section DESCRIPTION
 * 
 * This is main entry for the program.
 *

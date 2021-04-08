@@ -14,7 +14,7 @@ find_package(cpprestsdk REQUIRED)
 
 # Locate libraries and headers
 find_package(Threads REQUIRED)
-find_library(LIB_I2C i2c)
+find_library(LIB_I2C i2c REQUIRED)
 
 # Set Include Directories
 set(INCLUDE_DIRS
@@ -46,7 +46,7 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/utils/CppTimer.h
    ${CMAKE_CURRENT_SOURCE_DIR}/utils/CppTimerCallback.h
    ${CMAKE_CURRENT_SOURCE_DIR}/utils/typeDefinitions.h 
-   ${CMAKE_CURRENT_SOURCE_DIR}/controller/Sampler.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CSensor.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CDriver.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SHT31D.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/Camera.h
@@ -55,14 +55,14 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/VEML7700.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/Controller.h
    ${CMAKE_CURRENT_SOURCE_DIR}/threads/ControllerThread.h
-
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/Sampler.h
 )
 
 # Create library for src and test
-add_library(AgroPiLib SHARED ${SOURCES})
+add_library(AgroPiLib SHARED ${SOURCES} )
 target_include_directories(AgroPiLib PUBLIC ${INCLUDE_DIRS})
-target_link_libraries(AgroPiLib i2c rt ${CMAKE_THREAD_LIBS_INIT})
-target_link_libraries(AgroPiLib cpprestsdk::cpprest)
+target_link_libraries(AgroPiLib i2c rt ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CSensor.h)
+target_link_libraries(AgroPiLib cpprestsdk::cpprest) 
 
 # Add executable
 add_executable(AgroPi main.cpp)

@@ -1,32 +1,23 @@
 /**
-* @file
+* @file SHT31D.h
 * @author Kamil Rog
 * @version 0.1
-*
-*
-* @section DESCRIPTION
 * 
-* This header file contains the class for the 
+* This header file contains the class for the SH31D Sensor
 * 
+* This is a Temperature and Humidity sensor
+* Currently The sensors must be written to in order to respond.
+* A Hack has been implemented to write dummy data during initalization to overcome this issue
+*
 */
 #ifndef SHT31D_H
 #define SHT31D_H
 
 #include "I2CDriver.h"
+#include "I2CSensor.h"
 
 // Overcome first write fail 
 #define SHT31D_HACK 1
-
-
-typedef enum
-{
-  SHT31_OK = 0,
-  SHT31_CRC_CHECK_FAILED = 1,
-  SHT31_BAD = 2,
-  SHT31_READ_FAILED = 3, 
-  SHT31_WRITE_FAILED = 4
-} SHT31_STATUS;
-
 
 
 /**
@@ -35,25 +26,27 @@ typedef enum
 *
 * This is class is responsilbe for the SHT31D temperature and humidity sensor.
 * 
-* @section PROTOCOL
+* PROTOCOL - I2C
 * 
-* I2C
+* 
 */
-class SHT31D {
+class SHT31D : public I2CSensor {
 
 public:
 	SHT31D() {
+		m_fd = 0;
 		
 	}
 
-  void Initialize(I2CDriver &i2c);
-	int Close_Device();
+  int Initialize(I2CDriver &i2c) override;
+	int Close_Device() override;
+	int Reset() override;
 
-	SHT31_STATUS Get_Temperature_Humidity(float &temperature, float &humidity);
-	SHT31_STATUS Get_Status(uint16_t &returnBuffer);
-	SHT31_STATUS Clear_Status(void);
-	SHT31_STATUS Soft_Reset(void);
 
+	int Get_Temperature_Humidity(float &temperature, float &humidity);
+	int Get_Status(uint16_t &returnBuffer);
+	int Clear_Status(void);
+	
 private:
 
 	enum { SHT31D_I2C_ADDRESS = 0x44};
@@ -64,10 +57,9 @@ private:
 	enum { SHT31D_SOFT_RESET = 0x30A2 }; 
 
 	void run();
-	int fd;
+	int m_fd;
 
-private:
-	I2CDriver i2cdriv;
+	I2CDriver *m_pI2Cdriver = nullptr;
 };
 
 #endif

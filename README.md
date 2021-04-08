@@ -261,9 +261,13 @@ make
 To run the software:
 
 
+
+
 1. Go to web directory and run server
 ```sh
 python ./run.py &
+You might need to create Python env
+source venv/bin/activate
 ```
 
 2. Go to build directory and run application

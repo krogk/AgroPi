@@ -1,10 +1,7 @@
 /**
-* @file
+* @file SGP30.h
 * @author Kamil Rog
 * @version 0.1
-*
-*
-* @section DESCRIPTION
 * 
 * This header file contains the class for SGP30 gas sensor.
 * 
@@ -12,7 +9,7 @@
 #ifndef SGP30_H
 #define SGP30_H
 
-
+#include "I2CSensor.h"
 
 /**
 * @brief SGP30 class
@@ -20,22 +17,28 @@
 *
 * This is class is responsilbe for the SGP30 gas sensor.
 * 
-* @section PROTOCOL
+* PROTOCOL - I2C
 * 
 * I2C
 */
-class SGP30 {
+class SGP30 : public I2CSensor {
 
 public:
 	SGP30(void) {
-		
+			m_fd = 0;
+			m_initSensor = 1;
+			m_serialnum[0] = 0;
+			m_serialnum[1] = 0;
+			m_serialnum[2] = 0;
 	}
 
-	int Initialize(I2CDriver &i2c);
-	int Close_Device();
-	int Soft_Reset(void);
+	int Initialize(I2CDriver &i2c) override;
+	int Reset(void) override;
+	int Close_Device(void) override;
+	
 	int IAQ_Measure(uint16_t &tvoc, uint16_t &eCO2);
 	int IAQ_Measure_Raw( uint16_t &rawEthanol, uint16_t &rawH2);
+
 	
 
 private:
@@ -57,10 +60,10 @@ private:
 	enum { SGP30_SET_TVOC_BASELINE = 0x2077 }; 
 	enum { SGP30_SOFT_RESET = 0x0006};
 
-	int fd;
-	uint16_t serialnum[3];
-	I2CDriver i2cdriv;
-	int initSensor;
+	int m_fd;
+	uint16_t m_serialnum[3]; 
+	I2CDriver *m_pI2Cdriver = nullptr;
+	int m_initSensor;
 
 };
 

@@ -1,10 +1,7 @@
 /**
-* @file
+* @file I2CDriver.h
 * @author Kamil Rog
 * @version 0.1
-*
-*
-* @section DESCRIPTION
 * 
 * This file contains the class for the I2C Driver
 *
@@ -13,7 +10,6 @@
 #define I2C_DRIVER_H
 
 #include <stdint.h>
-#include "utils.h"
 
 
 /**

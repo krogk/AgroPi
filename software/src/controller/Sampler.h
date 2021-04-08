@@ -1,45 +1,24 @@
 /**
-* @file
+* @file Sampler.h
 * @author Kamil Rog
 * @version 0.1
 *
-*
-* @section DESCRIPTION
-* 
 * This header file contains the thread for Controller of the AgroPi sensors and actuators 
-*
 * 
 */
-#ifndef CONTROLLER_H
-#define CONTROLLER_H
+#ifndef SAMPLER_H
+#define SAMPLER_H
 
 
 #include "Controller.h"
-//#include <iostream>
-#include <thread>
 #include <stdio.h>
-#include <time.h>
-#include <unistd.h>
 #include "CppTimer.h"
 #include "I2CDriver.h"
+#include "I2CSensor.h"
 #include "VEML7700.h"
 #include "SHT31D.h"
 #include "SGP30.h"
 //#include "Camera.h"
-
-
-
-/**
- * Callback for new samples which needs to be implemented by the main program.
- * The function hasSample needs to be overloaded in the main program.
- **/
-class ControllerCallback {
-public:
-	/**
-	 * Called after a sample has arrived.
-	 **/
-	void SamplerHasData(EnvironmentData data);
-};
 
 
 /**
@@ -47,6 +26,7 @@ public:
  * @author Kamil Rog
  *
  * This class is responsible for taking measurements for all devices on I2C Bus. 
+ * Inherits from CppTimer 
  */
 class Sampler : public CppTimer
 {

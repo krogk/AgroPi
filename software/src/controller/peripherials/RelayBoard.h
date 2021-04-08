@@ -1,12 +1,9 @@
 /**
-* @file
+* @file RelayBoard.h
 * @author Kamil Rog
 * @version 0.1
-*
-*
-* @section DESCRIPTION
 * 
-* This header file contains the class for the RPI Camera.
+* This header file contains the Elego relay board class.
 * 
 */
 #ifndef RELAY_H
