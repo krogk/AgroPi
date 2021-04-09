@@ -1,0 +1,144 @@
+\hypertarget{classCppTimer}{}\section{Cpp\+Timer Class Reference}
+\label{classCppTimer}\index{Cpp\+Timer@{Cpp\+Timer}}
+
+
+{\ttfamily \#include $<$Cpp\+Timer.\+h$>$}
+
+
+
+Inheritance diagram for Cpp\+Timer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCppTimer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cpp\+Timer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCppTimer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCppTimer_a327a07c051b9b60fcc61e6fd8f40f381}{Cpp\+Timer} ()
+\item 
+virtual void \hyperlink{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}{start} (long nanosecs, \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t} type=\hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58}{P\+E\+R\+I\+O\+D\+IC})
+\item 
+virtual void \hyperlink{classCppTimer_a4bb95ddee98a536d0818b8f6096bf7e7}{stop} ()
+\item 
+virtual \hyperlink{classCppTimer_a91779a93fce7383a8d832ed481399342}{$\sim$\+Cpp\+Timer} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classCppTimer_ac2665403595b6aee5f581d0ebfeb886c}{timer\+Event} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classCppTimer_a7cf621a640ea9a1e567ee295c7255b5d}{handler} (int sig, siginfo\+\_\+t $\ast$si, void $\ast$uc)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+timer\+\_\+t \hyperlink{classCppTimer_a90ff764263fdde5a0f6e53429c8cf734}{timerid} = 0
+\item 
+struct sigevent \hyperlink{classCppTimer_a9860d3d723ad55982db50c9cde8d725a}{sev}
+\item 
+struct sigaction \hyperlink{classCppTimer_a692a200df6d2c43b72ff1db76458f09f}{sa}
+\item 
+struct itimerspec \hyperlink{classCppTimer_a8774fb5ba9af8f276874c1234741f106}{its}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Timer class which repeatedly fires. It\textquotesingle{}s wrapper around the P\+O\+S\+IX per-\/process timer. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCppTimer_a327a07c051b9b60fcc61e6fd8f40f381}\label{classCppTimer_a327a07c051b9b60fcc61e6fd8f40f381}} 
+\index{Cpp\+Timer@{Cpp\+Timer}!Cpp\+Timer@{Cpp\+Timer}}
+\index{Cpp\+Timer@{Cpp\+Timer}!Cpp\+Timer@{Cpp\+Timer}}
+\subsubsection{\texorpdfstring{Cpp\+Timer()}{CppTimer()}}
+{\footnotesize\ttfamily Cpp\+Timer\+::\+Cpp\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Creates an instance of the timer and connects the signal handler to the timer.
+
+G\+NU G\+E\+N\+E\+R\+AL P\+U\+B\+L\+IC L\+I\+C\+E\+N\+SE Version 3, 29 June 2007
+
+(C) 2020, Bernd Porr \href{mailto:mail@bernporr.me.uk}{\tt mail@bernporr.\+me.\+uk}
+
+This is inspired by the timer\+\_\+create man page. \mbox{\Hypertarget{classCppTimer_a91779a93fce7383a8d832ed481399342}\label{classCppTimer_a91779a93fce7383a8d832ed481399342}} 
+\index{Cpp\+Timer@{Cpp\+Timer}!````~Cpp\+Timer@{$\sim$\+Cpp\+Timer}}
+\index{````~Cpp\+Timer@{$\sim$\+Cpp\+Timer}!Cpp\+Timer@{Cpp\+Timer}}
+\subsubsection{\texorpdfstring{$\sim$\+Cpp\+Timer()}{~CppTimer()}}
+{\footnotesize\ttfamily Cpp\+Timer\+::$\sim$\+Cpp\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor disarms the timer, deletes it and disconnect the signal handler. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCppTimer_a7cf621a640ea9a1e567ee295c7255b5d}\label{classCppTimer_a7cf621a640ea9a1e567ee295c7255b5d}} 
+\index{Cpp\+Timer@{Cpp\+Timer}!handler@{handler}}
+\index{handler@{handler}!Cpp\+Timer@{Cpp\+Timer}}
+\subsubsection{\texorpdfstring{handler()}{handler()}}
+{\footnotesize\ttfamily static void Cpp\+Timer\+::handler (\begin{DoxyParamCaption}\item[{int}]{sig,  }\item[{siginfo\+\_\+t $\ast$}]{si,  }\item[{void $\ast$}]{uc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}\label{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}} 
+\index{Cpp\+Timer@{Cpp\+Timer}!start@{start}}
+\index{start@{start}!Cpp\+Timer@{Cpp\+Timer}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Cpp\+Timer\+::start (\begin{DoxyParamCaption}\item[{long}]{nanosecs,  }\item[{\hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t}}]{type = {\ttfamily \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58}{P\+E\+R\+I\+O\+D\+IC}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Starts the timer. The timer fires first after the specified time in nanoseconds and then at that interval in P\+E\+R\+I\+O\+D\+IC mode. In O\+N\+E\+S\+H\+OT mode the timer fires once after the specified time in nanoseconds. \mbox{\Hypertarget{classCppTimer_a4bb95ddee98a536d0818b8f6096bf7e7}\label{classCppTimer_a4bb95ddee98a536d0818b8f6096bf7e7}} 
+\index{Cpp\+Timer@{Cpp\+Timer}!stop@{stop}}
+\index{stop@{stop}!Cpp\+Timer@{Cpp\+Timer}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Cpp\+Timer\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Stops the timer by disarming it. It can be re-\/started with \hyperlink{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}{start()}. \mbox{\Hypertarget{classCppTimer_ac2665403595b6aee5f581d0ebfeb886c}\label{classCppTimer_ac2665403595b6aee5f581d0ebfeb886c}} 
+\index{Cpp\+Timer@{Cpp\+Timer}!timer\+Event@{timer\+Event}}
+\index{timer\+Event@{timer\+Event}!Cpp\+Timer@{Cpp\+Timer}}
+\subsubsection{\texorpdfstring{timer\+Event()}{timerEvent()}}
+{\footnotesize\ttfamily virtual void Cpp\+Timer\+::timer\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Abstract function which needs to be implemented by the children. This is called every time the timer fires. 
+
+Implemented in \hyperlink{classSampler_addf333c6e247ee3a1def41260caa902a}{Sampler}, and \hyperlink{classCppTimerCallback_af6b39f5eb8e98bfc1b301ac3f25276e9}{Cpp\+Timer\+Callback}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCppTimer_a8774fb5ba9af8f276874c1234741f106}\label{classCppTimer_a8774fb5ba9af8f276874c1234741f106}} 
+\index{Cpp\+Timer@{Cpp\+Timer}!its@{its}}
+\index{its@{its}!Cpp\+Timer@{Cpp\+Timer}}
+\subsubsection{\texorpdfstring{its}{its}}
+{\footnotesize\ttfamily struct itimerspec Cpp\+Timer\+::its\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCppTimer_a692a200df6d2c43b72ff1db76458f09f}\label{classCppTimer_a692a200df6d2c43b72ff1db76458f09f}} 
+\index{Cpp\+Timer@{Cpp\+Timer}!sa@{sa}}
+\index{sa@{sa}!Cpp\+Timer@{Cpp\+Timer}}
+\subsubsection{\texorpdfstring{sa}{sa}}
+{\footnotesize\ttfamily struct sigaction Cpp\+Timer\+::sa\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCppTimer_a9860d3d723ad55982db50c9cde8d725a}\label{classCppTimer_a9860d3d723ad55982db50c9cde8d725a}} 
+\index{Cpp\+Timer@{Cpp\+Timer}!sev@{sev}}
+\index{sev@{sev}!Cpp\+Timer@{Cpp\+Timer}}
+\subsubsection{\texorpdfstring{sev}{sev}}
+{\footnotesize\ttfamily struct sigevent Cpp\+Timer\+::sev\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCppTimer_a90ff764263fdde5a0f6e53429c8cf734}\label{classCppTimer_a90ff764263fdde5a0f6e53429c8cf734}} 
+\index{Cpp\+Timer@{Cpp\+Timer}!timerid@{timerid}}
+\index{timerid@{timerid}!Cpp\+Timer@{Cpp\+Timer}}
+\subsubsection{\texorpdfstring{timerid}{timerid}}
+{\footnotesize\ttfamily timer\+\_\+t Cpp\+Timer\+::timerid = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/utils/\hyperlink{CppTimer_8h}{Cpp\+Timer.\+h}\item 
+src/utils/\hyperlink{CppTimer_8cpp}{Cpp\+Timer.\+cpp}\end{DoxyCompactItemize}

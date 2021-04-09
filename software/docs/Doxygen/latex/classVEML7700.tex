@@ -1,0 +1,740 @@
+\hypertarget{classVEML7700}{}\section{V\+E\+M\+L7700 Class Reference}
+\label{classVEML7700}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+
+
+\hyperlink{classVEML7700}{V\+E\+M\+L7700} class.  
+
+
+
+
+{\ttfamily \#include $<$V\+E\+M\+L7700.\+h$>$}
+
+
+
+Inheritance diagram for V\+E\+M\+L7700\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classVEML7700__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for V\+E\+M\+L7700\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVEML7700__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classVEML7700_a7328cc2563da545e48ea72381dc7bd9b}{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+T} \{ \hyperlink{classVEML7700_a7328cc2563da545e48ea72381dc7bd9ba4c07a5980fa8aa1e6ea3e6e85a26eddf}{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+x1} = 0x0, 
+\hyperlink{classVEML7700_a7328cc2563da545e48ea72381dc7bd9ba80722e7850af774e558b2ef7684a81f4}{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+x2} = 0x1, 
+\hyperlink{classVEML7700_a7328cc2563da545e48ea72381dc7bd9ba393b9df437329457ca21bff810c8b7ee}{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+d8} = 0x2, 
+\hyperlink{classVEML7700_a7328cc2563da545e48ea72381dc7bd9ba0b5e6555c821a9c50adbe60629b15e4b}{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+d4} = 0x3
+ \}
+\item 
+enum \hyperlink{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6e}{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+T\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+\_\+T} \{ \newline
+\hyperlink{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6eac645a7593dba12a6d9410de0d7bd1703}{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+25ms} = 0xc, 
+\hyperlink{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6eac1519635aa44f50fcc4ed955ad1c04e1}{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+50ms} = 0x8, 
+\hyperlink{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6ea400cae3f071cb84b9eb779dae45e2f37}{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+100ms} = 0x0, 
+\hyperlink{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6ea4907ac5a1fae354c96383c7f1a8b7aac}{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+200ms} = 0x1, 
+\newline
+\hyperlink{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6ea0d6e0a5191550c7983a5e6d3e4376495}{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+400ms} = 0x2, 
+\hyperlink{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6eab6d8894bd9f6a20f4a9870751e572fda}{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+800ms} = 0x3
+ \}
+\item 
+enum \hyperlink{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3c}{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+T} \{ \hyperlink{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3cace3cd89e100b478d3cce4c053e8d23e1}{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+1} = 0x0, 
+\hyperlink{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3ca7277f3289328bb4c176243aec5f6015b}{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+2} = 0x1, 
+\hyperlink{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3ca852553ed3cf1f1e0b972fab8899f032f}{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+4} = 0x2, 
+\hyperlink{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3cad5c65357a9ba8cc17a3b8b30169b9590}{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+8} = 0x3
+ \}
+\item 
+enum \hyperlink{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282}{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+M\+O\+D\+E\+\_\+T} \{ \hyperlink{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282a65221f69f2af6a28d95bc4519664bf13}{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+1} = 0x0, 
+\hyperlink{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282af10ede06dc073f78f7ca0ba2d98e3dfb}{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+2} = 0x1, 
+\hyperlink{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282a6b6fde3da4b3e13b0c0207dc31d62e1b}{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+3} = 0x2, 
+\hyperlink{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282aeb27a31fc102f1bfeb57a15726a71c51}{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+4} = 0x3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVEML7700_a6b351807d27da4e07ea3bb93bd3dcbb1}{V\+E\+M\+L7700} (void)
+\item 
+int \hyperlink{classVEML7700_af772ec5fe2bac04428479c9d232f1799}{Initialize} (\hyperlink{classI2CDriver}{I2\+C\+Driver} \&i2c) override
+\item 
+uint8\+\_\+t \hyperlink{classVEML7700_acf024ffb95cc98d82a708f511ec63d4e}{Get\+\_\+\+A\+L\+S\+\_\+\+Lux} (float \&lux)
+\item 
+uint8\+\_\+t \hyperlink{classVEML7700_a0f046c3327cac02f34cf9bfe2ac1231b}{Get\+\_\+\+White\+\_\+\+Lux} (float \&white)
+\item 
+uint8\+\_\+t \hyperlink{classVEML7700_aecbcabefbc9469ea91153723925acbd3}{Set\+\_\+\+Gain} (\hyperlink{classVEML7700_a7328cc2563da545e48ea72381dc7bd9b}{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+T} gain)
+\item 
+uint8\+\_\+t \hyperlink{classVEML7700_a127d85c25f32b5bc0282fb04ad813fd6}{Get\+\_\+\+Gain} (\hyperlink{classVEML7700_a7328cc2563da545e48ea72381dc7bd9b}{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+T} \&gain)
+\item 
+uint8\+\_\+t \hyperlink{classVEML7700_af3f3de94154ca1dd8905e932686ca23c}{Set\+\_\+\+Integration\+\_\+\+Time} (\hyperlink{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6e}{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+T\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+\_\+T} integration\+Time)
+\item 
+uint8\+\_\+t \hyperlink{classVEML7700_a226efafb0bbc8068fbdf02f2d0afc0a0}{Get\+\_\+\+Integration\+\_\+\+Time} (\hyperlink{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6e}{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+T\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+\_\+T} \&integration\+Time)
+\item 
+int \hyperlink{classVEML7700_af4be747d3c60af76ca46c7e4fb859ec7}{Close\+\_\+\+Device} () override
+\item 
+int \hyperlink{classVEML7700_a381358f8998260f4600a0d6713f7ea2a}{Reset} () override
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classVEML7700_ab63c7a3f732769f87046a7fe517fa5d2a89ac7a0c3d5299cc896db94f3f11ad3b}{I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS} = 0x10
+ \}
+\item 
+enum \{ \hyperlink{classVEML7700_a4173dfe44f2cce96da124bdecab4cea9a4f94aea0ea0bd1f3ddde34f141fb40b0}{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+SM} = 0x00, 
+\hyperlink{classVEML7700_a4173dfe44f2cce96da124bdecab4cea9a0cc9ee77ebfb54f10e8e0b310557e8bc}{A\+L\+S\+\_\+\+S\+M\+\_\+\+M\+A\+SK} = 0x1800, 
+\hyperlink{classVEML7700_a4173dfe44f2cce96da124bdecab4cea9a267f0498d6ffd9942d82af76204cdf94}{A\+L\+S\+\_\+\+S\+M\+\_\+\+S\+H\+I\+FT} = 11
+ \}
+\item 
+enum \{ \hyperlink{classVEML7700_a8fc60ed332ae2b50905f477742e155c5ae6b6537105961e230f3c3bd922af64e7}{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+IT} = 0x00, 
+\hyperlink{classVEML7700_a8fc60ed332ae2b50905f477742e155c5a3a76e5f3bed2f727dc77529203b4709d}{A\+L\+S\+\_\+\+I\+T\+\_\+\+M\+A\+SK} = 0x03c0, 
+\hyperlink{classVEML7700_a8fc60ed332ae2b50905f477742e155c5a6a0ef54484f8ca1e5e9fc40e5268ea9b}{A\+L\+S\+\_\+\+I\+T\+\_\+\+S\+H\+I\+FT} = 6
+ \}
+\item 
+enum \{ \hyperlink{classVEML7700_a29c6b040874a46d6911a8e78566057b7a4c3ed42cb54ed1d56e233cb2b63a7af9}{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+P\+E\+RS} = 0x00, 
+\hyperlink{classVEML7700_a29c6b040874a46d6911a8e78566057b7a3e52078f4c2aa271762fa258b542756e}{A\+L\+S\+\_\+\+P\+E\+R\+S\+\_\+\+M\+A\+SK} = 0x0030, 
+\hyperlink{classVEML7700_a29c6b040874a46d6911a8e78566057b7aac2f5794157be86c64a3304676a50801}{A\+L\+S\+\_\+\+P\+E\+R\+S\+\_\+\+S\+H\+I\+FT} = 4
+ \}
+\item 
+enum \{ \hyperlink{classVEML7700_a6e9e3003ac094c096b9095a3ceb9faaeab1bae27fdd79e5fd8f79dfa27cbdb147}{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+EN} = 0x00, 
+\hyperlink{classVEML7700_a6e9e3003ac094c096b9095a3ceb9faaea6f3348962ed45d34cafcdeff49792472}{A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+E\+N\+\_\+\+M\+A\+SK} = 0x0002, 
+\hyperlink{classVEML7700_a6e9e3003ac094c096b9095a3ceb9faaea698db2febefb152579472c9aeee16f71}{A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+E\+N\+\_\+\+S\+H\+I\+FT} = 1
+ \}
+\item 
+enum \{ \hyperlink{classVEML7700_afba237ed01b4949e9aeb96151f9273b5ae4acf5f5dc8e4039bdc97cdb84c3d668}{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+SD} = 0x00, 
+\hyperlink{classVEML7700_afba237ed01b4949e9aeb96151f9273b5a2fd5844c6a640f48b67c7bd56f2cc8c0}{A\+L\+S\+\_\+\+S\+D\+\_\+\+M\+A\+SK} = 0x0001, 
+\hyperlink{classVEML7700_afba237ed01b4949e9aeb96151f9273b5a786e4e2edfd8bbe8e033a3aec13f410a}{A\+L\+S\+\_\+\+S\+D\+\_\+\+S\+H\+I\+FT} = 0
+ \}
+\item 
+enum \{ \hyperlink{classVEML7700_af00a284cf91c8f469f2ff1af9805fdfbaf2d5b2cc1ae968d5228c83322be1ed9b}{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+WH} = 0x01
+ \}
+\item 
+enum \{ \hyperlink{classVEML7700_a660a8a0b8955a6a316aa65fbceda8c0fa33d1cafd2cc649dfc04a2e5efdde55f7}{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+WL} = 0x02
+ \}
+\item 
+enum \{ \hyperlink{classVEML7700_ab29ccdbcd4e170ac8663965e40523012a10105e35082facc6bce9f96ce60e0113}{C\+O\+M\+M\+A\+N\+D\+\_\+\+P\+SM} = 0x03, 
+\hyperlink{classVEML7700_ab29ccdbcd4e170ac8663965e40523012a0cf5a09e1bd111e893e0cfc535c227dc}{P\+S\+M\+\_\+\+M\+A\+SK} = 0x0006, 
+\hyperlink{classVEML7700_ab29ccdbcd4e170ac8663965e40523012a100f7cf3af8443f352a3030a062e5d17}{P\+S\+M\+\_\+\+S\+H\+I\+FT} = 1
+ \}
+\item 
+enum \{ \hyperlink{classVEML7700_ab9eb0034cdb5c017a8fab52a50390bafa8222ed77749165e06f68103b1908a0ab}{C\+O\+M\+M\+A\+N\+D\+\_\+\+P\+S\+M\+\_\+\+EN} = 0x03, 
+\hyperlink{classVEML7700_ab9eb0034cdb5c017a8fab52a50390bafa4430a48be44ce68abe4f34c61340af33}{P\+S\+M\+\_\+\+E\+N\+\_\+\+M\+A\+SK} = 0x0001, 
+\hyperlink{classVEML7700_ab9eb0034cdb5c017a8fab52a50390bafaff513cb99fc1bd99f06cf6ed064e3750}{P\+S\+M\+\_\+\+E\+N\+\_\+\+S\+H\+I\+FT} = 0
+ \}
+\item 
+enum \{ \hyperlink{classVEML7700_a2b96be5d4a52744ab8cfa400b4bbd623a0b4d97d359ebed7dda6535f1fdf29887}{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+LS} = 0x04
+ \}
+\item 
+enum \{ \hyperlink{classVEML7700_addfea724a5192296d3dcc9392e420d0aa45821ad771eb9fdf961211ef411c861d}{C\+O\+M\+M\+A\+N\+D\+\_\+\+W\+H\+I\+TE} = 0x05
+ \}
+\item 
+enum \{ \hyperlink{classVEML7700_a97d56ee9f3e176b36b73d4da40fa3d4aaeb3f59e8f54b7e72689ee0f25ed79307}{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+F\+\_\+L} = 0x06, 
+\hyperlink{classVEML7700_a97d56ee9f3e176b36b73d4da40fa3d4aa806747ccccccd1853f97cccc26151ff1}{A\+L\+S\+\_\+\+I\+F\+\_\+\+L\+\_\+\+M\+A\+SK} = 0x8000, 
+\hyperlink{classVEML7700_a97d56ee9f3e176b36b73d4da40fa3d4aa236cddac0f7c78f37a578436901bcb68}{A\+L\+S\+\_\+\+I\+F\+\_\+\+L\+\_\+\+S\+H\+I\+FT} = 15
+ \}
+\item 
+enum \{ \hyperlink{classVEML7700_afecc79a3882992a337dcb7fbd0f29b9ba2ddb21b523a11128c8b09fb056ec6e26}{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+F\+\_\+H} = 0x06, 
+\hyperlink{classVEML7700_afecc79a3882992a337dcb7fbd0f29b9ba1d0aa5abc421a84af1f7b07a1af45fd7}{A\+L\+S\+\_\+\+I\+F\+\_\+\+H\+\_\+\+M\+A\+SK} = 0x4000, 
+\hyperlink{classVEML7700_afecc79a3882992a337dcb7fbd0f29b9ba27a522f8d1bc1192f2902c03a913137d}{A\+L\+S\+\_\+\+I\+F\+\_\+\+H\+\_\+\+S\+H\+I\+FT} = 14
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{classVEML7700_a6a5e3bcbf41bc103823ca4d9f26ce31f}{Get\+\_\+\+A\+LS} (uint16\+\_\+t \&als)
+\item 
+uint8\+\_\+t \hyperlink{classVEML7700_aaee2f4b39b9391548ccb96bcdaebe2a0}{Get\+\_\+\+White} (uint16\+\_\+t \&white)
+\item 
+void \hyperlink{classVEML7700_a1e7056289f5d716f0d120cc5798d664a}{Compute\+\_\+\+Lux} (uint16\+\_\+t raw\+\_\+counts, float \&lux)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{classVEML7700_a8e5c194037bceb4544cc1a7b05f697bb}{m\+\_\+register\+V\+E\+M\+L7700} \mbox{[}4\mbox{]}
+\item 
+\hyperlink{classI2CDriver}{I2\+C\+Driver} $\ast$ \hyperlink{classVEML7700_a06777141dab95a6244cc75e97a66f238}{m\+\_\+p\+I2\+Cdriver} = nullptr
+\item 
+int \hyperlink{classVEML7700_ae6d0418ab65f7fdfb21079d8637334af}{m\+\_\+fd}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classVEML7700}{V\+E\+M\+L7700} class. 
+
+\begin{DoxyAuthor}{Author}
+Kamil Rog
+\end{DoxyAuthor}
+This is class is responsilbe for the \hyperlink{classVEML7700}{V\+E\+M\+L7700} light sensor.
+
+P\+R\+O\+T\+O\+C\+OL -\/ I2C\hypertarget{classVEML7700_VEML7700}{}\subsection{Registers}\label{classVEML7700_VEML7700}
+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+ON R\+E\+G\+I\+S\+T\+ER \#0
+
+B\+IT $\vert$ R\+E\+G\+I\+S\+T\+ER N\+A\+ME $\vert$ D\+E\+S\+C\+R\+I\+P\+T\+I\+ON 15 \+: 13 $\vert$ Reserved $\vert$ Set 000b 12 \+: 11 $\vert$ A\+L\+S\+\_\+\+G\+A\+IN $\vert$ See Enums for options 10 $\vert$ Reserved $\vert$ Set 0b 9 \+: 6 $\vert$ A\+L\+S\+\_\+\+IT $\vert$ See Enums for options 3 \+: 2 $\vert$ Reserved $\vert$ Set 00b 1 $\vert$ A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+EN $\vert$ See Enums for options 0 $\vert$ A\+L\+S\+\_\+\+SD $\vert$ See Enums for options
+
+C\+O\+M\+M\+A\+ND R\+E\+G\+I\+S\+T\+ER 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVEML7700_ab63c7a3f732769f87046a7fe517fa5d2}\label{classVEML7700_ab63c7a3f732769f87046a7fe517fa5d2}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS@{I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS@{I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS}}}\mbox{\Hypertarget{classVEML7700_ab63c7a3f732769f87046a7fe517fa5d2a89ac7a0c3d5299cc896db94f3f11ad3b}\label{classVEML7700_ab63c7a3f732769f87046a7fe517fa5d2a89ac7a0c3d5299cc896db94f3f11ad3b}} 
+I2\+C\+\_\+\+A\+D\+D\+R\+E\+SS&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_a4173dfe44f2cce96da124bdecab4cea9}\label{classVEML7700_a4173dfe44f2cce96da124bdecab4cea9}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+SM@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+SM}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+SM@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+SM}}}\mbox{\Hypertarget{classVEML7700_a4173dfe44f2cce96da124bdecab4cea9a4f94aea0ea0bd1f3ddde34f141fb40b0}\label{classVEML7700_a4173dfe44f2cce96da124bdecab4cea9a4f94aea0ea0bd1f3ddde34f141fb40b0}} 
+C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+SM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+S\+M\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+S\+M\+\_\+\+M\+A\+SK}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+S\+M\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+S\+M\+\_\+\+M\+A\+SK}}}\mbox{\Hypertarget{classVEML7700_a4173dfe44f2cce96da124bdecab4cea9a0cc9ee77ebfb54f10e8e0b310557e8bc}\label{classVEML7700_a4173dfe44f2cce96da124bdecab4cea9a0cc9ee77ebfb54f10e8e0b310557e8bc}} 
+A\+L\+S\+\_\+\+S\+M\+\_\+\+M\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+S\+M\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+S\+M\+\_\+\+S\+H\+I\+FT}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+S\+M\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+S\+M\+\_\+\+S\+H\+I\+FT}}}\mbox{\Hypertarget{classVEML7700_a4173dfe44f2cce96da124bdecab4cea9a267f0498d6ffd9942d82af76204cdf94}\label{classVEML7700_a4173dfe44f2cce96da124bdecab4cea9a267f0498d6ffd9942d82af76204cdf94}} 
+A\+L\+S\+\_\+\+S\+M\+\_\+\+S\+H\+I\+FT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_a8fc60ed332ae2b50905f477742e155c5}\label{classVEML7700_a8fc60ed332ae2b50905f477742e155c5}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+IT@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+IT}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+IT@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+IT}}}\mbox{\Hypertarget{classVEML7700_a8fc60ed332ae2b50905f477742e155c5ae6b6537105961e230f3c3bd922af64e7}\label{classVEML7700_a8fc60ed332ae2b50905f477742e155c5ae6b6537105961e230f3c3bd922af64e7}} 
+C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+IT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+T\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+I\+T\+\_\+\+M\+A\+SK}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+T\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+I\+T\+\_\+\+M\+A\+SK}}}\mbox{\Hypertarget{classVEML7700_a8fc60ed332ae2b50905f477742e155c5a3a76e5f3bed2f727dc77529203b4709d}\label{classVEML7700_a8fc60ed332ae2b50905f477742e155c5a3a76e5f3bed2f727dc77529203b4709d}} 
+A\+L\+S\+\_\+\+I\+T\+\_\+\+M\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+T\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+I\+T\+\_\+\+S\+H\+I\+FT}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+T\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+I\+T\+\_\+\+S\+H\+I\+FT}}}\mbox{\Hypertarget{classVEML7700_a8fc60ed332ae2b50905f477742e155c5a6a0ef54484f8ca1e5e9fc40e5268ea9b}\label{classVEML7700_a8fc60ed332ae2b50905f477742e155c5a6a0ef54484f8ca1e5e9fc40e5268ea9b}} 
+A\+L\+S\+\_\+\+I\+T\+\_\+\+S\+H\+I\+FT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_a29c6b040874a46d6911a8e78566057b7}\label{classVEML7700_a29c6b040874a46d6911a8e78566057b7}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+P\+E\+RS@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+P\+E\+RS}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+P\+E\+RS@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+P\+E\+RS}}}\mbox{\Hypertarget{classVEML7700_a29c6b040874a46d6911a8e78566057b7a4c3ed42cb54ed1d56e233cb2b63a7af9}\label{classVEML7700_a29c6b040874a46d6911a8e78566057b7a4c3ed42cb54ed1d56e233cb2b63a7af9}} 
+C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+P\+E\+RS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+P\+E\+R\+S\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+P\+E\+R\+S\+\_\+\+M\+A\+SK}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+P\+E\+R\+S\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+P\+E\+R\+S\+\_\+\+M\+A\+SK}}}\mbox{\Hypertarget{classVEML7700_a29c6b040874a46d6911a8e78566057b7a3e52078f4c2aa271762fa258b542756e}\label{classVEML7700_a29c6b040874a46d6911a8e78566057b7a3e52078f4c2aa271762fa258b542756e}} 
+A\+L\+S\+\_\+\+P\+E\+R\+S\+\_\+\+M\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+P\+E\+R\+S\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+P\+E\+R\+S\+\_\+\+S\+H\+I\+FT}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+P\+E\+R\+S\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+P\+E\+R\+S\+\_\+\+S\+H\+I\+FT}}}\mbox{\Hypertarget{classVEML7700_a29c6b040874a46d6911a8e78566057b7aac2f5794157be86c64a3304676a50801}\label{classVEML7700_a29c6b040874a46d6911a8e78566057b7aac2f5794157be86c64a3304676a50801}} 
+A\+L\+S\+\_\+\+P\+E\+R\+S\+\_\+\+S\+H\+I\+FT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_a6e9e3003ac094c096b9095a3ceb9faae}\label{classVEML7700_a6e9e3003ac094c096b9095a3ceb9faae}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+EN@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+EN}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+EN@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+EN}}}\mbox{\Hypertarget{classVEML7700_a6e9e3003ac094c096b9095a3ceb9faaeab1bae27fdd79e5fd8f79dfa27cbdb147}\label{classVEML7700_a6e9e3003ac094c096b9095a3ceb9faaeab1bae27fdd79e5fd8f79dfa27cbdb147}} 
+C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+EN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+E\+N\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+E\+N\+\_\+\+M\+A\+SK}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+E\+N\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+E\+N\+\_\+\+M\+A\+SK}}}\mbox{\Hypertarget{classVEML7700_a6e9e3003ac094c096b9095a3ceb9faaea6f3348962ed45d34cafcdeff49792472}\label{classVEML7700_a6e9e3003ac094c096b9095a3ceb9faaea6f3348962ed45d34cafcdeff49792472}} 
+A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+E\+N\+\_\+\+M\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+E\+N\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+E\+N\+\_\+\+S\+H\+I\+FT}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+E\+N\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+E\+N\+\_\+\+S\+H\+I\+FT}}}\mbox{\Hypertarget{classVEML7700_a6e9e3003ac094c096b9095a3ceb9faaea698db2febefb152579472c9aeee16f71}\label{classVEML7700_a6e9e3003ac094c096b9095a3ceb9faaea698db2febefb152579472c9aeee16f71}} 
+A\+L\+S\+\_\+\+I\+N\+T\+\_\+\+E\+N\+\_\+\+S\+H\+I\+FT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_afba237ed01b4949e9aeb96151f9273b5}\label{classVEML7700_afba237ed01b4949e9aeb96151f9273b5}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+SD@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+SD}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+SD@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+SD}}}\mbox{\Hypertarget{classVEML7700_afba237ed01b4949e9aeb96151f9273b5ae4acf5f5dc8e4039bdc97cdb84c3d668}\label{classVEML7700_afba237ed01b4949e9aeb96151f9273b5ae4acf5f5dc8e4039bdc97cdb84c3d668}} 
+C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+SD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+S\+D\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+S\+D\+\_\+\+M\+A\+SK}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+S\+D\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+S\+D\+\_\+\+M\+A\+SK}}}\mbox{\Hypertarget{classVEML7700_afba237ed01b4949e9aeb96151f9273b5a2fd5844c6a640f48b67c7bd56f2cc8c0}\label{classVEML7700_afba237ed01b4949e9aeb96151f9273b5a2fd5844c6a640f48b67c7bd56f2cc8c0}} 
+A\+L\+S\+\_\+\+S\+D\+\_\+\+M\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+S\+D\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+S\+D\+\_\+\+S\+H\+I\+FT}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+S\+D\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+S\+D\+\_\+\+S\+H\+I\+FT}}}\mbox{\Hypertarget{classVEML7700_afba237ed01b4949e9aeb96151f9273b5a786e4e2edfd8bbe8e033a3aec13f410a}\label{classVEML7700_afba237ed01b4949e9aeb96151f9273b5a786e4e2edfd8bbe8e033a3aec13f410a}} 
+A\+L\+S\+\_\+\+S\+D\+\_\+\+S\+H\+I\+FT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_af00a284cf91c8f469f2ff1af9805fdfb}\label{classVEML7700_af00a284cf91c8f469f2ff1af9805fdfb}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+WH@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+WH}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+WH@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+WH}}}\mbox{\Hypertarget{classVEML7700_af00a284cf91c8f469f2ff1af9805fdfbaf2d5b2cc1ae968d5228c83322be1ed9b}\label{classVEML7700_af00a284cf91c8f469f2ff1af9805fdfbaf2d5b2cc1ae968d5228c83322be1ed9b}} 
+C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+WH&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_a660a8a0b8955a6a316aa65fbceda8c0f}\label{classVEML7700_a660a8a0b8955a6a316aa65fbceda8c0f}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+WL@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+WL}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+WL@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+WL}}}\mbox{\Hypertarget{classVEML7700_a660a8a0b8955a6a316aa65fbceda8c0fa33d1cafd2cc649dfc04a2e5efdde55f7}\label{classVEML7700_a660a8a0b8955a6a316aa65fbceda8c0fa33d1cafd2cc649dfc04a2e5efdde55f7}} 
+C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+WL&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_ab29ccdbcd4e170ac8663965e40523012}\label{classVEML7700_ab29ccdbcd4e170ac8663965e40523012}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+P\+SM@{C\+O\+M\+M\+A\+N\+D\+\_\+\+P\+SM}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!C\+O\+M\+M\+A\+N\+D\+\_\+\+P\+SM@{C\+O\+M\+M\+A\+N\+D\+\_\+\+P\+SM}}}\mbox{\Hypertarget{classVEML7700_ab29ccdbcd4e170ac8663965e40523012a10105e35082facc6bce9f96ce60e0113}\label{classVEML7700_ab29ccdbcd4e170ac8663965e40523012a10105e35082facc6bce9f96ce60e0113}} 
+C\+O\+M\+M\+A\+N\+D\+\_\+\+P\+SM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+S\+M\+\_\+\+M\+A\+SK@{P\+S\+M\+\_\+\+M\+A\+SK}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!P\+S\+M\+\_\+\+M\+A\+SK@{P\+S\+M\+\_\+\+M\+A\+SK}}}\mbox{\Hypertarget{classVEML7700_ab29ccdbcd4e170ac8663965e40523012a0cf5a09e1bd111e893e0cfc535c227dc}\label{classVEML7700_ab29ccdbcd4e170ac8663965e40523012a0cf5a09e1bd111e893e0cfc535c227dc}} 
+P\+S\+M\+\_\+\+M\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+S\+M\+\_\+\+S\+H\+I\+FT@{P\+S\+M\+\_\+\+S\+H\+I\+FT}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!P\+S\+M\+\_\+\+S\+H\+I\+FT@{P\+S\+M\+\_\+\+S\+H\+I\+FT}}}\mbox{\Hypertarget{classVEML7700_ab29ccdbcd4e170ac8663965e40523012a100f7cf3af8443f352a3030a062e5d17}\label{classVEML7700_ab29ccdbcd4e170ac8663965e40523012a100f7cf3af8443f352a3030a062e5d17}} 
+P\+S\+M\+\_\+\+S\+H\+I\+FT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_ab9eb0034cdb5c017a8fab52a50390baf}\label{classVEML7700_ab9eb0034cdb5c017a8fab52a50390baf}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+P\+S\+M\+\_\+\+EN@{C\+O\+M\+M\+A\+N\+D\+\_\+\+P\+S\+M\+\_\+\+EN}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!C\+O\+M\+M\+A\+N\+D\+\_\+\+P\+S\+M\+\_\+\+EN@{C\+O\+M\+M\+A\+N\+D\+\_\+\+P\+S\+M\+\_\+\+EN}}}\mbox{\Hypertarget{classVEML7700_ab9eb0034cdb5c017a8fab52a50390bafa8222ed77749165e06f68103b1908a0ab}\label{classVEML7700_ab9eb0034cdb5c017a8fab52a50390bafa8222ed77749165e06f68103b1908a0ab}} 
+C\+O\+M\+M\+A\+N\+D\+\_\+\+P\+S\+M\+\_\+\+EN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+S\+M\+\_\+\+E\+N\+\_\+\+M\+A\+SK@{P\+S\+M\+\_\+\+E\+N\+\_\+\+M\+A\+SK}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!P\+S\+M\+\_\+\+E\+N\+\_\+\+M\+A\+SK@{P\+S\+M\+\_\+\+E\+N\+\_\+\+M\+A\+SK}}}\mbox{\Hypertarget{classVEML7700_ab9eb0034cdb5c017a8fab52a50390bafa4430a48be44ce68abe4f34c61340af33}\label{classVEML7700_ab9eb0034cdb5c017a8fab52a50390bafa4430a48be44ce68abe4f34c61340af33}} 
+P\+S\+M\+\_\+\+E\+N\+\_\+\+M\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+S\+M\+\_\+\+E\+N\+\_\+\+S\+H\+I\+FT@{P\+S\+M\+\_\+\+E\+N\+\_\+\+S\+H\+I\+FT}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!P\+S\+M\+\_\+\+E\+N\+\_\+\+S\+H\+I\+FT@{P\+S\+M\+\_\+\+E\+N\+\_\+\+S\+H\+I\+FT}}}\mbox{\Hypertarget{classVEML7700_ab9eb0034cdb5c017a8fab52a50390bafaff513cb99fc1bd99f06cf6ed064e3750}\label{classVEML7700_ab9eb0034cdb5c017a8fab52a50390bafaff513cb99fc1bd99f06cf6ed064e3750}} 
+P\+S\+M\+\_\+\+E\+N\+\_\+\+S\+H\+I\+FT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_a2b96be5d4a52744ab8cfa400b4bbd623}\label{classVEML7700_a2b96be5d4a52744ab8cfa400b4bbd623}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+LS@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+LS}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+LS@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+LS}}}\mbox{\Hypertarget{classVEML7700_a2b96be5d4a52744ab8cfa400b4bbd623a0b4d97d359ebed7dda6535f1fdf29887}\label{classVEML7700_a2b96be5d4a52744ab8cfa400b4bbd623a0b4d97d359ebed7dda6535f1fdf29887}} 
+C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+LS&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_addfea724a5192296d3dcc9392e420d0a}\label{classVEML7700_addfea724a5192296d3dcc9392e420d0a}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+W\+H\+I\+TE@{C\+O\+M\+M\+A\+N\+D\+\_\+\+W\+H\+I\+TE}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!C\+O\+M\+M\+A\+N\+D\+\_\+\+W\+H\+I\+TE@{C\+O\+M\+M\+A\+N\+D\+\_\+\+W\+H\+I\+TE}}}\mbox{\Hypertarget{classVEML7700_addfea724a5192296d3dcc9392e420d0aa45821ad771eb9fdf961211ef411c861d}\label{classVEML7700_addfea724a5192296d3dcc9392e420d0aa45821ad771eb9fdf961211ef411c861d}} 
+C\+O\+M\+M\+A\+N\+D\+\_\+\+W\+H\+I\+TE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_a97d56ee9f3e176b36b73d4da40fa3d4a}\label{classVEML7700_a97d56ee9f3e176b36b73d4da40fa3d4a}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+F\+\_\+L@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+F\+\_\+L}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+F\+\_\+L@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+F\+\_\+L}}}\mbox{\Hypertarget{classVEML7700_a97d56ee9f3e176b36b73d4da40fa3d4aaeb3f59e8f54b7e72689ee0f25ed79307}\label{classVEML7700_a97d56ee9f3e176b36b73d4da40fa3d4aaeb3f59e8f54b7e72689ee0f25ed79307}} 
+C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+F\+\_\+L&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+F\+\_\+\+L\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+I\+F\+\_\+\+L\+\_\+\+M\+A\+SK}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+F\+\_\+\+L\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+I\+F\+\_\+\+L\+\_\+\+M\+A\+SK}}}\mbox{\Hypertarget{classVEML7700_a97d56ee9f3e176b36b73d4da40fa3d4aa806747ccccccd1853f97cccc26151ff1}\label{classVEML7700_a97d56ee9f3e176b36b73d4da40fa3d4aa806747ccccccd1853f97cccc26151ff1}} 
+A\+L\+S\+\_\+\+I\+F\+\_\+\+L\+\_\+\+M\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+F\+\_\+\+L\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+I\+F\+\_\+\+L\+\_\+\+S\+H\+I\+FT}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+F\+\_\+\+L\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+I\+F\+\_\+\+L\+\_\+\+S\+H\+I\+FT}}}\mbox{\Hypertarget{classVEML7700_a97d56ee9f3e176b36b73d4da40fa3d4aa236cddac0f7c78f37a578436901bcb68}\label{classVEML7700_a97d56ee9f3e176b36b73d4da40fa3d4aa236cddac0f7c78f37a578436901bcb68}} 
+A\+L\+S\+\_\+\+I\+F\+\_\+\+L\+\_\+\+S\+H\+I\+FT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_afecc79a3882992a337dcb7fbd0f29b9b}\label{classVEML7700_afecc79a3882992a337dcb7fbd0f29b9b}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+F\+\_\+H@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+F\+\_\+H}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+F\+\_\+H@{C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+F\+\_\+H}}}\mbox{\Hypertarget{classVEML7700_afecc79a3882992a337dcb7fbd0f29b9ba2ddb21b523a11128c8b09fb056ec6e26}\label{classVEML7700_afecc79a3882992a337dcb7fbd0f29b9ba2ddb21b523a11128c8b09fb056ec6e26}} 
+C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+L\+S\+\_\+\+I\+F\+\_\+H&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+F\+\_\+\+H\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+I\+F\+\_\+\+H\+\_\+\+M\+A\+SK}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+F\+\_\+\+H\+\_\+\+M\+A\+SK@{A\+L\+S\+\_\+\+I\+F\+\_\+\+H\+\_\+\+M\+A\+SK}}}\mbox{\Hypertarget{classVEML7700_afecc79a3882992a337dcb7fbd0f29b9ba1d0aa5abc421a84af1f7b07a1af45fd7}\label{classVEML7700_afecc79a3882992a337dcb7fbd0f29b9ba1d0aa5abc421a84af1f7b07a1af45fd7}} 
+A\+L\+S\+\_\+\+I\+F\+\_\+\+H\+\_\+\+M\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+F\+\_\+\+H\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+I\+F\+\_\+\+H\+\_\+\+S\+H\+I\+FT}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+F\+\_\+\+H\+\_\+\+S\+H\+I\+FT@{A\+L\+S\+\_\+\+I\+F\+\_\+\+H\+\_\+\+S\+H\+I\+FT}}}\mbox{\Hypertarget{classVEML7700_afecc79a3882992a337dcb7fbd0f29b9ba27a522f8d1bc1192f2902c03a913137d}\label{classVEML7700_afecc79a3882992a337dcb7fbd0f29b9ba27a522f8d1bc1192f2902c03a913137d}} 
+A\+L\+S\+\_\+\+I\+F\+\_\+\+H\+\_\+\+S\+H\+I\+FT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_a7328cc2563da545e48ea72381dc7bd9b}\label{classVEML7700_a7328cc2563da545e48ea72381dc7bd9b}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+T@{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+T}}
+\index{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+T@{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+T}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+T}{ALS\_GAIN\_T}}
+{\footnotesize\ttfamily enum \hyperlink{classVEML7700_a7328cc2563da545e48ea72381dc7bd9b}{V\+E\+M\+L7700\+::\+A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+T}}
+
+Gain Setting Enumeration \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+x1@{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+x1}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+x1@{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+x1}}}\mbox{\Hypertarget{classVEML7700_a7328cc2563da545e48ea72381dc7bd9ba4c07a5980fa8aa1e6ea3e6e85a26eddf}\label{classVEML7700_a7328cc2563da545e48ea72381dc7bd9ba4c07a5980fa8aa1e6ea3e6e85a26eddf}} 
+A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+x1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+x2@{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+x2}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+x2@{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+x2}}}\mbox{\Hypertarget{classVEML7700_a7328cc2563da545e48ea72381dc7bd9ba80722e7850af774e558b2ef7684a81f4}\label{classVEML7700_a7328cc2563da545e48ea72381dc7bd9ba80722e7850af774e558b2ef7684a81f4}} 
+A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+x2&x 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+d8@{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+d8}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+d8@{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+d8}}}\mbox{\Hypertarget{classVEML7700_a7328cc2563da545e48ea72381dc7bd9ba393b9df437329457ca21bff810c8b7ee}\label{classVEML7700_a7328cc2563da545e48ea72381dc7bd9ba393b9df437329457ca21bff810c8b7ee}} 
+A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+d8&x 2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+d4@{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+d4}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+d4@{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+d4}}}\mbox{\Hypertarget{classVEML7700_a7328cc2563da545e48ea72381dc7bd9ba0b5e6555c821a9c50adbe60629b15e4b}\label{classVEML7700_a7328cc2563da545e48ea72381dc7bd9ba0b5e6555c821a9c50adbe60629b15e4b}} 
+A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+d4&x 1/8 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6e}\label{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6e}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+T\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+\_\+T@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+T\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+\_\+T}}
+\index{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+T\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+\_\+T@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+T\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+\_\+T}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+T\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+\_\+T}{ALS\_INTEGRTATION\_TIME\_T}}
+{\footnotesize\ttfamily enum \hyperlink{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6e}{V\+E\+M\+L7700\+::\+A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+T\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+\_\+T}}
+
+Integration time Enumeration \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+25ms@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+25ms}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+25ms@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+25ms}}}\mbox{\Hypertarget{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6eac645a7593dba12a6d9410de0d7bd1703}\label{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6eac645a7593dba12a6d9410de0d7bd1703}} 
+A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+25ms&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+50ms@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+50ms}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+50ms@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+50ms}}}\mbox{\Hypertarget{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6eac1519635aa44f50fcc4ed955ad1c04e1}\label{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6eac1519635aa44f50fcc4ed955ad1c04e1}} 
+A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+50ms&25 mS \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+100ms@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+100ms}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+100ms@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+100ms}}}\mbox{\Hypertarget{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6ea400cae3f071cb84b9eb779dae45e2f37}\label{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6ea400cae3f071cb84b9eb779dae45e2f37}} 
+A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+100ms&50 mS \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+200ms@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+200ms}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+200ms@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+200ms}}}\mbox{\Hypertarget{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6ea4907ac5a1fae354c96383c7f1a8b7aac}\label{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6ea4907ac5a1fae354c96383c7f1a8b7aac}} 
+A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+200ms&100 mS \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+400ms@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+400ms}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+400ms@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+400ms}}}\mbox{\Hypertarget{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6ea0d6e0a5191550c7983a5e6d3e4376495}\label{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6ea0d6e0a5191550c7983a5e6d3e4376495}} 
+A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+400ms&200 mS \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+800ms@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+800ms}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+800ms@{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+800ms}}}\mbox{\Hypertarget{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6eab6d8894bd9f6a20f4a9870751e572fda}\label{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6eab6d8894bd9f6a20f4a9870751e572fda}} 
+A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+I\+O\+N\+\_\+800ms&400 mS \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3c}\label{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3c}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+T@{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+T}}
+\index{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+T@{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+T}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+T}{ALS\_PERSISTENCE\_T}}
+{\footnotesize\ttfamily enum \hyperlink{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3c}{V\+E\+M\+L7700\+::\+A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+T}}
+
+Integration time Enumeration \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+1@{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+1}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+1@{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+1}}}\mbox{\Hypertarget{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3cace3cd89e100b478d3cce4c053e8d23e1}\label{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3cace3cd89e100b478d3cce4c053e8d23e1}} 
+A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+2@{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+2}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+2@{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+2}}}\mbox{\Hypertarget{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3ca7277f3289328bb4c176243aec5f6015b}\label{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3ca7277f3289328bb4c176243aec5f6015b}} 
+A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+4@{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+4}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+4@{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+4}}}\mbox{\Hypertarget{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3ca852553ed3cf1f1e0b972fab8899f032f}\label{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3ca852553ed3cf1f1e0b972fab8899f032f}} 
+A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+8@{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+8}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+8@{A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+8}}}\mbox{\Hypertarget{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3cad5c65357a9ba8cc17a3b8b30169b9590}\label{classVEML7700_a4f3d9c3d3014149a380dabbf35decb3cad5c65357a9ba8cc17a3b8b30169b9590}} 
+A\+L\+S\+\_\+\+P\+E\+R\+S\+I\+S\+T\+E\+N\+C\+E\+\_\+8&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282}\label{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+M\+O\+D\+E\+\_\+T@{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+M\+O\+D\+E\+\_\+T}}
+\index{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+M\+O\+D\+E\+\_\+T@{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+M\+O\+D\+E\+\_\+T}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+M\+O\+D\+E\+\_\+T}{ALS\_POWERMODE\_T}}
+{\footnotesize\ttfamily enum \hyperlink{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282}{V\+E\+M\+L7700\+::\+A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+M\+O\+D\+E\+\_\+T}}
+
+Power Enumeration \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+1@{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+1}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+1@{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+1}}}\mbox{\Hypertarget{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282a65221f69f2af6a28d95bc4519664bf13}\label{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282a65221f69f2af6a28d95bc4519664bf13}} 
+A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+2@{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+2}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+2@{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+2}}}\mbox{\Hypertarget{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282af10ede06dc073f78f7ca0ba2d98e3dfb}\label{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282af10ede06dc073f78f7ca0ba2d98e3dfb}} 
+A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+3@{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+3}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+3@{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+3}}}\mbox{\Hypertarget{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282a6b6fde3da4b3e13b0c0207dc31d62e1b}\label{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282a6b6fde3da4b3e13b0c0207dc31d62e1b}} 
+A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+4@{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+4}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+4@{A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+4}}}\mbox{\Hypertarget{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282aeb27a31fc102f1bfeb57a15726a71c51}\label{classVEML7700_ab2266ec2b4e62447d74a5dce5cc34282aeb27a31fc102f1bfeb57a15726a71c51}} 
+A\+L\+S\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+4&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVEML7700_a6b351807d27da4e07ea3bb93bd3dcbb1}\label{classVEML7700_a6b351807d27da4e07ea3bb93bd3dcbb1}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{V\+E\+M\+L7700()}{VEML7700()}}
+{\footnotesize\ttfamily V\+E\+M\+L7700\+::\+V\+E\+M\+L7700 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVEML7700_af4be747d3c60af76ca46c7e4fb859ec7}\label{classVEML7700_af4be747d3c60af76ca46c7e4fb859ec7}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!Close\+\_\+\+Device@{Close\+\_\+\+Device}}
+\index{Close\+\_\+\+Device@{Close\+\_\+\+Device}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{Close\+\_\+\+Device()}{Close\_Device()}}
+{\footnotesize\ttfamily int V\+E\+M\+L7700\+::\+Close\+\_\+\+Device (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Close Device Closes file descriptor
+
+\begin{DoxyReturn}{Returns}
+Status of close operation 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classI2CSensor_acee1633439e97bae412441ac085fabba}{I2\+C\+Sensor}.
+
+\mbox{\Hypertarget{classVEML7700_a1e7056289f5d716f0d120cc5798d664a}\label{classVEML7700_a1e7056289f5d716f0d120cc5798d664a}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!Compute\+\_\+\+Lux@{Compute\+\_\+\+Lux}}
+\index{Compute\+\_\+\+Lux@{Compute\+\_\+\+Lux}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{Compute\+\_\+\+Lux()}{Compute\_Lux()}}
+{\footnotesize\ttfamily void V\+E\+M\+L7700\+::\+Compute\+\_\+\+Lux (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{raw\+Count,  }\item[{float \&}]{lux }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Compute Lux base on the raw count
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+Count} & Raw count from the sensor \\
+\hline
+{\em lux} & Address of lux variable to update.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVEML7700_a6a5e3bcbf41bc103823ca4d9f26ce31f}\label{classVEML7700_a6a5e3bcbf41bc103823ca4d9f26ce31f}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!Get\+\_\+\+A\+LS@{Get\+\_\+\+A\+LS}}
+\index{Get\+\_\+\+A\+LS@{Get\+\_\+\+A\+LS}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{Get\+\_\+\+A\+L\+S()}{Get\_ALS()}}
+{\footnotesize\ttfamily uint8\+\_\+t V\+E\+M\+L7700\+::\+Get\+\_\+\+A\+LS (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \&}]{als }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Get raw A\+LS count from \hyperlink{classVEML7700}{V\+E\+M\+L7700}
+
+
+\begin{DoxyParams}{Parameters}
+{\em als} & Addres of als variable update with read lux value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVEML7700_acf024ffb95cc98d82a708f511ec63d4e}\label{classVEML7700_acf024ffb95cc98d82a708f511ec63d4e}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!Get\+\_\+\+A\+L\+S\+\_\+\+Lux@{Get\+\_\+\+A\+L\+S\+\_\+\+Lux}}
+\index{Get\+\_\+\+A\+L\+S\+\_\+\+Lux@{Get\+\_\+\+A\+L\+S\+\_\+\+Lux}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{Get\+\_\+\+A\+L\+S\+\_\+\+Lux()}{Get\_ALS\_Lux()}}
+{\footnotesize\ttfamily uint8\+\_\+t V\+E\+M\+L7700\+::\+Get\+\_\+\+A\+L\+S\+\_\+\+Lux (\begin{DoxyParamCaption}\item[{float \&}]{lux }\end{DoxyParamCaption})}
+
+Read Current Lux without chaning any \hyperlink{classVEML7700}{V\+E\+M\+L7700} settings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lux} & Address of the variable to update with current measurement of light intenstity in lux.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Get Lux from \hyperlink{classVEML7700}{V\+E\+M\+L7700}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lux} & Addres of lux variable to modify\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVEML7700_a127d85c25f32b5bc0282fb04ad813fd6}\label{classVEML7700_a127d85c25f32b5bc0282fb04ad813fd6}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!Get\+\_\+\+Gain@{Get\+\_\+\+Gain}}
+\index{Get\+\_\+\+Gain@{Get\+\_\+\+Gain}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{Get\+\_\+\+Gain()}{Get\_Gain()}}
+{\footnotesize\ttfamily uint8\+\_\+t V\+E\+M\+L7700\+::\+Get\+\_\+\+Gain (\begin{DoxyParamCaption}\item[{\hyperlink{classVEML7700_a7328cc2563da545e48ea72381dc7bd9b}{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+T} \&}]{gain }\end{DoxyParamCaption})}
+
+Get current gain from register cache
+
+
+\begin{DoxyParams}{Parameters}
+{\em gain} & Address of gain variable to update\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVEML7700_a226efafb0bbc8068fbdf02f2d0afc0a0}\label{classVEML7700_a226efafb0bbc8068fbdf02f2d0afc0a0}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!Get\+\_\+\+Integration\+\_\+\+Time@{Get\+\_\+\+Integration\+\_\+\+Time}}
+\index{Get\+\_\+\+Integration\+\_\+\+Time@{Get\+\_\+\+Integration\+\_\+\+Time}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{Get\+\_\+\+Integration\+\_\+\+Time()}{Get\_Integration\_Time()}}
+{\footnotesize\ttfamily uint8\+\_\+t V\+E\+M\+L7700\+::\+Get\+\_\+\+Integration\+\_\+\+Time (\begin{DoxyParamCaption}\item[{\hyperlink{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6e}{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+T\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+\_\+T} \&}]{integration\+Time }\end{DoxyParamCaption})}
+
+Get current gain from register cache
+
+
+\begin{DoxyParams}{Parameters}
+{\em integration\+Time} & Address of integration time variable to update\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else negative errno 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVEML7700_aaee2f4b39b9391548ccb96bcdaebe2a0}\label{classVEML7700_aaee2f4b39b9391548ccb96bcdaebe2a0}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!Get\+\_\+\+White@{Get\+\_\+\+White}}
+\index{Get\+\_\+\+White@{Get\+\_\+\+White}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{Get\+\_\+\+White()}{Get\_White()}}
+{\footnotesize\ttfamily uint8\+\_\+t V\+E\+M\+L7700\+::\+Get\+\_\+\+White (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \&}]{white }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Get raw white als count from \hyperlink{classVEML7700}{V\+E\+M\+L7700}
+
+
+\begin{DoxyParams}{Parameters}
+{\em white} & Addres of als variable update with read raw count\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVEML7700_a0f046c3327cac02f34cf9bfe2ac1231b}\label{classVEML7700_a0f046c3327cac02f34cf9bfe2ac1231b}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!Get\+\_\+\+White\+\_\+\+Lux@{Get\+\_\+\+White\+\_\+\+Lux}}
+\index{Get\+\_\+\+White\+\_\+\+Lux@{Get\+\_\+\+White\+\_\+\+Lux}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{Get\+\_\+\+White\+\_\+\+Lux()}{Get\_White\_Lux()}}
+{\footnotesize\ttfamily uint8\+\_\+t V\+E\+M\+L7700\+::\+Get\+\_\+\+White\+\_\+\+Lux (\begin{DoxyParamCaption}\item[{float \&}]{white }\end{DoxyParamCaption})}
+
+Get white lux from \hyperlink{classVEML7700}{V\+E\+M\+L7700}
+
+
+\begin{DoxyParams}{Parameters}
+{\em white} & Addres of white lux variable update with read white value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVEML7700_af772ec5fe2bac04428479c9d232f1799}\label{classVEML7700_af772ec5fe2bac04428479c9d232f1799}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily int V\+E\+M\+L7700\+::\+Initialize (\begin{DoxyParamCaption}\item[{\hyperlink{classI2CDriver}{I2\+C\+Driver} \&}]{i2c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Initialize \hyperlink{classVEML7700}{V\+E\+M\+L7700} with basic settings.
+
+Initialize \hyperlink{classVEML7700}{V\+E\+M\+L7700} Open fd and write 4 16-\/bit integers to appropriate registers Gain = 01 = x2 Integration time = 0000 = 100 ms Persistance = 00 = 1 Power mode = 00 = mode 1 Refresh Time = 600 ms Resolution (lx/bit) = 0.\+0288
+
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classI2CSensor_a0fb4755ddff3fe2cf5a9651d9d1fe5cd}{I2\+C\+Sensor}.
+
+\mbox{\Hypertarget{classVEML7700_a381358f8998260f4600a0d6713f7ea2a}\label{classVEML7700_a381358f8998260f4600a0d6713f7ea2a}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!Reset@{Reset}}
+\index{Reset@{Reset}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily int V\+E\+M\+L7700\+::\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Reset Devide to default settings.
+
+\begin{DoxyReturn}{Returns}
+Zero on success else negative error number 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classI2CSensor_a0622266d335944782d2bfa6352f01095}{I2\+C\+Sensor}.
+
+\mbox{\Hypertarget{classVEML7700_aecbcabefbc9469ea91153723925acbd3}\label{classVEML7700_aecbcabefbc9469ea91153723925acbd3}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!Set\+\_\+\+Gain@{Set\+\_\+\+Gain}}
+\index{Set\+\_\+\+Gain@{Set\+\_\+\+Gain}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{Set\+\_\+\+Gain()}{Set\_Gain()}}
+{\footnotesize\ttfamily uint8\+\_\+t V\+E\+M\+L7700\+::\+Set\+\_\+\+Gain (\begin{DoxyParamCaption}\item[{\hyperlink{classVEML7700_a7328cc2563da545e48ea72381dc7bd9b}{A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+T}}]{gain }\end{DoxyParamCaption})}
+
+Set Gain for \hyperlink{classVEML7700}{V\+E\+M\+L7700}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gain} & A\+L\+S\+\_\+\+G\+A\+I\+N\+\_\+T Enumeration to set the sensor to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else negative errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVEML7700_af3f3de94154ca1dd8905e932686ca23c}\label{classVEML7700_af3f3de94154ca1dd8905e932686ca23c}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!Set\+\_\+\+Integration\+\_\+\+Time@{Set\+\_\+\+Integration\+\_\+\+Time}}
+\index{Set\+\_\+\+Integration\+\_\+\+Time@{Set\+\_\+\+Integration\+\_\+\+Time}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{Set\+\_\+\+Integration\+\_\+\+Time()}{Set\_Integration\_Time()}}
+{\footnotesize\ttfamily uint8\+\_\+t V\+E\+M\+L7700\+::\+Set\+\_\+\+Integration\+\_\+\+Time (\begin{DoxyParamCaption}\item[{\hyperlink{classVEML7700_a82e8b8f9960d8f80bc31dcfe7133ad6e}{A\+L\+S\+\_\+\+I\+N\+T\+E\+G\+R\+T\+A\+T\+I\+O\+N\+\_\+\+T\+I\+M\+E\+\_\+T}}]{integration\+Time }\end{DoxyParamCaption})}
+
+Set Integration time for \hyperlink{classVEML7700}{V\+E\+M\+L7700}
+
+
+\begin{DoxyParams}{Parameters}
+{\em integration\+Time} & Integration time enumeration to set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else negative errno 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classVEML7700_ae6d0418ab65f7fdfb21079d8637334af}\label{classVEML7700_ae6d0418ab65f7fdfb21079d8637334af}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!m\+\_\+fd@{m\+\_\+fd}}
+\index{m\+\_\+fd@{m\+\_\+fd}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{m\+\_\+fd}{m\_fd}}
+{\footnotesize\ttfamily int V\+E\+M\+L7700\+::m\+\_\+fd\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVEML7700_a06777141dab95a6244cc75e97a66f238}\label{classVEML7700_a06777141dab95a6244cc75e97a66f238}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!m\+\_\+p\+I2\+Cdriver@{m\+\_\+p\+I2\+Cdriver}}
+\index{m\+\_\+p\+I2\+Cdriver@{m\+\_\+p\+I2\+Cdriver}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{m\+\_\+p\+I2\+Cdriver}{m\_pI2Cdriver}}
+{\footnotesize\ttfamily \hyperlink{classI2CDriver}{I2\+C\+Driver}$\ast$ V\+E\+M\+L7700\+::m\+\_\+p\+I2\+Cdriver = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVEML7700_a8e5c194037bceb4544cc1a7b05f697bb}\label{classVEML7700_a8e5c194037bceb4544cc1a7b05f697bb}} 
+\index{V\+E\+M\+L7700@{V\+E\+M\+L7700}!m\+\_\+register\+V\+E\+M\+L7700@{m\+\_\+register\+V\+E\+M\+L7700}}
+\index{m\+\_\+register\+V\+E\+M\+L7700@{m\+\_\+register\+V\+E\+M\+L7700}!V\+E\+M\+L7700@{V\+E\+M\+L7700}}
+\subsubsection{\texorpdfstring{m\+\_\+register\+V\+E\+M\+L7700}{m\_registerVEML7700}}
+{\footnotesize\ttfamily uint16\+\_\+t V\+E\+M\+L7700\+::m\+\_\+register\+V\+E\+M\+L7700\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/controller/peripherials/\hyperlink{VEML7700_8h}{V\+E\+M\+L7700.\+h}\item 
+src/controller/peripherials/\hyperlink{VEML7700_8cpp}{V\+E\+M\+L7700.\+cpp}\end{DoxyCompactItemize}

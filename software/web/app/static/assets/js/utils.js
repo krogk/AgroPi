@@ -140,28 +140,12 @@ function LoadTable(element, data_source_url) {
 }
 
 
-function notify_success(header, message){
-    $.toast({
-        heading: header,
-        text: message,
-        position: 'top-right',
-        loaderBg: '#ff6849',
-        icon: 'success',
-        hideAfter:3000,
-        stack: 6
-    });
+function notify_success(message){
+  toastr.success(message);
 }
 
-function notify_failure(header, message){
-    $.toast({
-        heading: header,
-        text: message,
-        position: 'top-right',
-        loaderBg: '#ff6849',
-        icon: 'error',
-        hideAfter:3000,
-        stack: 6
-    });
+function notify_failure(message){
+  toastr.error(message);
 }
 
 
@@ -204,18 +188,30 @@ function date_format(date_string){
 }
 
 $.date = function(dateObject) {
-    var d = new Date(dateObject);
-    var day = d.getDate();
-    var month = d.getMonth() + 1;
-    var year = d.getFullYear();
-    if (day < 10) {
-        day = "0" + day;
-    }
-    if (month < 10) {
-        month = "0" + month;
-    }
-    var date = day + "/" + month + "/" + year;
+  var d = new Date(dateObject);
+  var day = d.getDate();
+  var month = d.getMonth() + 1;
+  var year = d.getFullYear();
+  var hour = d.getHours();
+  var minute = String(d.getMinutes());
 
-    return date;
+
+  if (day < 10) {
+      day = "0" + day;
+  }
+  if (month < 10) {
+      month = "0" + month;
+  }
+
+  if (String(hour).length == 1){
+    hour = "0" + hour;
+  }
+  if(String(minute).length == 1){
+    minute = "0" + minute;
+  }
+
+  var date = day + "/" + month + "/" + year + " " + hour + ":" + minute;
+
+  return date;
 };
 

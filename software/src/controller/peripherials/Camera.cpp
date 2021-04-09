@@ -1,11 +1,11 @@
 /**
-* @file
+* @file Camera.cpp
 * @author Kamil Rog
 * @version 0.1
-*
-*
-* @section DESCRIPTION
 * 
-* This file contains the functions for RPI Camera class.
+* This file contains the functions for RPi Camera class.
 *
 */
+#include "Camera.h"
+#include <ctime>
+#include <iostream>

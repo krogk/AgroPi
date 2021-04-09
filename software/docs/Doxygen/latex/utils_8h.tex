@@ -1,0 +1,57 @@
+\hypertarget{utils_8h}{}\section{src/utils/utils.h File Reference}
+\label{utils_8h}\index{src/utils/utils.\+h@{src/utils/utils.\+h}}
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for utils.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{utils_8h_a382a50931a510e3f93461c289586dfd6}{C\+R\+C8} (uint8\+\_\+t $\ast$data, uint8\+\_\+t datalen)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Kamil Rog 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+This is a header file for utility functions This file only contains the function prototypes 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{utils_8h_a382a50931a510e3f93461c289586dfd6}\label{utils_8h_a382a50931a510e3f93461c289586dfd6}} 
+\index{utils.\+h@{utils.\+h}!C\+R\+C8@{C\+R\+C8}}
+\index{C\+R\+C8@{C\+R\+C8}!utils.\+h@{utils.\+h}}
+\subsubsection{\texorpdfstring{C\+R\+C8()}{CRC8()}}
+{\footnotesize\ttfamily uint8\+\_\+t C\+R\+C8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint8\+\_\+t}]{datalen }\end{DoxyParamCaption})}
+
+Cyclic redundancy check, Calculates 8-\/\+Bit checksum with following parameters Specified on page 14 of \hyperlink{classSHT31D}{S\+H\+T31D} Application Note \& Also applies to \hyperlink{classSGP30}{S\+G\+P30} Initial value\+: 0x\+FF Polynomial\+: 0x31 (x$^\wedge$8 + x$^\wedge$5 + x$^\wedge$4 + 1) X\+OR Result by\+: 0x00
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to perform C\+R\+C8 on \\
+\hline
+{\em datalen} & length of the data in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Byte C\+RC Checksum
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]\+: Modify to pass in polynomial, initial value and X\+OR factor \end{DoxyRefDesc}

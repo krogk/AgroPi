@@ -1,0 +1,5 @@
+<map id="src/controller/peripherials/VEML7700.cpp" name="src/controller/peripherials/VEML7700.cpp">
+<area shape="rect" id="node2" href="$VEML7700_8h.html" title="VEML7700.h" alt="" coords="56,95,153,121"/>
+<area shape="rect" id="node5" href="$I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="35,244,124,271"/>
+<area shape="rect" id="node6" href="$I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="168,169,263,196"/>
+</map>

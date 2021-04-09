@@ -32,8 +32,13 @@
   <!-- CSS Files -->
   <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}" rel="stylesheet" />
   <link href="{{ url_for('static', filename='assets/css/now-ui-dashboard.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='assets/css/plugins/daterangepicker.css') }}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{ url_for('static', filename='assets/demo/demo.css') }}" rel="stylesheet" />
+  <!-- Range Slider CSS -->
+  <link href="{{ url_for('static', filename='assets/css/plugins/main.min.css') }}" rel="stylesheet" />
+  <!-- ToastR CSS -->
+  <link href="{{ url_for('static', filename='assets/css/plugins/toastr.css') }}" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -93,21 +98,22 @@
   <script src="{{ url_for('static', filename='assets/js/core/jquery.min.js') }}"></script>
   <script src="{{ url_for('static', filename='assets/js/core/popper.min.js') }}"></script>
   <script src="{{ url_for('static', filename='assets/js/core/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/plugins/moment.min.js') }}"></script>
   <script src="{{ url_for('static', filename='assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
   <!-- Chart JS -->
   <script src="{{ url_for('static', filename='assets/js/plugins/chartjs.min.js') }}"></script>
   <!--  Notifications Plugin    -->
   <script src="{{ url_for('static', filename='assets/js/plugins/bootstrap-notify.js') }}"></script>
+  <!-- Daterangepicker Plugin -->
+  <script src="{{ url_for('static', filename='assets/js/plugins/daterangepicker.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/utils.js') }}"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ url_for('static', filename='assets/js/now-ui-dashboard.min.js') }}" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="{{ url_for('static', filename='assets/demo/demo.js') }}"></script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
-
-    });
-  </script>
+  <!-- Range Slider Plugin -->
+  <script src="{{ url_for('static', filename='assets/js/plugins/jQuery.inputSliderRange.min.js') }}"></script>
+  <!-- ToastR Plugin -->
+  <script src="{{ url_for('static', filename='assets/js/plugins/toastr.js') }}"></script>
   {% block scripts %}{% endblock %}
 </body>
 

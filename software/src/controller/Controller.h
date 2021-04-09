@@ -1,104 +1,71 @@
 /**
-* @file
+* @file Controller.h
 * @author Kamil Rog
 * @version 0.1
 *
 *
 * @section DESCRIPTION
 * 
-* This header file contains the thread for Controller of the AgroPi sensors and actuators 
-*
-* 
 */
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
-
-#include <iostream>
-#include <time.h>
-#include <unistd.h>
-
-#include "I2CDriver.h"
-#include "VEML7700.h"
-#include "SHT31D.h"
-#include "Actuator.h"
-#include "CCS811.h"
-#include "Camera.h"
-
-using namespace std;
-
- 
-/**
- * Environment Data Struct Definition
- * 
- * This struct conatins all enviroment data read from sensors as well as target values
- */
- typedef struct{
-  /// Alternativley use triple slash for the comments
-	// Env Data
-  float LightIntensity; /*!< Light Intensity of the envieronment (in Lux) */	
-  float Temperature; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
-  float CO2; 					  /*!< Carbon Dioxide in air (in )*/
-  float TVOC; 					/*!< Total Volatile Organic Compounds in air (in )*/
-  float Humidity;     /*!< Humidity of the environment (in Percent %)*/
-  
-	/// Targets
-  float LightIntensityTarget; /*!< Threshold Light Intensity - Set by user */
-  float TemperatureTarget;    /*!< Target Temperature - Set by user */		 
-  float HumidityTarget;		  /*!< Target Humidity - Set by user */	
-  
-} EnvironmentData;
-
+#include "typeDefinitions.h"
+#include "RelayBoard.h"
+#include <string>
 
 /**
- * @brief Controller Class
- * @author Kamil Rog
- *
- * This class is responsible for handling all measurements and controll. 
- */
+* @brief Controller class
+* @author Kamil Rog
+*
+* This is class is responsilbe for the SHT31D temperature and humidity sensor.
+* 
+* @section PROTOCOL
+* 
+* WATER PUMP - ANALOG - GPIO x
+* HEATER     - ANALOG - GPIO x
+* 
+*/
 class Controller {
 
 public:
-	/**
-	 * Constructor that sets the offset for the thread to a given value.
-	 *
-	 * @todo:@param filepath  filepath for settings file.
-	 * 
-	 */
-	Controller() {
-	
-		/*Initialize Peripherials*/
-		lightSensor.Initialize();
-		
-		
-		/* Initialize EnvData Structure*/
-		envData.LightIntensity = 0.0; 
-		envData.Temperature = 0.0; 
-		envData.Humidity = 0.0; 
-		envData.CO2 = 0.0; 
-		envData.TVOC = 0.0; 
-		
-		envData.LightIntensityTarget = 1000; 		
-		envData.TemperatureTarget = 25.0; 		
-		envData.HumidityTarget = 45; 	
+	Controller()
+	{
+	/* Initialize EnvData Structure*/
+	envData.LightIntensity = 0.0; 
+	envData.Temperature = 0.0; 
+	envData.Humidity = 0.0; 
+	envData.CO2 = 0; 
+	envData.TVOC = 0; 
+	envData.RawEthanol = 0; 
+	envData.RawH2 = 0; 
+
+	/* Initialize Targets for EnvData Structure*/
+	// This needs to be downloaded from website
+	targets.LightIntensityUpperThreshold = 1000.0; 
+  targets.LightIntensityLowerThreshold = 100.0; 
+  targets.TemperatureUpperThreshold = 30.0; 					
+  targets.TemperatureLowerThreshold = 18.0; 					
+  targets.HumidityUpperThreshold = 70.0; 				
+  targets.HumidityLowerThreshold = 30.0; 				
+  targets.CO2UpperThreshold = 1000; 				
+  targets.TVOCUpperThreshold = 300; 				
+  targets.RawEthanolUpperThreshold = 300; 				
+  targets.RawH2UpperThreshold = 300; 				
 	}
-	
- /**
-	* Run Function responsible for event hanlding.
-	* 
-	*/
-	void Run();
+
+	void SamplerHasData(EnvironmentData newData);
 
 private:
+	void SendDataToWebApp(std::string variable_type, float value);
+	void ActuatorHandler();
+	void StartListenerServer();
 
-	I2CDriver i2cDriver;              /*!< I2C driver used for peripherials */
-	VEML7700 	lightSensor; 				        /*!< VEML7700 Light Sensor Object */
-	SHT31D  	temperatureHumiditySensor;  /*!< SHT31D Temperature & Humidity Sensor Object */
-	CCS811		gasSensor;  				        /*!< CS811 Gas Sensor Object */
-	Camera 		camera; 					          /*!< Camera Sensor Object */
-	Actuator 	actuator; 					        /*!< Actuator Object */
+private:
 	EnvironmentData envData; 				      /*!< Current and Target Enviroment Data Struct */
-	
+	TargetEnvironmentData targets; 				      /*!< Current and Target Enviroment Data Struct */
+	RelayBoard relay;
+
 };
 
 #endif

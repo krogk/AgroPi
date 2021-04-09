@@ -1,0 +1,117 @@
+\hypertarget{classController}{}\section{Controller Class Reference}
+\label{classController}\index{Controller@{Controller}}
+
+
+\hyperlink{classController}{Controller} class.  
+
+
+
+
+{\ttfamily \#include $<$Controller.\+h$>$}
+
+
+
+Collaboration diagram for Controller\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classController__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classController_a95c56822d667e94b031451729ce069a9}{Controller} ()
+\item 
+void \hyperlink{classController_a4b765eaaf8f72e964118967f86c265e2}{Sampler\+Has\+Data} (\hyperlink{structEnvironmentData}{Environment\+Data} new\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classController_a9d59ef3807f630a52c964a899a7235dd}{Send\+Data\+To\+Web\+App} (std\+::string variable\+\_\+type, float value)
+\item 
+void \hyperlink{classController_acd0145853d19eaf3ef9d15f6203ace69}{Actuator\+Handler} ()
+\item 
+void \hyperlink{classController_a64173dd00be020975d7db533cd280c15}{Start\+Listener\+Server} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structEnvironmentData}{Environment\+Data} \hyperlink{classController_ac99088334f56588243867ca1c18f9633}{env\+Data}
+\item 
+\hyperlink{structTargetEnvironmentData}{Target\+Environment\+Data} \hyperlink{classController_a8f2fb8295fd3da6ebc8bdb0f25036322}{targets}
+\item 
+\hyperlink{classRelayBoard}{Relay\+Board} \hyperlink{classController_aa3f1d7aae706a5440adf520cbd7fb216}{relay}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classController}{Controller} class. 
+
+\begin{DoxyAuthor}{Author}
+Kamil Rog
+\end{DoxyAuthor}
+This is class is responsilbe for the \hyperlink{classSHT31D}{S\+H\+T31D} temperature and humidity sensor.\hypertarget{classController_PROTOCOL}{}\subsection{P\+R\+O\+T\+O\+C\+OL}\label{classController_PROTOCOL}
+W\+A\+T\+ER P\+U\+MP -\/ A\+N\+A\+L\+OG -\/ G\+P\+IO x H\+E\+A\+T\+ER -\/ A\+N\+A\+L\+OG -\/ G\+P\+IO x 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classController_a95c56822d667e94b031451729ce069a9}\label{classController_a95c56822d667e94b031451729ce069a9}} 
+\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily Controller\+::\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classController_acd0145853d19eaf3ef9d15f6203ace69}\label{classController_acd0145853d19eaf3ef9d15f6203ace69}} 
+\index{Controller@{Controller}!Actuator\+Handler@{Actuator\+Handler}}
+\index{Actuator\+Handler@{Actuator\+Handler}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Actuator\+Handler()}{ActuatorHandler()}}
+{\footnotesize\ttfamily void Controller\+::\+Actuator\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classController_a4b765eaaf8f72e964118967f86c265e2}\label{classController_a4b765eaaf8f72e964118967f86c265e2}} 
+\index{Controller@{Controller}!Sampler\+Has\+Data@{Sampler\+Has\+Data}}
+\index{Sampler\+Has\+Data@{Sampler\+Has\+Data}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Sampler\+Has\+Data()}{SamplerHasData()}}
+{\footnotesize\ttfamily void Controller\+::\+Sampler\+Has\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structEnvironmentData}{Environment\+Data}}]{new\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classController_a9d59ef3807f630a52c964a899a7235dd}\label{classController_a9d59ef3807f630a52c964a899a7235dd}} 
+\index{Controller@{Controller}!Send\+Data\+To\+Web\+App@{Send\+Data\+To\+Web\+App}}
+\index{Send\+Data\+To\+Web\+App@{Send\+Data\+To\+Web\+App}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Send\+Data\+To\+Web\+App()}{SendDataToWebApp()}}
+{\footnotesize\ttfamily void Controller\+::\+Send\+Data\+To\+Web\+App (\begin{DoxyParamCaption}\item[{std\+::string}]{variable\+\_\+type,  }\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classController_a64173dd00be020975d7db533cd280c15}\label{classController_a64173dd00be020975d7db533cd280c15}} 
+\index{Controller@{Controller}!Start\+Listener\+Server@{Start\+Listener\+Server}}
+\index{Start\+Listener\+Server@{Start\+Listener\+Server}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Start\+Listener\+Server()}{StartListenerServer()}}
+{\footnotesize\ttfamily void Controller\+::\+Start\+Listener\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classController_ac99088334f56588243867ca1c18f9633}\label{classController_ac99088334f56588243867ca1c18f9633}} 
+\index{Controller@{Controller}!env\+Data@{env\+Data}}
+\index{env\+Data@{env\+Data}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{env\+Data}{envData}}
+{\footnotesize\ttfamily \hyperlink{structEnvironmentData}{Environment\+Data} Controller\+::env\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+Current and Target Enviroment Data Struct \mbox{\Hypertarget{classController_aa3f1d7aae706a5440adf520cbd7fb216}\label{classController_aa3f1d7aae706a5440adf520cbd7fb216}} 
+\index{Controller@{Controller}!relay@{relay}}
+\index{relay@{relay}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{relay}{relay}}
+{\footnotesize\ttfamily \hyperlink{classRelayBoard}{Relay\+Board} Controller\+::relay\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classController_a8f2fb8295fd3da6ebc8bdb0f25036322}\label{classController_a8f2fb8295fd3da6ebc8bdb0f25036322}} 
+\index{Controller@{Controller}!targets@{targets}}
+\index{targets@{targets}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{targets}{targets}}
+{\footnotesize\ttfamily \hyperlink{structTargetEnvironmentData}{Target\+Environment\+Data} Controller\+::targets\hspace{0.3cm}{\ttfamily [private]}}
+
+Current and Target Enviroment Data Struct 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/controller/\hyperlink{Controller_8h}{Controller.\+h}\item 
+src/controller/\hyperlink{Controller_8cpp}{Controller.\+cpp}\end{DoxyCompactItemize}

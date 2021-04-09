@@ -1,0 +1,98 @@
+\hypertarget{classCppTimerCallback}{}\section{Cpp\+Timer\+Callback Class Reference}
+\label{classCppTimerCallback}\index{Cpp\+Timer\+Callback@{Cpp\+Timer\+Callback}}
+
+
+{\ttfamily \#include $<$Cpp\+Timer\+Callback.\+h$>$}
+
+
+
+Inheritance diagram for Cpp\+Timer\+Callback\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classCppTimerCallback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cpp\+Timer\+Callback\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCppTimerCallback__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classCppTimerCallback_1_1Runnable}{Runnable}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCppTimerCallback_ae6e815f1c3b65ea4f10fe0332e13acb9}{register\+Event\+Runnable} (\hyperlink{classCppTimerCallback_1_1Runnable}{Runnable} \&h)
+\item 
+void \hyperlink{classCppTimerCallback_a29d8d5a426a3d15bca8a42c2c897f50f}{unregister\+Event\+Runnable} ()
+\item 
+void \hyperlink{classCppTimerCallback_af6b39f5eb8e98bfc1b301ac3f25276e9}{timer\+Event} ()
+\item 
+virtual void \hyperlink{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}{start} (long nanosecs, \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t} type=\hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58}{P\+E\+R\+I\+O\+D\+IC})
+\item 
+virtual void \hyperlink{classCppTimer_a4bb95ddee98a536d0818b8f6096bf7e7}{stop} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCppTimerCallback_1_1Runnable}{Runnable} $\ast$ \hyperlink{classCppTimerCallback_a578cc701cee7be10f3afab2859eac74f}{cpp\+Timer\+Event\+Runnable} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCppTimerCallback_ae6e815f1c3b65ea4f10fe0332e13acb9}\label{classCppTimerCallback_ae6e815f1c3b65ea4f10fe0332e13acb9}} 
+\index{Cpp\+Timer\+Callback@{Cpp\+Timer\+Callback}!register\+Event\+Runnable@{register\+Event\+Runnable}}
+\index{register\+Event\+Runnable@{register\+Event\+Runnable}!Cpp\+Timer\+Callback@{Cpp\+Timer\+Callback}}
+\subsubsection{\texorpdfstring{register\+Event\+Runnable()}{registerEventRunnable()}}
+{\footnotesize\ttfamily void Cpp\+Timer\+Callback\+::register\+Event\+Runnable (\begin{DoxyParamCaption}\item[{\hyperlink{classCppTimerCallback_1_1Runnable}{Runnable} \&}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}\label{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}} 
+\index{Cpp\+Timer\+Callback@{Cpp\+Timer\+Callback}!start@{start}}
+\index{start@{start}!Cpp\+Timer\+Callback@{Cpp\+Timer\+Callback}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Cpp\+Timer\+::start (\begin{DoxyParamCaption}\item[{long}]{nanosecs,  }\item[{\hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t}}]{type = {\ttfamily \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58}{P\+E\+R\+I\+O\+D\+IC}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+Starts the timer. The timer fires first after the specified time in nanoseconds and then at that interval in P\+E\+R\+I\+O\+D\+IC mode. In O\+N\+E\+S\+H\+OT mode the timer fires once after the specified time in nanoseconds. \mbox{\Hypertarget{classCppTimer_a4bb95ddee98a536d0818b8f6096bf7e7}\label{classCppTimer_a4bb95ddee98a536d0818b8f6096bf7e7}} 
+\index{Cpp\+Timer\+Callback@{Cpp\+Timer\+Callback}!stop@{stop}}
+\index{stop@{stop}!Cpp\+Timer\+Callback@{Cpp\+Timer\+Callback}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Cpp\+Timer\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+Stops the timer by disarming it. It can be re-\/started with \hyperlink{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}{start()}. \mbox{\Hypertarget{classCppTimerCallback_af6b39f5eb8e98bfc1b301ac3f25276e9}\label{classCppTimerCallback_af6b39f5eb8e98bfc1b301ac3f25276e9}} 
+\index{Cpp\+Timer\+Callback@{Cpp\+Timer\+Callback}!timer\+Event@{timer\+Event}}
+\index{timer\+Event@{timer\+Event}!Cpp\+Timer\+Callback@{Cpp\+Timer\+Callback}}
+\subsubsection{\texorpdfstring{timer\+Event()}{timerEvent()}}
+{\footnotesize\ttfamily void Cpp\+Timer\+Callback\+::timer\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Abstract function which needs to be implemented by the children. This is called every time the timer fires. 
+
+Implements \hyperlink{classCppTimer_ac2665403595b6aee5f581d0ebfeb886c}{Cpp\+Timer}.
+
+\mbox{\Hypertarget{classCppTimerCallback_a29d8d5a426a3d15bca8a42c2c897f50f}\label{classCppTimerCallback_a29d8d5a426a3d15bca8a42c2c897f50f}} 
+\index{Cpp\+Timer\+Callback@{Cpp\+Timer\+Callback}!unregister\+Event\+Runnable@{unregister\+Event\+Runnable}}
+\index{unregister\+Event\+Runnable@{unregister\+Event\+Runnable}!Cpp\+Timer\+Callback@{Cpp\+Timer\+Callback}}
+\subsubsection{\texorpdfstring{unregister\+Event\+Runnable()}{unregisterEventRunnable()}}
+{\footnotesize\ttfamily void Cpp\+Timer\+Callback\+::unregister\+Event\+Runnable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCppTimerCallback_a578cc701cee7be10f3afab2859eac74f}\label{classCppTimerCallback_a578cc701cee7be10f3afab2859eac74f}} 
+\index{Cpp\+Timer\+Callback@{Cpp\+Timer\+Callback}!cpp\+Timer\+Event\+Runnable@{cpp\+Timer\+Event\+Runnable}}
+\index{cpp\+Timer\+Event\+Runnable@{cpp\+Timer\+Event\+Runnable}!Cpp\+Timer\+Callback@{Cpp\+Timer\+Callback}}
+\subsubsection{\texorpdfstring{cpp\+Timer\+Event\+Runnable}{cppTimerEventRunnable}}
+{\footnotesize\ttfamily \hyperlink{classCppTimerCallback_1_1Runnable}{Runnable}$\ast$ Cpp\+Timer\+Callback\+::cpp\+Timer\+Event\+Runnable = N\+U\+LL\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/utils/\hyperlink{CppTimerCallback_8h}{Cpp\+Timer\+Callback.\+h}\end{DoxyCompactItemize}

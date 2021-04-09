@@ -1,0 +1,91 @@
+\hypertarget{structEnvironmentData}{}\section{Environment\+Data Struct Reference}
+\label{structEnvironmentData}\index{Environment\+Data@{Environment\+Data}}
+
+
+{\ttfamily \#include $<$type\+Definitions.\+h$>$}
+
+
+
+Collaboration diagram for Environment\+Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{structEnvironmentData__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{structEnvironmentData_a2013551c12a584a6680517d750b2116a}{Light\+Intensity}
+\begin{DoxyCompactList}\small\item\em Alternativley use triple slash for the comments. \end{DoxyCompactList}\item 
+float \hyperlink{structEnvironmentData_a5c8f919b34fe673a71726053d05cb775}{Temperature}
+\item 
+float \hyperlink{structEnvironmentData_a84e684c2dc15c5fb6bd87a03569cab05}{Humidity}
+\item 
+uint16\+\_\+t \hyperlink{structEnvironmentData_a5fe69eb57f3debefe5feba3a930ab851}{C\+O2}
+\item 
+uint16\+\_\+t \hyperlink{structEnvironmentData_aae4ac3338a76432de00582ba5af01a45}{T\+V\+OC}
+\item 
+uint16\+\_\+t \hyperlink{structEnvironmentData_a3c949734838b0bc862b8f7449b6df41c}{Raw\+Ethanol}
+\item 
+uint16\+\_\+t \hyperlink{structEnvironmentData_a89c96958697dd39ee2e41289debcd8a5}{Raw\+H2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Environment Data Struct Definition
+
+This struct conatins all enviroment data read from sensors as well as target values 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structEnvironmentData_a5fe69eb57f3debefe5feba3a930ab851}\label{structEnvironmentData_a5fe69eb57f3debefe5feba3a930ab851}} 
+\index{Environment\+Data@{Environment\+Data}!C\+O2@{C\+O2}}
+\index{C\+O2@{C\+O2}!Environment\+Data@{Environment\+Data}}
+\subsubsection{\texorpdfstring{C\+O2}{CO2}}
+{\footnotesize\ttfamily uint16\+\_\+t Environment\+Data\+::\+C\+O2}
+
+Carbon Dioxide in air (in ) \mbox{\Hypertarget{structEnvironmentData_a84e684c2dc15c5fb6bd87a03569cab05}\label{structEnvironmentData_a84e684c2dc15c5fb6bd87a03569cab05}} 
+\index{Environment\+Data@{Environment\+Data}!Humidity@{Humidity}}
+\index{Humidity@{Humidity}!Environment\+Data@{Environment\+Data}}
+\subsubsection{\texorpdfstring{Humidity}{Humidity}}
+{\footnotesize\ttfamily float Environment\+Data\+::\+Humidity}
+
+Humidity of the environment (in Percent \%) \mbox{\Hypertarget{structEnvironmentData_a2013551c12a584a6680517d750b2116a}\label{structEnvironmentData_a2013551c12a584a6680517d750b2116a}} 
+\index{Environment\+Data@{Environment\+Data}!Light\+Intensity@{Light\+Intensity}}
+\index{Light\+Intensity@{Light\+Intensity}!Environment\+Data@{Environment\+Data}}
+\subsubsection{\texorpdfstring{Light\+Intensity}{LightIntensity}}
+{\footnotesize\ttfamily float Environment\+Data\+::\+Light\+Intensity}
+
+
+
+Alternativley use triple slash for the comments. 
+
+Light Intensity of the envieronment (in Lux) \mbox{\Hypertarget{structEnvironmentData_a3c949734838b0bc862b8f7449b6df41c}\label{structEnvironmentData_a3c949734838b0bc862b8f7449b6df41c}} 
+\index{Environment\+Data@{Environment\+Data}!Raw\+Ethanol@{Raw\+Ethanol}}
+\index{Raw\+Ethanol@{Raw\+Ethanol}!Environment\+Data@{Environment\+Data}}
+\subsubsection{\texorpdfstring{Raw\+Ethanol}{RawEthanol}}
+{\footnotesize\ttfamily uint16\+\_\+t Environment\+Data\+::\+Raw\+Ethanol}
+
+\mbox{\Hypertarget{structEnvironmentData_a89c96958697dd39ee2e41289debcd8a5}\label{structEnvironmentData_a89c96958697dd39ee2e41289debcd8a5}} 
+\index{Environment\+Data@{Environment\+Data}!Raw\+H2@{Raw\+H2}}
+\index{Raw\+H2@{Raw\+H2}!Environment\+Data@{Environment\+Data}}
+\subsubsection{\texorpdfstring{Raw\+H2}{RawH2}}
+{\footnotesize\ttfamily uint16\+\_\+t Environment\+Data\+::\+Raw\+H2}
+
+\mbox{\Hypertarget{structEnvironmentData_a5c8f919b34fe673a71726053d05cb775}\label{structEnvironmentData_a5c8f919b34fe673a71726053d05cb775}} 
+\index{Environment\+Data@{Environment\+Data}!Temperature@{Temperature}}
+\index{Temperature@{Temperature}!Environment\+Data@{Environment\+Data}}
+\subsubsection{\texorpdfstring{Temperature}{Temperature}}
+{\footnotesize\ttfamily float Environment\+Data\+::\+Temperature}
+
+Temperature of the envirnoment (in Degrees Celsius) \mbox{\Hypertarget{structEnvironmentData_aae4ac3338a76432de00582ba5af01a45}\label{structEnvironmentData_aae4ac3338a76432de00582ba5af01a45}} 
+\index{Environment\+Data@{Environment\+Data}!T\+V\+OC@{T\+V\+OC}}
+\index{T\+V\+OC@{T\+V\+OC}!Environment\+Data@{Environment\+Data}}
+\subsubsection{\texorpdfstring{T\+V\+OC}{TVOC}}
+{\footnotesize\ttfamily uint16\+\_\+t Environment\+Data\+::\+T\+V\+OC}
+
+Total Volatile Organic Compounds in air (in ) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/utils/\hyperlink{typeDefinitions_8h}{type\+Definitions.\+h}\end{DoxyCompactItemize}

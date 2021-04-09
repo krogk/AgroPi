@@ -6,7 +6,7 @@ from enum import Enum
 # -*- coding: utf-8 -*-
 from flask import current_app, g, jsonify
 from itsdangerous import URLSafeTimedSerializer
-from app.config import API_URL, API_HEADERS
+from app.config import API_URL, API_HEADERS, CPP_SERVER_URL
 
 
 def get_signer():
@@ -26,6 +26,19 @@ class Utilities:
     @staticmethod
     def format_date_string(date_string):
         return (datetime.datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S.%f")).strftime("%d %B, %Y %H:%M:%S")
+
+    @staticmethod
+    def get_dates_in_range(start_date, end_date):
+        start_date_obj = datetime.datetime.strptime(start_date, "%d/%m/%Y %H:%M")
+        end_date_obj = datetime.datetime.strptime(end_date, "%d/%m/%Y %H:%M")
+
+        dates = [datetime.datetime.strftime(start_date_obj, "%H:00")]
+        date_ = start_date_obj + datetime.timedelta(hours=1)
+        while date_ <= end_date_obj:
+            dates.append(datetime.datetime.strftime(date_, "%H:00"))
+            date_ = date_ + datetime.timedelta(hours=1)
+
+        return dates
 
 
 class SlickEnum(Enum):
@@ -98,7 +111,7 @@ class ApiCalls:
     """
 
     @staticmethod
-    def request_api(req_params, route='', method='post', url=API_URL, headers=API_HEADERS):
+    def request_api(req_params, route='', method='post', url=CPP_SERVER_URL, headers=API_HEADERS):
         """
         This function makes and get response form fusion Virtuals account API
 

@@ -1,0 +1,4 @@
+<map id="SGP30" name="SGP30">
+<area shape="rect" id="node2" href="$classI2CSensor.html" title="{I2CSensor\n||+ Initialize()\l+ Reset()\l+ Close_Device()\l}" alt="" coords="5,79,129,185"/>
+<area shape="rect" id="node5" href="$classI2CDriver.html" title="I2C Driver class. " alt="" coords="345,5,563,259"/>
+</map>

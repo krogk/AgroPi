@@ -1,0 +1,33 @@
+\hypertarget{I2CDriver_8cpp}{}\section{src/controller/peripherials/\+I2\+C\+Driver.cpp File Reference}
+\label{I2CDriver_8cpp}\index{src/controller/peripherials/\+I2\+C\+Driver.\+cpp@{src/controller/peripherials/\+I2\+C\+Driver.\+cpp}}
+{\ttfamily \#include \char`\"{}I2\+C\+Driver.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}i2c/smbus.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$linux/i2c-\/dev.\+h$>$}\newline
+{\ttfamily \#include $<$linux/i2c.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+Include dependency graph for I2\+C\+Driver.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{I2CDriver_8cpp__incl}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Kamil Rog 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+This file contains the functions for I2C Driver Class. Essentially this is a wrapper for the A\+PI provided for I2C Linux Driver. Conatins functions for plain I2C and S\+M\+B\+US
+
+\href{https://www.kernel.org/doc/html/latest/driver-api/i2c}{\tt https\+://www.\+kernel.\+org/doc/html/latest/driver-\/api/i2c}. \href{https://www.i2c-bus.org/smbus/}{\tt https\+://www.\+i2c-\/bus.\+org/smbus/} 

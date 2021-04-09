@@ -1,34 +1,25 @@
 /**
-* @file
+* @file main.cpp
 * @author Kamil Rog
 * @version 0.1
 *
-*
-* @section DESCRIPTION
 * 
 * This is main entry for the program.
 *
 * 
 */
-
-#include <stdio.h>
-#include "AgroPiThread.h"
-#include "ServerThread.h"
+#include "ControllerThread.h"
 
 int main(int argc, const char* argv[] ){
+
 	/* Initialize thread objects */ 
-	AgroPiThread  agroPiThread(0);
-	ServerThread  serverThread(10);
-  
-	/* Run Agro Pi Thread */ 
-	agroPiThread.start();
-  
-	/* Run Server Thread */
-	serverThread.start();
+	ControllerThread controllerThread;
+
+	/* Run Controller Thread */ 
+	controllerThread.start();
   
 	/* Join to the thread */
-	agroPiThread.join();
-	serverThread.join();
+	controllerThread.join();
   
 	return 0;
 }

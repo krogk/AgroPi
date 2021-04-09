@@ -1,0 +1,79 @@
+\hypertarget{I2CDriver_8h}{}\section{src/controller/peripherials/\+I2\+C\+Driver.h File Reference}
+\label{I2CDriver_8h}\index{src/controller/peripherials/\+I2\+C\+Driver.\+h@{src/controller/peripherials/\+I2\+C\+Driver.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for I2\+C\+Driver.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{I2CDriver_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{I2CDriver_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classI2CDriver}{I2\+C\+Driver}
+\begin{DoxyCompactList}\small\item\em I2C Driver class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3f}{I2\+C\+\_\+\+Return} \{ \newline
+\hyperlink{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3faeceba296bdda2b90e8835c431fe7a72a}{I2\+C\+\_\+\+OK} = 0, 
+\hyperlink{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3faa978b8c99ba81b70dcb4a660ec190c8b}{I2\+C\+\_\+\+I\+O\+C\+T\+L\+\_\+\+F\+A\+I\+L\+ED} = -\/1, 
+\hyperlink{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3fa43b4aeb860553fe1c22ab94cb6b4a446}{I2\+C\+\_\+\+W\+R\+I\+T\+E\+\_\+\+F\+A\+I\+L\+ED} = -\/2, 
+\hyperlink{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3fac86dfc8232f86c65e33a1b9491763a21}{I2\+C\+\_\+\+R\+E\+A\+D\+\_\+\+F\+A\+I\+L\+ED} = -\/3, 
+\newline
+\hyperlink{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3fa63b31d0c504bdae545fb5da13d59c986}{I2\+C\+\_\+\+C\+R\+C\+\_\+\+F\+A\+I\+L\+ED} = -\/4, 
+\hyperlink{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3fa2fa4d728abcc354ab37d4ff073289900}{I2\+C\+\_\+\+F\+A\+IL} = -\/5
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Kamil Rog 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+This file contains the class for the I2C Driver 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3f}\label{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3f}} 
+\index{I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}!I2\+C\+\_\+\+Return@{I2\+C\+\_\+\+Return}}
+\index{I2\+C\+\_\+\+Return@{I2\+C\+\_\+\+Return}!I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+\+Return}{I2C\_Return}}
+{\footnotesize\ttfamily enum \hyperlink{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3f}{I2\+C\+\_\+\+Return}}
+
+Return Status Enumeration \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I2\+C\+\_\+\+OK@{I2\+C\+\_\+\+OK}!I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}}\index{I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}!I2\+C\+\_\+\+OK@{I2\+C\+\_\+\+OK}}}\mbox{\Hypertarget{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3faeceba296bdda2b90e8835c431fe7a72a}\label{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3faeceba296bdda2b90e8835c431fe7a72a}} 
+I2\+C\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I2\+C\+\_\+\+I\+O\+C\+T\+L\+\_\+\+F\+A\+I\+L\+ED@{I2\+C\+\_\+\+I\+O\+C\+T\+L\+\_\+\+F\+A\+I\+L\+ED}!I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}}\index{I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}!I2\+C\+\_\+\+I\+O\+C\+T\+L\+\_\+\+F\+A\+I\+L\+ED@{I2\+C\+\_\+\+I\+O\+C\+T\+L\+\_\+\+F\+A\+I\+L\+ED}}}\mbox{\Hypertarget{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3faa978b8c99ba81b70dcb4a660ec190c8b}\label{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3faa978b8c99ba81b70dcb4a660ec190c8b}} 
+I2\+C\+\_\+\+I\+O\+C\+T\+L\+\_\+\+F\+A\+I\+L\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I2\+C\+\_\+\+W\+R\+I\+T\+E\+\_\+\+F\+A\+I\+L\+ED@{I2\+C\+\_\+\+W\+R\+I\+T\+E\+\_\+\+F\+A\+I\+L\+ED}!I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}}\index{I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}!I2\+C\+\_\+\+W\+R\+I\+T\+E\+\_\+\+F\+A\+I\+L\+ED@{I2\+C\+\_\+\+W\+R\+I\+T\+E\+\_\+\+F\+A\+I\+L\+ED}}}\mbox{\Hypertarget{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3fa43b4aeb860553fe1c22ab94cb6b4a446}\label{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3fa43b4aeb860553fe1c22ab94cb6b4a446}} 
+I2\+C\+\_\+\+W\+R\+I\+T\+E\+\_\+\+F\+A\+I\+L\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I2\+C\+\_\+\+R\+E\+A\+D\+\_\+\+F\+A\+I\+L\+ED@{I2\+C\+\_\+\+R\+E\+A\+D\+\_\+\+F\+A\+I\+L\+ED}!I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}}\index{I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}!I2\+C\+\_\+\+R\+E\+A\+D\+\_\+\+F\+A\+I\+L\+ED@{I2\+C\+\_\+\+R\+E\+A\+D\+\_\+\+F\+A\+I\+L\+ED}}}\mbox{\Hypertarget{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3fac86dfc8232f86c65e33a1b9491763a21}\label{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3fac86dfc8232f86c65e33a1b9491763a21}} 
+I2\+C\+\_\+\+R\+E\+A\+D\+\_\+\+F\+A\+I\+L\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I2\+C\+\_\+\+C\+R\+C\+\_\+\+F\+A\+I\+L\+ED@{I2\+C\+\_\+\+C\+R\+C\+\_\+\+F\+A\+I\+L\+ED}!I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}}\index{I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}!I2\+C\+\_\+\+C\+R\+C\+\_\+\+F\+A\+I\+L\+ED@{I2\+C\+\_\+\+C\+R\+C\+\_\+\+F\+A\+I\+L\+ED}}}\mbox{\Hypertarget{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3fa63b31d0c504bdae545fb5da13d59c986}\label{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3fa63b31d0c504bdae545fb5da13d59c986}} 
+I2\+C\+\_\+\+C\+R\+C\+\_\+\+F\+A\+I\+L\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I2\+C\+\_\+\+F\+A\+IL@{I2\+C\+\_\+\+F\+A\+IL}!I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}}\index{I2\+C\+Driver.\+h@{I2\+C\+Driver.\+h}!I2\+C\+\_\+\+F\+A\+IL@{I2\+C\+\_\+\+F\+A\+IL}}}\mbox{\Hypertarget{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3fa2fa4d728abcc354ab37d4ff073289900}\label{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3fa2fa4d728abcc354ab37d4ff073289900}} 
+I2\+C\+\_\+\+F\+A\+IL&\\
+\hline
+
+\end{DoxyEnumFields}

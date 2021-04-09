@@ -1,0 +1,316 @@
+\hypertarget{classI2CDriver}{}\section{I2\+C\+Driver Class Reference}
+\label{classI2CDriver}\index{I2\+C\+Driver@{I2\+C\+Driver}}
+
+
+I2C Driver class.  
+
+
+
+
+{\ttfamily \#include $<$I2\+C\+Driver.\+h$>$}
+
+
+
+Collaboration diagram for I2\+C\+Driver\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classI2CDriver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classI2CDriver_ae25c889f0a2540eee34d53e0228fe914}{I2\+C\+\_\+\+Setup\+\_\+\+File} (int addres)
+\item 
+int \hyperlink{classI2CDriver_a6480a0e3e5022ac90944f319ca5a5f4e}{I2\+C\+\_\+\+Close\+\_\+\+File} (int fd)
+\item 
+\hyperlink{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3f}{I2\+C\+\_\+\+Return} \hyperlink{classI2CDriver_a1e025ccfccece30b7d42acd1bf7e8e41}{Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read} (int fd, uint16\+\_\+t command, uint8\+\_\+t $\ast$buffer, uint8\+\_\+t read\+Length, uint16\+\_\+t delay=10)
+\item 
+\hyperlink{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3f}{I2\+C\+\_\+\+Return} \hyperlink{classI2CDriver_a732c5b799a0aecde0d908ee981872572}{Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read\+\_\+\+C\+R\+C8} (int fd, uint16\+\_\+t command, uint16\+\_\+t $\ast$buffer, uint8\+\_\+t readlen, uint16\+\_\+t delay=10)
+\item 
+void \hyperlink{classI2CDriver_a01453a7adeb358f269faabb33953eee0}{Delay} (unsigned int time\+Ms)
+\item 
+int \hyperlink{classI2CDriver_acd90c5e9215accc2baf66757054e2906}{I2\+C\+\_\+\+Read\+\_\+\+Byte} (int fd)
+\item 
+int \hyperlink{classI2CDriver_aab652313af52fe19360bc928baf80fae}{I2\+C\+\_\+\+Read\+\_\+8bit\+Reg} (int fd, int command)
+\item 
+int \hyperlink{classI2CDriver_a8639cbc95b98be425f6b30dd591384c6}{I2\+C\+\_\+\+Read\+\_\+16bit\+Reg} (int fd, int command)
+\item 
+int \hyperlink{classI2CDriver_a7b5eb92afa9ed0b5af264836d0944520}{I2\+C\+\_\+\+Write\+\_\+\+Byte} (int fd, int data)
+\item 
+int \hyperlink{classI2CDriver_a6ff7dfdd4aca26c83c6047f45cce1a9e}{I2\+C\+\_\+\+Write\+\_\+8bit\+Reg} (int fd, int command, int data)
+\item 
+int \hyperlink{classI2CDriver_a445d2ef0ba5f742fb8264c202dae4a8d}{I2\+C\+\_\+\+Write\+\_\+16bit\+Reg} (int fd, int command, int data)
+\item 
+int \hyperlink{classI2CDriver_a389bf23234176e0fd0421e078e1fa00d}{I2\+C\+\_\+\+Write\+\_\+\+Block} (int fd, int command, uint8\+\_\+t length, uint8\+\_\+t $\ast$buff)
+\item 
+int \hyperlink{classI2CDriver_a3877a689d16c30835569c7fa5f064359}{I2\+C\+\_\+\+Read\+\_\+\+Block} (int fd, int command, uint8\+\_\+t $\ast$buff)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+I2C Driver class. 
+
+\begin{DoxyAuthor}{Author}
+Kamil Rog
+\end{DoxyAuthor}
+This is class is responsilbe for handling I2C communication. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classI2CDriver_a01453a7adeb358f269faabb33953eee0}\label{classI2CDriver_a01453a7adeb358f269faabb33953eee0}} 
+\index{I2\+C\+Driver@{I2\+C\+Driver}!Delay@{Delay}}
+\index{Delay@{Delay}!I2\+C\+Driver@{I2\+C\+Driver}}
+\subsubsection{\texorpdfstring{Delay()}{Delay()}}
+{\footnotesize\ttfamily void I2\+C\+Driver\+::\+Delay (\begin{DoxyParamCaption}\item[{unsigned int}]{time\+Ms }\end{DoxyParamCaption})}
+
+Dealy Function Pausing Executaion for specified amount of time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Ms} & Time to wait in miliseconds.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classI2CDriver_a6480a0e3e5022ac90944f319ca5a5f4e}\label{classI2CDriver_a6480a0e3e5022ac90944f319ca5a5f4e}} 
+\index{I2\+C\+Driver@{I2\+C\+Driver}!I2\+C\+\_\+\+Close\+\_\+\+File@{I2\+C\+\_\+\+Close\+\_\+\+File}}
+\index{I2\+C\+\_\+\+Close\+\_\+\+File@{I2\+C\+\_\+\+Close\+\_\+\+File}!I2\+C\+Driver@{I2\+C\+Driver}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+\+Close\+\_\+\+File()}{I2C\_Close\_File()}}
+{\footnotesize\ttfamily int I2\+C\+Driver\+::\+I2\+C\+\_\+\+Close\+\_\+\+File (\begin{DoxyParamCaption}\item[{int}]{fd }\end{DoxyParamCaption})}
+
+Close file descriptor
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of file descriptor close operation. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classI2CDriver_a8639cbc95b98be425f6b30dd591384c6}\label{classI2CDriver_a8639cbc95b98be425f6b30dd591384c6}} 
+\index{I2\+C\+Driver@{I2\+C\+Driver}!I2\+C\+\_\+\+Read\+\_\+16bit\+Reg@{I2\+C\+\_\+\+Read\+\_\+16bit\+Reg}}
+\index{I2\+C\+\_\+\+Read\+\_\+16bit\+Reg@{I2\+C\+\_\+\+Read\+\_\+16bit\+Reg}!I2\+C\+Driver@{I2\+C\+Driver}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+\+Read\+\_\+16bit\+Reg()}{I2C\_Read\_16bitReg()}}
+{\footnotesize\ttfamily int I2\+C\+Driver\+::\+I2\+C\+\_\+\+Read\+\_\+16bit\+Reg (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{command }\end{DoxyParamCaption})}
+
+Use S\+M\+B\+US to Write a byte word and read 2 bytes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the device. \\
+\hline
+{\em command} & Command / Register to address.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 16-\/bit unsigned word received from the device else negative errno 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classI2CDriver_aab652313af52fe19360bc928baf80fae}\label{classI2CDriver_aab652313af52fe19360bc928baf80fae}} 
+\index{I2\+C\+Driver@{I2\+C\+Driver}!I2\+C\+\_\+\+Read\+\_\+8bit\+Reg@{I2\+C\+\_\+\+Read\+\_\+8bit\+Reg}}
+\index{I2\+C\+\_\+\+Read\+\_\+8bit\+Reg@{I2\+C\+\_\+\+Read\+\_\+8bit\+Reg}!I2\+C\+Driver@{I2\+C\+Driver}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+\+Read\+\_\+8bit\+Reg()}{I2C\_Read\_8bitReg()}}
+{\footnotesize\ttfamily int I2\+C\+Driver\+::\+I2\+C\+\_\+\+Read\+\_\+8bit\+Reg (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{command }\end{DoxyParamCaption})}
+
+Use S\+M\+B\+US to Write a byte word and read one byte from.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the device. \\
+\hline
+{\em command} & Command / Register to address.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A data byte received from the device elese negative errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classI2CDriver_a3877a689d16c30835569c7fa5f064359}\label{classI2CDriver_a3877a689d16c30835569c7fa5f064359}} 
+\index{I2\+C\+Driver@{I2\+C\+Driver}!I2\+C\+\_\+\+Read\+\_\+\+Block@{I2\+C\+\_\+\+Read\+\_\+\+Block}}
+\index{I2\+C\+\_\+\+Read\+\_\+\+Block@{I2\+C\+\_\+\+Read\+\_\+\+Block}!I2\+C\+Driver@{I2\+C\+Driver}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+\+Read\+\_\+\+Block()}{I2C\_Read\_Block()}}
+{\footnotesize\ttfamily int I2\+C\+Driver\+::\+I2\+C\+\_\+\+Read\+\_\+\+Block (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{command,  }\item[{uint8\+\_\+t $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+Use S\+M\+B\+US to Read n-\/bytes using a command / addressing specific register.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the device. \\
+\hline
+{\em command} & Command / Register to address. \\
+\hline
+{\em buffer} & Buffer to read the data to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of read bytes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classI2CDriver_acd90c5e9215accc2baf66757054e2906}\label{classI2CDriver_acd90c5e9215accc2baf66757054e2906}} 
+\index{I2\+C\+Driver@{I2\+C\+Driver}!I2\+C\+\_\+\+Read\+\_\+\+Byte@{I2\+C\+\_\+\+Read\+\_\+\+Byte}}
+\index{I2\+C\+\_\+\+Read\+\_\+\+Byte@{I2\+C\+\_\+\+Read\+\_\+\+Byte}!I2\+C\+Driver@{I2\+C\+Driver}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+\+Read\+\_\+\+Byte()}{I2C\_Read\_Byte()}}
+{\footnotesize\ttfamily int I2\+C\+Driver\+::\+I2\+C\+\_\+\+Read\+\_\+\+Byte (\begin{DoxyParamCaption}\item[{int}]{fd }\end{DoxyParamCaption})}
+
+Use S\+M\+B\+US to read one byte.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A data byte received from the device elese negative errno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classI2CDriver_ae25c889f0a2540eee34d53e0228fe914}\label{classI2CDriver_ae25c889f0a2540eee34d53e0228fe914}} 
+\index{I2\+C\+Driver@{I2\+C\+Driver}!I2\+C\+\_\+\+Setup\+\_\+\+File@{I2\+C\+\_\+\+Setup\+\_\+\+File}}
+\index{I2\+C\+\_\+\+Setup\+\_\+\+File@{I2\+C\+\_\+\+Setup\+\_\+\+File}!I2\+C\+Driver@{I2\+C\+Driver}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+\+Setup\+\_\+\+File()}{I2C\_Setup\_File()}}
+{\footnotesize\ttfamily int I2\+C\+Driver\+::\+I2\+C\+\_\+\+Setup\+\_\+\+File (\begin{DoxyParamCaption}\item[{int}]{addr }\end{DoxyParamCaption})}
+
+Open I2C File descriptor for target slave device.
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the slave device.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I2C File descriptor for specified address of the slave device. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classI2CDriver_a445d2ef0ba5f742fb8264c202dae4a8d}\label{classI2CDriver_a445d2ef0ba5f742fb8264c202dae4a8d}} 
+\index{I2\+C\+Driver@{I2\+C\+Driver}!I2\+C\+\_\+\+Write\+\_\+16bit\+Reg@{I2\+C\+\_\+\+Write\+\_\+16bit\+Reg}}
+\index{I2\+C\+\_\+\+Write\+\_\+16bit\+Reg@{I2\+C\+\_\+\+Write\+\_\+16bit\+Reg}!I2\+C\+Driver@{I2\+C\+Driver}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+\+Write\+\_\+16bit\+Reg()}{I2C\_Write\_16bitReg()}}
+{\footnotesize\ttfamily int I2\+C\+Driver\+::\+I2\+C\+\_\+\+Write\+\_\+16bit\+Reg (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{command,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+Use S\+M\+B\+US to Write a 2-\/byte word using a command / addressing specific register.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the device. \\
+\hline
+{\em command} & Command / Register to address. \\
+\hline
+{\em data} & Data to be written.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else negative errno 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classI2CDriver_a6ff7dfdd4aca26c83c6047f45cce1a9e}\label{classI2CDriver_a6ff7dfdd4aca26c83c6047f45cce1a9e}} 
+\index{I2\+C\+Driver@{I2\+C\+Driver}!I2\+C\+\_\+\+Write\+\_\+8bit\+Reg@{I2\+C\+\_\+\+Write\+\_\+8bit\+Reg}}
+\index{I2\+C\+\_\+\+Write\+\_\+8bit\+Reg@{I2\+C\+\_\+\+Write\+\_\+8bit\+Reg}!I2\+C\+Driver@{I2\+C\+Driver}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+\+Write\+\_\+8bit\+Reg()}{I2C\_Write\_8bitReg()}}
+{\footnotesize\ttfamily int I2\+C\+Driver\+::\+I2\+C\+\_\+\+Write\+\_\+8bit\+Reg (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{command,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+Use S\+M\+B\+US to Write a byte word uing a command / addressing specific register.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the device. \\
+\hline
+{\em command} & Command / Register to address. \\
+\hline
+{\em data} & Data to be written.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else negative errno 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classI2CDriver_a389bf23234176e0fd0421e078e1fa00d}\label{classI2CDriver_a389bf23234176e0fd0421e078e1fa00d}} 
+\index{I2\+C\+Driver@{I2\+C\+Driver}!I2\+C\+\_\+\+Write\+\_\+\+Block@{I2\+C\+\_\+\+Write\+\_\+\+Block}}
+\index{I2\+C\+\_\+\+Write\+\_\+\+Block@{I2\+C\+\_\+\+Write\+\_\+\+Block}!I2\+C\+Driver@{I2\+C\+Driver}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+\+Write\+\_\+\+Block()}{I2C\_Write\_Block()}}
+{\footnotesize\ttfamily int I2\+C\+Driver\+::\+I2\+C\+\_\+\+Write\+\_\+\+Block (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{command,  }\item[{uint8\+\_\+t}]{length,  }\item[{uint8\+\_\+t $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+Use S\+M\+B\+US to Write n-\/bytes using a command / addressing specific register.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the device. \\
+\hline
+{\em command} & Command / Register to address. \\
+\hline
+{\em length} & Number of bytes to be written from the data buffer. \\
+\hline
+{\em buffer} & Buffer containing data to be written.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else negative errno 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classI2CDriver_a7b5eb92afa9ed0b5af264836d0944520}\label{classI2CDriver_a7b5eb92afa9ed0b5af264836d0944520}} 
+\index{I2\+C\+Driver@{I2\+C\+Driver}!I2\+C\+\_\+\+Write\+\_\+\+Byte@{I2\+C\+\_\+\+Write\+\_\+\+Byte}}
+\index{I2\+C\+\_\+\+Write\+\_\+\+Byte@{I2\+C\+\_\+\+Write\+\_\+\+Byte}!I2\+C\+Driver@{I2\+C\+Driver}}
+\subsubsection{\texorpdfstring{I2\+C\+\_\+\+Write\+\_\+\+Byte()}{I2C\_Write\_Byte()}}
+{\footnotesize\ttfamily int I2\+C\+Driver\+::\+I2\+C\+\_\+\+Write\+\_\+\+Byte (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{data }\end{DoxyParamCaption})}
+
+Use S\+M\+B\+US to Write a byte word.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the device. \\
+\hline
+{\em data} & Data to be written.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else negative errno 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classI2CDriver_a1e025ccfccece30b7d42acd1bf7e8e41}\label{classI2CDriver_a1e025ccfccece30b7d42acd1bf7e8e41}} 
+\index{I2\+C\+Driver@{I2\+C\+Driver}!Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read@{Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read}}
+\index{Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read@{Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read}!I2\+C\+Driver@{I2\+C\+Driver}}
+\subsubsection{\texorpdfstring{Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read()}{Plain\_I2C\_Write\_Read()}}
+{\footnotesize\ttfamily \hyperlink{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3f}{I2\+C\+\_\+\+Return} I2\+C\+Driver\+::\+Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{uint16\+\_\+t}]{command,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{uint8\+\_\+t}]{read\+Length,  }\item[{uint16\+\_\+t}]{delay = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Use Plain I2C to read n-\/bytes a using a 2byte command. Pass 0 for read\+Length to just write.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the device. \\
+\hline
+{\em command} & Command / Register to address. \\
+\hline
+{\em buffer} & Buffer to read the data to. \\
+\hline
+{\em read\+Length} & Number of bytes to recieve \\
+\hline
+{\em delay} & Delay between read and write (10ms by default)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classI2CDriver_a732c5b799a0aecde0d908ee981872572}\label{classI2CDriver_a732c5b799a0aecde0d908ee981872572}} 
+\index{I2\+C\+Driver@{I2\+C\+Driver}!Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read\+\_\+\+C\+R\+C8@{Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read\+\_\+\+C\+R\+C8}}
+\index{Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read\+\_\+\+C\+R\+C8@{Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read\+\_\+\+C\+R\+C8}!I2\+C\+Driver@{I2\+C\+Driver}}
+\subsubsection{\texorpdfstring{Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read\+\_\+\+C\+R\+C8()}{Plain\_I2C\_Write\_Read\_CRC8()}}
+{\footnotesize\ttfamily \hyperlink{I2CDriver_8h_a52c38e7692a76e897b00daa867b29d3f}{I2\+C\+\_\+\+Return} I2\+C\+Driver\+::\+Plain\+\_\+\+I2\+C\+\_\+\+Write\+\_\+\+Read\+\_\+\+C\+R\+C8 (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{uint16\+\_\+t}]{command,  }\item[{uint16\+\_\+t $\ast$}]{buffer,  }\item[{uint8\+\_\+t}]{readlen,  }\item[{uint16\+\_\+t}]{delay = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+Use Plain I2C to read n-\/bytes using a uint16\+\_\+t command and perform a C\+R\+C8 on reply uint16\+\_\+ts . Pass 0 for read\+Length to just write.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor of the device. \\
+\hline
+{\em command} & Command / Register to address. \\
+\hline
+{\em buffer} & Buffer to read the data to. \\
+\hline
+{\em readlen} & number of uint16\+\_\+t to read \\
+\hline
+{\em delay} & Delay between read and write\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else error number
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]\+: Appopriate command bytes \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/controller/peripherials/\hyperlink{I2CDriver_8h}{I2\+C\+Driver.\+h}\item 
+src/controller/peripherials/\hyperlink{I2CDriver_8cpp}{I2\+C\+Driver.\+cpp}\end{DoxyCompactItemize}

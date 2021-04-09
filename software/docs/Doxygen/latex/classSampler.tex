@@ -1,0 +1,213 @@
+\hypertarget{classSampler}{}\section{Sampler Class Reference}
+\label{classSampler}\index{Sampler@{Sampler}}
+
+
+\hyperlink{classSampler}{Sampler} Class.  
+
+
+
+
+{\ttfamily \#include $<$Sampler.\+h$>$}
+
+
+
+Inheritance diagram for Sampler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classSampler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sampler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSampler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSampler_aec4905ed5f8259bb5e361da172bf7f17}{Sampler} (\hyperlink{classController}{Controller} $\ast$cb)
+\item 
+\hyperlink{classSampler_afbbbd238b78dd3024686c852b69fa64e}{$\sim$\+Sampler} ()
+\item 
+void \hyperlink{classSampler_a026a0839919e8e93fa75f19b67ccffc6}{set\+Callback} (\hyperlink{classController}{Controller} $\ast$cb)
+\item 
+void \hyperlink{classSampler_af661f48134a6d0f1f2d6080f5025392e}{stop\+Sampler} ()
+\item 
+virtual void \hyperlink{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}{start} (long nanosecs, \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t} type=\hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58}{P\+E\+R\+I\+O\+D\+IC})
+\item 
+virtual void \hyperlink{classCppTimer_a4bb95ddee98a536d0818b8f6096bf7e7}{stop} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSampler_addf333c6e247ee3a1def41260caa902a}{timer\+Event} ()
+\item 
+int \hyperlink{classSampler_a1aed5b32bf99312ba38d092f1acad3d9}{Initialize} ()
+\item 
+int \hyperlink{classSampler_a5702d0ef89adb532fef4f9879e7e36d4}{Gather\+\_\+\+Env\+\_\+\+Data} ()
+\item 
+int \hyperlink{classSampler_acf3d04a740356e54fe53766a7f00ae15}{Print\+\_\+\+Env\+\_\+\+Data} ()
+\item 
+int \hyperlink{classSampler_a24077f1eeb2491b65f9577efd07dffd6}{Close\+Devices} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classI2CDriver}{I2\+C\+Driver} \hyperlink{classSampler_ada5598060be79a005bf4375fcbf9773d}{i2c\+Driver}
+\item 
+\hyperlink{classVEML7700}{V\+E\+M\+L7700} \hyperlink{classSampler_ae81394f464670af514f8dc7c5df46d74}{light\+Sensor}
+\item 
+\hyperlink{classSHT31D}{S\+H\+T31D} \hyperlink{classSampler_aad073931f59004109e8050c669b294c0}{temperature\+Humidity\+Sensor}
+\item 
+\hyperlink{classSGP30}{S\+G\+P30} \hyperlink{classSampler_a4af78e46617fc8cdbc4bd14a7db5c741}{gas\+Sensor}
+\item 
+\hyperlink{structEnvironmentData}{Environment\+Data} \hyperlink{classSampler_a4cfbeb66e1cd18cfc66ccdb2712770f9}{env\+Data}
+\item 
+\hyperlink{classController}{Controller} $\ast$ \hyperlink{classSampler_a3a37b5d667134d905e4bda45974cb936}{sampler\+Callback} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classSampler}{Sampler} Class. 
+
+\begin{DoxyAuthor}{Author}
+Kamil Rog
+\end{DoxyAuthor}
+This class is responsible for taking measurements for all devices on I2C Bus. Inherits from \hyperlink{classCppTimer}{Cpp\+Timer} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSampler_aec4905ed5f8259bb5e361da172bf7f17}\label{classSampler_aec4905ed5f8259bb5e361da172bf7f17}} 
+\index{Sampler@{Sampler}!Sampler@{Sampler}}
+\index{Sampler@{Sampler}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{Sampler()}{Sampler()}}
+{\footnotesize\ttfamily Sampler\+::\+Sampler (\begin{DoxyParamCaption}\item[{\hyperlink{classController}{Controller} $\ast$}]{cb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSampler_afbbbd238b78dd3024686c852b69fa64e}\label{classSampler_afbbbd238b78dd3024686c852b69fa64e}} 
+\index{Sampler@{Sampler}!````~Sampler@{$\sim$\+Sampler}}
+\index{````~Sampler@{$\sim$\+Sampler}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{$\sim$\+Sampler()}{~Sampler()}}
+{\footnotesize\ttfamily Sampler\+::$\sim$\+Sampler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSampler_a24077f1eeb2491b65f9577efd07dffd6}\label{classSampler_a24077f1eeb2491b65f9577efd07dffd6}} 
+\index{Sampler@{Sampler}!Close\+Devices@{Close\+Devices}}
+\index{Close\+Devices@{Close\+Devices}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{Close\+Devices()}{CloseDevices()}}
+{\footnotesize\ttfamily int Sampler\+::\+Close\+Devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Reads data from all sensors by turn.
+
+\begin{DoxyReturn}{Returns}
+Zero On Sucess 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSampler_a5702d0ef89adb532fef4f9879e7e36d4}\label{classSampler_a5702d0ef89adb532fef4f9879e7e36d4}} 
+\index{Sampler@{Sampler}!Gather\+\_\+\+Env\+\_\+\+Data@{Gather\+\_\+\+Env\+\_\+\+Data}}
+\index{Gather\+\_\+\+Env\+\_\+\+Data@{Gather\+\_\+\+Env\+\_\+\+Data}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{Gather\+\_\+\+Env\+\_\+\+Data()}{Gather\_Env\_Data()}}
+{\footnotesize\ttfamily int Sampler\+::\+Gather\+\_\+\+Env\+\_\+\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Reads data from all sensors by turn.
+
+\begin{DoxyReturn}{Returns}
+Zero On Sucess 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSampler_a1aed5b32bf99312ba38d092f1acad3d9}\label{classSampler_a1aed5b32bf99312ba38d092f1acad3d9}} 
+\index{Sampler@{Sampler}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily int Sampler\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Initialize all enviromental data struct variables and sensors.
+
+filepath filepath for settings file. \mbox{\Hypertarget{classSampler_acf3d04a740356e54fe53766a7f00ae15}\label{classSampler_acf3d04a740356e54fe53766a7f00ae15}} 
+\index{Sampler@{Sampler}!Print\+\_\+\+Env\+\_\+\+Data@{Print\+\_\+\+Env\+\_\+\+Data}}
+\index{Print\+\_\+\+Env\+\_\+\+Data@{Print\+\_\+\+Env\+\_\+\+Data}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{Print\+\_\+\+Env\+\_\+\+Data()}{Print\_Env\_Data()}}
+{\footnotesize\ttfamily int Sampler\+::\+Print\+\_\+\+Env\+\_\+\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSampler_a026a0839919e8e93fa75f19b67ccffc6}\label{classSampler_a026a0839919e8e93fa75f19b67ccffc6}} 
+\index{Sampler@{Sampler}!set\+Callback@{set\+Callback}}
+\index{set\+Callback@{set\+Callback}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{set\+Callback()}{setCallback()}}
+{\footnotesize\ttfamily void Sampler\+::set\+Callback (\begin{DoxyParamCaption}\item[{\hyperlink{classController}{Controller} $\ast$}]{cb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the callback which is called whenever there is new data \mbox{\Hypertarget{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}\label{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}} 
+\index{Sampler@{Sampler}!start@{start}}
+\index{start@{start}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Cpp\+Timer\+::start (\begin{DoxyParamCaption}\item[{long}]{nanosecs,  }\item[{\hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t}}]{type = {\ttfamily \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58}{P\+E\+R\+I\+O\+D\+IC}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+Starts the timer. The timer fires first after the specified time in nanoseconds and then at that interval in P\+E\+R\+I\+O\+D\+IC mode. In O\+N\+E\+S\+H\+OT mode the timer fires once after the specified time in nanoseconds. \mbox{\Hypertarget{classCppTimer_a4bb95ddee98a536d0818b8f6096bf7e7}\label{classCppTimer_a4bb95ddee98a536d0818b8f6096bf7e7}} 
+\index{Sampler@{Sampler}!stop@{stop}}
+\index{stop@{stop}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Cpp\+Timer\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+Stops the timer by disarming it. It can be re-\/started with \hyperlink{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}{start()}. \mbox{\Hypertarget{classSampler_af661f48134a6d0f1f2d6080f5025392e}\label{classSampler_af661f48134a6d0f1f2d6080f5025392e}} 
+\index{Sampler@{Sampler}!stop\+Sampler@{stop\+Sampler}}
+\index{stop\+Sampler@{stop\+Sampler}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{stop\+Sampler()}{stopSampler()}}
+{\footnotesize\ttfamily void Sampler\+::stop\+Sampler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Stops the data acquistion \mbox{\Hypertarget{classSampler_addf333c6e247ee3a1def41260caa902a}\label{classSampler_addf333c6e247ee3a1def41260caa902a}} 
+\index{Sampler@{Sampler}!timer\+Event@{timer\+Event}}
+\index{timer\+Event@{timer\+Event}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{timer\+Event()}{timerEvent()}}
+{\footnotesize\ttfamily void Sampler\+::timer\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+Abstract function which needs to be implemented by the children. This is called every time the timer fires. 
+
+Implements \hyperlink{classCppTimer_ac2665403595b6aee5f581d0ebfeb886c}{Cpp\+Timer}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classSampler_a4cfbeb66e1cd18cfc66ccdb2712770f9}\label{classSampler_a4cfbeb66e1cd18cfc66ccdb2712770f9}} 
+\index{Sampler@{Sampler}!env\+Data@{env\+Data}}
+\index{env\+Data@{env\+Data}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{env\+Data}{envData}}
+{\footnotesize\ttfamily \hyperlink{structEnvironmentData}{Environment\+Data} Sampler\+::env\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+Current and Target Enviroment Data Struct \mbox{\Hypertarget{classSampler_a4af78e46617fc8cdbc4bd14a7db5c741}\label{classSampler_a4af78e46617fc8cdbc4bd14a7db5c741}} 
+\index{Sampler@{Sampler}!gas\+Sensor@{gas\+Sensor}}
+\index{gas\+Sensor@{gas\+Sensor}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{gas\+Sensor}{gasSensor}}
+{\footnotesize\ttfamily \hyperlink{classSGP30}{S\+G\+P30} Sampler\+::gas\+Sensor\hspace{0.3cm}{\ttfamily [private]}}
+
+\hyperlink{classSGP30}{S\+G\+P30} Gas Sensor Object \mbox{\Hypertarget{classSampler_ada5598060be79a005bf4375fcbf9773d}\label{classSampler_ada5598060be79a005bf4375fcbf9773d}} 
+\index{Sampler@{Sampler}!i2c\+Driver@{i2c\+Driver}}
+\index{i2c\+Driver@{i2c\+Driver}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{i2c\+Driver}{i2cDriver}}
+{\footnotesize\ttfamily \hyperlink{classI2CDriver}{I2\+C\+Driver} Sampler\+::i2c\+Driver\hspace{0.3cm}{\ttfamily [private]}}
+
+I2C driver used for peripherials \mbox{\Hypertarget{classSampler_ae81394f464670af514f8dc7c5df46d74}\label{classSampler_ae81394f464670af514f8dc7c5df46d74}} 
+\index{Sampler@{Sampler}!light\+Sensor@{light\+Sensor}}
+\index{light\+Sensor@{light\+Sensor}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{light\+Sensor}{lightSensor}}
+{\footnotesize\ttfamily \hyperlink{classVEML7700}{V\+E\+M\+L7700} Sampler\+::light\+Sensor\hspace{0.3cm}{\ttfamily [private]}}
+
+\hyperlink{classVEML7700}{V\+E\+M\+L7700} Light Sensor Object \mbox{\Hypertarget{classSampler_a3a37b5d667134d905e4bda45974cb936}\label{classSampler_a3a37b5d667134d905e4bda45974cb936}} 
+\index{Sampler@{Sampler}!sampler\+Callback@{sampler\+Callback}}
+\index{sampler\+Callback@{sampler\+Callback}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{sampler\+Callback}{samplerCallback}}
+{\footnotesize\ttfamily \hyperlink{classController}{Controller}$\ast$ Sampler\+::sampler\+Callback = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSampler_aad073931f59004109e8050c669b294c0}\label{classSampler_aad073931f59004109e8050c669b294c0}} 
+\index{Sampler@{Sampler}!temperature\+Humidity\+Sensor@{temperature\+Humidity\+Sensor}}
+\index{temperature\+Humidity\+Sensor@{temperature\+Humidity\+Sensor}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{temperature\+Humidity\+Sensor}{temperatureHumiditySensor}}
+{\footnotesize\ttfamily \hyperlink{classSHT31D}{S\+H\+T31D} Sampler\+::temperature\+Humidity\+Sensor\hspace{0.3cm}{\ttfamily [private]}}
+
+\hyperlink{classSHT31D}{S\+H\+T31D} Temperature \& Humidity Sensor Object 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/controller/\hyperlink{Sampler_8h}{Sampler.\+h}\item 
+src/controller/\hyperlink{Sampler_8cpp}{Sampler.\+cpp}\end{DoxyCompactItemize}

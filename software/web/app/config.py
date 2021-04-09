@@ -19,9 +19,9 @@ PROJECT_SITE_URL = u'http://127.0.0.1:5000'
 PROJECT_SIGNUP_TOKEN_MAX_AGE = 60 * 60 * 24 * 7  # in seconds
 PROJECT_RECOVER_PASSWORD_TOKEN_MAX_AGE = 60 * 60 * 24 * 7  # in seconds
 
+#db settings
+MONGODB_DB = "agropi_db"
 
-
-API_URL = 'http://127.0.0.1:6060/api/v1'
-API_HEADERS = {
-	'Authorization': 'Bearer 4UFzjYbPmtWS6yChoeMXvMlG1yGIczec'
-}
+API_URL = ''
+CPP_SERVER_URL = 'http://127.0.0.1:8080'
+API_HEADERS = {}

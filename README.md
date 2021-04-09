@@ -47,7 +47,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#wiki">Wiki</a></li>
   </ol>
 </details>
 
@@ -73,8 +72,8 @@ In the near future AgroPi is going to utilize AI driven image pocessing to deter
 
 <br />
 
-  <a href="https://github.com/krogk/AgroPi">
-    <img src="media/images/agropitopright.PNG" alt="Concept Render" >
+  <!--  <a href="https://github.com/krogk/AgroPi"> -->
+  <!--  <img src="media/images/agropitopright.PNG" alt="Concept Render" >--> 
   </a>
 
 
@@ -82,16 +81,15 @@ In the near future AgroPi is going to utilize AI driven image pocessing to deter
 
 ### Software
 
-In the first software release we plan to allow you to view the following conditions on the website interface:
+v0.1 Release allows you to view the following conditions on the website interface:
 * Temperature 
 * Humidity
 * Light Intensity
-* TVOC
+* [TVOC](https://en.wikipedia.org/wiki/Volatile_organic_compound)
 * eCO2
-* Photos of your crops
 <br />
 <br />
-As well as easily set the target values for each variable for particular time of day, however, the actuation is going to be implemented in software release 2.
+As well as easily set the target values for each variable for particular time of day, however, the actuation is going to be implemented in software release v0.2.
 <br />
 
 
@@ -110,46 +108,33 @@ Sensors:
 <br />
 
 Actuators - This is user's choice however for our demo the following are used:
-* [Camera Actuators - TBD]()
+* [Heating Element - Zerodis PTC Heating Element AC/DC 12V (80 ℃ 2—5W) ](https://www.amazon.co.uk/gp/product/B07FJZQLMK/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
 * [Water Pump](https://www.mybotic.com.my/products/Micro-Submersible-Water-Pump-DC-3V-5V/2778#:~:text=Suction%20Distance%3A%200.8%20meter%20)
-* [Fan - TBD]()
+* [Fan - Coolermaster A12025-12CB-3BN-F1]()
 
 Misc:
-* [Relay Board - TBD]()
+* [Relay Board - Elego ](https://github.com/krogk/AgroPi/blob/Software_Release_1/hardware/Relay%20Board/4%20CHANNEL%205V%2010A%20RELAY%20MODULE.pdf)
 
-<br />
+
 
 Schematics:
-* [System Schematic - TBC]()
+* [System Schematic](https://github.com/krogk/AgroPi/blob/Software_Release_1/hardware/Schematic.svg)
 
 
 ### Roadmap
 
-[x] Github Setup
 <br />
-<br />
-[] Software Release 1 - Working core prototype
-* [x] I2C Driver
-* [x] Light Sensor Integrated
-* [] Temperature + Humidity Sensor Integrated
-* [] Camera Integrated
-* [] Gas Sensor Integrated
-* [] Web server
-* [] Real-time Adaptation
-<br />
-<br />
-[] Software Release 2 - Actuation & Image Processing - Detecting Mold
-* [] Lighting Actuation 
-* [] Watering Actuation 
-* [] Water Level Sensor Integrated 
-* [] Soil Moisture Sensor Integrated 
-* [] Gather Training Dataset
-* [] Train neuralnet
-* [] Test on real samples
-<br />
-<br />
-[] Software Release 3 - Life cycle Assessment & Nutrient Defficiencies
-<br />
+[-] Next Software Release (v0.2) - Actuation & Image Processing - Detecting Seedling/Mushroom - 16/04/2021
+* [-] Camera Integrated
+* [-] Sensor Calibration
+* [-] Relay Board Driver
+* [-] Relay Board Integration
+* [-] Web-Server Improvments
+* [-] Gather Training Dataset
+* [-] Train neuralnet
+* [-] Test on real samples
+
+
 <br />
 
 
@@ -158,26 +143,23 @@ Schematics:
 
 ### Prerequisites
 
-...Ubuntu Packages: 
-  ```sh
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install git
-sudo apt-get install cmake
-sudo apt-get install flex  - (Only Required for building Doxygen)
-sudo apt-get install bison - (Only Required for building Doxygen)
-sudo apt-get install libboost-all-dev
-sudo apt-get install libi2c-dev
-  ```
-
-
-### Installation
-
 1. Clone the repository
 ```sh
 git clone https://github.com/krogk/AgroPi
 ```
-2. Build
+2. Ubuntu Packages: 
+```sh
+./install.sh
+```
+3. Server Depencencies: 
+```sh
+pip install -r requirements.txt
+```
+
+### Installation
+
+Build:
+
 ```sh
 mkdir build
 cd build/
@@ -190,10 +172,20 @@ make
 ### Usage
 
 To run the software:
-1. Go to build directory and run
+1. Go to web directory and run server
+```sh
+python ./run.py &
+You might need to create Python env
+source venv/bin/activate
+```
+
+2. Go to build directory and run application
 ```sh
 ./src/AgroPi 
 ```
+
+3. Wait 15 Seconds for application to set up sensors
+
 
 <!-- Contributing -->
 ## Contributing
@@ -209,14 +201,8 @@ Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 <!-- Contact Info -->
 ## Contact
 
-[Samuel Obosu - Web server & Application](https://github.com/Samuel-Obosu)
+[Samuel Obosu - Web server & Network Programming](https://github.com/Samuel-Obosu)
 <br />
 [Andrew Scott-George - Image Processing](https://github.com/andrewsg3)
 <br />
 [Kamil Rog - Real-time Embedded Programming](https://github.com/krogk)
-
-
-<!-- AgroPi Wiki -->
-## Wiki
-
-[Wiki](https://github.com/krogk/AgroPi/wiki)
