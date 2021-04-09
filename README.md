@@ -89,11 +89,8 @@ v0.1 Release allows you to view the following conditions on the website interfac
 * eCO2
 <br />
 
-<div align="center">
 [See Doxygen Documentation](https://krogk.github.io/AgroPi/software/docs/Doxygen/html/index.html)
 <br />
-  </a>
-</div>
 <br />
 
 As well as easily set the target values for each variable for particular time of day, however, the actuation is going to be implemented in software release v0.2.
