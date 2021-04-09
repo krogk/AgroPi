@@ -122,6 +122,7 @@ Schematics:
 
 
 ### Roadmap
+
 <br />
 [-] Next Software Release (v0.2) - Actuation & Image Processing - Detecting Seedling/Mushroom - 16/04/2021
 * [-] Camera Integrated
@@ -133,6 +134,7 @@ Schematics:
 * [-] Train neuralnet
 * [-] Test on real samples
 
+
 <br />
 
 
@@ -140,6 +142,7 @@ Schematics:
 ## Getting Started
 
 ### Prerequisites
+
 1. Clone the repository
 ```sh
 git clone https://github.com/krogk/AgroPi
@@ -156,6 +159,7 @@ pip install -r requirements.txt
 ### Installation
 
 Build:
+
 ```sh
 mkdir build
 cd build/
@@ -168,7 +172,6 @@ make
 ### Usage
 
 To run the software:
-
 1. Go to web directory and run server
 ```sh
 python ./run.py &
@@ -182,6 +185,7 @@ source venv/bin/activate
 ```
 
 3. Wait 15 Seconds for application to set up sensors
+
 
 <!-- Contributing -->
 ## Contributing
