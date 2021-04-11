@@ -13,7 +13,7 @@
             <span class="navbar-toggler-bar bar3"></span>
           </button>
         </div>
-        <a class="navbar-brand" href="#pablo">Control</a>
+        <a class="navbar-brand" href="#pablo">Actuation</a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -73,7 +73,7 @@
       <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h5 class="title">Control</h5>
+                <h5 class="title">Actuation</h5>
                 <p class="category">Adjust sensors</p>
             </div>
             <div class="card-body">
@@ -82,7 +82,7 @@
                 </div>
                 <div class="col-md-4 px-1">
                     <div class="form-group">
-                        <label>Temperature</label>
+                        <label>Temperature (celsius)</label>
                         <input type="text" id="temperature-slider">
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="col-md-4 px-1">
                     <div class="form-group">
-                        <label>Humidity</label>
+                        <label>Humidity (%)</label>
                         <input type="text" id="humidity-slider">
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                 </div>
                 <div class="col-md-4 px-1">
                     <div class="form-group">
-                        <label>Light Intensity</label>
+                        <label>Light Intensity (Lux)</label>
                         <input type="text" id="light-slider">
                     </div>
                 </div>
@@ -120,6 +120,29 @@
                 <div class="col-md-1 px-1">
                 </div>
               </div>
+              <div class="row">
+                <hr>
+              </div>
+              <div class="row">
+                <div class="col-md-1 px-1">
+                </div>
+                <div class="col-md-4 px-1">
+                    <div class="form-group">
+                        <label>TVOC (ppb)</label>
+                        <input type="text" id="tvoc-slider">
+                    </div>
+                </div>
+                <div class="col-md-2 px-1">
+                </div>
+                <div class="col-md-4 px-1">
+                    <div class="form-group">
+                        <label>eCO2 (ppm)</label>
+                        <input type="text" id="eco2-slider">
+                    </div>
+                </div>
+                <div class="col-md-1 px-1">
+                </div>
+              </div>
               <div class="row" style="padding-top: 50px;">
                 <div class="col-md-1 px-1">
                 </div>
@@ -128,7 +151,7 @@
                 <div class="col-md-2 px-1">
                 </div>
                 <div class="col-md-4 px-1">
-                  <button class="btn btn-primary btn-round" type="button" style="float: right;">
+                  <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_control_values()" id="update-control-button">
                     <i class="now-ui-icons arrows-1_cloud-upload-94"></i> Update
                   </button>
                 </div>

@@ -17,6 +17,7 @@ class ControlControllers:
             return Response.input_error(description="An error occurred: {}".format(str(ex)))
 
     def update_sensor_values(self, request_data):
+        return Response.ok_response()
         try:
             for key, value in request_data.items():
                 params = {
