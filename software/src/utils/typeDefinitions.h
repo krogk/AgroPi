@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 /**
  * Environment Data Struct Definition
  * 
@@ -21,7 +22,6 @@
 } EnvironmentData;
 
 
-
 /**
  * Environment Data Struct Definition
  * 
@@ -30,14 +30,29 @@
  typedef struct{
   /// Alternativley use triple slash for the comments
 	// Env Data
-  float LightIntensityUpperThreshold; /*!< Light Intensity of the envieronment (in Lux) */
-  float LightIntensityLowerThreshold; /*!< Light Intensity of the envieronment (in Lux) */	
+  float LightIntensityUpperThreshold;       /*!< Light Intensity of the envieronment (in Lux) */
+  float LightIntensityLowerThreshold;       /*!< Light Intensity of the envieronment (in Lux) */	
   float TemperatureUpperThreshold; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
   float TemperatureLowerThreshold; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
-  float HumidityUpperThreshold; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
-  float HumidityLowerThreshold; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
-  uint16_t CO2UpperThreshold; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
-  uint16_t TVOCUpperThreshold; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
-  uint16_t RawEthanolUpperThreshold; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
-  uint16_t RawH2UpperThreshold; 					/*!< Temperature of the envirnoment (in Degrees Celsius)*/
+  float HumidityUpperThreshold; 					  /*!< Temperature of the envirnoment (in Degrees Celsius)*/
+  float HumidityLowerThreshold; 					  /*!< Temperature of the envirnoment (in Degrees Celsius)*/
+  uint16_t CO2UpperThreshold; 					    /*!< Temperature of the envirnoment (in Degrees Celsius)*/
+  uint16_t TVOCUpperThreshold; 					    /*!< Temperature of the envirnoment (in Degrees Celsius)*/
+  uint16_t RawEthanolUpperThreshold; 				/*!< Temperature of the envirnoment (in Degrees Celsius)*/
+  uint16_t RawH2UpperThreshold; 					  /*!< Temperature of the envirnoment (in Degrees Celsius)*/
 } TargetEnvironmentData;
+
+
+/**
+ * Environment Data Struct Definition
+ * 
+ * This struct conatins actuaytor 
+ */
+ typedef struct{
+  /// Alternativley use triple slash for the comments
+	// Env Data
+  bool ForceHeating;        /*!< ForceHeating on actuation handler */
+	bool ForceLighting;					
+	bool ForceAirflow;
+	bool ForceWaterPump;						
+} ActuationForceFlags;

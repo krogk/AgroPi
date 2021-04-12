@@ -2,7 +2,16 @@
 \label{ControllerThread_8cpp}\index{src/threads/\+Controller\+Thread.\+cpp@{src/threads/\+Controller\+Thread.\+cpp}}
 {\ttfamily \#include \char`\"{}Controller\+Thread.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Sampler.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Controller.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$condition\+\_\+variable$>$}\newline
+{\ttfamily \#include $<$httplib.\+h$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
 Include dependency graph for Controller\+Thread.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -10,6 +19,38 @@ Include dependency graph for Controller\+Thread.\+cpp\+:\nopagebreak
 \includegraphics[width=350pt]{ControllerThread_8cpp__incl}
 \end{center}
 \end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classEventDispatcher}{Event\+Dispatcher}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3}{S\+E\+R\+V\+E\+R\+\_\+\+O\+P\+\_\+\+C\+O\+DE} \{ \newline
+\hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3ae82495bae3a794eb1568c7a381a19cf0}{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE} = 1, 
+\hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3ae7aeecba50584a1dc20c86dfe3e4a4f0}{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE} = 2, 
+\hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a9ac9e84041778794930eb5f264ef32ce}{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE} = 3, 
+\hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3adfe0a5b404a32bf815b936d953f32785}{T\+V\+O\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE} = 4, 
+\newline
+\hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a236b51acee3d9d8050e63c5c7cbb538d}{E\+C\+O2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE} = 5, 
+\hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a1529fb0d5e223eac297ee2525e0cd324}{F\+O\+R\+C\+E\+\_\+\+H\+E\+A\+T\+I\+NG} = 128, 
+\hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a7d012c80a4cf528530d68e9195b5b17e}{F\+O\+R\+C\+E\+\_\+\+A\+I\+R\+F\+L\+OW} = 129, 
+\hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3ab46987fc5b5469a3ba7a0a0a5b658b77}{F\+O\+R\+C\+E\+\_\+\+L\+I\+G\+H\+TS} = 130, 
+\newline
+\hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a18f059df885c9509b31a22399941eaa3}{F\+O\+R\+C\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+MP} = 131, 
+\hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3ae5c39d7ebc2e5d0ea28b531d983d9731}{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+C\+H\+A\+N\+GE} = 252, 
+\hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3aa147d81463736a4b13de687c13434c15}{S\+T\+A\+R\+T\+\_\+\+S\+A\+M\+P\+L\+I\+NG} = 253, 
+\hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a09235ebfaa8a70ffd6ffecd3174f7be3}{S\+T\+O\+P\+\_\+\+S\+A\+M\+P\+L\+I\+NG} = 254, 
+\newline
+\hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a945280aa3e9db0f24215a8d9b6ddbd8e}{E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON} = 255
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const auto \hyperlink{ControllerThread_8cpp_abb6289930d828a19c02d900548c961da}{html}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -20,3 +61,98 @@ Kamil Rog
 0.\+1
 \end{DoxyVersion}
 This file contains the functions for Server Thread class. 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3}} 
+\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!S\+E\+R\+V\+E\+R\+\_\+\+O\+P\+\_\+\+C\+O\+DE@{S\+E\+R\+V\+E\+R\+\_\+\+O\+P\+\_\+\+C\+O\+DE}}
+\index{S\+E\+R\+V\+E\+R\+\_\+\+O\+P\+\_\+\+C\+O\+DE@{S\+E\+R\+V\+E\+R\+\_\+\+O\+P\+\_\+\+C\+O\+DE}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}
+\subsubsection{\texorpdfstring{S\+E\+R\+V\+E\+R\+\_\+\+O\+P\+\_\+\+C\+O\+DE}{SERVER\_OP\_CODE}}
+{\footnotesize\ttfamily enum \hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3}{S\+E\+R\+V\+E\+R\+\_\+\+O\+P\+\_\+\+C\+O\+DE}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3ae82495bae3a794eb1568c7a381a19cf0}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3ae82495bae3a794eb1568c7a381a19cf0}} 
+L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3ae7aeecba50584a1dc20c86dfe3e4a4f0}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3ae7aeecba50584a1dc20c86dfe3e4a4f0}} 
+T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a9ac9e84041778794930eb5f264ef32ce}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a9ac9e84041778794930eb5f264ef32ce}} 
+H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+V\+O\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+V\+O\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!T\+V\+O\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+V\+O\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3adfe0a5b404a32bf815b936d953f32785}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3adfe0a5b404a32bf815b936d953f32785}} 
+T\+V\+O\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+C\+O2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+C\+O2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!E\+C\+O2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+C\+O2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a236b51acee3d9d8050e63c5c7cbb538d}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a236b51acee3d9d8050e63c5c7cbb538d}} 
+E\+C\+O2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+O\+R\+C\+E\+\_\+\+H\+E\+A\+T\+I\+NG@{F\+O\+R\+C\+E\+\_\+\+H\+E\+A\+T\+I\+NG}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!F\+O\+R\+C\+E\+\_\+\+H\+E\+A\+T\+I\+NG@{F\+O\+R\+C\+E\+\_\+\+H\+E\+A\+T\+I\+NG}}}\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a1529fb0d5e223eac297ee2525e0cd324}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a1529fb0d5e223eac297ee2525e0cd324}} 
+F\+O\+R\+C\+E\+\_\+\+H\+E\+A\+T\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+O\+R\+C\+E\+\_\+\+A\+I\+R\+F\+L\+OW@{F\+O\+R\+C\+E\+\_\+\+A\+I\+R\+F\+L\+OW}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!F\+O\+R\+C\+E\+\_\+\+A\+I\+R\+F\+L\+OW@{F\+O\+R\+C\+E\+\_\+\+A\+I\+R\+F\+L\+OW}}}\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a7d012c80a4cf528530d68e9195b5b17e}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a7d012c80a4cf528530d68e9195b5b17e}} 
+F\+O\+R\+C\+E\+\_\+\+A\+I\+R\+F\+L\+OW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+O\+R\+C\+E\+\_\+\+L\+I\+G\+H\+TS@{F\+O\+R\+C\+E\+\_\+\+L\+I\+G\+H\+TS}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!F\+O\+R\+C\+E\+\_\+\+L\+I\+G\+H\+TS@{F\+O\+R\+C\+E\+\_\+\+L\+I\+G\+H\+TS}}}\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3ab46987fc5b5469a3ba7a0a0a5b658b77}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3ab46987fc5b5469a3ba7a0a0a5b658b77}} 
+F\+O\+R\+C\+E\+\_\+\+L\+I\+G\+H\+TS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+O\+R\+C\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+MP@{F\+O\+R\+C\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+MP}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!F\+O\+R\+C\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+MP@{F\+O\+R\+C\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+MP}}}\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a18f059df885c9509b31a22399941eaa3}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a18f059df885c9509b31a22399941eaa3}} 
+F\+O\+R\+C\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+MP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+C\+H\+A\+N\+GE@{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+C\+H\+A\+N\+GE}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+C\+H\+A\+N\+GE@{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3ae5c39d7ebc2e5d0ea28b531d983d9731}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3ae5c39d7ebc2e5d0ea28b531d983d9731}} 
+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+C\+H\+A\+N\+GE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+R\+T\+\_\+\+S\+A\+M\+P\+L\+I\+NG@{S\+T\+A\+R\+T\+\_\+\+S\+A\+M\+P\+L\+I\+NG}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!S\+T\+A\+R\+T\+\_\+\+S\+A\+M\+P\+L\+I\+NG@{S\+T\+A\+R\+T\+\_\+\+S\+A\+M\+P\+L\+I\+NG}}}\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3aa147d81463736a4b13de687c13434c15}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3aa147d81463736a4b13de687c13434c15}} 
+S\+T\+A\+R\+T\+\_\+\+S\+A\+M\+P\+L\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+O\+P\+\_\+\+S\+A\+M\+P\+L\+I\+NG@{S\+T\+O\+P\+\_\+\+S\+A\+M\+P\+L\+I\+NG}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!S\+T\+O\+P\+\_\+\+S\+A\+M\+P\+L\+I\+NG@{S\+T\+O\+P\+\_\+\+S\+A\+M\+P\+L\+I\+NG}}}\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a09235ebfaa8a70ffd6ffecd3174f7be3}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a09235ebfaa8a70ffd6ffecd3174f7be3}} 
+S\+T\+O\+P\+\_\+\+S\+A\+M\+P\+L\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON@{E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON@{E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON}}}\mbox{\Hypertarget{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a945280aa3e9db0f24215a8d9b6ddbd8e}\label{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a945280aa3e9db0f24215a8d9b6ddbd8e}} 
+E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{ControllerThread_8cpp_abb6289930d828a19c02d900548c961da}\label{ControllerThread_8cpp_abb6289930d828a19c02d900548c961da}} 
+\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!html@{html}}
+\index{html@{html}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}
+\subsubsection{\texorpdfstring{html}{html}}
+{\footnotesize\ttfamily const auto html}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= R\textcolor{stringliteral}{"(}
+\textcolor{stringliteral}{<!DOCTYPE html>}
+\textcolor{stringliteral}{<html lang="en">}
+\textcolor{stringliteral}{<head>}
+\textcolor{stringliteral}{<meta charset="UTF-8">}
+\textcolor{stringliteral}{<title>SSE demo</title>}
+\textcolor{stringliteral}{</head>}
+\textcolor{stringliteral}{<body>}
+\textcolor{stringliteral}{<script>}
+\textcolor{stringliteral}{const ev1 = new EventSource("event1");}
+\textcolor{stringliteral}{ev1.onmessage = function(e) \{}
+\textcolor{stringliteral}{  console.log('ev1', e.data);}
+\textcolor{stringliteral}{\}}
+\textcolor{stringliteral}{const ev2 = new EventSource("event2");}
+\textcolor{stringliteral}{ev2.onmessage = function(e) \{}
+\textcolor{stringliteral}{  console.log('ev2', e.data);}
+\textcolor{stringliteral}{\}}
+\textcolor{stringliteral}{</script>}
+\textcolor{stringliteral}{</body>}
+\textcolor{stringliteral}{</html>}
+\textcolor{stringliteral}{)"}
+\end{DoxyCode}

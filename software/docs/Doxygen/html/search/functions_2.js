@@ -2,8 +2,8 @@ var searchData=
 [
   ['camera',['Camera',['../classCamera.html#a5c68f1ee8348320a6c47419ae2d724fb',1,'Camera']]],
   ['clear_5fstatus',['Clear_Status',['../classSHT31D.html#a29d822bbc17bae95b35270128942c2ba',1,'SHT31D']]],
-  ['cleargpio',['ClearGPIO',['../classRelayBoard.html#a0dcfab8a5d558c5af4f8deeee510d314',1,'RelayBoard']]],
   ['close_5fdevice',['Close_Device',['../classI2CSensor.html#acee1633439e97bae412441ac085fabba',1,'I2CSensor::Close_Device()'],['../classSGP30.html#a3feaf2623eb853169d14687e7ad1db24',1,'SGP30::Close_Device()'],['../classSHT31D.html#a925cd964b0a6535d40dff588ac7d02be',1,'SHT31D::Close_Device()'],['../classVEML7700.html#af4be747d3c60af76ca46c7e4fb859ec7',1,'VEML7700::Close_Device()']]],
+  ['closedevice',['CloseDevice',['../classRelayBoard.html#a83e2f4e38c382c0bf4a56d04640cfc27',1,'RelayBoard']]],
   ['closedevices',['CloseDevices',['../classSampler.html#a24077f1eeb2491b65f9577efd07dffd6',1,'Sampler']]],
   ['compute_5flux',['Compute_Lux',['../classVEML7700.html#a1e7056289f5d716f0d120cc5798d664a',1,'VEML7700']]],
   ['controller',['Controller',['../classController.html#a95c56822d667e94b031451729ce069a9',1,'Controller']]],

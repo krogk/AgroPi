@@ -1,25 +1,10 @@
 var searchData=
 [
-  ['sgp30_5ffeatureset',['SGP30_FEATURESET',['../classSGP30.html#a2729a6a324c09b992fbfc46fc4bfed66ae33bc9477a75eb531e3868a02ef79c78',1,'SGP30']]],
-  ['sgp30_5fget_5ffeature_5fset',['SGP30_GET_FEATURE_SET',['../classSGP30.html#a1d3a484196d7d31bf7d4210b410bb760a375ad7f464e6a21241bd655100a5ce94',1,'SGP30']]],
-  ['sgp30_5fget_5ffeatureset_5fversion',['SGP30_GET_FEATURESET_VERSION',['../classSGP30.html#aca7fa4ab06bdae25a5fb142ec20f58d3a9d732bc016196d5decb7e1dd2b1e2dd7',1,'SGP30']]],
-  ['sgp30_5fget_5fiaq_5fbaseline',['SGP30_GET_IAQ_BASELINE',['../classSGP30.html#a6265830ddaa1c5e55a1efe326326e57ea5df373d3deebce36ee7a1c745c9c735a',1,'SGP30']]],
-  ['sgp30_5fget_5fserial_5fid',['SGP30_GET_SERIAL_ID',['../classSGP30.html#aacd1f082dc76bc6251edf06f0b3832c0ace04a9903c43bc54b35a579e0c661e13',1,'SGP30']]],
-  ['sgp30_5fget_5ftvoc_5finceptive_5fbaseline',['SGP30_GET_TVOC_INCEPTIVE_BASELINE',['../classSGP30.html#aa3eee88b9594f8df87e651374c4a1016ac75ca98ed28bb4b660cde006d6ea03ed',1,'SGP30']]],
-  ['sgp30_5finit_5fair_5fquality',['SGP30_INIT_AIR_QUALITY',['../classSGP30.html#a9fab3e307da43db87a836b096151a31ca68ef1f21f1267a8b1109796eea0e19fe',1,'SGP30']]],
-  ['sgp30_5fmeasure_5fair_5fquality',['SGP30_MEASURE_AIR_QUALITY',['../classSGP30.html#a7dc6849851676f2dbd1e118ff782d830a1d8427617ada8d841010c43f382bccfa',1,'SGP30']]],
-  ['sgp30_5fmeasure_5fraw',['SGP30_MEASURE_RAW',['../classSGP30.html#ae79520d1a6d2d0b51a33f66bda330426a4b9de0c35084e50e2314402541630294',1,'SGP30']]],
-  ['sgp30_5fmeasure_5ftest',['SGP30_MEASURE_TEST',['../classSGP30.html#af209e8391e943c53e3c6aa3479e4a8f9adaacf9a8f14c2f6903cdb635b3e8a1fd',1,'SGP30']]],
-  ['sgp30_5fset_5fabsolute_5fhumidity',['SGP30_SET_ABSOLUTE_HUMIDITY',['../classSGP30.html#a4f249632f5e33f139cd7377c728cba1da8ad78d173fbf29a175db80bf59d8a361',1,'SGP30']]],
-  ['sgp30_5fset_5fiaq_5fbaseline',['SGP30_SET_IAQ_BASELINE',['../classSGP30.html#adb75f486c71b86401a9e61cf6d37449ba21711e444f927177674d89c44702904a',1,'SGP30']]],
-  ['sgp30_5fset_5ftvoc_5fbaseline',['SGP30_SET_TVOC_BASELINE',['../classSGP30.html#a4a464453ec9603419c3d49ad5c3fd21ca2c77db1c8c9a871d505a7a54f13fa05f',1,'SGP30']]],
-  ['sgp30_5fsoft_5freset',['SGP30_SOFT_RESET',['../classSGP30.html#a48c35303e4f88d4b9bed717184795c2eae7362fc1d71c48cca9c68611d5348007',1,'SGP30']]],
-  ['sht31d_5fclear_5fstatus',['SHT31D_CLEAR_STATUS',['../classSHT31D.html#a40c567ed542f06f8cc22db0764415419ab93931def2227da6c7bcb0ec8d2ac171',1,'SHT31D']]],
-  ['sht31d_5fi2c_5faddress',['SHT31D_I2C_ADDRESS',['../classSHT31D.html#a5810e24af0e5737b6df24089366100fea7a00c3f8439a0de223d6fe77132acc69',1,'SHT31D']]],
-  ['sht31d_5fmeas_5fmedrep',['SHT31D_MEAS_MEDREP',['../classSHT31D.html#aff87615787f9fd6f287b22b5f407d222a8a5caa21d4686c35ce1b7ff092c8f01d',1,'SHT31D']]],
-  ['sht31d_5fread_5fserialno',['SHT31D_READ_SERIALNO',['../classSHT31D.html#abcfdc15982f0b22747afa7e3c325706aa4cdf0feb8a281e9ea9b49c913666f765',1,'SHT31D']]],
-  ['sht31d_5fread_5fstatus',['SHT31D_READ_STATUS',['../classSHT31D.html#a72375ee81208748cd053d13a256c25cda0c1298490bd20d683dd0a189d1f33f80',1,'SHT31D']]],
-  ['sht31d_5fsoft_5freset',['SHT31D_SOFT_RESET',['../classSHT31D.html#ae72fd59d3f80785321012a7d001a9008a8143b8b9241db83920c6fe106b9b787a',1,'SHT31D']]],
-  ['status_5ferror',['STATUS_ERROR',['../VEML7700_8h.html#aae05225933a42f81e7c4a9fb286596f9a5bde228d9506a863d51ffbc868ff67f7',1,'VEML7700.h']]],
-  ['status_5fok',['STATUS_OK',['../VEML7700_8h.html#aae05225933a42f81e7c4a9fb286596f9a7e4a42e3b6dd63708c64cf3db6f69566',1,'VEML7700.h']]]
+  ['i2c_5faddress',['I2C_ADDRESS',['../classSGP30.html#a5b752e81e00059c22c039ab0fa2021d0a509dbee04dff24f01fb2c7892703a3bd',1,'SGP30::I2C_ADDRESS()'],['../classVEML7700.html#ab63c7a3f732769f87046a7fe517fa5d2a89ac7a0c3d5299cc896db94f3f11ad3b',1,'VEML7700::I2C_ADDRESS()']]],
+  ['i2c_5fcrc_5ffailed',['I2C_CRC_FAILED',['../I2CDriver_8h.html#a52c38e7692a76e897b00daa867b29d3fa63b31d0c504bdae545fb5da13d59c986',1,'I2CDriver.h']]],
+  ['i2c_5ffail',['I2C_FAIL',['../I2CDriver_8h.html#a52c38e7692a76e897b00daa867b29d3fa2fa4d728abcc354ab37d4ff073289900',1,'I2CDriver.h']]],
+  ['i2c_5fioctl_5ffailed',['I2C_IOCTL_FAILED',['../I2CDriver_8h.html#a52c38e7692a76e897b00daa867b29d3faa978b8c99ba81b70dcb4a660ec190c8b',1,'I2CDriver.h']]],
+  ['i2c_5fok',['I2C_OK',['../I2CDriver_8h.html#a52c38e7692a76e897b00daa867b29d3faeceba296bdda2b90e8835c431fe7a72a',1,'I2CDriver.h']]],
+  ['i2c_5fread_5ffailed',['I2C_READ_FAILED',['../I2CDriver_8h.html#a52c38e7692a76e897b00daa867b29d3fac86dfc8232f86c65e33a1b9491763a21',1,'I2CDriver.h']]],
+  ['i2c_5fwrite_5ffailed',['I2C_WRITE_FAILED',['../I2CDriver_8h.html#a52c38e7692a76e897b00daa867b29d3fa43b4aeb860553fe1c22ab94cb6b4a446',1,'I2CDriver.h']]]
 ];

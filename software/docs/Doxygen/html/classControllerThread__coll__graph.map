@@ -1,3 +1,8 @@
 <map id="ControllerThread" name="ControllerThread">
-<area shape="rect" id="node2" href="$classCppThread.html" title="{CppThread\n||+ start()\l+ join()\l# run()\l&#45; exec()\l}" alt="" coords="46,145,133,267"/>
+<area shape="rect" id="node2" href="$classCppThread.html" title="{CppThread\n||+ start()\l+ join()\l# run()\l&#45; exec()\l}" alt="" coords="66,520,153,641"/>
+<area shape="rect" id="node4" href="$classController.html" title="Controller class. " alt="" coords="399,505,561,656"/>
+<area shape="rect" id="node5" href="$structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="419,292,541,369"/>
+<area shape="rect" id="node12" href="$structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="565,292,725,369"/>
+<area shape="rect" id="node8" href="$classRelayBoard.html" title="Relay Board class. " alt="" coords="248,219,395,443"/>
+<area shape="rect" id="node10" href="$structActuationForceFlags.html" title="{ActuationForceFlags\n||}" alt="" coords="854,292,997,369"/>
 </map>

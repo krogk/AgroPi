@@ -1,11 +1,11 @@
 <map id="src/controller/Sampler.h" name="src/controller/Sampler.h">
-<area shape="rect" id="node2" href="$Controller_8h.html" title="Controller.h" alt="" coords="729,80,818,107"/>
-<area shape="rect" id="node10" href="$CppTimer_8h.html" title="CppTimer.h" alt="" coords="80,155,171,181"/>
-<area shape="rect" id="node13" href="$I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="559,229,649,256"/>
-<area shape="rect" id="node14" href="$I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="246,155,341,181"/>
-<area shape="rect" id="node15" href="$VEML7700_8h.html" title="VEML7700.h" alt="" coords="531,80,629,107"/>
-<area shape="rect" id="node16" href="$SHT31D_8h.html" title="SHT31D.h" alt="" coords="423,80,507,107"/>
-<area shape="rect" id="node17" href="$SGP30_8h.html" title="SGP30.h" alt="" coords="324,80,399,107"/>
-<area shape="rect" id="node3" href="$typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="365,155,485,181"/>
-<area shape="rect" id="node8" href="$RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="843,155,944,181"/>
+<area shape="rect" id="node2" href="$Controller_8h.html" title="Controller.h" alt="" coords="391,80,481,107"/>
+<area shape="rect" id="node10" href="$CppTimer_8h.html" title="CppTimer.h" alt="" coords="33,155,124,181"/>
+<area shape="rect" id="node13" href="$I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="922,229,1011,256"/>
+<area shape="rect" id="node14" href="$I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="701,155,795,181"/>
+<area shape="rect" id="node15" href="$VEML7700_8h.html" title="VEML7700.h" alt="" coords="789,80,886,107"/>
+<area shape="rect" id="node16" href="$SHT31D_8h.html" title="SHT31D.h" alt="" coords="910,80,994,107"/>
+<area shape="rect" id="node17" href="$SGP30_8h.html" title="SGP30.h" alt="" coords="689,80,764,107"/>
+<area shape="rect" id="node3" href="$typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="425,155,545,181"/>
+<area shape="rect" id="node8" href="$RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="148,155,249,181"/>
 </map>

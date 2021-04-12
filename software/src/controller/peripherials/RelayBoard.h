@@ -1,5 +1,5 @@
 /**
-* @file RelayBoard.h
+* @file
 * @author Kamil Rog
 * @version 0.1
 * 
@@ -21,25 +21,40 @@ class RelayBoard {
 
 public:
 	RelayBoard(void) {
-		heaterGPIO = 0;
-    fanGPIO = 0;
-    waterPumpGPIO = 0;
-    lightsGPIO = 0;
+    // Change this list to enum or defines
+		heaterGPIO = 17;
+    lightsGPIO = 27;
+    fanGPIO = 22;
+    waterPumpGPIO = 23;
+    lightsGPIOState = 1;
+    Initialize();
 	}
 
-  
-  int SetGPIO();
-  int ClearGPIO();
+  ~RelayBoard(void)
+  {
+    CloseDevice();
+  }
 
-private:
-	
+  int SetGPIOState(int gpioPinNumber, int value);
+  int SetGPIODirection(int gpioPinNumber, int direction);
+  int GPIORead(int gpioPinNumber);
+  int UnexportGPIO(int gpioPinNumber);
+  int ExportGPIO(int gpioPinNumber);
   int Initialize();
 
 private:
+	int SetUpPin(int gpioPinNumber);
+  int UnexportPin(int gpioPinNumber); 
+  
+  int CloseDevice();
+  
+private:
 	int heaterGPIO;
+  int lightsGPIO;
+  int lightsGPIOState;
   int fanGPIO;
   int waterPumpGPIO;
-  int lightsGPIO;
+
 };
 
 #endif

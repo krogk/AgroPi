@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7ecpptimer',['~CppTimer',['../classCppTimer.html#a91779a93fce7383a8d832ed481399342',1,'CppTimer']]],
-  ['_7esampler',['~Sampler',['../classSampler.html#afbbbd238b78dd3024686c852b69fa64e',1,'Sampler']]]
+  ['wait_5fevent',['wait_event',['../classEventDispatcher.html#af52dcf785f0c33b88c5b96bb91c6610c',1,'EventDispatcher']]],
+  ['waterpumpgpio',['waterPumpGPIO',['../classRelayBoard.html#a195c50d455165712f59cd39c6f7a6b82',1,'RelayBoard']]]
 ];

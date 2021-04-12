@@ -5,6 +5,6 @@ var searchData=
   ['m_5fpi2cdriver',['m_pI2Cdriver',['../classSGP30.html#a3be2d504b90a81a66af2bcd4fc96673b',1,'SGP30::m_pI2Cdriver()'],['../classSHT31D.html#ad76767dc72097d43aea68675ae33e1ed',1,'SHT31D::m_pI2Cdriver()'],['../classVEML7700.html#a06777141dab95a6244cc75e97a66f238',1,'VEML7700::m_pI2Cdriver()']]],
   ['m_5fregisterveml7700',['m_registerVEML7700',['../classVEML7700.html#a8e5c194037bceb4544cc1a7b05f697bb',1,'VEML7700']]],
   ['m_5fserialnum',['m_serialnum',['../classSGP30.html#a6da04f39b302756d806d36ff3aa93293',1,'SGP30']]],
-  ['main',['main',['../main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c',1,'main.cpp']]],
-  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['main',['main',['../livestream_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;livestream.cpp'],['../ai_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp'],['../src_2main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c',1,'main(int argc, const char *argv[]):&#160;main.cpp']]],
+  ['main_2ecpp',['main.cpp',['../ai_2main_8cpp.html',1,'(Global Namespace)'],['../src_2main_8cpp.html',1,'(Global Namespace)']]]
 ];

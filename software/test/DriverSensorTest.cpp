@@ -42,12 +42,13 @@ BOOST_AUTO_TEST_SUITE_END()
 BOOST_AUTO_TEST_SUITE(LIGHT_SENSOR)
 
 /**
-* Test I2C Driver 
+* Test VEML7700 Sensor Driver 
 *
 * Open File Descriptor and check if it is non-zero
-* 
+* Get a reading and make sure it is not below zero(minimum) or above 120k(maximum) and not equal to 
 */
-BOOST_AUTO_TEST_CASE(VEML770_LUX_READ){
+BOOST_AUTO_TEST_CASE(VEML770_LUX_READ)
+{
     float lux = 0.0;
     I2CDriver driver;
     VEML7700 lightsensor;
@@ -57,23 +58,31 @@ BOOST_AUTO_TEST_CASE(VEML770_LUX_READ){
     // Attempt to read lux
     lightsensor.Get_ALS_Lux( lux );
     // If lux is 0 it means the I2C communication wasn't effective.
-    BOOST_CHECK_MESSAGE( lux > 0.0,    "Lux measured by light sensor is: " << lux << " Zero" );
+    BOOST_CHECK_MESSAGE( lux >= 0.0,    "Lux measured by light sensor is: " << lux << " Zero" );
     // If lux is above 120000, it is highly likely the value obtained is incorrect.
-    BOOST_CHECK_MESSAGE( lux < 120000, "Lux measured by light sensor is: " << lux << " - Above Maximum(120000)" );
+    BOOST_CHECK_MESSAGE( lux <= 120000, "Lux measured by light sensor is: " << lux << " - Above Maximum(120000)" );
 }
 BOOST_AUTO_TEST_SUITE_END()
 
 
 // Test Temperature and Humidity Sensor
 BOOST_AUTO_TEST_SUITE(TEMP_HUM_SENSOR)
-BOOST_AUTO_TEST_CASE( SHT31D_READ ) {
+/**
+* Test SHT31D Sensor Driver 
+*
+* Open File Descriptor and check if it is non-zero
+* Get a remperature reading and make sure it is not below zero(unlikley) or above 50(unlikley)
+* Get a remperature reading and make sure it is not below zero(minimum) or above 100(maxiumum)
+*/
+BOOST_AUTO_TEST_CASE( SHT31D_READ )
+{
     I2CDriver driver;
     SHT31D temperatureHumiditySensor;
     float temp = 0, humidity = 0;
     temperatureHumiditySensor.Initialize(driver);
     temperatureHumiditySensor.Get_Temperature_Humidity(temp, humidity);
     BOOST_CHECK_MESSAGE( temp > 0.0f,   "Temperature measured by SHT31D: " << temp << " C - Too Low" );
-    BOOST_CHECK_MESSAGE( temp < 50.0f,  "Temperature measured by SHT31D: " << temp << " C - Too High" );
+    BOOST_CHECK_MESSAGE( temp < 60.0f,  "Temperature measured by SHT31D: " << temp << " C - Too High" );
     BOOST_CHECK_MESSAGE( humidity > 0.0f,   "Temperature measured by SHT31D: " << humidity << " % - Too Low" );
     BOOST_CHECK_MESSAGE( humidity < 100.0f,  "Temperature measured by SHT31D: " << humidity << " % - Too High" );
 
@@ -82,14 +91,22 @@ BOOST_AUTO_TEST_SUITE_END()
 
 // Test Gas Sensor
 BOOST_AUTO_TEST_SUITE(GAS_SENSOR)
-BOOST_AUTO_TEST_CASE( SGP30_READ ) {
+/**
+* Test SGP30 Gas Sensor Driver 
+*
+* Open File Descriptor and check if it is non-zero
+* Get a remperature reading and make sure it is not below zero(unlikley) or above 50(unlikley)
+* Get a remperature reading and make sure it is not below zero(minimum) or above 100(maxiumum)
+*/
+BOOST_AUTO_TEST_CASE( SGP30_READ )
+{
     I2CDriver driver;
     SGP30 gasSensor;
     uint16_t tvoc = 0, eco2 = 0;
     gasSensor.Initialize(driver);
     gasSensor.IAQ_Measure(tvoc,eco2);
-    BOOST_CHECK_MESSAGE( tvoc >= 0.0f,   "Temperature measured by SHT31D: " << tvoc << " ppb - Too Low" );
-    BOOST_CHECK_MESSAGE( eco2 > 0.0f,   "Temperature measured by SHT31D: " << eco2 << " ppm - Too Low" );
+    BOOST_CHECK_MESSAGE( tvoc >= 0.0f, "Temperature measured by SHT31D: " << tvoc << " ppb - Too Low" );
+    BOOST_CHECK_MESSAGE( eco2 > 0.0f,  "Temperature measured by SHT31D: " << eco2 << " ppm - Too Low" );
 }
 BOOST_AUTO_TEST_SUITE_END()
 
@@ -97,6 +114,14 @@ BOOST_AUTO_TEST_SUITE_END()
 /*// Test Camera
 BOOST_AUTO_TEST_SUITE(CAMERA)
 BOOST_AUTO_TEST_CASE( Camera ) {
+}
+BOOST_AUTO_TEST_SUITE_END()
+*/
+
+
+/*// Test Relay Board
+BOOST_AUTO_TEST_SUITE(Relays)
+BOOST_AUTO_TEST_CASE( ElegoRelayBoard ) {
 }
 BOOST_AUTO_TEST_SUITE_END()
 */

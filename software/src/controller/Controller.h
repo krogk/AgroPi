@@ -13,6 +13,10 @@
 #include "typeDefinitions.h"
 #include "RelayBoard.h"
 #include <string>
+#include <unistd.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
 * @brief Controller class
@@ -43,7 +47,7 @@ public:
 	/* Initialize Targets for EnvData Structure*/
 	// This needs to be downloaded from website
 	targets.LightIntensityUpperThreshold = 1000.0; 
-  targets.LightIntensityLowerThreshold = 100.0; 
+  targets.LightIntensityLowerThreshold = 2.0; 
   targets.TemperatureUpperThreshold = 30.0; 					
   targets.TemperatureLowerThreshold = 18.0; 					
   targets.HumidityUpperThreshold = 70.0; 				
@@ -51,21 +55,40 @@ public:
   targets.CO2UpperThreshold = 1000; 				
   targets.TVOCUpperThreshold = 300; 				
   targets.RawEthanolUpperThreshold = 300; 				
-  targets.RawH2UpperThreshold = 300; 				
+  targets.RawH2UpperThreshold = 300; 		
+
+	actuationFlags.ForceHeating = false;
+	actuationFlags.ForceLighting = false;
+	actuationFlags.ForceAirflow = false;
+	actuationFlags.ForceWaterPump = false;
 	}
 
 	void SamplerHasData(EnvironmentData newData);
 
-private:
-	void SendDataToWebApp(std::string variable_type, float value);
-	void ActuatorHandler();
+	int Update_Targets(uint8_t opcode, float vlaue);
 	void StartListenerServer();
 
 private:
-	EnvironmentData envData; 				      /*!< Current and Target Enviroment Data Struct */
-	TargetEnvironmentData targets; 				      /*!< Current and Target Enviroment Data Struct */
-	RelayBoard relay;
+	void SendDataToWebApp(std::string variable_type, float value);
+	void ActuatorHandler();
 
+
+private:
+
+		enum TARGET_OP_CODES {
+		LIGHT_INTENSITY_TARGET_CHANGE 	= 1,
+		TEMPERATURE_TARGET_CHANGE 			= 2,
+		HUMIDITY_TARGET_CHANGE 					= 3,
+		TVOC_TARGET_CHANGE 							= 4,
+		ECO2_TARGET_CHANGE 						  = 5,
+		ETH_TARGET_CHANGE								= 6,
+		H2_TARGET_CHANGE								= 7
+		};
+
+	EnvironmentData envData; 				      			/*!< Current Enviroment Conditions Read Froms the sensors */
+	TargetEnvironmentData targets; 				      /*!< Target Enviroment Conditions */
+	ActuationForceFlags actuationFlags;					/*!< Actuatuion force flags ignoring hu Enviroment Conditions */
+	RelayBoard relay;
 };
 
 #endif

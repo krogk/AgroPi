@@ -9,5 +9,6 @@ var searchData=
   ['get_5fstatus',['Get_Status',['../classSHT31D.html#ada8e1773dee18a8a76656bb2d41b19f1',1,'SHT31D']]],
   ['get_5ftemperature_5fhumidity',['Get_Temperature_Humidity',['../classSHT31D.html#a749e5909bbd129e6352a32f28aef96d8',1,'SHT31D']]],
   ['get_5fwhite',['Get_White',['../classVEML7700.html#aaee2f4b39b9391548ccb96bcdaebe2a0',1,'VEML7700']]],
-  ['get_5fwhite_5flux',['Get_White_Lux',['../classVEML7700.html#a0f046c3327cac02f34cf9bfe2ac1231b',1,'VEML7700']]]
+  ['get_5fwhite_5flux',['Get_White_Lux',['../classVEML7700.html#a0f046c3327cac02f34cf9bfe2ac1231b',1,'VEML7700']]],
+  ['gpioread',['GPIORead',['../classRelayBoard.html#aced41245b932daad1709cc8d3b07bc4b',1,'RelayBoard']]]
 ];
