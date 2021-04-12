@@ -17,3 +17,6 @@ target_link_libraries (DriverSensorTest
 
 # Add Tests
 add_test (NAME Driver_Sensor_Test COMMAND DriverSensorTest)
+#add_test (NAME Architecture_Tests  COMMAND ArchitectureTest)
+#add_test (NAME Integration_Tests   COMMAND IntegrationTest)
+

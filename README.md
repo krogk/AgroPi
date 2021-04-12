@@ -1,7 +1,7 @@
 <h2 align="center">AgroPi</h2>  
 <p align="center">
   <a href="https://github.com/krogk/AgroPi">
-    <img src="media/images/logo1.png" alt="Logo" >
+    <img src="media/images/logo1.png" alt="Logo" width="250" height="250">
   </a>
   
   <p align="center">
@@ -88,9 +88,12 @@ v0.1 Release allows you to view the following conditions on the website interfac
 * [TVOC](https://en.wikipedia.org/wiki/Volatile_organic_compound)
 * eCO2
 <br />
+
+[See Doxygen Documentation](https://krogk.github.io/AgroPi/software/docs/Doxygen/html/index.html)
 <br />
+<br />
+
 As well as easily set the target values for each variable for particular time of day, however, the actuation is going to be implemented in software release v0.2.
-<br />
 
 
 ### Hardware
@@ -123,7 +126,6 @@ Schematics:
 
 ### Roadmap
 
-<br />
 [-] Next Software Release (v0.2) - Actuation & Image Processing - Detecting Seedling/Mushroom - 16/04/2021
 * [-] Camera Integrated
 * [-] Sensor Calibration
@@ -135,14 +137,10 @@ Schematics:
 * [-] Test on real samples
 
 
-<br />
-
-
 <!-- Getting Started -->
 ## Getting Started
 
 ### Prerequisites
-
 1. Clone the repository
 ```sh
 git clone https://github.com/krogk/AgroPi
@@ -159,7 +157,6 @@ pip install -r requirements.txt
 ### Installation
 
 Build:
-
 ```sh
 mkdir build
 cd build/
@@ -172,6 +169,7 @@ make
 ### Usage
 
 To run the software:
+
 1. Go to web directory and run server
 ```sh
 python ./run.py &
@@ -185,7 +183,6 @@ source venv/bin/activate
 ```
 
 3. Wait 15 Seconds for application to set up sensors
-
 
 <!-- Contributing -->
 ## Contributing

@@ -13,7 +13,7 @@
 #define SERVER_THREAD_H
 
 #include "CppThread.h"
-
+#include "Controller.h"
 
 /**
  * @brief Server Thread class
@@ -37,12 +37,18 @@ public:
 		samplePeriod = 250000000;
 	}
 
+
+
 private:
 	void run();
+	void StartListenerServer();
+
 
 private:
 	bool isRunning;
 	int	samplePeriod;
+	Controller controbj;
+
 };
 
 #endif

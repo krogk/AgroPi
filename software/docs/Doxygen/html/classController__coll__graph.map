@@ -1,5 +1,6 @@
 <map id="Controller" name="Controller">
-<area shape="rect" id="node2" href="$structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="229,241,352,318"/>
-<area shape="rect" id="node7" href="$structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="376,241,536,318"/>
-<area shape="rect" id="node5" href="$classRelayBoard.html" title="Relay Board class. " alt="" coords="582,219,693,340"/>
+<area shape="rect" id="node2" href="$structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="221,292,344,369"/>
+<area shape="rect" id="node9" href="$structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="368,292,528,369"/>
+<area shape="rect" id="node5" href="$classRelayBoard.html" title="Relay Board class. " alt="" coords="552,219,699,443"/>
+<area shape="rect" id="node7" href="$structActuationForceFlags.html" title="{ActuationForceFlags\n||}" alt="" coords="723,292,866,369"/>
 </map>

@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['actuationflags',['actuationFlags',['../classController.html#adb38d16eaea1f98887b3c1fc75ab5bd3',1,'Controller']]],
+  ['actuationforceflags',['ActuationForceFlags',['../structActuationForceFlags.html',1,'']]],
   ['actuatorhandler',['ActuatorHandler',['../classController.html#acd0145853d19eaf3ef9d15f6203ace69',1,'Controller']]],
   ['als_5fgain_5fd4',['ALS_GAIN_d4',['../classVEML7700.html#a7328cc2563da545e48ea72381dc7bd9ba0b5e6555c821a9c50adbe60629b15e4b',1,'VEML7700']]],
   ['als_5fgain_5fd8',['ALS_GAIN_d8',['../classVEML7700.html#a7328cc2563da545e48ea72381dc7bd9ba393b9df437329457ca21bff810c8b7ee',1,'VEML7700']]],

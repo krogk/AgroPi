@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gassensor',['gasSensor',['../classSampler.html#a4af78e46617fc8cdbc4bd14a7db5c741',1,'Sampler']]]
+  ['envdata',['envData',['../classController.html#ac99088334f56588243867ca1c18f9633',1,'Controller::envData()'],['../classSampler.html#a4cfbeb66e1cd18cfc66ccdb2712770f9',1,'Sampler::envData()']]]
 ];
