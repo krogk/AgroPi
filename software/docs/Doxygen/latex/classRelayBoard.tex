@@ -15,7 +15,7 @@ Collaboration diagram for Relay\+Board\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=200pt]{classRelayBoard__coll__graph}
+\includegraphics[width=213pt]{classRelayBoard__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -23,25 +23,41 @@ Collaboration diagram for Relay\+Board\+:\nopagebreak
 \item 
 \hyperlink{classRelayBoard_aa788c15cfc95188f5935f9d9d9fe86d2}{Relay\+Board} (void)
 \item 
-int \hyperlink{classRelayBoard_a681cd840b5406b0f5d285b4aed94ef2c}{Set\+G\+P\+IO} ()
+\hyperlink{classRelayBoard_af05bb34a287c76312104a427c86c658e}{$\sim$\+Relay\+Board} (void)
 \item 
-int \hyperlink{classRelayBoard_a0dcfab8a5d558c5af4f8deeee510d314}{Clear\+G\+P\+IO} ()
+int \hyperlink{classRelayBoard_a161657ba51adff983bae66543ff5d365}{Set\+G\+P\+I\+O\+State} (int gpio\+Pin\+Number, int value)
+\item 
+int \hyperlink{classRelayBoard_a1011a5d79df5912e20d11053d7811ecd}{Set\+G\+P\+I\+O\+Direction} (int gpio\+Pin\+Number, int direction)
+\item 
+int \hyperlink{classRelayBoard_aced41245b932daad1709cc8d3b07bc4b}{G\+P\+I\+O\+Read} (int gpio\+Pin\+Number)
+\item 
+int \hyperlink{classRelayBoard_a501dbfa2878a57538eff31b16e70d74d}{Unexport\+G\+P\+IO} (int gpio\+Pin\+Number)
+\item 
+int \hyperlink{classRelayBoard_aa5394e9044c4271f9dcd9f08b9310b5b}{Export\+G\+P\+IO} (int gpio\+Pin\+Number)
+\item 
+int \hyperlink{classRelayBoard_a49759cb3cdcb6c2ccd7fbb44eb34b260}{Initialize} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classRelayBoard_a49759cb3cdcb6c2ccd7fbb44eb34b260}{Initialize} ()
+int \hyperlink{classRelayBoard_a11b26e90f7a0831003a002937d28b30b}{Set\+Up\+Pin} (int gpio\+Pin\+Number)
+\item 
+int \hyperlink{classRelayBoard_aa63dcc275551dd06476c03d68a059228}{Unexport\+Pin} (int gpio\+Pin\+Number)
+\item 
+int \hyperlink{classRelayBoard_a83e2f4e38c382c0bf4a56d04640cfc27}{Close\+Device} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{classRelayBoard_a714832d9e7129960e0413b5618d2e310}{heater\+G\+P\+IO}
 \item 
+int \hyperlink{classRelayBoard_a05f68a6555288127a238e31282886ae0}{lights\+G\+P\+IO}
+\item 
+int \hyperlink{classRelayBoard_a0b33569569f2698b99a17e65f6dbc5a1}{lights\+G\+P\+I\+O\+State}
+\item 
 int \hyperlink{classRelayBoard_a70ab1391ffac8f4c01c64ba1a811b6fc}{fan\+G\+P\+IO}
 \item 
 int \hyperlink{classRelayBoard_a195c50d455165712f59cd39c6f7a6b82}{water\+Pump\+G\+P\+IO}
-\item 
-int \hyperlink{classRelayBoard_a05f68a6555288127a238e31282886ae0}{lights\+G\+P\+IO}
 \end{DoxyCompactItemize}
 
 
@@ -60,31 +76,73 @@ This is class is responsilbe for the Elego Relay Board.
 \subsubsection{\texorpdfstring{Relay\+Board()}{RelayBoard()}}
 {\footnotesize\ttfamily Relay\+Board\+::\+Relay\+Board (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+\mbox{\Hypertarget{classRelayBoard_af05bb34a287c76312104a427c86c658e}\label{classRelayBoard_af05bb34a287c76312104a427c86c658e}} 
+\index{Relay\+Board@{Relay\+Board}!````~Relay\+Board@{$\sim$\+Relay\+Board}}
+\index{````~Relay\+Board@{$\sim$\+Relay\+Board}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{$\sim$\+Relay\+Board()}{~RelayBoard()}}
+{\footnotesize\ttfamily Relay\+Board\+::$\sim$\+Relay\+Board (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classRelayBoard_a0dcfab8a5d558c5af4f8deeee510d314}\label{classRelayBoard_a0dcfab8a5d558c5af4f8deeee510d314}} 
-\index{Relay\+Board@{Relay\+Board}!Clear\+G\+P\+IO@{Clear\+G\+P\+IO}}
-\index{Clear\+G\+P\+IO@{Clear\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
-\subsubsection{\texorpdfstring{Clear\+G\+P\+I\+O()}{ClearGPIO()}}
-{\footnotesize\ttfamily int Relay\+Board\+::\+Clear\+G\+P\+IO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classRelayBoard_a83e2f4e38c382c0bf4a56d04640cfc27}\label{classRelayBoard_a83e2f4e38c382c0bf4a56d04640cfc27}} 
+\index{Relay\+Board@{Relay\+Board}!Close\+Device@{Close\+Device}}
+\index{Close\+Device@{Close\+Device}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Close\+Device()}{CloseDevice()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Close\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classRelayBoard_aa5394e9044c4271f9dcd9f08b9310b5b}\label{classRelayBoard_aa5394e9044c4271f9dcd9f08b9310b5b}} 
+\index{Relay\+Board@{Relay\+Board}!Export\+G\+P\+IO@{Export\+G\+P\+IO}}
+\index{Export\+G\+P\+IO@{Export\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Export\+G\+P\+I\+O()}{ExportGPIO()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Export\+G\+P\+IO (\begin{DoxyParamCaption}\item[{int}]{gpio\+Pin\+Number }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRelayBoard_aced41245b932daad1709cc8d3b07bc4b}\label{classRelayBoard_aced41245b932daad1709cc8d3b07bc4b}} 
+\index{Relay\+Board@{Relay\+Board}!G\+P\+I\+O\+Read@{G\+P\+I\+O\+Read}}
+\index{G\+P\+I\+O\+Read@{G\+P\+I\+O\+Read}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{G\+P\+I\+O\+Read()}{GPIORead()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+G\+P\+I\+O\+Read (\begin{DoxyParamCaption}\item[{int}]{gpio\+Pin\+Number }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classRelayBoard_a49759cb3cdcb6c2ccd7fbb44eb34b260}\label{classRelayBoard_a49759cb3cdcb6c2ccd7fbb44eb34b260}} 
 \index{Relay\+Board@{Relay\+Board}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!Relay\+Board@{Relay\+Board}}
 \subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
-{\footnotesize\ttfamily int Relay\+Board\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRelayBoard_a1011a5d79df5912e20d11053d7811ecd}\label{classRelayBoard_a1011a5d79df5912e20d11053d7811ecd}} 
+\index{Relay\+Board@{Relay\+Board}!Set\+G\+P\+I\+O\+Direction@{Set\+G\+P\+I\+O\+Direction}}
+\index{Set\+G\+P\+I\+O\+Direction@{Set\+G\+P\+I\+O\+Direction}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Set\+G\+P\+I\+O\+Direction()}{SetGPIODirection()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Set\+G\+P\+I\+O\+Direction (\begin{DoxyParamCaption}\item[{int}]{gpio\+Pin\+Number,  }\item[{int}]{direction }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRelayBoard_a161657ba51adff983bae66543ff5d365}\label{classRelayBoard_a161657ba51adff983bae66543ff5d365}} 
+\index{Relay\+Board@{Relay\+Board}!Set\+G\+P\+I\+O\+State@{Set\+G\+P\+I\+O\+State}}
+\index{Set\+G\+P\+I\+O\+State@{Set\+G\+P\+I\+O\+State}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Set\+G\+P\+I\+O\+State()}{SetGPIOState()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Set\+G\+P\+I\+O\+State (\begin{DoxyParamCaption}\item[{int}]{gpio\+Pin\+Number,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRelayBoard_a11b26e90f7a0831003a002937d28b30b}\label{classRelayBoard_a11b26e90f7a0831003a002937d28b30b}} 
+\index{Relay\+Board@{Relay\+Board}!Set\+Up\+Pin@{Set\+Up\+Pin}}
+\index{Set\+Up\+Pin@{Set\+Up\+Pin}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Set\+Up\+Pin()}{SetUpPin()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Set\+Up\+Pin (\begin{DoxyParamCaption}\item[{int}]{gpio\+Pin\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 Initialize G\+P\+IO Pins for using Relay Board.
 
 \begin{DoxyReturn}{Returns}
-Zero on success 
+Zero on success error 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classRelayBoard_a681cd840b5406b0f5d285b4aed94ef2c}\label{classRelayBoard_a681cd840b5406b0f5d285b4aed94ef2c}} 
-\index{Relay\+Board@{Relay\+Board}!Set\+G\+P\+IO@{Set\+G\+P\+IO}}
-\index{Set\+G\+P\+IO@{Set\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
-\subsubsection{\texorpdfstring{Set\+G\+P\+I\+O()}{SetGPIO()}}
-{\footnotesize\ttfamily int Relay\+Board\+::\+Set\+G\+P\+IO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classRelayBoard_a501dbfa2878a57538eff31b16e70d74d}\label{classRelayBoard_a501dbfa2878a57538eff31b16e70d74d}} 
+\index{Relay\+Board@{Relay\+Board}!Unexport\+G\+P\+IO@{Unexport\+G\+P\+IO}}
+\index{Unexport\+G\+P\+IO@{Unexport\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Unexport\+G\+P\+I\+O()}{UnexportGPIO()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Unexport\+G\+P\+IO (\begin{DoxyParamCaption}\item[{int}]{gpio\+Pin\+Number }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRelayBoard_aa63dcc275551dd06476c03d68a059228}\label{classRelayBoard_aa63dcc275551dd06476c03d68a059228}} 
+\index{Relay\+Board@{Relay\+Board}!Unexport\+Pin@{Unexport\+Pin}}
+\index{Unexport\+Pin@{Unexport\+Pin}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Unexport\+Pin()}{UnexportPin()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Unexport\+Pin (\begin{DoxyParamCaption}\item[{int}]{gpio\+Pin\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -106,6 +164,12 @@ Zero on success
 \index{lights\+G\+P\+IO@{lights\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
 \subsubsection{\texorpdfstring{lights\+G\+P\+IO}{lightsGPIO}}
 {\footnotesize\ttfamily int Relay\+Board\+::lights\+G\+P\+IO\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classRelayBoard_a0b33569569f2698b99a17e65f6dbc5a1}\label{classRelayBoard_a0b33569569f2698b99a17e65f6dbc5a1}} 
+\index{Relay\+Board@{Relay\+Board}!lights\+G\+P\+I\+O\+State@{lights\+G\+P\+I\+O\+State}}
+\index{lights\+G\+P\+I\+O\+State@{lights\+G\+P\+I\+O\+State}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{lights\+G\+P\+I\+O\+State}{lightsGPIOState}}
+{\footnotesize\ttfamily int Relay\+Board\+::lights\+G\+P\+I\+O\+State\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classRelayBoard_a195c50d455165712f59cd39c6f7a6b82}\label{classRelayBoard_a195c50d455165712f59cd39c6f7a6b82}} 
 \index{Relay\+Board@{Relay\+Board}!water\+Pump\+G\+P\+IO@{water\+Pump\+G\+P\+IO}}

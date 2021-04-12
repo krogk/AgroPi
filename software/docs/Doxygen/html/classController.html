@@ -60,6 +60,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classController-members.html">List of all members</a>  </div>
@@ -77,9 +78,10 @@ Collaboration diagram for Controller:</div>
 <div class="dyncontent">
 <div class="center"><img src="classController__coll__graph.png" border="0" usemap="#Controller_coll__map" alt="Collaboration graph"/></div>
 <map name="Controller_coll__map" id="Controller_coll__map">
-<area shape="rect" id="node2" href="structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="229,241,352,318"/>
-<area shape="rect" id="node7" href="structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="376,241,536,318"/>
-<area shape="rect" id="node5" href="classRelayBoard.html" title="Relay Board class. " alt="" coords="582,219,693,340"/>
+<area shape="rect" id="node2" href="structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="221,292,344,369"/>
+<area shape="rect" id="node9" href="structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="368,292,528,369"/>
+<area shape="rect" id="node5" href="classRelayBoard.html" title="Relay Board class. " alt="" coords="552,219,699,443"/>
+<area shape="rect" id="node7" href="structActuationForceFlags.html" title="{ActuationForceFlags\n||}" alt="" coords="723,292,866,369"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -89,6 +91,25 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a95c56822d667e94b031451729ce069a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b765eaaf8f72e964118967f86c265e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a4b765eaaf8f72e964118967f86c265e2">SamplerHasData</a> (<a class="el" href="structEnvironmentData.html">EnvironmentData</a> newData)</td></tr>
 <tr class="separator:a4b765eaaf8f72e964118967f86c265e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eb08a1d38b2c79e2d140476fd097f24"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a0eb08a1d38b2c79e2d140476fd097f24">Update_Targets</a> (uint8_t opcode, float vlaue)</td></tr>
+<tr class="separator:a0eb08a1d38b2c79e2d140476fd097f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64173dd00be020975d7db533cd280c15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a64173dd00be020975d7db533cd280c15">StartListenerServer</a> ()</td></tr>
+<tr class="separator:a64173dd00be020975d7db533cd280c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:ae0cc6feb81bc46e0859390fd1551ff43"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#ae0cc6feb81bc46e0859390fd1551ff43">TARGET_OP_CODES</a> { <br />
+&#160;&#160;<a class="el" href="classController.html#ae0cc6feb81bc46e0859390fd1551ff43a915722d1485a0a671e6d9740e4f336d7">LIGHT_INTENSITY_TARGET_CHANGE</a> = 1, 
+<a class="el" href="classController.html#ae0cc6feb81bc46e0859390fd1551ff43a1c6726567b0f23f4431b2b2693b67ec9">TEMPERATURE_TARGET_CHANGE</a> = 2, 
+<a class="el" href="classController.html#ae0cc6feb81bc46e0859390fd1551ff43a9380620e3b95492374b3ac3a3e3bd5e7">HUMIDITY_TARGET_CHANGE</a> = 3, 
+<a class="el" href="classController.html#ae0cc6feb81bc46e0859390fd1551ff43ab7367a898dd3e0befa174fa4e42f1eeb">TVOC_TARGET_CHANGE</a> = 4, 
+<br />
+&#160;&#160;<a class="el" href="classController.html#ae0cc6feb81bc46e0859390fd1551ff43af162eb21304384728b51aad12ef581c3">ECO2_TARGET_CHANGE</a> = 5, 
+<a class="el" href="classController.html#ae0cc6feb81bc46e0859390fd1551ff43a93b6d3178783a23734c076d193fcb1fb">ETH_TARGET_CHANGE</a> = 6, 
+<a class="el" href="classController.html#ae0cc6feb81bc46e0859390fd1551ff43a19170325b57f14dd6d349184ed1379e2">H2_TARGET_CHANGE</a> = 7
+<br />
+ }</td></tr>
+<tr class="separator:ae0cc6feb81bc46e0859390fd1551ff43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -96,8 +117,6 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a9d59ef3807f630a52c964a899a7235dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd0145853d19eaf3ef9d15f6203ace69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#acd0145853d19eaf3ef9d15f6203ace69">ActuatorHandler</a> ()</td></tr>
 <tr class="separator:acd0145853d19eaf3ef9d15f6203ace69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64173dd00be020975d7db533cd280c15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a64173dd00be020975d7db533cd280c15">StartListenerServer</a> ()</td></tr>
-<tr class="separator:a64173dd00be020975d7db533cd280c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -105,6 +124,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ac99088334f56588243867ca1c18f9633"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f2fb8295fd3da6ebc8bdb0f25036322"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTargetEnvironmentData.html">TargetEnvironmentData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a8f2fb8295fd3da6ebc8bdb0f25036322">targets</a></td></tr>
 <tr class="separator:a8f2fb8295fd3da6ebc8bdb0f25036322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb38d16eaea1f98887b3c1fc75ab5bd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structActuationForceFlags.html">ActuationForceFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#adb38d16eaea1f98887b3c1fc75ab5bd3">actuationFlags</a></td></tr>
+<tr class="separator:adb38d16eaea1f98887b3c1fc75ab5bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3f1d7aae706a5440adf520cbd7fb216"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRelayBoard.html">RelayBoard</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#aa3f1d7aae706a5440adf520cbd7fb216">relay</a></td></tr>
 <tr class="separator:aa3f1d7aae706a5440adf520cbd7fb216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -115,7 +136,39 @@ Private Attributes</h2></td></tr>
 <h1><a class="anchor" id="PROTOCOL"></a>
 PROTOCOL</h1>
 <p>WATER PUMP - ANALOG - GPIO x HEATER - ANALOG - GPIO x </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="ae0cc6feb81bc46e0859390fd1551ff43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0cc6feb81bc46e0859390fd1551ff43">&#9670;&nbsp;</a></span>TARGET_OP_CODES</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classController.html#ae0cc6feb81bc46e0859390fd1551ff43">Controller::TARGET_OP_CODES</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae0cc6feb81bc46e0859390fd1551ff43a915722d1485a0a671e6d9740e4f336d7"></a>LIGHT_INTENSITY_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae0cc6feb81bc46e0859390fd1551ff43a1c6726567b0f23f4431b2b2693b67ec9"></a>TEMPERATURE_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae0cc6feb81bc46e0859390fd1551ff43a9380620e3b95492374b3ac3a3e3bd5e7"></a>HUMIDITY_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae0cc6feb81bc46e0859390fd1551ff43ab7367a898dd3e0befa174fa4e42f1eeb"></a>TVOC_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae0cc6feb81bc46e0859390fd1551ff43af162eb21304384728b51aad12ef581c3"></a>ECO2_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae0cc6feb81bc46e0859390fd1551ff43a93b6d3178783a23734c076d193fcb1fb"></a>ETH_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae0cc6feb81bc46e0859390fd1551ff43a19170325b57f14dd6d349184ed1379e2"></a>H2_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a95c56822d667e94b031451729ce069a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a95c56822d667e94b031451729ce069a9">&#9670;&nbsp;</a></span>Controller()</h2>
 
@@ -226,9 +279,6 @@ PROTOCOL</h1>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Controller::StartListenerServer </td>
@@ -237,16 +287,62 @@ PROTOCOL</h1>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0eb08a1d38b2c79e2d140476fd097f24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eb08a1d38b2c79e2d140476fd097f24">&#9670;&nbsp;</a></span>Update_Targets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Controller::Update_Targets </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>opcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>vlaue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="adb38d16eaea1f98887b3c1fc75ab5bd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb38d16eaea1f98887b3c1fc75ab5bd3">&#9670;&nbsp;</a></span>actuationFlags</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structActuationForceFlags.html">ActuationForceFlags</a> Controller::actuationFlags</td>
+        </tr>
+      </table>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Actuatuion force flags ignoring hu Enviroment Conditions </p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
 <a id="ac99088334f56588243867ca1c18f9633"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac99088334f56588243867ca1c18f9633">&#9670;&nbsp;</a></span>envData</h2>
 
@@ -266,7 +362,7 @@ PROTOCOL</h1>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current and Target Enviroment Data Struct </p>
+<p>Current Enviroment Conditions Read Froms the sensors </p>
 
 </div>
 </div>
@@ -311,7 +407,7 @@ PROTOCOL</h1>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Current and Target Enviroment Data Struct </p>
+<p>Target Enviroment Conditions </p>
 
 </div>
 </div>

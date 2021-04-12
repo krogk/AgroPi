@@ -19,14 +19,14 @@
 void Controller::SamplerHasData(EnvironmentData newData)
 {
 	envData = newData;
-	printf("\n");
-	printf("Controller Thread: LUX: %f\n",envData.LightIntensity);
-	printf("Controller Thread: Temperature: %f\n",envData.Temperature);
-	printf("Controller Thread: Humidity: %f\n",envData.Humidity);
-	printf("Controller Thread: TVOC: %d ppb\n", envData.TVOC);
-	printf("Controller Thread: eCO2: %d ppm\n", envData.CO2);
-	printf("Controller Thread: RawEthanol: %d ppb\n", envData.RawEthanol);
-	printf("Controller Thread: RawH2: %d ppm\n", envData.RawH2);
+	//printf("\n");
+	//printf("Controller Thread: LUX: %f\n",envData.LightIntensity);
+	//printf("Controller Thread: Temperature: %f\n",envData.Temperature);
+	//printf("Controller Thread: Humidity: %f\n",envData.Humidity);
+	//printf("Controller Thread: TVOC: %d ppb\n", envData.TVOC);
+	//printf("Controller Thread: eCO2: %d ppm\n", envData.CO2);
+	//printf("Controller Thread: RawEthanol: %d ppb\n", envData.RawEthanol);
+	//printf("Controller Thread: RawH2: %d ppm\n", envData.RawH2);
 	//std::thread::id this_id = std::this_thread::get_id();
 	//std::cout << "Controller Thread " << this_id << "\n";
 	SendDataToWebApp("TEMPERATURE", envData.Temperature);
@@ -50,24 +50,6 @@ void Controller::SendDataToWebApp(std::string variable_type, float value)
 
 }
 
-/*
-void Controller::StartListenerServer()
-{
-	httplib::Server svr;
-	svr.Get("/control", [](const httplib::req &, httplib::Response &res) {
-		if (req.has_param("type")) {
-		  auto variable_type = req.get_param_value("type");
-		}
-		if (req.has_param("value")) {
-		  auto value = req.get_param_value("value");
-		}
-	 	res.set_content("Complete!", "text/plain");
-	});
-
-	svr.listen("0.0.0.0", 8080);
-}
-*/
-
 void Controller::ActuatorHandler()
 {
 	// Light
@@ -75,13 +57,57 @@ void Controller::ActuatorHandler()
 	{
 		printf("Light Intensity:%f Too Low\n", envData.LightIntensity);
 		// turn lights on
+		relay.SetGPIOState(27, 0);
 	}
+
 	else if( envData.LightIntensity > targets.LightIntensityUpperThreshold )
 	{
 		printf("Light Intensity :%f - Sufficient To Turn Lights off\n", envData.LightIntensity);
 		// turn lights off if On
+		
+		relay.SetGPIOState(27, 1);
+
 	}
-	// Heating
-	// Fan
-	// Watering
+}
+
+int Controller::Update_Targets(uint8_t opcode, float value )
+{
+	printf("Operation %d Value: %f\n",opcode, value);
+	switch(opcode)
+  {
+  case LIGHT_INTENSITY_TARGET_CHANGE:
+	  targets.LightIntensityLowerThreshold = value;
+		//targets.LightIntensityUpperThreshold = 1000.0; 
+  break;
+
+  case TEMPERATURE_TARGET_CHANGE:
+	  //targets.TemperatureUpperThreshold = 30.0; 					
+  	targets.TemperatureLowerThreshold = value; 	
+  break;
+
+  case HUMIDITY_TARGET_CHANGE:
+	  //targets.HumidityUpperThreshold = 70.0; 				
+  	targets.HumidityLowerThreshold = value; 	
+  break;
+
+  case TVOC_TARGET_CHANGE:	
+  	targets.TVOCUpperThreshold = value; 	
+  break;
+
+ case ECO2_TARGET_CHANGE:
+		targets.CO2UpperThreshold = value; 	
+  break;
+
+ case ETH_TARGET_CHANGE:
+		targets.RawEthanolUpperThreshold = value; 	
+  break;
+
+	case H2_TARGET_CHANGE:
+		targets.RawH2UpperThreshold = value; 	
+  break;
+
+  default:
+    break;
+  }
+
 }
