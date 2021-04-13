@@ -28,6 +28,17 @@ void \hyperlink{classController_a4b765eaaf8f72e964118967f86c265e2}{Sampler\+Has\
 int \hyperlink{classController_a0eb08a1d38b2c79e2d140476fd097f24}{Update\+\_\+\+Targets} (uint8\+\_\+t opcode, float vlaue)
 \item 
 void \hyperlink{classController_a64173dd00be020975d7db533cd280c15}{Start\+Listener\+Server} ()
+\item 
+void \hyperlink{classController_affbf340fed1aca0172f336bcb2db8c8a}{Message\+Handler} (uint8\+\_\+t opcode, float value)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structEnvironmentData}{Environment\+Data} \hyperlink{classController_ac99088334f56588243867ca1c18f9633}{env\+Data}
+\item 
+\hyperlink{structTargetEnvironmentData}{Target\+Environment\+Data} \hyperlink{classController_a8f2fb8295fd3da6ebc8bdb0f25036322}{targets}
+\item 
+\hyperlink{structActuationForceFlags}{Actuation\+Force\+Flags} \hyperlink{classController_adb38d16eaea1f98887b3c1fc75ab5bd3}{actuation\+Flags}
 \end{DoxyCompactItemize}
 \subsection*{Private Types}
 \begin{DoxyCompactItemize}
@@ -52,12 +63,6 @@ void \hyperlink{classController_acd0145853d19eaf3ef9d15f6203ace69}{Actuator\+Han
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
-\item 
-\hyperlink{structEnvironmentData}{Environment\+Data} \hyperlink{classController_ac99088334f56588243867ca1c18f9633}{env\+Data}
-\item 
-\hyperlink{structTargetEnvironmentData}{Target\+Environment\+Data} \hyperlink{classController_a8f2fb8295fd3da6ebc8bdb0f25036322}{targets}
-\item 
-\hyperlink{structActuationForceFlags}{Actuation\+Force\+Flags} \hyperlink{classController_adb38d16eaea1f98887b3c1fc75ab5bd3}{actuation\+Flags}
 \item 
 \hyperlink{classRelayBoard}{Relay\+Board} \hyperlink{classController_aa3f1d7aae706a5440adf520cbd7fb216}{relay}
 \end{DoxyCompactItemize}
@@ -127,6 +132,12 @@ H2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
 \subsubsection{\texorpdfstring{Actuator\+Handler()}{ActuatorHandler()}}
 {\footnotesize\ttfamily void Controller\+::\+Actuator\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classController_affbf340fed1aca0172f336bcb2db8c8a}\label{classController_affbf340fed1aca0172f336bcb2db8c8a}} 
+\index{Controller@{Controller}!Message\+Handler@{Message\+Handler}}
+\index{Message\+Handler@{Message\+Handler}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Message\+Handler()}{MessageHandler()}}
+{\footnotesize\ttfamily void Controller\+::\+Message\+Handler (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{opcode,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classController_a4b765eaaf8f72e964118967f86c265e2}\label{classController_a4b765eaaf8f72e964118967f86c265e2}} 
 \index{Controller@{Controller}!Sampler\+Has\+Data@{Sampler\+Has\+Data}}
 \index{Sampler\+Has\+Data@{Sampler\+Has\+Data}!Controller@{Controller}}
@@ -158,13 +169,13 @@ H2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
 \index{Controller@{Controller}!actuation\+Flags@{actuation\+Flags}}
 \index{actuation\+Flags@{actuation\+Flags}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{actuation\+Flags}{actuationFlags}}
-{\footnotesize\ttfamily \hyperlink{structActuationForceFlags}{Actuation\+Force\+Flags} Controller\+::actuation\+Flags\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \hyperlink{structActuationForceFlags}{Actuation\+Force\+Flags} Controller\+::actuation\+Flags}
 
 Actuatuion force flags ignoring hu Enviroment Conditions \mbox{\Hypertarget{classController_ac99088334f56588243867ca1c18f9633}\label{classController_ac99088334f56588243867ca1c18f9633}} 
 \index{Controller@{Controller}!env\+Data@{env\+Data}}
 \index{env\+Data@{env\+Data}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{env\+Data}{envData}}
-{\footnotesize\ttfamily \hyperlink{structEnvironmentData}{Environment\+Data} Controller\+::env\+Data\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \hyperlink{structEnvironmentData}{Environment\+Data} Controller\+::env\+Data}
 
 Current Enviroment Conditions Read Froms the sensors \mbox{\Hypertarget{classController_aa3f1d7aae706a5440adf520cbd7fb216}\label{classController_aa3f1d7aae706a5440adf520cbd7fb216}} 
 \index{Controller@{Controller}!relay@{relay}}
@@ -176,7 +187,7 @@ Current Enviroment Conditions Read Froms the sensors \mbox{\Hypertarget{classCon
 \index{Controller@{Controller}!targets@{targets}}
 \index{targets@{targets}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{targets}{targets}}
-{\footnotesize\ttfamily \hyperlink{structTargetEnvironmentData}{Target\+Environment\+Data} Controller\+::targets\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \hyperlink{structTargetEnvironmentData}{Target\+Environment\+Data} Controller\+::targets}
 
 Target Enviroment Conditions 
 

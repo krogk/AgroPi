@@ -62,153 +62,24 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">RelayBoard.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="RelayBoard_8h_source.html">RelayBoard.h</a>&quot;</code><br />
-<code>#include &lt;errno.h&gt;</code><br />
-<code>#include &lt;fcntl.h&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;sys/stat.h&gt;</code><br />
-<code>#include &lt;sys/types.h&gt;</code><br />
-<code>#include &lt;unistd.h&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;sys/mman.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for RelayBoard.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="RelayBoard_8cpp__incl.png" border="0" usemap="#src_2controller_2peripherials_2RelayBoard_8cpp" alt=""/></div>
 <map name="src_2controller_2peripherials_2RelayBoard_8cpp" id="src_2controller_2peripherials_2RelayBoard_8cpp">
-<area shape="rect" id="node2" href="RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="5,95,107,121"/>
+<area shape="rect" id="node2" href="RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="38,95,139,121"/>
 </map>
 </div>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ac2bbd6d630a06a980d9a92ddb9a49928"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RelayBoard_8cpp.html#ac2bbd6d630a06a980d9a92ddb9a49928">IN</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ac2bbd6d630a06a980d9a92ddb9a49928"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec78e7a9e90a406a56f859ee456e8eae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RelayBoard_8cpp.html#aec78e7a9e90a406a56f859ee456e8eae">OUT</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:aec78e7a9e90a406a56f859ee456e8eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab811d8c6ff3a505312d3276590444289"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RelayBoard_8cpp.html#ab811d8c6ff3a505312d3276590444289">LOW</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ab811d8c6ff3a505312d3276590444289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bb885982ff66a2e0a0a45a8ee9c35e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RelayBoard_8cpp.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">HIGH</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a5bb885982ff66a2e0a0a45a8ee9c35e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b20d41d6252e9871430c242cb1a56e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RelayBoard_8cpp.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>&#160;&#160;&#160;3</td></tr>
-<tr class="separator:a6b20d41d6252e9871430c242cb1a56e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa65936c8accb6e3766be6ee9f063ead4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RelayBoard_8cpp.html#aa65936c8accb6e3766be6ee9f063ead4">DIRECTION_MAX</a>&#160;&#160;&#160;35</td></tr>
-<tr class="separator:aa65936c8accb6e3766be6ee9f063ead4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacdeb883b8cfc24b1ea6133e987a556d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RelayBoard_8cpp.html#aacdeb883b8cfc24b1ea6133e987a556d">VALUE_MAX</a>&#160;&#160;&#160;30</td></tr>
-<tr class="separator:aacdeb883b8cfc24b1ea6133e987a556d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Kamil Rog </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
-<p>This file contains the functions for the Relay Board class. </p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a6b20d41d6252e9871430c242cb1a56e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b20d41d6252e9871430c242cb1a56e7">&#9670;&nbsp;</a></span>BUFFER_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUFFER_SIZE&#160;&#160;&#160;3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa65936c8accb6e3766be6ee9f063ead4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa65936c8accb6e3766be6ee9f063ead4">&#9670;&nbsp;</a></span>DIRECTION_MAX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DIRECTION_MAX&#160;&#160;&#160;35</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5bb885982ff66a2e0a0a45a8ee9c35e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bb885982ff66a2e0a0a45a8ee9c35e2">&#9670;&nbsp;</a></span>HIGH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define HIGH&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac2bbd6d630a06a980d9a92ddb9a49928"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2bbd6d630a06a980d9a92ddb9a49928">&#9670;&nbsp;</a></span>IN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IN&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab811d8c6ff3a505312d3276590444289"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab811d8c6ff3a505312d3276590444289">&#9670;&nbsp;</a></span>LOW</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LOW&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aec78e7a9e90a406a56f859ee456e8eae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec78e7a9e90a406a56f859ee456e8eae">&#9670;&nbsp;</a></span>OUT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define OUT&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aacdeb883b8cfc24b1ea6133e987a556d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacdeb883b8cfc24b1ea6133e987a556d">&#9670;&nbsp;</a></span>VALUE_MAX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define VALUE_MAX&#160;&#160;&#160;30</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+<p>This file contains the functions for the Elego 4 Relay Board class. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

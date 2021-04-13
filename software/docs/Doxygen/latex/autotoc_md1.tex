@@ -58,6 +58,8 @@ As soon as the timer fires the timer event function executes. The Timer event is
 
 \hyperlink{classController}{Controller} object is going to contain the callback function for sampler object to use as well as set of functions to Tx \& Rx data to \& from web-\/server. \hyperlink{classController}{Controller} is going to contain data structures holding latest environment data from sampler and hueristics passed from the user by the server. \hyperlink{classController}{Controller} is going to contain relay object(s) and have set of functions to controll them.
 
+j\+Query -\/$>$ flask server -\/$>$ nginx -\/$>$ C\+GI handler -\/$>$ C\+PP
+
 \hyperlink{classController}{Controller} thread should initialize the sampler and controller object, start sampling and go into a while loop which should execute based on an exit flag which is going to be able to controlled from web server. In this while loop thread is going to read data from the server. The Read operation for the server should be blocking and as soon as the messeage has been recieved it is going to be processed by striping the opcode and this opcode with the corresponding value should be passed to the event handler function.
 
 Project is built on these technologies\+:
@@ -82,6 +84,18 @@ Project is built on these technologies\+:
 \item cppcheck
 \begin{DoxyItemize}
 \item With {\itshape make cppcheck} you can run static code analysis
+\end{DoxyItemize}
+\item Nginx
+\begin{DoxyItemize}
+\item Server which does post request for data and posts controll data
+\end{DoxyItemize}
+\item Python
+\begin{DoxyItemize}
+\item Webserver
+\end{DoxyItemize}
+\item Mongodb
+\begin{DoxyItemize}
+\item Databases
 \end{DoxyItemize}
 \item Open\+CV
 \begin{DoxyItemize}

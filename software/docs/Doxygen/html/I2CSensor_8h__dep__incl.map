@@ -1,12 +1,13 @@
 <map id="src/controller/peripherials/I2CSensor.h" name="src/controller/peripherials/I2CSensor.h">
-<area shape="rect" id="node2" href="$SGP30_8h.html" title="src/controller/peripherials\l/SGP30.h" alt="" coords="140,95,307,136"/>
+<area shape="rect" id="node2" href="$SGP30_8h.html" title="src/controller/peripherials\l/SGP30.h" alt="" coords="315,95,481,136"/>
 <area shape="rect" id="node4" href="$Sampler_8h.html" title="src/controller/Sampler.h" alt="" coords="197,191,357,218"/>
-<area shape="rect" id="node8" href="$SHT31D_8h.html" title="src/controller/peripherials\l/SHT31D.h" alt="" coords="575,95,741,136"/>
-<area shape="rect" id="node10" href="$VEML7700_8h.html" title="src/controller/peripherials\l/VEML7700.h" alt="" coords="383,95,549,136"/>
+<area shape="rect" id="node9" href="$SHT31D_8h.html" title="src/controller/peripherials\l/SHT31D.h" alt="" coords="696,95,863,136"/>
+<area shape="rect" id="node11" href="$VEML7700_8h.html" title="src/controller/peripherials\l/VEML7700.h" alt="" coords="505,95,672,136"/>
 <area shape="rect" id="node3" href="$SGP30_8cpp.html" title="src/controller/peripherials\l/SGP30.cpp" alt="" coords="5,184,172,225"/>
 <area shape="rect" id="node7" href="$DriverSensorTest_8cpp.html" title="test/DriverSensorTest.cpp" alt="" coords="572,191,747,218"/>
+<area shape="rect" id="node8" href="$IntegrationTests_8cpp.html" title="test/IntegrationTests.cpp" alt="" coords="771,191,937,218"/>
 <area shape="rect" id="node5" href="$Sampler_8cpp.html" title="src/controller/Sampler.cpp" alt="" coords="81,273,256,300"/>
 <area shape="rect" id="node6" href="$ControllerThread_8cpp.html" title="src/threads/ControllerThread.cpp" alt="" coords="280,273,492,300"/>
-<area shape="rect" id="node9" href="$SHT31D_8cpp.html" title="src/controller/peripherials\l/SHT31D.cpp" alt="" coords="771,184,937,225"/>
-<area shape="rect" id="node11" href="$VEML7700_8cpp.html" title="src/controller/peripherials\l/VEML7700.cpp" alt="" coords="381,184,548,225"/>
+<area shape="rect" id="node10" href="$SHT31D_8cpp.html" title="src/controller/peripherials\l/SHT31D.cpp" alt="" coords="961,184,1128,225"/>
+<area shape="rect" id="node12" href="$VEML7700_8cpp.html" title="src/controller/peripherials\l/VEML7700.cpp" alt="" coords="381,184,548,225"/>
 </map>

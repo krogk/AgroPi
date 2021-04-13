@@ -1,34 +1,61 @@
-~\newline
- \mbox{[}x\mbox{]} Github Setup
 
-\mbox{[}x\mbox{]} Software Release 0.\+1 -\/ Working core prototype -\/ 09/04/2021
 \begin{DoxyItemize}
-\item \mbox{[}x\mbox{]} I2C Driver
-\item \mbox{[}x\mbox{]} Light Sensor Integrated
-\item \mbox{[}x\mbox{]} Temperature + Humidity Sensor Integrated
-\item \mbox{[}x\mbox{]} Gas Sensor Integrated
-\item \mbox{[}x\mbox{]} Web server
-\item \mbox{[}x\mbox{]} Real-\/time Adaptation
+\item Agro\+Pi
+\begin{DoxyItemize}
+\item {\bfseries Hardware} -\/ contains datasheets and schematics of hardware used
+\item {\bfseries media} -\/ contains all media
+\begin{DoxyItemize}
+\item {\bfseries images} -\/ contains all images for the project
 \end{DoxyItemize}
-
-\mbox{[}-\/\mbox{]} Software Release 0.\+2 Actuation \& Image Processing -\/ Detecting Seedling/\+Mushroom -\/ 16/04/2021
+\item {\bfseries software} -\/ contains the src and test files for the software filesn
 \begin{DoxyItemize}
-\item \mbox{[}-\/\mbox{]} \hyperlink{classCamera}{Camera} Integrated
-\item \mbox{[}-\/\mbox{]} Sensor Calibration
-\item \mbox{[}-\/\mbox{]} Relay Board Driver
-\item \mbox{[}-\/\mbox{]} Relay Board Integration
-\item \mbox{[}-\/\mbox{]} Web-\/\+Server Improvments
-\item \mbox{[}-\/\mbox{]} Gather Training Dataset
-\item \mbox{[}-\/\mbox{]} Train neuralnet
-\item \mbox{[}-\/\mbox{]} Test on real samples
+\item {\bfseries build} -\/ user created, build takes place here
+\begin{DoxyItemize}
+\item {\bfseries doc} -\/ contains documentation
+\begin{DoxyItemize}
+\item doxygen documentation lives here
 \end{DoxyItemize}
-
-\mbox{[}-\/\mbox{]} Software Release 0.\+3 -\/ Life cycle Assessment \& Nutrient Defficiencies -\/ After Summer
+\item {\bfseries src} -\/ Here source application is build
 \begin{DoxyItemize}
-\item \mbox{[}-\/\mbox{]} Light Spectrum Sensor
-\item \mbox{[}-\/\mbox{]} A\+DC Integration
-\item \mbox{[}-\/\mbox{]} Water Level Sensor
-\item \mbox{[}-\/\mbox{]} Soil Moisture Sensor
-\item \mbox{[}-\/\mbox{]} Sensor-\/\+Web Integration ~\newline
- 
+\item Agro\+Pi -\/ Executable for the application
+\end{DoxyItemize}
+\item {\bfseries test} -\/ Here test application is build
+\end{DoxyItemize}
+\item {\bfseries cmake} -\/ contains cmake scripts
+\begin{DoxyItemize}
+\item Static\+Analyzers.\+cmake -\/ Static Analyzer Settings (cppcheck)
+\end{DoxyItemize}
+\item {\bfseries doc} -\/ contains documentation
+\begin{DoxyItemize}
+\item C\+Make\+Lists.\+txt -\/ doc building
+\item Doxyfile.\+in -\/ doxygen settings
+\item \hyperlink{Design_8md}{Design.\+md} -\/ Application Design
+\end{DoxyItemize}
+\item {\bfseries src} -\/ contains source files
+\begin{DoxyItemize}
+\item {\bfseries controller} -\/ Contains sampler, contoller and peripherials
+\begin{DoxyItemize}
+\item {\bfseries peripherials} -\/ Contains all communication protocol, sensors and relay drivers
+\begin{DoxyItemize}
+\item C\+Make\+Lists.\+txt -\/ source building
+\end{DoxyItemize}
+\item \hyperlink{Controller_8h}{Controller.\+h} -\/
+\item \hyperlink{Controller_8cpp}{Controller.\+cpp} -\/
+\item \hyperlink{Sampler_8h}{Sampler.\+h} -\/
+\item \hyperlink{Sampler_8cpp}{Sampler.\+cpp} -\/
+\item httplib.\+h -\/
+\end{DoxyItemize}
+\item {\bfseries threads} -\/ Contains controller thread and base cpp thread class
+\item {\bfseries utils} -\/ contains base clases for timers, typedefs and maths functions
+\end{DoxyItemize}
+\item {\bfseries test} -\/ unit tests \& integration tests
+\begin{DoxyItemize}
+\item C\+Make\+Lists.\+txt -\/ test building
+\item \hyperlink{DriverSensorTest_8cpp}{Driver\+Sensor\+Test.\+cpp} -\/ Unit tests for I2C driver and sensors
+\end{DoxyItemize}
+\item {\bfseries web} -\/ contains web application
+\end{DoxyItemize}
+\item \hyperlink{README_8md}{R\+E\+A\+D\+M\+E.\+md} -\/ main readme file
+\item C\+Make\+Lists.\+txt -\/ Main C\+Make configuration 
+\end{DoxyItemize}
 \end{DoxyItemize}

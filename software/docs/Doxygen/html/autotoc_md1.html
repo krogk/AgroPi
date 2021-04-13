@@ -101,6 +101,7 @@ $(function() {
 <li>Use controller callback function which sends data to server and executes the actuation loop.</li>
 </ol>
 <p><a class="el" href="classController.html" title="Controller class. ">Controller</a> object is going to contain the callback function for sampler object to use as well as set of functions to Tx &amp; Rx data to &amp; from web-server. <a class="el" href="classController.html" title="Controller class. ">Controller</a> is going to contain data structures holding latest environment data from sampler and hueristics passed from the user by the server. <a class="el" href="classController.html" title="Controller class. ">Controller</a> is going to contain relay object(s) and have set of functions to controll them.</p>
+<p>jQuery -&gt; flask server -&gt; nginx -&gt; CGI handler -&gt; CPP</p>
 <p><a class="el" href="classController.html" title="Controller class. ">Controller</a> thread should initialize the sampler and controller object, start sampling and go into a while loop which should execute based on an exit flag which is going to be able to controlled from web server. In this while loop thread is going to read data from the server. The Read operation for the server should be blocking and as soon as the messeage has been recieved it is going to be processed by striping the opcode and this opcode with the corresponding value should be passed to the event handler function.</p>
 <p>Project is built on these technologies:</p>
 <ul>
@@ -121,6 +122,18 @@ $(function() {
 </li>
 <li>cppcheck<ul>
 <li>With <em>make cppcheck</em> you can run static code analysis</li>
+</ul>
+</li>
+<li>Nginx<ul>
+<li>Server which does post request for data and posts controll data</li>
+</ul>
+</li>
+<li>Python<ul>
+<li>Webserver</li>
+</ul>
+</li>
+<li>Mongodb<ul>
+<li>Databases</li>
 </ul>
 </li>
 <li>OpenCV<ul>

@@ -1,0 +1,137 @@
+\hypertarget{classJSONCGIHandler_1_1JSONGenerator}{}\section{J\+S\+O\+N\+C\+G\+I\+Handler\+:\+:J\+S\+O\+N\+Generator Class Reference}
+\label{classJSONCGIHandler_1_1JSONGenerator}\index{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}}
+
+
+{\ttfamily \#include $<$json\+\_\+fastcgi\+\_\+web\+\_\+api.\+h$>$}
+
+
+
+Collaboration diagram for J\+S\+O\+N\+C\+G\+I\+Handler\+:\+:J\+S\+O\+N\+Generator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{classJSONCGIHandler_1_1JSONGenerator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classJSONCGIHandler_1_1JSONGenerator_a191efd00967cbace0d9ddfedea39cd9b}{add} (std\+::string key, std\+::string value)
+\item 
+void \hyperlink{classJSONCGIHandler_1_1JSONGenerator_aa25099deb2442335298ab1c021f36910}{add} (std\+::string key, double value)
+\item 
+void \hyperlink{classJSONCGIHandler_1_1JSONGenerator_a2192849b22341653a138bb63da6c6c9a}{add} (std\+::string key, float value)
+\item 
+void \hyperlink{classJSONCGIHandler_1_1JSONGenerator_afc3e9374b0e49ca1f701bd22bbd4cd92}{add} (std\+::string key, long value)
+\item 
+void \hyperlink{classJSONCGIHandler_1_1JSONGenerator_a87fe5c75b46f9822255535a61f15ad4b}{add} (std\+::string key, int value)
+\item 
+std\+::string \hyperlink{classJSONCGIHandler_1_1JSONGenerator_afec28cd80e562955e2cd8cdb92d86205}{get\+J\+S\+ON} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classJSONCGIHandler_1_1JSONGenerator_a5a9fd42e7b9030c6a0a4bee923a2e416}{json} = \char`\"{}\{\char`\"{}
+\item 
+int \hyperlink{classJSONCGIHandler_1_1JSONGenerator_a9d14c80af92fa9f3a3406d826acd2cc0}{first\+Entry} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple helper function to create a key/value json pairs for the callback function. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classJSONCGIHandler_1_1JSONGenerator_a191efd00967cbace0d9ddfedea39cd9b}\label{classJSONCGIHandler_1_1JSONGenerator_a191efd00967cbace0d9ddfedea39cd9b}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}!add@{add}}
+\index{add@{add}!J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily void J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator\+::add (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{std\+::string}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a J\+S\+ON entry\+: string 
+\begin{DoxyParams}{Parameters}
+{\em key} & The J\+S\+ON key \\
+\hline
+{\em value} & The J\+S\+ON value as a string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJSONCGIHandler_1_1JSONGenerator_aa25099deb2442335298ab1c021f36910}\label{classJSONCGIHandler_1_1JSONGenerator_aa25099deb2442335298ab1c021f36910}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}!add@{add}}
+\index{add@{add}!J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily void J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator\+::add (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a J\+S\+ON entry\+: double 
+\begin{DoxyParams}{Parameters}
+{\em key} & The J\+S\+ON key \\
+\hline
+{\em value} & The J\+S\+ON value as a double \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJSONCGIHandler_1_1JSONGenerator_a2192849b22341653a138bb63da6c6c9a}\label{classJSONCGIHandler_1_1JSONGenerator_a2192849b22341653a138bb63da6c6c9a}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}!add@{add}}
+\index{add@{add}!J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily void J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator\+::add (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a J\+S\+ON entry\+: float 
+\begin{DoxyParams}{Parameters}
+{\em key} & The J\+S\+ON key \\
+\hline
+{\em value} & The J\+S\+ON value as a float \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJSONCGIHandler_1_1JSONGenerator_afc3e9374b0e49ca1f701bd22bbd4cd92}\label{classJSONCGIHandler_1_1JSONGenerator_afc3e9374b0e49ca1f701bd22bbd4cd92}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}!add@{add}}
+\index{add@{add}!J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily void J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator\+::add (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{long}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a J\+S\+ON entry\+: long int 
+\begin{DoxyParams}{Parameters}
+{\em key} & The J\+S\+ON key \\
+\hline
+{\em value} & The J\+S\+ON value as a long int \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJSONCGIHandler_1_1JSONGenerator_a87fe5c75b46f9822255535a61f15ad4b}\label{classJSONCGIHandler_1_1JSONGenerator_a87fe5c75b46f9822255535a61f15ad4b}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}!add@{add}}
+\index{add@{add}!J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily void J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator\+::add (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a J\+S\+ON entry\+: int 
+\begin{DoxyParams}{Parameters}
+{\em key} & The J\+S\+ON key \\
+\hline
+{\em value} & The J\+S\+ON value as an int \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJSONCGIHandler_1_1JSONGenerator_afec28cd80e562955e2cd8cdb92d86205}\label{classJSONCGIHandler_1_1JSONGenerator_afec28cd80e562955e2cd8cdb92d86205}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}!get\+J\+S\+ON@{get\+J\+S\+ON}}
+\index{get\+J\+S\+ON@{get\+J\+S\+ON}!J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}}
+\subsubsection{\texorpdfstring{get\+J\+S\+O\+N()}{getJSON()}}
+{\footnotesize\ttfamily std\+::string J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator\+::get\+J\+S\+ON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the json string \begin{DoxyReturn}{Returns}
+The J\+S\+ON data ready to be sent 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classJSONCGIHandler_1_1JSONGenerator_a9d14c80af92fa9f3a3406d826acd2cc0}\label{classJSONCGIHandler_1_1JSONGenerator_a9d14c80af92fa9f3a3406d826acd2cc0}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}!first\+Entry@{first\+Entry}}
+\index{first\+Entry@{first\+Entry}!J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}}
+\subsubsection{\texorpdfstring{first\+Entry}{firstEntry}}
+{\footnotesize\ttfamily int J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator\+::first\+Entry = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSONCGIHandler_1_1JSONGenerator_a5a9fd42e7b9030c6a0a4bee923a2e416}\label{classJSONCGIHandler_1_1JSONGenerator_a5a9fd42e7b9030c6a0a4bee923a2e416}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}!json@{json}}
+\index{json@{json}!J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator@{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator}}
+\subsubsection{\texorpdfstring{json}{json}}
+{\footnotesize\ttfamily std\+::string J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+Generator\+::json = \char`\"{}\{\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/threads/\hyperlink{json__fastcgi__web__api_8h}{json\+\_\+fastcgi\+\_\+web\+\_\+api.\+h}\end{DoxyCompactItemize}

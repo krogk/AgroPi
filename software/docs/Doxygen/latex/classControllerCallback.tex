@@ -1,0 +1,71 @@
+\hypertarget{classControllerCallback}{}\section{Controller\+Callback Class Reference}
+\label{classControllerCallback}\index{Controller\+Callback@{Controller\+Callback}}
+
+
+Inheritance diagram for Controller\+Callback\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classControllerCallback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Controller\+Callback\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classControllerCallback__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classControllerCallback_ad09e33e9c4725df642ca098364737a84}{Controller\+Callback} (\hyperlink{classController}{Controller} $\ast$cfastcgi)
+\item 
+void \hyperlink{classControllerCallback_aa7aa4c4c12ced1395e8c40ed1b82db12}{post\+String} (std\+::string post\+Arg)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classController}{Controller} $\ast$ \hyperlink{classControllerCallback_a0992380f69e00cdb841e291d3d447cd5}{controllerfastcgi}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Callback handler which receives the J\+S\+ON from j\+Query 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classControllerCallback_ad09e33e9c4725df642ca098364737a84}\label{classControllerCallback_ad09e33e9c4725df642ca098364737a84}} 
+\index{Controller\+Callback@{Controller\+Callback}!Controller\+Callback@{Controller\+Callback}}
+\index{Controller\+Callback@{Controller\+Callback}!Controller\+Callback@{Controller\+Callback}}
+\subsubsection{\texorpdfstring{Controller\+Callback()}{ControllerCallback()}}
+{\footnotesize\ttfamily Controller\+Callback\+::\+Controller\+Callback (\begin{DoxyParamCaption}\item[{\hyperlink{classController}{Controller} $\ast$}]{cfastcgi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classControllerCallback_aa7aa4c4c12ced1395e8c40ed1b82db12}\label{classControllerCallback_aa7aa4c4c12ced1395e8c40ed1b82db12}} 
+\index{Controller\+Callback@{Controller\+Callback}!post\+String@{post\+String}}
+\index{post\+String@{post\+String}!Controller\+Callback@{Controller\+Callback}}
+\subsubsection{\texorpdfstring{post\+String()}{postString()}}
+{\footnotesize\ttfamily void Controller\+Callback\+::post\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{post\+Arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Extract the operation code and the value, then pass it to an event handler 
+
+Implements \hyperlink{classJSONCGIHandler_1_1POSTCallback_a6cddb384a3fd9242b323cea3d82a6bb7}{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+P\+O\+S\+T\+Callback}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classControllerCallback_a0992380f69e00cdb841e291d3d447cd5}\label{classControllerCallback_a0992380f69e00cdb841e291d3d447cd5}} 
+\index{Controller\+Callback@{Controller\+Callback}!controllerfastcgi@{controllerfastcgi}}
+\index{controllerfastcgi@{controllerfastcgi}!Controller\+Callback@{Controller\+Callback}}
+\subsubsection{\texorpdfstring{controllerfastcgi}{controllerfastcgi}}
+{\footnotesize\ttfamily \hyperlink{classController}{Controller}$\ast$ Controller\+Callback\+::controllerfastcgi}
+
+Pointer to the controller object, holding target structs 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/threads/\hyperlink{ControllerThread_8cpp}{Controller\+Thread.\+cpp}\end{DoxyCompactItemize}

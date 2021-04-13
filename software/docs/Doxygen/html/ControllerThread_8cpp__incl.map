@@ -1,14 +1,15 @@
 <map id="src/threads/ControllerThread.cpp" name="src/threads/ControllerThread.cpp">
-<area shape="rect" id="node2" href="$ControllerThread_8h.html" title="ControllerThread.h" alt="" coords="381,80,510,107"/>
-<area shape="rect" id="node13" href="$Sampler_8h.html" title="Sampler.h" alt="" coords="667,80,749,107"/>
-<area shape="rect" id="node3" href="$CppThread_8h.html" title="CppThread.h" alt="" coords="118,155,215,181"/>
-<area shape="rect" id="node5" href="$Controller_8h.html" title="Controller.h" alt="" coords="401,155,490,181"/>
-<area shape="rect" id="node6" href="$typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="395,229,515,256"/>
-<area shape="rect" id="node11" href="$RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="269,229,371,256"/>
-<area shape="rect" id="node14" href="$CppTimer_8h.html" title="CppTimer.h" alt="" coords="691,229,781,256"/>
-<area shape="rect" id="node17" href="$I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="1078,304,1167,331"/>
-<area shape="rect" id="node18" href="$I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="857,229,951,256"/>
-<area shape="rect" id="node19" href="$VEML7700_8h.html" title="VEML7700.h" alt="" coords="926,155,1023,181"/>
-<area shape="rect" id="node20" href="$SHT31D_8h.html" title="SHT31D.h" alt="" coords="1047,155,1131,181"/>
-<area shape="rect" id="node21" href="$SGP30_8h.html" title="SGP30.h" alt="" coords="823,155,897,181"/>
+<area shape="rect" id="node2" href="$json__fastcgi__web__api_8h.html" title="json_fastcgi_web_api.h" alt="" coords="1340,155,1499,181"/>
+<area shape="rect" id="node18" href="$ControllerThread_8h.html" title="ControllerThread.h" alt="" coords="778,80,907,107"/>
+<area shape="rect" id="node23" href="$Sampler_8h.html" title="Sampler.h" alt="" coords="283,80,364,107"/>
+<area shape="rect" id="node19" href="$CppThread_8h.html" title="CppThread.h" alt="" coords="983,155,1080,181"/>
+<area shape="rect" id="node20" href="$Controller_8h.html" title="Controller.h" alt="" coords="752,155,842,181"/>
+<area shape="rect" id="node21" href="$typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="737,229,857,256"/>
+<area shape="rect" id="node22" href="$RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="561,229,662,256"/>
+<area shape="rect" id="node24" href="$CppTimer_8h.html" title="CppTimer.h" alt="" coords="225,229,316,256"/>
+<area shape="rect" id="node27" href="$I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="92,304,182,331"/>
+<area shape="rect" id="node28" href="$I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="340,229,435,256"/>
+<area shape="rect" id="node29" href="$VEML7700_8h.html" title="VEML7700.h" alt="" coords="30,155,127,181"/>
+<area shape="rect" id="node30" href="$SHT31D_8h.html" title="SHT31D.h" alt="" coords="151,155,235,181"/>
+<area shape="rect" id="node31" href="$SGP30_8h.html" title="SGP30.h" alt="" coords="361,155,436,181"/>
 </map>

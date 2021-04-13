@@ -34,6 +34,8 @@ BOOST_AUTO_TEST_CASE(I2C_PLAIN_WRITE_READ){
     //driver.Plain_I2C_Write_Read(fd, 0x0303, buffer, 1);
     // Ensure no device replied
     //BOOST_CHECK_MESSAGE( buffer[0] == 0, "Buffer Was Modified: " << buffer[0] << " Unexpected Read" );
+    
+    close(fd);
 }
 BOOST_AUTO_TEST_SUITE_END()
 
@@ -61,6 +63,7 @@ BOOST_AUTO_TEST_CASE(VEML770_LUX_READ)
     BOOST_CHECK_MESSAGE( lux >= 0.0,    "Lux measured by light sensor is: " << lux << " Zero" );
     // If lux is above 120000, it is highly likely the value obtained is incorrect.
     BOOST_CHECK_MESSAGE( lux <= 120000, "Lux measured by light sensor is: " << lux << " - Above Maximum(120000)" );
+    lightsensor.Close_Device();
 }
 BOOST_AUTO_TEST_SUITE_END()
 
@@ -85,6 +88,7 @@ BOOST_AUTO_TEST_CASE( SHT31D_READ )
     BOOST_CHECK_MESSAGE( temp < 60.0f,  "Temperature measured by SHT31D: " << temp << " C - Too High" );
     BOOST_CHECK_MESSAGE( humidity > 0.0f,   "Temperature measured by SHT31D: " << humidity << " % - Too Low" );
     BOOST_CHECK_MESSAGE( humidity < 100.0f,  "Temperature measured by SHT31D: " << humidity << " % - Too High" );
+    temperatureHumiditySensor.Close_Device();
 
 }
 BOOST_AUTO_TEST_SUITE_END()
@@ -107,9 +111,24 @@ BOOST_AUTO_TEST_CASE( SGP30_READ )
     gasSensor.IAQ_Measure(tvoc,eco2);
     BOOST_CHECK_MESSAGE( tvoc >= 0.0f, "Temperature measured by SHT31D: " << tvoc << " ppb - Too Low" );
     BOOST_CHECK_MESSAGE( eco2 > 0.0f,  "Temperature measured by SHT31D: " << eco2 << " ppm - Too Low" );
+    gasSensor.Close_Device();
 }
 BOOST_AUTO_TEST_SUITE_END()
 
+/*
+// Test Relay Board
+BOOST_AUTO_TEST_SUITE(Relays)
+BOOST_AUTO_TEST_CASE( ElegoRelayBoard )
+{
+    //RelayBoard relay;
+    // turn GPIO ON 
+    // delay
+    // turn GPIO OFF
+    //Close_Device
+
+}
+BOOST_AUTO_TEST_SUITE_END()
+*/
 
 /*// Test Camera
 BOOST_AUTO_TEST_SUITE(CAMERA)
@@ -118,10 +137,3 @@ BOOST_AUTO_TEST_CASE( Camera ) {
 BOOST_AUTO_TEST_SUITE_END()
 */
 
-
-/*// Test Relay Board
-BOOST_AUTO_TEST_SUITE(Relays)
-BOOST_AUTO_TEST_CASE( ElegoRelayBoard ) {
-}
-BOOST_AUTO_TEST_SUITE_END()
-*/

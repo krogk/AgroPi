@@ -1,0 +1,4 @@
+<map id="JSONCGIHandler" name="JSONCGIHandler">
+<area shape="rect" id="node2" href="$classJSONCGIHandler_1_1GETCallback.html" title="{JSONCGIHandler::GETCallback\n||+ getJSONString()\l+ getContentType()\l}" alt="" coords="5,5,219,97"/>
+<area shape="rect" id="node6" href="$classJSONCGIHandler_1_1POSTCallback.html" title="{JSONCGIHandler::POSTCallback\n||+ postString()\l}" alt="" coords="550,13,773,90"/>
+</map>

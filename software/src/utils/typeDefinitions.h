@@ -49,9 +49,7 @@
  * This struct conatins actuaytor 
  */
  typedef struct{
-  /// Alternativley use triple slash for the comments
-	// Env Data
-  bool ForceHeating;        /*!< ForceHeating on actuation handler */
+  bool ForceHeating;        /*!< Force Heating on actuation handler */
 	bool ForceLighting;					
 	bool ForceAirflow;
 	bool ForceWaterPump;						

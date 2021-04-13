@@ -1,0 +1,152 @@
+\hypertarget{classJSONCGIHandler}{}\section{J\+S\+O\+N\+C\+G\+I\+Handler Class Reference}
+\label{classJSONCGIHandler}\index{J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}}
+
+
+{\ttfamily \#include $<$json\+\_\+fastcgi\+\_\+web\+\_\+api.\+h$>$}
+
+
+
+Collaboration diagram for J\+S\+O\+N\+C\+G\+I\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classJSONCGIHandler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classJSONCGIHandler_1_1GETCallback}{G\+E\+T\+Callback}
+\item 
+class \hyperlink{classJSONCGIHandler_1_1JSONGenerator}{J\+S\+O\+N\+Generator}
+\item 
+class \hyperlink{classJSONCGIHandler_1_1POSTCallback}{P\+O\+S\+T\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classJSONCGIHandler_a9bf5a96d13949d363225561ba6ac3b56}{J\+S\+O\+N\+C\+G\+I\+Handler} (\hyperlink{classJSONCGIHandler_1_1GETCallback}{G\+E\+T\+Callback} $\ast$arg\+Get\+Callback, \hyperlink{classJSONCGIHandler_1_1POSTCallback}{P\+O\+S\+T\+Callback} $\ast$arg\+Post\+Callback=nullptr, const char socketpath\mbox{[}$\,$\mbox{]}=\char`\"{}/tmp/fastcgisocket\char`\"{})
+\item 
+\hyperlink{classJSONCGIHandler_a4817e428a962bdea68123f2d32671f30}{$\sim$\+J\+S\+O\+N\+C\+G\+I\+Handler} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ std\+::string, std\+::string $>$ \hyperlink{classJSONCGIHandler_a0f208af3dd050ed182967fe9cca42d78}{post\+Decoder} (std\+::string s)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classJSONCGIHandler_a42518cd5ad781476d299b50e4c4c0000}{exec} (\hyperlink{classJSONCGIHandler}{J\+S\+O\+N\+C\+G\+I\+Handler} $\ast$fast\+C\+G\+I\+Handler)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+F\+C\+G\+X\+\_\+\+Request \hyperlink{classJSONCGIHandler_a69dba19ef64e913fc7e969854be997c9}{request}
+\item 
+int \hyperlink{classJSONCGIHandler_a6f696ff6856f32b3ba75a130fcbb8987}{sock\+\_\+fd} = 0
+\item 
+int \hyperlink{classJSONCGIHandler_aefa19cd01b387693ef99c5aa0c5fc093}{running} = 1
+\item 
+std\+::thread $\ast$ \hyperlink{classJSONCGIHandler_aca513f708ae4dc76ba70196ff25da695}{main\+Thread} = nullptr
+\item 
+\hyperlink{classJSONCGIHandler_1_1GETCallback}{G\+E\+T\+Callback} $\ast$ \hyperlink{classJSONCGIHandler_a7c8b4a44e15ac57fe93b382e86899fa7}{get\+Callback} = nullptr
+\item 
+\hyperlink{classJSONCGIHandler_1_1POSTCallback}{P\+O\+S\+T\+Callback} $\ast$ \hyperlink{classJSONCGIHandler_a09ee0f555db808d07c9ee9a575780553}{post\+Callback} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C++ wrapper around fast\+C\+GI which sends and receives J\+S\+ON in a j\+Query friendly format.
+
+Copyright (C) 2021 Bernd Porr \href{mailto:mail@berndporr.me.uk}{\tt mail@berndporr.\+me.\+uk} Apache License 2.\+0 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJSONCGIHandler_a9bf5a96d13949d363225561ba6ac3b56}\label{classJSONCGIHandler_a9bf5a96d13949d363225561ba6ac3b56}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}!J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}}
+\index{J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}!J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}}
+\subsubsection{\texorpdfstring{J\+S\+O\+N\+C\+G\+I\+Handler()}{JSONCGIHandler()}}
+{\footnotesize\ttfamily J\+S\+O\+N\+C\+G\+I\+Handler\+::\+J\+S\+O\+N\+C\+G\+I\+Handler (\begin{DoxyParamCaption}\item[{\hyperlink{classJSONCGIHandler_1_1GETCallback}{G\+E\+T\+Callback} $\ast$}]{arg\+Get\+Callback,  }\item[{\hyperlink{classJSONCGIHandler_1_1POSTCallback}{P\+O\+S\+T\+Callback} $\ast$}]{arg\+Post\+Callback = {\ttfamily nullptr},  }\item[{const char}]{socketpath\mbox{[}$\,$\mbox{]} = {\ttfamily \char`\"{}/tmp/fastcgisocket\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor which opens the connection and starts the main thread. Provide an instance of the callback handler which returns the payload data. arg\+Post\+Callback is the callback which returns received json packets as a map. The optional socketpath variable can be set to another path for the socket which talks to the webserver. 
+\begin{DoxyParams}{Parameters}
+{\em arg\+Get\+Callback} & Callback handler for sending J\+S\+ON \\
+\hline
+{\em arg\+Post\+Callback} & Callback handler for receiving J\+S\+ON \\
+\hline
+{\em socketpath} & Path of the socket which communicates to the webserver \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJSONCGIHandler_a4817e428a962bdea68123f2d32671f30}\label{classJSONCGIHandler_a4817e428a962bdea68123f2d32671f30}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}!````~J\+S\+O\+N\+C\+G\+I\+Handler@{$\sim$\+J\+S\+O\+N\+C\+G\+I\+Handler}}
+\index{````~J\+S\+O\+N\+C\+G\+I\+Handler@{$\sim$\+J\+S\+O\+N\+C\+G\+I\+Handler}!J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}}
+\subsubsection{\texorpdfstring{$\sim$\+J\+S\+O\+N\+C\+G\+I\+Handler()}{~JSONCGIHandler()}}
+{\footnotesize\ttfamily J\+S\+O\+N\+C\+G\+I\+Handler\+::$\sim$\+J\+S\+O\+N\+C\+G\+I\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destructor which shuts down the connection to the webserver and it also terminates the thread which is waiting for requests. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classJSONCGIHandler_a42518cd5ad781476d299b50e4c4c0000}\label{classJSONCGIHandler_a42518cd5ad781476d299b50e4c4c0000}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}!exec@{exec}}
+\index{exec@{exec}!J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}}
+\subsubsection{\texorpdfstring{exec()}{exec()}}
+{\footnotesize\ttfamily static void J\+S\+O\+N\+C\+G\+I\+Handler\+::exec (\begin{DoxyParamCaption}\item[{\hyperlink{classJSONCGIHandler}{J\+S\+O\+N\+C\+G\+I\+Handler} $\ast$}]{fast\+C\+G\+I\+Handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSONCGIHandler_a0f208af3dd050ed182967fe9cca42d78}\label{classJSONCGIHandler_a0f208af3dd050ed182967fe9cca42d78}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}!post\+Decoder@{post\+Decoder}}
+\index{post\+Decoder@{post\+Decoder}!J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}}
+\subsubsection{\texorpdfstring{post\+Decoder()}{postDecoder()}}
+{\footnotesize\ttfamily static std\+::map$<$std\+::string,std\+::string$>$ J\+S\+O\+N\+C\+G\+I\+Handler\+::post\+Decoder (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Parses a P\+O\+ST string and returns a std\+::map with key/value pairs. It also converts back any xx style encoding back to chars using libcurl. Note this is a simple parser and it won\textquotesingle{}t deal with nested J\+S\+ON structures. 
+\begin{DoxyParams}{Parameters}
+{\em s} & The P\+O\+ST string to be decoded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\+::map which conains the key/value pairs. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classJSONCGIHandler_a7c8b4a44e15ac57fe93b382e86899fa7}\label{classJSONCGIHandler_a7c8b4a44e15ac57fe93b382e86899fa7}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}!get\+Callback@{get\+Callback}}
+\index{get\+Callback@{get\+Callback}!J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}}
+\subsubsection{\texorpdfstring{get\+Callback}{getCallback}}
+{\footnotesize\ttfamily \hyperlink{classJSONCGIHandler_1_1GETCallback}{G\+E\+T\+Callback}$\ast$ J\+S\+O\+N\+C\+G\+I\+Handler\+::get\+Callback = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSONCGIHandler_aca513f708ae4dc76ba70196ff25da695}\label{classJSONCGIHandler_aca513f708ae4dc76ba70196ff25da695}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}!main\+Thread@{main\+Thread}}
+\index{main\+Thread@{main\+Thread}!J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}}
+\subsubsection{\texorpdfstring{main\+Thread}{mainThread}}
+{\footnotesize\ttfamily std\+::thread$\ast$ J\+S\+O\+N\+C\+G\+I\+Handler\+::main\+Thread = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSONCGIHandler_a09ee0f555db808d07c9ee9a575780553}\label{classJSONCGIHandler_a09ee0f555db808d07c9ee9a575780553}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}!post\+Callback@{post\+Callback}}
+\index{post\+Callback@{post\+Callback}!J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}}
+\subsubsection{\texorpdfstring{post\+Callback}{postCallback}}
+{\footnotesize\ttfamily \hyperlink{classJSONCGIHandler_1_1POSTCallback}{P\+O\+S\+T\+Callback}$\ast$ J\+S\+O\+N\+C\+G\+I\+Handler\+::post\+Callback = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSONCGIHandler_a69dba19ef64e913fc7e969854be997c9}\label{classJSONCGIHandler_a69dba19ef64e913fc7e969854be997c9}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}!request@{request}}
+\index{request@{request}!J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}}
+\subsubsection{\texorpdfstring{request}{request}}
+{\footnotesize\ttfamily F\+C\+G\+X\+\_\+\+Request J\+S\+O\+N\+C\+G\+I\+Handler\+::request\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSONCGIHandler_aefa19cd01b387693ef99c5aa0c5fc093}\label{classJSONCGIHandler_aefa19cd01b387693ef99c5aa0c5fc093}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}!running@{running}}
+\index{running@{running}!J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}}
+\subsubsection{\texorpdfstring{running}{running}}
+{\footnotesize\ttfamily int J\+S\+O\+N\+C\+G\+I\+Handler\+::running = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classJSONCGIHandler_a6f696ff6856f32b3ba75a130fcbb8987}\label{classJSONCGIHandler_a6f696ff6856f32b3ba75a130fcbb8987}} 
+\index{J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}!sock\+\_\+fd@{sock\+\_\+fd}}
+\index{sock\+\_\+fd@{sock\+\_\+fd}!J\+S\+O\+N\+C\+G\+I\+Handler@{J\+S\+O\+N\+C\+G\+I\+Handler}}
+\subsubsection{\texorpdfstring{sock\+\_\+fd}{sock\_fd}}
+{\footnotesize\ttfamily int J\+S\+O\+N\+C\+G\+I\+Handler\+::sock\+\_\+fd = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/threads/\hyperlink{json__fastcgi__web__api_8h}{json\+\_\+fastcgi\+\_\+web\+\_\+api.\+h}\end{DoxyCompactItemize}

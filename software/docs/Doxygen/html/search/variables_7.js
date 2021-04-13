@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['i2cdriver',['i2cDriver',['../classSampler.html#ada5598060be79a005bf4375fcbf9773d',1,'Sampler']]],
-  ['img',['img',['../ai_2main_8cpp.html#a6dc9e145eafd30060f68789be59f34b7',1,'main.cpp']]],
-  ['isrunning',['isRunning',['../classControllerThread.html#ad00ac5cba8e74a5ea69d5caace8c9954',1,'ControllerThread']]],
-  ['its',['its',['../classCppTimer.html#a8774fb5ba9af8f276874c1234741f106',1,'CppTimer']]]
+  ['handlerclass',['HandlerClass',['../namespacessi__server.html#a22ffdf7df37fd789d621c214e509fcea',1,'ssi_server']]],
+  ['heatergpio',['heaterGPIO',['../classRelayBoard.html#a714832d9e7129960e0413b5618d2e310',1,'RelayBoard']]],
+  ['humidity',['Humidity',['../structEnvironmentData.html#a84e684c2dc15c5fb6bd87a03569cab05',1,'EnvironmentData']]],
+  ['humiditylowerthreshold',['HumidityLowerThreshold',['../structTargetEnvironmentData.html#af40ad465a6e74c13caf26b3672b7470f',1,'TargetEnvironmentData']]],
+  ['humidityupperthreshold',['HumidityUpperThreshold',['../structTargetEnvironmentData.html#a8db2e041382994d52fe089f9953ff437',1,'TargetEnvironmentData']]]
 ];

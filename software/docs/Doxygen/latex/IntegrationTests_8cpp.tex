@@ -1,2 +1,61 @@
 \hypertarget{IntegrationTests_8cpp}{}\section{test/\+Integration\+Tests.cpp File Reference}
 \label{IntegrationTests_8cpp}\index{test/\+Integration\+Tests.\+cpp@{test/\+Integration\+Tests.\+cpp}}
+{\ttfamily \#include $<$boost/test/unit\+\_\+test.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}I2\+C\+Driver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}V\+E\+M\+L7700.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}S\+H\+T31\+D.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}S\+G\+P30.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Camera.\+h\char`\"{}}\newline
+Include dependency graph for Integration\+Tests.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{IntegrationTests_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a6b2a3852db8bb19ab6909bac01859985}{B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE}~Agro\+Pi\+Integration\+Test
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{IntegrationTests_8cpp_adc1d3c8e593faa9c35d22df377ba1a08}{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE} (I2\+C\+\_\+\+S\+A\+M\+P\+L\+E\+R\+\_\+\+R\+E\+AD)
+\item 
+\hyperlink{IntegrationTests_8cpp_ad22d36c43a840b4967715d65fd1da45f}{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE} (C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+V\+E\+N\+T\+\_\+\+H\+A\+N\+D\+L\+ER)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{IntegrationTests_8cpp_a6b2a3852db8bb19ab6909bac01859985}\label{IntegrationTests_8cpp_a6b2a3852db8bb19ab6909bac01859985}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE@{B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE}}
+\index{B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE@{B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE}{BOOST\_TEST\_MODULE}}
+{\footnotesize\ttfamily \#define B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE~Agro\+Pi\+Integration\+Test}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{IntegrationTests_8cpp_adc1d3c8e593faa9c35d22df377ba1a08}\label{IntegrationTests_8cpp_adc1d3c8e593faa9c35d22df377ba1a08}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+S\+A\+M\+P\+L\+E\+R\+\_\+\+R\+E\+AD}]{ }\end{DoxyParamCaption})}
+
+Test I2C \hyperlink{classSampler}{Sampler}
+
+This Test reads 40 samples (10 Seconds worth) of each enviroment On each new Sample set \hyperlink{classSampler}{Sampler} uses callback which checks whether the conditions are in reasonable range.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]\+: Change the callback type in sampler to just contain a function, in the main program the functionality will remain unchanged but here it will allow for some testing\end{DoxyRefDesc}
+\mbox{\Hypertarget{IntegrationTests_8cpp_ad22d36c43a840b4967715d65fd1da45f}\label{IntegrationTests_8cpp_ad22d36c43a840b4967715d65fd1da45f}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+V\+E\+N\+T\+\_\+\+H\+A\+N\+D\+L\+ER}]{ }\end{DoxyParamCaption})}
+
+Test I2C \hyperlink{classSampler}{Sampler}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]\+: Change the callback type in sampler to just contain a function, in the main program the functionality will remain unchanged but here it will allow for some testing\end{DoxyRefDesc}

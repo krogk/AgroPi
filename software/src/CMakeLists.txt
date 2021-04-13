@@ -15,6 +15,7 @@ find_package(cpprestsdk REQUIRED)
 # Locate libraries and headers
 find_package(Threads REQUIRED)
 find_library(LIB_I2C i2c REQUIRED)
+find_package( CURL )
 
 # Set Include Directories
 set(INCLUDE_DIRS
@@ -61,8 +62,9 @@ set(HEADERS
 # Create library for src and test
 add_library(AgroPiLib SHARED ${SOURCES} )
 target_include_directories(AgroPiLib PUBLIC ${INCLUDE_DIRS})
-target_link_libraries(AgroPiLib i2c rt ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CSensor.h)
+target_link_libraries(AgroPiLib i2c rt fcgi++ fcgi ${CMAKE_THREAD_LIBS_INIT} curl ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CSensor.h)
 target_link_libraries(AgroPiLib cpprestsdk::cpprest) 
+
 
 # Add executable
 add_executable(AgroPi main.cpp)

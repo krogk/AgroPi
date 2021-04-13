@@ -67,6 +67,11 @@ public:
 
 	int Update_Targets(uint8_t opcode, float vlaue);
 	void StartListenerServer();
+	void MessageHandler(uint8_t opcode, float value );
+
+	EnvironmentData envData; 				      			/*!< Current Enviroment Conditions Read Froms the sensors */
+	TargetEnvironmentData targets; 				      /*!< Target Enviroment Conditions */
+	ActuationForceFlags actuationFlags;					/*!< Actuatuion force flags ignoring hu Enviroment Conditions */
 
 private:
 	void SendDataToWebApp(std::string variable_type, float value);
@@ -85,9 +90,6 @@ private:
 		H2_TARGET_CHANGE								= 7
 		};
 
-	EnvironmentData envData; 				      			/*!< Current Enviroment Conditions Read Froms the sensors */
-	TargetEnvironmentData targets; 				      /*!< Target Enviroment Conditions */
-	ActuationForceFlags actuationFlags;					/*!< Actuatuion force flags ignoring hu Enviroment Conditions */
 	RelayBoard relay;
 };
 

@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['lightintensity',['LightIntensity',['../structEnvironmentData.html#a2013551c12a584a6680517d750b2116a',1,'EnvironmentData']]],
-  ['lightintensitylowerthreshold',['LightIntensityLowerThreshold',['../structTargetEnvironmentData.html#a4619dffef19d60fd03d690fd756b595c',1,'TargetEnvironmentData']]],
-  ['lightintensityupperthreshold',['LightIntensityUpperThreshold',['../structTargetEnvironmentData.html#a7755db8c43daca465d5ac3730d57f7d8',1,'TargetEnvironmentData']]],
-  ['lightsensor',['lightSensor',['../classSampler.html#ae81394f464670af514f8dc7c5df46d74',1,'Sampler']]],
-  ['lightsgpio',['lightsGPIO',['../classRelayBoard.html#a05f68a6555288127a238e31282886ae0',1,'RelayBoard']]],
-  ['lightsgpiostate',['lightsGPIOState',['../classRelayBoard.html#a0b33569569f2698b99a17e65f6dbc5a1',1,'RelayBoard']]]
+  ['i2cdriver',['i2cDriver',['../classSampler.html#ada5598060be79a005bf4375fcbf9773d',1,'Sampler']]],
+  ['img',['img',['../ai_2main_8cpp.html#a6dc9e145eafd30060f68789be59f34b7',1,'main.cpp']]],
+  ['its',['its',['../classCppTimer.html#a8774fb5ba9af8f276874c1234741f106',1,'CppTimer']]]
 ];

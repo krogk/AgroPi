@@ -65,12 +65,14 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">ControllerThread.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="ControllerThread_8h_source.html">ControllerThread.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="json__fastcgi__web__api_8h_source.html">json_fastcgi_web_api.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ControllerThread_8h_source.html">ControllerThread.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Sampler_8h_source.html">Sampler.h</a>&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
@@ -78,33 +80,36 @@ $(function() {
 <code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;condition_variable&gt;</code><br />
-<code>#include &lt;httplib.h&gt;</code><br />
 <code>#include &lt;mutex&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ControllerThread.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ControllerThread_8cpp__incl.png" border="0" usemap="#src_2threads_2ControllerThread_8cpp" alt=""/></div>
 <map name="src_2threads_2ControllerThread_8cpp" id="src_2threads_2ControllerThread_8cpp">
-<area shape="rect" id="node2" href="ControllerThread_8h.html" title="ControllerThread.h" alt="" coords="381,80,510,107"/>
-<area shape="rect" id="node13" href="Sampler_8h.html" title="Sampler.h" alt="" coords="667,80,749,107"/>
-<area shape="rect" id="node3" href="CppThread_8h.html" title="CppThread.h" alt="" coords="118,155,215,181"/>
-<area shape="rect" id="node5" href="Controller_8h.html" title="Controller.h" alt="" coords="401,155,490,181"/>
-<area shape="rect" id="node6" href="typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="395,229,515,256"/>
-<area shape="rect" id="node11" href="RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="269,229,371,256"/>
-<area shape="rect" id="node14" href="CppTimer_8h.html" title="CppTimer.h" alt="" coords="691,229,781,256"/>
-<area shape="rect" id="node17" href="I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="1078,304,1167,331"/>
-<area shape="rect" id="node18" href="I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="857,229,951,256"/>
-<area shape="rect" id="node19" href="VEML7700_8h.html" title="VEML7700.h" alt="" coords="926,155,1023,181"/>
-<area shape="rect" id="node20" href="SHT31D_8h.html" title="SHT31D.h" alt="" coords="1047,155,1131,181"/>
-<area shape="rect" id="node21" href="SGP30_8h.html" title="SGP30.h" alt="" coords="823,155,897,181"/>
+<area shape="rect" id="node2" href="json__fastcgi__web__api_8h.html" title="json_fastcgi_web_api.h" alt="" coords="1340,155,1499,181"/>
+<area shape="rect" id="node18" href="ControllerThread_8h.html" title="ControllerThread.h" alt="" coords="778,80,907,107"/>
+<area shape="rect" id="node23" href="Sampler_8h.html" title="Sampler.h" alt="" coords="283,80,364,107"/>
+<area shape="rect" id="node19" href="CppThread_8h.html" title="CppThread.h" alt="" coords="983,155,1080,181"/>
+<area shape="rect" id="node20" href="Controller_8h.html" title="Controller.h" alt="" coords="752,155,842,181"/>
+<area shape="rect" id="node21" href="typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="737,229,857,256"/>
+<area shape="rect" id="node22" href="RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="561,229,662,256"/>
+<area shape="rect" id="node24" href="CppTimer_8h.html" title="CppTimer.h" alt="" coords="225,229,316,256"/>
+<area shape="rect" id="node27" href="I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="92,304,182,331"/>
+<area shape="rect" id="node28" href="I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="340,229,435,256"/>
+<area shape="rect" id="node29" href="VEML7700_8h.html" title="VEML7700.h" alt="" coords="30,155,127,181"/>
+<area shape="rect" id="node30" href="SHT31D_8h.html" title="SHT31D.h" alt="" coords="151,155,235,181"/>
+<area shape="rect" id="node31" href="SGP30_8h.html" title="SGP30.h" alt="" coords="361,155,436,181"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventDispatcher.html">EventDispatcher</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSONCGIDataCallback.html">JSONCGIDataCallback</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControllerCallback.html">ControllerCallback</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -130,10 +135,17 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="separator:aaa635ffbc23f953745a8a1707ba021b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a844160e16f1a3e514df9ce65683e17bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControllerThread_8cpp.html#a844160e16f1a3e514df9ce65683e17bd">sigHandler</a> (int sig)</td></tr>
+<tr class="separator:a844160e16f1a3e514df9ce65683e17bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20a45737018ec41ab19cb4f5164b26ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControllerThread_8cpp.html#a20a45737018ec41ab19cb4f5164b26ac">setHUPHandler</a> ()</td></tr>
+<tr class="separator:a20a45737018ec41ab19cb4f5164b26ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:abb6289930d828a19c02d900548c961da"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControllerThread_8cpp.html#abb6289930d828a19c02d900548c961da">html</a></td></tr>
-<tr class="separator:abb6289930d828a19c02d900548c961da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94a2e79f236e50a73fb8c842bcff7738"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControllerThread_8cpp.html#a94a2e79f236e50a73fb8c842bcff7738">mainRunning</a> = 1</td></tr>
+<tr class="separator:a94a2e79f236e50a73fb8c842bcff7738"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Kamil Rog </dd></dl>
@@ -169,19 +181,58 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="abb6289930d828a19c02d900548c961da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb6289930d828a19c02d900548c961da">&#9670;&nbsp;</a></span>html</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a20a45737018ec41ab19cb4f5164b26ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20a45737018ec41ab19cb4f5164b26ac">&#9670;&nbsp;</a></span>setHUPHandler()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto html</td>
+          <td class="memname">void setHUPHandler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= R<span class="stringliteral">&quot;(</span></div><div class="line"><span class="stringliteral">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="stringliteral">&lt;html lang=&quot;en&quot;&gt;</span></div><div class="line"><span class="stringliteral">&lt;head&gt;</span></div><div class="line"><span class="stringliteral">&lt;meta charset=&quot;UTF-8&quot;&gt;</span></div><div class="line"><span class="stringliteral">&lt;title&gt;SSE demo&lt;/title&gt;</span></div><div class="line"><span class="stringliteral">&lt;/head&gt;</span></div><div class="line"><span class="stringliteral">&lt;body&gt;</span></div><div class="line"><span class="stringliteral">&lt;script&gt;</span></div><div class="line"><span class="stringliteral">const ev1 = new EventSource(&quot;event1&quot;);</span></div><div class="line"><span class="stringliteral">ev1.onmessage = function(e) {</span></div><div class="line"><span class="stringliteral">  console.log(&#39;ev1&#39;, e.data);</span></div><div class="line"><span class="stringliteral">}</span></div><div class="line"><span class="stringliteral">const ev2 = new EventSource(&quot;event2&quot;);</span></div><div class="line"><span class="stringliteral">ev2.onmessage = function(e) {</span></div><div class="line"><span class="stringliteral">  console.log(&#39;ev2&#39;, e.data);</span></div><div class="line"><span class="stringliteral">}</span></div><div class="line"><span class="stringliteral">&lt;/script&gt;</span></div><div class="line"><span class="stringliteral">&lt;/body&gt;</span></div><div class="line"><span class="stringliteral">&lt;/html&gt;</span></div><div class="line"><span class="stringliteral">)&quot;</span></div></div><!-- fragment -->
+<p>Sets a signal handler so that you can kill the background process gracefully with: kill -HUP &lt;PID&gt; </p>
+
+</div>
+</div>
+<a id="a844160e16f1a3e514df9ce65683e17bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a844160e16f1a3e514df9ce65683e17bd">&#9670;&nbsp;</a></span>sigHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sigHandler </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sig</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Handler when the user has pressed ctrl-C send HUP via the kill command. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a94a2e79f236e50a73fb8c842bcff7738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94a2e79f236e50a73fb8c842bcff7738">&#9670;&nbsp;</a></span>mainRunning</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mainRunning = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Flag to indicate program is running. Needed later to quit the idle loop. </p>
+
 </div>
 </div>
 </div><!-- contents -->
