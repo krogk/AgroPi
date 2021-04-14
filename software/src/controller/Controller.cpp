@@ -9,10 +9,12 @@
 *
 * 
 */
+#define CPPHTTPLIB_OPENSSL_SUPPORT
 #include "Controller.h"
 #include <stdio.h>
 #include <string>
 #include <iostream>
+#include "httplib.h"
 
 void Controller::SamplerHasData(EnvironmentData newData)
 {
@@ -31,7 +33,30 @@ void Controller::SamplerHasData(EnvironmentData newData)
 	//std::thread::id this_id = std::this_thread::get_id();
 	//std::cout << "Controller Thread " << this_id << "\n";
 	ActuatorHandler();
+	SendDataToWebApp("LIGHT_INTENSITY", envData.LightIntensity);
+	SendDataToWebApp("TEMPERATURE", envData.Temperature);
+	SendDataToWebApp("HUMIDITY", envData.Humidity);
+	SendDataToWebApp("TVOC", envData.TVOC);
+	SendDataToWebApp("ECO2", envData.CO2);
+	SendDataToWebApp("ETHANOL", envData.RawEthanol);
+	SendDataToWebApp("H2", envData.RawH2);
 }
+
+
+void Controller::SendDataToWebApp(std::string variable_type, float value)
+{
+	//envData  "/measurement" http://192.168.178.41:5050
+	httplib::Client cli("http://127.0.0.1:5050");
+
+	std::string url = "/measurements?type=" + variable_type + "&value=" + std::to_string(value);
+	const char * urlStr = url.c_str();
+	if(auto res = cli.Get(urlStr)){
+		printf("Response status from web app: %f\n", res->status);
+		printf("Response body from web app: %f\n", res->body);
+	}
+
+}
+
 
 void Controller::MessageHandler(uint8_t opcode, float value )
 {
@@ -74,8 +99,6 @@ void Controller::MessageHandler(uint8_t opcode, float value )
 		printf("Unknown Opcode!");
     break;
   }
-
-
 }
 
 void Controller::ActuatorHandler()

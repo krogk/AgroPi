@@ -35,6 +35,7 @@ var searchData=
   ['controllerthread',['ControllerThread',['../classControllerThread.html',1,'ControllerThread'],['../classControllerThread.html#a00cd6502504f5f1e680e6be3f60a987d',1,'ControllerThread::ControllerThread()']]],
   ['controllerthread_2ecpp',['ControllerThread.cpp',['../ControllerThread_8cpp.html',1,'']]],
   ['controllerthread_2eh',['ControllerThread.h',['../ControllerThread_8h.html',1,'']]],
+  ['cpphttplib_5fopenssl_5fsupport',['CPPHTTPLIB_OPENSSL_SUPPORT',['../Controller_8cpp.html#a261c321c196e81758a042f0ae37aca7f',1,'Controller.cpp']]],
   ['cppthread',['CppThread',['../classCppThread.html',1,'']]],
   ['cppthread_2eh',['CppThread.h',['../CppThread_8h.html',1,'']]],
   ['cpptimer',['CppTimer',['../classCppTimer.html',1,'CppTimer'],['../classCppTimer.html#a327a07c051b9b60fcc61e6fd8f40f381',1,'CppTimer::CppTimer()']]],
