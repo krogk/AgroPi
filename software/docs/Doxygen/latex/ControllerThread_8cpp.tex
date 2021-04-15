@@ -1,5 +1,6 @@
 \hypertarget{ControllerThread_8cpp}{}\section{src/threads/\+Controller\+Thread.cpp File Reference}
 \label{ControllerThread_8cpp}\index{src/threads/\+Controller\+Thread.\+cpp@{src/threads/\+Controller\+Thread.\+cpp}}
+{\ttfamily \#include \char`\"{}json\+\_\+fastcgi\+\_\+web\+\_\+api.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Controller\+Thread.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Sampler.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
@@ -8,10 +9,10 @@
 {\ttfamily \#include $<$atomic$>$}\newline
 {\ttfamily \#include $<$chrono$>$}\newline
 {\ttfamily \#include $<$condition\+\_\+variable$>$}\newline
-{\ttfamily \#include $<$httplib.\+h$>$}\newline
 {\ttfamily \#include $<$mutex$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
 Include dependency graph for Controller\+Thread.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -22,7 +23,9 @@ Include dependency graph for Controller\+Thread.\+cpp\+:\nopagebreak
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classEventDispatcher}{Event\+Dispatcher}
+class \hyperlink{classJSONCGIDataCallback}{J\+S\+O\+N\+C\+G\+I\+Data\+Callback}
+\item 
+class \hyperlink{classControllerCallback}{Controller\+Callback}
 \end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -46,10 +49,17 @@ enum \hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3}{S\+E\+R
 \hyperlink{ControllerThread_8cpp_aaa635ffbc23f953745a8a1707ba021b3a945280aa3e9db0f24215a8d9b6ddbd8e}{E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON} = 255
  \}
 \end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ControllerThread_8cpp_a844160e16f1a3e514df9ce65683e17bd}{sig\+Handler} (int sig)
+\item 
+void \hyperlink{ControllerThread_8cpp_a20a45737018ec41ab19cb4f5164b26ac}{set\+H\+U\+P\+Handler} ()
+\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-const auto \hyperlink{ControllerThread_8cpp_abb6289930d828a19c02d900548c961da}{html}
+int \hyperlink{ControllerThread_8cpp_a94a2e79f236e50a73fb8c842bcff7738}{main\+Running} = 1
 \end{DoxyCompactItemize}
 
 
@@ -125,34 +135,26 @@ E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON&\\
 \end{DoxyEnumFields}
 
 
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{ControllerThread_8cpp_abb6289930d828a19c02d900548c961da}\label{ControllerThread_8cpp_abb6289930d828a19c02d900548c961da}} 
-\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!html@{html}}
-\index{html@{html}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}
-\subsubsection{\texorpdfstring{html}{html}}
-{\footnotesize\ttfamily const auto html}
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ControllerThread_8cpp_a20a45737018ec41ab19cb4f5164b26ac}\label{ControllerThread_8cpp_a20a45737018ec41ab19cb4f5164b26ac}} 
+\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!set\+H\+U\+P\+Handler@{set\+H\+U\+P\+Handler}}
+\index{set\+H\+U\+P\+Handler@{set\+H\+U\+P\+Handler}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}
+\subsubsection{\texorpdfstring{set\+H\+U\+P\+Handler()}{setHUPHandler()}}
+{\footnotesize\ttfamily void set\+H\+U\+P\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-{\bfseries Initial value\+:}
-\begin{DoxyCode}
-= R\textcolor{stringliteral}{"(}
-\textcolor{stringliteral}{<!DOCTYPE html>}
-\textcolor{stringliteral}{<html lang="en">}
-\textcolor{stringliteral}{<head>}
-\textcolor{stringliteral}{<meta charset="UTF-8">}
-\textcolor{stringliteral}{<title>SSE demo</title>}
-\textcolor{stringliteral}{</head>}
-\textcolor{stringliteral}{<body>}
-\textcolor{stringliteral}{<script>}
-\textcolor{stringliteral}{const ev1 = new EventSource("event1");}
-\textcolor{stringliteral}{ev1.onmessage = function(e) \{}
-\textcolor{stringliteral}{  console.log('ev1', e.data);}
-\textcolor{stringliteral}{\}}
-\textcolor{stringliteral}{const ev2 = new EventSource("event2");}
-\textcolor{stringliteral}{ev2.onmessage = function(e) \{}
-\textcolor{stringliteral}{  console.log('ev2', e.data);}
-\textcolor{stringliteral}{\}}
-\textcolor{stringliteral}{</script>}
-\textcolor{stringliteral}{</body>}
-\textcolor{stringliteral}{</html>}
-\textcolor{stringliteral}{)"}
-\end{DoxyCode}
+Sets a signal handler so that you can kill the background process gracefully with\+: kill -\/\+H\+UP $<$\+P\+I\+D$>$ \mbox{\Hypertarget{ControllerThread_8cpp_a844160e16f1a3e514df9ce65683e17bd}\label{ControllerThread_8cpp_a844160e16f1a3e514df9ce65683e17bd}} 
+\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!sig\+Handler@{sig\+Handler}}
+\index{sig\+Handler@{sig\+Handler}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}
+\subsubsection{\texorpdfstring{sig\+Handler()}{sigHandler()}}
+{\footnotesize\ttfamily void sig\+Handler (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+Handler when the user has pressed ctrl-\/C send H\+UP via the kill command. 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{ControllerThread_8cpp_a94a2e79f236e50a73fb8c842bcff7738}\label{ControllerThread_8cpp_a94a2e79f236e50a73fb8c842bcff7738}} 
+\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!main\+Running@{main\+Running}}
+\index{main\+Running@{main\+Running}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}
+\subsubsection{\texorpdfstring{main\+Running}{mainRunning}}
+{\footnotesize\ttfamily int main\+Running = 1}
+
+Flag to indicate program is running. Needed later to quit the idle loop. 

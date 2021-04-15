@@ -1,0 +1,20 @@
+server {
+        listen       80;
+        server_name  localhost;
+
+        location /favicon.ico {
+          return 204;
+          access_log     off;
+          log_not_found  off;
+        } 
+
+        location /sensor/ {
+          include        fastcgi_params;
+          fastcgi_pass   unix:/tmp/fastcgisocket; 
+        }
+
+        location / {
+	  root /var/www/html;
+          index index.html;
+        }
+}

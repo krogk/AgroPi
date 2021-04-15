@@ -1,19 +1,7 @@
 var searchData=
 [
-  ['sampler',['Sampler',['../classSampler.html#aec4905ed5f8259bb5e361da172bf7f17',1,'Sampler']]],
-  ['samplerhasdata',['SamplerHasData',['../classController.html#a4b765eaaf8f72e964118967f86c265e2',1,'Controller']]],
-  ['send_5fevent',['send_event',['../classEventDispatcher.html#a17ee873402eb3abbb1e3cd5fa1fadafc',1,'EventDispatcher']]],
-  ['senddatatowebapp',['SendDataToWebApp',['../classController.html#a9d59ef3807f630a52c964a899a7235dd',1,'Controller']]],
-  ['set_5fgain',['Set_Gain',['../classVEML7700.html#aecbcabefbc9469ea91153723925acbd3',1,'VEML7700']]],
-  ['set_5fintegration_5ftime',['Set_Integration_Time',['../classVEML7700.html#af3f3de94154ca1dd8905e932686ca23c',1,'VEML7700']]],
-  ['setcallback',['setCallback',['../classSampler.html#a026a0839919e8e93fa75f19b67ccffc6',1,'Sampler']]],
-  ['setgpiodirection',['SetGPIODirection',['../classRelayBoard.html#a1011a5d79df5912e20d11053d7811ecd',1,'RelayBoard']]],
-  ['setgpiostate',['SetGPIOState',['../classRelayBoard.html#a161657ba51adff983bae66543ff5d365',1,'RelayBoard']]],
-  ['setuppin',['SetUpPin',['../classRelayBoard.html#a11b26e90f7a0831003a002937d28b30b',1,'RelayBoard']]],
-  ['sgp30',['SGP30',['../classSGP30.html#a995b5a2cf525479cbd930b54fb7d8f80',1,'SGP30']]],
-  ['sht31d',['SHT31D',['../classSHT31D.html#a697a7f48dbe4c821e81de47d8fbb2c74',1,'SHT31D']]],
-  ['start',['start',['../classCppThread.html#a1be46d1be000f41a763289300623c609',1,'CppThread::start()'],['../classCppTimer.html#a64989025caa3c030c6c397ca76a2d20b',1,'CppTimer::start()']]],
-  ['startlistenerserver',['StartListenerServer',['../classController.html#a64173dd00be020975d7db533cd280c15',1,'Controller::StartListenerServer()'],['../classControllerThread.html#a362c7faaf16d2556fc11ed30d571b8f3',1,'ControllerThread::StartListenerServer()']]],
-  ['stop',['stop',['../classCppTimer.html#a4bb95ddee98a536d0818b8f6096bf7e7',1,'CppTimer']]],
-  ['stopsampler',['stopSampler',['../classSampler.html#af661f48134a6d0f1f2d6080f5025392e',1,'Sampler']]]
+  ['registereventrunnable',['registerEventRunnable',['../classCppTimerCallback.html#ae6e815f1c3b65ea4f10fe0332e13acb9',1,'CppTimerCallback']]],
+  ['relayboard',['RelayBoard',['../classRelayBoard.html#aa788c15cfc95188f5935f9d9d9fe86d2',1,'RelayBoard']]],
+  ['reset',['Reset',['../classI2CSensor.html#a0622266d335944782d2bfa6352f01095',1,'I2CSensor::Reset()'],['../classSGP30.html#a4934ef3a64eb0782a6d956c6526e4186',1,'SGP30::Reset()'],['../classSHT31D.html#aa5d28c2557ed05435ca9b433492b9b07',1,'SHT31D::Reset()'],['../classVEML7700.html#a381358f8998260f4600a0d6713f7ea2a',1,'VEML7700::Reset()']]],
+  ['run',['run',['../classSHT31D.html#a1cb98e435a44e2b6beeb3d0226cc9ec8',1,'SHT31D::run()'],['../classControllerThread.html#ae8206a23ab1a414f2956424def2e759c',1,'ControllerThread::run()'],['../classCppThread.html#a792b79e72250710147c452648def4a78',1,'CppThread::run()'],['../classCppTimerCallback_1_1Runnable.html#af8d11a3b580e76431151e76ac1886e6e',1,'CppTimerCallback::Runnable::run()']]]
 ];

@@ -1,7 +1,7 @@
 <map id="Sampler" name="Sampler">
-<area shape="rect" id="node2" href="$classCppTimer.html" title="{CppTimer\n||+ CppTimer()\l+ start()\l+ stop()\l+ ~CppTimer()\l# timerEvent()\l&#45; handler()\l}" alt="" coords="278,711,385,861"/>
+<area shape="rect" id="node2" href="$classCppTimer.html" title="{CppTimer\n||+ CppTimer()\l+ start()\l+ stop()\l+ ~CppTimer()\l# timerEvent()\l&#45; handler()\l}" alt="" coords="278,718,385,869"/>
 <area shape="rect" id="node7" href="$structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="906,483,1029,560"/>
-<area shape="rect" id="node15" href="$classController.html" title="Controller class. " alt="" coords="887,711,1048,861"/>
+<area shape="rect" id="node15" href="$classController.html" title="Controller class. " alt="" coords="887,711,1048,876"/>
 <area shape="rect" id="node10" href="$classVEML7700.html" title="VEML7700 class. " alt="" coords="1571,395,1737,648"/>
 <area shape="rect" id="node14" href="$classSGP30.html" title="SGP30 class. " alt="" coords="1344,439,1500,604"/>
 <area shape="rect" id="node19" href="$structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="669,483,829,560"/>

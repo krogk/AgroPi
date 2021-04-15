@@ -1,4 +1,0 @@
-/home/pi/agro_pi/software/src/CMakeFiles/rebuild_cache.dir
-/home/pi/agro_pi/software/src/CMakeFiles/edit_cache.dir
-/home/pi/agro_pi/software/src/CMakeFiles/AgroPiLib.dir
-/home/pi/agro_pi/software/src/CMakeFiles/AgroPi.dir

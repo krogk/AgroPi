@@ -1,40 +1,13 @@
 \hypertarget{RelayBoard_8cpp}{}\section{src/controller/peripherials/\+Relay\+Board.cpp File Reference}
 \label{RelayBoard_8cpp}\index{src/controller/peripherials/\+Relay\+Board.\+cpp@{src/controller/peripherials/\+Relay\+Board.\+cpp}}
 {\ttfamily \#include \char`\"{}Relay\+Board.\+h\char`\"{}}\newline
-{\ttfamily \#include $<$errno.\+h$>$}\newline
-{\ttfamily \#include $<$fcntl.\+h$>$}\newline
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
-{\ttfamily \#include $<$sys/types.\+h$>$}\newline
-{\ttfamily \#include $<$unistd.\+h$>$}\newline
-{\ttfamily \#include $<$string$>$}\newline
-{\ttfamily \#include $<$iostream$>$}\newline
-{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
 Include dependency graph for Relay\+Board.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{RelayBoard_8cpp__incl}
+\includegraphics[width=205pt]{RelayBoard_8cpp__incl}
 \end{center}
 \end{figure}
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{RelayBoard_8cpp_ac2bbd6d630a06a980d9a92ddb9a49928}{IN}~0
-\item 
-\#define \hyperlink{RelayBoard_8cpp_aec78e7a9e90a406a56f859ee456e8eae}{O\+UT}~1
-\item 
-\#define \hyperlink{RelayBoard_8cpp_ab811d8c6ff3a505312d3276590444289}{L\+OW}~0
-\item 
-\#define \hyperlink{RelayBoard_8cpp_a5bb885982ff66a2e0a0a45a8ee9c35e2}{H\+I\+GH}~1
-\item 
-\#define \hyperlink{RelayBoard_8cpp_a6b20d41d6252e9871430c242cb1a56e7}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}~3
-\item 
-\#define \hyperlink{RelayBoard_8cpp_aa65936c8accb6e3766be6ee9f063ead4}{D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+M\+AX}~35
-\item 
-\#define \hyperlink{RelayBoard_8cpp_aacdeb883b8cfc24b1ea6133e987a556d}{V\+A\+L\+U\+E\+\_\+\+M\+AX}~30
-\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -44,48 +17,4 @@ Kamil Rog
 \begin{DoxyVersion}{Version}
 0.\+1
 \end{DoxyVersion}
-This file contains the functions for the Relay Board class. 
-
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{RelayBoard_8cpp_a6b20d41d6252e9871430c242cb1a56e7}\label{RelayBoard_8cpp_a6b20d41d6252e9871430c242cb1a56e7}} 
-\index{Relay\+Board.\+cpp@{Relay\+Board.\+cpp}!B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}
-\index{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}!Relay\+Board.\+cpp@{Relay\+Board.\+cpp}}
-\subsubsection{\texorpdfstring{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}{BUFFER\_SIZE}}
-{\footnotesize\ttfamily \#define B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE~3}
-
-\mbox{\Hypertarget{RelayBoard_8cpp_aa65936c8accb6e3766be6ee9f063ead4}\label{RelayBoard_8cpp_aa65936c8accb6e3766be6ee9f063ead4}} 
-\index{Relay\+Board.\+cpp@{Relay\+Board.\+cpp}!D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+M\+AX@{D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+M\+AX}}
-\index{D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+M\+AX@{D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+M\+AX}!Relay\+Board.\+cpp@{Relay\+Board.\+cpp}}
-\subsubsection{\texorpdfstring{D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+M\+AX}{DIRECTION\_MAX}}
-{\footnotesize\ttfamily \#define D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+M\+AX~35}
-
-\mbox{\Hypertarget{RelayBoard_8cpp_a5bb885982ff66a2e0a0a45a8ee9c35e2}\label{RelayBoard_8cpp_a5bb885982ff66a2e0a0a45a8ee9c35e2}} 
-\index{Relay\+Board.\+cpp@{Relay\+Board.\+cpp}!H\+I\+GH@{H\+I\+GH}}
-\index{H\+I\+GH@{H\+I\+GH}!Relay\+Board.\+cpp@{Relay\+Board.\+cpp}}
-\subsubsection{\texorpdfstring{H\+I\+GH}{HIGH}}
-{\footnotesize\ttfamily \#define H\+I\+GH~1}
-
-\mbox{\Hypertarget{RelayBoard_8cpp_ac2bbd6d630a06a980d9a92ddb9a49928}\label{RelayBoard_8cpp_ac2bbd6d630a06a980d9a92ddb9a49928}} 
-\index{Relay\+Board.\+cpp@{Relay\+Board.\+cpp}!IN@{IN}}
-\index{IN@{IN}!Relay\+Board.\+cpp@{Relay\+Board.\+cpp}}
-\subsubsection{\texorpdfstring{IN}{IN}}
-{\footnotesize\ttfamily \#define IN~0}
-
-\mbox{\Hypertarget{RelayBoard_8cpp_ab811d8c6ff3a505312d3276590444289}\label{RelayBoard_8cpp_ab811d8c6ff3a505312d3276590444289}} 
-\index{Relay\+Board.\+cpp@{Relay\+Board.\+cpp}!L\+OW@{L\+OW}}
-\index{L\+OW@{L\+OW}!Relay\+Board.\+cpp@{Relay\+Board.\+cpp}}
-\subsubsection{\texorpdfstring{L\+OW}{LOW}}
-{\footnotesize\ttfamily \#define L\+OW~0}
-
-\mbox{\Hypertarget{RelayBoard_8cpp_aec78e7a9e90a406a56f859ee456e8eae}\label{RelayBoard_8cpp_aec78e7a9e90a406a56f859ee456e8eae}} 
-\index{Relay\+Board.\+cpp@{Relay\+Board.\+cpp}!O\+UT@{O\+UT}}
-\index{O\+UT@{O\+UT}!Relay\+Board.\+cpp@{Relay\+Board.\+cpp}}
-\subsubsection{\texorpdfstring{O\+UT}{OUT}}
-{\footnotesize\ttfamily \#define O\+UT~1}
-
-\mbox{\Hypertarget{RelayBoard_8cpp_aacdeb883b8cfc24b1ea6133e987a556d}\label{RelayBoard_8cpp_aacdeb883b8cfc24b1ea6133e987a556d}} 
-\index{Relay\+Board.\+cpp@{Relay\+Board.\+cpp}!V\+A\+L\+U\+E\+\_\+\+M\+AX@{V\+A\+L\+U\+E\+\_\+\+M\+AX}}
-\index{V\+A\+L\+U\+E\+\_\+\+M\+AX@{V\+A\+L\+U\+E\+\_\+\+M\+AX}!Relay\+Board.\+cpp@{Relay\+Board.\+cpp}}
-\subsubsection{\texorpdfstring{V\+A\+L\+U\+E\+\_\+\+M\+AX}{VALUE\_MAX}}
-{\footnotesize\ttfamily \#define V\+A\+L\+U\+E\+\_\+\+M\+AX~30}
-
+This file contains the functions for the Elego 4 Relay Board class. 
