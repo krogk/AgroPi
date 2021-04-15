@@ -169,15 +169,15 @@ void Camera::takeScanDNNPicture(){
 
     //Output detections 
     std::cout<<outs<<std::endl;
-    std::string weights = "ssdmodel/frozen_inference_graph.pb";
-    std::string prototxt = "ssdmodel/ssd_mobilenet_v2_coco_2018_03_29.pbtxt";
+    std::string weights = "Resources/frozen_inference_graph.pb";
+    std::string prototxt = "Resources/ssd_mobilenet_v2_coco_2018_03_29.pbtxt";
     cv::dnn::Net net = cv::dnn::readNetFromTensorflow(weights, prototxt);
 
     //Set detection threshold
     float detect_thresh = 0.05;
 
     //load classes
-    std::ifstream myfile ("ssdmodel/object_detection_classes_coco.txt");
+    std::ifstream myfile ("Resources/object_detection_classes_coco.txt");
 
     //Classes should be saved as string
     const char* classNames[] = { "seedling" };//
@@ -231,10 +231,10 @@ void Camera::takeScanDNNPicture(){
  */
 void Camera::takeScanCascade(){
     //Take picture 
-    //cv::Mat image = Camera::takePicture();
+    cv::Mat image = Camera::takePicture();
     
-    //Alternatibely, read an
-    cv::Mat image = cv::imread("seedlings.jpg");
+    //Alternatibely, read an image
+    //cv::Mat image = cv::imread("seedlings.jpg");
 
 
     cv::Mat image_grey;
@@ -242,7 +242,7 @@ void Camera::takeScanCascade(){
 
     std::vector<cv::Rect> seedlings; //Instantiate vector for storing detected seedlings
 
-    std::string classifierFile ="cascadeModel/seedcascade.xml";
+    std::string classifierFile ="Resources/seedcascade.xml";
     cv::CascadeClassifier seedling_cascade;
 
     if(!seedling_cascade.load(classifierFile)){
@@ -271,10 +271,10 @@ void Camera::takeScanCascade(){
  */
 void Camera::takeScanForGreen(){
     //Take picture 
-    //cv::Mat image = Camera::takePicture();
+    cv::Mat image = Camera::takePicture();
     
-    //Alternatibely, read an
-    cv::Mat image = cv::imread("seedlings.jpg");
+    //Alternatibely, read an image
+    //cv::Mat image = cv::imread("seedlings.jpg");
     cv::Mat imgHSV;
     cv::Mat mask;
 

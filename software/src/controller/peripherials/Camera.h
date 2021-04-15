@@ -52,8 +52,8 @@ class Camera{
         int cMax; ///Maximmum contrast for image normalization
         int Shut = 0; ///Shutter speed in ms; 30 is reasonable
 
-        std::string model_file = "ssdmodel/frozen_inference_graph.pb";
-        std::string config_file = "ssdmodel/ssd_mobilenet_v2_coco_2018_03_29.pbtxt";
+        std::string model_file = "Resources/frozen_inference_graph.pb";
+        std::string config_file = "Resources/ssd_mobilenet_v2_coco_2018_03_29.pbtxt";
 };
 
 #endif
