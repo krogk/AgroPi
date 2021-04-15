@@ -27,28 +27,18 @@ class ControllerThread : public CppThread {
 
 public:
 	/**
-	 * Constructor that sets the offset for the thread to a given value.
-	 *
-	 * offset value
-	 * 
+	 * Constructor that sets the sample period(in ms).
 	 */
-	ControllerThread() {
-		isRunning = true;
+	ControllerThread()
+	{
 		samplePeriod = 250000000;
 	}
 
-
-
 private:
 	void run();
-	void StartListenerServer();
-
 
 private:
-	bool isRunning;
 	int	samplePeriod;
-	Controller controbj;
-
 };
 
 #endif

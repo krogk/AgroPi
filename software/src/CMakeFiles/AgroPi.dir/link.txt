@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/AgroPi.dir/main.cpp.o -o AgroPi  -Wl,-rpath,/home/pi/agro_pi/software/src libAgroPiLib.so -li2c -lrt /usr/lib/arm-linux-gnueabihf/libcpprest.so.2.10 -lpthread /usr/lib/arm-linux-gnueabihf/libssl.so /usr/lib/arm-linux-gnueabihf/libcrypto.so 

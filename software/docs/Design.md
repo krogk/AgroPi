@@ -77,9 +77,17 @@ Controller object is going to contain the callback function for sampler object t
 Controller is going to contain data structures holding latest environment data from sampler and hueristics passed from the user by the server.
 Controller is going to contain relay object(s) and have set of functions to controll them. 
 
+### FastCGI 
+
+jQuery -> flask server -> nginx -> CGI handler -> CPP
+
 ### Controller Thread 
 
 Controller thread should initialize the sampler and controller object, start sampling and go into a while loop which should execute based on an exit flag which is going to be able to controlled from web server. In this while loop thread is going to read data from the server. The Read operation for the server should be blocking and as soon as the messeage has been recieved it is going to be processed by striping the opcode and this opcode with the corresponding value should be passed to the event handler function.
+
+
+
+
 
 ## Used technologies
 Project is built on these technologies:
@@ -95,6 +103,13 @@ Project is built on these technologies:
     - Graphviz - for creating UML diagrams with doxygen
 * cppcheck
     - With *make cppcheck* you can run static code analysis
+* Nginx  
+    - Server which does post request for data and posts controll data
+* Python 
+    - Webserver
+* Mongodb 
+    - Databases
 * OpenCV
     - Capturing image from camera
     - Pattern recognition
+

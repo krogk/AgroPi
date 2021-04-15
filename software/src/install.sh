@@ -6,6 +6,7 @@
 
 BASEDIR=$(dirname $0)
 echo "Script location: ${BASEDIR}"
+# Enabble I2C etc..
 
 echo "Installing Ubuntu Packages..."
 # Install all Ubuntu Packages
@@ -15,7 +16,6 @@ sudo apt-get install git -y
 sudo apt-get install cmake -y
 sudo apt-get install flex -y
 sudo apt-get install bison -y
-#sudo apt-get install wiringpi -y
 sudo apt-get install libboost-all-dev -y
 sudo apt-get install libi2c-dev -y
 sudo apt-get install cppcheck -y
@@ -41,6 +41,15 @@ sudo apt-get install libtbb2 libtbb-dev libdc1394-22-dev libv4l-dev -y
 sudo apt-get install libopenblas-dev libatlas-base-dev libblas-dev -y
 sudo apt-get install libjasper-dev liblapack-dev libhdf5-dev -y
 sudo apt-get install protobuf-compiler -y
+# Web nginx server dependencies.
+sudo apt install nginx -y
+sudo apt-get install -y jq
+sudo apt-get install libcurl4-openssl-dev -y
+sudo apt-get install libfcgi-dev -y
+sudo apt install nodejs -y
+sudo apt install npm -y
+sudo apt install curl -y
+sudo npm install dygraphs -y
 
 
 # Install OpenCV

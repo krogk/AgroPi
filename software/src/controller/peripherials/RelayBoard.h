@@ -32,7 +32,7 @@ public:
 
   ~RelayBoard(void)
   {
-    CloseDevice();
+    //CloseDevice();
   }
 
   int SetGPIOState(int gpioPinNumber, int value);

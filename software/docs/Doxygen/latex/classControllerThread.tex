@@ -15,7 +15,7 @@ Inheritance diagram for Controller\+Thread\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=193pt]{classControllerThread__inherit__graph}
+\includegraphics[width=184pt]{classControllerThread__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -24,7 +24,7 @@ Collaboration diagram for Controller\+Thread\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classControllerThread__coll__graph}
+\includegraphics[width=265pt]{classControllerThread__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -40,17 +40,11 @@ void \hyperlink{classCppThread_a8ff0fda6b913cc53764caef0e1200f3f}{join} ()
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classControllerThread_ae8206a23ab1a414f2956424def2e759c}{run} ()
-\item 
-void \hyperlink{classControllerThread_a362c7faaf16d2556fc11ed30d571b8f3}{Start\+Listener\+Server} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{classControllerThread_ad00ac5cba8e74a5ea69d5caace8c9954}{is\+Running}
-\item 
 int \hyperlink{classControllerThread_a5dcd0069c7d31295c7e1e598c31fadf7}{sample\+Period}
-\item 
-\hyperlink{classController}{Controller} \hyperlink{classControllerThread_ae37e5312460cff540a7749057db5c265}{controbj}
 \end{DoxyCompactItemize}
 
 
@@ -69,9 +63,7 @@ This is a simple class that is responsible for data handling for server and file
 \subsubsection{\texorpdfstring{Controller\+Thread()}{ControllerThread()}}
 {\footnotesize\ttfamily Controller\+Thread\+::\+Controller\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Constructor that sets the offset for the thread to a given value.
-
-offset value 
+Constructor that sets the sample period(in ms). 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classCppThread_a8ff0fda6b913cc53764caef0e1200f3f}\label{classCppThread_a8ff0fda6b913cc53764caef0e1200f3f}} 
@@ -96,27 +88,9 @@ Implements \hyperlink{classCppThread_a792b79e72250710147c452648def4a78}{Cpp\+Thr
 \subsubsection{\texorpdfstring{start()}{start()}}
 {\footnotesize\ttfamily void Cpp\+Thread\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
 
-Starts the thread. \mbox{\Hypertarget{classControllerThread_a362c7faaf16d2556fc11ed30d571b8f3}\label{classControllerThread_a362c7faaf16d2556fc11ed30d571b8f3}} 
-\index{Controller\+Thread@{Controller\+Thread}!Start\+Listener\+Server@{Start\+Listener\+Server}}
-\index{Start\+Listener\+Server@{Start\+Listener\+Server}!Controller\+Thread@{Controller\+Thread}}
-\subsubsection{\texorpdfstring{Start\+Listener\+Server()}{StartListenerServer()}}
-{\footnotesize\ttfamily void Controller\+Thread\+::\+Start\+Listener\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
+Starts the thread. 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classControllerThread_ae37e5312460cff540a7749057db5c265}\label{classControllerThread_ae37e5312460cff540a7749057db5c265}} 
-\index{Controller\+Thread@{Controller\+Thread}!controbj@{controbj}}
-\index{controbj@{controbj}!Controller\+Thread@{Controller\+Thread}}
-\subsubsection{\texorpdfstring{controbj}{controbj}}
-{\footnotesize\ttfamily \hyperlink{classController}{Controller} Controller\+Thread\+::controbj\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classControllerThread_ad00ac5cba8e74a5ea69d5caace8c9954}\label{classControllerThread_ad00ac5cba8e74a5ea69d5caace8c9954}} 
-\index{Controller\+Thread@{Controller\+Thread}!is\+Running@{is\+Running}}
-\index{is\+Running@{is\+Running}!Controller\+Thread@{Controller\+Thread}}
-\subsubsection{\texorpdfstring{is\+Running}{isRunning}}
-{\footnotesize\ttfamily bool Controller\+Thread\+::is\+Running\hspace{0.3cm}{\ttfamily [private]}}
-
 \mbox{\Hypertarget{classControllerThread_a5dcd0069c7d31295c7e1e598c31fadf7}\label{classControllerThread_a5dcd0069c7d31295c7e1e598c31fadf7}} 
 \index{Controller\+Thread@{Controller\+Thread}!sample\+Period@{sample\+Period}}
 \index{sample\+Period@{sample\+Period}!Controller\+Thread@{Controller\+Thread}}
