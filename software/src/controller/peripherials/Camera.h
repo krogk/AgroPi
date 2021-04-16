@@ -45,6 +45,18 @@ class Camera{
         
         void takeScanForGreen();
 
+        cv::Mat greenMask(cv::Mat);
+
+        void greenCascade(cv::Mat);
+
+        /* Green masked images setup */
+
+        void greenFolderP();
+        
+        void greenFolderN(int);
+
+        void scanSaveGreen(std::string);
+
     private:
         cv::Mat img; ///for storing images
         int CameraID; ///for setting camera ID, default 0
