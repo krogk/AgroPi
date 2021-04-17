@@ -39,6 +39,10 @@
   <link href="{{ url_for('static', filename='assets/css/plugins/main.min.css') }}" rel="stylesheet" />
   <!-- ToastR CSS -->
   <link href="{{ url_for('static', filename='assets/css/plugins/toastr.css') }}" rel="stylesheet" />
+  <!-- jQuery range slider -->
+  <link href="{{ url_for('static', filename='assets/css/plugins/jquery.range.css') }}" rel="stylesheet" />
+  <!-- netliva switch -->
+  <link href="{{ url_for('static', filename='assets/css/plugins/netliva_switch.css') }}" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -111,9 +115,11 @@
   <script src="{{ url_for('static', filename='assets/js/now-ui-dashboard.min.js') }}" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="{{ url_for('static', filename='assets/demo/demo.js') }}"></script>
   <!-- Range Slider Plugin -->
-  <script src="{{ url_for('static', filename='assets/js/plugins/jQuery.inputSliderRange.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/plugins/jquery.range-min.js') }}"></script>
   <!-- ToastR Plugin -->
   <script src="{{ url_for('static', filename='assets/js/plugins/toastr.js') }}"></script>
+  <!-- LC Switch -->
+   <script src="{{ url_for('static', filename='assets/js/plugins/netliva_switch.js') }}"></script>
   {% block scripts %}{% endblock %}
 </body>
 

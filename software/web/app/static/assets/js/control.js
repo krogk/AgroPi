@@ -1,55 +1,131 @@
 $(document).ready(function(){
-	$('#temperature-slider').inputSliderRange({
-        "min": -40,
-        "max": 125,
-        "start": 10
-      });
+	$('#temperature-slider').jRange({
+        from: -40.0,
+        to: 125.0,
+        step: 5,
+        // scale: [-40.0,0.0,50.0,100.0,125.0],
+        format: '%s',
+        showLabels: true,
+        snap: true,
+        isRange : true
+    });
+    $('#humidity-slider').jRange({
+        from: 0.0,
+        to: 100.0,
+        step: 5,
+        // scale: [0.0,25.0,50.0,75.0,100.0],
+        format: '%s',
+        showLabels: true,
+        snap: true,
+        isRange : true
+    });
+    $('#light-slider').jRange({
+        from: 0.0,
+        to: 120000.0,
+        step: 5,
+        // scale: [0.0,30000.0,60000.0,120000.0],
+        format: '%s',
+        showLabels: true,
+        snap: true,
+        isRange : true
+    });
+    $('#ethanol-slider').jRange({
+        from: 0.0,
+        to: 80.0,
+        step: 5,
+        // scale: [0.0,20.0,40.0,60.0,80.0],
+        format: '%s',
+        showLabels: true,
+        snap: true,
+        isRange : true
+    });
+    $('#tvoc-slider').jRange({
+        from: 0.0,
+        to: 60000.0,
+        step: 5,
+        // scale: [0.0,10000.0,20000.0,30000.0,40000.0,50000.0],
+        format: '%s',
+        showLabels: true,
+        snap: true,
+        isRange : true
+    });
+    $('#eco2-slider').jRange({
+        from: 0.0,
+        to: 60000.0,
+        step: 5,
+        // scale: [0.0,10000.0,20000.0,30000.0,40000.0,50000.0],
+        format: '%s',
+        showLabels: true,
+        snap: true,
+        isRange : true
+    });
+    $('#h2-slider').jRange({
+        from: 0.0,
+        to: 80.0,
+        step: 5,
+        // scale: [0.0,20.0,40.0,60.0,80.0],
+        format: '%s',
+        showLabels: true,
+        snap: true,
+        isRange : true
+    });
 
-	$('#humidity-slider').inputSliderRange({
-        "min": 0,
-        "max": 100,
-        "start": 10
-      });
-
-	$('#light-slider').inputSliderRange({
-        "min": 0,
-        "max": 120000,
-        "start": 10
-      });
-
-	$('#water-level-slider').inputSliderRange({
-        "min": 0,
-        "max": 80,
-        "start": 10
-      });
-    $('#tvoc-slider').inputSliderRange({
-        "min": 0,
-        "max": 60000,
-        "start": 10
-      });
-
-    $('#eco2-slider').inputSliderRange({
-        "min": 0,
-        "max": 60000,
-        "start": 10
-      });
 });
 
+
+
 function update_control_values(){
-	var temperature_val = $('#temperature-slider').val();
-	var humidity_val = $('#humidity-slider').val();
-	var light_intensity_val = $('#light-slider').val();
-	var water_level_val = $('#water-level-slider').val();
-    var tvoc_val = $('#tvoc-slider').val();
-    var eco2_val = $('#eco2-slider').val();
+	var temperature_val = $('#temperature-slider').val().split(',');
+	var humidity_val = $('#humidity-slider').val().split(',');
+	var light_intensity_val = $('#light-slider').val().split(',');
+	var ethanol_val = $('#ethanol-slider').val().split(',');
+    var tvoc_val = $('#tvoc-slider').val().split(',');
+    var eco2_val = $('#eco2-slider').val().split(',');
+    var h2_val = $('#h2-slider').val().split(',');
+    var heating_toggle = $('#heating-toggle').val();
+    var airflow_toggle = $('#airflow-toggle').val();
+    var light_toggle = $('#lights-toggle').val();
+
+    if (heating_toggle == "on"){
+        heating_toggle = 1;
+    }
+    else{
+        heating_toggle = 0;
+    }
+
+    if (airflow_toggle == "on"){
+        airflow_toggle = 1;
+    }
+    else{
+        airflow_toggle = 0;
+    }
+
+    if (light_toggle == "on"){
+        light_toggle = 1;
+    }
+    else{
+        light_toggle = 0;
+    }
+
 
 	form_data = {
-        'temperature': temperature_val,
-        'humidity': humidity_val,
-        'light_intensity': light_intensity_val,
-        'water_level': water_level_val,
-        'tvoc': tvoc_val,
-        'eco2': eco2_val
+        'min_temp': temperature_val[0],
+        'max_temp': temperature_val[1],
+        'min_humidity': humidity_val[0],
+        'max_humidity': humidity_val[1],
+        'min_light': light_intensity_val[0],
+        'max_light': light_intensity_val[1],
+        'min_ethanol': ethanol_val[0],
+        'max_ethanol': ethanol_val[1],
+        'min_tvoc': tvoc_val[0],
+        'max_tvoc': tvoc_val[1],
+        'min_eco2': eco2_val[0],
+        'max_eco2': eco2_val[1],
+        'min_h2': h2_val[0],
+        'max_h2': h2_val[1],
+        'heating_toggle': heating_toggle,
+        'airflow_toggle': airflow_toggle,
+        'light_toggle': light_toggle
     }
     form_data = JSON.stringify(form_data);
     console.log(form_data);

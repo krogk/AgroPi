@@ -82,7 +82,7 @@
                 </div>
                 <div class="col-md-4 px-1">
                     <div class="form-group">
-                        <label>Temperature (celsius)</label>
+                        <label style="margin-bottom: 20px;">Temperature (celsius)</label>
                         <input type="text" id="temperature-slider">
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="col-md-4 px-1">
                     <div class="form-group">
-                        <label>Humidity (%)</label>
+                        <label style="margin-bottom: 20px;">Humidity (%)</label>
                         <input type="text" id="humidity-slider">
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                 </div>
                 <div class="col-md-4 px-1">
                     <div class="form-group">
-                        <label>Light Intensity (Lux)</label>
+                        <label style="margin-bottom: 20px;">Light Intensity (Lux)</label>
                         <input type="text" id="light-slider">
                     </div>
                 </div>
@@ -113,8 +113,8 @@
                 </div>
                 <div class="col-md-4 px-1">
                     <div class="form-group">
-                        <label>Water Level</label>
-                        <input type="text" id="water-level-slider">
+                        <label style="margin-bottom: 20px;">Ethanol</label>
+                        <input type="text" id="ethanol-slider">
                     </div>
                 </div>
                 <div class="col-md-1 px-1">
@@ -128,7 +128,7 @@
                 </div>
                 <div class="col-md-4 px-1">
                     <div class="form-group">
-                        <label>TVOC (ppb)</label>
+                        <label style="margin-bottom: 20px;">TVOC (ppb)</label>
                         <input type="text" id="tvoc-slider">
                     </div>
                 </div>
@@ -136,8 +136,47 @@
                 </div>
                 <div class="col-md-4 px-1">
                     <div class="form-group">
-                        <label>eCO2 (ppm)</label>
+                        <label style="margin-bottom: 20px;">eCO2 (ppm)</label>
                         <input type="text" id="eco2-slider">
+                    </div>
+                </div>
+                <div class="col-md-1 px-1">
+                </div>
+              </div>
+              <div class="row">
+                <hr>
+              </div>
+              <div class="row">
+                <div class="col-md-1 px-1">
+                </div>
+                <div class="col-md-4 px-1">
+                    <div class="form-group">
+                        <label style="margin-bottom: 20px;">H2</label>
+                        <input type="text" id="h2-slider">
+                    </div>
+                </div>
+                <div class="col-md-2 px-1">
+                </div>
+                <div class="col-md-4 px-1">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <label style="margin-bottom: 10px;">Heating</label>
+                        <div class="form-group">
+                            <input type="checkbox" netliva-switch data-active-text="ON" data-passive-text="OFF" data-width="70px" id="heating-toggle">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <label style="margin-bottom: 10px;">Airflow</label>
+                        <div class="form-group">
+                            <input type="checkbox" netliva-switch data-active-text="ON" data-passive-text="OFF" data-width="70px" id="airflow-toggle">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <label style="margin-bottom: 10px;">Lights</label>
+                        <div class="form-group">
+                            <input type="checkbox" netliva-switch data-active-text="ON" data-passive-text="OFF" data-width="70px" id="lights-toggle">
+                        </div>
+                      </div>
                     </div>
                 </div>
                 <div class="col-md-1 px-1">

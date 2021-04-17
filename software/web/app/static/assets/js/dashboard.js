@@ -11,16 +11,25 @@ $(document).ready(function(){
     socket.on('measurement_updated', function(data) {
         console.log('Measurement updated', data);
         if (data.type == "TEMPERATURE"){
-            display_temperature_chart(data, true);
+          display_temperature_chart(data, true);
         }
         else if(data.type == "HUMIDITY"){
-            display_humidity_chart(data, true);
+          display_humidity_chart(data, true);
         }
-        else if(data.type == "WATER_LEVEL"){
-            display_water_level_chart(data, true);
+        else if(data.type == "TVOC"){
+          display_tvoc_chart(data, true);
+        }
+        else if(data.type == "ECO2"){
+          display_eco2_chart(data, true);
+        }
+        else if(data.type == "ETHANOL"){
+          display_ethanol_chart(data, true);
+        }
+        else if(data.type == "H2"){
+          display_h2_chart(data, true);
         }
         else if(data.type == "LIGHT_INTENSITY"){
-            display_light_intensity_chart(data, true);
+          display_light_intensity_chart(data, true);
         }
     });
 });
@@ -31,7 +40,10 @@ $(document).ready(function(){
 var time_series_chart = null;
 var temperature_chart = null;
 var humidity_chart = null;
-var water_level_chart = null;
+var tvoc_chart = null;
+var eco2_chart = null;
+var ethanol_chart = null;
+var h2_chart = null;
 var light_intensity_chart = null;
 
 function get_dashboard_data(){
@@ -65,7 +77,10 @@ function get_dashboard_data(){
         if (data.code == "00") {
             display_temperature_chart(data.data.temperature);
             display_humidity_chart(data.data.humidity);
-            display_water_level_chart(data.data.water_level);
+            display_tvoc_chart(data.data.tvoc);
+            display_eco2_chart(data.data.eco2);
+            display_ethanol_chart(data.data.ethanol);
+            display_h2_chart(data.data.h2);
             display_light_intensity_chart(data.data.light_intensity);
             // display_time_series_chart(count_data.legal_aid_chart, count_data.firm_requests_chart);
         }
@@ -181,10 +196,10 @@ function display_humidity_chart(data, single_update){
     }
 }
 
-function display_water_level_chart(data, single_update){
+function display_light_intensity_chart(data, single_update){
     //2CA8FF
-    if (water_level_chart == null){
-        ctx = document.getElementById('water-level-chart').getContext("2d");
+    if (light_intensity_chart == null){
+        ctx = document.getElementById('light-intensity-chart').getContext("2d");
 
         gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
         gradientStroke.addColorStop(0, '#2CA8FF');
@@ -194,13 +209,13 @@ function display_water_level_chart(data, single_update){
         gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
         gradientFill.addColorStop(1, hexToRGB('#2CA8FF', 0.4));
 
-        water_level_chart = new Chart(ctx, {
+        light_intensity_chart = new Chart(ctx, {
           type: 'bar',
           responsive: true,
           data: {
             labels: data.labels,
             datasets: [{
-              label: "Water level",
+              label: "Light Intensity",
               borderColor: "#2CA8FF",
               pointBorderColor: "#FFF",
               pointBackgroundColor: "#2CA8FF",
@@ -219,60 +234,6 @@ function display_water_level_chart(data, single_update){
     }
     else{
         if(single_update){
-            water_level_chart.data.labels.push(data.created_at);
-            water_level_chart.data.datasets.forEach((dataset) => {
-                dataset.data.push(parseFloat(data.value));
-            });
-        }
-        else{
-            water_level_chart.data.labels.push(data.labels);
-            water_level_chart.data.datasets.forEach((dataset) => {
-                dataset.data.push(parseFloat(data.values));
-            });
-        }
-        water_level_chart.update();
-    }
-}
-
-function display_light_intensity_chart(data, single_update){
-    if(light_intensity_chart == null){
-        ctx = document.getElementById('light-intensity-chart').getContext("2d");
-
-        gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-        gradientStroke.addColorStop(0, '#80b6f4');
-        gradientStroke.addColorStop(1, chartColor);
-
-        gradientFill = ctx.createLinearGradient(0, 200, 0, 50);
-        gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
-        gradientFill.addColorStop(1, "rgba(255, 255, 255, 0.24)");
-
-        light_intensity_chart = new Chart(ctx, {
-          type: 'line',
-          responsive: true,
-          data: {
-            labels: data.labels,
-            datasets: [{
-              label: "Temperature",
-              borderColor: chartColor,
-              pointBorderColor: chartColor,
-              pointBackgroundColor: "#1e3d60",
-              pointHoverBackgroundColor: "#1e3d60",
-              pointHoverBorderColor: chartColor,
-              pointBorderWidth: 2,
-              pointHoverRadius: 4,
-              pointHoverBorderWidth: 1,
-              pointRadius: 4,
-              fill: true,
-              backgroundColor: gradientFill,
-              borderWidth: 2,
-              data: data.values
-            }]
-          },
-          options: gradientChartOptionsBigChart
-        });
-    }
-    else{
-        if(single_update){
             light_intensity_chart.data.labels.push(data.created_at);
             light_intensity_chart.data.datasets.forEach((dataset) => {
                 dataset.data.push(parseFloat(data.value));
@@ -287,6 +248,219 @@ function display_light_intensity_chart(data, single_update){
         light_intensity_chart.update();
     }
 }
+
+function display_tvoc_chart(data, single_update){
+    //2CA8FF
+    if (tvoc_chart == null){
+        ctx = document.getElementById('tvoc-chart').getContext("2d");
+
+        gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+        gradientStroke.addColorStop(0, '#80b6f4');
+        gradientStroke.addColorStop(1, chartColor);
+
+        gradientFill = ctx.createLinearGradient(0, 170, 0, 50);
+        gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
+        gradientFill.addColorStop(1, "rgba(249, 99, 59, 0.40)");
+
+        tvoc_chart = new Chart(ctx, {
+          type: 'bar',
+          responsive: true,
+          data: {
+            labels: data.labels,
+            datasets: [{
+              label: "TVOC",
+              borderColor: "#f96332",
+              pointBorderColor: "#FFF",
+              pointBackgroundColor: "#f96332",
+              pointBorderWidth: 2,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 1,
+              pointRadius: 4,
+              fill: true,
+              backgroundColor: gradientFill,
+              borderWidth: 2,
+              data: data.values
+            }]
+          },
+          options: gradientChartOptionsConfigurationWithNumbersAndGrid
+        });
+    }
+    else{
+        if(single_update){
+            tvoc_chart.data.labels.push(data.created_at);
+            tvoc_chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(parseFloat(data.value));
+            });
+        }
+        else{
+            tvoc_chart.data.labels.push(data.labels);
+            tvoc_chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(parseFloat(data.values));
+            });
+        }
+        tvoc_chart.update();
+    }
+}
+
+function display_eco2_chart(data, single_update){
+    //2CA8FF
+    if (eco2_chart == null){
+        ctx = document.getElementById('eco2-chart').getContext("2d");
+
+        gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+        gradientStroke.addColorStop(0, '#18ce0f');
+        gradientStroke.addColorStop(1, chartColor);
+
+        gradientFill = ctx.createLinearGradient(0, 170, 0, 50);
+        gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
+        gradientFill.addColorStop(1, hexToRGB('#18ce0f', 0.4));
+
+        eco2_chart = new Chart(ctx, {
+          type: 'line',
+          responsive: true,
+          data: {
+            labels: data.labels,
+            datasets: [{
+              label: "ECO2",
+              borderColor: "#18ce0f",
+              pointBorderColor: "#FFF",
+              pointBackgroundColor: "#18ce0f",
+              pointBorderWidth: 2,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 1,
+              pointRadius: 4,
+              fill: true,
+              backgroundColor: gradientFill,
+              borderWidth: 2,
+              data: data.values
+            }]
+          },
+          options: gradientChartOptionsConfigurationWithNumbersAndGrid
+        });
+    }
+    else{
+        if(single_update){
+            eco2_chart.data.labels.push(data.created_at);
+            eco2_chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(parseFloat(data.value));
+            });
+        }
+        else{
+            eco2_chart.data.labels.push(data.labels);
+            eco2_chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(parseFloat(data.values));
+            });
+        }
+        eco2_chart.update();
+    }
+}
+
+function display_ethanol_chart(data, single_update){
+    //2CA8FF
+    if (ethanol_chart == null){
+        ctx = document.getElementById('ethanol-chart').getContext("2d");
+
+        gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+        gradientStroke.addColorStop(0, '#2CA8FF');
+        gradientStroke.addColorStop(1, chartColor);
+
+        gradientFill = ctx.createLinearGradient(0, 170, 0, 50);
+        gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
+        gradientFill.addColorStop(1, hexToRGB('#2CA8FF', 0.4));
+
+        ethanol_chart = new Chart(ctx, {
+          type: 'line',
+          responsive: true,
+          data: {
+            labels: data.labels,
+            datasets: [{
+              label: "Light Intensity",
+              borderColor: "#2CA8FF",
+              pointBorderColor: "#FFF",
+              pointBackgroundColor: "#2CA8FF",
+              pointBorderWidth: 2,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 1,
+              pointRadius: 4,
+              fill: true,
+              backgroundColor: gradientFill,
+              borderWidth: 2,
+              data: data.values
+            }]
+          },
+          options: gradientChartOptionsConfigurationWithNumbersAndGrid
+        });
+    }
+    else{
+        if(single_update){
+            ethanol_chart.data.labels.push(data.created_at);
+            ethanol_chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(parseFloat(data.value));
+            });
+        }
+        else{
+            ethanol_chart.data.labels.push(data.labels);
+            ethanol_chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(parseFloat(data.values));
+            });
+        }
+        ethanol_chart.update();
+    }
+}
+
+function display_h2_chart(data, single_update){
+    //2CA8FF
+    if (h2_chart == null){
+        ctx = document.getElementById('h2-chart').getContext("2d");
+
+        gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+        gradientStroke.addColorStop(0, '#80b6f4');
+        gradientStroke.addColorStop(1, chartColor);
+
+        gradientFill = ctx.createLinearGradient(0, 170, 0, 50);
+        gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
+        gradientFill.addColorStop(1, "rgba(249, 99, 59, 0.40)");
+
+        h2_chart = new Chart(ctx, {
+          type: 'bar',
+          responsive: true,
+          data: {
+            labels: data.labels,
+            datasets: [{
+              label: "Light Intensity",
+              borderColor: "#2CA8FF",
+              pointBorderColor: "#FFF",
+              pointBackgroundColor: "#2CA8FF",
+              pointBorderWidth: 2,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 1,
+              pointRadius: 4,
+              fill: true,
+              backgroundColor: gradientFill,
+              borderWidth: 2,
+              data: data.values
+            }]
+          },
+          options: gradientChartOptionsConfigurationWithNumbersAndGrid
+        });
+    }
+    else{
+        if(single_update){
+            h2_chart.data.labels.push(data.created_at);
+            h2_chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(parseFloat(data.value));
+            });
+        }
+        else{
+            h2_chart.data.labels.push(data.labels);
+            h2_chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(parseFloat(data.values));
+            });
+        }
+        h2_chart.update();
+    }
+}
+
 
 function init_chart_configs(){
     chartColor = "#FFFFFF";

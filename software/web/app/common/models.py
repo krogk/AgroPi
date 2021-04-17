@@ -72,10 +72,12 @@ class Admin(db.Document):
 class Measurement(db.Document):
     class Type(SlickEnum):
         TEMPERATURE = "TEMPERATURE"
-        WATER_LEVEL = "WATER_LEVEL"
+        TVOC = "TVOC"
         LIGHT_INTENSITY = "LIGHT_INTENSITY"
         HUMIDITY = "HUMIDITY"
-        CO2 = "CO2"
+        ECO2 = "ECO2"
+        ETHANOL = "ETHANOL"
+        H2 = "H2"
 
     type = db.StringField(reqired=True, choices=Type.to_list())
     value = db.DecimalField()

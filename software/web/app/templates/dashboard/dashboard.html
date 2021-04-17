@@ -3,7 +3,7 @@
 {% block content %}
 <div class="main-panel" id="main-panel">
   <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+  <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
     <div class="container-fluid">
       <div class="navbar-wrapper">
         <div class="navbar-toggle">
@@ -13,7 +13,7 @@
             <span class="navbar-toggler-bar bar3"></span>
           </button>
         </div>
-        <a class="navbar-brand" href="#">Light Intensity</a>
+        <a class="navbar-brand" href="#pablo">Dashboard</a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -38,6 +38,14 @@
               <i data-feather="calendar" class="align-self-center icon-xs ml-1"></i>
             </a>
           </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#pablo">
+              <i class="now-ui-icons media-2_sound-wave"></i>
+              <p>
+                <span class="d-lg-none d-md-block">Stats</span>
+              </p>
+            </a>
+          </li> -->
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="now-ui-icons location_world"></i>
@@ -51,28 +59,27 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li> -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#pablo">
               <i class="now-ui-icons users_single-02"></i>
               <p>
                 <span class="d-lg-none d-md-block">Account</span>
               </p>
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
-    </nav>
-    <!-- End Navbar -->
-    <div class="panel-header panel-header-lg">
-    <canvas id="light-intensity-chart"></canvas>
-    </div>
-    <div class="content">
+  </nav>
+  <!-- End Navbar -->
+  <div class="panel-header panel-header-sm">
+  </div>
+  <div class="content">
     <div class="row">
       <div class="col-lg-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h5 class="card-category">6am - 5pm</h5>
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
             <h4 class="card-title">Temperature</h4>
             <!-- <div class="dropdown">
               <button type="button" class="btn btn-round btn-outline-default dropdown-toggle btn-simple btn-icon no-caret" data-toggle="dropdown">
@@ -101,19 +108,8 @@
       <div class="col-lg-6 col-md-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h5 class="card-category">6am - 5pm</h5>
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
             <h4 class="card-title">Humidity</h4>
-            <!-- <div class="dropdown">
-              <button type="button" class="btn btn-round btn-outline-default dropdown-toggle btn-simple btn-icon no-caret" data-toggle="dropdown">
-                <i class="now-ui-icons loader_gear"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <a class="dropdown-item text-danger" href="#">Remove Data</a>
-              </div>
-            </div> -->
           </div>
           <div class="card-body">
             <div class="chart-area">
@@ -130,12 +126,84 @@
       <div class="col-lg-6 col-md-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h5 class="card-category">6am - 5pm</h5>
-            <h4 class="card-title">Water Usage</h4>
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">Light Intensity</h4>
           </div>
           <div class="card-body">
             <div class="chart-area">
-              <canvas id="water-level-chart"></canvas>
+              <canvas id="light-intensity-chart"></canvas>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">TVOC</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area">
+              <canvas id="tvoc-chart"></canvas>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">ECO2</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area">
+              <canvas id="eco2-chart"></canvas>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">Ethanol</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area">
+              <canvas id="ethanol-chart"></canvas>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">H2</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area">
+              <canvas id="h2-chart"></canvas>
             </div>
           </div>
           <div class="card-footer">
@@ -146,8 +214,9 @@
         </div>
       </div>
     </div>
-    </div>
-    <footer class="footer">
+  </div>
+  </div>
+  <footer class="footer">
     <div class=" container-fluid ">
       <nav>
         <ul>
@@ -174,7 +243,7 @@
         </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
       </div>
     </div>
-    </footer>
+  </footer>
 </div>
 
 {% endblock %}
