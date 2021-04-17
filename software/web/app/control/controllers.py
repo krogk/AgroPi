@@ -28,7 +28,7 @@ class ControlControllers:
                 }
                 self.logger.event("Request to cpp: {}".format(params))
                 # ApiCalls().request_api(req_params=params, method='post', route='/sensor/')
-                response = requests.post(url="{}/sensor/".format(CPP_SERVER_URL), json=params, verify=False).text
+                response = requests.post(url="{}/sensor/".format(CPP_SERVER_URL), data=params, verify=False).text
                 # response = {}
                 self.logger.event("Response from cpp: {}".format(response))
             return Response.ok_response()

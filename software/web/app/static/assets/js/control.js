@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$('#temperature-slider').jRange({
         from: -40.0,
         to: 125.0,
-        step: 5,
+        step: 1,
         // scale: [-40.0,0.0,50.0,100.0,125.0],
         format: '%s',
         showLabels: true,
@@ -12,7 +12,7 @@ $(document).ready(function(){
     $('#humidity-slider').jRange({
         from: 0.0,
         to: 100.0,
-        step: 5,
+        step: 1,
         // scale: [0.0,25.0,50.0,75.0,100.0],
         format: '%s',
         showLabels: true,
@@ -22,7 +22,7 @@ $(document).ready(function(){
     $('#light-slider').jRange({
         from: 0.0,
         to: 120000.0,
-        step: 5,
+        step: 1,
         // scale: [0.0,30000.0,60000.0,120000.0],
         format: '%s',
         showLabels: true,
@@ -32,7 +32,7 @@ $(document).ready(function(){
     $('#ethanol-slider').jRange({
         from: 0.0,
         to: 80.0,
-        step: 5,
+        step: 1,
         // scale: [0.0,20.0,40.0,60.0,80.0],
         format: '%s',
         showLabels: true,
@@ -42,7 +42,7 @@ $(document).ready(function(){
     $('#tvoc-slider').jRange({
         from: 0.0,
         to: 60000.0,
-        step: 5,
+        step: 1,
         // scale: [0.0,10000.0,20000.0,30000.0,40000.0,50000.0],
         format: '%s',
         showLabels: true,
@@ -52,7 +52,7 @@ $(document).ready(function(){
     $('#eco2-slider').jRange({
         from: 0.0,
         to: 60000.0,
-        step: 5,
+        step: 1,
         // scale: [0.0,10000.0,20000.0,30000.0,40000.0,50000.0],
         format: '%s',
         showLabels: true,
@@ -62,7 +62,7 @@ $(document).ready(function(){
     $('#h2-slider').jRange({
         from: 0.0,
         to: 80.0,
-        step: 5,
+        step: 1,
         // scale: [0.0,20.0,40.0,60.0,80.0],
         format: '%s',
         showLabels: true,
@@ -82,25 +82,25 @@ function update_control_values(){
     var tvoc_val = $('#tvoc-slider').val().split(',');
     var eco2_val = $('#eco2-slider').val().split(',');
     var h2_val = $('#h2-slider').val().split(',');
-    var heating_toggle = $('#heating-toggle').val();
-    var airflow_toggle = $('#airflow-toggle').val();
-    var light_toggle = $('#lights-toggle').val();
+    var heating_toggle = $('#heating-toggle').prop('checked');
+    var airflow_toggle = $('#airflow-toggle').prop('checked');
+    var light_toggle = $('#lights-toggle').prop('checked');
 
-    if (heating_toggle == "on"){
+    if (heating_toggle == true){
         heating_toggle = 1;
     }
     else{
         heating_toggle = 0;
     }
 
-    if (airflow_toggle == "on"){
+    if (airflow_toggle == true){
         airflow_toggle = 1;
     }
     else{
         airflow_toggle = 0;
     }
 
-    if (light_toggle == "on"){
+    if (light_toggle == true){
         light_toggle = 1;
     }
     else{
