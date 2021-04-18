@@ -13,7 +13,8 @@
 #include <sstream>
 #include <iostream>
 
-class Camera{
+class Camera // : public CppTimer
+{
     public:
         /* Setup camera */
         Camera(); 

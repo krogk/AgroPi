@@ -105,6 +105,7 @@ int Camera::checkCamOpen(cv::VideoCapture cap){
         std::cout<<"Camera opened successfully."<<std::endl;
         //do nothing; camera has opened.
     }
+    return 0;
 }
 
 /** 

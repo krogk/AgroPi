@@ -8,7 +8,7 @@
 */
 #ifndef RELAY_H
 #define RELAY_H
-
+#include "GPIODriver.h"
 
 /**
 * @brief Relay Board class
@@ -20,41 +20,41 @@
 class RelayBoard {
 
 public:
-	RelayBoard(void) {
+	RelayBoard() {
     // Change this list to enum or defines
-		heaterGPIO = 17;
-    lightsGPIO = 27;
-    fanGPIO = 22;
-    waterPumpGPIO = 23;
-    lightsGPIOState = 1;
-    Initialize();
+		m_heaterGPIO = 17;
+    m_lightsGPIO = 27;
+    m_fanGPIO = 22;
+    m_waterPumpGPIO = 23;
+    m_heaterGPIOState = 1;
+    m_lightsGPIOState = 1;
+    m_fanGPIOState = 1;
+    m_waterPumpGPIOState = 1;
 	}
 
   ~RelayBoard(void)
   {
-    //CloseDevice();
+    //Close_Device();
   }
 
-  int SetGPIOState(int gpioPinNumber, int value);
-  int SetGPIODirection(int gpioPinNumber, int direction);
-  int GPIORead(int gpioPinNumber);
-  int UnexportGPIO(int gpioPinNumber);
-  int ExportGPIO(int gpioPinNumber);
-  int Initialize();
-
-private:
-	int SetUpPin(int gpioPinNumber);
-  int UnexportPin(int gpioPinNumber); 
-  
-  int CloseDevice();
+  int Initialize(GPIODriver &driver);
+  int Lighting(int state);
+  int Heating(int state);
+  int Airflow(int state);
+  int Watering(int state);
+  int Turn_Relays_Off();
+  int Close_Relay_Board();
   
 private:
-	int heaterGPIO;
-  int lightsGPIO;
-  int lightsGPIOState;
-  int fanGPIO;
-  int waterPumpGPIO;
-
+	int m_heaterGPIO;
+  int m_lightsGPIO;
+  int m_fanGPIO;
+  int m_waterPumpGPIO;
+  int m_heaterGPIOState;
+  int m_lightsGPIOState;
+  int m_fanGPIOState;
+  int m_waterPumpGPIOState;
+  GPIODriver* m_pGPIODriver = nullptr;
 };
 
 #endif

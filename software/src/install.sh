@@ -50,15 +50,37 @@ sudo apt install nodejs -y
 sudo apt install npm -y
 sudo apt install curl -y
 sudo npm install dygraphs -y
-
+# OpenCV 
+sudo apt install -y g++
+sudo apt install -y clang
+sudo apt install -y make
+sudo apt install -y ninja-build
+sudo apt install -y wget unzip
+sudo apt install -y libatlas-base-dev liblapacke-dev gfortran
+sudo apt install -y libhdf5-dev libhdf5-103
+sudo apt install -y libavresample-dev
+sudo apt install -y libeigen3-dev
+sudo apt install -y default-jdk
+sudo apt install -y libopenjpeg-dev
 
 # Install OpenCV
 echo "Installing OpenCV in /utils..."
-cd BASEDIR/utils
+cd ~
 git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
 mkdir ~/opencv/build
 cd ~/opencv/build
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+    -D ENABLE_NEON=ON \
+    -D ENABLE_VFPV3=ON \
+    -D BUILD_TESTS=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=OFF \
+    -D OPENCV_ENABLE_NONFREE=ON \
+    -D CMAKE_SHARED_LINKER_FLAGS=-latomic \
+    -D BUILD_EXAMPLES=OFF ..
+
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D CMAKE_INSTALL_PREFIX=/usr/local \
     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
