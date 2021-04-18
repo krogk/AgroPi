@@ -131,7 +131,7 @@ function update_control_values(){
     console.log(form_data);
     $('#update-control-button').attr('disabled', true);
 
-    $.putJSON("/control", form_data, function(data){
+    $.postJSON("/sensor/:80", form_data, function(data){
         console.log(data);
         if (data.code == "00") {
             notify_success("Values updated");
