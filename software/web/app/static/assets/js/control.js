@@ -127,18 +127,27 @@ function update_control_values(){
         'airflow_toggle': airflow_toggle,
         'light_toggle': light_toggle
     }
-    form_data = JSON.stringify(form_data);
-    console.log(form_data);
     $('#update-control-button').attr('disabled', true);
-
-    $.postJSON("/sensor/:80", form_data, function(data){
-        console.log(data);
-        if (data.code == "00") {
-            notify_success("Values updated");
-        }
-        else{
-            notify_failure(data.msg);
-        }
-        $('#update-control-button').attr('disabled', false);
+    // form_data = JSON.stringify(form_data);
+    console.log(form_data);
+    
+    $.post("/sensor/:80", form_data)
+      .done(function( data ) {
+        notify_success("Values updated");
     });
+
+    // $.post("/sensor/:80", form_data, function( data ) {
+    //     notify_success("Values updated");
+    // });
+
+    // $.postJSON("/sensor/:80", form_data, function(data){
+    //     console.log(data);
+    //     if (data.code == "00") {
+    //         notify_success("Values updated");
+    //     }
+    //     else{
+    //         notify_failure(data.msg);
+    //     }
+    //     $('#update-control-button').attr('disabled', false);
+    // });
 }
