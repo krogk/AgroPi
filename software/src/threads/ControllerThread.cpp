@@ -21,13 +21,11 @@
 #include <thread>
 #include <string.h>
 
-
 /**
  * Flag to indicate program is running.
  * Needed later to quit the idle loop.
  **/
 int mainRunning = 1;
-
 
 /**
  * Handler when the user has pressed ctrl-C
@@ -59,25 +57,11 @@ void setHUPHandler() {
 	}
 }
 
-	enum SERVER_OP_CODE {
-		LIGHT_INTENSITY_TARGET_CHANGE 	= 1,
-		TEMPERATURE_TARGET_CHANGE 			= 2,
-		HUMIDITY_TARGET_CHANGE 					= 3,
-		TVOC_TARGET_CHANGE 							= 4,
-		ECO2_TARGET_CHANGE 						  = 5,
+	enum EVENT_OP_CODES {
+		SAMPLE_RATE_CHANGE										= 253,
+		ENABLE_SAMPLING												= 254,
 
-
-		FORCE_HEATING										= 128,
-		FORCE_AIRFLOW										= 129,
-		FORCE_LIGHTS										= 130,
-		FORCE_WATER_PUMP								= 131,
-
-
-		SAMPLE_RATE_CHANGE							= 252,
-		START_SAMPLING									= 253,
-		STOP_SAMPLING										= 254,
-
-		EXIT_APPLICATION								= 255
+		EXIT_APPLICATION											= 255
 	};
 
 /**
@@ -106,10 +90,10 @@ public:
 		jsonGenerator.add("epoch",(long)time(NULL));
 		jsonGenerator.add("temperature",			controllerfastcgi->envData.Temperature);
 		jsonGenerator.add("humidity",					controllerfastcgi->envData.Humidity);
-		jsonGenerator.add("lightIntensity",		controllerfastcgi->envData.LightIntensity);
+		jsonGenerator.add("lightintensity",		controllerfastcgi->envData.LightIntensity);
 		jsonGenerator.add("co2",							controllerfastcgi->envData.CO2);
 		jsonGenerator.add("tvoc",							controllerfastcgi->envData.TVOC);
-		jsonGenerator.add("rawEth",						controllerfastcgi->envData.RawEthanol);
+		jsonGenerator.add("eth",							controllerfastcgi->envData.RawEthanol);
 		jsonGenerator.add("h2",								controllerfastcgi->envData.RawH2);
 		return jsonGenerator.getJSON();
 	}
@@ -127,8 +111,10 @@ public:
  **/
 class ControllerCallback : public JSONCGIHandler::POSTCallback {
 public:
-	ControllerCallback(Controller* cfastcgi) {
+	ControllerCallback(Controller* cfastcgi) // Sampler* SamplerCb
+	{
 		controllerfastcgi = cfastcgi;
+		//samplerCallback = SamplerCb
 	}
 
 	/**
@@ -140,18 +126,23 @@ public:
 		uint8_t operation = atoi(m["operation"].c_str());
 		float value = atof(m["value"].c_str());
 		// Pass Data to event handler 
-		controllerfastcgi->MessageHandler(operation,value);
+		//controllerfastcgi->MessageHandler(operation,value);
+		//samplerCallback->MessageHandler();
 	}
 
 	/**
 	 * Pointer to the controller object, holding target structs
 	 **/
 	Controller* controllerfastcgi;
+	//Sampler* samplerCallback;
 };
 
 void ControllerThread::run(void) 
 {
 	printf("Controller Thread...\n");
+
+	// catching Ctrl-C or kill -HUP so that we can terminate properly
+	setHUPHandler();
 
 	// Initialize Controller
 	Controller controller;
@@ -171,9 +162,6 @@ void ControllerThread::run(void)
 	// Start Sampler Timer
 	sampler.start(samplePeriod);
 
-	// catching Ctrl-C or kill -HUP so that we can terminate properly
-	setHUPHandler();
-
 	// Just do nothing here and sleep. It's all dealt with in threads!
 	// Here, we just wait till the user presses ctrl-c which then
 	// sets mainRunning to zero.
@@ -187,4 +175,3 @@ void ControllerThread::run(void)
 	sampler.stop();
 	printf("Shutting Down...\n");
 }
-

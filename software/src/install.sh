@@ -50,11 +50,22 @@ sudo apt install nodejs -y
 sudo apt install npm -y
 sudo apt install curl -y
 sudo npm install dygraphs -y
-
+# OpenCV 
+sudo apt install -y g++
+sudo apt install -y clang
+sudo apt install -y make
+sudo apt install -y ninja-build
+sudo apt install -y wget unzip
+sudo apt install -y libatlas-base-dev liblapacke-dev gfortran
+sudo apt install -y libhdf5-dev libhdf5-103
+sudo apt install -y libavresample-dev
+sudo apt install -y libeigen3-dev
+sudo apt install -y default-jdk
+sudo apt install -y libopenjpeg-dev
 
 # Install OpenCV
 echo "Installing OpenCV in /utils..."
-cd BASEDIR/utils
+cd ~
 git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
 mkdir ~/opencv/build

@@ -37,20 +37,42 @@
   float HumidityUpperThreshold; 					  /*!< Temperature of the envirnoment (in Degrees Celsius)*/
   float HumidityLowerThreshold; 					  /*!< Temperature of the envirnoment (in Degrees Celsius)*/
   uint16_t CO2UpperThreshold; 					    /*!< Temperature of the envirnoment (in Degrees Celsius)*/
+  uint16_t CO2LowerThreshold; 					    /*!< Temperature of the envirnoment (in Degrees Celsius)*/
   uint16_t TVOCUpperThreshold; 					    /*!< Temperature of the envirnoment (in Degrees Celsius)*/
+  uint16_t TVOCLowerThreshold; 					    /*!< Temperature of the envirnoment (in Degrees Celsius)*/
   uint16_t RawEthanolUpperThreshold; 				/*!< Temperature of the envirnoment (in Degrees Celsius)*/
+  uint16_t RawEthanolLowerThreshold; 				/*!< Temperature of the envirnoment (in Degrees Celsius)*/
   uint16_t RawH2UpperThreshold; 					  /*!< Temperature of the envirnoment (in Degrees Celsius)*/
+  uint16_t RawH2LowerThreshold; 					  /*!< Temperature of the envirnoment (in Degrees Celsius)*/
+
 } TargetEnvironmentData;
 
 
 /**
  * Environment Data Struct Definition
  * 
- * This struct conatins actuaytor 
+ * This struct conatins actuator Force flags.
+ * If a flag is set the actuator enables the device
+ * regardless of everything else. 
  */
  typedef struct{
-  bool ForceHeating;        /*!< Force Heating on actuation handler */
-	bool ForceLighting;					
-	bool ForceAirflow;
-	bool ForceWaterPump;						
+  bool Heating;        /*!< Force Heating on actuation handler */
+	bool Lighting;					
+	bool Airflow;
+	bool Watering;						
 } ActuationForceFlags;
+
+
+/**
+ * Environment Data Struct Definition
+ * 
+ * This struct conatins actuator Heuristics flags.
+ * If a flag is set the actuator enables the control through Heuristics
+ *
+ */
+ typedef struct{
+  bool Heating;
+	bool Lighting;
+	bool Airflow;
+	bool Watering;
+} ActuationHeuristicsFlags;

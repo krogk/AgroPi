@@ -12,21 +12,21 @@
 #include <stdio.h>
 
 
-
 /**
 * Initialize all enviromental data struct variables and sensors.
 *
 * filepath filepath for settings file.
 * 
 */
-int Sampler::Initialize(){
-	printf("Initializing Peripherials...\n");
-	/*Initialize Peripherials*/
+int Sampler::Initialize()
+{
+	printf("Sampler: Initializing Peripherials...\n");
+	// Initialize Peripherials
 	lightSensor.Initialize(i2cDriver);
 	temperatureHumiditySensor.Initialize(i2cDriver);
 	gasSensor.Initialize(i2cDriver);
 	
-	/* Initialize EnvData Structure*/
+	// Initialize EnvData Structure
 	envData.LightIntensity = 0.0; 
 	envData.Temperature = 0.0; 
 	envData.Humidity = 0.0; 
@@ -35,6 +35,8 @@ int Sampler::Initialize(){
 	envData.RawEthanol = 0.0; 
 	envData.RawH2 = 0.0; 
 
+	// Set sample counter to zero
+	sampleCounter = 0;
 	return 0;
 }
 
@@ -44,11 +46,12 @@ int Sampler::Initialize(){
 *
 * @return Zero On Sucess 
 */
-int Sampler::Gather_Env_Data() {
+int Sampler::Gather_Env_Data()
+{
 	lightSensor.Get_ALS_Lux(envData.LightIntensity);
 	temperatureHumiditySensor.Get_Temperature_Humidity(envData.Temperature, envData.Humidity);
 	gasSensor.IAQ_Measure(envData.TVOC, envData.CO2);
-	gasSensor.IAQ_Measure_Raw( envData.RawEthanol, envData.RawH2);
+	gasSensor.IAQ_Measure_Raw(envData.RawEthanol, envData.RawH2);
 	return 0;
 }
 
@@ -58,12 +61,47 @@ int Sampler::Gather_Env_Data() {
 *
 * @return Zero On Sucess 
 */
-int Sampler::CloseDevices() {
+int Sampler::CloseDevices()
+{
 	printf("Closing Devices...\n");
 	lightSensor.Close_Device();
 	temperatureHumiditySensor.Close_Device();
 	gasSensor.Close_Device();
 	return 0;
+}
+
+
+/**
+* Sends the Env data from all sensors to the web server via http.
+*
+*/
+void Sampler::SendEnvData()
+{
+	SendDataToWebApp("LIGHT_INTENSITY", envData.LightIntensity);
+	SendDataToWebApp("TEMPERATURE", envData.Temperature);
+	SendDataToWebApp("HUMIDITY", envData.Humidity);
+	SendDataToWebApp("TVOC", envData.TVOC);
+	SendDataToWebApp("ECO2", envData.CO2);
+	SendDataToWebApp("ETHANOL", envData.RawEthanol);
+	SendDataToWebApp("H2", envData.RawH2);
+}
+
+
+/**
+* Sends the Env data from all sensors to the web server via http.
+*
+*/
+void Sampler::SendDataToWebApp(std::string variable_type, float value)
+{
+	httplib::Client cli("http://127.0.0.1:5050");
+	std::string url = "/measurements?type=" + variable_type + "&value=" + std::to_string(value);
+	const char * urlStr = url.c_str();
+	if(auto res = cli.Get(urlStr))
+	{
+		//printf("Response status from web app: %f\n", res->status);
+		//printf("Response body from web app: %f\n", res->body);
+	}
+
 }
 
 
