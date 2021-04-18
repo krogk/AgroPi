@@ -147,6 +147,7 @@ git clone https://github.com/krogk/AgroPi
 ```
 2. Ubuntu Packages: 
 ```sh
+chmod +x install.sh
 ./install.sh
 ```
 3. Server Depencencies: 
