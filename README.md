@@ -200,6 +200,6 @@ Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 
 [Samuel Obosu - Web server & Network Programming](https://github.com/Samuel-Obosu)
 <br />
-[Andrew Scott-George - Image Processing](https://github.com/andrewsg3)
+[Andrew Scott-George - Image Processing, 3D design, & PR](https://github.com/andrewsg3)
 <br />
 [Kamil Rog - Real-time Embedded Programming](https://github.com/krogk)
