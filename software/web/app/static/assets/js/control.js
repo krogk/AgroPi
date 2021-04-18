@@ -127,15 +127,16 @@ function update_control_values(){
         'airflow_toggle': airflow_toggle,
         'light_toggle': light_toggle
     }
-    form_data = JSON.stringify(form_data);
+    // form_data = JSON.stringify(form_data);
     console.log(form_data);
     $('#update-control-button').attr('disabled', true);
 
-    $.postJSON("/sensor/:80", form_data, function(data){
+    $.postFORM("/sensor/:80", form_data, function(data){
         console.log(data);
+        $('#update-control-button').attr('disabled', false);
         if (data.code == "00") {
             notify_success("Values updated");
-            $('#update-control-button').attr('disabled', false);
+            // $('#update-control-button').attr('disabled', false);
         }
         else{
             notify_failure(data.msg);
