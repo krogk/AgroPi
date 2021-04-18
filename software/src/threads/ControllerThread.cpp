@@ -90,10 +90,10 @@ public:
 		jsonGenerator.add("epoch",(long)time(NULL));
 		jsonGenerator.add("temperature",			controllerfastcgi->envData.Temperature);
 		jsonGenerator.add("humidity",					controllerfastcgi->envData.Humidity);
-		jsonGenerator.add("lightIntensity",		controllerfastcgi->envData.LightIntensity);
+		jsonGenerator.add("lightintensity",		controllerfastcgi->envData.LightIntensity);
 		jsonGenerator.add("co2",							controllerfastcgi->envData.CO2);
 		jsonGenerator.add("tvoc",							controllerfastcgi->envData.TVOC);
-		jsonGenerator.add("rawEth",						controllerfastcgi->envData.RawEthanol);
+		jsonGenerator.add("eth",							controllerfastcgi->envData.RawEthanol);
 		jsonGenerator.add("h2",								controllerfastcgi->envData.RawH2);
 		return jsonGenerator.getJSON();
 	}
@@ -126,7 +126,7 @@ public:
 		uint8_t operation = atoi(m["operation"].c_str());
 		float value = atof(m["value"].c_str());
 		// Pass Data to event handler 
-		controllerfastcgi->MessageHandler(operation,value);
+		//controllerfastcgi->MessageHandler(operation,value);
 		//samplerCallback->MessageHandler();
 	}
 
@@ -157,10 +157,10 @@ void ControllerThread::run(void)
 	JSONCGIHandler* fastCGIHandler = new JSONCGIHandler(&fastCGIdataCallback, &controllerCallback, "/tmp/fastcgisocket");
 
 	// Initialize Sampler
-	//Sampler sampler(&controller);
+	Sampler sampler(&controller);
 
 	// Start Sampler Timer
-	//sampler.start(samplePeriod);
+	sampler.start(samplePeriod);
 
 	// Just do nothing here and sleep. It's all dealt with in threads!
 	// Here, we just wait till the user presses ctrl-c which then
@@ -175,4 +175,3 @@ void ControllerThread::run(void)
 	sampler.stop();
 	printf("Shutting Down...\n");
 }
-

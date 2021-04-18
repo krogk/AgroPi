@@ -9,12 +9,11 @@
 *
 * 
 */
-#define CPPHTTPLIB_OPENSSL_SUPPORT
 #include "Controller.h"
 #include <stdio.h>
 #include <string>
 #include <iostream>
-#include "httplib.h"
+
 
 void Controller::SamplerHasData(EnvironmentData newData)
 {
@@ -33,35 +32,8 @@ void Controller::SamplerHasData(EnvironmentData newData)
 	//std::thread::id this_id = std::this_thread::get_id();
 	//std::cout << "Controller Thread " << this_id << "\n";
 	ActuatorHandler();
-	SendEnvData();
 }
 
-
-void Controller::SendEnvData()
-{
-	SendDataToWebApp("LIGHT_INTENSITY", envData.LightIntensity);
-	SendDataToWebApp("TEMPERATURE", envData.Temperature);
-	SendDataToWebApp("HUMIDITY", envData.Humidity);
-	SendDataToWebApp("TVOC", envData.TVOC);
-	SendDataToWebApp("ECO2", envData.CO2);
-	SendDataToWebApp("ETHANOL", envData.RawEthanol);
-	SendDataToWebApp("H2", envData.RawH2);
-}
-
-
-void Controller::SendDataToWebApp(std::string variable_type, float value)
-{
-	//envData  "/measurement" http://192.168.178.41:5050
-	httplib::Client cli("http://127.0.0.1:5050");
-
-	std::string url = "/measurements?type=" + variable_type + "&value=" + std::to_string(value);
-	const char * urlStr = url.c_str();
-	if(auto res = cli.Get(urlStr)){
-		//printf("Response status from web app: %f\n", res->status);
-		//printf("Response body from web app: %f\n", res->body);
-	}
-
-}
 
 void Controller::MessageHandler(uint8_t opcode, float value)
 {
@@ -140,21 +112,25 @@ void Controller::MessageHandler(uint8_t opcode, float value)
 
 		case FORCE_HEATING:
 			(value > 0) ? actuationForceFlags.Heating  = true : actuationForceFlags.Heating = false;
+			(actuationForceFlags.Heating  == true ) ? relay.Heating(0) : relay.Heating(1);
 			printf("FORCE_HEATING\n");		
 		break;
 		
 		case FORCE_AIRFLOW:
 			(value > 0) ? actuationForceFlags.Airflow  = true : actuationForceFlags.Airflow = false;
+			(actuationForceFlags.Airflow  == true ) ? relay.Airflow(0) : relay.Airflow(1);
 			printf("FORCE_AIRFLOW\n");
 		break;
 		
 		case FORCE_LIGHTS:
 			(value > 0) ? actuationForceFlags.Lighting  = true : actuationForceFlags.Lighting = false;
+			(actuationForceFlags.Lighting  == true ) ? relay.Lighting(0) : relay.Lighting(1);
 			printf("FORCE_LIGHTS\n");		
 		break;
 	
 		case FORCE_WATER_PUMP:
 			(value > 0) ? actuationForceFlags.Watering  = true : actuationForceFlags.Watering = false;
+			(actuationForceFlags.Watering  == true ) ? relay.Watering(0) : relay.Watering(1);
 			printf("FORCE_WATER_PUMP\n");		
 		break;
 
@@ -252,5 +228,5 @@ void Controller::ActuatorHandler()
 {
 	LightActuator();
 	HeatActuator();
-	AirflowActuator();
+	//AirflowActuator();
 }

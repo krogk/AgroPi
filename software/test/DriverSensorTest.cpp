@@ -6,7 +6,47 @@
 #include "SHT31D.h"
 #include "SGP30.h"
 #include "Camera.h"
-//#include "Actuator.h"
+#include "GPIODriver.h"
+#include "RelayBoard.h"
+
+// Define
+
+
+
+/**
+ * Environment Data Struct Definition
+ * 
+ * This struct conatins actuator Heuristics flags.
+ * If a flag is set the actuator enables the control through Heuristics
+ *
+ */
+ /*
+ typedef struct{
+
+    float LUX_MIN = 0;
+    float LUX_MAX 120000;
+    float LUX_MIN_REASONABLE 20;
+    float LUX_MAX_REASONABLE 10000;
+
+    float TEMPERATURE_MIN -40;
+    float TEMPERATURE_MAX 125;
+    float TEMPERATURE_MIN_REASONABLE 15;
+    float TEMPERATURE_MAX_REASONABLE 25;
+
+    float HUMDIITY_MIN 0;
+    float HUMIDITY_MAX 100;
+    float HUMDIITY_MIN_REASONABLE 45;
+    float HUMIDITY_MAX_REASONABLE 65;
+    
+    float HUMDIITY_MIN 0;
+    float HUMIDITY_MAX 100;
+    float HUMDIITY_MIN_REASONABLE 45;
+    float HUMIDITY_MAX_REASONABLE 65;
+
+
+} TargetValues;
+*/
+
 
 // Test I2C Driver
 BOOST_AUTO_TEST_SUITE(I2C_DRIVER)
@@ -60,9 +100,9 @@ BOOST_AUTO_TEST_CASE(VEML770_LUX_READ)
     // Attempt to read lux
     lightsensor.Get_ALS_Lux( lux );
     // If lux is 0 it means the I2C communication wasn't effective.
-    BOOST_CHECK_MESSAGE( lux >= 0.0,    "Lux measured by light sensor is: " << lux << " Zero" );
+    BOOST_CHECK_MESSAGE( lux > 0.0,    "Lux measured by light sensor is: " << lux << " Zero" );
     // If lux is above 120000, it is highly likely the value obtained is incorrect.
-    BOOST_CHECK_MESSAGE( lux <= 120000, "Lux measured by light sensor is: " << lux << " - Above Maximum(120000)" );
+    BOOST_CHECK_MESSAGE( lux < 120000, "Lux measured by light sensor is: " << lux << " - Above Maximum(120000)" );
     lightsensor.Close_Device();
 }
 BOOST_AUTO_TEST_SUITE_END()
@@ -84,7 +124,7 @@ BOOST_AUTO_TEST_CASE( SHT31D_READ )
     float temp = 0, humidity = 0;
     temperatureHumiditySensor.Initialize(driver);
     temperatureHumiditySensor.Get_Temperature_Humidity(temp, humidity);
-    BOOST_CHECK_MESSAGE( temp > 0.0f,   "Temperature measured by SHT31D: " << temp << " C - Too Low" );
+    BOOST_CHECK_MESSAGE( temp > 10.0f,   "Temperature measured by SHT31D: " << temp << " C - Too Low" );
     BOOST_CHECK_MESSAGE( temp < 60.0f,  "Temperature measured by SHT31D: " << temp << " C - Too High" );
     BOOST_CHECK_MESSAGE( humidity > 0.0f,   "Temperature measured by SHT31D: " << humidity << " % - Too Low" );
     BOOST_CHECK_MESSAGE( humidity < 100.0f,  "Temperature measured by SHT31D: " << humidity << " % - Too High" );
@@ -109,26 +149,58 @@ BOOST_AUTO_TEST_CASE( SGP30_READ )
     uint16_t tvoc = 0, eco2 = 0;
     gasSensor.Initialize(driver);
     gasSensor.IAQ_Measure(tvoc,eco2);
-    BOOST_CHECK_MESSAGE( tvoc >= 0.0f, "Temperature measured by SHT31D: " << tvoc << " ppb - Too Low" );
-    BOOST_CHECK_MESSAGE( eco2 > 0.0f,  "Temperature measured by SHT31D: " << eco2 << " ppm - Too Low" );
+    BOOST_CHECK_MESSAGE( tvoc >= 0.0f, "TVOC measured by SHT31D: " << tvoc << " ppb - Too Low" );
+    BOOST_CHECK_MESSAGE( eco2 > 0.0f,  "eCO2 measured by SHT31D: " << eco2 << " ppm - Too Low" );
     gasSensor.Close_Device();
 }
 BOOST_AUTO_TEST_SUITE_END()
 
-/*
+
 // Test Relay Board
 BOOST_AUTO_TEST_SUITE(Relays)
+/**
+* Test Relay Board 
+* Turn on 
+*/
 BOOST_AUTO_TEST_CASE( ElegoRelayBoard )
 {
-    //RelayBoard relay;
-    // turn GPIO ON 
-    // delay
-    // turn GPIO OFF
-    //Close_Device
+    GPIODriver driver;
+    RelayBoard relay;
+    relay.Initialize(driver);
+
+    // Turn On Each Actuator for 1 Second.
+    relay.Heating(0);
+    //BOOST_CHECK_MESSAGE( eco2 > 0.0f,  "Temperature measured by SHT31D: " << eco2 << " ppm - Too Low" );
+    sleep(1);
+    relay.Heating(1);
+    relay.Lighting(0);
+    sleep(1);
+    relay.Lighting(1);
+    relay.Airflow(0);
+    sleep(1);
+    relay.Airflow(1);
+    relay.Watering(0);
+    sleep(1);
+    relay.Watering(1);
+    sleep(1);
+
+    // Turn all actuators for 5 seconds.
+    relay.Lighting(0);
+    relay.Heating(0);
+    relay.Airflow(0);
+    relay.Watering(0);
+    sleep(5);
+    relay.Lighting(1);
+    relay.Heating(1);
+    relay.Airflow(1);
+    relay.Watering(1);
+
+    // Close Device
+    relay.Turn_Relays_Off();
 
 }
 BOOST_AUTO_TEST_SUITE_END()
-*/
+
 
 /*// Test Camera
 BOOST_AUTO_TEST_SUITE(CAMERA)

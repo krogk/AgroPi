@@ -19,6 +19,8 @@
 #include "SHT31D.h"
 #include "SGP30.h"
 #include "Camera.h"
+#define CPPHTTPLIB_OPENSSL_SUPPORT
+#include "httplib.h"
 
 
 /**
@@ -38,6 +40,7 @@ class Sampler : public CppTimer
     //std::cout << "timerEvent() " << this_id << "\n";
 		if (nullptr != samplerCallback) 
 		{
+			SendEnvData();
 			samplerCallback->SamplerHasData(envData);
   	}
 
@@ -78,6 +81,8 @@ private:
 	int Gather_Env_Data();
 	int Print_Env_Data();
 	int CloseDevices();
+	void SendEnvData();
+	void SendDataToWebApp(std::string variable_type, float value);
 
 	I2CDriver i2cDriver;              		/*!< I2C driver used for peripherials */
 	VEML7700 	lightSensor; 				        /*!< VEML7700 Light Sensor Object */

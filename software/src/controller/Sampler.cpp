@@ -18,14 +18,15 @@
 * filepath filepath for settings file.
 * 
 */
-int Sampler::Initialize(){
+int Sampler::Initialize()
+{
 	printf("Sampler: Initializing Peripherials...\n");
-	/*Initialize Peripherials*/
+	// Initialize Peripherials
 	lightSensor.Initialize(i2cDriver);
 	temperatureHumiditySensor.Initialize(i2cDriver);
 	gasSensor.Initialize(i2cDriver);
 	
-	/* Initialize EnvData Structure*/
+	// Initialize EnvData Structure
 	envData.LightIntensity = 0.0; 
 	envData.Temperature = 0.0; 
 	envData.Humidity = 0.0; 
@@ -67,6 +68,40 @@ int Sampler::CloseDevices()
 	temperatureHumiditySensor.Close_Device();
 	gasSensor.Close_Device();
 	return 0;
+}
+
+
+/**
+* Sends the Env data from all sensors to the web server via http.
+*
+*/
+void Sampler::SendEnvData()
+{
+	SendDataToWebApp("LIGHT_INTENSITY", envData.LightIntensity);
+	SendDataToWebApp("TEMPERATURE", envData.Temperature);
+	SendDataToWebApp("HUMIDITY", envData.Humidity);
+	SendDataToWebApp("TVOC", envData.TVOC);
+	SendDataToWebApp("ECO2", envData.CO2);
+	SendDataToWebApp("ETHANOL", envData.RawEthanol);
+	SendDataToWebApp("H2", envData.RawH2);
+}
+
+
+/**
+* Sends the Env data from all sensors to the web server via http.
+*
+*/
+void Sampler::SendDataToWebApp(std::string variable_type, float value)
+{
+	httplib::Client cli("http://127.0.0.1:5050");
+	std::string url = "/measurements?type=" + variable_type + "&value=" + std::to_string(value);
+	const char * urlStr = url.c_str();
+	if(auto res = cli.Get(urlStr))
+	{
+		//printf("Response status from web app: %f\n", res->status);
+		//printf("Response body from web app: %f\n", res->body);
+	}
+
 }
 
 
