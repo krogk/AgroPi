@@ -5,7 +5,7 @@
   </a>
   
   <p align="center">
-    Learn cultivation of plants and mushrooms through a Raspberry Pi driven monitoring system. 
+    Learn cultivation of plants and mushrooms through a Raspberry Pi driven automated indoor garden. 
     <br />
 </div>
 
@@ -53,14 +53,14 @@
 <!-- Project descirption -->
 ## About
 
-AgroPi is a flexible modular educational tool which allows user to learn how changes in enviroment effect plant's/mushroom's health. It is up to the user to decide what actuators fit the enviromental chamber needs best.   
+AgroPi is a flexible modular educational tool which allows user to learn how changes in enviroment effect the health of plants and mushrooms. With a raspberry pi, a box ("environmental chamber"), and a handful of sensors and actuators, you can get started with your own AgroPi. It is up to the user to decide what actuators fit the enviromental chamber needs best, though we provide some recommended ones.   
 <br />
 <br />
-Website interface enables user to easily display and control the conditions within enviromental chamber in real time. 
+The website interface enables the user to easily display and control the conditions within enviromental chamber in real time. 
 The information throughout your grow cycle is saved in a grow log which you can share with other users so they can copy the exact conditions you've specifed with a click of a button. In addition AgroPi takes photos of your growth in constant intervals so you can show off your crops. 
 <br />
 <br />
-In the near future AgroPi is going to utilize AI driven image pocessing to determine whether your plants are heatlhy and if not specify what might be the issue. Future updates will focus on recognizing stages of growth and nutrient defficiencies. 
+In the near future AgroPi is going to utilize AI driven image processing to determine whether your plants are heatlhy and if not specify what might be the issue. Future updates will focus on recognizing stages of growth and nutrient defficiencies. 
 
 <div align="center">
 
