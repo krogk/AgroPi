@@ -184,6 +184,9 @@
                     <div class="form-group">
                         <label style="margin-bottom: 20px;">Temperature (celsius)</label>
                         <input type="text" id="temperature-slider">
+                        <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_temperature_value()" id="update-control-button">
+                          <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="col-md-2 px-1">
@@ -192,6 +195,9 @@
                     <div class="form-group">
                         <label style="margin-bottom: 20px;">Humidity (%)</label>
                         <input type="text" id="humidity-slider">
+                        <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_humidity_value()" id="update-control-button">
+                          <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="col-md-1 px-1">
@@ -207,6 +213,9 @@
                     <div class="form-group">
                         <label style="margin-bottom: 20px;">Light Intensity (Lux)</label>
                         <input type="text" id="light-slider">
+                        <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_light_value()" id="update-control-button">
+                          <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="col-md-2 px-1">
@@ -215,6 +224,9 @@
                     <div class="form-group">
                         <label style="margin-bottom: 20px;">Ethanol</label>
                         <input type="text" id="ethanol-slider">
+                        <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_ethanol_value()" id="update-control-button">
+                          <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="col-md-1 px-1">
@@ -230,6 +242,9 @@
                     <div class="form-group">
                         <label style="margin-bottom: 20px;">TVOC (ppb)</label>
                         <input type="text" id="tvoc-slider">
+                        <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_tvoc_value()" id="update-control-button">
+                          <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="col-md-2 px-1">
@@ -238,6 +253,9 @@
                     <div class="form-group">
                         <label style="margin-bottom: 20px;">eCO2 (ppm)</label>
                         <input type="text" id="eco2-slider">
+                        <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_eco2_value()" id="update-control-button">
+                          <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="col-md-1 px-1">
@@ -253,6 +271,9 @@
                     <div class="form-group">
                         <label style="margin-bottom: 20px;">H2</label>
                         <input type="text" id="h2-slider">
+                        <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_h2_value()" id="update-control-button">
+                          <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="col-md-2 px-1">
@@ -266,18 +287,80 @@
                         </div>
                       </div>
                       <div class="col-md-4">
+                      </div>
+                      <div class="col-md-4">
+                        <label style="margin-bottom: 10px;">Heating Heuristic</label>
+                        <div class="form-group">
+                            <input type="checkbox" netliva-switch data-active-text="ON" data-passive-text="OFF" data-width="70px" id="heating-heu-toggle">
+                        </div>
+                      </div>
+                      <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_heating()" id="update-control-button">
+                          <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 px-1">
+                    <div class="row">
+                      <div class="col-md-4">
                         <label style="margin-bottom: 10px;">Airflow</label>
                         <div class="form-group">
                             <input type="checkbox" netliva-switch data-active-text="ON" data-passive-text="OFF" data-width="70px" id="airflow-toggle">
                         </div>
                       </div>
                       <div class="col-md-4">
+                      </div>
+                      <div class="col-md-4">
+                        <label style="margin-bottom: 10px;">Airflow Heurestic</label>
+                        <div class="form-group">
+                            <input type="checkbox" netliva-switch data-active-text="ON" data-passive-text="OFF" data-width="70px" id="airflow-heu-toggle">
+                        </div>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_airflow()" id="update-control-button">
+                      <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+                    </button>
+                </div>
+                <div class="col-md-4 px-1">
+                    <div class="row">
+                      <div class="col-md-4">
                         <label style="margin-bottom: 10px;">Lights</label>
                         <div class="form-group">
                             <input type="checkbox" netliva-switch data-active-text="ON" data-passive-text="OFF" data-width="70px" id="lights-toggle">
                         </div>
                       </div>
+                      <div class="col-md-4">
+                      </div>
+                      <div class="col-md-4">
+                        <label style="margin-bottom: 10px;">Lights Heurestic</label>
+                        <div class="form-group">
+                            <input type="checkbox" netliva-switch data-active-text="ON" data-passive-text="OFF" data-width="70px" id="lights-heu-toggle">
+                        </div>
+                      </div>
                     </div>
+                    <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_lights()" id="update-control-button">
+                      <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+                    </button>
+                </div>
+                <div class="col-md-4 px-1">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <label style="margin-bottom: 10px;">Water Pump</label>
+                        <div class="form-group">
+                            <input type="checkbox" netliva-switch data-active-text="ON" data-passive-text="OFF" data-width="70px" id="water-toggle">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                      </div>
+                      <div class="col-md-4">
+                        <label style="margin-bottom: 10px;">Water Pump Heurestic</label>
+                        <div class="form-group">
+                            <input type="checkbox" netliva-switch data-active-text="ON" data-passive-text="OFF" data-width="70px" id="water-heu-toggle">
+                        </div>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_water()" id="update-control-button">
+                      <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+                    </button>
                 </div>
                 <div class="col-md-1 px-1">
                 </div>
@@ -290,9 +373,9 @@
                 <div class="col-md-2 px-1">
                 </div>
                 <div class="col-md-4 px-1">
-                  <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_control_values()" id="update-control-button">
+                  <!-- <button class="btn btn-primary btn-round" type="button" style="float: right;" onclick="update_control_values()" id="update-control-button">
                     <i class="now-ui-icons arrows-1_cloud-upload-94"></i> Update
-                  </button>
+                  </button> -->
                 </div>
                 <div class="col-md-1 px-1">
                 </div>
