@@ -126,7 +126,7 @@ public:
 		uint8_t operation = atoi(m["operation"].c_str());
 		float value = atof(m["value"].c_str());
 		// Pass Data to event handler 
-		//controllerfastcgi->MessageHandler(operation,value);
+		controllerfastcgi->MessageHandler(operation,value);
 		//samplerCallback->MessageHandler();
 	}
 

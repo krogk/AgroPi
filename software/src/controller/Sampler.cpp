@@ -36,7 +36,6 @@ int Sampler::Initialize()
 	envData.RawH2 = 0.0; 
 
 	// Set sample counter to zero
-	sampleCounter = 0;
 	return 0;
 }
 
@@ -75,6 +74,7 @@ int Sampler::CloseDevices()
 * Sends the Env data from all sensors to the web server via http.
 *
 */
+/*
 void Sampler::SendEnvData()
 {
 	SendDataToWebApp("LIGHT_INTENSITY", envData.LightIntensity);
@@ -85,12 +85,13 @@ void Sampler::SendEnvData()
 	SendDataToWebApp("ETHANOL", envData.RawEthanol);
 	SendDataToWebApp("H2", envData.RawH2);
 }
-
+/*
 
 /**
 * Sends the Env data from all sensors to the web server via http.
 *
 */
+/*
 void Sampler::SendDataToWebApp(std::string variable_type, float value)
 {
 	httplib::Client cli("http://127.0.0.1:5050");
@@ -103,7 +104,7 @@ void Sampler::SendDataToWebApp(std::string variable_type, float value)
 	}
 
 }
-
+*/
 
 /**
 * Prints data read by sensors by turn.

@@ -42,10 +42,8 @@ public:
 	I2C_Return Plain_I2C_Write_Read(int fd, uint16_t command, uint8_t *buffer, uint8_t readLength, uint16_t delay=10);
 	I2C_Return Plain_I2C_Write_Read_CRC8(int fd, uint16_t command, uint16_t *buffer, uint8_t readlen, uint16_t delay=10);
 	//I2C_Return Plain_I2C_Write_CRC8(int fd, uint16_t *command, uint8_t writelength, uint16_t *buffer, uint8_t readlength, uint16_t delay=10);
-	
 
 	void Delay(unsigned int timeMs);
-
 
 	/* SMBUS Functions*/
 	int I2C_Read_Byte(int fd);

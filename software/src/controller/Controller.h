@@ -49,7 +49,6 @@ public:
 	relay.Initialize(gpiodriver);
 
 	// Initialize Targets for EnvData Structure
-	// This needs to be downloaded from website
 	targets.LightIntensityUpperThreshold = 1000.0; 
   targets.LightIntensityLowerThreshold = 2.0; 
   targets.TemperatureUpperThreshold = 30.0; 					
@@ -70,10 +69,10 @@ public:
 	actuationForceFlags.Airflow = false;
 	actuationForceFlags.Watering = false;
 	// Heuristics Flags on by default
-	actuationHeuristicsFlags.Heating = true;
-	actuationHeuristicsFlags.Lighting = true;
-	actuationHeuristicsFlags.Airflow = true;
-	actuationHeuristicsFlags.Watering = true;
+	actuationHeuristicsFlags.Heating = false;
+	actuationHeuristicsFlags.Lighting = false;
+	actuationHeuristicsFlags.Airflow = false;
+	actuationHeuristicsFlags.Watering = false;
 	}
 
 	void SamplerHasData(EnvironmentData newData);
@@ -95,6 +94,7 @@ private:
   void LightActuator();
 	void HeatActuator();
 	void AirflowActuator();
+	void WateringActuator();
 
 private:
 
