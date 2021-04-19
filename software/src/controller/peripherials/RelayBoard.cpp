@@ -61,7 +61,9 @@ int RelayBoard::Lighting(int state)
 	if( ret != 0)
 	{
 		printf("Relay Board: Error: Lighting GPIO state change unsuccessful!");
+    return ret;
 	}
+  m_lightsGPIOState = state;
 	return ret;
 }
 
@@ -79,7 +81,9 @@ int RelayBoard::Heating(int state)
 	if( ret != 0)
 	{
 		printf("Relay Board: Error: Heating GPIO state change unsuccessful!");
+    return ret;
 	}
+  m_heaterGPIOState = state;
 	return ret;
 }
 
@@ -98,7 +102,9 @@ int RelayBoard::Airflow(int state)
 	if( ret != 0)
 	{
 		printf("Relay Board: Error: Airflow GPIO state change unsuccessful!");
+    return ret;
 	}
+  m_fanGPIOState = state;
 	return ret;
 }
 
@@ -117,7 +123,9 @@ int RelayBoard::Watering(int state)
 	if( ret != 0)
 	{
 		printf("Relay Board: Error: Watering GPIO state change unsuccessful!");
+    return ret;
 	}
+  m_waterPumpGPIOState = state;
 	return ret;
 }
 

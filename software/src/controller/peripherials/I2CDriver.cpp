@@ -28,7 +28,8 @@ extern "C" {
 #include "utils.h"
 
 /**
-* Dealy Function Pausing Executaion for specified amount of time.
+* Dealy Function Pausing Executaion on the
+* thread calling this function for specified amount of time.
 *
 * @param timeMs  Time to wait in miliseconds.
 * 
@@ -40,7 +41,7 @@ void I2CDriver::Delay(unsigned int timeMs) {
   sleeper.tv_sec  = (time_t)(timeMs / 1000);
   sleeper.tv_nsec = (long)(timeMs % 1000) * 1000000;
 
-  nanosleep (&sleeper, &dummy);
+  nanosleep(&sleeper, &dummy);
 }
 
 

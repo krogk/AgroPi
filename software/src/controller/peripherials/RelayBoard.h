@@ -45,15 +45,16 @@ public:
   int Turn_Relays_Off();
   int Close_Relay_Board();
   
+  int m_heaterGPIOState;
+  int m_lightsGPIOState;
+  int m_fanGPIOState;
+  int m_waterPumpGPIOState;
+
 private:
 	int m_heaterGPIO;
   int m_lightsGPIO;
   int m_fanGPIO;
   int m_waterPumpGPIO;
-  int m_heaterGPIOState;
-  int m_lightsGPIOState;
-  int m_fanGPIOState;
-  int m_waterPumpGPIOState;
   GPIODriver* m_pGPIODriver = nullptr;
 };
 

@@ -32,7 +32,11 @@
  */
 class Sampler : public CppTimer
 {
-
+	/**
+	*
+	* This class is responsible for taking measurements for all devices on I2C Bus. 
+	* Inherits from CppTimer 
+	*/
 	void timerEvent()
 	{
 		Gather_Env_Data();
@@ -40,7 +44,7 @@ class Sampler : public CppTimer
     //std::cout << "timerEvent() " << this_id << "\n";
 		if (nullptr != samplerCallback) 
 		{
-			SendEnvData();
+			//SendEnvData();
 			samplerCallback->SamplerHasData(envData);
   	}
 
