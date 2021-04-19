@@ -98,8 +98,8 @@ function update_light_value(){
     light_max = {'operation': 1, 'value': light_intensity_val[1]}
     light_min = {'operation': 2, 'value': light_intensity_val[0]}
 
-    post_data(hum_max);
-    post_data(hum_min, true);
+    post_data(light_max);
+    post_data(light_min, true);
 }
 
 function update_ethanol_value(){
@@ -143,8 +143,19 @@ function update_h2_value(){
 }
 
 function update_heating(){
-    var heating = $('#heating-toggle').prop('checked');
-    var heating_heu = $('#heating-heu-toggle').prop('checked');
+    if ($('#heating-toggle').prop('checked')){
+        heating = 1;
+    }
+    else{
+        heating = 0;
+    }
+
+    if ($('#heating-heu-toggle').prop('checked')){
+        heating_heu = 1;
+    }
+    else{
+        heating_heu = 0;
+    }
 
     heating = {'operation': 128, 'value': heating}
     heating_heu = {'operation': 132, 'value': heating_heu}
@@ -154,8 +165,19 @@ function update_heating(){
 }
 
 function update_airflow(){
-    var airflow = $('#airflow-toggle').prop('checked');
-    var airflow_heu = $('#airflow-heu-toggle').prop('checked');
+    if ($('#airflow-toggle').prop('checked')){
+        airflow = 1;
+    }
+    else{
+        airflow = 0;
+    }
+
+    if ($('#airflow-heu-toggle').prop('checked')){
+        airflow_heu = 1;
+    }
+    else{
+        airflow_heu = 0;
+    }
 
     airflow = {'operation': 129, 'value': airflow}
     airflow_heu = {'operation': 133, 'value': airflow_heu}
@@ -165,8 +187,19 @@ function update_airflow(){
 }
 
 function update_lights(){
-    var lights = $('#lights-toggle').prop('checked');
-    var lights_heu = $('#lights-heu-toggle').prop('checked');
+    if ($('#lights-toggle').prop('checked')){
+        lights = 1;
+    }
+    else{
+        lights = 0;
+    }
+
+    if ($('#lights-heu-toggle').prop('checked')){
+        lights_heu = 1;
+    }
+    else{
+        lights_heu = 0;
+    }
 
     lights = {'operation': 130, 'value': lights}
     lights_heu = {'operation': 134, 'value': lights_heu}
@@ -176,8 +209,19 @@ function update_lights(){
 }
 
 function update_water(){
-    var water = $('#water-toggle').prop('checked');
-    var water_heu = $('#water-heu-toggle').prop('checked');
+    if ($('#water-toggle').prop('checked')){
+        water = 1;
+    }
+    else{
+        water = 0;
+    }
+
+    if ($('#water-heu-toggle').prop('checked')){
+        water_heu = 1;
+    }
+    else{
+        water_heu = 0;
+    }
 
     water = {'operation': 131, 'value': water}
     water_heu = {'operation': 135, 'value': water_heu}
