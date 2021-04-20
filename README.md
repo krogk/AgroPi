@@ -5,7 +5,7 @@
   </a>
   
   <p align="center">
-    Learn cultivation of plants and mushrooms through a Raspberry Pi driven monitoring system. 
+     Cultivate your plants and mushrooms with ease through a Raspberry Pi driven monitoring and controlling system. 
     <br />
 </div>
 
@@ -56,11 +56,9 @@
 AgroPi is a flexible modular educational tool which allows user to learn how changes in enviroment effect plant's/mushroom's health. It is up to the user to decide what actuators fit the enviromental chamber needs best.   
 <br />
 <br />
-Website interface enables user to easily display and control the conditions within enviromental chamber in real time. 
-The information throughout your grow cycle is saved in a grow log which you can share with other users so they can copy the exact conditions you've specifed with a click of a button. In addition AgroPi takes photos of your growth in constant intervals so you can show off your crops. 
+Website interface enables user to easily display and control the conditions within enviromental chamber in real time. In addition AgroPi takes photos of your growth in constant intervals so you can show off your crops. 
 <br />
 <br />
-In the near future AgroPi is going to utilize AI driven image pocessing to determine whether your plants are heatlhy and if not specify what might be the issue. Future updates will focus on recognizing stages of growth and nutrient defficiencies. 
 
 <div align="center">
 
