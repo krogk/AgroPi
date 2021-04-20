@@ -115,7 +115,17 @@ As well as easily set the target values for your environmental chamber.
     <br />
 </div>
 
-Camera allows for detecting seedlings 
+Camera also allows for basic seedlings detection 
+
+<p align="center">
+  <a href="https://github.com/krogk/AgroPi">
+    <img src="media/images/seedlingdetection.jpg" alt="Actuation">
+  </a>
+  
+  <p align="center">
+    Control Panel 
+    <br />
+</div>
 
 [See Doxygen Documentation](https://krogk.github.io/AgroPi/software/docs/Doxygen/html/index.html)
 <br />
