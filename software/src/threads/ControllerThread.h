@@ -32,7 +32,7 @@ public:
 	ControllerThread()
 	{
 		samplePeriod = 250000000;
-		cameraSamplePeriod = 250000000;
+		cameraSamplePeriod = 10000000000;
 	}
 
 private:
@@ -40,7 +40,7 @@ private:
 
 private:
 	int	samplePeriod;
-	int cameraSamplePeriod;
+	long long int cameraSamplePeriod;
 };
 
 #endif

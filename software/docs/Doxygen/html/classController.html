@@ -139,7 +139,6 @@ Private Attributes</h2></td></tr>
 <p>This is class is responsilbe for the <a class="el" href="classSHT31D.html" title="SHT31D class. ">SHT31D</a> temperature and humidity sensor.</p>
 <h1><a class="anchor" id="PROTOCOL"></a>
 PROTOCOL</h1>
-<p>WATER PUMP - ANALOG - GPIO x HEATER - ANALOG - GPIO x </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a95c56822d667e94b031451729ce069a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a95c56822d667e94b031451729ce069a9">&#9670;&nbsp;</a></span>Controller()</h2>
@@ -286,6 +285,15 @@ PROTOCOL</h1>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="classSampler.html" title="Sampler Class. ">Sampler</a> Callback function. This</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opcode</td><td>ID of the operation, this has been defined in CONTROL_OP_CODES enumeration. </td></tr>
+    <tr><td class="paramname">value</td><td>value to assign to the variable</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -359,7 +367,7 @@ PROTOCOL</h1>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Handle Messages from the web server.</p>
+<p>Handle Messages from the web server. CONTROL_OP_CODES define the message purpose, the values should be float</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">opcode</td><td>ID of the operation, this has been defined in CONTROL_OP_CODES enumeration. </td></tr>
@@ -367,7 +375,8 @@ PROTOCOL</h1>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Zero On Sucess </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>void</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>: Casting to appropriate types. </dd></dl>
 
 </div>
 </div>

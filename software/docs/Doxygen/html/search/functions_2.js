@@ -1,7 +1,7 @@
 var searchData=
 [
   ['callbacktest',['CallbackTest',['../classSampler.html#a4e239960ef9947af152ba441ba152cd0',1,'Sampler']]],
-  ['camera',['Camera',['../classCamera.html#a01f94c3543f56ede7af49dc778f19331',1,'Camera']]],
+  ['camera',['Camera',['../classCamera.html#a8facf3634f5d9d5be12c488eac7b7e2a',1,'Camera']]],
   ['checkcamopen',['checkCamOpen',['../classCamera.html#a230bee20d42ae409aba0700d8205bbe0',1,'Camera']]],
   ['checkenvironmentalvariablevalue',['CheckEnvironmentalVariableValue',['../TestFunctions_8h.html#a18eb6807c62cbcb872b3a5561c6ec7b9',1,'TestFunctions.h']]],
   ['clear_5fstatus',['Clear_Status',['../classSHT31D.html#a29d822bbc17bae95b35270128942c2ba',1,'SHT31D']]],

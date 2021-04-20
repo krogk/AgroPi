@@ -156,8 +156,11 @@ void ControllerThread::run(void)
 	// Start Sampler Timer
 	sampler.start(samplePeriod);
 
+	//Instance of cap object
+	cv::VideoCapture cap(0);
+
 	//Camera 		
-	Camera camera;
+	Camera camera(&cap);
 
 	// Start sampling images
 	camera.start(cameraSamplePeriod);
@@ -173,5 +176,6 @@ void ControllerThread::run(void)
 	
 	// Stop Sampler Timer
 	sampler.stop();
+	camera.stopCamera();
 	printf("Shutting Down...\n");
 }

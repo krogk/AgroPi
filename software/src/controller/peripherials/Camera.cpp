@@ -1,5 +1,5 @@
 /**
-* @file I2CDriver.cpp
+* @file Camera.cpp
 * @author Andrew Scott-George
 * @version 0.1
 * 
@@ -10,16 +10,21 @@
 */
 #include "Camera.h"
 
+
 /**
- * 
- * 
+ * Initalises camera
+ * @todo may be redundant 
  * @param 
  * 
  * @return 
  */
 void Camera::Initialize()
 {
-    Camera::setCameraID(0); //Initialise to camera 0.
+    //Camera::setCameraID(0); //Initialise to camera 0.
+	//int id = 0;
+	//cv::VideoCapture cap(id);
+	//masterCap = &cap;
+	//Camera::savePicture(masterCap, Camera::save_path); //Take a first picture	
     return;
 }
 
@@ -30,11 +35,10 @@ void Camera::Initialize()
  * 
  * @return a saved image file as filename.jpg
  */
-void Camera::savePicture(std::string filename){
-    cv::VideoCapture cap(Camera::CameraID);
-    cap.read(img);
-    cv::waitKey(Camera::Shut);
-    cv::imwrite(filename+".jpg",img);
+void Camera::savePicture(cv::VideoCapture* cap, std::string filename){
+    cap->read(img);
+	cv::cvtColor(img, img, cv::COLOR_RGB2BGR);
+    cv::imwrite(filename,img);
 }
 
 /**
@@ -346,30 +350,27 @@ void Camera::greenFolderN(int Number){
  * @return a saved image with detections
  * 
  */
-void Camera::greenCascade(cv::Mat image){
+void Camera::greenCascade(cv::VideoCapture* cap, std::string filename, std::string cascade_path){
    //Take picture 
-    //cv::Mat image = Camera::takePicture();
-    
+    cap->read(img);
+    cv::cvtColor(img, img, cv::COLOR_RGB2BGR);
+    	    
     //Alternatibely, read an image
     cv::Mat imageHSV;
 
     //If image needs converted to HSV
-    imageHSV = Camera::greenMask(image);  //HSV green masks image
-
-    //imageHSV = image;
-    cv::imshow("Intermediate Image",imageHSV);
-    cv::waitKey(1000);
+    imageHSV = Camera::greenMask(img);  //HSV green masks image
 
     std::vector<cv::Rect> seedlings; //Instantiate vector for storing detected seedlings
 
-    std::string classifierFile ="cascadeModel/leafcascade.xml";
+    std::string classifierFile = cascade_path;
     cv::CascadeClassifier seedling_cascade;
 
     if(!seedling_cascade.load(classifierFile)){
         std::cerr<<"Could not load classifier"<<std::endl;
     }
 
-    seedling_cascade.detectMultiScale(imageHSV, seedlings, 1.1, 1);
+    seedling_cascade.detectMultiScale(imageHSV, seedlings, 1.1, 2);
 
     std::cout<<seedlings.size()<<std::endl;
 
@@ -379,15 +380,13 @@ void Camera::greenCascade(cv::Mat image){
         cv::Point center(seedlings[i].x + seedlings[i].width / 2, seedlings[i].y + seedlings[i].height / 2);
         //cv::ellipse(image, center, cv::Size(seedlings[i].width / 2, seedlings[i].height / 2), 0, 0, 360, cv::Scalar(0, 0, 255), 6);
         //cv::rectangle(image, seedlings, cv::Scalar(0, 0, 255));
-        cv::rectangle(image, seedlings[i].tl(), seedlings[i].br(), cv::Scalar(255, 0, 0), 3);
+        cv::rectangle(img, seedlings[i].tl(), seedlings[i].br(), cv::Scalar(255, 0, 0), 3);
         //cv::Point topl;
         //topl = seedlings[i].tl();
-        cv::putText(image, "Seedling", seedlings[i].tl(), 3, 0.5, cv::Scalar(255, 0, 0), 2);
+        cv::putText(img, "Seedling", seedlings[i].tl(), 3, 0.5, cv::Scalar(255, 0, 0), 2);
         //std::cout<<seedlings[i]<<std::endl;
-        cv::Mat faceROI = image(seedlings[i]);
+        cv::Mat faceROI = img(seedlings[i]);
     }
 
-    cv::imshow("Seedling Party", image);
-    cv::imwrite("Tested.jpg",image);
-    cv::waitKey(2000); 
+    cv::imwrite(filename,img); 
 }

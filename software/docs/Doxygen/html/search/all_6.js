@@ -24,7 +24,7 @@ var searchData=
   ['gpiodriver_2ecpp',['GPIODriver.cpp',['../GPIODriver_8cpp.html',1,'']]],
   ['gpiodriver_2eh',['GPIODriver.h',['../GPIODriver_8h.html',1,'']]],
   ['gpioread',['GPIORead',['../classGPIODriver.html#a68be60ab1fb0e9c29f60818654766a32',1,'GPIODriver']]],
-  ['greencascade',['greenCascade',['../classCamera.html#a5dd9bbe1eac3485d2fb835e21f0d9a9d',1,'Camera']]],
+  ['greencascade',['greenCascade',['../classCamera.html#afa26f268b99c90b239592006bad6c5a5',1,'Camera']]],
   ['greenfoldern',['greenFolderN',['../classCamera.html#ac212835924bf4cee1b8c477a6b79f4d2',1,'Camera']]],
   ['greenfolderp',['greenFolderP',['../classCamera.html#ac8f74b6c456d6fc7e9e83e746f8fc6c5',1,'Camera']]],
   ['greenmask',['greenMask',['../classCamera.html#adf305e574ca94bce9435c217fef1501b',1,'Camera']]]

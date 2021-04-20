@@ -2,7 +2,7 @@ var searchData=
 [
   ['sampler',['Sampler',['../classSampler.html#aec4905ed5f8259bb5e361da172bf7f17',1,'Sampler']]],
   ['samplerhasdata',['SamplerHasData',['../classController.html#a4b765eaaf8f72e964118967f86c265e2',1,'Controller']]],
-  ['savepicture',['savePicture',['../classCamera.html#ad0c5cc34e0b16ab7925d2c432ece20de',1,'Camera']]],
+  ['savepicture',['savePicture',['../classCamera.html#a919fb6f236e4535c0d2d29d760562ba5',1,'Camera']]],
   ['scansavegreen',['scanSaveGreen',['../classCamera.html#a06cf0ed4a2b79d95637ddeb3301d3856',1,'Camera']]],
   ['set_5fgain',['Set_Gain',['../classVEML7700.html#aecbcabefbc9469ea91153723925acbd3',1,'VEML7700']]],
   ['set_5fintegration_5ftime',['Set_Integration_Time',['../classVEML7700.html#af3f3de94154ca1dd8905e932686ca23c',1,'VEML7700']]],

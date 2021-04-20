@@ -1,7 +1,8 @@
 var searchData=
 [
   ['cameraid',['CameraID',['../classCamera.html#a96c19741cb6ba7a897ca90746e8b8918',1,'Camera']]],
-  ['camerasampleperiod',['cameraSamplePeriod',['../classControllerThread.html#af7ff15f765bb001fbb647515761173cd',1,'ControllerThread']]],
+  ['camerasampleperiod',['cameraSamplePeriod',['../classControllerThread.html#acc0d9519e838a1b508c2f2f9274a109f',1,'ControllerThread']]],
+  ['cascade_5fpath',['cascade_path',['../classCamera.html#a7f9dcee329ab710d227afa3eb8f6e4a3',1,'Camera']]],
   ['cmax',['cMax',['../classCamera.html#ad784af65b7f7e1b6ebb9b33df774d7db',1,'Camera']]],
   ['cmin',['cMin',['../classCamera.html#ab6f982f42917eb9ef75606e97fc82911',1,'Camera']]],
   ['co2',['CO2',['../structEnvironmentData.html#a5fe69eb57f3debefe5feba3a930ab851',1,'EnvironmentData']]],

@@ -72,8 +72,8 @@ void \hyperlink{classController_a92e03a719890c12f2272b8a6b904d6e1}{Watering\+Act
 \begin{DoxyAuthor}{Author}
 Kamil Rog
 \end{DoxyAuthor}
-This is class is responsilbe for the \hyperlink{classSHT31D}{S\+H\+T31D} temperature and humidity sensor.\hypertarget{classController_PROTOCOL}{}\subsection{P\+R\+O\+T\+O\+C\+OL}\label{classController_PROTOCOL}
-W\+A\+T\+ER P\+U\+MP -\/ A\+N\+A\+L\+OG -\/ G\+P\+IO x H\+E\+A\+T\+ER -\/ A\+N\+A\+L\+OG -\/ G\+P\+IO x 
+This is class is responsilbe for the \hyperlink{classSHT31D}{S\+H\+T31D} temperature and humidity sensor.\hypertarget{Controller.h_PROTOCOL}{}\subsection{P\+R\+O\+T\+O\+C\+OL}\label{Controller.h_PROTOCOL}
+
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classController_a95c56822d667e94b031451729ce069a9}\label{classController_a95c56822d667e94b031451729ce069a9}} 
@@ -125,6 +125,18 @@ Zero On Sucess
 \subsubsection{\texorpdfstring{Sampler\+Has\+Data()}{SamplerHasData()}}
 {\footnotesize\ttfamily void Controller\+::\+Sampler\+Has\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structEnvironmentData}{Environment\+Data}}]{new\+Data }\end{DoxyParamCaption})}
 
+\hyperlink{classSampler}{Sampler} Callback function. This
+
+
+\begin{DoxyParams}{Parameters}
+{\em opcode} & ID of the operation, this has been defined in C\+O\+N\+T\+R\+O\+L\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES enumeration. \\
+\hline
+{\em value} & value to assign to the variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classController_a0eb08a1d38b2c79e2d140476fd097f24}\label{classController_a0eb08a1d38b2c79e2d140476fd097f24}} 
 \index{Controller@{Controller}!Update\+\_\+\+Targets@{Update\+\_\+\+Targets}}
 \index{Update\+\_\+\+Targets@{Update\+\_\+\+Targets}!Controller@{Controller}}
@@ -143,7 +155,7 @@ Zero On Sucess
 \subsubsection{\texorpdfstring{Update\+Handler()}{UpdateHandler()}}
 {\footnotesize\ttfamily void Controller\+::\+Update\+Handler (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{opcode,  }\item[{float}]{value }\end{DoxyParamCaption})}
 
-Handle Messages from the web server.
+Handle Messages from the web server. C\+O\+N\+T\+R\+O\+L\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES define the message purpose, the values should be float
 
 
 \begin{DoxyParams}{Parameters}
@@ -153,8 +165,10 @@ Handle Messages from the web server.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Zero On Sucess 
+void
 \end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]\+: Casting to appropriate types. \end{DoxyRefDesc}
 \mbox{\Hypertarget{classController_a92e03a719890c12f2272b8a6b904d6e1}\label{classController_a92e03a719890c12f2272b8a6b904d6e1}} 
 \index{Controller@{Controller}!Watering\+Actuator@{Watering\+Actuator}}
 \index{Watering\+Actuator@{Watering\+Actuator}!Controller@{Controller}}

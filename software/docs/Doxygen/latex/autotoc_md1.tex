@@ -11,7 +11,7 @@ Once a working sensing prototype has been established for each software release 
 \item Append to \& Modify the following requirement sections.
 \end{DoxyEnumerate}
 
-An Itterative approach.
+N\+O\+TE\+: This itterative approach was okay, but more meetings could\textquotesingle{}ve been planned in the time provided to varify and investiage real-\/time software architecture implementations. Current
 
 The base of application must conist of sensors able to obtain the following set of environmental conditions\+:
 \begin{DoxyItemize}
@@ -22,13 +22,13 @@ The base of application must conist of sensors able to obtain the following set 
 \item T\+V\+OC
 \end{DoxyItemize}
 
-\mbox{[}-\/\mbox{]} Ideally each sensor should have an interrupt pin. \mbox{[}x\mbox{]} All sensors should utilize one protocol if possible this should be $\ast$\+I2\+C/\+S\+M\+B\+US.
+\mbox{[}-\/\mbox{]} Ideally each sensor should have an interrupt pin. \mbox{[}x\mbox{]} All sensors should utilize one protocol if possible this should be I2\+C/\+S\+M\+B\+US.
 
-N\+O\+TE\+: S\+PI Would be faster, however, extension would be required for R\+Pi which would complicate design.
+{\bfseries N\+O\+TE\+:} S\+PI Would be faster, however, extension would be required for R\+Pi which would complicate design.
 
-N\+O\+TE\+: None of the sensors we have decided to use for demo has interrupt functonality.
+{\bfseries N\+O\+TE\+:} None of the sensors we have decided to use for demo has interrupt functonality.
 
-This class must contain the following virtual functions to be overriden by each sensor class when inherting.
+\mbox{[}x\mbox{]} This class must contain the following virtual functions to be overriden by each sensor class when inherting.
 \begin{DoxyItemize}
 \item Initialize -\/ Opens the file descriptor to the sensor and does initial writes to sets up the sensor for reading operations.
 \item Reset -\/ Writes to sensor to set up initial state.
@@ -41,35 +41,31 @@ The class is going to also following private variables\+:
 \item m\+\_\+fd -\/ File Descriptor for I2C device.
 \end{DoxyItemize}
 
-The I2C driver functions must be implemented as signle object, only one instance of the object is going to be initialized and reference to this object is going to be passed in initialization stage of each device that requires access to the driver\textquotesingle{}s functions.
+\mbox{[}x\mbox{]} The I2C driver functions must be implemented as signle object, only one instance of the object is going to be initialized and reference to this object is going to be passed in initialization stage of each device that requires access to the driver\textquotesingle{}s functions.
 
-I2C driver must contain contain methods for plain I2C writes as well as S\+M\+B\+US. The implementation should esentially be a wrapper around the A\+PI that linux provides.
+\mbox{[}x\mbox{]} I2C driver must contain contain methods for plain I2C writes as well as S\+M\+B\+US. \mbox{[}x\mbox{]} The implementation should esentially be a wrapper around the A\+PI that linux provides.
 
-The G\+P\+IO drivermust be implemented as signle object, only one instance of the object is going to be initialized and reference to this object is going to be passed in initialization stage of each device that requires access to the driver\textquotesingle{}s functions.
+\mbox{[}x\mbox{]} The G\+P\+IO driver must be implemented as signle object, only one instance of the object is going to be initialized and reference to this object is going to be passed in initialization stage of each device that requires access to the driver\textquotesingle{}s functions.
 
 The object should be implementing using file descriptors to sys/ and contain the following functions\+:
 \begin{DoxyItemize}
-\item -\/ Set up a pin based on
-\item Set G\+P\+IO Direction
-\item Set G\+P\+IO State
-\item Read G\+P\+IO State
+\item \mbox{[}x\mbox{]} Set G\+P\+IO Direction
+\item \mbox{[}x\mbox{]} Set G\+P\+IO State
+\item \mbox{[}x\mbox{]} Set G\+P\+IO pin -\/ esentially calling the two methods.
+\item \mbox{[}x\mbox{]} Read G\+P\+IO State
 \end{DoxyItemize}
 
-N\+O\+TE\+: Currently only relay board object uses the G\+P\+IO driver. Therefore methods could\textquotesingle{}ve been implemented into relayboard object, this approach wasn\textquotesingle{}t taken as the designed architecutre allows the
+{\bfseries N\+O\+TE\+:} Currently only relay board object uses the G\+P\+IO driver. Therefore methods could\textquotesingle{}ve been implemented into relayboard object, this approach wasn\textquotesingle{}t taken as the designed architecutre allows the
 
 User must have freedom to choose the appropriate sensors for the application therefore no specific set of actuating elements must be recommended.
 
-Stated aproach means actuating method must The actuating elements are be
-
-relay is going to be used to allow for user to connect desired actuaiting. 4 Channels is the minimmum and which going to allow for the following\+:
+Relay was chosen as the high voltage functionality is appealing \mbox{[}x\mbox{]} 4 Channels is the minimmum and which going to allow for the following\+:
 \begin{DoxyItemize}
 \item Lights
 \item Heating Element
 \item Fan
-\item Water Pump / Humidifier (Not Applicable Since High Voltage is not permitted for the assignment)
+\item Water Pump or Humidifier (Not Applicable Since High Voltage is not permitted for the assignment)
 \end{DoxyItemize}
-
-The relay is going to be controlled by G\+P\+IO Pins.
 
 
 \begin{DoxyEnumerate}
@@ -84,48 +80,96 @@ The relay is going to be controlled by G\+P\+IO Pins.
 
 This is can be achievied by interrupts, timers and blocking read operations.
 
-Delay may be used {\bfseries only} if it is absolotuley required this has been defined as not infulening or delaying any other tasks, otherwise timers are the preffered choice.
+{\bfseries N\+O\+TE\+:} Currently the application uses 3 threads,
+\begin{DoxyEnumerate}
+\item Sampling Timer and timer event
+\item \hyperlink{classCamera}{Camera}
+\item J\+S\+O\+N\+Handler
+\end{DoxyEnumerate}
 
-Timers are reliable to about 100\+Hz, any functionality needing higher sampling rates must utilize different approach preferably signals, interrupts and service routines.
+\mbox{[}x\mbox{]} Delay may be used {\bfseries only} if it is absolotuley required this has been defined as not infulening or delaying any other tasks, otherwise timers are the preffered choice.
+
+\mbox{[}x\mbox{]} If delay must be used to pause execution a high resolution delay must be used.
+
+\mbox{[}x\mbox{]} Timers are reliable to about 100\+Hz, any functionality needing higher sampling rates must utilize different approach preferably signals, interrupts and service routines.
 
 Ideally an interrupt service routines is going to write to handle sensor interrupts. If Interrupt architecture cannot be realized then a a sampling is going to be implemented by a timer with an event function for whole I2C Bus. The sampling rate in such case is going to be at least 1\+Hz but preferablly 4\+Hz (Average human reaction time).
 
 As soon as the timer fires the timer event function executes. The Timer event is going to do the following\+:
 \begin{DoxyEnumerate}
-\item Gather data from each sensor by turn
-\item Use controller callback function which sends data to server and executes the actuation loop.
+\item \mbox{[}x\mbox{]} Gather data from each sensor by turn
+\item \mbox{[}x\mbox{]} Use controller callback function which sends data to server and executes the actuation loop.
 \end{DoxyEnumerate}
 
-as well as set of functions to Tx \& Rx data to \& from web-\/server.
+{\bfseries N\+O\+TE}\+:
 
-\hyperlink{classController}{Controller} object must contain the callback function for sampler object to use \hyperlink{classController}{Controller} is going to contain data structures holding latest environment data from sampler and hueristics passed from the user by the server. \hyperlink{classController}{Controller} is going to contain relay object(s) and have set of functions to controll them.
+\mbox{[}x\mbox{]} \hyperlink{classController}{Controller} object must contain the callback function for sampler object to use \mbox{[}x\mbox{]} \hyperlink{classController}{Controller} must contain data structures holding latest environment data from sampler information structures containing hueristics passed from the user by the server. \mbox{[}x\mbox{]} \hyperlink{classController}{Controller} must contain relay object. and have set of abstraction functions to controll actuators.
 
-j\+Query -\/$>$ flask server -\/$>$ nginx -\/$>$ C\+GI handler -\/$>$ C\+PP
+The web application doesn\textquotesingle{}t need to receives each sample, therefore a timer has been used on the nginx server and to create a post request.
 
-\hyperlink{classController}{Controller} thread should\+: initialize the sampler and controller object, start sampling and go into a while loop which should execute based on an exit flag which is going to be able to controlled from web server. In this while loop thread is going to read data from the server. The Read operation for the server should be blocking and as soon as the messeage has been recieved it is going to be processed by striping the opcode and this opcode with the corresponding value should be passed to the event handler function.
+Nginx -\/$>$ C\+GI handler -\/$>$ C\+PP
 
-Code must contain doxygen comments which is going to allow online to
+\hyperlink{classController}{Controller} thread should\+:
+\begin{DoxyItemize}
+\item \mbox{[}x\mbox{]} Initialize the sampler and controller object
+\item \mbox{[}x\mbox{]} Start sampling
+\item \mbox{[}x\mbox{]} Go into a while loop which should execute based on an exit flag.
+\item \mbox{[}x\mbox{]} In this while loop thread is going to read data from the server.
+\item \mbox{[}x\mbox{]} The Read operation for the server should be blocking and as soon as the messeage has been recieved it is going to be processed by striping the opcode and this opcode with the corresponding value should be passed to an appropriate event handler function.
+\end{DoxyItemize}
 
-Unit Test should focus on the drivers and sensors, this test should run first and compare
+{\bfseries N\+O\+TE\+:} The above has been achieved using a
 
-For each of the Environment condition sensors should read 10 samples and check each sample
+Code must contain doxygen comments, from these comments which is going to allow to produce U\+ML diagrams and easily inspect the code. Generate doxygen documentation must be put on the online to
+
+Before each software release the application needs to run through a set of unit and integration tests. If any new functionality is implemented or architecture of the software is changed then test suit must be updated.
+
+Before software release evidence of sucessfull test pass must be provied.
+
+\mbox{[}x\mbox{]} Unit test must focus purley on the drivers and devices. \mbox{[}x\mbox{]} For each of the Environment condition sensors should read 10 samples and check each sample\+:
 \begin{DoxyEnumerate}
-\item Check the value is within the maxiumum and minimum for the sensor
-\item Check if the value is in reasonable range
-\item 
+\item \mbox{[}x\mbox{]} Check the value is within the maxiumum and minimum for the sensor
+\item \mbox{[}x\mbox{]} Check if the value is in reasonable range, this has been specified through play testing in room conditions
 \end{DoxyEnumerate}
 
-Relay board testing\+:
+\mbox{[}\mbox{]} G\+P\+IO Testing -\/ Needs implementation but tested as a part of relay board and seems to work.
+
+\mbox{[}x\mbox{]} Relay board testing\+:
 \begin{DoxyEnumerate}
-\item S
+\item \mbox{[}x\mbox{]} Switch each relay on by turn and check the value of G\+P\+I\+Os has changed, allow one second sleep interval inbetween relay changes. Switch all relays off.
+\item \mbox{[}x\mbox{]} Switch all 4 relays on, check the value of G\+P\+I\+Os has changed, sleep for 5 seconds,
 \end{DoxyEnumerate}
 
 Integration test should test the main objects responsible for controll in the application\+:
 \begin{DoxyItemize}
-\item \hyperlink{classSampler}{Sampler}
-\item \hyperlink{classController}{Controller}
-\item J\+S\+O\+N\+Handler
+\item \mbox{[}\mbox{]} \hyperlink{classSampler}{Sampler}
+\item \mbox{[}x\mbox{]} \hyperlink{classController}{Controller}
+\item \mbox{[}\mbox{]} J\+S\+O\+N\+Handler
 \end{DoxyItemize}
+
+Currently Tested as a part of controller tests.
+
+{\bfseries N\+O\+TE\+:} A detailed set of tests needs to be implemented to exactly investigate the timing of the
+
+The controller Heuristics tests are aimed to make sure the backbone of the project is working by following test case scenario\+:
+
+By default the heuristic flags are off firstly for each heursitic coressponding env data is measurent using sampler, then the data is checked whether is has updated and actuator state is read to determine whether the actuator is turned off, then the target variable is updated through operation handler simulating a messeage from the web server, then the target gets checked. The targets are set so after turning heuristic control the actuators should turn on, the test checks for the state and repeats the process for next actuator. The samplers callback is used to send the data to the controller object.
+
+
+\begin{DoxyEnumerate}
+\item Create new .cpp \& .h files in /software/src/controller/peripherals
+\item In your header file inherit from \hyperlink{classI2CSensor}{I2\+C\+Sensor}
+\item Override necessary functions
+\item Implement Measurement function
+\item Add variables to env data struct in /software/src/utils/typedefinitions.h
+\item Add measurement function in sampler.\+h function gather\+\_\+env\+\_\+data()
+\end{DoxyEnumerate}
+
+
+\begin{DoxyEnumerate}
+\item Open /software/src/threads/controller\+Thread.h
+\item Change the sample\+Period variable in the constructor of the class, this value is in nanoseconds.
+\end{DoxyEnumerate}
 
 Project is built on these technologies\+:
 
@@ -162,7 +206,7 @@ Project is built on these technologies\+:
 \end{DoxyItemize}
 \item flaskserver
 \begin{DoxyItemize}
-\item Databases
+\item 
 \end{DoxyItemize}
 \item Python
 \begin{DoxyItemize}

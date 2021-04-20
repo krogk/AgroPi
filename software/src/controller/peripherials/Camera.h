@@ -32,18 +32,24 @@ class Camera : public CppTimer
 			//cameraCallback->CameraHasNewImage(image);
   	    }
         */
+	Camera::savePicture(masterCap, save_path);
+	//Camera::greenCascade(masterCap, save_path, cascade_path);
+
         return;
 	}
 
     public:
         /* Setup camera */
         //Camera(); 
+	//Camera constructor: receives a pointer to a cv::VideoCapture object in the ControllerThread.cpp
+	//Assigns this pointer to masterCap 
         
-        Camera() // Camera(CameraCallback* cb)
+        Camera(cv::VideoCapture* cp) // Camera(CameraCallback* cb)
         {
-            //setCallback(cb);
+           //setCallback(cb);
+	Camera::masterCap = cp;
             // Implement initialize function
-            Initialize();
+            //Initialize();
         }
         
 
@@ -78,7 +84,7 @@ class Camera : public CppTimer
         
         cv::Mat takePicture();
         
-        void savePicture(std::string filename);
+        void savePicture(cv::VideoCapture*, std::string filename);
 
         void livestream(); 
         
@@ -94,7 +100,7 @@ class Camera : public CppTimer
 
         cv::Mat greenMask(cv::Mat);
 
-        void greenCascade(cv::Mat);
+        void greenCascade(cv::VideoCapture*, std::string, std::string);
 
         /* Green masked images setup */
 
@@ -106,11 +112,13 @@ class Camera : public CppTimer
 
     private:
         cv::Mat img; ///for storing images
-        int CameraID; ///for setting camera ID, default 0
+        int CameraID = 0; ///for setting camera ID, default 0
         int cMin; ///Minimum contrast for image normalization
         int cMax; ///Maximmum contrast for image normalization
         int Shut = 0; ///Shutter speed in ms; 30 is reasonable
-
+	cv::VideoCapture* masterCap = nullptr; //VideoCapture pointer for accessing camera
+	std::string save_path = "../web/app/static/test.jpg";
+	std::string cascade_path = "../src/controller/peripherials/Resources/seedcascade.xml";
         std::string model_file = "Resources/frozen_inference_graph.pb";
         std::string config_file = "Resources/ssd_mobilenet_v2_coco_2018_03_29.pbtxt";
         //CameraCallback* cameraCallback = nullptr;

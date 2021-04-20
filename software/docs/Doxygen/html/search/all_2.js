@@ -1,11 +1,12 @@
 var searchData=
 [
   ['callbacktest',['CallbackTest',['../classSampler.html#a4e239960ef9947af152ba441ba152cd0',1,'Sampler']]],
-  ['camera',['Camera',['../classCamera.html',1,'Camera'],['../classCamera.html#a01f94c3543f56ede7af49dc778f19331',1,'Camera::Camera()']]],
+  ['camera',['Camera',['../classCamera.html',1,'Camera'],['../classCamera.html#a8facf3634f5d9d5be12c488eac7b7e2a',1,'Camera::Camera()']]],
   ['camera_2ecpp',['Camera.cpp',['../Camera_8cpp.html',1,'']]],
   ['camera_2eh',['Camera.h',['../Camera_8h.html',1,'']]],
   ['cameraid',['CameraID',['../classCamera.html#a96c19741cb6ba7a897ca90746e8b8918',1,'Camera']]],
-  ['camerasampleperiod',['cameraSamplePeriod',['../classControllerThread.html#af7ff15f765bb001fbb647515761173cd',1,'ControllerThread']]],
+  ['camerasampleperiod',['cameraSamplePeriod',['../classControllerThread.html#acc0d9519e838a1b508c2f2f9274a109f',1,'ControllerThread']]],
+  ['cascade_5fpath',['cascade_path',['../classCamera.html#a7f9dcee329ab710d227afa3eb8f6e4a3',1,'Camera']]],
   ['checkcamopen',['checkCamOpen',['../classCamera.html#a230bee20d42ae409aba0700d8205bbe0',1,'Camera']]],
   ['checkenvironmentalvariablevalue',['CheckEnvironmentalVariableValue',['../TestFunctions_8h.html#a18eb6807c62cbcb872b3a5561c6ec7b9',1,'TestFunctions.h']]],
   ['clear_5fstatus',['Clear_Status',['../classSHT31D.html#a29d822bbc17bae95b35270128942c2ba',1,'SHT31D']]],

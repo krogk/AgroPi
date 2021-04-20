@@ -16,5 +16,6 @@ var searchData=
   ['m_5fwaterpumpgpiostate',['m_waterPumpGPIOState',['../classRelayBoard.html#acf0292f25a47eb8facbec7279c0fa69d',1,'RelayBoard']]],
   ['mainrunning',['mainRunning',['../ControllerThread_8cpp.html#a94a2e79f236e50a73fb8c842bcff7738',1,'ControllerThread.cpp']]],
   ['mainthread',['mainThread',['../classJSONCGIHandler.html#aca513f708ae4dc76ba70196ff25da695',1,'JSONCGIHandler']]],
+  ['mastercap',['masterCap',['../classCamera.html#af32d4a5550c35edb96c9e81fb4208adb',1,'Camera']]],
   ['model_5ffile',['model_file',['../classCamera.html#a22a0754fc359b253e203ce59026021a0',1,'Camera']]]
 ];
