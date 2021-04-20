@@ -7,7 +7,6 @@
   <p align="center">
      Cultivate your plants and mushrooms with ease through a Raspberry Pi driven monitoring and controlling system. 
 
-    <br />
 </div>
 
 <p align="center">
