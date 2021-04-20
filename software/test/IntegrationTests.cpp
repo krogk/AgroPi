@@ -109,8 +109,8 @@ BOOST_AUTO_TEST_CASE(CONTROLLER_OPERATION_HANDLER)
   ActuationForceFlags  controllerDefaultForceFlags = controller.actuationForceFlags;
   ActuationHeuristicsFlags controllerDefaultHeuristicsFlags = controller.actuationHeuristicsFlags;
 
-  // Tes
-  uint8_t NewTargetvalues[14] = { 300,
+  // New Values vector corresponds in sequence to the operation codes
+  uint16_t NewTargetvalues[14] = { 300,
                                   100,
                                   50,
                                   10,
@@ -123,9 +123,10 @@ BOOST_AUTO_TEST_CASE(CONTROLLER_OPERATION_HANDLER)
                                   1000,
                                   100,
                                   90,
-                                  30 }
+                                  30 };
 
-  //controller.Update_Targets(LIGHT_INTENSITY_UPPER_TARGET_CHANGE, );
+  // int counter = 0;
+  //controller.UpdateHandler(LIGHT_INTENSITY_UPPER_TARGET_CHANGE, NewTargetvalues[0]);
   // BOOST_CHECK_MESSAGE( relay.m_heaterGPIOState == RELAY_OFF,  "Heating GPIO State is: " <<  relay.m_heaterGPIOState << " - Must Be 1 After Initialization" );
 
 

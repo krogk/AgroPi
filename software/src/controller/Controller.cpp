@@ -40,7 +40,7 @@ void Controller::SamplerHasData(EnvironmentData newData)
 *
 * @return Zero On Sucess 
 */
-void Controller::MessageHandler(uint8_t opcode, float value)
+void Controller::UpdateHandler(uint8_t opcode, float value)
 {
 	printf("Operation %d Value: %f\n", opcode, value);
 	// Switch with OP CODE

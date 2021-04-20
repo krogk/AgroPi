@@ -121,7 +121,7 @@ public:
 		uint8_t operation = atoi(m["operation"].c_str());
 		float value = atof(m["value"].c_str());
 		// Pass Data to event handler 
-		controllerfastcgi->MessageHandler(operation,value);
+		controllerfastcgi->UpdateHandler(operation,value);
 	}
 
 	/**
@@ -157,7 +157,7 @@ void ControllerThread::run(void)
 	sampler.start(samplePeriod);
 
 	//Camera 		
-	Camera camera();
+	Camera camera;
 
 	// Start sampling images
 	camera.start(cameraSamplePeriod);

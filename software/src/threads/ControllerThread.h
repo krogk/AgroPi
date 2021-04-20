@@ -40,6 +40,7 @@ private:
 
 private:
 	int	samplePeriod;
+	int cameraSamplePeriod;
 };
 
 #endif

@@ -48,7 +48,7 @@ public:
 	//
 	relay.Initialize(gpiodriver);
 
-	// Initialize Targets for EnvData Structure
+	// Initialize Thresholds for Heuristics 
 	targets.LightIntensityUpperThreshold = 1000.0; 
   targets.LightIntensityLowerThreshold = 2.0; 
   targets.TemperatureUpperThreshold = 30.0; 					
@@ -78,24 +78,12 @@ public:
 	void SamplerHasData(EnvironmentData newData);
 
 	int Update_Targets(uint8_t opcode, float vlaue);
-	void Handler(uint8_t opcode, float value );
+	void UpdateHandler(uint8_t opcode, float value );
 
 	EnvironmentData envData; 				      			/*!< Current Enviroment Conditions Read Froms the sensors */
 	TargetEnvironmentData targets; 				      /*!< Target Enviroment Conditions */
 	ActuationForceFlags actuationForceFlags;		/*!< Actuatuion force flags ignoring hu Enviroment Conditions */
 	ActuationHeuristicsFlags  actuationHeuristicsFlags; /*!< Actuatuion Heuristics flags if this is disabled the actuator doesn't run against hueristics */
-
-private:
-	void ActuatorHandler();
-	void SendEnvData();
-  void SendDataToWebApp(std::string variable_type, float value);
-
-  void LightActuator();
-	void HeatActuator();
-	void AirflowActuator();
-	void WateringActuator();
-
-private:
 
 	enum CONTROL_OP_CODES {
 	LIGHT_INTENSITY_UPPER_TARGET_CHANGE 	= 1,
@@ -122,6 +110,19 @@ private:
 	ENABLE_LIGHTS_HEURISTIC								= 134,
 	ENABLE_WATER_PUMP_HEURISTIC						= 135
 	};
+
+
+private:
+	void ActuatorHandler();
+	void SendEnvData();
+  void SendDataToWebApp(std::string variable_type, float value);
+
+  void LightActuator();
+	void HeatActuator();
+	void AirflowActuator();
+	void WateringActuator();
+
+private:
 
 	GPIODriver gpiodriver;
 	RelayBoard relay;

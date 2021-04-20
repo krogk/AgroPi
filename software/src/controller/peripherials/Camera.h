@@ -8,6 +8,7 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 #include <opencv2/opencv.hpp>
+#include "CppTimer.h"
 #include <string>
 #include <fstream>
 #include <sstream>
