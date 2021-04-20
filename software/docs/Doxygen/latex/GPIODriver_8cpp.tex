@@ -1,0 +1,96 @@
+\hypertarget{GPIODriver_8cpp}{}\section{src/controller/peripherials/\+G\+P\+I\+O\+Driver.cpp File Reference}
+\label{GPIODriver_8cpp}\index{src/controller/peripherials/\+G\+P\+I\+O\+Driver.\+cpp@{src/controller/peripherials/\+G\+P\+I\+O\+Driver.\+cpp}}
+{\ttfamily \#include \char`\"{}G\+P\+I\+O\+Driver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Relay\+Board.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+Include dependency graph for G\+P\+I\+O\+Driver.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GPIODriver_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{GPIODriver_8cpp_ac2bbd6d630a06a980d9a92ddb9a49928}{IN}~0
+\item 
+\#define \hyperlink{GPIODriver_8cpp_aec78e7a9e90a406a56f859ee456e8eae}{O\+UT}~1
+\item 
+\#define \hyperlink{GPIODriver_8cpp_ab811d8c6ff3a505312d3276590444289}{L\+OW}~0
+\item 
+\#define \hyperlink{GPIODriver_8cpp_a5bb885982ff66a2e0a0a45a8ee9c35e2}{H\+I\+GH}~1
+\item 
+\#define \hyperlink{GPIODriver_8cpp_a437e2826e590435de33777cdab13faef}{G\+P\+I\+O\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+L\+E\+N\+G\+TH}~3
+\begin{DoxyCompactList}\small\item\em Define B. \end{DoxyCompactList}\item 
+\#define \hyperlink{GPIODriver_8cpp_ad0ca8f10a33dc934babb22393b1eee16}{D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH}~35
+\item 
+\#define \hyperlink{GPIODriver_8cpp_aad53eaa9f18598639a489d0a5c05cd02}{V\+A\+L\+U\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH}~30
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Kamil Rog 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1
+\end{DoxyVersion}
+This file contains the functions for G\+P\+IO driver class. 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{GPIODriver_8cpp_ad0ca8f10a33dc934babb22393b1eee16}\label{GPIODriver_8cpp_ad0ca8f10a33dc934babb22393b1eee16}} 
+\index{G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}!D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH@{D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH}}
+\index{D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH@{D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH}!G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}}
+\subsubsection{\texorpdfstring{D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH}{DIRECTION\_STRING\_MAX\_LENGTH}}
+{\footnotesize\ttfamily \#define D\+I\+R\+E\+C\+T\+I\+O\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH~35}
+
+\mbox{\Hypertarget{GPIODriver_8cpp_a437e2826e590435de33777cdab13faef}\label{GPIODriver_8cpp_a437e2826e590435de33777cdab13faef}} 
+\index{G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}!G\+P\+I\+O\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+L\+E\+N\+G\+TH@{G\+P\+I\+O\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+L\+E\+N\+G\+TH}}
+\index{G\+P\+I\+O\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+L\+E\+N\+G\+TH@{G\+P\+I\+O\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+L\+E\+N\+G\+TH}!G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}}
+\subsubsection{\texorpdfstring{G\+P\+I\+O\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+L\+E\+N\+G\+TH}{GPIO\_STRING\_LENGTH}}
+{\footnotesize\ttfamily \#define G\+P\+I\+O\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+L\+E\+N\+G\+TH~3}
+
+
+
+Define B. 
+
+\mbox{\Hypertarget{GPIODriver_8cpp_a5bb885982ff66a2e0a0a45a8ee9c35e2}\label{GPIODriver_8cpp_a5bb885982ff66a2e0a0a45a8ee9c35e2}} 
+\index{G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}!H\+I\+GH@{H\+I\+GH}}
+\index{H\+I\+GH@{H\+I\+GH}!G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}}
+\subsubsection{\texorpdfstring{H\+I\+GH}{HIGH}}
+{\footnotesize\ttfamily \#define H\+I\+GH~1}
+
+\mbox{\Hypertarget{GPIODriver_8cpp_ac2bbd6d630a06a980d9a92ddb9a49928}\label{GPIODriver_8cpp_ac2bbd6d630a06a980d9a92ddb9a49928}} 
+\index{G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}!IN@{IN}}
+\index{IN@{IN}!G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}}
+\subsubsection{\texorpdfstring{IN}{IN}}
+{\footnotesize\ttfamily \#define IN~0}
+
+\mbox{\Hypertarget{GPIODriver_8cpp_ab811d8c6ff3a505312d3276590444289}\label{GPIODriver_8cpp_ab811d8c6ff3a505312d3276590444289}} 
+\index{G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}!L\+OW@{L\+OW}}
+\index{L\+OW@{L\+OW}!G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}}
+\subsubsection{\texorpdfstring{L\+OW}{LOW}}
+{\footnotesize\ttfamily \#define L\+OW~0}
+
+\mbox{\Hypertarget{GPIODriver_8cpp_aec78e7a9e90a406a56f859ee456e8eae}\label{GPIODriver_8cpp_aec78e7a9e90a406a56f859ee456e8eae}} 
+\index{G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}!O\+UT@{O\+UT}}
+\index{O\+UT@{O\+UT}!G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}}
+\subsubsection{\texorpdfstring{O\+UT}{OUT}}
+{\footnotesize\ttfamily \#define O\+UT~1}
+
+\mbox{\Hypertarget{GPIODriver_8cpp_aad53eaa9f18598639a489d0a5c05cd02}\label{GPIODriver_8cpp_aad53eaa9f18598639a489d0a5c05cd02}} 
+\index{G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}!V\+A\+L\+U\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH@{V\+A\+L\+U\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH}}
+\index{V\+A\+L\+U\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH@{V\+A\+L\+U\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH}!G\+P\+I\+O\+Driver.\+cpp@{G\+P\+I\+O\+Driver.\+cpp}}
+\subsubsection{\texorpdfstring{V\+A\+L\+U\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH}{VALUE\_STRING\_MAX\_LENGTH}}
+{\footnotesize\ttfamily \#define V\+A\+L\+U\+E\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N\+G\+TH~30}
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>AgroPi</title>
+	<style>
+	 body {
+             width: 35em;
+             margin: 0 auto;
+             font-family: Tahoma, Verdana, Arial, sans-serif;
+	 }
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css" />
+    </head>
+    <body>
+      <h2>Realtime data plot with JSON data transfer</h2>
+
+			<h3> Light Intensity: <span id="lightintensity">00</span> Lux</h3>
+      <h3> Temperature: <span id="temperature">00</span> C Humidity: <span id="humidity">00</span> %</h3>
+			<h3> Carbon Dioxide: <span id="co2">00</span> ppm TVOC: <span id="tvoc">00</span> TVOC ppb</h3>
+			<h3> Ethanol: <span id="eth">00</span> ppb Hydrogen: <span id="h2">00</span> H2 ppm</h3>
+
+	<p>This is a realtime demo where the java script requests the data
+	  and then appends it to the plot every second.</p>
+	<br />
+
+	<h3> Light Intensity </h3>
+	<div id="div_light" style="width:600px; height:300px;"> </div>
+	<br />
+	<h3> Temperature </h3>
+	<br />
+	<div id="div_temp" style="width:600px; height:300px;"> </div>
+	<br />
+	<h3> Humidity </h3>
+	<br />
+	<div id="div_hum" style="width:600px; height:300px;"></div>
+	<br />
+	<h3> TVOC </h3>
+	<br />
+	<div id="div_tvoc" style="width:600px; height:300px;"></div>
+	<br />
+	<h3> Carbon Dioxide </h3>
+	<br />
+	<div id="div_co2" style="width:600px; height:300px;"></div>
+	<br />
+	<h3> Ethanol </h3>
+	<br />
+	<div id="div_eth" style="width:600px; height:300px;"></div>
+	<br />
+	<h3> Hydrogen </h3>
+	<br />
+	<div id="div_h2" style="width:600px; height:300px;"></div>
+	<br />
+	<br />
+	
+	<script type="text/javascript">
+	  // max samples for dygraph
+	  var maxSamples = 60;
+
+	  // relative path to the sensor data for get/post:
+	  var serverPath = "/sensor/:80";
+	  
+	  // callback when the Web page has been loaded
+	  $(document).ready(function() {
+	      var data = [];
+				var tempData = [];
+				var luxData = [];
+				var humData = [];
+				var co2Data = [];
+				var tvocData = [];
+				var ethData = [];
+				var h2Data = [];
+	      var g = new Dygraph(document.getElementById("div_temp"), data,
+				  {
+				      drawPoints: true,
+				      labels: ['Time', 'Temperature'],
+				  });
+
+				var gLux = new Dygraph(document.getElementById("div_light"), luxData,
+				  {
+				      drawPoints: true,
+				      labels: ['Time', 'Lightintensity'],
+				  });
+
+				var gHum = new Dygraph(document.getElementById("div_hum"), humData,
+				  {
+				      drawPoints: true,
+				      labels: ['Time', 'Humidity'],
+				  });
+
+				var gCo2 = new Dygraph(document.getElementById("div_co2"), co2Data,
+				  {
+				      drawPoints: true,
+				      labels: ['Time', 'eCO2 ppm'],
+				  });
+
+				var gTVOC = new Dygraph(document.getElementById("div_tvoc"), tvocData,
+				  {
+				      drawPoints: true,
+				      labels: ['Time', 'TVOC ppb'],
+				  });
+
+					var gEth = new Dygraph(document.getElementById("div_eth"), ethData,
+				  {
+				      drawPoints: true,
+				      labels: ['Time', 'Ethanol ppb'],
+				  });
+
+					var gH2 = new Dygraph(document.getElementById("div_h2"), h2Data,
+				  {
+				      drawPoints: true,
+				      labels: ['Time', 'H2 ppm'],
+				  });
+					
+	      $("#driver").click(function(event){
+		  $.post( 
+                      serverPath,
+                      {
+			  operation: 1,
+			  value: 100,
+		      }
+		  );
+		  
+              });
+	      
+	      window.intervalId = setInterval(function() {
+		  // callback for interval timer for every second
+		  $.getJSON(serverPath,function(result){
+		      // callback after the php script has been called
+		      var utcSeconds = result.epoch;
+		      var d = new Date(0);
+		      d.setUTCSeconds(utcSeconds);
+		      var x = d;
+		      var y = result.temperature;
+					var yt = result.temperature;
+					var yl = result.lightintensity;
+					var yh = result.humidity;
+					var yc = result.co2;
+					var yt = result.tvoc;
+					var ye = result.eth;
+					var yh2 = result.h2;
+                      document.getElementById("temperature").innerHTML = Math.round(y * 100) / 100;
+											document.getElementById("humidity").innerHTML = Math.round(yh * 100) / 100;
+											document.getElementById("lightintensity").innerHTML = Math.round(yl * 100) / 100;
+											document.getElementById("co2").innerHTML = Math.round(yc * 100) / 100;
+											document.getElementById("tvoc").innerHTML = Math.round(yt * 100) / 100;
+											document.getElementById("eth").innerHTML = Math.round(ye * 100) / 100;
+											document.getElementById("h2").innerHTML = Math.round(yh2 * 100) / 100;
+		      if (data.length > maxSamples) {
+			  data.shift();
+				tempData.shift();
+				luxData.shift();
+				humData.shift();
+				co2Data.shift();
+				tvocData.shift();
+				ethData.shift();
+				h2Data.shift();
+		      }
+		      data.push([x, y]);
+					luxData.push([x, yl]);
+					humData.push([x, yh]);
+					co2Data.push([x, yc]);
+					tvocData.push([x, yt]);
+					ethData.push([x, ye]);
+					h2Data.push([x, yh2]);
+		      g.updateOptions( { 'file': data } );
+					gLux.updateOptions( { 'file': luxData } );
+					gHum.updateOptions( { 'file': humData } );
+					gCo2.updateOptions( { 'file': co2Data } );
+					gTVOC.updateOptions( { 'file': tvocData } );
+					gEth.updateOptions( { 'file': ethData } );
+					gH2.updateOptions( { 'file': h2Data } );
+		  });
+	      }, 1000);
+	  });
+	</script>
+	
+	
+	<br />
+	<br />
+<br />
+<br />
+<input type = "button" id = "driver" value = "Force constant 20C" />
+<br />
+<br />
+<p><a href="/">Main page</a></p>
+<br />
+<br />
+<br />
+<br />
+
+<h2>References</h2>
+
+<p><a href="http://dygraphs.com/">dygraphs</p>
+
+<p><a href="https://github.com/krogk/Agropi">github repo</a></p>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<p><a href="textonly.html">Text only version</a></p>
+	
+    </body>
+</html>

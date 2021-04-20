@@ -1,8 +1,19 @@
 var searchData=
 [
+  ['light_5fintensity_5flower_5ftarget_5fchange',['LIGHT_INTENSITY_LOWER_TARGET_CHANGE',['../IntegrationTests_8cpp.html#ababe8748e7b9dd8ba2589b9c4512ff42',1,'LIGHT_INTENSITY_LOWER_TARGET_CHANGE():&#160;IntegrationTests.cpp'],['../Controller_8h.html#af2aa7191ff70853e51846b5057935d09acb4b1049e371749e7fa8949273996425',1,'LIGHT_INTENSITY_LOWER_TARGET_CHANGE():&#160;Controller.h']]],
+  ['light_5fintensity_5fupper_5ftarget_5fchange',['LIGHT_INTENSITY_UPPER_TARGET_CHANGE',['../IntegrationTests_8cpp.html#a2eee6e5e06757df3b094cbae3be6d3a8',1,'LIGHT_INTENSITY_UPPER_TARGET_CHANGE():&#160;IntegrationTests.cpp'],['../Controller_8h.html#af2aa7191ff70853e51846b5057935d09a0a469239010b69082ea5bc22a0347baf',1,'LIGHT_INTENSITY_UPPER_TARGET_CHANGE():&#160;Controller.h']]],
+  ['lightactuator',['LightActuator',['../classController.html#ad45f507b92936f2964524270c62c9d07',1,'Controller']]],
+  ['lighting',['Lighting',['../structActuationForceFlags.html#ad624645b72bca1c2297753232ef62199',1,'ActuationForceFlags::Lighting()'],['../structActuationHeuristicsFlags.html#a78679bf94f4fbf96995a7942719dd756',1,'ActuationHeuristicsFlags::Lighting()'],['../classRelayBoard.html#a0ce37124540bae0827a1b81e28841f70',1,'RelayBoard::Lighting()']]],
   ['lightintensity',['LightIntensity',['../structEnvironmentData.html#a2013551c12a584a6680517d750b2116a',1,'EnvironmentData']]],
   ['lightintensitylowerthreshold',['LightIntensityLowerThreshold',['../structTargetEnvironmentData.html#a4619dffef19d60fd03d690fd756b595c',1,'TargetEnvironmentData']]],
   ['lightintensityupperthreshold',['LightIntensityUpperThreshold',['../structTargetEnvironmentData.html#a7755db8c43daca465d5ac3730d57f7d8',1,'TargetEnvironmentData']]],
   ['lightsensor',['lightSensor',['../classSampler.html#ae81394f464670af514f8dc7c5df46d74',1,'Sampler']]],
-  ['lightsgpio',['lightsGPIO',['../classRelayBoard.html#a05f68a6555288127a238e31282886ae0',1,'RelayBoard']]]
+  ['livestream',['livestream',['../classCamera.html#af0d3c970e947813e71f316b9e499b456',1,'Camera']]],
+  ['livestream_2ecpp',['livestream.cpp',['../livestream_8cpp.html',1,'']]],
+  ['low',['LOW',['../GPIODriver_8cpp.html#ab811d8c6ff3a505312d3276590444289',1,'GPIODriver.cpp']]],
+  ['lower_5fthreshold_5fvalue_5fcheck_5ffailed',['LOWER_THRESHOLD_VALUE_CHECK_FAILED',['../TestFunctions_8h.html#a88a3bf672ec2cde645342b7b662b3fbaa14c7a7478fbb8a2e715194a9dddb9e4e',1,'TestFunctions.h']]],
+  ['lux_5fmax',['LUX_MAX',['../TestFunctions_8h.html#a439277832d2729315a5e4dbf64feec57',1,'TestFunctions.h']]],
+  ['lux_5fmax_5freasonable',['LUX_MAX_REASONABLE',['../TestFunctions_8h.html#a3289fb2394d1b2cfaaeae6c9acf56cf7',1,'TestFunctions.h']]],
+  ['lux_5fmin',['LUX_MIN',['../TestFunctions_8h.html#afae3c3f54130bbf63ae1f4565f07a518',1,'TestFunctions.h']]],
+  ['lux_5fmin_5freasonable',['LUX_MIN_REASONABLE',['../TestFunctions_8h.html#aba4ee5bea44dc2e5a04f1e2b55cb9cbb',1,'TestFunctions.h']]]
 ];

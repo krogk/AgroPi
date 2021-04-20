@@ -72,10 +72,12 @@ class Admin(db.Document):
 class Measurement(db.Document):
     class Type(SlickEnum):
         TEMPERATURE = "TEMPERATURE"
-        WATER_LEVEL = "WATER_LEVEL"
+        TVOC = "TVOC"
         LIGHT_INTENSITY = "LIGHT_INTENSITY"
         HUMIDITY = "HUMIDITY"
-        CO2 = "CO2"
+        ECO2 = "ECO2"
+        ETHANOL = "ETHANOL"
+        H2 = "H2"
 
     type = db.StringField(reqired=True, choices=Type.to_list())
     value = db.DecimalField()
@@ -100,14 +102,13 @@ class Measurement(db.Document):
         dict_obj = {}
         for column, value in self._fields.items():
             if column == "created_at":
-                dict_obj[column] = datetime.strftime(getattr(self, column), "%H:%M")
+                dict_obj['x'] = datetime.strftime(getattr(self, column), "%H:%M:%S")
             elif column == "value":
+                dict_obj['y'] = str(getattr(self, column))
+            elif column == "type":
                 dict_obj[column] = str(getattr(self, column))
             else:
-                dict_obj[column] = getattr(self, column)
-
-        if "id" in dict_obj:
-            dict_obj["id"] = str(dict_obj["id"])
+                pass
         return dict_obj
 
 

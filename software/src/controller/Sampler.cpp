@@ -12,21 +12,21 @@
 #include <stdio.h>
 
 
-
 /**
 * Initialize all enviromental data struct variables and sensors.
 *
 * filepath filepath for settings file.
 * 
 */
-int Sampler::Initialize(){
-	printf("Initializing Peripherials...\n");
-	/*Initialize Peripherials*/
+int Sampler::Initialize()
+{
+	printf("Sampler: Initializing Peripherials...\n");
+	// Initialize Peripherials
 	lightSensor.Initialize(i2cDriver);
 	temperatureHumiditySensor.Initialize(i2cDriver);
 	gasSensor.Initialize(i2cDriver);
 	
-	/* Initialize EnvData Structure*/
+	// Initialize EnvData Structure
 	envData.LightIntensity = 0.0; 
 	envData.Temperature = 0.0; 
 	envData.Humidity = 0.0; 
@@ -35,6 +35,7 @@ int Sampler::Initialize(){
 	envData.RawEthanol = 0.0; 
 	envData.RawH2 = 0.0; 
 
+	// Set sample counter to zero
 	return 0;
 }
 
@@ -44,21 +45,48 @@ int Sampler::Initialize(){
 *
 * @return Zero On Sucess 
 */
-int Sampler::Gather_Env_Data() {
+int Sampler::Gather_Env_Data()
+{
 	lightSensor.Get_ALS_Lux(envData.LightIntensity);
 	temperatureHumiditySensor.Get_Temperature_Humidity(envData.Temperature, envData.Humidity);
 	gasSensor.IAQ_Measure(envData.TVOC, envData.CO2);
-	gasSensor.IAQ_Measure_Raw( envData.RawEthanol, envData.RawH2);
+	gasSensor.IAQ_Measure_Raw(envData.RawEthanol, envData.RawH2);
 	return 0;
+}
+
+/**
+* Returns the current data from all sensors by turn.
+* Currently used only for integation tests
+*
+* @return Environment data struct
+*/
+EnvironmentData Sampler::GetEnvData()
+{
+	return envData;
 }
 
 
 /**
-* Reads data from all sensors by turn.
+* Use Callback
+* Currently used only for integation test
+*
+*/
+void Sampler::CallbackTest()
+{
+	if (samplerCallback != nullptr) 
+	{
+		samplerCallback->SamplerHasData(envData);
+	}
+}
+
+
+/**
+* Closes each I2C measurement device by turn.
 *
 * @return Zero On Sucess 
 */
-int Sampler::CloseDevices() {
+int Sampler::CloseDevices()
+{
 	printf("Closing Devices...\n");
 	lightSensor.Close_Device();
 	temperatureHumiditySensor.Close_Device();
@@ -72,8 +100,8 @@ int Sampler::CloseDevices() {
 *
 * @return Zero On Sucess 
 */
-/*
-int Sampler::Print_Env_Data(){
+int Sampler::Print_Env_Data()
+{
 	printf("\n");
 	printf("Get_ALS_LUX: %f\n",envData.LightIntensity);
 	printf("Temperature: %f\n",envData.Temperature);
@@ -84,4 +112,3 @@ int Sampler::Print_Env_Data(){
 	printf("RawH2: %d ppm\n", envData.RawH2);
 	return 0;
 }
-*/

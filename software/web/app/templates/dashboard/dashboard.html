@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <div class="main-panel" id="main-panel">
   <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+  <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
     <div class="container-fluid">
       <div class="navbar-wrapper">
         <div class="navbar-toggle">
@@ -13,7 +12,7 @@
             <span class="navbar-toggler-bar bar3"></span>
           </button>
         </div>
-        <a class="navbar-brand" href="#">Light Intensity</a>
+        <a class="navbar-brand" href="#pablo">Dashboard</a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -38,6 +37,14 @@
               <i data-feather="calendar" class="align-self-center icon-xs ml-1"></i>
             </a>
           </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#pablo">
+              <i class="now-ui-icons media-2_sound-wave"></i>
+              <p>
+                <span class="d-lg-none d-md-block">Stats</span>
+              </p>
+            </a>
+          </li> -->
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="now-ui-icons location_world"></i>
@@ -51,28 +58,27 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li> -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#pablo">
               <i class="now-ui-icons users_single-02"></i>
               <p>
                 <span class="d-lg-none d-md-block">Account</span>
               </p>
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
-    </nav>
-    <!-- End Navbar -->
-    <div class="panel-header panel-header-lg">
-    <canvas id="light-intensity-chart"></canvas>
-    </div>
-    <div class="content">
+  </nav>
+  <!-- End Navbar -->
+  <div class="panel-header panel-header-sm">
+  </div>
+  <div class="content">
     <div class="row">
       <div class="col-lg-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h5 class="card-category">6am - 5pm</h5>
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
             <h4 class="card-title">Temperature</h4>
             <!-- <div class="dropdown">
               <button type="button" class="btn btn-round btn-outline-default dropdown-toggle btn-simple btn-icon no-caret" data-toggle="dropdown">
@@ -87,8 +93,7 @@
             </div> -->
           </div>
           <div class="card-body">
-            <div class="chart-area">
-              <canvas id="temperature-chart"></canvas>
+            <div class="chart-area" id="div_temp" style="width:700px; height:200px;">
             </div>
           </div>
           <div class="card-footer">
@@ -101,23 +106,11 @@
       <div class="col-lg-6 col-md-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h5 class="card-category">6am - 5pm</h5>
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
             <h4 class="card-title">Humidity</h4>
-            <!-- <div class="dropdown">
-              <button type="button" class="btn btn-round btn-outline-default dropdown-toggle btn-simple btn-icon no-caret" data-toggle="dropdown">
-                <i class="now-ui-icons loader_gear"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <a class="dropdown-item text-danger" href="#">Remove Data</a>
-              </div>
-            </div> -->
           </div>
           <div class="card-body">
-            <div class="chart-area">
-              <canvas id="humidity-chart"></canvas>
+            <div class="chart-area" id="div_hum" style="width:700px; height:200px;">
             </div>
           </div>
           <div class="card-footer">
@@ -130,12 +123,79 @@
       <div class="col-lg-6 col-md-6">
         <div class="card card-chart">
           <div class="card-header">
-            <h5 class="card-category">6am - 5pm</h5>
-            <h4 class="card-title">Water Usage</h4>
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">Light Intensity</h4>
           </div>
           <div class="card-body">
-            <div class="chart-area">
-              <canvas id="water-level-chart"></canvas>
+            <div class="chart-area" id="div_light" style="width:700px; height:200px;">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">TVOC</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area" id="div_tvoc" style="width:700px; height:200px;">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">ECO2</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area" id="div_co2" style="width:700px; height:200px;">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">Ethanol</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area" id="div_eth" style="width:700px; height:200px;">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">H2</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area" id="div_h2" style="width:700px; height:200px;">
             </div>
           </div>
           <div class="card-footer">
@@ -146,8 +206,9 @@
         </div>
       </div>
     </div>
-    </div>
-    <footer class="footer">
+  </div>
+  </div>
+  <footer class="footer">
     <div class=" container-fluid ">
       <nav>
         <ul>
@@ -174,7 +235,7 @@
         </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
       </div>
     </div>
-    </footer>
+  </footer>
 </div>
 
 {% endblock %}
@@ -182,7 +243,7 @@
 {% block scripts %}
     <!-- <script src="{{ url_for('static', filename='plugins/apex-charts/apexcharts.min.js') }}"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
-    <script src="{{ url_for('static', filename='assets/js/dashboard.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='assets/js/dashboard.js') }}"></script> -->
     <script type="text/javascript">
       $(function() {
 
@@ -209,13 +270,134 @@
 
         cb(start, end);
 
-        get_dashboard_data();
-        $('.date-range').on('apply.daterangepicker', function (ev, picker) {
-          get_dashboard_data();
-        });
+        // get_dashboard_data();
+        // $('.date-range').on('apply.daterangepicker', function (ev, picker) {
+        //   get_dashboard_data();
+        // });
 
       });
       $('.nav-button').removeClass("active");
       $('#dashboard-nav').addClass("active");
     </script>
+  <script type="text/javascript">
+    // max samples for dygraph
+    var maxSamples = 60;
+
+    // relative path to the sensor data for get/post:
+    var serverPath = "http://127.0.0.1:8080/sensor/";
+
+    // callback when the Web page has been loaded
+    $(document).ready(function() {
+        var data = [];
+        var tempData = [];
+        var luxData = [];
+        var humData = [];
+        var co2Data = [];
+        var tvocData = [];
+        var ethData = [];
+        var h2Data = [];
+        var g = new Dygraph(document.getElementById("div_temp"), data,
+          {
+              drawPoints: true,
+              labels: ['Time', 'Temperature'],
+          });
+
+        var gLux = new Dygraph(document.getElementById("div_light"), luxData,
+          {
+              drawPoints: true,
+              labels: ['Time', 'Lightintensity'],
+          });
+
+        var gHum = new Dygraph(document.getElementById("div_hum"), humData,
+          {
+              drawPoints: true,
+              labels: ['Time', 'Humidity'],
+          });
+
+        var gCo2 = new Dygraph(document.getElementById("div_co2"), co2Data,
+          {
+              drawPoints: true,
+              labels: ['Time', 'eCO2 ppm'],
+          });
+
+        var gTVOC = new Dygraph(document.getElementById("div_tvoc"), tvocData,
+          {
+              drawPoints: true,
+              labels: ['Time', 'TVOC ppb'],
+          });
+
+          var gEth = new Dygraph(document.getElementById("div_eth"), ethData,
+          {
+              drawPoints: true,
+              labels: ['Time', 'Ethanol ppb'],
+          });
+
+          var gH2 = new Dygraph(document.getElementById("div_h2"), h2Data,
+          {
+              drawPoints: true,
+              labels: ['Time', 'H2 ppm'],
+          });
+
+        $("#driver").click(function(event){
+      $.post( 
+                      serverPath,
+                      {
+        operation: 1,
+        value: 100,
+          }
+      );
+
+              });
+
+        window.intervalId = setInterval(function() {
+      // callback for interval timer for every second
+      $.getJSON(serverPath,function(result){
+          // callback after the php script has been called
+          var utcSeconds = result.epoch;
+          var d = new Date(0);
+          d.setUTCSeconds(utcSeconds);
+          var x = d;
+          var y = result.temperature;
+          var yt = result.temperature;
+          var yl = result.lightintensity;
+          var yh = result.humidity;
+          var yc = result.co2;
+          var yt = result.tvoc;
+          var ye = result.eth;
+          var yh2 = result.h2;
+                      document.getElementById("temperature").innerHTML = Math.round(y * 100) / 100;
+                      document.getElementById("humidity").innerHTML = Math.round(yh * 100) / 100;
+                      document.getElementById("lightintensity").innerHTML = Math.round(yl * 100) / 100;
+                      document.getElementById("co2").innerHTML = Math.round(yc * 100) / 100;
+                      document.getElementById("tvoc").innerHTML = Math.round(yt * 100) / 100;
+                      document.getElementById("eth").innerHTML = Math.round(ye * 100) / 100;
+                      document.getElementById("h2").innerHTML = Math.round(yh2 * 100) / 100;
+          if (data.length > maxSamples) {
+        data.shift();
+        tempData.shift();
+        luxData.shift();
+        humData.shift();
+        co2Data.shift();
+        tvocData.shift();
+        ethData.shift();
+        h2Data.shift();
+          }
+          data.push([x, y]);
+          luxData.push([x, yl]);
+          humData.push([x, yh]);
+          co2Data.push([x, yc]);
+          tvocData.push([x, yt]);
+          ethData.push([x, ye]);
+          h2Data.push([x, yh2]);
+          g.updateOptions( { 'file': data } );
+          gLux.updateOptions( { 'file': luxData } );
+          gHum.updateOptions( { 'file': humData } );
+          gCo2.updateOptions( { 'file': co2Data } );
+          gTVOC.updateOptions( { 'file': tvocData } );
+          gEth.updateOptions( { 'file': ethData } );
+          gH2.updateOptions( { 'file': h2Data } );
+      });
+        }, 1000);
+    });
+  </script>
 {% endblock %}

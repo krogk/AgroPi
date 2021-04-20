@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['registereventrunnable',['registerEventRunnable',['../classCppTimerCallback.html#ae6e815f1c3b65ea4f10fe0332e13acb9',1,'CppTimerCallback']]],
-  ['relayboard',['RelayBoard',['../classRelayBoard.html#aa788c15cfc95188f5935f9d9d9fe86d2',1,'RelayBoard']]],
-  ['reset',['Reset',['../classI2CSensor.html#a0622266d335944782d2bfa6352f01095',1,'I2CSensor::Reset()'],['../classSGP30.html#a4934ef3a64eb0782a6d956c6526e4186',1,'SGP30::Reset()'],['../classSHT31D.html#aa5d28c2557ed05435ca9b433492b9b07',1,'SHT31D::Reset()'],['../classVEML7700.html#a381358f8998260f4600a0d6713f7ea2a',1,'VEML7700::Reset()']]],
-  ['run',['run',['../classSHT31D.html#a1cb98e435a44e2b6beeb3d0226cc9ec8',1,'SHT31D::run()'],['../classControllerThread.html#ae8206a23ab1a414f2956424def2e759c',1,'ControllerThread::run()'],['../classCppThread.html#a792b79e72250710147c452648def4a78',1,'CppThread::run()'],['../classCppTimerCallback_1_1Runnable.html#af8d11a3b580e76431151e76ac1886e6e',1,'CppTimerCallback::Runnable::run()']]]
+  ['plain_5fi2c_5fwrite_5fread',['Plain_I2C_Write_Read',['../classI2CDriver.html#a1e025ccfccece30b7d42acd1bf7e8e41',1,'I2CDriver']]],
+  ['plain_5fi2c_5fwrite_5fread_5fcrc8',['Plain_I2C_Write_Read_CRC8',['../classI2CDriver.html#a732c5b799a0aecde0d908ee981872572',1,'I2CDriver']]],
+  ['postdecoder',['postDecoder',['../classJSONCGIHandler.html#a0f208af3dd050ed182967fe9cca42d78',1,'JSONCGIHandler']]],
+  ['poststring',['postString',['../classControllerCallback.html#aa7aa4c4c12ced1395e8c40ed1b82db12',1,'ControllerCallback::postString()'],['../classJSONCGIHandler_1_1POSTCallback.html#a6cddb384a3fd9242b323cea3d82a6bb7',1,'JSONCGIHandler::POSTCallback::postString()']]],
+  ['print_5fenv_5fdata',['Print_Env_Data',['../classSampler.html#acf3d04a740356e54fe53766a7f00ae15',1,'Sampler']]]
 ];

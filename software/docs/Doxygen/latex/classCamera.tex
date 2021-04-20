@@ -2,46 +2,453 @@
 \label{classCamera}\index{Camera@{Camera}}
 
 
-\hyperlink{classCamera}{Camera} class.  
-
-
-
-
 {\ttfamily \#include $<$Camera.\+h$>$}
 
+
+
+Inheritance diagram for Camera\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classCamera__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Camera\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=146pt]{classCamera__coll__graph}
+\includegraphics[width=350pt]{classCamera__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCamera_a5c68f1ee8348320a6c47419ae2d724fb}{Camera} (void)
+\hyperlink{classCamera_a8facf3634f5d9d5be12c488eac7b7e2a}{Camera} (cv\+::\+Video\+Capture $\ast$cp)
+\item 
+void \hyperlink{classCamera_aac0e2e17954d17a0c15019ca74149f15}{stop\+Camera} ()
+\item 
+void \hyperlink{classCamera_afd88c2780203f02c9fe236a7239e414c}{Initialize} ()
+\item 
+void \hyperlink{classCamera_af699a1dad54f8631e862b6f7703e48d3}{set\+Camera\+ID} (int ID)
+\item 
+void \hyperlink{classCamera_aef0a4ebb556d5a2a0f13e5d120c05259}{set\+Contrasts} (int low, int high)
+\item 
+void \hyperlink{classCamera_a9409482c4422823f73d45b3d5e29304b}{set\+Shutter} (int Shutter)
+\item 
+int \hyperlink{classCamera_a230bee20d42ae409aba0700d8205bbe0}{check\+Cam\+Open} (cv\+::\+Video\+Capture cap)
+\item 
+cv\+::\+Mat \hyperlink{classCamera_a07670e99337fb322375a412222c06ada}{take\+Picture} ()
+\item 
+void \hyperlink{classCamera_a919fb6f236e4535c0d2d29d760562ba5}{save\+Picture} (cv\+::\+Video\+Capture $\ast$, std\+::string filename)
+\item 
+void \hyperlink{classCamera_af0d3c970e947813e71f316b9e499b456}{livestream} ()
+\item 
+void \hyperlink{classCamera_a3595618ceff1b74e79633b4132ada11f}{set\+Net\+Address} (std\+::string, std\+::string)
+\item 
+void \hyperlink{classCamera_a59f08842d3de300419c74b12bee44d47}{take\+Scan\+D\+N\+N\+Picture} ()
+\item 
+void \hyperlink{classCamera_a09931f84cc8e66e4e4c1181cb1cb4af6}{take\+Scan\+Cascade} ()
+\item 
+void \hyperlink{classCamera_ab4f4c3f77479c8594dfa7fd7e6348306}{take\+Scan\+For\+Green} ()
+\item 
+cv\+::\+Mat \hyperlink{classCamera_adf305e574ca94bce9435c217fef1501b}{green\+Mask} (cv\+::\+Mat)
+\begin{DoxyCompactList}\small\item\em Takes an image and returns the same image filtered to show green only. \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_afa26f268b99c90b239592006bad6c5a5}{green\+Cascade} (cv\+::\+Video\+Capture $\ast$, std\+::string, std\+::string)
+\begin{DoxyCompactList}\small\item\em function to run cascade on a green masked image \end{DoxyCompactList}\item 
+void \hyperlink{classCamera_ac8f74b6c456d6fc7e9e83e746f8fc6c5}{green\+FolderP} ()
+\item 
+void \hyperlink{classCamera_ac212835924bf4cee1b8c477a6b79f4d2}{green\+FolderN} (int)
+\item 
+void \hyperlink{classCamera_a06cf0ed4a2b79d95637ddeb3301d3856}{scan\+Save\+Green} (std\+::string)
+\item 
+virtual void \hyperlink{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}{start} (long nanosecs, \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t} type=\hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58}{P\+E\+R\+I\+O\+D\+IC})
+\item 
+virtual void \hyperlink{classCppTimer_a4bb95ddee98a536d0818b8f6096bf7e7}{stop} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCamera_afcf6ca7256cd36f2f4a5ba088d67090a}{timer\+Event} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+cv\+::\+Mat \hyperlink{classCamera_a9a184f1522b055612f5ede1cc2443457}{img}
+\item 
+int \hyperlink{classCamera_a96c19741cb6ba7a897ca90746e8b8918}{Camera\+ID} = 0
+\begin{DoxyCompactList}\small\item\em for storing images \end{DoxyCompactList}\item 
+int \hyperlink{classCamera_ab6f982f42917eb9ef75606e97fc82911}{c\+Min}
+\begin{DoxyCompactList}\small\item\em for setting camera ID, default 0 \end{DoxyCompactList}\item 
+int \hyperlink{classCamera_ad784af65b7f7e1b6ebb9b33df774d7db}{c\+Max}
+\begin{DoxyCompactList}\small\item\em Minimum contrast for image normalization. \end{DoxyCompactList}\item 
+int \hyperlink{classCamera_ad3d6176cdcccecd116f2e7867b642ad1}{Shut} = 0
+\begin{DoxyCompactList}\small\item\em Maximmum contrast for image normalization. \end{DoxyCompactList}\item 
+cv\+::\+Video\+Capture $\ast$ \hyperlink{classCamera_af32d4a5550c35edb96c9e81fb4208adb}{master\+Cap} = nullptr
+\begin{DoxyCompactList}\small\item\em Shutter speed in ms; 30 is reasonable. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classCamera_a1ed93fa883066dfbc6fa88b267aefabe}{save\+\_\+path} = \char`\"{}../web/app/static/test.\+jpg\char`\"{}
+\item 
+std\+::string \hyperlink{classCamera_a7f9dcee329ab710d227afa3eb8f6e4a3}{cascade\+\_\+path} = \char`\"{}../src/controller/peripherials/Resources/seedcascade.\+xml\char`\"{}
+\item 
+std\+::string \hyperlink{classCamera_a22a0754fc359b253e203ce59026021a0}{model\+\_\+file} = \char`\"{}Resources/frozen\+\_\+inference\+\_\+graph.\+pb\char`\"{}
+\item 
+std\+::string \hyperlink{classCamera_affbb5356cbe1e069d4e107ccda0d1b2b}{config\+\_\+file} = \char`\"{}Resources/ssd\+\_\+mobilenet\+\_\+v2\+\_\+coco\+\_\+2018\+\_\+03\+\_\+29.\+pbtxt\char`\"{}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\hyperlink{classCamera}{Camera} class. 
-
-\begin{DoxyAuthor}{Author}
-Kamil Rog
-\end{DoxyAuthor}
-This is class is responsilbe for the \hyperlink{classSHT31D}{S\+H\+T31D} temperature and humidity sensor. 
+This class is responsible for taking an image in specified intervals and saving it Inherits from \hyperlink{classCppTimer}{Cpp\+Timer} 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classCamera_a5c68f1ee8348320a6c47419ae2d724fb}\label{classCamera_a5c68f1ee8348320a6c47419ae2d724fb}} 
+\mbox{\Hypertarget{classCamera_a8facf3634f5d9d5be12c488eac7b7e2a}\label{classCamera_a8facf3634f5d9d5be12c488eac7b7e2a}} 
 \index{Camera@{Camera}!Camera@{Camera}}
 \index{Camera@{Camera}!Camera@{Camera}}
 \subsubsection{\texorpdfstring{Camera()}{Camera()}}
-{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{cv\+::\+Video\+Capture $\ast$}]{cp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCamera_a230bee20d42ae409aba0700d8205bbe0}\label{classCamera_a230bee20d42ae409aba0700d8205bbe0}} 
+\index{Camera@{Camera}!check\+Cam\+Open@{check\+Cam\+Open}}
+\index{check\+Cam\+Open@{check\+Cam\+Open}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{check\+Cam\+Open()}{checkCamOpen()}}
+{\footnotesize\ttfamily int Camera\+::check\+Cam\+Open (\begin{DoxyParamCaption}\item[{cv\+::\+Video\+Capture}]{cap }\end{DoxyParamCaption})}
+
+Debug function to chek whether camera is opened successfully. Used within other functions that take pictures/stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cap} & Video\+Capture object -\/ essentially which camera is being communicated with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 and error message if camera has failed to open, a line of text it successfully opened. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_afa26f268b99c90b239592006bad6c5a5}\label{classCamera_afa26f268b99c90b239592006bad6c5a5}} 
+\index{Camera@{Camera}!green\+Cascade@{green\+Cascade}}
+\index{green\+Cascade@{green\+Cascade}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{green\+Cascade()}{greenCascade()}}
+{\footnotesize\ttfamily void Camera\+::green\+Cascade (\begin{DoxyParamCaption}\item[{cv\+::\+Video\+Capture $\ast$}]{cap,  }\item[{std\+::string}]{filename,  }\item[{std\+::string}]{cascade\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+function to run cascade on a green masked image 
+
+\begin{DoxyReturn}{Returns}
+a saved image with detections 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_ac212835924bf4cee1b8c477a6b79f4d2}\label{classCamera_ac212835924bf4cee1b8c477a6b79f4d2}} 
+\index{Camera@{Camera}!green\+FolderN@{green\+FolderN}}
+\index{green\+FolderN@{green\+FolderN}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{green\+Folder\+N()}{greenFolderN()}}
+{\footnotesize\ttfamily void Camera\+::green\+FolderN (\begin{DoxyParamCaption}\item[{int}]{Number }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCamera_ac8f74b6c456d6fc7e9e83e746f8fc6c5}\label{classCamera_ac8f74b6c456d6fc7e9e83e746f8fc6c5}} 
+\index{Camera@{Camera}!green\+FolderP@{green\+FolderP}}
+\index{green\+FolderP@{green\+FolderP}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{green\+Folder\+P()}{greenFolderP()}}
+{\footnotesize\ttfamily void Camera\+::green\+FolderP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCamera_adf305e574ca94bce9435c217fef1501b}\label{classCamera_adf305e574ca94bce9435c217fef1501b}} 
+\index{Camera@{Camera}!green\+Mask@{green\+Mask}}
+\index{green\+Mask@{green\+Mask}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{green\+Mask()}{greenMask()}}
+{\footnotesize\ttfamily cv\+::\+Mat Camera\+::green\+Mask (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{image }\end{DoxyParamCaption})}
+
+
+
+Takes an image and returns the same image filtered to show green only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & A cv\+::\+Mat image to be givena green mask \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cv\+::\+Mat , same as image in but with green mask 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_afd88c2780203f02c9fe236a7239e414c}\label{classCamera_afd88c2780203f02c9fe236a7239e414c}} 
+\index{Camera@{Camera}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Camera\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initalises camera \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]may be redundant \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCamera_af0d3c970e947813e71f316b9e499b456}\label{classCamera_af0d3c970e947813e71f316b9e499b456}} 
+\index{Camera@{Camera}!livestream@{livestream}}
+\index{livestream@{livestream}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{livestream()}{livestream()}}
+{\footnotesize\ttfamily void Camera\+::livestream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to livestream video to an Open\+CV window -\/ requires a G\+UI
+
+\begin{DoxyReturn}{Returns}
+an open cv window livestreaming from camera 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_a919fb6f236e4535c0d2d29d760562ba5}\label{classCamera_a919fb6f236e4535c0d2d29d760562ba5}} 
+\index{Camera@{Camera}!save\+Picture@{save\+Picture}}
+\index{save\+Picture@{save\+Picture}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{save\+Picture()}{savePicture()}}
+{\footnotesize\ttfamily void Camera\+::save\+Picture (\begin{DoxyParamCaption}\item[{cv\+::\+Video\+Capture $\ast$}]{cap,  }\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+Function to take a picture and save it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & String to save file as.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a saved image file as filename.\+jpg 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_a06cf0ed4a2b79d95637ddeb3301d3856}\label{classCamera_a06cf0ed4a2b79d95637ddeb3301d3856}} 
+\index{Camera@{Camera}!scan\+Save\+Green@{scan\+Save\+Green}}
+\index{scan\+Save\+Green@{scan\+Save\+Green}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{scan\+Save\+Green()}{scanSaveGreen()}}
+{\footnotesize\ttfamily void Camera\+::scan\+Save\+Green (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCamera_af699a1dad54f8631e862b6f7703e48d3}\label{classCamera_af699a1dad54f8631e862b6f7703e48d3}} 
+\index{Camera@{Camera}!set\+Camera\+ID@{set\+Camera\+ID}}
+\index{set\+Camera\+ID@{set\+Camera\+ID}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Camera\+I\+D()}{setCameraID()}}
+{\footnotesize\ttfamily void Camera\+::set\+Camera\+ID (\begin{DoxyParamCaption}\item[{int}]{ID }\end{DoxyParamCaption})}
+
+Set the \hyperlink{classCamera}{Camera} ID object
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+updated \hyperlink{classCamera_a96c19741cb6ba7a897ca90746e8b8918}{Camera\+::\+Camera\+ID} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_aef0a4ebb556d5a2a0f13e5d120c05259}\label{classCamera_aef0a4ebb556d5a2a0f13e5d120c05259}} 
+\index{Camera@{Camera}!set\+Contrasts@{set\+Contrasts}}
+\index{set\+Contrasts@{set\+Contrasts}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Contrasts()}{setContrasts()}}
+{\footnotesize\ttfamily void Camera\+::set\+Contrasts (\begin{DoxyParamCaption}\item[{int}]{low,  }\item[{int}]{high }\end{DoxyParamCaption})}
+
+Set the upper and lower contrast in order to work in variable brightnesses
+
+
+\begin{DoxyParams}{Parameters}
+{\em low} & Lower contrast level. 0 is normally ok.\\
+\hline
+{\em high} & higher contrast level. 400 is usually ok but in dark settings may need to reach 600-\/800.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Updated \hyperlink{classCamera_ab6f982f42917eb9ef75606e97fc82911}{Camera\+::c\+Min} and \hyperlink{classCamera_ad784af65b7f7e1b6ebb9b33df774d7db}{Camera\+::c\+Max} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_a3595618ceff1b74e79633b4132ada11f}\label{classCamera_a3595618ceff1b74e79633b4132ada11f}} 
+\index{Camera@{Camera}!set\+Net\+Address@{set\+Net\+Address}}
+\index{set\+Net\+Address@{set\+Net\+Address}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Net\+Address()}{setNetAddress()}}
+{\footnotesize\ttfamily void Camera\+::set\+Net\+Address (\begin{DoxyParamCaption}\item[{std\+::string}]{netpath,  }\item[{std\+::string}]{weightspath }\end{DoxyParamCaption})}
+
+Set neural net pathway
+
+
+\begin{DoxyParams}{Parameters}
+{\em netpath} & Location of neural net\\
+\hline
+{\em weightspath} & Location of weights\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+updated Camera\+::net\+File and camera\+::weights\+Path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCamera_a9409482c4422823f73d45b3d5e29304b}\label{classCamera_a9409482c4422823f73d45b3d5e29304b}} 
+\index{Camera@{Camera}!set\+Shutter@{set\+Shutter}}
+\index{set\+Shutter@{set\+Shutter}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{set\+Shutter()}{setShutter()}}
+{\footnotesize\ttfamily void Camera\+::set\+Shutter (\begin{DoxyParamCaption}\item[{int}]{Shutter }\end{DoxyParamCaption})}
+
+Set the shutter speed. Must be $>$= 1, 30 works for me.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Shutter} & Shutter speed in ms\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+updated \hyperlink{classCamera_ad3d6176cdcccecd116f2e7867b642ad1}{Camera\+::\+Shut} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}\label{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}} 
+\index{Camera@{Camera}!start@{start}}
+\index{start@{start}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Cpp\+Timer\+::start (\begin{DoxyParamCaption}\item[{long}]{nanosecs,  }\item[{\hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t}}]{type = {\ttfamily \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58}{P\+E\+R\+I\+O\+D\+IC}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+Starts the timer. The timer fires first after the specified time in nanoseconds and then at that interval in P\+E\+R\+I\+O\+D\+IC mode. In O\+N\+E\+S\+H\+OT mode the timer fires once after the specified time in nanoseconds. \mbox{\Hypertarget{classCppTimer_a4bb95ddee98a536d0818b8f6096bf7e7}\label{classCppTimer_a4bb95ddee98a536d0818b8f6096bf7e7}} 
+\index{Camera@{Camera}!stop@{stop}}
+\index{stop@{stop}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Cpp\+Timer\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+Stops the timer by disarming it. It can be re-\/started with \hyperlink{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}{start()}. \mbox{\Hypertarget{classCamera_aac0e2e17954d17a0c15019ca74149f15}\label{classCamera_aac0e2e17954d17a0c15019ca74149f15}} 
+\index{Camera@{Camera}!stop\+Camera@{stop\+Camera}}
+\index{stop\+Camera@{stop\+Camera}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{stop\+Camera()}{stopCamera()}}
+{\footnotesize\ttfamily void Camera\+::stop\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the callback which is called whenever there is new data Stops the data acquistion \mbox{\Hypertarget{classCamera_a07670e99337fb322375a412222c06ada}\label{classCamera_a07670e99337fb322375a412222c06ada}} 
+\index{Camera@{Camera}!take\+Picture@{take\+Picture}}
+\index{take\+Picture@{take\+Picture}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{take\+Picture()}{takePicture()}}
+{\footnotesize\ttfamily cv\+::\+Mat Camera\+::take\+Picture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to take a picture and return the frame as a cv mat
+
+\begin{DoxyReturn}{Returns}
+cv\+::\+Mat type image from camera
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]option to change this to return a C\+V\+::\+Mat \end{DoxyRefDesc}
+\mbox{\Hypertarget{classCamera_a09931f84cc8e66e4e4c1181cb1cb4af6}\label{classCamera_a09931f84cc8e66e4e4c1181cb1cb4af6}} 
+\index{Camera@{Camera}!take\+Scan\+Cascade@{take\+Scan\+Cascade}}
+\index{take\+Scan\+Cascade@{take\+Scan\+Cascade}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{take\+Scan\+Cascade()}{takeScanCascade()}}
+{\footnotesize\ttfamily void Camera\+::take\+Scan\+Cascade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to take a picture and scan it with a custom H\+A\+AR Cascade. Best option currently.
+
+\begin{DoxyReturn}{Returns}
+a saved image with detections
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]keep improving the dataset being used to train the cascade. Try training a cascade on some of the green masked contours images. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classCamera_a59f08842d3de300419c74b12bee44d47}\label{classCamera_a59f08842d3de300419c74b12bee44d47}} 
+\index{Camera@{Camera}!take\+Scan\+D\+N\+N\+Picture@{take\+Scan\+D\+N\+N\+Picture}}
+\index{take\+Scan\+D\+N\+N\+Picture@{take\+Scan\+D\+N\+N\+Picture}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{take\+Scan\+D\+N\+N\+Picture()}{takeScanDNNPicture()}}
+{\footnotesize\ttfamily void Camera\+::take\+Scan\+D\+N\+N\+Picture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to take a picture and scan it with a D\+NN built in tensorflow.
+
+\begin{DoxyReturn}{Returns}
+a saved image with detections
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000004}{Todo}]Work out how to get a frozen\+\_\+inference\+\_\+graph.\+pb to work here. For whatever reason, it throws an error at runtime when using custom trained nets. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classCamera_ab4f4c3f77479c8594dfa7fd7e6348306}\label{classCamera_ab4f4c3f77479c8594dfa7fd7e6348306}} 
+\index{Camera@{Camera}!take\+Scan\+For\+Green@{take\+Scan\+For\+Green}}
+\index{take\+Scan\+For\+Green@{take\+Scan\+For\+Green}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{take\+Scan\+For\+Green()}{takeScanForGreen()}}
+{\footnotesize\ttfamily void Camera\+::take\+Scan\+For\+Green (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to draw a box around anything green. A classifier could be trained on the shapes this picks up. Adds another step, but could be viable.
+
+\begin{DoxyReturn}{Returns}
+saved image of green detection
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]create a bunch of images this way. train a cascade on them. run the cascade again. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classCamera_afcf6ca7256cd36f2f4a5ba088d67090a}\label{classCamera_afcf6ca7256cd36f2f4a5ba088d67090a}} 
+\index{Camera@{Camera}!timer\+Event@{timer\+Event}}
+\index{timer\+Event@{timer\+Event}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{timer\+Event()}{timerEvent()}}
+{\footnotesize\ttfamily void Camera\+::timer\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+Abstract function which needs to be implemented by the children. This is called every time the timer fires. 
+
+Implements \hyperlink{classCppTimer_ac2665403595b6aee5f581d0ebfeb886c}{Cpp\+Timer}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCamera_a96c19741cb6ba7a897ca90746e8b8918}\label{classCamera_a96c19741cb6ba7a897ca90746e8b8918}} 
+\index{Camera@{Camera}!Camera\+ID@{Camera\+ID}}
+\index{Camera\+ID@{Camera\+ID}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{Camera\+ID}{CameraID}}
+{\footnotesize\ttfamily int Camera\+::\+Camera\+ID = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+for storing images 
+
+\mbox{\Hypertarget{classCamera_a7f9dcee329ab710d227afa3eb8f6e4a3}\label{classCamera_a7f9dcee329ab710d227afa3eb8f6e4a3}} 
+\index{Camera@{Camera}!cascade\+\_\+path@{cascade\+\_\+path}}
+\index{cascade\+\_\+path@{cascade\+\_\+path}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{cascade\+\_\+path}{cascade\_path}}
+{\footnotesize\ttfamily std\+::string Camera\+::cascade\+\_\+path = \char`\"{}../src/controller/peripherials/Resources/seedcascade.\+xml\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCamera_ad784af65b7f7e1b6ebb9b33df774d7db}\label{classCamera_ad784af65b7f7e1b6ebb9b33df774d7db}} 
+\index{Camera@{Camera}!c\+Max@{c\+Max}}
+\index{c\+Max@{c\+Max}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{c\+Max}{cMax}}
+{\footnotesize\ttfamily int Camera\+::c\+Max\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Minimum contrast for image normalization. 
+
+\mbox{\Hypertarget{classCamera_ab6f982f42917eb9ef75606e97fc82911}\label{classCamera_ab6f982f42917eb9ef75606e97fc82911}} 
+\index{Camera@{Camera}!c\+Min@{c\+Min}}
+\index{c\+Min@{c\+Min}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{c\+Min}{cMin}}
+{\footnotesize\ttfamily int Camera\+::c\+Min\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+for setting camera ID, default 0 
+
+\mbox{\Hypertarget{classCamera_affbb5356cbe1e069d4e107ccda0d1b2b}\label{classCamera_affbb5356cbe1e069d4e107ccda0d1b2b}} 
+\index{Camera@{Camera}!config\+\_\+file@{config\+\_\+file}}
+\index{config\+\_\+file@{config\+\_\+file}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{config\+\_\+file}{config\_file}}
+{\footnotesize\ttfamily std\+::string Camera\+::config\+\_\+file = \char`\"{}Resources/ssd\+\_\+mobilenet\+\_\+v2\+\_\+coco\+\_\+2018\+\_\+03\+\_\+29.\+pbtxt\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCamera_a9a184f1522b055612f5ede1cc2443457}\label{classCamera_a9a184f1522b055612f5ede1cc2443457}} 
+\index{Camera@{Camera}!img@{img}}
+\index{img@{img}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{img}{img}}
+{\footnotesize\ttfamily cv\+::\+Mat Camera\+::img\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCamera_af32d4a5550c35edb96c9e81fb4208adb}\label{classCamera_af32d4a5550c35edb96c9e81fb4208adb}} 
+\index{Camera@{Camera}!master\+Cap@{master\+Cap}}
+\index{master\+Cap@{master\+Cap}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{master\+Cap}{masterCap}}
+{\footnotesize\ttfamily cv\+::\+Video\+Capture$\ast$ Camera\+::master\+Cap = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Shutter speed in ms; 30 is reasonable. 
+
+\mbox{\Hypertarget{classCamera_a22a0754fc359b253e203ce59026021a0}\label{classCamera_a22a0754fc359b253e203ce59026021a0}} 
+\index{Camera@{Camera}!model\+\_\+file@{model\+\_\+file}}
+\index{model\+\_\+file@{model\+\_\+file}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{model\+\_\+file}{model\_file}}
+{\footnotesize\ttfamily std\+::string Camera\+::model\+\_\+file = \char`\"{}Resources/frozen\+\_\+inference\+\_\+graph.\+pb\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCamera_a1ed93fa883066dfbc6fa88b267aefabe}\label{classCamera_a1ed93fa883066dfbc6fa88b267aefabe}} 
+\index{Camera@{Camera}!save\+\_\+path@{save\+\_\+path}}
+\index{save\+\_\+path@{save\+\_\+path}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{save\+\_\+path}{save\_path}}
+{\footnotesize\ttfamily std\+::string Camera\+::save\+\_\+path = \char`\"{}../web/app/static/test.\+jpg\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCamera_ad3d6176cdcccecd116f2e7867b642ad1}\label{classCamera_ad3d6176cdcccecd116f2e7867b642ad1}} 
+\index{Camera@{Camera}!Shut@{Shut}}
+\index{Shut@{Shut}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{Shut}{Shut}}
+{\footnotesize\ttfamily int Camera\+::\+Shut = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maximmum contrast for image normalization. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/controller/peripherials/\hyperlink{Camera_8h}{Camera.\+h}\end{DoxyCompactItemize}
+src/controller/peripherials/\hyperlink{Camera_8h}{Camera.\+h}\item 
+src/controller/peripherials/\hyperlink{Camera_8cpp}{Camera.\+cpp}\end{DoxyCompactItemize}

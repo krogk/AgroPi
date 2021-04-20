@@ -1,0 +1,474 @@
+<!--
+
+=========================================================
+* Now UI Dashboard - v1.5.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/now-ui-dashboard
+* Copyright 2019 Creative Tim (http://www.creative-tim.com)
+
+* Designed by www.invisionapp.com Coded by www.creative-tim.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/static/assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/static/assets/img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    AgroPi
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/static/assets/css/now-ui-dashboard.css" rel="stylesheet" />
+  <link href="/static/assets/css/plugins/daterangepicker.css" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="/static/assets/demo/demo.css" rel="stylesheet" />
+  <!-- Range Slider CSS -->
+  <link href="/static/assets/css/plugins/main.min.css" rel="stylesheet" />
+  <!-- ToastR CSS -->
+  <link href="/static/assets/css/plugins/toastr.css" rel="stylesheet" />
+  <!-- jQuery range slider -->
+  <link href="/static/assets/css/plugins/jquery.range.css" rel="stylesheet" />
+  <!-- netliva switch -->
+  <link href="/static/assets/css/plugins/netliva_switch.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css" />
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="orange">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+      <div class="logo">
+        <a href="#" class="simple-text logo-mini">
+          <img src="/static/assets/img/logo.png" alt="">
+        </a>
+        <a href="#" class="simple-text logo-normal">
+          AgroPi
+        </a>
+      </div>
+      <div class="sidebar-wrapper" id="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-button" id="dashboard-nav">
+            <a href="#">
+              <i class="now-ui-icons design_app"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-button" id="control-nav">
+            <a href="/static/control.html">
+              <i class="now-ui-icons education_atom"></i>
+              <p>Actuation</p>
+            </a>
+          </li>
+          <li class="nav-button" id="observations-nav">
+            <a href="/static/observations.html">
+              <i class="now-ui-icons location_map-big"></i>
+              <p>Observation</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Page Content-->
+        <div class="main-panel" id="main-panel">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+    <div class="container-fluid">
+      <div class="navbar-wrapper">
+        <div class="navbar-toggle">
+          <button type="button" class="navbar-toggler">
+            <span class="navbar-toggler-bar bar1"></span>
+            <span class="navbar-toggler-bar bar2"></span>
+            <span class="navbar-toggler-bar bar3"></span>
+          </button>
+        </div>
+        <a class="navbar-brand" href="#pablo">Dashboard</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-bar navbar-kebab"></span>
+        <span class="navbar-toggler-bar navbar-kebab"></span>
+        <span class="navbar-toggler-bar navbar-kebab"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navigation">
+        <form>
+          <div class="input-group no-border">
+            <input type="text" value="" class="form-control" placeholder="Search...">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <i class="now-ui-icons ui-1_zoom-bold"></i>
+              </div>
+            </div>
+          </div>
+        </form>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link date-range" href="#">
+              <span class="day-name" id="Day_Name">Today:</span>
+              <i data-feather="calendar" class="align-self-center icon-xs ml-1"></i>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#pablo">
+              <i class="now-ui-icons media-2_sound-wave"></i>
+              <p>
+                <span class="d-lg-none d-md-block">Stats</span>
+              </p>
+            </a>
+          </li> -->
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="now-ui-icons location_world"></i>
+              <p>
+                <span class="d-lg-none d-md-block">Some Actions</span>
+              </p>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#pablo">
+              <i class="now-ui-icons users_single-02"></i>
+              <p>
+                <span class="d-lg-none d-md-block">Account</span>
+              </p>
+            </a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+  <div class="panel-header panel-header-sm">
+  </div>
+  <div class="content">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">Temperature</h4>
+            <!-- <div class="dropdown">
+              <button type="button" class="btn btn-round btn-outline-default dropdown-toggle btn-simple btn-icon no-caret" data-toggle="dropdown">
+                <i class="now-ui-icons loader_gear"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item text-danger" href="#">Remove Data</a>
+              </div>
+            </div> -->
+          </div>
+          <div class="card-body">
+            <div class="chart-area" id="div_temp" style="width:700px; height:200px;">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">Humidity</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area" id="div_hum" style="width:700px; height:200px;">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">Light Intensity</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area" id="div_light" style="width:700px; height:200px;">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">TVOC</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area" id="div_tvoc" style="width:700px; height:200px;">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">ECO2</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area" id="div_co2" style="width:700px; height:200px;">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">Ethanol</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area" id="div_eth" style="width:700px; height:200px;">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="card card-chart">
+          <div class="card-header">
+            <!-- <h5 class="card-category">6am - 5pm</h5> -->
+            <h4 class="card-title">H2</h4>
+          </div>
+          <div class="card-body">
+            <div class="chart-area" id="div_h2" style="width:700px; height:200px;">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <footer class="footer">
+    <div class=" container-fluid ">
+      <nav>
+        <ul>
+          <li>
+            <a href="https://www.creative-tim.com">
+              Creative Tim
+            </a>
+          </li>
+          <li>
+            <a href="http://presentation.creative-tim.com">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="http://blog.creative-tim.com">
+              Blog
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright" id="copyright">
+        &copy; <script>
+          document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+        </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+      </div>
+    </div>
+  </footer>
+</div>
+    <!-- end page content -->
+  </div>
+  <!--   Core JS Files   -->
+  <script src="/static/assets/js/core/jquery.min.js"></script>
+  <script src="/static/assets/js/core/popper.min.js"></script>
+  <script src="/static/assets/js/core/bootstrap.min.js"></script>
+  <script src="/static/assets/js/plugins/moment.min.js"></script>
+  <script src="/static/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!-- Chart JS -->
+  <!-- <script src="/static/assets/js/plugins/chartjs.min.js"></script> -->
+  <!-- Apexchart JS -->
+  <script src="/static/assets/js/plugins/apexcharts.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="/static/assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Daterangepicker Plugin -->
+  <script src="/static/assets/js/plugins/daterangepicker.js"></script>
+  <!-- <script src="/static/assets/js/utils.js"></script> -->
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="/static/assets/js/now-ui-dashboard.min.js" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+  <script src="/static/assets/demo/demo.js"></script>
+  <!-- Range Slider Plugin -->
+  <script src="/static/assets/js/plugins/jquery.range-min.js"></script>
+  <!-- ToastR Plugin -->
+  <script src="/static/assets/js/plugins/toastr.js"></script>
+  <!-- LC Switch -->
+   <script src="/static/assets/js/plugins/netliva_switch.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
+  <script type="text/javascript">
+    // max samples for dygraph
+    var maxSamples = 60;
+
+    // relative path to the sensor data for get/post:
+    var serverPath = "/sensor/:80";
+
+    // callback when the Web page has been loaded
+    $(document).ready(function() {
+        var data = [];
+        var tempData = [];
+        var luxData = [];
+        var humData = [];
+        var co2Data = [];
+        var tvocData = [];
+        var ethData = [];
+        var h2Data = [];
+        var g = new Dygraph(document.getElementById("div_temp"), data,
+          {
+              drawPoints: true,
+              labels: ['Time', 'Temperature'],
+          });
+
+        var gLux = new Dygraph(document.getElementById("div_light"), luxData,
+          {
+              drawPoints: true,
+              labels: ['Time', 'Lightintensity'],
+          });
+
+        var gHum = new Dygraph(document.getElementById("div_hum"), humData,
+          {
+              drawPoints: true,
+              labels: ['Time', 'Humidity'],
+          });
+
+        var gCo2 = new Dygraph(document.getElementById("div_co2"), co2Data,
+          {
+              drawPoints: true,
+              labels: ['Time', 'eCO2 ppm'],
+          });
+
+        var gTVOC = new Dygraph(document.getElementById("div_tvoc"), tvocData,
+          {
+              drawPoints: true,
+              labels: ['Time', 'TVOC ppb'],
+          });
+
+          var gEth = new Dygraph(document.getElementById("div_eth"), ethData,
+          {
+              drawPoints: true,
+              labels: ['Time', 'Ethanol ppb'],
+          });
+
+          var gH2 = new Dygraph(document.getElementById("div_h2"), h2Data,
+          {
+              drawPoints: true,
+              labels: ['Time', 'H2 ppm'],
+          });
+
+        $("#driver").click(function(event){
+      $.post( 
+                      serverPath,
+                      {
+        operation: 1,
+        value: 100,
+          }
+      );
+
+              });
+
+        window.intervalId = setInterval(function() {
+      // callback for interval timer for every second
+      $.getJSON(serverPath,function(result){
+          // callback after the php script has been called
+          var utcSeconds = result.epoch;
+          var d = new Date(0);
+          d.setUTCSeconds(utcSeconds);
+          var x = d;
+          var y = result.temperature;
+          var yt = result.temperature;
+          var yl = result.lightintensity;
+          var yh = result.humidity;
+          var yc = result.co2;
+          var yt = result.tvoc;
+          var ye = result.eth;
+          var yh2 = result.h2;
+                      // document.getElementById("temperature").innerHTML = Math.round(y * 100) / 100;
+                      // document.getElementById("humidity").innerHTML = Math.round(yh * 100) / 100;
+                      // document.getElementById("lightintensity").innerHTML = Math.round(yl * 100) / 100;
+                      // document.getElementById("co2").innerHTML = Math.round(yc * 100) / 100;
+                      // document.getElementById("tvoc").innerHTML = Math.round(yt * 100) / 100;
+                      // document.getElementById("eth").innerHTML = Math.round(ye * 100) / 100;
+                      // document.getElementById("h2").innerHTML = Math.round(yh2 * 100) / 100;
+          if (data.length > maxSamples) {
+        data.shift();
+        tempData.shift();
+        luxData.shift();
+        humData.shift();
+        co2Data.shift();
+        tvocData.shift();
+        ethData.shift();
+        h2Data.shift();
+          }
+          data.push([x, y]);
+          luxData.push([x, yl]);
+          humData.push([x, yh]);
+          co2Data.push([x, yc]);
+          tvocData.push([x, yt]);
+          ethData.push([x, ye]);
+          h2Data.push([x, yh2]);
+          g.updateOptions( { 'file': data } );
+          gLux.updateOptions( { 'file': luxData } );
+          gHum.updateOptions( { 'file': humData } );
+          gCo2.updateOptions( { 'file': co2Data } );
+          gTVOC.updateOptions( { 'file': tvocData } );
+          gEth.updateOptions( { 'file': ethData } );
+          gH2.updateOptions( { 'file': h2Data } );
+      });
+        }, 1000);
+    });
+  </script>
+</body>
+
+</html>

@@ -15,6 +15,8 @@ find_package(cpprestsdk REQUIRED)
 # Locate libraries and headers
 find_package(Threads REQUIRED)
 find_library(LIB_I2C i2c REQUIRED)
+find_package( CURL )
+find_package( OpenCV REQUIRED )
 
 # Set Include Directories
 set(INCLUDE_DIRS
@@ -23,6 +25,7 @@ set(INCLUDE_DIRS
    ${CMAKE_CURRENT_SOURCE_DIR}/threads
    ${CMAKE_CURRENT_SOURCE_DIR}/controller
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials
+   ${OpenCV_INCLUDE_DIRS}
 )
 
 # Set Source files
@@ -31,6 +34,7 @@ set(SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/utils/CppTimer.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/Sampler.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CDriver.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/GPIODriver.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SHT31D.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/Camera.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/RelayBoard.cpp
@@ -48,6 +52,7 @@ set(HEADERS
    ${CMAKE_CURRENT_SOURCE_DIR}/utils/typeDefinitions.h 
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CSensor.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CDriver.h
+   ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/GPIODriver.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/SHT31D.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/Camera.h
    ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/RelayBoard.h
@@ -61,7 +66,7 @@ set(HEADERS
 # Create library for src and test
 add_library(AgroPiLib SHARED ${SOURCES} )
 target_include_directories(AgroPiLib PUBLIC ${INCLUDE_DIRS})
-target_link_libraries(AgroPiLib i2c rt ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CSensor.h)
+target_link_libraries(AgroPiLib i2c rt fcgi++ fcgi ${CMAKE_THREAD_LIBS_INIT} curl ${OpenCV_LIBS} ${CMAKE_CURRENT_SOURCE_DIR}/controller/peripherials/I2CSensor.h)
 target_link_libraries(AgroPiLib cpprestsdk::cpprest) 
 
 # Add executable

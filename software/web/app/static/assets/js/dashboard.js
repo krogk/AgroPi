@@ -1,5 +1,12 @@
 $(document).ready(function(){
-    init_chart_configs();
+    // init_chart_configs();
+    init_temperature_chart();
+    init_humidity_chart();
+    init_light_intensity_chart();
+    init_tvoc_chart();
+    init_eco2_chart();
+    init_ethanol_chart();
+    init_h2_chart();
     // sending a connect request to the server.
     var socket = io.connect('http://localhost:5050');
 
@@ -10,17 +17,70 @@ $(document).ready(function(){
 
     socket.on('measurement_updated', function(data) {
         console.log('Measurement updated', data);
+        
         if (data.type == "TEMPERATURE"){
-            display_temperature_chart(data, true);
+          if (temperature_data.length > 20){
+            temperature_data.shift();
+          }
+          temperature_data.push({'x': data.x, 'y': data.y})
+          temperature_chart.updateSeries([{
+            data: temperature_data
+          }]);
+          // console.log(temperature_data);
         }
         else if(data.type == "HUMIDITY"){
-            display_humidity_chart(data, true);
+          if (humidity_data.length > 20){
+            humidity_data.shift();
+          }
+          humidity_data.push({'x': data.x, 'y': data.y})
+          humidity_chart.updateSeries([{
+            data: humidity_data
+          }]);
         }
-        else if(data.type == "WATER_LEVEL"){
-            display_water_level_chart(data, true);
+        else if(data.type == "TVOC"){
+          if (tvoc_data.length > 20){
+            tvoc_data.shift();
+          }
+          tvoc_data.push({'x': data.x, 'y': data.y})
+          tvoc_chart.updateSeries([{
+            data: tvoc_data
+          }]);
+        }
+        else if(data.type == "ECO2"){
+          if (eco2_data.length > 20){
+            eco2_data.shift();
+          }
+          eco2_data.push({'x': data.x, 'y': data.y})
+          eco2_chart.updateSeries([{
+            data: eco2_data
+          }]);
+        }
+        else if(data.type == "ETHANOL"){
+          if (ethanol_data.length > 20){
+            ethanol_data.shift();
+          }
+          ethanol_data.push({'x': data.x, 'y': data.y})
+          ethanol_chart.updateSeries([{
+            data: ethanol_data
+          }]);
+        }
+        else if(data.type == "H2"){
+          if (h2_data.length > 20){
+            h2_data.shift();
+          }
+          h2_data.push({'x': data.x, 'y': data.y})
+          h2_chart.updateSeries([{
+            data: h2_data
+          }]);
         }
         else if(data.type == "LIGHT_INTENSITY"){
-            display_light_intensity_chart(data, true);
+          if (light_intensity_data.length > 20){
+            light_intensity_data.shift();
+          }
+          light_intensity_data.push({'x': data.x, 'y': data.y})
+          light_intensity_chart.updateSeries([{
+            data: light_intensity_data
+          }]);
         }
     });
 });
@@ -31,8 +91,19 @@ $(document).ready(function(){
 var time_series_chart = null;
 var temperature_chart = null;
 var humidity_chart = null;
-var water_level_chart = null;
+var tvoc_chart = null;
+var eco2_chart = null;
+var ethanol_chart = null;
+var h2_chart = null;
 var light_intensity_chart = null;
+
+var temperature_data = [];
+var humidity_data = [];
+var tvoc_data = [];
+var eco2_data = [];
+var ethanol_data = [];
+var h2_data = [];
+var light_intensity_data = [];
 
 function get_dashboard_data(){
     var start_date = $('.date-range').data('daterangepicker').startDate._d;
@@ -63,10 +134,29 @@ function get_dashboard_data(){
     $.postJSON("/dashboard", form_data, function(data){
         console.log(data);
         if (data.code == "00") {
-            display_temperature_chart(data.data.temperature);
-            display_humidity_chart(data.data.humidity);
-            display_water_level_chart(data.data.water_level);
-            display_light_intensity_chart(data.data.light_intensity);
+            temperature_chart.updateSeries([{
+              data: data.data.temperature
+            }]);
+
+            humidity_chart.updateSeries([{
+              data: data.data.humidity
+            }]);
+
+            tvoc_chart.updateSeries([{
+              data: data.data.tvoc
+            }]);
+
+            eco2_chart.updateSeries([{
+              data: data.data.eco2
+            }]);
+
+            ethanol_chart.updateSeries([{
+              data: data.data.ethanol
+            }]);
+
+            h2_chart.updateSeries([{
+              data: data.data.h2
+            }]);
             // display_time_series_chart(count_data.legal_aid_chart, count_data.firm_requests_chart);
         }
         else{
@@ -75,380 +165,284 @@ function get_dashboard_data(){
     });
 }
 
-function display_temperature_chart(data, single_update){
-    
-    if(temperature_chart == null){
-        ctx = document.getElementById('temperature-chart').getContext("2d");
-
-        gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-        gradientStroke.addColorStop(0, '#80b6f4');
-        gradientStroke.addColorStop(1, chartColor);
-
-        gradientFill = ctx.createLinearGradient(0, 170, 0, 50);
-        gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
-        gradientFill.addColorStop(1, "rgba(249, 99, 59, 0.40)");
-
-        temperature_chart = new Chart(ctx, {
-          type: 'line',
-          responsive: true,
-          data: {
-            labels: data.labels,
-            datasets: [{
-              label: "Temperature",
-              borderColor: "#f96332",
-              pointBorderColor: "#FFF",
-              pointBackgroundColor: "#f96332",
-              pointBorderWidth: 2,
-              pointHoverRadius: 4,
-              pointHoverBorderWidth: 1,
-              pointRadius: 4,
-              fill: true,
-              backgroundColor: gradientFill,
-              borderWidth: 2,
-              data: data.values
-            }]
-          },
-          options: gradientChartOptionsConfiguration
-        });
-    }
-    else{
-        if(single_update){
-            temperature_chart.data.labels.push(data.created_at);
-            temperature_chart.data.datasets.forEach((dataset) => {
-                dataset.data.push(parseFloat(data.value));
-            });
-        }
-        else{
-            temperature_chart.data.labels.push(data.labels);
-            temperature_chart.data.datasets.forEach((dataset) => {
-                dataset.data.push(parseFloat(data.values));
-            });
-        }
-        
-        temperature_chart.update();
-    }
-}
-
-function display_humidity_chart(data, single_update){
-    if (humidity_chart == null){
-        ctx = document.getElementById('humidity-chart').getContext("2d");
-
-        gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-        gradientStroke.addColorStop(0, '#18ce0f');
-        gradientStroke.addColorStop(1, chartColor);
-
-        gradientFill = ctx.createLinearGradient(0, 170, 0, 50);
-        gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
-        gradientFill.addColorStop(1, hexToRGB('#18ce0f', 0.4));
-
-        humidity_chart = new Chart(ctx, {
-          type: 'line',
-          responsive: true,
-          data: {
-            labels: data.labels,
-            datasets: [{
-              label: "Humidity",
-              borderColor: "#18ce0f",
-              pointBorderColor: "#FFF",
-              pointBackgroundColor: "#18ce0f",
-              pointBorderWidth: 2,
-              pointHoverRadius: 4,
-              pointHoverBorderWidth: 1,
-              pointRadius: 4,
-              fill: true,
-              backgroundColor: gradientFill,
-              borderWidth: 2,
-              data: data.values
-            }]
-          },
-          options: gradientChartOptionsConfigurationWithNumbersAndGrid
-        });
-    }
-    else{
-        if(single_update){
-            humidity_chart.data.labels.push(data.created_at);
-            humidity_chart.data.datasets.forEach((dataset) => {
-                dataset.data.push(parseFloat(data.value));
-            });
-        }
-        else{
-            humidity_chart.data.labels.push(data.labels);
-            humidity_chart.data.datasets.forEach((dataset) => {
-                dataset.data.push(parseFloat(data.values));
-            });
-        }
-        humidity_chart.update();
-    }
-}
-
-function display_water_level_chart(data, single_update){
-    //2CA8FF
-    if (water_level_chart == null){
-        ctx = document.getElementById('water-level-chart').getContext("2d");
-
-        gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-        gradientStroke.addColorStop(0, '#2CA8FF');
-        gradientStroke.addColorStop(1, chartColor);
-
-        gradientFill = ctx.createLinearGradient(0, 170, 0, 50);
-        gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
-        gradientFill.addColorStop(1, hexToRGB('#2CA8FF', 0.4));
-
-        water_level_chart = new Chart(ctx, {
-          type: 'bar',
-          responsive: true,
-          data: {
-            labels: data.labels,
-            datasets: [{
-              label: "Water level",
-              borderColor: "#2CA8FF",
-              pointBorderColor: "#FFF",
-              pointBackgroundColor: "#2CA8FF",
-              pointBorderWidth: 2,
-              pointHoverRadius: 4,
-              pointHoverBorderWidth: 1,
-              pointRadius: 4,
-              fill: true,
-              backgroundColor: gradientFill,
-              borderWidth: 2,
-              data: data.values
-            }]
-          },
-          options: gradientChartOptionsConfigurationWithNumbersAndGrid
-        });
-    }
-    else{
-        if(single_update){
-            water_level_chart.data.labels.push(data.created_at);
-            water_level_chart.data.datasets.forEach((dataset) => {
-                dataset.data.push(parseFloat(data.value));
-            });
-        }
-        else{
-            water_level_chart.data.labels.push(data.labels);
-            water_level_chart.data.datasets.forEach((dataset) => {
-                dataset.data.push(parseFloat(data.values));
-            });
-        }
-        water_level_chart.update();
-    }
-}
-
-function display_light_intensity_chart(data, single_update){
-    if(light_intensity_chart == null){
-        ctx = document.getElementById('light-intensity-chart').getContext("2d");
-
-        gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-        gradientStroke.addColorStop(0, '#80b6f4');
-        gradientStroke.addColorStop(1, chartColor);
-
-        gradientFill = ctx.createLinearGradient(0, 200, 0, 50);
-        gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
-        gradientFill.addColorStop(1, "rgba(255, 255, 255, 0.24)");
-
-        light_intensity_chart = new Chart(ctx, {
-          type: 'line',
-          responsive: true,
-          data: {
-            labels: data.labels,
-            datasets: [{
-              label: "Temperature",
-              borderColor: chartColor,
-              pointBorderColor: chartColor,
-              pointBackgroundColor: "#1e3d60",
-              pointHoverBackgroundColor: "#1e3d60",
-              pointHoverBorderColor: chartColor,
-              pointBorderWidth: 2,
-              pointHoverRadius: 4,
-              pointHoverBorderWidth: 1,
-              pointRadius: 4,
-              fill: true,
-              backgroundColor: gradientFill,
-              borderWidth: 2,
-              data: data.values
-            }]
-          },
-          options: gradientChartOptionsBigChart
-        });
-    }
-    else{
-        if(single_update){
-            light_intensity_chart.data.labels.push(data.created_at);
-            light_intensity_chart.data.datasets.forEach((dataset) => {
-                dataset.data.push(parseFloat(data.value));
-            });
-        }
-        else{
-            light_intensity_chart.data.labels.push(data.labels);
-            light_intensity_chart.data.datasets.forEach((dataset) => {
-                dataset.data.push(parseFloat(data.values));
-            });
-        }
-        light_intensity_chart.update();
-    }
-}
-
-function init_chart_configs(){
-    chartColor = "#FFFFFF";
-
-    gradientChartOptionsConfiguration = {
-      maintainAspectRatio: false,
-      legend: {
-        display: false
-      },
-      tooltips: {
-        bodySpacing: 4,
-        mode: "nearest",
-        intersect: 0,
-        position: "nearest",
-        xPadding: 10,
-        yPadding: 10,
-        caretPadding: 10
-      },
-      responsive: 1,
-      scales: {
-        yAxes: [{
-          display: 0,
-          gridLines: 0,
-          ticks: {
-            display: false
-          },
-          gridLines: {
-            zeroLineColor: "transparent",
-            drawTicks: false,
-            display: false,
-            drawBorder: false
-          }
-        }],
-        xAxes: [{
-          display: 0,
-          gridLines: 0,
-          ticks: {
-            display: false
-          },
-          gridLines: {
-            zeroLineColor: "transparent",
-            drawTicks: false,
-            display: false,
-            drawBorder: false
-          }
-        }]
-      },
-      layout: {
-        padding: {
-          left: 0,
-          right: 0,
-          top: 15,
-          bottom: 15
-        }
+function init_temperature_chart(){
+  var options = {
+    series: [{
+      name: "Temperature",
+      data: temperature_data
+    }],
+      chart: {
+      height: 350,
+      id: 'realtime',
+      type: 'line',
+      zoom: {
+        enabled: false
       }
-    };
-
-    gradientChartOptionsConfigurationWithNumbersAndGrid = {
-      maintainAspectRatio: false,
-      legend: {
-        display: false
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      curve: 'straight'
+    },
+    title: {
+      text: 'Temperature',
+      align: 'left'
+    },
+    grid: {
+      row: {
+        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5
       },
-      tooltips: {
-        bodySpacing: 4,
-        mode: "nearest",
-        intersect: 0,
-        position: "nearest",
-        xPadding: 10,
-        yPadding: 10,
-        caretPadding: 10
-      },
-      responsive: true,
-      scales: {
-        yAxes: [{
-          gridLines: 0,
-          gridLines: {
-            zeroLineColor: "transparent",
-            drawBorder: false
-          }
-        }],
-        xAxes: [{
-          display: 0,
-          gridLines: 0,
-          ticks: {
-            display: false
-          },
-          gridLines: {
-            zeroLineColor: "transparent",
-            drawTicks: false,
-            display: false,
-            drawBorder: false
-          }
-        }]
-      },
-      layout: {
-        padding: {
-          left: 0,
-          right: 0,
-          top: 15,
-          bottom: 15
-        }
-      }
-    };
-
-    gradientChartOptionsBigChart = {
-        layout: {
-          padding: {
-            left: 20,
-            right: 20,
-            top: 0,
-            bottom: 0
-          }
-        },
-        maintainAspectRatio: false,
-        tooltips: {
-          backgroundColor: '#fff',
-          titleFontColor: '#333',
-          bodyFontColor: '#666',
-          bodySpacing: 4,
-          xPadding: 12,
-          mode: "nearest",
-          intersect: 0,
-          position: "nearest"
-        },
-        legend: {
-          position: "bottom",
-          fillStyle: "#FFF",
-          display: false
-        },
-        scales: {
-          yAxes: [{
-            ticks: {
-              fontColor: "rgba(255,255,255,0.4)",
-              fontStyle: "bold",
-              beginAtZero: true,
-              maxTicksLimit: 5,
-              padding: 10
-            },
-            gridLines: {
-              drawTicks: true,
-              drawBorder: false,
-              display: true,
-              color: "rgba(255,255,255,0.1)",
-              zeroLineColor: "transparent"
-            }
-
-          }],
-          xAxes: [{
-            gridLines: {
-              zeroLineColor: "transparent",
-              display: false,
-
-            },
-            ticks: {
-              padding: 10,
-              fontColor: "rgba(255,255,255,0.4)",
-              fontStyle: "bold"
-            }
-          }]
-        }
+    },
+    xaxis: {
+      categories: [],
+      range: 10
     }
+  };
+
+  temperature_chart = new ApexCharts(document.querySelector("#temperature-chart"), options);
+  temperature_chart.render();
 }
 
+function init_humidity_chart(){
+  var options = {
+    series: [{
+      name: "Humidity",
+      data: humidity_data
+    }],
+      chart: {
+      height: 350,
+      id: 'realtime',
+      type: 'line',
+      zoom: {
+        enabled: false
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      curve: 'straight'
+    },
+    title: {
+      text: 'Humidity',
+      align: 'left'
+    },
+    grid: {
+      row: {
+        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5
+      },
+    },
+    xaxis: {
+      categories: [],
+      range: 10
+    }
+  };
+
+  humidity_chart = new ApexCharts(document.querySelector("#humidity-chart"), options);
+  humidity_chart.render();
+}
+
+function init_light_intensity_chart(){
+  var options = {
+    series: [{
+      name: "Light Intensity",
+      data: light_intensity_data
+    }],
+      chart: {
+      height: 350,
+      id: 'realtime',
+      type: 'line',
+      zoom: {
+        enabled: false
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      curve: 'straight'
+    },
+    title: {
+      text: 'Light Intensity',
+      align: 'left'
+    },
+    grid: {
+      row: {
+        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5
+      },
+    },
+    xaxis: {
+      categories: [],
+      range: 10
+    }
+  };
+
+  light_intensity_chart = new ApexCharts(document.querySelector("#light-intensity-chart"), options);
+  light_intensity_chart.render();
+}
+
+function init_tvoc_chart(){
+  var options = {
+    series: [{
+      name: "TVOC",
+      data: tvoc_data
+    }],
+      chart: {
+      height: 350,
+      id: 'realtime',
+      type: 'line',
+      zoom: {
+        enabled: false
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      curve: 'straight'
+    },
+    title: {
+      text: 'TVOC',
+      align: 'left'
+    },
+    grid: {
+      row: {
+        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5
+      },
+    },
+    xaxis: {
+      categories: [],
+      range: 10
+    }
+  };
+
+  tvoc_chart = new ApexCharts(document.querySelector("#tvoc-chart"), options);
+  tvoc_chart.render();
+}
+
+function init_eco2_chart(){
+  var options = {
+    series: [{
+      name: "ECO2",
+      data: eco2_data
+    }],
+      chart: {
+      height: 350,
+      id: 'realtime',
+      type: 'line',
+      zoom: {
+        enabled: false
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      curve: 'straight'
+    },
+    title: {
+      text: 'ECO2',
+      align: 'left'
+    },
+    grid: {
+      row: {
+        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5
+      },
+    },
+    xaxis: {
+      categories: [],
+      range: 10
+    }
+  };
+
+  eco2_chart = new ApexCharts(document.querySelector("#eco2-chart"), options);
+  eco2_chart.render();
+}
+
+function init_ethanol_chart(){
+  var options = {
+    series: [{
+      name: "Ethanol",
+      data: ethanol_data
+    }],
+      chart: {
+      height: 350,
+      id: 'realtime',
+      type: 'line',
+      zoom: {
+        enabled: false
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      curve: 'straight'
+    },
+    title: {
+      text: 'Ethanol',
+      align: 'left'
+    },
+    grid: {
+      row: {
+        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5
+      },
+    },
+    xaxis: {
+      categories: [],
+      range: 10
+    }
+  };
+
+  ethanol_chart = new ApexCharts(document.querySelector("#ethanol-chart"), options);
+  ethanol_chart.render();
+}
+
+function init_h2_chart(){
+  var options = {
+    series: [{
+      name: "H2",
+      data: h2_data
+    }],
+      chart: {
+      height: 350,
+      id: 'realtime',
+      type: 'line',
+      zoom: {
+        enabled: false
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      curve: 'straight'
+    },
+    title: {
+      text: 'H2',
+      align: 'left'
+    },
+    grid: {
+      row: {
+        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5
+      },
+    },
+    xaxis: {
+      categories: [],
+      range: 10
+    }
+  };
+
+  h2_chart = new ApexCharts(document.querySelector("#h2-chart"), options);
+  h2_chart.render();
+}
 
 

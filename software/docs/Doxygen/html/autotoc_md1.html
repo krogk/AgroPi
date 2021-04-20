@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AgroPi: Design Document</title>
+<title>AgroPi: Design Processes</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -59,19 +59,29 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Design Document </div>  </div>
+<div class="title">Design Processes </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Goal of this project is to create a flexible application which allows user to view enviroment variables on a website interface and controll the enviromnet from interface within a small chamber with actuating technology based on user's choice.</p>
-<p>The base of application should conist of sensors able to sense the following:</p><ul>
+<div class="textblock"><p>Goal of this project is to create a flexible application which allows user to view enviroment variables on a website interface and controll the enviromnet from interface within a small chamber or box with actuating technology based on user's choice.</p>
+<p>An agile approach has been taken for developing this application as the first attempt was probably going to be far from good:</p>
+<p>Firstly after assessing the initial set of hardware</p>
+<p>Once a working sensing prototype has been established for each software release the following process must be carried out:</p><ol type="1">
+<li>Have a meeting assessing the state of the project.</li>
+<li>Define new feature set and or modifications based on feedback, testing, hardware and bugs.</li>
+<li>Append to &amp; Modify the following requirement sections.</li>
+</ol>
+<p>NOTE: This itterative approach was okay, but more meetings could've been planned in the time provided to varify and investiage real-time software architecture implementations. Current</p>
+<p>The base of application must conist of sensors able to obtain the following set of environmental conditions:</p><ul>
 <li>Light Intensity - This would be used as a hueristic for controlling light actuator</li>
 <li>Temperature</li>
 <li>Humidity</li>
 <li>Co2 or eCo2</li>
 <li>TVOC</li>
 </ul>
-<p>All sensors should utilize one protocol if possible this should be I2C/SMBUS. SPI Would be faster, however, extension would be required for RPi which would complicate design.</p>
-<p>A base class is going to be created. This class is going to contain the following virtual functions to be overriden by each sensor class when inherting.</p><ul>
+<p>[-] Ideally each sensor should have an interrupt pin. [x] All sensors should utilize one protocol if possible this should be I2C/SMBUS.</p>
+<p><b>NOTE:</b> SPI Would be faster, however, extension would be required for RPi which would complicate design.</p>
+<p><b>NOTE:</b> None of the sensors we have decided to use for demo has interrupt functonality.</p>
+<p>[x] This class must contain the following virtual functions to be overriden by each sensor class when inherting.</p><ul>
 <li>Initialize - Opens the file descriptor to the sensor and does initial writes to sets up the sensor for reading operations.</li>
 <li>Reset - Writes to sensor to set up initial state.</li>
 <li>Close Device - Calls Reset function and closes the file descriptor</li>
@@ -80,32 +90,96 @@ $(function() {
 <li>m_pI2CDriver - a pointer to I2C driver object.</li>
 <li>m_fd - File Descriptor for I2C device.</li>
 </ul>
-<p>The I2C driver functions is going to be implemented as signle object, only one instance of the object is going to be initialized and reference to this object is going to be passed in initialization stage.</p>
-<p>is going to contain methods for plain I2C writes as well as SMBUS</p>
-<p>Flexibility is key, relay is going to be used to allow for user to connect desired actuaiting. 4 Channels is the minimmum and it is going to allow for the following:</p><ul>
+<p>[x] The I2C driver functions must be implemented as signle object, only one instance of the object is going to be initialized and reference to this object is going to be passed in initialization stage of each device that requires access to the driver's functions.</p>
+<p>[x] I2C driver must contain contain methods for plain I2C writes as well as SMBUS. [x] The implementation should esentially be a wrapper around the API that linux provides.</p>
+<p>[x] The GPIO driver must be implemented as signle object, only one instance of the object is going to be initialized and reference to this object is going to be passed in initialization stage of each device that requires access to the driver's functions.</p>
+<p>The object should be implementing using file descriptors to sys/ and contain the following functions:</p><ul>
+<li>[x] Set GPIO Direction</li>
+<li>[x] Set GPIO State</li>
+<li>[x] Set GPIO pin - esentially calling the two methods.</li>
+<li>[x] Read GPIO State</li>
+</ul>
+<p><b>NOTE:</b> Currently only relay board object uses the GPIO driver. Therefore methods could've been implemented into relayboard object, this approach wasn't taken as the designed architecutre allows the</p>
+<p>User must have freedom to choose the appropriate sensors for the application therefore no specific set of actuating elements must be recommended.</p>
+<p>Relay was chosen as the high voltage functionality is appealing [x] 4 Channels is the minimmum and which going to allow for the following:</p><ul>
 <li>Lights</li>
 <li>Heating Element</li>
 <li>Fan</li>
-<li>Water Pump</li>
+<li>Water Pump or Humidifier (Not Applicable Since High Voltage is not permitted for the assignment)</li>
 </ul>
-<p>The relay is going to be controlled by GPIO Pins.</p>
-<p>The application must be multi-threaded. To avoid complexity in terms of concurency and communications:</p><ol type="1">
-<li>All threads must be contained in a single process</li>
-<li>Call-backs is going to be used where possible.</li>
+<ol type="1">
+<li>[x]The application must be multi-threaded.</li>
+<li>To avoid complexity in terms of concurency and communications:<ol type="a">
+<li>[x] All threads must be contained in a single process</li>
+<li>[x] Call-backs must be used used where possible.</li>
+<li>[x] The Main Threads must idle not execute constantly.</li>
 </ol>
-<p>Threads is going to idle most of the time and not execute constantly. This is can be achievied by interrupts, timers and blocking read operations.</p>
-<p>Delay may be used only if it is absolotuley required(does not infulence/delay any other tasks), otherwise timers are the preffered choice.</p>
+</li>
+</ol>
+<p>This is can be achievied by interrupts, timers and blocking read operations.</p>
+<p><b>NOTE:</b> Currently the application uses 3 threads,</p><ol type="1">
+<li>Sampling Timer and timer event</li>
+<li><a class="el" href="classCamera.html">Camera</a></li>
+<li>JSONHandler</li>
+</ol>
+<p>[x] Delay may be used <b>only</b> if it is absolotuley required this has been defined as not infulening or delaying any other tasks, otherwise timers are the preffered choice.</p>
+<p>[x] If delay must be used to pause execution a high resolution delay must be used.</p>
+<p>[x] Timers are reliable to about 100Hz, any functionality needing higher sampling rates must utilize different approach preferably signals, interrupts and service routines.</p>
 <p>Ideally an interrupt service routines is going to write to handle sensor interrupts. If Interrupt architecture cannot be realized then a a sampling is going to be implemented by a timer with an event function for whole I2C Bus. The sampling rate in such case is going to be at least 1Hz but preferablly 4Hz (Average human reaction time).</p>
 <p>As soon as the timer fires the timer event function executes. The Timer event is going to do the following:</p><ol type="1">
-<li>Gather data from each sensor by turn</li>
-<li>Use controller callback function which sends data to server and executes the actuation loop.</li>
+<li>[x] Gather data from each sensor by turn</li>
+<li>[x] Use controller callback function which sends data to server and executes the actuation loop.</li>
 </ol>
-<p><a class="el" href="classController.html" title="Controller class. ">Controller</a> object is going to contain the callback function for sampler object to use as well as set of functions to Tx &amp; Rx data to &amp; from web-server. <a class="el" href="classController.html" title="Controller class. ">Controller</a> is going to contain data structures holding latest environment data from sampler and hueristics passed from the user by the server. <a class="el" href="classController.html" title="Controller class. ">Controller</a> is going to contain relay object(s) and have set of functions to controll them.</p>
-<p><a class="el" href="classController.html" title="Controller class. ">Controller</a> thread should initialize the sampler and controller object, start sampling and go into a while loop which should execute based on an exit flag which is going to be able to controlled from web server. In this while loop thread is going to read data from the server. The Read operation for the server should be blocking and as soon as the messeage has been recieved it is going to be processed by striping the opcode and this opcode with the corresponding value should be passed to the event handler function.</p>
+<p><b>NOTE</b>:</p>
+<p>[x] <a class="el" href="classController.html" title="Controller class. ">Controller</a> object must contain the callback function for sampler object to use [x] <a class="el" href="classController.html" title="Controller class. ">Controller</a> must contain data structures holding latest environment data from sampler information structures containing hueristics passed from the user by the server. [x] <a class="el" href="classController.html" title="Controller class. ">Controller</a> must contain relay object. and have set of abstraction functions to controll actuators.</p>
+<p>The web application doesn't need to receives each sample, therefore a timer has been used on the nginx server and to create a post request.</p>
+<p>Nginx -&gt; CGI handler -&gt; CPP</p>
+<p><a class="el" href="classController.html" title="Controller class. ">Controller</a> thread should:</p><ul>
+<li>[x] Initialize the sampler and controller object</li>
+<li>[x] Start sampling</li>
+<li>[x] Go into a while loop which should execute based on an exit flag.</li>
+<li>[x] In this while loop thread is going to read data from the server.</li>
+<li>[x] The Read operation for the server should be blocking and as soon as the messeage has been recieved it is going to be processed by striping the opcode and this opcode with the corresponding value should be passed to an appropriate event handler function.</li>
+</ul>
+<p><b>NOTE:</b> The above has been achieved using a</p>
+<p>Code must contain doxygen comments, from these comments which is going to allow to produce UML diagrams and easily inspect the code. Generate doxygen documentation must be put on the online to</p>
+<p>Before each software release the application needs to run through a set of unit and integration tests. If any new functionality is implemented or architecture of the software is changed then test suit must be updated.</p>
+<p>Before software release evidence of sucessfull test pass must be provied.</p>
+<p>[x] Unit test must focus purley on the drivers and devices. [x] For each of the Environment condition sensors should read 10 samples and check each sample:</p><ol type="1">
+<li>[x] Check the value is within the maxiumum and minimum for the sensor</li>
+<li>[x] Check if the value is in reasonable range, this has been specified through play testing in room conditions</li>
+</ol>
+<p>[] GPIO Testing - Needs implementation but tested as a part of relay board and seems to work.</p>
+<p>[x] Relay board testing:</p><ol type="1">
+<li>[x] Switch each relay on by turn and check the value of GPIOs has changed, allow one second sleep interval inbetween relay changes. Switch all relays off.</li>
+<li>[x] Switch all 4 relays on, check the value of GPIOs has changed, sleep for 5 seconds,</li>
+</ol>
+<p>Integration test should test the main objects responsible for controll in the application:</p><ul>
+<li>[] <a class="el" href="classSampler.html" title="Sampler Class. ">Sampler</a></li>
+<li>[x] <a class="el" href="classController.html" title="Controller class. ">Controller</a></li>
+<li>[] JSONHandler</li>
+</ul>
+<p>Currently Tested as a part of controller tests.</p>
+<p><b>NOTE:</b> A detailed set of tests needs to be implemented to exactly investigate the timing of the</p>
+<p>The controller Heuristics tests are aimed to make sure the backbone of the project is working by following test case scenario:</p>
+<p>By default the heuristic flags are off firstly for each heursitic coressponding env data is measurent using sampler, then the data is checked whether is has updated and actuator state is read to determine whether the actuator is turned off, then the target variable is updated through operation handler simulating a messeage from the web server, then the target gets checked. The targets are set so after turning heuristic control the actuators should turn on, the test checks for the state and repeats the process for next actuator. The samplers callback is used to send the data to the controller object.</p>
+<ol type="1">
+<li>Create new .cpp &amp; .h files in /software/src/controller/peripherals</li>
+<li>In your header file inherit from <a class="el" href="classI2CSensor.html">I2CSensor</a></li>
+<li>Override necessary functions</li>
+<li>Implement Measurement function</li>
+<li>Add variables to env data struct in /software/src/utils/typedefinitions.h</li>
+<li>Add measurement function in sampler.h function gather_env_data()</li>
+</ol>
+<ol type="1">
+<li>Open /software/src/threads/controllerThread.h</li>
+<li>Change the samplePeriod variable in the constructor of the class, this value is in nanoseconds.</li>
+</ol>
 <p>Project is built on these technologies:</p>
 <ul>
 <li>Git<ul>
 <li>Source control</li>
+<li>Github pages for displaying contents</li>
 </ul>
 </li>
 <li>CMake<ul>
@@ -121,6 +195,27 @@ $(function() {
 </li>
 <li>cppcheck<ul>
 <li>With <em>make cppcheck</em> you can run static code analysis</li>
+</ul>
+</li>
+<li>Nginx<ul>
+<li>Server sends post request for environment data</li>
+<li>Posts controll data</li>
+</ul>
+</li>
+<li>Dygraph<ul>
+<li>Plotting environment data</li>
+</ul>
+</li>
+<li>flaskserver<ul>
+<li></li>
+</ul>
+</li>
+<li>Python<ul>
+<li>Webserver</li>
+</ul>
+</li>
+<li>Mongodb<ul>
+<li>Databases</li>
 </ul>
 </li>
 <li>OpenCV<ul>

@@ -1,0 +1,104 @@
+\hypertarget{classssi__server_1_1SSIRequestHandler}{}\section{ssi\+\_\+server.\+S\+S\+I\+Request\+Handler Class Reference}
+\label{classssi__server_1_1SSIRequestHandler}\index{ssi\+\_\+server.\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server.\+S\+S\+I\+Request\+Handler}}
+
+
+Inheritance diagram for ssi\+\_\+server.\+S\+S\+I\+Request\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classssi__server_1_1SSIRequestHandler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ssi\+\_\+server.\+S\+S\+I\+Request\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classssi__server_1_1SSIRequestHandler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classssi__server_1_1SSIRequestHandler_af279fca1b9b4a54555fafe2cbf85c145}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, request, client\+\_\+address, server)
+\item 
+def \hyperlink{classssi__server_1_1SSIRequestHandler_aa3b488000dbc2ff5cc9bd1c6782032ac}{do\+\_\+\+G\+ET} (self)
+\item 
+def \hyperlink{classssi__server_1_1SSIRequestHandler_a8a789887b05f6ad59e2f669becad03bd}{do\+\_\+\+H\+E\+AD} (self)
+\item 
+def \hyperlink{classssi__server_1_1SSIRequestHandler_ae5f46f5007be9c70944c6e98d4b33f65}{translate\+\_\+path} (self, path)
+\item 
+def \hyperlink{classssi__server_1_1SSIRequestHandler_acd2983c5ead1154be7e6e12a5335bab9}{delete\+\_\+temp\+\_\+files} (self)
+\item 
+def \hyperlink{classssi__server_1_1SSIRequestHandler_a9cd12eef68d46d5fcddc5fddaec213c9}{create\+\_\+temp\+\_\+file} (self, original\+\_\+path, content)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classssi__server_1_1SSIRequestHandler_afb75305b5cb2a913599b40810aeeeb68}{temp\+\_\+files}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Adds minimal support for <!-- #include --> directives.
+
+The key bit is translate_path, which intercepts requests and serves them
+using a temporary file which inlines the #includes.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classssi__server_1_1SSIRequestHandler_af279fca1b9b4a54555fafe2cbf85c145}\label{classssi__server_1_1SSIRequestHandler_af279fca1b9b4a54555fafe2cbf85c145}} 
+\index{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def ssi\+\_\+server.\+S\+S\+I\+Request\+Handler.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{request,  }\item[{}]{client\+\_\+address,  }\item[{}]{server }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classssi__server_1_1SSIRequestHandler_a9cd12eef68d46d5fcddc5fddaec213c9}\label{classssi__server_1_1SSIRequestHandler_a9cd12eef68d46d5fcddc5fddaec213c9}} 
+\index{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}!create\+\_\+temp\+\_\+file@{create\+\_\+temp\+\_\+file}}
+\index{create\+\_\+temp\+\_\+file@{create\+\_\+temp\+\_\+file}!ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}}
+\subsubsection{\texorpdfstring{create\+\_\+temp\+\_\+file()}{create\_temp\_file()}}
+{\footnotesize\ttfamily def ssi\+\_\+server.\+S\+S\+I\+Request\+Handler.\+create\+\_\+temp\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{original\+\_\+path,  }\item[{}]{content }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classssi__server_1_1SSIRequestHandler_acd2983c5ead1154be7e6e12a5335bab9}\label{classssi__server_1_1SSIRequestHandler_acd2983c5ead1154be7e6e12a5335bab9}} 
+\index{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}!delete\+\_\+temp\+\_\+files@{delete\+\_\+temp\+\_\+files}}
+\index{delete\+\_\+temp\+\_\+files@{delete\+\_\+temp\+\_\+files}!ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}}
+\subsubsection{\texorpdfstring{delete\+\_\+temp\+\_\+files()}{delete\_temp\_files()}}
+{\footnotesize\ttfamily def ssi\+\_\+server.\+S\+S\+I\+Request\+Handler.\+delete\+\_\+temp\+\_\+files (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classssi__server_1_1SSIRequestHandler_aa3b488000dbc2ff5cc9bd1c6782032ac}\label{classssi__server_1_1SSIRequestHandler_aa3b488000dbc2ff5cc9bd1c6782032ac}} 
+\index{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}!do\+\_\+\+G\+ET@{do\+\_\+\+G\+ET}}
+\index{do\+\_\+\+G\+ET@{do\+\_\+\+G\+ET}!ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}}
+\subsubsection{\texorpdfstring{do\+\_\+\+G\+E\+T()}{do\_GET()}}
+{\footnotesize\ttfamily def ssi\+\_\+server.\+S\+S\+I\+Request\+Handler.\+do\+\_\+\+G\+ET (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classssi__server_1_1SSIRequestHandler_a8a789887b05f6ad59e2f669becad03bd}\label{classssi__server_1_1SSIRequestHandler_a8a789887b05f6ad59e2f669becad03bd}} 
+\index{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}!do\+\_\+\+H\+E\+AD@{do\+\_\+\+H\+E\+AD}}
+\index{do\+\_\+\+H\+E\+AD@{do\+\_\+\+H\+E\+AD}!ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}}
+\subsubsection{\texorpdfstring{do\+\_\+\+H\+E\+A\+D()}{do\_HEAD()}}
+{\footnotesize\ttfamily def ssi\+\_\+server.\+S\+S\+I\+Request\+Handler.\+do\+\_\+\+H\+E\+AD (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classssi__server_1_1SSIRequestHandler_ae5f46f5007be9c70944c6e98d4b33f65}\label{classssi__server_1_1SSIRequestHandler_ae5f46f5007be9c70944c6e98d4b33f65}} 
+\index{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}!translate\+\_\+path@{translate\+\_\+path}}
+\index{translate\+\_\+path@{translate\+\_\+path}!ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}}
+\subsubsection{\texorpdfstring{translate\+\_\+path()}{translate\_path()}}
+{\footnotesize\ttfamily def ssi\+\_\+server.\+S\+S\+I\+Request\+Handler.\+translate\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classssi__server_1_1SSIRequestHandler_afb75305b5cb2a913599b40810aeeeb68}\label{classssi__server_1_1SSIRequestHandler_afb75305b5cb2a913599b40810aeeeb68}} 
+\index{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}!temp\+\_\+files@{temp\+\_\+files}}
+\index{temp\+\_\+files@{temp\+\_\+files}!ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler@{ssi\+\_\+server\+::\+S\+S\+I\+Request\+Handler}}
+\subsubsection{\texorpdfstring{temp\+\_\+files}{temp\_files}}
+{\footnotesize\ttfamily ssi\+\_\+server.\+S\+S\+I\+Request\+Handler.\+temp\+\_\+files}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/nginx/node\+\_\+modules/dygraphs/docs/\hyperlink{ssi__server_8py}{ssi\+\_\+server.\+py}\end{DoxyCompactItemize}

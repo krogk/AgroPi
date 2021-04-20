@@ -1,12 +1,15 @@
 <map id="Sampler" name="Sampler">
-<area shape="rect" id="node2" href="$classCppTimer.html" title="{CppTimer\n||+ CppTimer()\l+ start()\l+ stop()\l+ ~CppTimer()\l# timerEvent()\l&#45; handler()\l}" alt="" coords="261,711,367,861"/>
-<area shape="rect" id="node7" href="$structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="502,483,625,560"/>
-<area shape="rect" id="node15" href="$classController.html" title="Controller class. " alt="" coords="799,718,960,854"/>
-<area shape="rect" id="node10" href="$classVEML7700.html" title="VEML7700 class. " alt="" coords="1329,395,1496,648"/>
-<area shape="rect" id="node14" href="$classSGP30.html" title="SGP30 class. " alt="" coords="1060,439,1216,604"/>
-<area shape="rect" id="node17" href="$structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="649,483,809,560"/>
-<area shape="rect" id="node11" href="$classI2CSensor.html" title="{I2CSensor\n||+ Initialize()\l+ Reset()\l+ Close_Device()\l}" alt="" coords="1408,79,1532,185"/>
-<area shape="rect" id="node18" href="$classSHT31D.html" title="SHT31D class. " alt="" coords="1559,431,1762,611"/>
-<area shape="rect" id="node16" href="$classRelayBoard.html" title="Relay Board class. " alt="" coords="884,461,995,582"/>
-<area shape="rect" id="node13" href="$classI2CDriver.html" title="I2C Driver class. " alt="" coords="1682,5,1901,259"/>
+<area shape="rect" id="node2" href="$classCppTimer.html" title="{CppTimer\n||+ CppTimer()\l+ start()\l+ stop()\l+ ~CppTimer()\l# timerEvent()\l&#45; handler()\l}" alt="" coords="261,769,367,920"/>
+<area shape="rect" id="node7" href="$structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="1673,512,1795,589"/>
+<area shape="rect" id="node15" href="$classController.html" title="Controller class. " alt="" coords="2102,740,2257,949"/>
+<area shape="rect" id="node10" href="$classVEML7700.html" title="VEML7700 class. " alt="" coords="940,424,1107,677"/>
+<area shape="rect" id="node14" href="$classSGP30.html" title="SGP30 class. " alt="" coords="1189,468,1345,633"/>
+<area shape="rect" id="node21" href="$structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="2033,512,2193,589"/>
+<area shape="rect" id="node11" href="$classI2CSensor.html" title="{I2CSensor\n||+ Initialize()\l+ Reset()\l+ Close_Device()\l}" alt="" coords="940,79,1064,185"/>
+<area shape="rect" id="node22" href="$classSHT31D.html" title="SHT31D class. " alt="" coords="587,461,790,641"/>
+<area shape="rect" id="node19" href="$classRelayBoard.html" title="Relay Board class. " alt="" coords="2217,424,2376,677"/>
+<area shape="rect" id="node13" href="$classI2CDriver.html" title="I2C Driver class. " alt="" coords="559,5,778,259"/>
+<area shape="rect" id="node16" href="$classGPIODriver.html" title="GPIO Driver Class. " alt="" coords="2392,49,2535,215"/>
+<area shape="rect" id="node17" href="$structActuationHeuristicsFlags.html" title="{ActuationHeuristicsFlags\n||}" alt="" coords="2613,512,2781,589"/>
+<area shape="rect" id="node20" href="$structActuationForceFlags.html" title="{ActuationForceFlags\n||}" alt="" coords="2805,512,2948,589"/>
 </map>

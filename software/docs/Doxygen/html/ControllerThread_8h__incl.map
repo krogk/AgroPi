@@ -1,3 +1,7 @@
 <map id="src/threads/ControllerThread.h" name="src/threads/ControllerThread.h">
-<area shape="rect" id="node2" href="$CppThread_8h.html" title="CppThread.h" alt="" coords="56,80,153,107"/>
+<area shape="rect" id="node2" href="$CppThread_8h.html" title="CppThread.h" alt="" coords="83,80,181,107"/>
+<area shape="rect" id="node4" href="$Controller_8h.html" title="Controller.h" alt="" coords="302,80,391,107"/>
+<area shape="rect" id="node5" href="$typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="189,155,309,181"/>
+<area shape="rect" id="node10" href="$RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="515,155,616,181"/>
+<area shape="rect" id="node11" href="$GPIODriver_8h.html" title="GPIODriver.h" alt="" coords="533,229,635,256"/>
 </map>

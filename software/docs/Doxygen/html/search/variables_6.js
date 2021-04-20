@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['lightintensity',['LightIntensity',['../structEnvironmentData.html#a2013551c12a584a6680517d750b2116a',1,'EnvironmentData']]],
-  ['lightintensitylowerthreshold',['LightIntensityLowerThreshold',['../structTargetEnvironmentData.html#a4619dffef19d60fd03d690fd756b595c',1,'TargetEnvironmentData']]],
-  ['lightintensityupperthreshold',['LightIntensityUpperThreshold',['../structTargetEnvironmentData.html#a7755db8c43daca465d5ac3730d57f7d8',1,'TargetEnvironmentData']]],
-  ['lightsensor',['lightSensor',['../classSampler.html#ae81394f464670af514f8dc7c5df46d74',1,'Sampler']]],
-  ['lightsgpio',['lightsGPIO',['../classRelayBoard.html#a05f68a6555288127a238e31282886ae0',1,'RelayBoard']]]
+  ['heating',['Heating',['../structActuationForceFlags.html#a6c9c69d9337857666a4ebf38893537cb',1,'ActuationForceFlags::Heating()'],['../structActuationHeuristicsFlags.html#aa591189e4fa9ffbf4dc982c1bb9202b6',1,'ActuationHeuristicsFlags::Heating()']]],
+  ['humidity',['Humidity',['../structEnvironmentData.html#a84e684c2dc15c5fb6bd87a03569cab05',1,'EnvironmentData']]],
+  ['humiditylowerthreshold',['HumidityLowerThreshold',['../structTargetEnvironmentData.html#af40ad465a6e74c13caf26b3672b7470f',1,'TargetEnvironmentData']]],
+  ['humidityupperthreshold',['HumidityUpperThreshold',['../structTargetEnvironmentData.html#a8db2e041382994d52fe089f9953ff437',1,'TargetEnvironmentData']]]
 ];

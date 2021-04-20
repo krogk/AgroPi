@@ -1,5 +1,8 @@
 <map id="Controller" name="Controller">
-<area shape="rect" id="node2" href="$structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="229,241,352,318"/>
-<area shape="rect" id="node7" href="$structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="376,241,536,318"/>
-<area shape="rect" id="node5" href="$classRelayBoard.html" title="Relay Board class. " alt="" coords="582,219,693,340"/>
+<area shape="rect" id="node2" href="$classGPIODriver.html" title="GPIO Driver Class. " alt="" coords="5,5,148,171"/>
+<area shape="rect" id="node9" href="$classRelayBoard.html" title="Relay Board class. " alt="" coords="151,336,309,589"/>
+<area shape="rect" id="node3" href="$structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="529,424,651,501"/>
+<area shape="rect" id="node11" href="$structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="675,424,835,501"/>
+<area shape="rect" id="node6" href="$structActuationHeuristicsFlags.html" title="{ActuationHeuristicsFlags\n||}" alt="" coords="889,424,1057,501"/>
+<area shape="rect" id="node10" href="$structActuationForceFlags.html" title="{ActuationForceFlags\n||}" alt="" coords="1096,424,1239,501"/>
 </map>

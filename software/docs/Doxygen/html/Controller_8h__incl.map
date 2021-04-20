@@ -1,4 +1,5 @@
 <map id="src/controller/Controller.h" name="src/controller/Controller.h">
-<area shape="rect" id="node2" href="$typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="114,80,234,107"/>
-<area shape="rect" id="node7" href="$RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="258,80,359,107"/>
+<area shape="rect" id="node2" href="$typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="113,80,233,107"/>
+<area shape="rect" id="node7" href="$RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="409,80,510,107"/>
+<area shape="rect" id="node8" href="$GPIODriver_8h.html" title="GPIODriver.h" alt="" coords="391,155,493,181"/>
 </map>

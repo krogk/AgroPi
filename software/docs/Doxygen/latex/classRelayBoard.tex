@@ -15,33 +15,61 @@ Collaboration diagram for Relay\+Board\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=200pt]{classRelayBoard__coll__graph}
+\includegraphics[width=342pt]{classRelayBoard__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classRelayBoard_aa788c15cfc95188f5935f9d9d9fe86d2}{Relay\+Board} (void)
+\hyperlink{classRelayBoard_ad96963754490cea54db92cf32ccccf90}{Relay\+Board} ()
 \item 
-int \hyperlink{classRelayBoard_a681cd840b5406b0f5d285b4aed94ef2c}{Set\+G\+P\+IO} ()
+\hyperlink{classRelayBoard_af05bb34a287c76312104a427c86c658e}{$\sim$\+Relay\+Board} (void)
 \item 
-int \hyperlink{classRelayBoard_a0dcfab8a5d558c5af4f8deeee510d314}{Clear\+G\+P\+IO} ()
+int \hyperlink{classRelayBoard_aee18a60a8063ebc87331cbb8fbb1a42f}{Initialize} (\hyperlink{classGPIODriver}{G\+P\+I\+O\+Driver} \&driver)
+\item 
+int \hyperlink{classRelayBoard_a0ce37124540bae0827a1b81e28841f70}{Lighting} (int state)
+\item 
+int \hyperlink{classRelayBoard_abdfd142dd723bda5fb961f2b83e04d98}{Heating} (int state)
+\item 
+int \hyperlink{classRelayBoard_aa14251b65f8b4872cdf95c56951f0959}{Airflow} (int state)
+\item 
+int \hyperlink{classRelayBoard_ab9e7c87d94483e55053722ff0981ff8f}{Watering} (int state)
+\item 
+int \hyperlink{classRelayBoard_a2339920ca78f22d9bbab349056ca261a}{Turn\+\_\+\+Relays\+\_\+\+Off} ()
+\item 
+int \hyperlink{classRelayBoard_a8d4fba9b90f8a65a0f02ad9d5a35c148}{Close\+\_\+\+Relay\+\_\+\+Board} ()
+\item 
+int \hyperlink{classRelayBoard_a2f9f8154a49a9d8ed3b7c54c39a5ed65}{Get\+Watering\+State} ()
+\item 
+int \hyperlink{classRelayBoard_a4b5cecaeadec360c688868a230a7d3a8}{Get\+Airflow\+State} ()
+\item 
+int \hyperlink{classRelayBoard_a4725ac8db57d591dbe338f646cdda254}{Get\+Heating\+State} ()
+\item 
+int \hyperlink{classRelayBoard_a32270d45de9d23698cf85fd3224f88c6}{Get\+Lighting\+State} ()
 \end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classRelayBoard_a49759cb3cdcb6c2ccd7fbb44eb34b260}{Initialize} ()
+int \hyperlink{classRelayBoard_acda1026ec1a4a11016812efc2e7fe732}{m\+\_\+heater\+G\+P\+I\+O\+State}
+\item 
+int \hyperlink{classRelayBoard_aff19bd04e757a2442243d9f863b435ae}{m\+\_\+lights\+G\+P\+I\+O\+State}
+\item 
+int \hyperlink{classRelayBoard_a1522a4a160fe47ecd96adf81ba372c98}{m\+\_\+fan\+G\+P\+I\+O\+State}
+\item 
+int \hyperlink{classRelayBoard_acf0292f25a47eb8facbec7279c0fa69d}{m\+\_\+water\+Pump\+G\+P\+I\+O\+State}
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classRelayBoard_a714832d9e7129960e0413b5618d2e310}{heater\+G\+P\+IO}
+int \hyperlink{classRelayBoard_a56817d4c93db75ccb542f8ee403d8440}{m\+\_\+heater\+G\+P\+IO}
 \item 
-int \hyperlink{classRelayBoard_a70ab1391ffac8f4c01c64ba1a811b6fc}{fan\+G\+P\+IO}
+int \hyperlink{classRelayBoard_aa781c5647863245c5ae7afbf6e185e59}{m\+\_\+lights\+G\+P\+IO}
 \item 
-int \hyperlink{classRelayBoard_a195c50d455165712f59cd39c6f7a6b82}{water\+Pump\+G\+P\+IO}
+int \hyperlink{classRelayBoard_af541df432f4ef6b385ee2e69c466b344}{m\+\_\+fan\+G\+P\+IO}
 \item 
-int \hyperlink{classRelayBoard_a05f68a6555288127a238e31282886ae0}{lights\+G\+P\+IO}
+int \hyperlink{classRelayBoard_a45807effbe5aaf2798d4f91dcf3c42d8}{m\+\_\+water\+Pump\+G\+P\+IO}
+\item 
+\hyperlink{classGPIODriver}{G\+P\+I\+O\+Driver} $\ast$ \hyperlink{classRelayBoard_ab567d2b303df89856d0e1e599aa538bc}{m\+\_\+p\+G\+P\+I\+O\+Driver} = nullptr
 \end{DoxyCompactItemize}
 
 
@@ -54,64 +82,208 @@ Kamil Rog
 This is class is responsilbe for the Elego Relay Board. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classRelayBoard_aa788c15cfc95188f5935f9d9d9fe86d2}\label{classRelayBoard_aa788c15cfc95188f5935f9d9d9fe86d2}} 
+\mbox{\Hypertarget{classRelayBoard_ad96963754490cea54db92cf32ccccf90}\label{classRelayBoard_ad96963754490cea54db92cf32ccccf90}} 
 \index{Relay\+Board@{Relay\+Board}!Relay\+Board@{Relay\+Board}}
 \index{Relay\+Board@{Relay\+Board}!Relay\+Board@{Relay\+Board}}
 \subsubsection{\texorpdfstring{Relay\+Board()}{RelayBoard()}}
-{\footnotesize\ttfamily Relay\+Board\+::\+Relay\+Board (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Relay\+Board\+::\+Relay\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classRelayBoard_af05bb34a287c76312104a427c86c658e}\label{classRelayBoard_af05bb34a287c76312104a427c86c658e}} 
+\index{Relay\+Board@{Relay\+Board}!````~Relay\+Board@{$\sim$\+Relay\+Board}}
+\index{````~Relay\+Board@{$\sim$\+Relay\+Board}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{$\sim$\+Relay\+Board()}{~RelayBoard()}}
+{\footnotesize\ttfamily Relay\+Board\+::$\sim$\+Relay\+Board (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classRelayBoard_a0dcfab8a5d558c5af4f8deeee510d314}\label{classRelayBoard_a0dcfab8a5d558c5af4f8deeee510d314}} 
-\index{Relay\+Board@{Relay\+Board}!Clear\+G\+P\+IO@{Clear\+G\+P\+IO}}
-\index{Clear\+G\+P\+IO@{Clear\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
-\subsubsection{\texorpdfstring{Clear\+G\+P\+I\+O()}{ClearGPIO()}}
-{\footnotesize\ttfamily int Relay\+Board\+::\+Clear\+G\+P\+IO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classRelayBoard_aa14251b65f8b4872cdf95c56951f0959}\label{classRelayBoard_aa14251b65f8b4872cdf95c56951f0959}} 
+\index{Relay\+Board@{Relay\+Board}!Airflow@{Airflow}}
+\index{Airflow@{Airflow}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Airflow()}{Airflow()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Airflow (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classRelayBoard_a49759cb3cdcb6c2ccd7fbb44eb34b260}\label{classRelayBoard_a49759cb3cdcb6c2ccd7fbb44eb34b260}} 
+Changes the state of the Airflow G\+P\+IO pin
+
+\begin{DoxyReturn}{Returns}
+Zero on success else error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRelayBoard_a8d4fba9b90f8a65a0f02ad9d5a35c148}\label{classRelayBoard_a8d4fba9b90f8a65a0f02ad9d5a35c148}} 
+\index{Relay\+Board@{Relay\+Board}!Close\+\_\+\+Relay\+\_\+\+Board@{Close\+\_\+\+Relay\+\_\+\+Board}}
+\index{Close\+\_\+\+Relay\+\_\+\+Board@{Close\+\_\+\+Relay\+\_\+\+Board}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Close\+\_\+\+Relay\+\_\+\+Board()}{Close\_Relay\_Board()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Close\+\_\+\+Relay\+\_\+\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRelayBoard_a4b5cecaeadec360c688868a230a7d3a8}\label{classRelayBoard_a4b5cecaeadec360c688868a230a7d3a8}} 
+\index{Relay\+Board@{Relay\+Board}!Get\+Airflow\+State@{Get\+Airflow\+State}}
+\index{Get\+Airflow\+State@{Get\+Airflow\+State}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Get\+Airflow\+State()}{GetAirflowState()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Get\+Airflow\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Wrapper for reading airflow G\+P\+IO pin state
+
+\begin{DoxyReturn}{Returns}
+Value of the lighting pin else negative error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRelayBoard_a4725ac8db57d591dbe338f646cdda254}\label{classRelayBoard_a4725ac8db57d591dbe338f646cdda254}} 
+\index{Relay\+Board@{Relay\+Board}!Get\+Heating\+State@{Get\+Heating\+State}}
+\index{Get\+Heating\+State@{Get\+Heating\+State}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Get\+Heating\+State()}{GetHeatingState()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Get\+Heating\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Wrapper for reading heating G\+P\+IO state
+
+\begin{DoxyReturn}{Returns}
+Value of the lighting pin else negative error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRelayBoard_a32270d45de9d23698cf85fd3224f88c6}\label{classRelayBoard_a32270d45de9d23698cf85fd3224f88c6}} 
+\index{Relay\+Board@{Relay\+Board}!Get\+Lighting\+State@{Get\+Lighting\+State}}
+\index{Get\+Lighting\+State@{Get\+Lighting\+State}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Get\+Lighting\+State()}{GetLightingState()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Get\+Lighting\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Wrapper for reading Lighting G\+P\+IO pin state
+
+\begin{DoxyReturn}{Returns}
+Value of the lighting pin, else negative error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRelayBoard_a2f9f8154a49a9d8ed3b7c54c39a5ed65}\label{classRelayBoard_a2f9f8154a49a9d8ed3b7c54c39a5ed65}} 
+\index{Relay\+Board@{Relay\+Board}!Get\+Watering\+State@{Get\+Watering\+State}}
+\index{Get\+Watering\+State@{Get\+Watering\+State}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Get\+Watering\+State()}{GetWateringState()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Get\+Watering\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Wrapper for reading airflow G\+P\+IO pin state
+
+\begin{DoxyReturn}{Returns}
+Value of the lighting pin else negative error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRelayBoard_abdfd142dd723bda5fb961f2b83e04d98}\label{classRelayBoard_abdfd142dd723bda5fb961f2b83e04d98}} 
+\index{Relay\+Board@{Relay\+Board}!Heating@{Heating}}
+\index{Heating@{Heating}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Heating()}{Heating()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Heating (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})}
+
+Changes the state of the Heating G\+P\+IO pin
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & State to change the Heating G\+P\+IO pin to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRelayBoard_aee18a60a8063ebc87331cbb8fbb1a42f}\label{classRelayBoard_aee18a60a8063ebc87331cbb8fbb1a42f}} 
 \index{Relay\+Board@{Relay\+Board}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!Relay\+Board@{Relay\+Board}}
 \subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
-{\footnotesize\ttfamily int Relay\+Board\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Initialize (\begin{DoxyParamCaption}\item[{\hyperlink{classGPIODriver}{G\+P\+I\+O\+Driver} \&}]{driver }\end{DoxyParamCaption})}
 
-Initialize G\+P\+IO Pins for using Relay Board.
+Initializes actuation gpio pins
 
 \begin{DoxyReturn}{Returns}
-Zero on success 
+Zero on success else negative error number 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classRelayBoard_a681cd840b5406b0f5d285b4aed94ef2c}\label{classRelayBoard_a681cd840b5406b0f5d285b4aed94ef2c}} 
-\index{Relay\+Board@{Relay\+Board}!Set\+G\+P\+IO@{Set\+G\+P\+IO}}
-\index{Set\+G\+P\+IO@{Set\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
-\subsubsection{\texorpdfstring{Set\+G\+P\+I\+O()}{SetGPIO()}}
-{\footnotesize\ttfamily int Relay\+Board\+::\+Set\+G\+P\+IO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classRelayBoard_a0ce37124540bae0827a1b81e28841f70}\label{classRelayBoard_a0ce37124540bae0827a1b81e28841f70}} 
+\index{Relay\+Board@{Relay\+Board}!Lighting@{Lighting}}
+\index{Lighting@{Lighting}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Lighting()}{Lighting()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Lighting (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})}
 
+Changes the state of the lighting G\+P\+IO pin
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & State to change the lighting G\+P\+IO pin to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRelayBoard_a2339920ca78f22d9bbab349056ca261a}\label{classRelayBoard_a2339920ca78f22d9bbab349056ca261a}} 
+\index{Relay\+Board@{Relay\+Board}!Turn\+\_\+\+Relays\+\_\+\+Off@{Turn\+\_\+\+Relays\+\_\+\+Off}}
+\index{Turn\+\_\+\+Relays\+\_\+\+Off@{Turn\+\_\+\+Relays\+\_\+\+Off}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Turn\+\_\+\+Relays\+\_\+\+Off()}{Turn\_Relays\_Off()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Turn\+\_\+\+Relays\+\_\+\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Turns each Relay off by setting the G\+P\+IO pin high
+
+\begin{DoxyReturn}{Returns}
+Zero on success else error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRelayBoard_ab9e7c87d94483e55053722ff0981ff8f}\label{classRelayBoard_ab9e7c87d94483e55053722ff0981ff8f}} 
+\index{Relay\+Board@{Relay\+Board}!Watering@{Watering}}
+\index{Watering@{Watering}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{Watering()}{Watering()}}
+{\footnotesize\ttfamily int Relay\+Board\+::\+Watering (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})}
+
+Changes the state of the Watering G\+P\+IO pin
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & State to change the watering G\+P\+IO pin to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else error number 
+\end{DoxyReturn}
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classRelayBoard_a70ab1391ffac8f4c01c64ba1a811b6fc}\label{classRelayBoard_a70ab1391ffac8f4c01c64ba1a811b6fc}} 
-\index{Relay\+Board@{Relay\+Board}!fan\+G\+P\+IO@{fan\+G\+P\+IO}}
-\index{fan\+G\+P\+IO@{fan\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
-\subsubsection{\texorpdfstring{fan\+G\+P\+IO}{fanGPIO}}
-{\footnotesize\ttfamily int Relay\+Board\+::fan\+G\+P\+IO\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classRelayBoard_af541df432f4ef6b385ee2e69c466b344}\label{classRelayBoard_af541df432f4ef6b385ee2e69c466b344}} 
+\index{Relay\+Board@{Relay\+Board}!m\+\_\+fan\+G\+P\+IO@{m\+\_\+fan\+G\+P\+IO}}
+\index{m\+\_\+fan\+G\+P\+IO@{m\+\_\+fan\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{m\+\_\+fan\+G\+P\+IO}{m\_fanGPIO}}
+{\footnotesize\ttfamily int Relay\+Board\+::m\+\_\+fan\+G\+P\+IO\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classRelayBoard_a714832d9e7129960e0413b5618d2e310}\label{classRelayBoard_a714832d9e7129960e0413b5618d2e310}} 
-\index{Relay\+Board@{Relay\+Board}!heater\+G\+P\+IO@{heater\+G\+P\+IO}}
-\index{heater\+G\+P\+IO@{heater\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
-\subsubsection{\texorpdfstring{heater\+G\+P\+IO}{heaterGPIO}}
-{\footnotesize\ttfamily int Relay\+Board\+::heater\+G\+P\+IO\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classRelayBoard_a1522a4a160fe47ecd96adf81ba372c98}\label{classRelayBoard_a1522a4a160fe47ecd96adf81ba372c98}} 
+\index{Relay\+Board@{Relay\+Board}!m\+\_\+fan\+G\+P\+I\+O\+State@{m\+\_\+fan\+G\+P\+I\+O\+State}}
+\index{m\+\_\+fan\+G\+P\+I\+O\+State@{m\+\_\+fan\+G\+P\+I\+O\+State}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{m\+\_\+fan\+G\+P\+I\+O\+State}{m\_fanGPIOState}}
+{\footnotesize\ttfamily int Relay\+Board\+::m\+\_\+fan\+G\+P\+I\+O\+State}
 
-\mbox{\Hypertarget{classRelayBoard_a05f68a6555288127a238e31282886ae0}\label{classRelayBoard_a05f68a6555288127a238e31282886ae0}} 
-\index{Relay\+Board@{Relay\+Board}!lights\+G\+P\+IO@{lights\+G\+P\+IO}}
-\index{lights\+G\+P\+IO@{lights\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
-\subsubsection{\texorpdfstring{lights\+G\+P\+IO}{lightsGPIO}}
-{\footnotesize\ttfamily int Relay\+Board\+::lights\+G\+P\+IO\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classRelayBoard_a56817d4c93db75ccb542f8ee403d8440}\label{classRelayBoard_a56817d4c93db75ccb542f8ee403d8440}} 
+\index{Relay\+Board@{Relay\+Board}!m\+\_\+heater\+G\+P\+IO@{m\+\_\+heater\+G\+P\+IO}}
+\index{m\+\_\+heater\+G\+P\+IO@{m\+\_\+heater\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{m\+\_\+heater\+G\+P\+IO}{m\_heaterGPIO}}
+{\footnotesize\ttfamily int Relay\+Board\+::m\+\_\+heater\+G\+P\+IO\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classRelayBoard_a195c50d455165712f59cd39c6f7a6b82}\label{classRelayBoard_a195c50d455165712f59cd39c6f7a6b82}} 
-\index{Relay\+Board@{Relay\+Board}!water\+Pump\+G\+P\+IO@{water\+Pump\+G\+P\+IO}}
-\index{water\+Pump\+G\+P\+IO@{water\+Pump\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
-\subsubsection{\texorpdfstring{water\+Pump\+G\+P\+IO}{waterPumpGPIO}}
-{\footnotesize\ttfamily int Relay\+Board\+::water\+Pump\+G\+P\+IO\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classRelayBoard_acda1026ec1a4a11016812efc2e7fe732}\label{classRelayBoard_acda1026ec1a4a11016812efc2e7fe732}} 
+\index{Relay\+Board@{Relay\+Board}!m\+\_\+heater\+G\+P\+I\+O\+State@{m\+\_\+heater\+G\+P\+I\+O\+State}}
+\index{m\+\_\+heater\+G\+P\+I\+O\+State@{m\+\_\+heater\+G\+P\+I\+O\+State}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{m\+\_\+heater\+G\+P\+I\+O\+State}{m\_heaterGPIOState}}
+{\footnotesize\ttfamily int Relay\+Board\+::m\+\_\+heater\+G\+P\+I\+O\+State}
+
+\mbox{\Hypertarget{classRelayBoard_aa781c5647863245c5ae7afbf6e185e59}\label{classRelayBoard_aa781c5647863245c5ae7afbf6e185e59}} 
+\index{Relay\+Board@{Relay\+Board}!m\+\_\+lights\+G\+P\+IO@{m\+\_\+lights\+G\+P\+IO}}
+\index{m\+\_\+lights\+G\+P\+IO@{m\+\_\+lights\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{m\+\_\+lights\+G\+P\+IO}{m\_lightsGPIO}}
+{\footnotesize\ttfamily int Relay\+Board\+::m\+\_\+lights\+G\+P\+IO\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classRelayBoard_aff19bd04e757a2442243d9f863b435ae}\label{classRelayBoard_aff19bd04e757a2442243d9f863b435ae}} 
+\index{Relay\+Board@{Relay\+Board}!m\+\_\+lights\+G\+P\+I\+O\+State@{m\+\_\+lights\+G\+P\+I\+O\+State}}
+\index{m\+\_\+lights\+G\+P\+I\+O\+State@{m\+\_\+lights\+G\+P\+I\+O\+State}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{m\+\_\+lights\+G\+P\+I\+O\+State}{m\_lightsGPIOState}}
+{\footnotesize\ttfamily int Relay\+Board\+::m\+\_\+lights\+G\+P\+I\+O\+State}
+
+\mbox{\Hypertarget{classRelayBoard_ab567d2b303df89856d0e1e599aa538bc}\label{classRelayBoard_ab567d2b303df89856d0e1e599aa538bc}} 
+\index{Relay\+Board@{Relay\+Board}!m\+\_\+p\+G\+P\+I\+O\+Driver@{m\+\_\+p\+G\+P\+I\+O\+Driver}}
+\index{m\+\_\+p\+G\+P\+I\+O\+Driver@{m\+\_\+p\+G\+P\+I\+O\+Driver}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{m\+\_\+p\+G\+P\+I\+O\+Driver}{m\_pGPIODriver}}
+{\footnotesize\ttfamily \hyperlink{classGPIODriver}{G\+P\+I\+O\+Driver}$\ast$ Relay\+Board\+::m\+\_\+p\+G\+P\+I\+O\+Driver = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classRelayBoard_a45807effbe5aaf2798d4f91dcf3c42d8}\label{classRelayBoard_a45807effbe5aaf2798d4f91dcf3c42d8}} 
+\index{Relay\+Board@{Relay\+Board}!m\+\_\+water\+Pump\+G\+P\+IO@{m\+\_\+water\+Pump\+G\+P\+IO}}
+\index{m\+\_\+water\+Pump\+G\+P\+IO@{m\+\_\+water\+Pump\+G\+P\+IO}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{m\+\_\+water\+Pump\+G\+P\+IO}{m\_waterPumpGPIO}}
+{\footnotesize\ttfamily int Relay\+Board\+::m\+\_\+water\+Pump\+G\+P\+IO\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classRelayBoard_acf0292f25a47eb8facbec7279c0fa69d}\label{classRelayBoard_acf0292f25a47eb8facbec7279c0fa69d}} 
+\index{Relay\+Board@{Relay\+Board}!m\+\_\+water\+Pump\+G\+P\+I\+O\+State@{m\+\_\+water\+Pump\+G\+P\+I\+O\+State}}
+\index{m\+\_\+water\+Pump\+G\+P\+I\+O\+State@{m\+\_\+water\+Pump\+G\+P\+I\+O\+State}!Relay\+Board@{Relay\+Board}}
+\subsubsection{\texorpdfstring{m\+\_\+water\+Pump\+G\+P\+I\+O\+State}{m\_waterPumpGPIOState}}
+{\footnotesize\ttfamily int Relay\+Board\+::m\+\_\+water\+Pump\+G\+P\+I\+O\+State}
 
 
 

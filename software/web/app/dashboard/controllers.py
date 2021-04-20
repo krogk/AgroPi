@@ -29,12 +29,13 @@ class DashboardControllers:
                     Q(type=measurement_type))
                 
                 data_values = []
-                time_values = []
                 for data in measurement_data:
-                    data_values.append(float(data.value))
-                    time_values.append(datetime.strftime(data.created_at, "%H:%M"))
+                    # data_values.append(float(data.value))
+                    # time_values.append(datetime.strftime(data.created_at, "%H:%M"))
+                    data_values.append({'x': datetime.strftime(data.created_at, "%H:%M:%S"), 'y': float(data.value)})
 
-                dashboard_data[measurement_type.lower()] = {'labels': time_values, 'values': data_values}
+                # dashboard_data[measurement_type.lower()] = {'labels': time_values, 'values': data_values}
+                dashboard_data[measurement_type.lower()] = data_values
             
             return Response.ok_response(data=dashboard_data)
         except Exception as ex:

@@ -1,0 +1,24 @@
+server {
+        listen       80;
+        server_name  localhost;
+
+        location /favicon.ico {
+          return 204;
+          access_log     off;
+          log_not_found  off;
+        }
+
+        location /sensor/ {
+          include        fastcgi_params;
+          fastcgi_pass   unix:/tmp/fastcgisocket;
+        }
+
+        location / {
+          root /home/pi/Desktop/repos/tests/AgroPi/software/web/html;
+          index dashboard.html;
+        }
+
+        location /static/ {
+               root /home/pi/Desktop/repos/tests/AgroPi/software/web/app;
+        }
+}

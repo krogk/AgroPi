@@ -27,20 +27,23 @@ extern "C" {
 }
 #include "utils.h"
 
+#define CLOCKID CLOCK_MONOTONIC
+
 /**
-* Dealy Function Pausing Executaion for specified amount of time.
+* Suspends the execution of the calling thread until
+* at least the time specified has elapsed.
 *
 * @param timeMs  Time to wait in miliseconds.
 * 
 * @return none
 */
 void I2CDriver::Delay(unsigned int timeMs) {
-  struct timespec sleeper, dummy ;
+  struct timespec sleeper, dummy;
 
   sleeper.tv_sec  = (time_t)(timeMs / 1000);
   sleeper.tv_nsec = (long)(timeMs % 1000) * 1000000;
-
-  nanosleep (&sleeper, &dummy);
+  // Use high-resolution sleep
+  nanosleep(&sleeper, &dummy);
 }
 
 

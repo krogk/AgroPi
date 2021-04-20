@@ -1,8 +1,14 @@
 \hypertarget{ControllerThread_8cpp}{}\section{src/threads/\+Controller\+Thread.cpp File Reference}
 \label{ControllerThread_8cpp}\index{src/threads/\+Controller\+Thread.\+cpp@{src/threads/\+Controller\+Thread.\+cpp}}
+{\ttfamily \#include \char`\"{}json\+\_\+fastcgi\+\_\+web\+\_\+api.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Controller\+Thread.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Sampler.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Controller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Camera.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
 Include dependency graph for Controller\+Thread.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -10,6 +16,33 @@ Include dependency graph for Controller\+Thread.\+cpp\+:\nopagebreak
 \includegraphics[width=350pt]{ControllerThread_8cpp__incl}
 \end{center}
 \end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classJSONCGIDataCallback}{J\+S\+O\+N\+C\+G\+I\+Data\+Callback}
+\item 
+class \hyperlink{classControllerCallback}{Controller\+Callback}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{ControllerThread_8cpp_a60176172068ee7057c3fd49521dd0115}{E\+V\+E\+N\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES} \{ \hyperlink{ControllerThread_8cpp_a60176172068ee7057c3fd49521dd0115ae5c39d7ebc2e5d0ea28b531d983d9731}{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+C\+H\+A\+N\+GE} = 253, 
+\hyperlink{ControllerThread_8cpp_a60176172068ee7057c3fd49521dd0115a97bb101d1d6c18d26fe95f18cef3792d}{E\+N\+A\+B\+L\+E\+\_\+\+S\+A\+M\+P\+L\+I\+NG} = 254, 
+\hyperlink{ControllerThread_8cpp_a60176172068ee7057c3fd49521dd0115a945280aa3e9db0f24215a8d9b6ddbd8e}{E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON} = 255
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ControllerThread_8cpp_a844160e16f1a3e514df9ce65683e17bd}{sig\+Handler} (int sig)
+\item 
+void \hyperlink{ControllerThread_8cpp_a20a45737018ec41ab19cb4f5164b26ac}{set\+H\+U\+P\+Handler} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ControllerThread_8cpp_a94a2e79f236e50a73fb8c842bcff7738}{main\+Running} = 1
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -20,3 +53,50 @@ Kamil Rog
 0.\+1
 \end{DoxyVersion}
 This file contains the functions for Server Thread class. 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{ControllerThread_8cpp_a60176172068ee7057c3fd49521dd0115}\label{ControllerThread_8cpp_a60176172068ee7057c3fd49521dd0115}} 
+\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!E\+V\+E\+N\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES@{E\+V\+E\+N\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES}}
+\index{E\+V\+E\+N\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES@{E\+V\+E\+N\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}
+\subsubsection{\texorpdfstring{E\+V\+E\+N\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES}{EVENT\_OP\_CODES}}
+{\footnotesize\ttfamily enum \hyperlink{ControllerThread_8cpp_a60176172068ee7057c3fd49521dd0115}{E\+V\+E\+N\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+C\+H\+A\+N\+GE@{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+C\+H\+A\+N\+GE}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+C\+H\+A\+N\+GE@{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{ControllerThread_8cpp_a60176172068ee7057c3fd49521dd0115ae5c39d7ebc2e5d0ea28b531d983d9731}\label{ControllerThread_8cpp_a60176172068ee7057c3fd49521dd0115ae5c39d7ebc2e5d0ea28b531d983d9731}} 
+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+C\+H\+A\+N\+GE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+N\+A\+B\+L\+E\+\_\+\+S\+A\+M\+P\+L\+I\+NG@{E\+N\+A\+B\+L\+E\+\_\+\+S\+A\+M\+P\+L\+I\+NG}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!E\+N\+A\+B\+L\+E\+\_\+\+S\+A\+M\+P\+L\+I\+NG@{E\+N\+A\+B\+L\+E\+\_\+\+S\+A\+M\+P\+L\+I\+NG}}}\mbox{\Hypertarget{ControllerThread_8cpp_a60176172068ee7057c3fd49521dd0115a97bb101d1d6c18d26fe95f18cef3792d}\label{ControllerThread_8cpp_a60176172068ee7057c3fd49521dd0115a97bb101d1d6c18d26fe95f18cef3792d}} 
+E\+N\+A\+B\+L\+E\+\_\+\+S\+A\+M\+P\+L\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON@{E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON@{E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON}}}\mbox{\Hypertarget{ControllerThread_8cpp_a60176172068ee7057c3fd49521dd0115a945280aa3e9db0f24215a8d9b6ddbd8e}\label{ControllerThread_8cpp_a60176172068ee7057c3fd49521dd0115a945280aa3e9db0f24215a8d9b6ddbd8e}} 
+E\+X\+I\+T\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{ControllerThread_8cpp_a20a45737018ec41ab19cb4f5164b26ac}\label{ControllerThread_8cpp_a20a45737018ec41ab19cb4f5164b26ac}} 
+\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!set\+H\+U\+P\+Handler@{set\+H\+U\+P\+Handler}}
+\index{set\+H\+U\+P\+Handler@{set\+H\+U\+P\+Handler}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}
+\subsubsection{\texorpdfstring{set\+H\+U\+P\+Handler()}{setHUPHandler()}}
+{\footnotesize\ttfamily void set\+H\+U\+P\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets a signal handler so that you can kill the background process gracefully with\+: kill -\/\+H\+UP $<$\+P\+I\+D$>$ \mbox{\Hypertarget{ControllerThread_8cpp_a844160e16f1a3e514df9ce65683e17bd}\label{ControllerThread_8cpp_a844160e16f1a3e514df9ce65683e17bd}} 
+\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!sig\+Handler@{sig\+Handler}}
+\index{sig\+Handler@{sig\+Handler}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}
+\subsubsection{\texorpdfstring{sig\+Handler()}{sigHandler()}}
+{\footnotesize\ttfamily void sig\+Handler (\begin{DoxyParamCaption}\item[{int}]{sig }\end{DoxyParamCaption})}
+
+Handler when the user has pressed ctrl-\/C send H\+UP via the kill command. 
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{ControllerThread_8cpp_a94a2e79f236e50a73fb8c842bcff7738}\label{ControllerThread_8cpp_a94a2e79f236e50a73fb8c842bcff7738}} 
+\index{Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}!main\+Running@{main\+Running}}
+\index{main\+Running@{main\+Running}!Controller\+Thread.\+cpp@{Controller\+Thread.\+cpp}}
+\subsubsection{\texorpdfstring{main\+Running}{mainRunning}}
+{\footnotesize\ttfamily int main\+Running = 1}
+
+Flag to indicate program is running. Needed later to quit the idle loop. 

@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classCppTimerCallback_1_1Runnable.html" title="CppTimerCallback::Runnable" alt="" coords="5,5,199,32"/>
+<area shape="rect" id="node1" href="$classCppTimer.html" title="CppTimer" alt="" coords="5,56,84,83"/>
+<area shape="rect" id="node2" href="$classCamera.html" title="Camera" alt="" coords="163,5,231,32"/>
+<area shape="rect" id="node3" href="$classCppTimerCallback.html" title="CppTimerCallback" alt="" coords="132,56,263,83"/>
+<area shape="rect" id="node4" href="$classSampler.html" title="Sampler Class. " alt="" coords="162,107,233,133"/>
 </map>

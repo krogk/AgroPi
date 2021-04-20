@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uthread',['uthread',['../classCppThread.html#a3136027f60f5054f2a195b7e5fb9f7c9',1,'CppThread']]]
+  ['norm',['Norm',['../ai_2main_8cpp.html#a56ea3886b7236ea8b29e7faa14fa600b',1,'main.cpp']]]
 ];

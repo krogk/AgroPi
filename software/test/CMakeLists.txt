@@ -6,6 +6,7 @@ add_definitions (-DBOOST_TEST_DYN_LINK)
 
 # Add executable
 add_executable (DriverSensorTest DriverSensorTest.cpp)
+add_executable (IntegrationTest IntegrationTests.cpp)
 
 # Add Link Libraries
 target_link_libraries (DriverSensorTest
@@ -15,5 +16,14 @@ target_link_libraries (DriverSensorTest
                       ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY}
 )
 
+target_link_libraries (IntegrationTest
+                      AgroPiLib
+                      ${Boost_FILESYSTEM_LIBRARY}
+                      ${Boost_SYSTEM_LIBRARY}
+                      ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY}
+)
+
 # Add Tests
 add_test (NAME Driver_Sensor_Test COMMAND DriverSensorTest)
+add_test (NAME Integration_Tests  COMMAND IntegrationTest)
+

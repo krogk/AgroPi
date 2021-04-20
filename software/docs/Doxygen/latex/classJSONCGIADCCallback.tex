@@ -1,0 +1,82 @@
+\hypertarget{classJSONCGIADCCallback}{}\section{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback Class Reference}
+\label{classJSONCGIADCCallback}\index{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback@{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback}}
+
+
+Inheritance diagram for J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classJSONCGIADCCallback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classJSONCGIADCCallback__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classJSONCGIADCCallback_abb5598a6c6563d00f8ede0b2bb87c2bc}{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback} (\hyperlink{classController}{Controller} $\ast$arg\+S\+E\+N\+S\+O\+Rfastcgi)
+\item 
+virtual std\+::string \hyperlink{classJSONCGIADCCallback_a763ae66809e399f49e712a1ad68289bb}{get\+J\+S\+O\+N\+String} ()
+\item 
+virtual std\+::string \hyperlink{classJSONCGIHandler_1_1GETCallback_a4e1fee495ddeb4e24eaa5b8e767ea838}{get\+Content\+Type} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classController}{Controller} $\ast$ \hyperlink{classJSONCGIADCCallback_a3f832c3bdcddd67e1ab4daa225531b2e}{controllerfastcgi}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Callback handler which returns data to the nginx server. Here, simply the current temperature and the timestamp is transmitted to nginx and the javascript application. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJSONCGIADCCallback_abb5598a6c6563d00f8ede0b2bb87c2bc}\label{classJSONCGIADCCallback_abb5598a6c6563d00f8ede0b2bb87c2bc}} 
+\index{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback@{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback}!J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback@{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback}}
+\index{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback@{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback}!J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback@{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback}}
+\subsubsection{\texorpdfstring{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback()}{JSONCGIADCCallback()}}
+{\footnotesize\ttfamily J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback\+::\+J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback (\begin{DoxyParamCaption}\item[{\hyperlink{classController}{Controller} $\ast$}]{arg\+S\+E\+N\+S\+O\+Rfastcgi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor\+: argument is the A\+DC callback handler which keeps the data as a simple example. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classJSONCGIHandler_1_1GETCallback_a4e1fee495ddeb4e24eaa5b8e767ea838}\label{classJSONCGIHandler_1_1GETCallback_a4e1fee495ddeb4e24eaa5b8e767ea838}} 
+\index{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback@{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback}!get\+Content\+Type@{get\+Content\+Type}}
+\index{get\+Content\+Type@{get\+Content\+Type}!J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback@{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback}}
+\subsubsection{\texorpdfstring{get\+Content\+Type()}{getContentType()}}
+{\footnotesize\ttfamily virtual std\+::string J\+S\+O\+N\+C\+G\+I\+Handler\+::\+G\+E\+T\+Callback\+::get\+Content\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+The content type of the payload. That\textquotesingle{}s by default \char`\"{}application/json\char`\"{} but can be overloaded if needed. \begin{DoxyReturn}{Returns}
+M\+I\+ME type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJSONCGIADCCallback_a763ae66809e399f49e712a1ad68289bb}\label{classJSONCGIADCCallback_a763ae66809e399f49e712a1ad68289bb}} 
+\index{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback@{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback}!get\+J\+S\+O\+N\+String@{get\+J\+S\+O\+N\+String}}
+\index{get\+J\+S\+O\+N\+String@{get\+J\+S\+O\+N\+String}!J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback@{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback}}
+\subsubsection{\texorpdfstring{get\+J\+S\+O\+N\+String()}{getJSONString()}}
+{\footnotesize\ttfamily virtual std\+::string J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback\+::get\+J\+S\+O\+N\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Gets the data sends it to the webserver. The callback creates eight json entries. One with the timestamp and sevem with the enviroment conditions read by the sensors. 
+
+Implements \hyperlink{classJSONCGIHandler_1_1GETCallback_a2367bf5a5912e9e5599ee464e0846255}{J\+S\+O\+N\+C\+G\+I\+Handler\+::\+G\+E\+T\+Callback}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classJSONCGIADCCallback_a3f832c3bdcddd67e1ab4daa225531b2e}\label{classJSONCGIADCCallback_a3f832c3bdcddd67e1ab4daa225531b2e}} 
+\index{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback@{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback}!controllerfastcgi@{controllerfastcgi}}
+\index{controllerfastcgi@{controllerfastcgi}!J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback@{J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback}}
+\subsubsection{\texorpdfstring{controllerfastcgi}{controllerfastcgi}}
+{\footnotesize\ttfamily \hyperlink{classController}{Controller}$\ast$ J\+S\+O\+N\+C\+G\+I\+A\+D\+C\+Callback\+::controllerfastcgi\hspace{0.3cm}{\ttfamily [private]}}
+
+Pointer to the controller holding current enviroment data 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/threads/\hyperlink{ControllerThread_8cpp}{Controller\+Thread.\+cpp}\end{DoxyCompactItemize}

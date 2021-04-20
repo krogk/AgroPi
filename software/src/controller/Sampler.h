@@ -18,7 +18,6 @@
 #include "VEML7700.h"
 #include "SHT31D.h"
 #include "SGP30.h"
-//#include "Camera.h"
 
 
 /**
@@ -26,11 +25,17 @@
  * @author Kamil Rog
  *
  * This class is responsible for taking measurements for all devices on I2C Bus. 
- * Inherits from CppTimer 
+ * This is achiebed by inheriting functionality of CppTimer.
+ * timerEvent() is executed when timer fires.
+ * This sampler creates new thread 
  */
 class Sampler : public CppTimer
 {
-
+	/**
+	* Executes when timer fires. 
+	* Firstly it takes measurements and runs the 
+	* callback function defined in the controller object
+	*/
 	void timerEvent()
 	{
 		Gather_Env_Data();
@@ -49,7 +54,7 @@ public:
 		setCallback(cb);
 		Initialize();
 	}
-
+  /// Destructor
 	~Sampler()
 	{
 		stop();
@@ -72,19 +77,28 @@ public:
 		stop();
 	}
 
+	/// Test Functions
+	int Gather_Env_Data();
+	EnvironmentData GetEnvData();
+	void CallbackTest();
 
 private:
+	// Initializes devices for communication
 	int Initialize();
-	int Gather_Env_Data();
+	// Debug function
 	int Print_Env_Data();
+	// Closes files descriptors and 
 	int CloseDevices();
 
-	I2CDriver i2cDriver;              		/*!< I2C driver used for peripherials */
-	VEML7700 	lightSensor; 				        /*!< VEML7700 Light Sensor Object */
-	SHT31D  	temperatureHumiditySensor;  /*!< SHT31D Temperature & Humidity Sensor Object */
-	SGP30			gasSensor;  				        /*!< SGP30 Gas Sensor Object */
-	//Camera 		camera; 					          /*!< Camera Sensor Object */
-	EnvironmentData envData; 				      /*!< Current and Target Enviroment Data Struct */
+	/// I2C driver used for 
+	I2CDriver i2cDriver;   
+	/// Peripherials using I2C driver - instantiate new sensors here     		
+	VEML7700 	lightSensor; 				        
+	SHT31D  	temperatureHumiditySensor; 
+	SGP30			gasSensor;  				        
+	/// Current and Target Enviroment Data Struct
+	EnvironmentData envData; 				  
+	/// Pointer to conroller object.    
 	Controller* samplerCallback = nullptr;
 };
 

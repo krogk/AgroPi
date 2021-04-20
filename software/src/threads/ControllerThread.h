@@ -13,7 +13,7 @@
 #define SERVER_THREAD_H
 
 #include "CppThread.h"
-
+#include "Controller.h"
 
 /**
  * @brief Server Thread class
@@ -27,22 +27,20 @@ class ControllerThread : public CppThread {
 
 public:
 	/**
-	 * Constructor that sets the offset for the thread to a given value.
-	 *
-	 * offset value
-	 * 
+	 * Constructor that sets the sample period(in ms).
 	 */
-	ControllerThread() {
-		isRunning = true;
+	ControllerThread()
+	{
 		samplePeriod = 250000000;
+		cameraSamplePeriod = 10000000000;
 	}
 
 private:
 	void run();
 
 private:
-	bool isRunning;
 	int	samplePeriod;
+	long long int cameraSamplePeriod;
 };
 
 #endif

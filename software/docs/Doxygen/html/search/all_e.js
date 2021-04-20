@@ -1,17 +1,14 @@
 var searchData=
 [
-  ['roadmap',['Roadmap',['../autotoc_md17.html',1,'']]],
-  ['rawethanol',['RawEthanol',['../structEnvironmentData.html#a3c949734838b0bc862b8f7449b6df41c',1,'EnvironmentData']]],
-  ['rawethanolupperthreshold',['RawEthanolUpperThreshold',['../structTargetEnvironmentData.html#ab0bb15f753619e3013f49dda97d15eab',1,'TargetEnvironmentData']]],
-  ['rawh2',['RawH2',['../structEnvironmentData.html#a89c96958697dd39ee2e41289debcd8a5',1,'EnvironmentData']]],
-  ['rawh2upperthreshold',['RawH2UpperThreshold',['../structTargetEnvironmentData.html#a649b7d8751b329fba9494b5c730a55fd',1,'TargetEnvironmentData']]],
-  ['registereventrunnable',['registerEventRunnable',['../classCppTimerCallback.html#ae6e815f1c3b65ea4f10fe0332e13acb9',1,'CppTimerCallback']]],
-  ['relay',['relay',['../classController.html#aa3f1d7aae706a5440adf520cbd7fb216',1,'Controller']]],
-  ['relayboard',['RelayBoard',['../classRelayBoard.html',1,'RelayBoard'],['../classRelayBoard.html#aa788c15cfc95188f5935f9d9d9fe86d2',1,'RelayBoard::RelayBoard()']]],
-  ['relayboard_2ecpp',['RelayBoard.cpp',['../RelayBoard_8cpp.html',1,'']]],
-  ['relayboard_2eh',['RelayBoard.h',['../RelayBoard_8h.html',1,'']]],
-  ['reset',['Reset',['../classI2CSensor.html#a0622266d335944782d2bfa6352f01095',1,'I2CSensor::Reset()'],['../classSGP30.html#a4934ef3a64eb0782a6d956c6526e4186',1,'SGP30::Reset()'],['../classSHT31D.html#aa5d28c2557ed05435ca9b433492b9b07',1,'SHT31D::Reset()'],['../classVEML7700.html#a381358f8998260f4600a0d6713f7ea2a',1,'VEML7700::Reset()']]],
-  ['roadmap_2emd',['roadmap.md',['../roadmap_8md.html',1,'']]],
-  ['run',['run',['../classSHT31D.html#a1cb98e435a44e2b6beeb3d0226cc9ec8',1,'SHT31D::run()'],['../classControllerThread.html#ae8206a23ab1a414f2956424def2e759c',1,'ControllerThread::run()'],['../classCppThread.html#a792b79e72250710147c452648def4a78',1,'CppThread::run()'],['../classCppTimerCallback_1_1Runnable.html#af8d11a3b580e76431151e76ac1886e6e',1,'CppTimerCallback::Runnable::run()']]],
-  ['runnable',['Runnable',['../classCppTimerCallback_1_1Runnable.html',1,'CppTimerCallback']]]
+  ['periodic',['PERIODIC',['../CppTimer_8h.html#a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58',1,'CppTimer.h']]],
+  ['plain_5fi2c_5fwrite_5fread',['Plain_I2C_Write_Read',['../classI2CDriver.html#a1e025ccfccece30b7d42acd1bf7e8e41',1,'I2CDriver']]],
+  ['plain_5fi2c_5fwrite_5fread_5fcrc8',['Plain_I2C_Write_Read_CRC8',['../classI2CDriver.html#a732c5b799a0aecde0d908ee981872572',1,'I2CDriver']]],
+  ['postcallback',['POSTCallback',['../classJSONCGIHandler_1_1POSTCallback.html',1,'JSONCGIHandler::POSTCallback'],['../classJSONCGIHandler.html#a09ee0f555db808d07c9ee9a575780553',1,'JSONCGIHandler::postCallback()']]],
+  ['postdecoder',['postDecoder',['../classJSONCGIHandler.html#a0f208af3dd050ed182967fe9cca42d78',1,'JSONCGIHandler']]],
+  ['poststring',['postString',['../classControllerCallback.html#aa7aa4c4c12ced1395e8c40ed1b82db12',1,'ControllerCallback::postString()'],['../classJSONCGIHandler_1_1POSTCallback.html#a6cddb384a3fd9242b323cea3d82a6bb7',1,'JSONCGIHandler::POSTCallback::postString()']]],
+  ['print_5fenv_5fdata',['Print_Env_Data',['../classSampler.html#acf3d04a740356e54fe53766a7f00ae15',1,'Sampler']]],
+  ['psm_5fen_5fmask',['PSM_EN_MASK',['../classVEML7700.html#ab9eb0034cdb5c017a8fab52a50390bafa4430a48be44ce68abe4f34c61340af33',1,'VEML7700']]],
+  ['psm_5fen_5fshift',['PSM_EN_SHIFT',['../classVEML7700.html#ab9eb0034cdb5c017a8fab52a50390bafaff513cb99fc1bd99f06cf6ed064e3750',1,'VEML7700']]],
+  ['psm_5fmask',['PSM_MASK',['../classVEML7700.html#ab29ccdbcd4e170ac8663965e40523012a0cf5a09e1bd111e893e0cfc535c227dc',1,'VEML7700']]],
+  ['psm_5fshift',['PSM_SHIFT',['../classVEML7700.html#ab29ccdbcd4e170ac8663965e40523012a100f7cf3af8443f352a3030a062e5d17',1,'VEML7700']]]
 ];

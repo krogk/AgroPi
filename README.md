@@ -5,12 +5,13 @@
   </a>
   
   <p align="center">
-    Learn cultivation of plants and mushrooms through a Raspberry Pi driven automated indoor garden. 
+     Cultivate your plants and mushrooms with ease through a Raspberry Pi driven monitoring and controlling system. 
+
     <br />
 </div>
 
 <p align="center">
-  <a href="https://twitter.com/agropiofficial">
+  <a href="https://twitter.com/AgropiOfficial_">
     <img src="media/images/icon_twitter.png" alt="Twitter"  width="64" height="64">
   </a>
   <a href="https://github.com/krogk/AgroPi">
@@ -53,14 +54,13 @@
 <!-- Project descirption -->
 ## About
 
-AgroPi is a flexible modular educational tool which allows user to learn how changes in enviroment effect the health of plants and mushrooms. With a raspberry pi, a box ("environmental chamber"), and a handful of sensors and actuators, you can get started with your own AgroPi. It is up to the user to decide what actuators fit the enviromental chamber needs best, though we provide some recommended ones.   
+AgroPi is a flexible modular monitoring and actuating tool which allows user to control enviroment within a small chamber to provide the desired conditions for mushroom and plant cultivation. It is up to the user to decide what actuators fit the enviromental chamber needs best as the main swiching technology utilizes GPIOs controlling relay board.   
 <br />
 <br />
-The website interface enables the user to easily display and control the conditions within enviromental chamber in real time. 
-The information throughout your grow cycle is saved in a grow log which you can share with other users so they can copy the exact conditions you've specifed with a click of a button. In addition AgroPi takes photos of your growth in constant intervals so you can show off your crops. 
+Website interface enables user to easily display and control the conditions within enviromental chamber in real time. In addition AgroPi takes photos of your growth in constant intervals so you can show off your crops. 
 <br />
 <br />
-In the near future AgroPi is going to utilize AI driven image processing to determine whether your plants are heatlhy and if not specify what might be the issue. Future updates will focus on recognizing stages of growth and nutrient defficiencies. 
+
 
 <div align="center">
 
@@ -81,19 +81,45 @@ In the near future AgroPi is going to utilize AI driven image processing to dete
 
 ### Software
 
-v0.1 Release allows you to view the following conditions on the website interface:
+v0.2 Release allows you to view the following conditions on the website interface:
 * Temperature 
 * Humidity
 * Light Intensity
 * [TVOC](https://en.wikipedia.org/wiki/Volatile_organic_compound)
 * eCO2
+* Ethanol
+* Hydrogen
 <br />
+
+<p align="center">
+  <a href="https://github.com/krogk/AgroPi">
+    <img src="media/images/website/AgroPiDashboard.PNG" alt="Logo">
+  </a>
+  
+  <p align="center">
+    Dashboard 
+    <br />
+</div>
+
+
+As well as easily set the target values for your environmental chamber.
+
+
+<p align="center">
+  <a href="https://github.com/krogk/AgroPi">
+    <img src="media/images/website/AgroPiActuation.PNG" alt="Actuation">
+  </a>
+  
+  <p align="center">
+    Control Panel 
+    <br />
+</div>
+
+Camera allows for detecting seedlings 
 
 [See Doxygen Documentation](https://krogk.github.io/AgroPi/software/docs/Doxygen/html/index.html)
 <br />
 <br />
-
-As well as easily set the target values for each variable for particular time of day, however, the actuation is going to be implemented in software release v0.2.
 
 
 ### Hardware
@@ -110,32 +136,45 @@ Sensors:
 
 <br />
 
-Actuators - This is user's choice however for our demo the following are used:
+Actuators - This is your choice as AgroPi is designed to control relay by changing state of the GPIO pins(make sure your relay module is compatible with 3v3 logic). For our demo the following are used:
+
+Switching Technology:
+* [Relay Board - Elego ](https://github.com/krogk/AgroPi/blob/Software_Release_1/hardware/Relay%20Board/4%20CHANNEL%205V%2010A%20RELAY%20MODULE.pdf)
+
+Actuators:
 * [Heating Element - Zerodis PTC Heating Element AC/DC 12V (80 ℃ 2—5W) ](https://www.amazon.co.uk/gp/product/B07FJZQLMK/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
 * [Water Pump](https://www.mybotic.com.my/products/Micro-Submersible-Water-Pump-DC-3V-5V/2778#:~:text=Suction%20Distance%3A%200.8%20meter%20)
 * [Fan - Coolermaster A12025-12CB-3BN-F1]()
-
-Misc:
-* [Relay Board - Elego ](https://github.com/krogk/AgroPi/blob/Software_Release_1/hardware/Relay%20Board/4%20CHANNEL%205V%2010A%20RELAY%20MODULE.pdf)
-
 
 
 Schematics:
 * [System Schematic](https://github.com/krogk/AgroPi/blob/Software_Release_1/hardware/Schematic.svg)
 
 
+<p align="center">
+  <a href="https://github.com/krogk/AgroPi">
+    <img src="media/images/logo1.png" alt="Logo">
+  </a>
+  
+  <p align="center">
+    Example Setup
+    <br />
+</div>
+
+
+
 ### Roadmap
 
-[-] Next Software Release (v0.2) - Actuation & Image Processing - Detecting Seedling/Mushroom - 16/04/2021
-* [-] Camera Integrated
-* [-] Sensor Calibration
-* [-] Relay Board Driver
-* [-] Relay Board Integration
-* [-] Web-Server Improvments
-* [-] Gather Training Dataset
-* [-] Train neuralnet
-* [-] Test on real samples
+[x] Next Software Release (v0.2) - Actuation & Image Processing - Detecting Seedling/Mushroom - 20/04/2021
+* [x] Camera Integrated
+* [x] Relay Board Driver
+* [x] Relay Board Integration
+* [x] Web-Server Improvments
+* [x] Gather Training Dataset
+* [x] Train neuralnet
+* [x] Test on real samples
 
+[] Software Release 3 Planning scheduled for september 2021(v0.3)
 
 <!-- Getting Started -->
 ## Getting Started
@@ -157,14 +196,43 @@ pip install -r requirements.txt
 
 ### Installation
 
-Build:
+1.Build:
 ```sh
 mkdir build
 cd build/
 cmake ..
-make test ARGS="-V"  
+make test ARGS="-V"  <- Optional Test Run, All sensors must be connected
 make
 ```
+2. Point Nginx File to AgroPi static website, modify the contents of /etc/nginx/sites-enabled/default
+```sh
+server {
+        listen       80;
+        server_name  localhost;
+
+        location /favicon.ico {
+          return 204;
+          access_log     off;
+          log_not_found  off;
+        }
+
+        location /sensor/ {
+          include        fastcgi_params;
+          fastcgi_pass   unix:/tmp/fastcgisocket;
+        }
+
+        location / {
+          root pathToAgroPi/AgroPi/software/web/html;
+          index dashboard.html;
+        }
+
+        location /static/ {
+               root pathToAgroPi/AgroPi/software/web/app;
+        }
+}
+```
+
+
 
 <!-- Usage -->
 ### Usage
@@ -174,8 +242,6 @@ To run the software:
 1. Go to web directory and run server
 ```sh
 python ./run.py &
-You might need to create Python env
-source venv/bin/activate
 ```
 
 2. Go to build directory and run application
@@ -183,7 +249,14 @@ source venv/bin/activate
 ./src/AgroPi 
 ```
 
-3. Wait 15 Seconds for application to set up sensors
+3. Wait 15 Seconds for application to set up sensors.
+
+4. Connect to webiste in your browser on your phone or pc
+```sh
+ (Rpi ip adress):80
+```
+Switch to control pannel, update your target values and enable your actucation heuristics. 
+
 
 <!-- Contributing -->
 ## Contributing
@@ -203,4 +276,4 @@ Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 <br />
 [Andrew Scott-George - Image Processing, 3D design, & PR](https://github.com/andrewsg3)
 <br />
-[Kamil Rog - Real-time Embedded Programming](https://github.com/krogk)
+[Kamil Rog - C++ Real-time Embedded Programming](https://github.com/krogk)

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7ecpptimer',['~CppTimer',['../classCppTimer.html#a91779a93fce7383a8d832ed481399342',1,'CppTimer']]],
-  ['_7esampler',['~Sampler',['../classSampler.html#afbbbd238b78dd3024686c852b69fa64e',1,'Sampler']]]
+  ['veml7700',['VEML7700',['../classVEML7700.html#a6b351807d27da4e07ea3bb93bd3dcbb1',1,'VEML7700']]]
 ];

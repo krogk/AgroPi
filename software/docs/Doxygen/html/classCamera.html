@@ -60,34 +60,117 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classCamera-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Camera Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="classCamera.html" title="Camera class. ">Camera</a> class.  
- <a href="classCamera.html#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="Camera_8h_source.html">Camera.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Camera:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCamera__inherit__graph.png" border="0" usemap="#Camera_inherit__map" alt="Inheritance graph"/></div>
+<map name="Camera_inherit__map" id="Camera_inherit__map">
+<area shape="rect" id="node2" href="classCppTimer.html" title="{CppTimer\n|&#45; timerid\l&#45; sev\l&#45; sa\l&#45; its\l|+ CppTimer()\l+ start()\l+ stop()\l+ ~CppTimer()\l# timerEvent()\l&#45; handler()\l}" alt="" coords="36,5,143,200"/>
+</map>
+</div>
 <div class="dynheader">
 Collaboration diagram for Camera:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCamera__coll__graph.png" border="0" usemap="#Camera_coll__map" alt="Collaboration graph"/></div>
+<map name="Camera_coll__map" id="Camera_coll__map">
+<area shape="rect" id="node2" href="classCppTimer.html" title="{CppTimer\n||+ CppTimer()\l+ start()\l+ stop()\l+ ~CppTimer()\l# timerEvent()\l&#45; handler()\l}" alt="" coords="203,145,310,296"/>
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5c68f1ee8348320a6c47419ae2d724fb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a5c68f1ee8348320a6c47419ae2d724fb">Camera</a> (void)</td></tr>
-<tr class="separator:a5c68f1ee8348320a6c47419ae2d724fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8facf3634f5d9d5be12c488eac7b7e2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a8facf3634f5d9d5be12c488eac7b7e2a">Camera</a> (cv::VideoCapture *cp)</td></tr>
+<tr class="separator:a8facf3634f5d9d5be12c488eac7b7e2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac0e2e17954d17a0c15019ca74149f15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#aac0e2e17954d17a0c15019ca74149f15">stopCamera</a> ()</td></tr>
+<tr class="separator:aac0e2e17954d17a0c15019ca74149f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd88c2780203f02c9fe236a7239e414c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#afd88c2780203f02c9fe236a7239e414c">Initialize</a> ()</td></tr>
+<tr class="separator:afd88c2780203f02c9fe236a7239e414c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af699a1dad54f8631e862b6f7703e48d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#af699a1dad54f8631e862b6f7703e48d3">setCameraID</a> (int ID)</td></tr>
+<tr class="separator:af699a1dad54f8631e862b6f7703e48d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef0a4ebb556d5a2a0f13e5d120c05259"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#aef0a4ebb556d5a2a0f13e5d120c05259">setContrasts</a> (int low, int high)</td></tr>
+<tr class="separator:aef0a4ebb556d5a2a0f13e5d120c05259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9409482c4422823f73d45b3d5e29304b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a9409482c4422823f73d45b3d5e29304b">setShutter</a> (int Shutter)</td></tr>
+<tr class="separator:a9409482c4422823f73d45b3d5e29304b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a230bee20d42ae409aba0700d8205bbe0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a230bee20d42ae409aba0700d8205bbe0">checkCamOpen</a> (cv::VideoCapture cap)</td></tr>
+<tr class="separator:a230bee20d42ae409aba0700d8205bbe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07670e99337fb322375a412222c06ada"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a07670e99337fb322375a412222c06ada">takePicture</a> ()</td></tr>
+<tr class="separator:a07670e99337fb322375a412222c06ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a919fb6f236e4535c0d2d29d760562ba5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a919fb6f236e4535c0d2d29d760562ba5">savePicture</a> (cv::VideoCapture *, std::string filename)</td></tr>
+<tr class="separator:a919fb6f236e4535c0d2d29d760562ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d3c970e947813e71f316b9e499b456"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#af0d3c970e947813e71f316b9e499b456">livestream</a> ()</td></tr>
+<tr class="separator:af0d3c970e947813e71f316b9e499b456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3595618ceff1b74e79633b4132ada11f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a3595618ceff1b74e79633b4132ada11f">setNetAddress</a> (std::string, std::string)</td></tr>
+<tr class="separator:a3595618ceff1b74e79633b4132ada11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59f08842d3de300419c74b12bee44d47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a59f08842d3de300419c74b12bee44d47">takeScanDNNPicture</a> ()</td></tr>
+<tr class="separator:a59f08842d3de300419c74b12bee44d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09931f84cc8e66e4e4c1181cb1cb4af6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a09931f84cc8e66e4e4c1181cb1cb4af6">takeScanCascade</a> ()</td></tr>
+<tr class="separator:a09931f84cc8e66e4e4c1181cb1cb4af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4f4c3f77479c8594dfa7fd7e6348306"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#ab4f4c3f77479c8594dfa7fd7e6348306">takeScanForGreen</a> ()</td></tr>
+<tr class="separator:ab4f4c3f77479c8594dfa7fd7e6348306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf305e574ca94bce9435c217fef1501b"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#adf305e574ca94bce9435c217fef1501b">greenMask</a> (cv::Mat)</td></tr>
+<tr class="memdesc:adf305e574ca94bce9435c217fef1501b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes an image and returns the same image filtered to show green only.  <a href="#adf305e574ca94bce9435c217fef1501b">More...</a><br /></td></tr>
+<tr class="separator:adf305e574ca94bce9435c217fef1501b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa26f268b99c90b239592006bad6c5a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#afa26f268b99c90b239592006bad6c5a5">greenCascade</a> (cv::VideoCapture *, std::string, std::string)</td></tr>
+<tr class="memdesc:afa26f268b99c90b239592006bad6c5a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">function to run cascade on a green masked image  <a href="#afa26f268b99c90b239592006bad6c5a5">More...</a><br /></td></tr>
+<tr class="separator:afa26f268b99c90b239592006bad6c5a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8f74b6c456d6fc7e9e83e746f8fc6c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#ac8f74b6c456d6fc7e9e83e746f8fc6c5">greenFolderP</a> ()</td></tr>
+<tr class="separator:ac8f74b6c456d6fc7e9e83e746f8fc6c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac212835924bf4cee1b8c477a6b79f4d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#ac212835924bf4cee1b8c477a6b79f4d2">greenFolderN</a> (int)</td></tr>
+<tr class="separator:ac212835924bf4cee1b8c477a6b79f4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06cf0ed4a2b79d95637ddeb3301d3856"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a06cf0ed4a2b79d95637ddeb3301d3856">scanSaveGreen</a> (std::string)</td></tr>
+<tr class="separator:a06cf0ed4a2b79d95637ddeb3301d3856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64989025caa3c030c6c397ca76a2d20b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppTimer.html#a64989025caa3c030c6c397ca76a2d20b">start</a> (long nanosecs, <a class="el" href="CppTimer_8h.html#a110d07ab6a96d7815149d3d95435790a">cppTimerType_t</a> type=<a class="el" href="CppTimer_8h.html#a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58">PERIODIC</a>)</td></tr>
+<tr class="separator:a64989025caa3c030c6c397ca76a2d20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bb95ddee98a536d0818b8f6096bf7e7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCppTimer.html#a4bb95ddee98a536d0818b8f6096bf7e7">stop</a> ()</td></tr>
+<tr class="separator:a4bb95ddee98a536d0818b8f6096bf7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:afcf6ca7256cd36f2f4a5ba088d67090a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#afcf6ca7256cd36f2f4a5ba088d67090a">timerEvent</a> ()</td></tr>
+<tr class="separator:afcf6ca7256cd36f2f4a5ba088d67090a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9a184f1522b055612f5ede1cc2443457"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a9a184f1522b055612f5ede1cc2443457">img</a></td></tr>
+<tr class="separator:a9a184f1522b055612f5ede1cc2443457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96c19741cb6ba7a897ca90746e8b8918"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a96c19741cb6ba7a897ca90746e8b8918">CameraID</a> = 0</td></tr>
+<tr class="memdesc:a96c19741cb6ba7a897ca90746e8b8918"><td class="mdescLeft">&#160;</td><td class="mdescRight">for storing images  <a href="#a96c19741cb6ba7a897ca90746e8b8918">More...</a><br /></td></tr>
+<tr class="separator:a96c19741cb6ba7a897ca90746e8b8918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6f982f42917eb9ef75606e97fc82911"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#ab6f982f42917eb9ef75606e97fc82911">cMin</a></td></tr>
+<tr class="memdesc:ab6f982f42917eb9ef75606e97fc82911"><td class="mdescLeft">&#160;</td><td class="mdescRight">for setting camera ID, default 0  <a href="#ab6f982f42917eb9ef75606e97fc82911">More...</a><br /></td></tr>
+<tr class="separator:ab6f982f42917eb9ef75606e97fc82911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad784af65b7f7e1b6ebb9b33df774d7db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#ad784af65b7f7e1b6ebb9b33df774d7db">cMax</a></td></tr>
+<tr class="memdesc:ad784af65b7f7e1b6ebb9b33df774d7db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum contrast for image normalization.  <a href="#ad784af65b7f7e1b6ebb9b33df774d7db">More...</a><br /></td></tr>
+<tr class="separator:ad784af65b7f7e1b6ebb9b33df774d7db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d6176cdcccecd116f2e7867b642ad1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#ad3d6176cdcccecd116f2e7867b642ad1">Shut</a> = 0</td></tr>
+<tr class="memdesc:ad3d6176cdcccecd116f2e7867b642ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximmum contrast for image normalization.  <a href="#ad3d6176cdcccecd116f2e7867b642ad1">More...</a><br /></td></tr>
+<tr class="separator:ad3d6176cdcccecd116f2e7867b642ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af32d4a5550c35edb96c9e81fb4208adb"><td class="memItemLeft" align="right" valign="top">cv::VideoCapture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#af32d4a5550c35edb96c9e81fb4208adb">masterCap</a> = nullptr</td></tr>
+<tr class="memdesc:af32d4a5550c35edb96c9e81fb4208adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutter speed in ms; 30 is reasonable.  <a href="#af32d4a5550c35edb96c9e81fb4208adb">More...</a><br /></td></tr>
+<tr class="separator:af32d4a5550c35edb96c9e81fb4208adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ed93fa883066dfbc6fa88b267aefabe"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a1ed93fa883066dfbc6fa88b267aefabe">save_path</a> = &quot;../web/app/static/test.jpg&quot;</td></tr>
+<tr class="separator:a1ed93fa883066dfbc6fa88b267aefabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f9dcee329ab710d227afa3eb8f6e4a3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a7f9dcee329ab710d227afa3eb8f6e4a3">cascade_path</a> = &quot;../src/controller/peripherials/Resources/seedcascade.xml&quot;</td></tr>
+<tr class="separator:a7f9dcee329ab710d227afa3eb8f6e4a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22a0754fc359b253e203ce59026021a0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#a22a0754fc359b253e203ce59026021a0">model_file</a> = &quot;Resources/frozen_inference_graph.pb&quot;</td></tr>
+<tr class="separator:a22a0754fc359b253e203ce59026021a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affbb5356cbe1e069d4e107ccda0d1b2b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCamera.html#affbb5356cbe1e069d4e107ccda0d1b2b">config_file</a> = &quot;Resources/ssd_mobilenet_v2_coco_2018_03_29.pbtxt&quot;</td></tr>
+<tr class="separator:affbb5356cbe1e069d4e107ccda0d1b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classCamera.html" title="Camera class. ">Camera</a> class. </p>
-<dl class="section author"><dt>Author</dt><dd>Kamil Rog</dd></dl>
-<p>This is class is responsilbe for the <a class="el" href="classSHT31D.html" title="SHT31D class. ">SHT31D</a> temperature and humidity sensor. </p>
+<div class="textblock"><p>This class is responsible for taking an image in specified intervals and saving it Inherits from <a class="el" href="classCppTimer.html">CppTimer</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a5c68f1ee8348320a6c47419ae2d724fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c68f1ee8348320a6c47419ae2d724fb">&#9670;&nbsp;</a></span>Camera()</h2>
+<a id="a8facf3634f5d9d5be12c488eac7b7e2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8facf3634f5d9d5be12c488eac7b7e2a">&#9670;&nbsp;</a></span>Camera()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -98,8 +181,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Camera::Camera </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">cv::VideoCapture *&#160;</td>
+          <td class="paramname"><em>cp</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -112,8 +195,786 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a230bee20d42ae409aba0700d8205bbe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a230bee20d42ae409aba0700d8205bbe0">&#9670;&nbsp;</a></span>checkCamOpen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Camera::checkCamOpen </td>
+          <td>(</td>
+          <td class="paramtype">cv::VideoCapture&#160;</td>
+          <td class="paramname"><em>cap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Debug function to chek whether camera is opened successfully. Used within other functions that take pictures/stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cap</td><td>VideoCapture object - essentially which camera is being communicated with</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 1 and error message if camera has failed to open, a line of text it successfully opened. </dd></dl>
+
+</div>
+</div>
+<a id="afa26f268b99c90b239592006bad6c5a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa26f268b99c90b239592006bad6c5a5">&#9670;&nbsp;</a></span>greenCascade()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::greenCascade </td>
+          <td>(</td>
+          <td class="paramtype">cv::VideoCapture *&#160;</td>
+          <td class="paramname"><em>cap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>cascade_path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>function to run cascade on a green masked image </p>
+<dl class="section return"><dt>Returns</dt><dd>a saved image with detections </dd></dl>
+
+</div>
+</div>
+<a id="ac212835924bf4cee1b8c477a6b79f4d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac212835924bf4cee1b8c477a6b79f4d2">&#9670;&nbsp;</a></span>greenFolderN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::greenFolderN </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8f74b6c456d6fc7e9e83e746f8fc6c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8f74b6c456d6fc7e9e83e746f8fc6c5">&#9670;&nbsp;</a></span>greenFolderP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::greenFolderP </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adf305e574ca94bce9435c217fef1501b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf305e574ca94bce9435c217fef1501b">&#9670;&nbsp;</a></span>greenMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat Camera::greenMask </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat&#160;</td>
+          <td class="paramname"><em>image</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Takes an image and returns the same image filtered to show green only. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>A cv::Mat image to be givena green mask </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>cv::Mat , same as image in but with green mask </dd></dl>
+
+</div>
+</div>
+<a id="afd88c2780203f02c9fe236a7239e414c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd88c2780203f02c9fe236a7239e414c">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initalises camera </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>may be redundant </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af0d3c970e947813e71f316b9e499b456"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0d3c970e947813e71f316b9e499b456">&#9670;&nbsp;</a></span>livestream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::livestream </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to livestream video to an OpenCV window - requires a GUI</p>
+<dl class="section return"><dt>Returns</dt><dd>an open cv window livestreaming from camera </dd></dl>
+
+</div>
+</div>
+<a id="a919fb6f236e4535c0d2d29d760562ba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a919fb6f236e4535c0d2d29d760562ba5">&#9670;&nbsp;</a></span>savePicture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::savePicture </td>
+          <td>(</td>
+          <td class="paramtype">cv::VideoCapture *&#160;</td>
+          <td class="paramname"><em>cap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to take a picture and save it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>String to save file as.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a saved image file as filename.jpg </dd></dl>
+
+</div>
+</div>
+<a id="a06cf0ed4a2b79d95637ddeb3301d3856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06cf0ed4a2b79d95637ddeb3301d3856">&#9670;&nbsp;</a></span>scanSaveGreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::scanSaveGreen </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af699a1dad54f8631e862b6f7703e48d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af699a1dad54f8631e862b6f7703e48d3">&#9670;&nbsp;</a></span>setCameraID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setCameraID </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the <a class="el" href="classCamera.html">Camera</a> ID object</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>updated <a class="el" href="classCamera.html#a96c19741cb6ba7a897ca90746e8b8918" title="for storing images ">Camera::CameraID</a> </dd></dl>
+
+</div>
+</div>
+<a id="aef0a4ebb556d5a2a0f13e5d120c05259"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef0a4ebb556d5a2a0f13e5d120c05259">&#9670;&nbsp;</a></span>setContrasts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setContrasts </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>low</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>high</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the upper and lower contrast in order to work in variable brightnesses</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">low</td><td>Lower contrast level. 0 is normally ok.</td></tr>
+    <tr><td class="paramname">high</td><td>higher contrast level. 400 is usually ok but in dark settings may need to reach 600-800.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Updated <a class="el" href="classCamera.html#ab6f982f42917eb9ef75606e97fc82911" title="for setting camera ID, default 0 ">Camera::cMin</a> and <a class="el" href="classCamera.html#ad784af65b7f7e1b6ebb9b33df774d7db" title="Minimum contrast for image normalization. ">Camera::cMax</a> </dd></dl>
+
+</div>
+</div>
+<a id="a3595618ceff1b74e79633b4132ada11f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3595618ceff1b74e79633b4132ada11f">&#9670;&nbsp;</a></span>setNetAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setNetAddress </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>netpath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>weightspath</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set neural net pathway</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">netpath</td><td>Location of neural net</td></tr>
+    <tr><td class="paramname">weightspath</td><td>Location of weights</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>updated Camera::netFile and camera::weightsPath </dd></dl>
+
+</div>
+</div>
+<a id="a9409482c4422823f73d45b3d5e29304b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9409482c4422823f73d45b3d5e29304b">&#9670;&nbsp;</a></span>setShutter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setShutter </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Shutter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the shutter speed. Must be &gt;= 1, 30 works for me.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Shutter</td><td>Shutter speed in ms</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>updated <a class="el" href="classCamera.html#ad3d6176cdcccecd116f2e7867b642ad1" title="Maximmum contrast for image normalization. ">Camera::Shut</a> </dd></dl>
+
+</div>
+</div>
+<a id="a64989025caa3c030c6c397ca76a2d20b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64989025caa3c030c6c397ca76a2d20b">&#9670;&nbsp;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CppTimer::start </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>nanosecs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="CppTimer_8h.html#a110d07ab6a96d7815149d3d95435790a">cppTimerType_t</a>&#160;</td>
+          <td class="paramname"><em>type</em> = <code><a class="el" href="CppTimer_8h.html#a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58">PERIODIC</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Starts the timer. The timer fires first after the specified time in nanoseconds and then at that interval in PERIODIC mode. In ONESHOT mode the timer fires once after the specified time in nanoseconds. </p>
+
+</div>
+</div>
+<a id="a4bb95ddee98a536d0818b8f6096bf7e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bb95ddee98a536d0818b8f6096bf7e7">&#9670;&nbsp;</a></span>stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CppTimer::stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Stops the timer by disarming it. It can be re-started with <a class="el" href="classCppTimer.html#a64989025caa3c030c6c397ca76a2d20b">start()</a>. </p>
+
+</div>
+</div>
+<a id="aac0e2e17954d17a0c15019ca74149f15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac0e2e17954d17a0c15019ca74149f15">&#9670;&nbsp;</a></span>stopCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::stopCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the callback which is called whenever there is new data Stops the data acquistion </p>
+
+</div>
+</div>
+<a id="a07670e99337fb322375a412222c06ada"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07670e99337fb322375a412222c06ada">&#9670;&nbsp;</a></span>takePicture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat Camera::takePicture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to take a picture and return the frame as a cv mat</p>
+<dl class="section return"><dt>Returns</dt><dd>cv::Mat type image from camera</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>option to change this to return a CV::Mat </dd></dl>
+
+</div>
+</div>
+<a id="a09931f84cc8e66e4e4c1181cb1cb4af6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09931f84cc8e66e4e4c1181cb1cb4af6">&#9670;&nbsp;</a></span>takeScanCascade()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::takeScanCascade </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to take a picture and scan it with a custom HAAR Cascade. Best option currently.</p>
+<dl class="section return"><dt>Returns</dt><dd>a saved image with detections</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>keep improving the dataset being used to train the cascade. Try training a cascade on some of the green masked contours images. </dd></dl>
+
+</div>
+</div>
+<a id="a59f08842d3de300419c74b12bee44d47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59f08842d3de300419c74b12bee44d47">&#9670;&nbsp;</a></span>takeScanDNNPicture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::takeScanDNNPicture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to take a picture and scan it with a DNN built in tensorflow.</p>
+<dl class="section return"><dt>Returns</dt><dd>a saved image with detections</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>Work out how to get a frozen_inference_graph.pb to work here. For whatever reason, it throws an error at runtime when using custom trained nets. </dd></dl>
+
+</div>
+</div>
+<a id="ab4f4c3f77479c8594dfa7fd7e6348306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f4c3f77479c8594dfa7fd7e6348306">&#9670;&nbsp;</a></span>takeScanForGreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::takeScanForGreen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to draw a box around anything green. A classifier could be trained on the shapes this picks up. Adds another step, but could be viable.</p>
+<dl class="section return"><dt>Returns</dt><dd>saved image of green detection</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>create a bunch of images this way. train a cascade on them. run the cascade again. </dd></dl>
+
+</div>
+</div>
+<a id="afcf6ca7256cd36f2f4a5ba088d67090a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcf6ca7256cd36f2f4a5ba088d67090a">&#9670;&nbsp;</a></span>timerEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::timerEvent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Abstract function which needs to be implemented by the children. This is called every time the timer fires. </p>
+
+<p>Implements <a class="el" href="classCppTimer.html#ac2665403595b6aee5f581d0ebfeb886c">CppTimer</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a96c19741cb6ba7a897ca90746e8b8918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96c19741cb6ba7a897ca90746e8b8918">&#9670;&nbsp;</a></span>CameraID</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Camera::CameraID = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>for storing images </p>
+
+</div>
+</div>
+<a id="a7f9dcee329ab710d227afa3eb8f6e4a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f9dcee329ab710d227afa3eb8f6e4a3">&#9670;&nbsp;</a></span>cascade_path</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Camera::cascade_path = &quot;../src/controller/peripherials/Resources/seedcascade.xml&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad784af65b7f7e1b6ebb9b33df774d7db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad784af65b7f7e1b6ebb9b33df774d7db">&#9670;&nbsp;</a></span>cMax</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Camera::cMax</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Minimum contrast for image normalization. </p>
+
+</div>
+</div>
+<a id="ab6f982f42917eb9ef75606e97fc82911"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6f982f42917eb9ef75606e97fc82911">&#9670;&nbsp;</a></span>cMin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Camera::cMin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>for setting camera ID, default 0 </p>
+
+</div>
+</div>
+<a id="affbb5356cbe1e069d4e107ccda0d1b2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affbb5356cbe1e069d4e107ccda0d1b2b">&#9670;&nbsp;</a></span>config_file</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Camera::config_file = &quot;Resources/ssd_mobilenet_v2_coco_2018_03_29.pbtxt&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9a184f1522b055612f5ede1cc2443457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a184f1522b055612f5ede1cc2443457">&#9670;&nbsp;</a></span>img</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat Camera::img</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af32d4a5550c35edb96c9e81fb4208adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af32d4a5550c35edb96c9e81fb4208adb">&#9670;&nbsp;</a></span>masterCap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::VideoCapture* Camera::masterCap = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shutter speed in ms; 30 is reasonable. </p>
+
+</div>
+</div>
+<a id="a22a0754fc359b253e203ce59026021a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22a0754fc359b253e203ce59026021a0">&#9670;&nbsp;</a></span>model_file</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Camera::model_file = &quot;Resources/frozen_inference_graph.pb&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ed93fa883066dfbc6fa88b267aefabe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed93fa883066dfbc6fa88b267aefabe">&#9670;&nbsp;</a></span>save_path</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Camera::save_path = &quot;../web/app/static/test.jpg&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad3d6176cdcccecd116f2e7867b642ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d6176cdcccecd116f2e7867b642ad1">&#9670;&nbsp;</a></span>Shut</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Camera::Shut = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximmum contrast for image normalization. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/controller/peripherials/<a class="el" href="Camera_8h_source.html">Camera.h</a></li>
+<li>src/controller/peripherials/<a class="el" href="Camera_8cpp.html">Camera.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

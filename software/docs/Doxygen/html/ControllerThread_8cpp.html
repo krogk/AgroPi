@@ -62,37 +62,153 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">ControllerThread.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="ControllerThread_8h_source.html">ControllerThread.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="json__fastcgi__web__api_8h_source.html">json_fastcgi_web_api.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ControllerThread_8h_source.html">ControllerThread.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Sampler_8h_source.html">Sampler.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Controller_8h_source.html">Controller.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Camera_8h_source.html">Camera.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ControllerThread.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ControllerThread_8cpp__incl.png" border="0" usemap="#src_2threads_2ControllerThread_8cpp" alt=""/></div>
 <map name="src_2threads_2ControllerThread_8cpp" id="src_2threads_2ControllerThread_8cpp">
-<area shape="rect" id="node2" href="ControllerThread_8h.html" title="ControllerThread.h" alt="" coords="119,80,249,107"/>
-<area shape="rect" id="node5" href="Sampler_8h.html" title="Sampler.h" alt="" coords="523,80,605,107"/>
-<area shape="rect" id="node6" href="Controller_8h.html" title="Controller.h" alt="" coords="249,155,338,181"/>
-<area shape="rect" id="node3" href="CppThread_8h.html" title="CppThread.h" alt="" coords="67,155,165,181"/>
-<area shape="rect" id="node14" href="CppTimer_8h.html" title="CppTimer.h" alt="" coords="365,229,456,256"/>
-<area shape="rect" id="node17" href="I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="825,304,914,331"/>
-<area shape="rect" id="node18" href="I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="675,229,770,256"/>
-<area shape="rect" id="node19" href="VEML7700_8h.html" title="VEML7700.h" alt="" coords="429,155,526,181"/>
-<area shape="rect" id="node20" href="SHT31D_8h.html" title="SHT31D.h" alt="" coords="701,155,785,181"/>
-<area shape="rect" id="node21" href="SGP30_8h.html" title="SGP30.h" alt="" coords="601,155,676,181"/>
-<area shape="rect" id="node7" href="typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="531,229,651,256"/>
-<area shape="rect" id="node12" href="RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="88,229,189,256"/>
+<area shape="rect" id="node2" href="json__fastcgi__web__api_8h.html" title="json_fastcgi_web_api.h" alt="" coords="1888,155,2047,181"/>
+<area shape="rect" id="node18" href="ControllerThread_8h.html" title="ControllerThread.h" alt="" coords="1196,80,1326,107"/>
+<area shape="rect" id="node24" href="Sampler_8h.html" title="Sampler.h" alt="" coords="300,80,382,107"/>
+<area shape="rect" id="node33" href="Camera_8h.html" title="Camera.h" alt="" coords="1176,155,1255,181"/>
+<area shape="rect" id="node19" href="CppThread_8h.html" title="CppThread.h" alt="" coords="1279,155,1376,181"/>
+<area shape="rect" id="node20" href="Controller_8h.html" title="Controller.h" alt="" coords="626,155,715,181"/>
+<area shape="rect" id="node21" href="typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="733,229,853,256"/>
+<area shape="rect" id="node22" href="RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="506,229,608,256"/>
+<area shape="rect" id="node23" href="GPIODriver_8h.html" title="GPIODriver.h" alt="" coords="466,304,568,331"/>
+<area shape="rect" id="node25" href="CppTimer_8h.html" title="CppTimer.h" alt="" coords="928,229,1018,256"/>
+<area shape="rect" id="node28" href="I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="203,304,292,331"/>
+<area shape="rect" id="node29" href="I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="286,229,380,256"/>
+<area shape="rect" id="node30" href="VEML7700_8h.html" title="VEML7700.h" alt="" coords="98,155,195,181"/>
+<area shape="rect" id="node31" href="SHT31D_8h.html" title="SHT31D.h" alt="" coords="219,155,303,181"/>
+<area shape="rect" id="node32" href="SGP30_8h.html" title="SGP30.h" alt="" coords="378,155,453,181"/>
 </map>
 </div>
-</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classJSONCGIDataCallback.html">JSONCGIDataCallback</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControllerCallback.html">ControllerCallback</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a60176172068ee7057c3fd49521dd0115"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControllerThread_8cpp.html#a60176172068ee7057c3fd49521dd0115">EVENT_OP_CODES</a> { <a class="el" href="ControllerThread_8cpp.html#a60176172068ee7057c3fd49521dd0115ae5c39d7ebc2e5d0ea28b531d983d9731">SAMPLE_RATE_CHANGE</a> = 253, 
+<a class="el" href="ControllerThread_8cpp.html#a60176172068ee7057c3fd49521dd0115a97bb101d1d6c18d26fe95f18cef3792d">ENABLE_SAMPLING</a> = 254, 
+<a class="el" href="ControllerThread_8cpp.html#a60176172068ee7057c3fd49521dd0115a945280aa3e9db0f24215a8d9b6ddbd8e">EXIT_APPLICATION</a> = 255
+ }</td></tr>
+<tr class="separator:a60176172068ee7057c3fd49521dd0115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a844160e16f1a3e514df9ce65683e17bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControllerThread_8cpp.html#a844160e16f1a3e514df9ce65683e17bd">sigHandler</a> (int sig)</td></tr>
+<tr class="separator:a844160e16f1a3e514df9ce65683e17bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20a45737018ec41ab19cb4f5164b26ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControllerThread_8cpp.html#a20a45737018ec41ab19cb4f5164b26ac">setHUPHandler</a> ()</td></tr>
+<tr class="separator:a20a45737018ec41ab19cb4f5164b26ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a94a2e79f236e50a73fb8c842bcff7738"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControllerThread_8cpp.html#a94a2e79f236e50a73fb8c842bcff7738">mainRunning</a> = 1</td></tr>
+<tr class="separator:a94a2e79f236e50a73fb8c842bcff7738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Kamil Rog </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
 <p>This file contains the functions for Server Thread class. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a60176172068ee7057c3fd49521dd0115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60176172068ee7057c3fd49521dd0115">&#9670;&nbsp;</a></span>EVENT_OP_CODES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ControllerThread_8cpp.html#a60176172068ee7057c3fd49521dd0115">EVENT_OP_CODES</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a60176172068ee7057c3fd49521dd0115ae5c39d7ebc2e5d0ea28b531d983d9731"></a>SAMPLE_RATE_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a60176172068ee7057c3fd49521dd0115a97bb101d1d6c18d26fe95f18cef3792d"></a>ENABLE_SAMPLING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a60176172068ee7057c3fd49521dd0115a945280aa3e9db0f24215a8d9b6ddbd8e"></a>EXIT_APPLICATION&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a20a45737018ec41ab19cb4f5164b26ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20a45737018ec41ab19cb4f5164b26ac">&#9670;&nbsp;</a></span>setHUPHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setHUPHandler </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets a signal handler so that you can kill the background process gracefully with: kill -HUP &lt;PID&gt; </p>
+
+</div>
+</div>
+<a id="a844160e16f1a3e514df9ce65683e17bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a844160e16f1a3e514df9ce65683e17bd">&#9670;&nbsp;</a></span>sigHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sigHandler </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sig</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Handler when the user has pressed ctrl-C send HUP via the kill command. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a94a2e79f236e50a73fb8c842bcff7738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94a2e79f236e50a73fb8c842bcff7738">&#9670;&nbsp;</a></span>mainRunning</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mainRunning = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Flag to indicate program is running. Needed later to quit the idle loop. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

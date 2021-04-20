@@ -1,6 +1,14 @@
 var searchData=
 [
+  ['actuationforceflags',['ActuationForceFlags',['../structActuationForceFlags.html',1,'ActuationForceFlags'],['../classController.html#a5af467109ecf31a0e63213ff9e5d0d72',1,'Controller::actuationForceFlags()']]],
+  ['actuationheuristicsflags',['ActuationHeuristicsFlags',['../structActuationHeuristicsFlags.html',1,'ActuationHeuristicsFlags'],['../classController.html#ae3d5121f2fa076d362ac5d56feae17d2',1,'Controller::actuationHeuristicsFlags()']]],
+  ['actuator_5foff',['ACTUATOR_OFF',['../IntegrationTests_8cpp.html#ada5fef4085763aa856db5f3d0f648d44',1,'IntegrationTests.cpp']]],
+  ['actuator_5fon',['ACTUATOR_ON',['../IntegrationTests_8cpp.html#a2554af6a082be1db1d489763b0ffba69',1,'IntegrationTests.cpp']]],
   ['actuatorhandler',['ActuatorHandler',['../classController.html#acd0145853d19eaf3ef9d15f6203ace69',1,'Controller']]],
+  ['actuatorsstate',['actuatorsState',['../classController.html#a23064d241b70e672c4c1d3db9671bd5e',1,'Controller']]],
+  ['add',['add',['../classJSONCGIHandler_1_1JSONGenerator.html#a191efd00967cbace0d9ddfedea39cd9b',1,'JSONCGIHandler::JSONGenerator::add(std::string key, std::string value)'],['../classJSONCGIHandler_1_1JSONGenerator.html#aa25099deb2442335298ab1c021f36910',1,'JSONCGIHandler::JSONGenerator::add(std::string key, double value)'],['../classJSONCGIHandler_1_1JSONGenerator.html#a2192849b22341653a138bb63da6c6c9a',1,'JSONCGIHandler::JSONGenerator::add(std::string key, float value)'],['../classJSONCGIHandler_1_1JSONGenerator.html#afc3e9374b0e49ca1f701bd22bbd4cd92',1,'JSONCGIHandler::JSONGenerator::add(std::string key, long value)'],['../classJSONCGIHandler_1_1JSONGenerator.html#a87fe5c75b46f9822255535a61f15ad4b',1,'JSONCGIHandler::JSONGenerator::add(std::string key, int value)']]],
+  ['airflow',['Airflow',['../structActuationForceFlags.html#a9aaf65e5568fef8b8e9a4d9954bd6dfa',1,'ActuationForceFlags::Airflow()'],['../structActuationHeuristicsFlags.html#ab9619c202211b7526c881df4746bdafe',1,'ActuationHeuristicsFlags::Airflow()'],['../classRelayBoard.html#aa14251b65f8b4872cdf95c56951f0959',1,'RelayBoard::Airflow()']]],
+  ['airflowactuator',['AirflowActuator',['../classController.html#ae27c7681db8370782c96769a35e09230',1,'Controller']]],
   ['als_5fgain_5fd4',['ALS_GAIN_d4',['../classVEML7700.html#a7328cc2563da545e48ea72381dc7bd9ba0b5e6555c821a9c50adbe60629b15e4b',1,'VEML7700']]],
   ['als_5fgain_5fd8',['ALS_GAIN_d8',['../classVEML7700.html#a7328cc2563da545e48ea72381dc7bd9ba393b9df437329457ca21bff810c8b7ee',1,'VEML7700']]],
   ['als_5fgain_5ft',['ALS_GAIN_T',['../classVEML7700.html#a7328cc2563da545e48ea72381dc7bd9b',1,'VEML7700']]],

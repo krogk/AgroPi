@@ -1,0 +1,166 @@
+\hypertarget{classGPIODriver}{}\section{G\+P\+I\+O\+Driver Class Reference}
+\label{classGPIODriver}\index{G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}}
+
+
+G\+P\+IO Driver Class.  
+
+
+
+
+{\ttfamily \#include $<$G\+P\+I\+O\+Driver.\+h$>$}
+
+
+
+Collaboration diagram for G\+P\+I\+O\+Driver\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classGPIODriver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGPIODriver_a74b0f69ce300c94de3d4fdd75042dec3}{G\+P\+I\+O\+Driver} (void)
+\item 
+int \hyperlink{classGPIODriver_a32a483cec3179d1d13acb1dad37b21ad}{Set\+G\+P\+I\+O\+State} (int gpio\+Pin\+Number, int value)
+\item 
+int \hyperlink{classGPIODriver_a68be60ab1fb0e9c29f60818654766a32}{G\+P\+I\+O\+Read} (int gpio\+Pin\+Number)
+\item 
+int \hyperlink{classGPIODriver_a314ce5622d8049f62b662b62fd3debe7}{Set\+Up\+Pin} (int gpio\+Pin\+Number)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classGPIODriver_a5e480dbffe553649faaa457579c7e847}{Export\+G\+P\+IO} (int gpio\+Pin\+Number)
+\item 
+int \hyperlink{classGPIODriver_a28f9117bc71b9cde6c2d27f896ab7251}{Unexport\+G\+P\+IO} (int gpio\+Pin\+Number)
+\item 
+int \hyperlink{classGPIODriver_a9e694366a04bc8662865ea758a74eabe}{Set\+G\+P\+I\+O\+Direction} (int gpio\+Pin\+Number, int direction)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+G\+P\+IO Driver Class. 
+
+\begin{DoxyAuthor}{Author}
+Kamil Rog
+\end{DoxyAuthor}
+This is class is responsilbe for handling G\+P\+IO Pins. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGPIODriver_a74b0f69ce300c94de3d4fdd75042dec3}\label{classGPIODriver_a74b0f69ce300c94de3d4fdd75042dec3}} 
+\index{G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}!G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}}
+\index{G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}!G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}}
+\subsubsection{\texorpdfstring{G\+P\+I\+O\+Driver()}{GPIODriver()}}
+{\footnotesize\ttfamily G\+P\+I\+O\+Driver\+::\+G\+P\+I\+O\+Driver (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGPIODriver_a5e480dbffe553649faaa457579c7e847}\label{classGPIODriver_a5e480dbffe553649faaa457579c7e847}} 
+\index{G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}!Export\+G\+P\+IO@{Export\+G\+P\+IO}}
+\index{Export\+G\+P\+IO@{Export\+G\+P\+IO}!G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}}
+\subsubsection{\texorpdfstring{Export\+G\+P\+I\+O()}{ExportGPIO()}}
+{\footnotesize\ttfamily int G\+P\+I\+O\+Driver\+::\+Export\+G\+P\+IO (\begin{DoxyParamCaption}\item[{int}]{gpio\+Pin\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Export G\+P\+IO Pin
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+Pin\+Number} & G\+P\+IO Pin number to export.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGPIODriver_a68be60ab1fb0e9c29f60818654766a32}\label{classGPIODriver_a68be60ab1fb0e9c29f60818654766a32}} 
+\index{G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}!G\+P\+I\+O\+Read@{G\+P\+I\+O\+Read}}
+\index{G\+P\+I\+O\+Read@{G\+P\+I\+O\+Read}!G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}}
+\subsubsection{\texorpdfstring{G\+P\+I\+O\+Read()}{GPIORead()}}
+{\footnotesize\ttfamily int G\+P\+I\+O\+Driver\+::\+G\+P\+I\+O\+Read (\begin{DoxyParamCaption}\item[{int}]{gpio\+Pin\+Number }\end{DoxyParamCaption})}
+
+Get the current state of the G\+P\+IO pin. L\+OW = 0 H\+I\+GH = 1
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+Pin\+Number} & G\+P\+IO Pin number state to read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+State of the G\+P\+IO Pin 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGPIODriver_a9e694366a04bc8662865ea758a74eabe}\label{classGPIODriver_a9e694366a04bc8662865ea758a74eabe}} 
+\index{G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}!Set\+G\+P\+I\+O\+Direction@{Set\+G\+P\+I\+O\+Direction}}
+\index{Set\+G\+P\+I\+O\+Direction@{Set\+G\+P\+I\+O\+Direction}!G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}}
+\subsubsection{\texorpdfstring{Set\+G\+P\+I\+O\+Direction()}{SetGPIODirection()}}
+{\footnotesize\ttfamily int G\+P\+I\+O\+Driver\+::\+Set\+G\+P\+I\+O\+Direction (\begin{DoxyParamCaption}\item[{int}]{gpio\+Pin\+Number,  }\item[{int}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Set Direction of G\+P\+IO Pin Input = 0 Output = 1
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+Pin\+Number} & G\+P\+IO Pin number to export. \\
+\hline
+{\em direction} & Direction of the pin.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGPIODriver_a32a483cec3179d1d13acb1dad37b21ad}\label{classGPIODriver_a32a483cec3179d1d13acb1dad37b21ad}} 
+\index{G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}!Set\+G\+P\+I\+O\+State@{Set\+G\+P\+I\+O\+State}}
+\index{Set\+G\+P\+I\+O\+State@{Set\+G\+P\+I\+O\+State}!G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}}
+\subsubsection{\texorpdfstring{Set\+G\+P\+I\+O\+State()}{SetGPIOState()}}
+{\footnotesize\ttfamily int G\+P\+I\+O\+Driver\+::\+Set\+G\+P\+I\+O\+State (\begin{DoxyParamCaption}\item[{int}]{gpio\+Pin\+Number,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+Set state of the G\+P\+IO pin. L\+OW -\/ value = 0 H\+I\+GH -\/ value = 1
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+Pin\+Number} & G\+P\+IO Pin number state to read. \\
+\hline
+{\em value} & State to set the pin to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success else negative error number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGPIODriver_a314ce5622d8049f62b662b62fd3debe7}\label{classGPIODriver_a314ce5622d8049f62b662b62fd3debe7}} 
+\index{G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}!Set\+Up\+Pin@{Set\+Up\+Pin}}
+\index{Set\+Up\+Pin@{Set\+Up\+Pin}!G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}}
+\subsubsection{\texorpdfstring{Set\+Up\+Pin()}{SetUpPin()}}
+{\footnotesize\ttfamily int G\+P\+I\+O\+Driver\+::\+Set\+Up\+Pin (\begin{DoxyParamCaption}\item[{int}]{gpio\+Pin\+Number }\end{DoxyParamCaption})}
+
+Initialize G\+P\+IO Pins for output use. Export Pin Set Direction to output Set G\+P\+IO state value to high
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+Pin\+Number} & G\+P\+IO pin number to set up for output use.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGPIODriver_a28f9117bc71b9cde6c2d27f896ab7251}\label{classGPIODriver_a28f9117bc71b9cde6c2d27f896ab7251}} 
+\index{G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}!Unexport\+G\+P\+IO@{Unexport\+G\+P\+IO}}
+\index{Unexport\+G\+P\+IO@{Unexport\+G\+P\+IO}!G\+P\+I\+O\+Driver@{G\+P\+I\+O\+Driver}}
+\subsubsection{\texorpdfstring{Unexport\+G\+P\+I\+O()}{UnexportGPIO()}}
+{\footnotesize\ttfamily int G\+P\+I\+O\+Driver\+::\+Unexport\+G\+P\+IO (\begin{DoxyParamCaption}\item[{int}]{gpio\+Pin\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Unexport G\+P\+IO Pin
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpio\+Pin\+Number} & G\+P\+IO Pin number to unexport.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero on success error 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/controller/peripherials/\hyperlink{GPIODriver_8h}{G\+P\+I\+O\+Driver.\+h}\item 
+src/controller/peripherials/\hyperlink{GPIODriver_8cpp}{G\+P\+I\+O\+Driver.\+cpp}\end{DoxyCompactItemize}

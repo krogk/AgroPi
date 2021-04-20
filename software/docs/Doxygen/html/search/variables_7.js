@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['m_5ffd',['m_fd',['../classSGP30.html#a751dee30db306b3f2ff17540adb7dfc9',1,'SGP30::m_fd()'],['../classSHT31D.html#a2740f957337c1944421401643a6a15b6',1,'SHT31D::m_fd()'],['../classVEML7700.html#ae6d0418ab65f7fdfb21079d8637334af',1,'VEML7700::m_fd()']]],
-  ['m_5finitsensor',['m_initSensor',['../classSGP30.html#a11b0db4fcffa5e8da8982a48ae0b1456',1,'SGP30']]],
-  ['m_5fpi2cdriver',['m_pI2Cdriver',['../classSGP30.html#a3be2d504b90a81a66af2bcd4fc96673b',1,'SGP30::m_pI2Cdriver()'],['../classSHT31D.html#ad76767dc72097d43aea68675ae33e1ed',1,'SHT31D::m_pI2Cdriver()'],['../classVEML7700.html#a06777141dab95a6244cc75e97a66f238',1,'VEML7700::m_pI2Cdriver()']]],
-  ['m_5fregisterveml7700',['m_registerVEML7700',['../classVEML7700.html#a8e5c194037bceb4544cc1a7b05f697bb',1,'VEML7700']]],
-  ['m_5fserialnum',['m_serialnum',['../classSGP30.html#a6da04f39b302756d806d36ff3aa93293',1,'SGP30']]]
+  ['i2cdriver',['i2cDriver',['../classSampler.html#ada5598060be79a005bf4375fcbf9773d',1,'Sampler']]],
+  ['img',['img',['../classCamera.html#a9a184f1522b055612f5ede1cc2443457',1,'Camera::img()'],['../ai_2main_8cpp.html#a6dc9e145eafd30060f68789be59f34b7',1,'img():&#160;main.cpp']]],
+  ['its',['its',['../classCppTimer.html#a8774fb5ba9af8f276874c1234741f106',1,'CppTimer']]]
 ];

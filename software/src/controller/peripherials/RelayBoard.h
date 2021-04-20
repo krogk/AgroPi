@@ -8,7 +8,7 @@
 */
 #ifndef RELAY_H
 #define RELAY_H
-
+#include "GPIODriver.h"
 
 /**
 * @brief Relay Board class
@@ -20,26 +20,47 @@
 class RelayBoard {
 
 public:
-	RelayBoard(void) {
-		heaterGPIO = 0;
-    fanGPIO = 0;
-    waterPumpGPIO = 0;
-    lightsGPIO = 0;
+	RelayBoard() {
+    // Change this list to enum or defines
+		m_heaterGPIO = 17;
+    m_lightsGPIO = 27;
+    m_fanGPIO = 22;
+    m_waterPumpGPIO = 23;
+    m_heaterGPIOState = 1;
+    m_lightsGPIOState = 1;
+    m_fanGPIOState = 1;
+    m_waterPumpGPIOState = 1;
 	}
 
+  ~RelayBoard(void)
+  {
+    //Close_Device();
+  }
+
+  int Initialize(GPIODriver &driver);
+  int Lighting(int state);
+  int Heating(int state);
+  int Airflow(int state);
+  int Watering(int state);
+  int Turn_Relays_Off();
+  int Close_Relay_Board();
+
+  int GetWateringState();
+  int GetAirflowState();
+  int GetHeatingState();
+  int GetLightingState();
   
-  int SetGPIO();
-  int ClearGPIO();
+  int m_heaterGPIOState;
+  int m_lightsGPIOState;
+  int m_fanGPIOState;
+  int m_waterPumpGPIOState;
 
 private:
-	
-  int Initialize();
-
-private:
-	int heaterGPIO;
-  int fanGPIO;
-  int waterPumpGPIO;
-  int lightsGPIO;
+	int m_heaterGPIO;
+  int m_lightsGPIO;
+  int m_fanGPIO;
+  int m_waterPumpGPIO;
+  GPIODriver* m_pGPIODriver = nullptr;
 };
 
 #endif
