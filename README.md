@@ -93,7 +93,7 @@ v0.2 Release allows you to view the following conditions on the website interfac
 
 <p align="center">
   <a href="https://github.com/krogk/AgroPi">
-    <img src="media/images/logo1.png" alt="Logo">
+    <img src="media/images/website/AgroPiDashboard.PNG" alt="Logo">
   </a>
   
   <p align="center">
@@ -107,7 +107,7 @@ As well as easily set the target values for your environmental chamber.
 
 <p align="center">
   <a href="https://github.com/krogk/AgroPi">
-    <img src="media/images/logo1.png" alt="Logo">
+    <img src="media/images/website/AgroPiActuation.PNG" alt="Actuation">
   </a>
   
   <p align="center">
