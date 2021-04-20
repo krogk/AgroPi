@@ -53,7 +53,7 @@
 <!-- Project descirption -->
 ## About
 
-AgroPi is a flexible modular educational tool which allows user to learn how changes in enviroment effect plant's/mushroom's health. It is up to the user to decide what actuators fit the enviromental chamber needs best.   
+AgroPi is a flexible modular monitoring and actuating tool which allows user to control enviroment within a small chamber to provide the desired conditions for mushroom and plant cultivation. It is up to the user to decide what actuators fit the enviromental chamber needs best as the main swiching technology utilizes GPIOs controlling relay board.   
 <br />
 <br />
 Website interface enables user to easily display and control the conditions within enviromental chamber in real time. In addition AgroPi takes photos of your growth in constant intervals so you can show off your crops. 
@@ -193,7 +193,7 @@ pip install -r requirements.txt
 
 ### Installation
 
-Build:
+1.Build:
 ```sh
 mkdir build
 cd build/
@@ -201,6 +201,35 @@ cmake ..
 make test ARGS="-V"  <- Optional Test Run, All sensors must be connected
 make
 ```
+2. Point Nginx File to AgroPi static website, modify the contents of /etc/nginx/sites-enabled/default
+```sh
+server {
+        listen       80;
+        server_name  localhost;
+
+        location /favicon.ico {
+          return 204;
+          access_log     off;
+          log_not_found  off;
+        }
+
+        location /sensor/ {
+          include        fastcgi_params;
+          fastcgi_pass   unix:/tmp/fastcgisocket;
+        }
+
+        location / {
+          root pathToAgroPi/AgroPi/software/web/html;
+          index dashboard.html;
+        }
+
+        location /static/ {
+               root pathToAgroPi/AgroPi/software/web/app;
+        }
+}
+```
+
+
 
 <!-- Usage -->
 ### Usage
