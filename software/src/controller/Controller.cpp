@@ -3,8 +3,6 @@
 * @author Kamil Rog
 * @version 0.1
 *
-*
-* 
 * This file contains the functions for actuator class.
 *
 * 
@@ -15,30 +13,31 @@
 #include <iostream>
 
 
+/**
+* Sampler Callback function. This 
+* 
+*
+* @param	opcode ID of the operation, this has been defined in CONTROL_OP_CODES enumeration.
+* @param 	value  value to assign to the variable
+*
+* @return void
+*/
 void Controller::SamplerHasData(EnvironmentData newData)
 {
-	// Add mutex here
 	envData = newData;
-	/*
-	printf("\n");
-	printf("Controller Thread: LUX: %f\n",envData.LightIntensity);
-	printf("SamplerHasData: Temperature: %f\n",envData.Temperature);
-	printf("Controller Thread: Humidity: %f\n",envData.Humidity);
-	printf("Controller Thread: TVOC: %d ppb\n", envData.TVOC);
-	printf("Controller Thread: eCO2: %d ppm\n", envData.CO2);
-	printf("Controller Thread: RawEthanol: %d ppb\n", envData.RawEthanol);
-	printf("Controller Thread: RawH2: %d ppm\n", envData.RawH2);
-	*/
 	ActuatorHandler();
 }
 
 /**
 * Handle Messages from the web server.
-*
+* CONTROL_OP_CODES define the message purpose, the values should be float
+* 
 * @param	opcode ID of the operation, this has been defined in CONTROL_OP_CODES enumeration.
 * @param 	value  value to assign to the variable
 *
-* @return Zero On Sucess 
+* @return void
+*
+* @todo: Casting to appropriate types.
 */
 void Controller::UpdateHandler(uint8_t opcode, float value)
 {
@@ -125,6 +124,8 @@ void Controller::UpdateHandler(uint8_t opcode, float value)
 		break;
 
 		// Force flags
+		// In this option appropriate boolean value is chosenusing tenerary operator
+		// and written to actuator.
 		case FORCE_HEATING:
 			(value > 0) ? actuationForceFlags.Heating  = true : actuationForceFlags.Heating = false;
 			(actuationForceFlags.Heating  == true ) ? relay.Heating(0) : relay.Heating(1);

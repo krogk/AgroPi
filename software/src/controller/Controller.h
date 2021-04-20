@@ -60,9 +60,6 @@
 * 
 * @section PROTOCOL
 * 
-* WATER PUMP - ANALOG - GPIO x
-* HEATER     - ANALOG - GPIO x
-* 
 */
 class Controller {
 

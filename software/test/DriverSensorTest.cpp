@@ -180,12 +180,13 @@ BOOST_AUTO_TEST_CASE( ElegoRelayBoard )
     RelayBoard relay;
     relay.Initialize(driver);
     
+    // Check if relays is on by default
     BOOST_CHECK_MESSAGE( relay.m_heaterGPIOState == RELAY_OFF,  "Heating GPIO State is: " <<  relay.m_heaterGPIOState << " - Must Be 1 After Initialization" );
     BOOST_CHECK_MESSAGE( relay.m_lightsGPIOState == RELAY_OFF,  "Lighting GPIO State is: " <<  relay.m_lightsGPIOState << " - Must Be 1 After Initialization" );
     BOOST_CHECK_MESSAGE( relay.m_fanGPIOState == RELAY_OFF,  "Airflow GPIO State is: " <<  relay.m_fanGPIOState << " - Must Be 1 After Initialization" );
     BOOST_CHECK_MESSAGE( relay.m_waterPumpGPIOState == RELAY_OFF,  "Watering GPIO State is: " <<  relay.m_waterPumpGPIOState << " - Must Be 1 After Initialization" );
 
-    // Turn On Each Actuator for 1 Second.
+    // Turn On Each Actuator for 1 Second by turn.
     relay.Heating(0);
     BOOST_CHECK_MESSAGE( relay.m_heaterGPIOState == RELAY_ON,  "Heating GPIO State is: " <<  relay.m_heaterGPIOState << " - Must Be 0" );
     //BOOST_CHECK_MESSAGE( eco2 == relay,  "Temperature measured by SHT31D: " << eco2 << " ppm - Too Low" );
@@ -193,15 +194,20 @@ BOOST_AUTO_TEST_CASE( ElegoRelayBoard )
     relay.Heating(1);
     BOOST_CHECK_MESSAGE( relay.m_heaterGPIOState == RELAY_OFF,  "Heating GPIO State is: " <<  relay.m_heaterGPIOState << " - Must Be 0" );
     relay.Lighting(0);
-    BOOST_CHECK_MESSAGE( relay.m_heaterGPIOState == RELAY_OFF,  "Heating GPIO State is: " <<  relay.m_heaterGPIOState << " - Must Be 0" );
+    BOOST_CHECK_MESSAGE( relay.m_lightsGPIOState == RELAY_ON,  "Lighting GPIO State is: " <<  relay.m_lightsGPIOState << " - Must Be 0" );
     sleep(1);
     relay.Lighting(1);
+    BOOST_CHECK_MESSAGE( relay.m_lightsGPIOState == RELAY_OFF,  "Lighting GPIO State is: " <<  relay.m_lightsGPIOState << " - Must Be 1" );
     relay.Airflow(0);
+    BOOST_CHECK_MESSAGE( relay.m_fanGPIOState == RELAY_ON,  "Airflow GPIO State is: " <<  relay.m_fanGPIOState << " - Must Be 0" );
     sleep(1);
     relay.Airflow(1);
+    BOOST_CHECK_MESSAGE( relay.m_fanGPIOState == RELAY_OFF,  "Airflow GPIO State is: " <<  relay.m_fanGPIOState << " - Must Be 1" );
     relay.Watering(0);
+    BOOST_CHECK_MESSAGE( relay.m_waterPumpGPIOState == RELAY_ON,  "Watering GPIO State is: " <<  relay.m_waterPumpGPIOState << " - Must Be 0" );
     sleep(1);
     relay.Watering(1);
+    BOOST_CHECK_MESSAGE( relay.m_waterPumpGPIOState == RELAY_OFF,  "Watering GPIO State is: " <<  relay.m_waterPumpGPIOState << " - Must Be 1" );
     sleep(1);
 
     // Turn all actuators for 5 seconds.

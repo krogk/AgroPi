@@ -1,5 +1,5 @@
 /**
-* @file
+* @file RelayBoard.h
 * @author Kamil Rog
 * @version 0.1
 * 

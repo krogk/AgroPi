@@ -12,7 +12,6 @@
 
 [-] Software Release 0.2 Actuation & Image Processing - Detecting Seedling/Mushroom - 20/04/2021
 * [x] Camera Integrated
-* [-] Sensor Calibration
 * [x] Relay Board Driver
 * [x] Relay Board Integration
 * [x] Web-Server Improvments
@@ -21,6 +20,7 @@
 * [x] Test on real samples
 
 [-] Software Release 0.3 - Life cycle Assessment & Nutrient Defficiencies - September
+* [-] Sensor Calibration
 * [-] Light Spectrum Sensor
 * [-] ADC Integration
 * [-] Water Level Sensor
