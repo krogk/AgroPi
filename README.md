@@ -124,7 +124,7 @@ Camera allows for detecting seedlings
 
 ### Hardware
 
-* [Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
+[Raspberry Pi 4 Model B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
 <br />
 
 Sensors:
