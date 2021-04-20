@@ -9,17 +9,12 @@
 #include "json_fastcgi_web_api.h"
 #include "ControllerThread.h"
 #include "Sampler.h"
+#include "Camera.h"
 #include <stdio.h>
-#include <string>
-#include <iostream>
-#include <atomic>
 #include <chrono>
-#include <condition_variable>
-#include <iostream>
 #include <mutex>
 #include <sstream>
 #include <thread>
-#include <string.h>
 
 /**
  * Flag to indicate program is running.
@@ -127,7 +122,6 @@ public:
 		float value = atof(m["value"].c_str());
 		// Pass Data to event handler 
 		controllerfastcgi->MessageHandler(operation,value);
-		//samplerCallback->MessageHandler();
 	}
 
 	/**
@@ -161,6 +155,12 @@ void ControllerThread::run(void)
 
 	// Start Sampler Timer
 	sampler.start(samplePeriod);
+
+	//Camera 		
+	Camera camera();
+
+	// Start sampling images
+	camera.start(cameraSamplePeriod);
 
 	// Just do nothing here and sleep. It's all dealt with in threads!
 	// Here, we just wait till the user presses ctrl-c which then

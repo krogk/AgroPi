@@ -10,13 +10,17 @@
 */
 #include "Camera.h"
 
-/* Constructor. No inputs required 
-*
-* Initializes camera ID to 0.
-*
-*/
-Camera::Camera(){
+/**
+ * 
+ * 
+ * @param 
+ * 
+ * @return 
+ */
+void Camera::Initialize()
+{
     Camera::setCameraID(0); //Initialise to camera 0.
+    return;
 }
 
 /**

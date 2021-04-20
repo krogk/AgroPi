@@ -32,6 +32,7 @@ public:
 	ControllerThread()
 	{
 		samplePeriod = 250000000;
+		cameraSamplePeriod = 250000000;
 	}
 
 private:

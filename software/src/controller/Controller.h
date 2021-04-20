@@ -78,8 +78,7 @@ public:
 	void SamplerHasData(EnvironmentData newData);
 
 	int Update_Targets(uint8_t opcode, float vlaue);
-	void StartListenerServer();
-	void MessageHandler(uint8_t opcode, float value );
+	void Handler(uint8_t opcode, float value );
 
 	EnvironmentData envData; 				      			/*!< Current Enviroment Conditions Read Froms the sensors */
 	TargetEnvironmentData targets; 				      /*!< Target Enviroment Conditions */

@@ -18,7 +18,6 @@
 #include "VEML7700.h"
 #include "SHT31D.h"
 #include "SGP30.h"
-#include "Camera.h"
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 #include "httplib.h"
 
@@ -92,7 +91,6 @@ private:
 	VEML7700 	lightSensor; 				        /*!< VEML7700 Light Sensor Object */
 	SHT31D  	temperatureHumiditySensor;  /*!< SHT31D Temperature & Humidity Sensor Object */
 	SGP30			gasSensor;  				        /*!< SGP30 Gas Sensor Object */
-	Camera 		camera; 					          /*!< Camera Sensor Object */
 	EnvironmentData envData; 				      /*!< Current and Target Enviroment Data Struct */
 	Controller* samplerCallback = nullptr;
 

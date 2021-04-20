@@ -1,6 +1,6 @@
 /**
 * @file I2CDriver.cpp
-* @author Andrew Scott-George
+* @author Andrew Scott-George & Kamil Rog
 * @version 0.1
 * 
 * This file contains the class for the Camera driver
@@ -13,12 +13,57 @@
 #include <sstream>
 #include <iostream>
 
-class Camera // : public CppTimer
+/**
+*
+* This class is responsible for taking an image in specified intervals and saving it
+* Inherits from CppTimer 
+*/
+class Camera : public CppTimer
 {
+
+	void timerEvent()
+	{
+        // Implement Grabing image here
+        // Left callback functionality in case we need it.
+        /*
+		if (nullptr != cameraCallback) 
+		{
+			//cameraCallback->CameraHasNewImage(image);
+  	    }
+        */
+        return;
+	}
+
     public:
         /* Setup camera */
-        Camera(); 
+        //Camera(); 
         
+        Camera() // Camera(CameraCallback* cb)
+        {
+            //setCallback(cb);
+            // Implement initialize function
+            Initialize();
+        }
+        
+
+        /**
+        * Sets the callback which is called whenever there is new data
+        **/
+        /*void setCallback(CameraCallback* cb)
+        {
+            cameraCallback = cb;
+        }*/
+
+        /**
+        * Stops the data acquistion
+        **/
+        void stopCamera()
+        {
+            stop();
+        }
+
+        void Initialize();
+
         /*Camera setup functions */
         void setCameraID(int ID); 
 
@@ -67,6 +112,7 @@ class Camera // : public CppTimer
 
         std::string model_file = "Resources/frozen_inference_graph.pb";
         std::string config_file = "Resources/ssd_mobilenet_v2_coco_2018_03_29.pbtxt";
+        //CameraCallback* cameraCallback = nullptr;
 };
 
 #endif

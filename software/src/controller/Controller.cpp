@@ -268,7 +268,7 @@ void Controller::AirflowActuator()
 void Controller::WateringActuator()
 {
 	// If Force Lighting is enabled
-	if(actuationForceFlags.Watering  && (relay.m_waterPumpGPIO == 1))
+	if(actuationForceFlags.Watering  && (relay.m_waterPumpGPIOState == 1))
 	{
 		relay.Watering(0);
 	}

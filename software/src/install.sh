@@ -3,6 +3,7 @@
 # Author: Kamil Rog
 # This Script Installs dependencies for AgroPi application, web-server and builds application
 
+# THIS HAS NOT BEEN TESTED
 
 BASEDIR=$(dirname $0)
 echo "Script location: ${BASEDIR}"
@@ -94,6 +95,7 @@ cd BASEDIR
 # Install Web Server Dependencies
 echo "Installing Web Server Depenencies..."
 cd BASEDIR/web
+python3 -m venv venv
 pip install -r requirements.txt
 cd BASEDIR
 

@@ -6,15 +6,19 @@ server {
           return 204;
           access_log     off;
           log_not_found  off;
-        } 
+        }
 
         location /sensor/ {
           include        fastcgi_params;
-          fastcgi_pass   unix:/tmp/fastcgisocket; 
+          fastcgi_pass   unix:/tmp/fastcgisocket;
         }
 
         location / {
-	  root /var/www/html;
-          index index.html;
+          root /home/pi/Desktop/repos/tests/AgroPi/software/web/html;
+          index dashboard.html;
+        }
+
+        location /static/ {
+               root /home/pi/Desktop/repos/tests/AgroPi/software/web/app;
         }
 }
