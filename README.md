@@ -6,6 +6,7 @@
   
   <p align="center">
      Cultivate your plants and mushrooms with ease through a Raspberry Pi driven monitoring and controlling system. 
+
     <br />
 </div>
 
@@ -59,6 +60,7 @@ AgroPi is a flexible modular monitoring and actuating tool which allows user to 
 Website interface enables user to easily display and control the conditions within enviromental chamber in real time. In addition AgroPi takes photos of your growth in constant intervals so you can show off your crops. 
 <br />
 <br />
+
 
 <div align="center">
 
@@ -184,6 +186,7 @@ git clone https://github.com/krogk/AgroPi
 ```
 2. Ubuntu Packages: 
 ```sh
+chmod +x install.sh
 ./install.sh
 ```
 3. Server Depencencies: 
@@ -271,6 +274,6 @@ Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 
 [Samuel Obosu - Web server & Network Programming](https://github.com/Samuel-Obosu)
 <br />
-[Andrew Scott-George - Image Processing](https://github.com/andrewsg3)
+[Andrew Scott-George - Image Processing, 3D design, & PR](https://github.com/andrewsg3)
 <br />
 [Kamil Rog - C++ Real-time Embedded Programming](https://github.com/krogk)
