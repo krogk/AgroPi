@@ -135,8 +135,8 @@ int GPIODriver::SetGPIODirection(int gpioPinNumber, int direction)
 
 /**
 * Get the current state of the GPIO pin.
-* Input = 0
-* Output = 1 
+* LOW = 0
+* HIGH = 1 
 *
 * @param gpioPinNumber GPIO Pin number state to read.
 *

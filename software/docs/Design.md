@@ -26,12 +26,15 @@ The base of application must conist of sensors able to obtain the following set 
 * Co2 or eCo2
 * TVOC
 
-Ideally each sensor should have an interrupt pin.
-All sensors should utilize one protocol if possible this should be I2C/SMBUS.
-SPI Would be faster, however, extension would be required for RPi which would complicate design.
+[-] Ideally each sensor should have an interrupt pin.
+[x] All sensors should utilize one protocol if possible this should be *I2C/SMBUS. 
+
+NOTE: SPI Would be faster, however, extension would be required for RPi which would complicate design.
+
+NOTE: None of the sensors we have decided to use for demo has interrupt functonality.
 
 #### Base Class
-A base class is going to be created. This class is going to contain the following virtual functions to be overriden by each sensor class when inherting.
+This class must contain the following virtual functions to be overriden by each sensor class when inherting.
 * Initialize - Opens the file descriptor to the sensor and does initial writes to sets up the sensor for reading operations. 
 * Reset - Writes to sensor to set up initial state.
 * Close Device  - Calls Reset function and closes the file descriptor
@@ -44,21 +47,31 @@ The class is going to also following private variables:
 ### Drivers
 
 #### I2C 
-The I2C driver functions is going to be implemented as signle object, only one instance of the object is going to be initialized and reference to this object is going to be passed in initialization stage.
+The I2C driver functions must be implemented as signle object, only one instance of the object is going to be initialized and reference to this object is going to be passed in initialization stage of each device that requires access to the driver's functions.
 
-is going to contain methods for plain I2C writes as well as SMBUS
+I2C driver must contain contain methods for plain I2C writes as well as SMBUS. 
+The implementation should esentially be a wrapper around the API that linux provides.
 
 #### GPIO 
 
-The GPIO driver must be implemented as an object.
+The GPIO drivermust be implemented as signle object, only one instance of the object is going to be initialized and reference to this object is going to be passed in initialization stage of each device that requires access to the driver's functions.
 
-The object should contain the following functions:
+The object should be implementing using file descriptors to sys/ and contain the following functions:
 *  - Set up a pin based on 
+* Set GPIO Direction
+* Set GPIO State
+* Read GPIO State
 
+NOTE: Currently only relay board object uses the GPIO driver. Therefore methods could've been implemented into relayboard object, this approach wasn't taken as the designed architecutre allows the 
 
 
 ## Actuators - Requirements
-Flexibility is key, relay is going to be used to allow for user to connect desired actuaiting. 
+User must have freedom to choose the appropriate sensors for the application therefore no specific set of actuating elements must be recommended.
+
+Stated aproach means actuating method must 
+The actuating elements are be 
+
+relay is going to be used to allow for user to connect desired actuaiting. 
 4 Channels is the minimmum and which going to allow for the following:
 * Lights
 * Heating Element
@@ -79,9 +92,11 @@ The relay is going to be controlled by GPIO Pins.
 
 This is can be achievied by interrupts, timers and blocking read operations.
 
-### Timers Not Delays
+### Timers > Delays
 
 Delay may be used **only** if it is absolotuley required this has been defined as not infulening or delaying any other tasks, otherwise timers are the preffered choice.
+
+Timers are reliable to about 100Hz, any functionality needing higher sampling rates must utilize different approach preferably signals, interrupts and service routines.
 
 
 ### Sampling - Sampler Object
@@ -103,10 +118,6 @@ Controller is going to contain relay object(s) and have set of functions to cont
 
 ### Web - Application Communication
 
-
-#### Tx - Httplib
-CPP -> flask server 
-
 #### Rx - FastCGI 
 jQuery -> flask server -> nginx -> CGI handler -> CPP
 
@@ -121,19 +132,26 @@ The Read operation for the server should be blocking and as soon as the messeage
 
 ## Documentation
 
-Code must contain doxygen comments which is going to allow the 
+Code must contain doxygen comments which is going to allow online to  
 
 
 ## Modification Guide
+
+### Adding I2C Sensor
+
+
+### Changing sampling frequency of I2C bus sampler
+
 
 
 ## Testing
 
 ### Unit Testing
 
-Unit Test should focus on the drivers and sensors
+Unit Test should focus on the drivers and sensors, this test should run first and compare 
 
-For the Environment Data Sensors should read 10 samples and check each sample  
+
+For each of the Environment condition sensors should read 10 samples and check each sample  
 1. Check the value is within the maxiumum and minimum for the sensor 
 2. Check if the value is in reasonable range
 3. 
@@ -143,9 +161,10 @@ Relay board testing:
 
 ### Integration Tests
 
-Integration test should test the follwoing:
+Integration test should test the main objects responsible for controll in the application:
 * Sampler
 * Controller
+* JSONHandler 
 
 #### Sampler
 
@@ -155,6 +174,7 @@ Project is built on these technologies:
 
 * Git
     - Source control
+    - Github pages for displaying contents  
 * CMake
     - Used as build tool
     - Doxygen generation
@@ -165,7 +185,10 @@ Project is built on these technologies:
 * cppcheck
     - With *make cppcheck* you can run static code analysis
 * Nginx  
-    - Server which does post request for data and posts controll data
+    - Server sends post request for environment data
+    - Posts controll data
+* Dygraph  
+    - Plotting environment data
 * flaskserver 
     - Databases
 * Python 

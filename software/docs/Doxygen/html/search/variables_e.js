@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['rawethanol',['RawEthanol',['../structEnvironmentData.html#a3c949734838b0bc862b8f7449b6df41c',1,'EnvironmentData']]],
-  ['rawethanolupperthreshold',['RawEthanolUpperThreshold',['../structTargetEnvironmentData.html#ab0bb15f753619e3013f49dda97d15eab',1,'TargetEnvironmentData']]],
-  ['rawh2',['RawH2',['../structEnvironmentData.html#a89c96958697dd39ee2e41289debcd8a5',1,'EnvironmentData']]],
-  ['rawh2upperthreshold',['RawH2UpperThreshold',['../structTargetEnvironmentData.html#a649b7d8751b329fba9494b5c730a55fd',1,'TargetEnvironmentData']]],
-  ['relay',['relay',['../classController.html#aa3f1d7aae706a5440adf520cbd7fb216',1,'Controller']]],
-  ['request',['request',['../classJSONCGIHandler.html#a69dba19ef64e913fc7e969854be997c9',1,'JSONCGIHandler']]],
-  ['running',['running',['../classJSONCGIHandler.html#aefa19cd01b387693ef99c5aa0c5fc093',1,'JSONCGIHandler']]]
+  ['sa',['sa',['../classCppTimer.html#a692a200df6d2c43b72ff1db76458f09f',1,'CppTimer']]],
+  ['sampleperiod',['samplePeriod',['../classControllerThread.html#a5dcd0069c7d31295c7e1e598c31fadf7',1,'ControllerThread']]],
+  ['samplercallback',['samplerCallback',['../classSampler.html#a3a37b5d667134d905e4bda45974cb936',1,'Sampler']]],
+  ['sev',['sev',['../classCppTimer.html#a9860d3d723ad55982db50c9cde8d725a',1,'CppTimer']]],
+  ['shut',['Shut',['../classCamera.html#ad3d6176cdcccecd116f2e7867b642ad1',1,'Camera::Shut()'],['../ai_2main_8cpp.html#a23a221013ece5cf46d769d9545bc2f71',1,'Shut():&#160;main.cpp']]],
+  ['sock_5ffd',['sock_fd',['../classJSONCGIHandler.html#a6f696ff6856f32b3ba75a130fcbb8987',1,'JSONCGIHandler']]]
 ];

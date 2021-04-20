@@ -67,6 +67,18 @@ int RelayBoard::Lighting(int state)
 	return ret;
 }
 
+
+/**
+* Wrapper for reading Lighting GPIO pin state
+* 
+* @return 						Value of the lighting pin, else negative error number
+*/
+int RelayBoard::GetLightingState()
+{
+	return m_pGPIODriver->GPIORead(m_lightsGPIO);
+}
+
+
 /**
 * Changes the state of the Heating GPIO pin
 *
@@ -89,9 +101,18 @@ int RelayBoard::Heating(int state)
 
 
 /**
+* Wrapper for reading heating GPIO state
+* 
+* @return 						Value of the lighting pin else negative error number
+*/
+int RelayBoard::GetHeatingState()
+{
+	return m_pGPIODriver->GPIORead(m_heaterGPIO);
+}
+
+
+/**
 * Changes the state of the Airflow GPIO pin
-*
-* @param state          State to change the Airflow GPIO pin to.
 * 
 * @return 			    Zero on success else error number
 *
@@ -106,6 +127,17 @@ int RelayBoard::Airflow(int state)
 	}
   m_fanGPIOState = state;
 	return ret;
+}
+
+
+/**
+* Wrapper for reading airflow GPIO pin state
+* 
+* @return 						Value of the lighting pin else negative error number
+*/
+int RelayBoard::GetAirflowState()
+{
+	return m_pGPIODriver->GPIORead(m_fanGPIO);
 }
 
 
@@ -127,6 +159,16 @@ int RelayBoard::Watering(int state)
 	}
   m_waterPumpGPIOState = state;
 	return ret;
+}
+
+/**
+* Wrapper for reading airflow GPIO pin state
+* 
+* @return 						Value of the lighting pin else negative error number
+*/
+int RelayBoard::GetWateringState()
+{
+	return m_pGPIODriver->GPIORead(m_waterPumpGPIO);
 }
 
 

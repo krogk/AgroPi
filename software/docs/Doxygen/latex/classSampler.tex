@@ -11,7 +11,8 @@
 
 
 
-Inheritance diagram for Sampler\+:\nopagebreak
+Inheritance diagram for Sampler\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Sampler\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Sampler\+:\nopagebreak
+Collaboration diagram for Sampler\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -33,10 +35,16 @@ Collaboration diagram for Sampler\+:\nopagebreak
 \hyperlink{classSampler_aec4905ed5f8259bb5e361da172bf7f17}{Sampler} (\hyperlink{classController}{Controller} $\ast$cb)
 \item 
 \hyperlink{classSampler_afbbbd238b78dd3024686c852b69fa64e}{$\sim$\+Sampler} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 void \hyperlink{classSampler_a026a0839919e8e93fa75f19b67ccffc6}{set\+Callback} (\hyperlink{classController}{Controller} $\ast$cb)
 \item 
 void \hyperlink{classSampler_af661f48134a6d0f1f2d6080f5025392e}{stop\+Sampler} ()
+\item 
+int \hyperlink{classSampler_a5702d0ef89adb532fef4f9879e7e36d4}{Gather\+\_\+\+Env\+\_\+\+Data} ()
+\begin{DoxyCompactList}\small\item\em Test Functions. \end{DoxyCompactList}\item 
+\hyperlink{structEnvironmentData}{Environment\+Data} \hyperlink{classSampler_a22edd729c6bbb5582ebac7681041cf55}{Get\+Env\+Data} ()
+\item 
+void \hyperlink{classSampler_a4e239960ef9947af152ba441ba152cd0}{Callback\+Test} ()
 \item 
 virtual void \hyperlink{classCppTimer_a64989025caa3c030c6c397ca76a2d20b}{start} (long nanosecs, \hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790a}{cpp\+Timer\+Type\+\_\+t} type=\hyperlink{CppTimer_8h_a110d07ab6a96d7815149d3d95435790aae4379d044711537d9ce3b3b58c575c58}{P\+E\+R\+I\+O\+D\+IC})
 \item 
@@ -49,8 +57,6 @@ void \hyperlink{classSampler_addf333c6e247ee3a1def41260caa902a}{timer\+Event} ()
 \item 
 int \hyperlink{classSampler_a1aed5b32bf99312ba38d092f1acad3d9}{Initialize} ()
 \item 
-int \hyperlink{classSampler_a5702d0ef89adb532fef4f9879e7e36d4}{Gather\+\_\+\+Env\+\_\+\+Data} ()
-\item 
 int \hyperlink{classSampler_acf3d04a740356e54fe53766a7f00ae15}{Print\+\_\+\+Env\+\_\+\+Data} ()
 \item 
 int \hyperlink{classSampler_a24077f1eeb2491b65f9577efd07dffd6}{Close\+Devices} ()
@@ -59,17 +65,17 @@ int \hyperlink{classSampler_a24077f1eeb2491b65f9577efd07dffd6}{Close\+Devices} (
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classI2CDriver}{I2\+C\+Driver} \hyperlink{classSampler_ada5598060be79a005bf4375fcbf9773d}{i2c\+Driver}
-\item 
+\begin{DoxyCompactList}\small\item\em I2C driver used for. \end{DoxyCompactList}\item 
 \hyperlink{classVEML7700}{V\+E\+M\+L7700} \hyperlink{classSampler_ae81394f464670af514f8dc7c5df46d74}{light\+Sensor}
-\item 
+\begin{DoxyCompactList}\small\item\em Peripherials using I2C driver -\/ instantiate new sensors here. \end{DoxyCompactList}\item 
 \hyperlink{classSHT31D}{S\+H\+T31D} \hyperlink{classSampler_aad073931f59004109e8050c669b294c0}{temperature\+Humidity\+Sensor}
 \item 
 \hyperlink{classSGP30}{S\+G\+P30} \hyperlink{classSampler_a4af78e46617fc8cdbc4bd14a7db5c741}{gas\+Sensor}
 \item 
 \hyperlink{structEnvironmentData}{Environment\+Data} \hyperlink{classSampler_a4cfbeb66e1cd18cfc66ccdb2712770f9}{env\+Data}
-\item 
+\begin{DoxyCompactList}\small\item\em Current and Target Enviroment Data Struct. \end{DoxyCompactList}\item 
 \hyperlink{classController}{Controller} $\ast$ \hyperlink{classSampler_a3a37b5d667134d905e4bda45974cb936}{sampler\+Callback} = nullptr
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Pointer to conroller object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -78,7 +84,7 @@ int \hyperlink{classSampler_a24077f1eeb2491b65f9577efd07dffd6}{Close\+Devices} (
 \begin{DoxyAuthor}{Author}
 Kamil Rog
 \end{DoxyAuthor}
-This class is responsible for taking measurements for all devices on I2C Bus. Inherits from \hyperlink{classCppTimer}{Cpp\+Timer} 
+This class is responsible for taking measurements for all devices on I2C Bus. This is achiebed by inheriting functionality of \hyperlink{classCppTimer}{Cpp\+Timer}. \hyperlink{classSampler_addf333c6e247ee3a1def41260caa902a}{timer\+Event()} is executed when timer fires. This sampler creates new thread 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classSampler_aec4905ed5f8259bb5e361da172bf7f17}\label{classSampler_aec4905ed5f8259bb5e361da172bf7f17}} 
@@ -95,14 +101,24 @@ This class is responsible for taking measurements for all devices on I2C Bus. In
 
 
 
+Destructor. 
+
+
+
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classSampler_a24077f1eeb2491b65f9577efd07dffd6}\label{classSampler_a24077f1eeb2491b65f9577efd07dffd6}} 
+\mbox{\Hypertarget{classSampler_a4e239960ef9947af152ba441ba152cd0}\label{classSampler_a4e239960ef9947af152ba441ba152cd0}} 
+\index{Sampler@{Sampler}!Callback\+Test@{Callback\+Test}}
+\index{Callback\+Test@{Callback\+Test}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{Callback\+Test()}{CallbackTest()}}
+{\footnotesize\ttfamily void Sampler\+::\+Callback\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Use Callback Currently used only for integation test \mbox{\Hypertarget{classSampler_a24077f1eeb2491b65f9577efd07dffd6}\label{classSampler_a24077f1eeb2491b65f9577efd07dffd6}} 
 \index{Sampler@{Sampler}!Close\+Devices@{Close\+Devices}}
 \index{Close\+Devices@{Close\+Devices}!Sampler@{Sampler}}
 \subsubsection{\texorpdfstring{Close\+Devices()}{CloseDevices()}}
 {\footnotesize\ttfamily int Sampler\+::\+Close\+Devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Reads data from all sensors by turn.
+Closes each I2C measurement device by turn.
 
 \begin{DoxyReturn}{Returns}
 Zero On Sucess 
@@ -111,12 +127,27 @@ Zero On Sucess
 \index{Sampler@{Sampler}!Gather\+\_\+\+Env\+\_\+\+Data@{Gather\+\_\+\+Env\+\_\+\+Data}}
 \index{Gather\+\_\+\+Env\+\_\+\+Data@{Gather\+\_\+\+Env\+\_\+\+Data}!Sampler@{Sampler}}
 \subsubsection{\texorpdfstring{Gather\+\_\+\+Env\+\_\+\+Data()}{Gather\_Env\_Data()}}
-{\footnotesize\ttfamily int Sampler\+::\+Gather\+\_\+\+Env\+\_\+\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily int Sampler\+::\+Gather\+\_\+\+Env\+\_\+\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Test Functions. 
 
 Reads data from all sensors by turn.
 
 \begin{DoxyReturn}{Returns}
 Zero On Sucess 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSampler_a22edd729c6bbb5582ebac7681041cf55}\label{classSampler_a22edd729c6bbb5582ebac7681041cf55}} 
+\index{Sampler@{Sampler}!Get\+Env\+Data@{Get\+Env\+Data}}
+\index{Get\+Env\+Data@{Get\+Env\+Data}!Sampler@{Sampler}}
+\subsubsection{\texorpdfstring{Get\+Env\+Data()}{GetEnvData()}}
+{\footnotesize\ttfamily \hyperlink{structEnvironmentData}{Environment\+Data} Sampler\+::\+Get\+Env\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the current data from all sensors by turn. Currently used only for integation tests
+
+\begin{DoxyReturn}{Returns}
+Environment data struct 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classSampler_a1aed5b32bf99312ba38d092f1acad3d9}\label{classSampler_a1aed5b32bf99312ba38d092f1acad3d9}} 
 \index{Sampler@{Sampler}!Initialize@{Initialize}}
@@ -132,6 +163,11 @@ filepath filepath for settings file. \mbox{\Hypertarget{classSampler_acf3d04a740
 \subsubsection{\texorpdfstring{Print\+\_\+\+Env\+\_\+\+Data()}{Print\_Env\_Data()}}
 {\footnotesize\ttfamily int Sampler\+::\+Print\+\_\+\+Env\+\_\+\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+Prints data read by sensors by turn.
+
+\begin{DoxyReturn}{Returns}
+Zero On Sucess 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classSampler_a026a0839919e8e93fa75f19b67ccffc6}\label{classSampler_a026a0839919e8e93fa75f19b67ccffc6}} 
 \index{Sampler@{Sampler}!set\+Callback@{set\+Callback}}
 \index{set\+Callback@{set\+Callback}!Sampler@{Sampler}}
@@ -162,7 +198,7 @@ Stops the data acquistion \mbox{\Hypertarget{classSampler_addf333c6e247ee3a1def4
 \subsubsection{\texorpdfstring{timer\+Event()}{timerEvent()}}
 {\footnotesize\ttfamily void Sampler\+::timer\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
 
-Abstract function which needs to be implemented by the children. This is called every time the timer fires. 
+Executes when timer fires. Firstly it takes measurements and runs the callback function defined in the controller object 
 
 Implements \hyperlink{classCppTimer_ac2665403595b6aee5f581d0ebfeb886c}{Cpp\+Timer}.
 
@@ -175,29 +211,45 @@ Implements \hyperlink{classCppTimer_ac2665403595b6aee5f581d0ebfeb886c}{Cpp\+Time
 \subsubsection{\texorpdfstring{env\+Data}{envData}}
 {\footnotesize\ttfamily \hyperlink{structEnvironmentData}{Environment\+Data} Sampler\+::env\+Data\hspace{0.3cm}{\ttfamily [private]}}
 
-Current and Target Enviroment Data Struct \mbox{\Hypertarget{classSampler_a4af78e46617fc8cdbc4bd14a7db5c741}\label{classSampler_a4af78e46617fc8cdbc4bd14a7db5c741}} 
+
+
+Current and Target Enviroment Data Struct. 
+
+\mbox{\Hypertarget{classSampler_a4af78e46617fc8cdbc4bd14a7db5c741}\label{classSampler_a4af78e46617fc8cdbc4bd14a7db5c741}} 
 \index{Sampler@{Sampler}!gas\+Sensor@{gas\+Sensor}}
 \index{gas\+Sensor@{gas\+Sensor}!Sampler@{Sampler}}
 \subsubsection{\texorpdfstring{gas\+Sensor}{gasSensor}}
 {\footnotesize\ttfamily \hyperlink{classSGP30}{S\+G\+P30} Sampler\+::gas\+Sensor\hspace{0.3cm}{\ttfamily [private]}}
 
-\hyperlink{classSGP30}{S\+G\+P30} Gas Sensor Object \mbox{\Hypertarget{classSampler_ada5598060be79a005bf4375fcbf9773d}\label{classSampler_ada5598060be79a005bf4375fcbf9773d}} 
+\mbox{\Hypertarget{classSampler_ada5598060be79a005bf4375fcbf9773d}\label{classSampler_ada5598060be79a005bf4375fcbf9773d}} 
 \index{Sampler@{Sampler}!i2c\+Driver@{i2c\+Driver}}
 \index{i2c\+Driver@{i2c\+Driver}!Sampler@{Sampler}}
 \subsubsection{\texorpdfstring{i2c\+Driver}{i2cDriver}}
 {\footnotesize\ttfamily \hyperlink{classI2CDriver}{I2\+C\+Driver} Sampler\+::i2c\+Driver\hspace{0.3cm}{\ttfamily [private]}}
 
-I2C driver used for peripherials \mbox{\Hypertarget{classSampler_ae81394f464670af514f8dc7c5df46d74}\label{classSampler_ae81394f464670af514f8dc7c5df46d74}} 
+
+
+I2C driver used for. 
+
+\mbox{\Hypertarget{classSampler_ae81394f464670af514f8dc7c5df46d74}\label{classSampler_ae81394f464670af514f8dc7c5df46d74}} 
 \index{Sampler@{Sampler}!light\+Sensor@{light\+Sensor}}
 \index{light\+Sensor@{light\+Sensor}!Sampler@{Sampler}}
 \subsubsection{\texorpdfstring{light\+Sensor}{lightSensor}}
 {\footnotesize\ttfamily \hyperlink{classVEML7700}{V\+E\+M\+L7700} Sampler\+::light\+Sensor\hspace{0.3cm}{\ttfamily [private]}}
 
-\hyperlink{classVEML7700}{V\+E\+M\+L7700} Light Sensor Object \mbox{\Hypertarget{classSampler_a3a37b5d667134d905e4bda45974cb936}\label{classSampler_a3a37b5d667134d905e4bda45974cb936}} 
+
+
+Peripherials using I2C driver -\/ instantiate new sensors here. 
+
+\mbox{\Hypertarget{classSampler_a3a37b5d667134d905e4bda45974cb936}\label{classSampler_a3a37b5d667134d905e4bda45974cb936}} 
 \index{Sampler@{Sampler}!sampler\+Callback@{sampler\+Callback}}
 \index{sampler\+Callback@{sampler\+Callback}!Sampler@{Sampler}}
 \subsubsection{\texorpdfstring{sampler\+Callback}{samplerCallback}}
 {\footnotesize\ttfamily \hyperlink{classController}{Controller}$\ast$ Sampler\+::sampler\+Callback = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to conroller object. 
 
 \mbox{\Hypertarget{classSampler_aad073931f59004109e8050c669b294c0}\label{classSampler_aad073931f59004109e8050c669b294c0}} 
 \index{Sampler@{Sampler}!temperature\+Humidity\+Sensor@{temperature\+Humidity\+Sensor}}
@@ -205,7 +257,7 @@ I2C driver used for peripherials \mbox{\Hypertarget{classSampler_ae81394f464670a
 \subsubsection{\texorpdfstring{temperature\+Humidity\+Sensor}{temperatureHumiditySensor}}
 {\footnotesize\ttfamily \hyperlink{classSHT31D}{S\+H\+T31D} Sampler\+::temperature\+Humidity\+Sensor\hspace{0.3cm}{\ttfamily [private]}}
 
-\hyperlink{classSHT31D}{S\+H\+T31D} Temperature \& Humidity Sensor Object 
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

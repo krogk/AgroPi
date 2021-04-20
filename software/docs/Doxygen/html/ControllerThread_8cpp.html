@@ -74,34 +74,32 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="json__fastcgi__web__api_8h_source.html">json_fastcgi_web_api.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ControllerThread_8h_source.html">ControllerThread.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Sampler_8h_source.html">Sampler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Camera_8h_source.html">Camera.h</a>&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
-<code>#include &lt;condition_variable&gt;</code><br />
 <code>#include &lt;mutex&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ControllerThread.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ControllerThread_8cpp__incl.png" border="0" usemap="#src_2threads_2ControllerThread_8cpp" alt=""/></div>
 <map name="src_2threads_2ControllerThread_8cpp" id="src_2threads_2ControllerThread_8cpp">
-<area shape="rect" id="node2" href="json__fastcgi__web__api_8h.html" title="json_fastcgi_web_api.h" alt="" coords="1340,155,1499,181"/>
-<area shape="rect" id="node18" href="ControllerThread_8h.html" title="ControllerThread.h" alt="" coords="778,80,907,107"/>
-<area shape="rect" id="node23" href="Sampler_8h.html" title="Sampler.h" alt="" coords="283,80,364,107"/>
-<area shape="rect" id="node19" href="CppThread_8h.html" title="CppThread.h" alt="" coords="983,155,1080,181"/>
-<area shape="rect" id="node20" href="Controller_8h.html" title="Controller.h" alt="" coords="752,155,842,181"/>
-<area shape="rect" id="node21" href="typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="737,229,857,256"/>
-<area shape="rect" id="node22" href="RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="561,229,662,256"/>
-<area shape="rect" id="node24" href="CppTimer_8h.html" title="CppTimer.h" alt="" coords="225,229,316,256"/>
-<area shape="rect" id="node27" href="I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="92,304,182,331"/>
-<area shape="rect" id="node28" href="I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="340,229,435,256"/>
-<area shape="rect" id="node29" href="VEML7700_8h.html" title="VEML7700.h" alt="" coords="30,155,127,181"/>
-<area shape="rect" id="node30" href="SHT31D_8h.html" title="SHT31D.h" alt="" coords="151,155,235,181"/>
-<area shape="rect" id="node31" href="SGP30_8h.html" title="SGP30.h" alt="" coords="361,155,436,181"/>
+<area shape="rect" id="node2" href="json__fastcgi__web__api_8h.html" title="json_fastcgi_web_api.h" alt="" coords="1888,155,2047,181"/>
+<area shape="rect" id="node18" href="ControllerThread_8h.html" title="ControllerThread.h" alt="" coords="1196,80,1326,107"/>
+<area shape="rect" id="node24" href="Sampler_8h.html" title="Sampler.h" alt="" coords="300,80,382,107"/>
+<area shape="rect" id="node33" href="Camera_8h.html" title="Camera.h" alt="" coords="1176,155,1255,181"/>
+<area shape="rect" id="node19" href="CppThread_8h.html" title="CppThread.h" alt="" coords="1279,155,1376,181"/>
+<area shape="rect" id="node20" href="Controller_8h.html" title="Controller.h" alt="" coords="626,155,715,181"/>
+<area shape="rect" id="node21" href="typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="733,229,853,256"/>
+<area shape="rect" id="node22" href="RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="506,229,608,256"/>
+<area shape="rect" id="node23" href="GPIODriver_8h.html" title="GPIODriver.h" alt="" coords="466,304,568,331"/>
+<area shape="rect" id="node25" href="CppTimer_8h.html" title="CppTimer.h" alt="" coords="928,229,1018,256"/>
+<area shape="rect" id="node28" href="I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="203,304,292,331"/>
+<area shape="rect" id="node29" href="I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="286,229,380,256"/>
+<area shape="rect" id="node30" href="VEML7700_8h.html" title="VEML7700.h" alt="" coords="98,155,195,181"/>
+<area shape="rect" id="node31" href="SHT31D_8h.html" title="SHT31D.h" alt="" coords="219,155,303,181"/>
+<area shape="rect" id="node32" href="SGP30_8h.html" title="SGP30.h" alt="" coords="378,155,453,181"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -114,26 +112,11 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aaa635ffbc23f953745a8a1707ba021b3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3">SERVER_OP_CODE</a> { <br />
-&#160;&#160;<a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3ae82495bae3a794eb1568c7a381a19cf0">LIGHT_INTENSITY_TARGET_CHANGE</a> = 1, 
-<a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3ae7aeecba50584a1dc20c86dfe3e4a4f0">TEMPERATURE_TARGET_CHANGE</a> = 2, 
-<a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3a9ac9e84041778794930eb5f264ef32ce">HUMIDITY_TARGET_CHANGE</a> = 3, 
-<a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3adfe0a5b404a32bf815b936d953f32785">TVOC_TARGET_CHANGE</a> = 4, 
-<br />
-&#160;&#160;<a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3a236b51acee3d9d8050e63c5c7cbb538d">ECO2_TARGET_CHANGE</a> = 5, 
-<a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3a1529fb0d5e223eac297ee2525e0cd324">FORCE_HEATING</a> = 128, 
-<a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3a7d012c80a4cf528530d68e9195b5b17e">FORCE_AIRFLOW</a> = 129, 
-<a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3ab46987fc5b5469a3ba7a0a0a5b658b77">FORCE_LIGHTS</a> = 130, 
-<br />
-&#160;&#160;<a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3a18f059df885c9509b31a22399941eaa3">FORCE_WATER_PUMP</a> = 131, 
-<a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3ae5c39d7ebc2e5d0ea28b531d983d9731">SAMPLE_RATE_CHANGE</a> = 252, 
-<a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3aa147d81463736a4b13de687c13434c15">START_SAMPLING</a> = 253, 
-<a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3a09235ebfaa8a70ffd6ffecd3174f7be3">STOP_SAMPLING</a> = 254, 
-<br />
-&#160;&#160;<a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3a945280aa3e9db0f24215a8d9b6ddbd8e">EXIT_APPLICATION</a> = 255
-<br />
+<tr class="memitem:a60176172068ee7057c3fd49521dd0115"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ControllerThread_8cpp.html#a60176172068ee7057c3fd49521dd0115">EVENT_OP_CODES</a> { <a class="el" href="ControllerThread_8cpp.html#a60176172068ee7057c3fd49521dd0115ae5c39d7ebc2e5d0ea28b531d983d9731">SAMPLE_RATE_CHANGE</a> = 253, 
+<a class="el" href="ControllerThread_8cpp.html#a60176172068ee7057c3fd49521dd0115a97bb101d1d6c18d26fe95f18cef3792d">ENABLE_SAMPLING</a> = 254, 
+<a class="el" href="ControllerThread_8cpp.html#a60176172068ee7057c3fd49521dd0115a945280aa3e9db0f24215a8d9b6ddbd8e">EXIT_APPLICATION</a> = 255
  }</td></tr>
-<tr class="separator:aaa635ffbc23f953745a8a1707ba021b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a60176172068ee7057c3fd49521dd0115"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -152,31 +135,21 @@ Variables</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
 <p>This file contains the functions for Server Thread class. </p>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="aaa635ffbc23f953745a8a1707ba021b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa635ffbc23f953745a8a1707ba021b3">&#9670;&nbsp;</a></span>SERVER_OP_CODE</h2>
+<a id="a60176172068ee7057c3fd49521dd0115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60176172068ee7057c3fd49521dd0115">&#9670;&nbsp;</a></span>EVENT_OP_CODES</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3">SERVER_OP_CODE</a></td>
+          <td class="memname">enum <a class="el" href="ControllerThread_8cpp.html#a60176172068ee7057c3fd49521dd0115">EVENT_OP_CODES</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aaa635ffbc23f953745a8a1707ba021b3ae82495bae3a794eb1568c7a381a19cf0"></a>LIGHT_INTENSITY_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aaa635ffbc23f953745a8a1707ba021b3ae7aeecba50584a1dc20c86dfe3e4a4f0"></a>TEMPERATURE_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aaa635ffbc23f953745a8a1707ba021b3a9ac9e84041778794930eb5f264ef32ce"></a>HUMIDITY_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aaa635ffbc23f953745a8a1707ba021b3adfe0a5b404a32bf815b936d953f32785"></a>TVOC_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aaa635ffbc23f953745a8a1707ba021b3a236b51acee3d9d8050e63c5c7cbb538d"></a>ECO2_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aaa635ffbc23f953745a8a1707ba021b3a1529fb0d5e223eac297ee2525e0cd324"></a>FORCE_HEATING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aaa635ffbc23f953745a8a1707ba021b3a7d012c80a4cf528530d68e9195b5b17e"></a>FORCE_AIRFLOW&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aaa635ffbc23f953745a8a1707ba021b3ab46987fc5b5469a3ba7a0a0a5b658b77"></a>FORCE_LIGHTS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aaa635ffbc23f953745a8a1707ba021b3a18f059df885c9509b31a22399941eaa3"></a>FORCE_WATER_PUMP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aaa635ffbc23f953745a8a1707ba021b3ae5c39d7ebc2e5d0ea28b531d983d9731"></a>SAMPLE_RATE_CHANGE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aaa635ffbc23f953745a8a1707ba021b3aa147d81463736a4b13de687c13434c15"></a>START_SAMPLING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aaa635ffbc23f953745a8a1707ba021b3a09235ebfaa8a70ffd6ffecd3174f7be3"></a>STOP_SAMPLING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aaa635ffbc23f953745a8a1707ba021b3a945280aa3e9db0f24215a8d9b6ddbd8e"></a>EXIT_APPLICATION&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a60176172068ee7057c3fd49521dd0115ae5c39d7ebc2e5d0ea28b531d983d9731"></a>SAMPLE_RATE_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a60176172068ee7057c3fd49521dd0115a97bb101d1d6c18d26fe95f18cef3792d"></a>ENABLE_SAMPLING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a60176172068ee7057c3fd49521dd0115a945280aa3e9db0f24215a8d9b6ddbd8e"></a>EXIT_APPLICATION&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>

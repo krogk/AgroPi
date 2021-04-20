@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['h2_5ftarget_5fchange',['H2_TARGET_CHANGE',['../classController.html#ae0cc6feb81bc46e0859390fd1551ff43a19170325b57f14dd6d349184ed1379e2',1,'Controller']]],
-  ['humidity_5ftarget_5fchange',['HUMIDITY_TARGET_CHANGE',['../classController.html#ae0cc6feb81bc46e0859390fd1551ff43a9380620e3b95492374b3ac3a3e3bd5e7',1,'Controller::HUMIDITY_TARGET_CHANGE()'],['../ControllerThread_8cpp.html#aaa635ffbc23f953745a8a1707ba021b3a9ac9e84041778794930eb5f264ef32ce',1,'HUMIDITY_TARGET_CHANGE():&#160;ControllerThread.cpp']]]
+  ['h2_5flower_5ftarget_5fchange',['H2_LOWER_TARGET_CHANGE',['../Controller_8h.html#af2aa7191ff70853e51846b5057935d09a8e6cfb33664990f0044e41d359223f8c',1,'Controller.h']]],
+  ['h2_5fupper_5ftarget_5fchange',['H2_UPPER_TARGET_CHANGE',['../Controller_8h.html#af2aa7191ff70853e51846b5057935d09a242b082ba7f50ae5c77d61c9f0bee404',1,'Controller.h']]],
+  ['humidity_5flower_5ftarget_5fchange',['HUMIDITY_LOWER_TARGET_CHANGE',['../Controller_8h.html#af2aa7191ff70853e51846b5057935d09a7a328a02c6e4d0434484440326c45ebc',1,'Controller.h']]],
+  ['humidity_5fupper_5ftarget_5fchange',['HUMIDITY_UPPER_TARGET_CHANGE',['../Controller_8h.html#af2aa7191ff70853e51846b5057935d09a486d927da6c3614d2d74cb878cdea05f',1,'Controller.h']]]
 ];

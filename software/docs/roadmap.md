@@ -10,17 +10,17 @@
 * [x] Web server
 * [x] Real-time Adaptation
 
-[-] Software Release 0.2 Actuation & Image Processing - Detecting Seedling/Mushroom - 16/04/2021
-* [-] Camera Integrated
+[-] Software Release 0.2 Actuation & Image Processing - Detecting Seedling/Mushroom - 20/04/2021
+* [x] Camera Integrated
 * [-] Sensor Calibration
-* [-] Relay Board Driver
-* [-] Relay Board Integration
-* [-] Web-Server Improvments
-* [-] Gather Training Dataset
-* [-] Train neuralnet
-* [-] Test on real samples
+* [x] Relay Board Driver
+* [x] Relay Board Integration
+* [x] Web-Server Improvments
+* [x] Gather Training Dataset
+* [x] Train neuralnet
+* [x] Test on real samples
 
-[-] Software Release 0.3 - Life cycle Assessment & Nutrient Defficiencies - After Summer
+[-] Software Release 0.3 - Life cycle Assessment & Nutrient Defficiencies - September
 * [-] Light Spectrum Sensor
 * [-] ADC Integration
 * [-] Water Level Sensor

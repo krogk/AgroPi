@@ -1,4 +1,5 @@
 <map id="CppTimer" name="CppTimer">
-<area shape="rect" id="node2" href="$classCppTimerCallback.html" title="{CppTimerCallback\n|&#45; cppTimerEventRunnable\l|+ registerEventRunnable()\l+ unregisterEventRunnable()\l+ timerEvent()\l}" alt="" coords="5,329,193,435"/>
-<area shape="rect" id="node3" href="$classSampler.html" title="Sampler Class. " alt="" coords="218,248,410,516"/>
+<area shape="rect" id="node2" href="$classCamera.html" title="{Camera\n|&#45; img\l&#45; CameraID\l&#45; cMin\l&#45; cMax\l&#45; Shut\l&#45; model_file\l&#45; config_file\l|+ Camera()\l+ stopCamera()\l+ Initialize()\l+ setCameraID()\l+ setContrasts()\l+ setShutter()\l+ checkCamOpen()\l+ takePicture()\l+ savePicture()\l+ livestream()\l+ setNetAddress()\l+ takeScanDNNPicture()\l+ takeScanCascade()\l+ takeScanForGreen()\l+ greenMask()\l+ greenCascade()\l+ greenFolderP()\l+ greenFolderN()\l+ scanSaveGreen()\l&#45; timerEvent()\l}" alt="" coords="5,248,173,692"/>
+<area shape="rect" id="node3" href="$classCppTimerCallback.html" title="{CppTimerCallback\n|&#45; cppTimerEventRunnable\l|+ registerEventRunnable()\l+ unregisterEventRunnable()\l+ timerEvent()\l}" alt="" coords="198,417,386,523"/>
+<area shape="rect" id="node4" href="$classSampler.html" title="Sampler Class. " alt="" coords="411,321,603,619"/>
 </map>

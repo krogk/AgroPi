@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['sa',['sa',['../classCppTimer.html#a692a200df6d2c43b72ff1db76458f09f',1,'CppTimer']]],
-  ['sampleperiod',['samplePeriod',['../classControllerThread.html#a5dcd0069c7d31295c7e1e598c31fadf7',1,'ControllerThread']]],
-  ['samplercallback',['samplerCallback',['../classSampler.html#a3a37b5d667134d905e4bda45974cb936',1,'Sampler']]],
-  ['sev',['sev',['../classCppTimer.html#a9860d3d723ad55982db50c9cde8d725a',1,'CppTimer']]],
-  ['shut',['Shut',['../ai_2main_8cpp.html#a23a221013ece5cf46d769d9545bc2f71',1,'main.cpp']]],
-  ['sock_5ffd',['sock_fd',['../classJSONCGIHandler.html#a6f696ff6856f32b3ba75a130fcbb8987',1,'JSONCGIHandler']]],
-  ['source',['source',['../namespacessi__expander.html#ae8fa20efba305e039de78680ea6b3fdb',1,'ssi_expander']]]
+  ['targets',['targets',['../classController.html#a8f2fb8295fd3da6ebc8bdb0f25036322',1,'Controller']]],
+  ['temperature',['Temperature',['../structEnvironmentData.html#a5c8f919b34fe673a71726053d05cb775',1,'EnvironmentData']]],
+  ['temperaturehumiditysensor',['temperatureHumiditySensor',['../classSampler.html#aad073931f59004109e8050c669b294c0',1,'Sampler']]],
+  ['temperaturelowerthreshold',['TemperatureLowerThreshold',['../structTargetEnvironmentData.html#a908d87e4fd88c513d671c591d0710ce0',1,'TargetEnvironmentData']]],
+  ['temperatureupperthreshold',['TemperatureUpperThreshold',['../structTargetEnvironmentData.html#a76d83792b14767a1bc23b57c027232d6',1,'TargetEnvironmentData']]],
+  ['timerid',['timerid',['../classCppTimer.html#a90ff764263fdde5a0f6e53429c8cf734',1,'CppTimer']]],
+  ['tvoc',['TVOC',['../structEnvironmentData.html#aae4ac3338a76432de00582ba5af01a45',1,'EnvironmentData']]],
+  ['tvoclowerthreshold',['TVOCLowerThreshold',['../structTargetEnvironmentData.html#a87019e6e28b712edf7900d6deef3e2b5',1,'TargetEnvironmentData']]],
+  ['tvocupperthreshold',['TVOCUpperThreshold',['../structTargetEnvironmentData.html#afdddfbd81d51a1831704d85b08e9df1a',1,'TargetEnvironmentData']]]
 ];

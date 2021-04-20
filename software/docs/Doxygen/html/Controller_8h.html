@@ -63,13 +63,15 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">Controller.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="typeDefinitions_8h_source.html">typeDefinitions.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="RelayBoard_8h_source.html">RelayBoard.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPIODriver_8h_source.html">GPIODriver.h</a>&quot;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
@@ -81,7 +83,8 @@ Include dependency graph for Controller.h:</div>
 <div class="center"><img src="Controller_8h__incl.png" border="0" usemap="#src_2controller_2Controller_8h" alt=""/></div>
 <map name="src_2controller_2Controller_8h" id="src_2controller_2Controller_8h">
 <area shape="rect" id="node2" href="typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="113,80,233,107"/>
-<area shape="rect" id="node7" href="RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="358,80,459,107"/>
+<area shape="rect" id="node7" href="RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="409,80,510,107"/>
+<area shape="rect" id="node8" href="GPIODriver_8h.html" title="GPIODriver.h" alt="" coords="391,155,493,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -90,11 +93,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="Controller_8h__dep__incl.png" border="0" usemap="#src_2controller_2Controller_8hdep" alt=""/></div>
 <map name="src_2controller_2Controller_8hdep" id="src_2controller_2Controller_8hdep">
 <area shape="rect" id="node2" href="Controller_8cpp.html" title="src/controller/Controller.cpp" alt="" coords="5,80,188,107"/>
-<area shape="rect" id="node3" href="Sampler_8h.html" title="src/controller/Sampler.h" alt="" coords="213,80,373,107"/>
-<area shape="rect" id="node6" href="ControllerThread_8h.html" title="src/threads/ControllerThread.h" alt="" coords="397,80,596,107"/>
-<area shape="rect" id="node4" href="Sampler_8cpp.html" title="src/controller/Sampler.cpp" alt="" coords="103,155,277,181"/>
-<area shape="rect" id="node5" href="ControllerThread_8cpp.html" title="src/threads/ControllerThread.cpp" alt="" coords="301,155,513,181"/>
-<area shape="rect" id="node7" href="src_2main_8cpp.html" title="src/main.cpp" alt="" coords="537,155,635,181"/>
+<area shape="rect" id="node3" href="Sampler_8h.html" title="src/controller/Sampler.h" alt="" coords="263,80,423,107"/>
+<area shape="rect" id="node6" href="IntegrationTests_8cpp.html" title="test/IntegrationTests.cpp" alt="" coords="65,155,232,181"/>
+<area shape="rect" id="node7" href="ControllerThread_8h.html" title="src/threads/ControllerThread.h" alt="" coords="461,80,660,107"/>
+<area shape="rect" id="node4" href="Sampler_8cpp.html" title="src/controller/Sampler.cpp" alt="" coords="256,155,431,181"/>
+<area shape="rect" id="node5" href="ControllerThread_8cpp.html" title="src/threads/ControllerThread.cpp" alt="" coords="455,155,667,181"/>
+<area shape="rect" id="node8" href="src_2main_8cpp.html" title="src/main.cpp" alt="" coords="691,155,788,181"/>
 </map>
 </div>
 </div>
@@ -105,13 +109,87 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html">Controller</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classController.html" title="Controller class. ">Controller</a> class.  <a href="classController.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:af2aa7191ff70853e51846b5057935d09"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09">CONTROL_OP_CODES</a> { <br />
+&#160;&#160;<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a0a469239010b69082ea5bc22a0347baf">LIGHT_INTENSITY_UPPER_TARGET_CHANGE</a> = 1, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09acb4b1049e371749e7fa8949273996425">LIGHT_INTENSITY_LOWER_TARGET_CHANGE</a> = 2, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09aa65f2911a7af118bc0220009b7a2d8cb">TEMPERATURE_UPPER_TARGET_CHANGE</a> = 3, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a0e390e8fbcf5c94c4e97f193e06267fd">TEMPERATURE_LOWER_TARGET_CHANGE</a> = 4, 
+<br />
+&#160;&#160;<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a210cb6a649bf3bc2d08afb350fcf2a98">TVOC_UPPER_TARGET_CHANGE</a> = 5, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09acb28e25f179492e8533e0081a2e3e080">TVOC_LOWER_TARGET_CHANGE</a> = 6, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09ac3b107f94ed270dcf31a3f577701e370">ECO2_UPPER_TARGET_CHANGE</a> = 7, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a7c337e15dc26f5b1c51d965fbca0036d">ECO2_LOWER_TARGET_CHANGE</a> = 8, 
+<br />
+&#160;&#160;<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09adf2068442acce364a4e9828e88f27201">ETH_UPPER_TARGET_CHANGE</a> = 9, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09abffb3ee43042cfdf40080f8b5c338105">ETH_LOWER_TARGET_CHANGE</a> = 10, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a242b082ba7f50ae5c77d61c9f0bee404">H2_UPPER_TARGET_CHANGE</a> = 11, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a8e6cfb33664990f0044e41d359223f8c">H2_LOWER_TARGET_CHANGE</a> = 12, 
+<br />
+&#160;&#160;<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a486d927da6c3614d2d74cb878cdea05f">HUMIDITY_UPPER_TARGET_CHANGE</a> = 13, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a7a328a02c6e4d0434484440326c45ebc">HUMIDITY_LOWER_TARGET_CHANGE</a> = 14, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a1529fb0d5e223eac297ee2525e0cd324">FORCE_HEATING</a> = 128, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a7d012c80a4cf528530d68e9195b5b17e">FORCE_AIRFLOW</a> = 129, 
+<br />
+&#160;&#160;<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09ab46987fc5b5469a3ba7a0a0a5b658b77">FORCE_LIGHTS</a> = 130, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a18f059df885c9509b31a22399941eaa3">FORCE_WATER_PUMP</a> = 131, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a88674d03f19760ffdfba8ab12772c35d">ENABLE_HEATING_HEURISTIC</a> = 132, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a625efb290fa19d2b368592028e013cee">ENABLE_AIRFLOW_HEURISTIC</a> = 133, 
+<br />
+&#160;&#160;<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a6b016d40e936bff16105d893e5d9b4a2">ENABLE_LIGHTS_HEURISTIC</a> = 134, 
+<a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09a8c08e6b282cf52ab63a97adf82b59436">ENABLE_WATER_PUMP_HEURISTIC</a> = 135
+<br />
+ }</td></tr>
+<tr class="separator:af2aa7191ff70853e51846b5057935d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Kamil Rog </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1</dd></dl>
 <h1><a class="anchor" id="DESCRIPTION"></a>
 DESCRIPTION</h1>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="af2aa7191ff70853e51846b5057935d09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2aa7191ff70853e51846b5057935d09">&#9670;&nbsp;</a></span>CONTROL_OP_CODES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="Controller_8h.html#af2aa7191ff70853e51846b5057935d09">CONTROL_OP_CODES</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Controll operation codes for update handler This is public, because it needs to be used in integration test. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a0a469239010b69082ea5bc22a0347baf"></a>LIGHT_INTENSITY_UPPER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09acb4b1049e371749e7fa8949273996425"></a>LIGHT_INTENSITY_LOWER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09aa65f2911a7af118bc0220009b7a2d8cb"></a>TEMPERATURE_UPPER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a0e390e8fbcf5c94c4e97f193e06267fd"></a>TEMPERATURE_LOWER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a210cb6a649bf3bc2d08afb350fcf2a98"></a>TVOC_UPPER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09acb28e25f179492e8533e0081a2e3e080"></a>TVOC_LOWER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09ac3b107f94ed270dcf31a3f577701e370"></a>ECO2_UPPER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a7c337e15dc26f5b1c51d965fbca0036d"></a>ECO2_LOWER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09adf2068442acce364a4e9828e88f27201"></a>ETH_UPPER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09abffb3ee43042cfdf40080f8b5c338105"></a>ETH_LOWER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a242b082ba7f50ae5c77d61c9f0bee404"></a>H2_UPPER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a8e6cfb33664990f0044e41d359223f8c"></a>H2_LOWER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a486d927da6c3614d2d74cb878cdea05f"></a>HUMIDITY_UPPER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a7a328a02c6e4d0434484440326c45ebc"></a>HUMIDITY_LOWER_TARGET_CHANGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a1529fb0d5e223eac297ee2525e0cd324"></a>FORCE_HEATING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a7d012c80a4cf528530d68e9195b5b17e"></a>FORCE_AIRFLOW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09ab46987fc5b5469a3ba7a0a0a5b658b77"></a>FORCE_LIGHTS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a18f059df885c9509b31a22399941eaa3"></a>FORCE_WATER_PUMP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a88674d03f19760ffdfba8ab12772c35d"></a>ENABLE_HEATING_HEURISTIC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a625efb290fa19d2b368592028e013cee"></a>ENABLE_AIRFLOW_HEURISTIC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a6b016d40e936bff16105d893e5d9b4a2"></a>ENABLE_LIGHTS_HEURISTIC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="af2aa7191ff70853e51846b5057935d09a8c08e6b282cf52ab63a97adf82b59436"></a>ENABLE_WATER_PUMP_HEURISTIC&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

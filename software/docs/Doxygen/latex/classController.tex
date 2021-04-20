@@ -27,9 +27,9 @@ void \hyperlink{classController_a4b765eaaf8f72e964118967f86c265e2}{Sampler\+Has\
 \item 
 int \hyperlink{classController_a0eb08a1d38b2c79e2d140476fd097f24}{Update\+\_\+\+Targets} (uint8\+\_\+t opcode, float vlaue)
 \item 
-void \hyperlink{classController_a64173dd00be020975d7db533cd280c15}{Start\+Listener\+Server} ()
+void \hyperlink{classController_a0a17902e4a70fde975c989c5275e8f05}{Update\+Handler} (uint8\+\_\+t opcode, float value)
 \item 
-void \hyperlink{classController_affbf340fed1aca0172f336bcb2db8c8a}{Message\+Handler} (uint8\+\_\+t opcode, float value)
+void \hyperlink{classController_a841b5219b4f48dbfd7b01fab727e7a2c}{Update\+G\+P\+I\+O\+States} ()
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -38,31 +38,29 @@ void \hyperlink{classController_affbf340fed1aca0172f336bcb2db8c8a}{Message\+Hand
 \item 
 \hyperlink{structTargetEnvironmentData}{Target\+Environment\+Data} \hyperlink{classController_a8f2fb8295fd3da6ebc8bdb0f25036322}{targets}
 \item 
-\hyperlink{structActuationForceFlags}{Actuation\+Force\+Flags} \hyperlink{classController_adb38d16eaea1f98887b3c1fc75ab5bd3}{actuation\+Flags}
-\end{DoxyCompactItemize}
-\subsection*{Private Types}
-\begin{DoxyCompactItemize}
+\hyperlink{structActuationForceFlags}{Actuation\+Force\+Flags} \hyperlink{classController_a5af467109ecf31a0e63213ff9e5d0d72}{actuation\+Force\+Flags}
 \item 
-enum \hyperlink{classController_ae0cc6feb81bc46e0859390fd1551ff43}{T\+A\+R\+G\+E\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES} \{ \newline
-\hyperlink{classController_ae0cc6feb81bc46e0859390fd1551ff43a915722d1485a0a671e6d9740e4f336d7}{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE} = 1, 
-\hyperlink{classController_ae0cc6feb81bc46e0859390fd1551ff43a1c6726567b0f23f4431b2b2693b67ec9}{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE} = 2, 
-\hyperlink{classController_ae0cc6feb81bc46e0859390fd1551ff43a9380620e3b95492374b3ac3a3e3bd5e7}{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE} = 3, 
-\hyperlink{classController_ae0cc6feb81bc46e0859390fd1551ff43ab7367a898dd3e0befa174fa4e42f1eeb}{T\+V\+O\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE} = 4, 
-\newline
-\hyperlink{classController_ae0cc6feb81bc46e0859390fd1551ff43af162eb21304384728b51aad12ef581c3}{E\+C\+O2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE} = 5, 
-\hyperlink{classController_ae0cc6feb81bc46e0859390fd1551ff43a93b6d3178783a23734c076d193fcb1fb}{E\+T\+H\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE} = 6, 
-\hyperlink{classController_ae0cc6feb81bc46e0859390fd1551ff43a19170325b57f14dd6d349184ed1379e2}{H2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE} = 7
- \}
+\hyperlink{structActuationHeuristicsFlags}{Actuation\+Heuristics\+Flags} \hyperlink{classController_ae3d5121f2fa076d362ac5d56feae17d2}{actuation\+Heuristics\+Flags}
+\item 
+int \hyperlink{classController_a23064d241b70e672c4c1d3db9671bd5e}{actuators\+State} \mbox{[}4\mbox{]}
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classController_a9d59ef3807f630a52c964a899a7235dd}{Send\+Data\+To\+Web\+App} (std\+::string variable\+\_\+type, float value)
-\item 
 void \hyperlink{classController_acd0145853d19eaf3ef9d15f6203ace69}{Actuator\+Handler} ()
+\item 
+void \hyperlink{classController_ad45f507b92936f2964524270c62c9d07}{Light\+Actuator} ()
+\item 
+void \hyperlink{classController_af2f697200bc977e9115aff768d13fd23}{Heat\+Actuator} ()
+\item 
+void \hyperlink{classController_ae27c7681db8370782c96769a35e09230}{Airflow\+Actuator} ()
+\item 
+void \hyperlink{classController_a92e03a719890c12f2272b8a6b904d6e1}{Watering\+Actuator} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGPIODriver}{G\+P\+I\+O\+Driver} \hyperlink{classController_aa3d6dde5a09dfc1a34bfaee1e7fa3434}{gpiodriver}
 \item 
 \hyperlink{classRelayBoard}{Relay\+Board} \hyperlink{classController_aa3f1d7aae706a5440adf520cbd7fb216}{relay}
 \end{DoxyCompactItemize}
@@ -76,45 +74,6 @@ Kamil Rog
 \end{DoxyAuthor}
 This is class is responsilbe for the \hyperlink{classSHT31D}{S\+H\+T31D} temperature and humidity sensor.\hypertarget{classController_PROTOCOL}{}\subsection{P\+R\+O\+T\+O\+C\+OL}\label{classController_PROTOCOL}
 W\+A\+T\+ER P\+U\+MP -\/ A\+N\+A\+L\+OG -\/ G\+P\+IO x H\+E\+A\+T\+ER -\/ A\+N\+A\+L\+OG -\/ G\+P\+IO x 
-
-\subsection{Member Enumeration Documentation}
-\mbox{\Hypertarget{classController_ae0cc6feb81bc46e0859390fd1551ff43}\label{classController_ae0cc6feb81bc46e0859390fd1551ff43}} 
-\index{Controller@{Controller}!T\+A\+R\+G\+E\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES@{T\+A\+R\+G\+E\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES}}
-\index{T\+A\+R\+G\+E\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES@{T\+A\+R\+G\+E\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{T\+A\+R\+G\+E\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES}{TARGET\_OP\_CODES}}
-{\footnotesize\ttfamily enum \hyperlink{classController_ae0cc6feb81bc46e0859390fd1551ff43}{Controller\+::\+T\+A\+R\+G\+E\+T\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES}\hspace{0.3cm}{\ttfamily [private]}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Controller@{Controller}}\index{Controller@{Controller}!L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{classController_ae0cc6feb81bc46e0859390fd1551ff43a915722d1485a0a671e6d9740e4f336d7}\label{classController_ae0cc6feb81bc46e0859390fd1551ff43a915722d1485a0a671e6d9740e4f336d7}} 
-L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Controller@{Controller}}\index{Controller@{Controller}!T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{classController_ae0cc6feb81bc46e0859390fd1551ff43a1c6726567b0f23f4431b2b2693b67ec9}\label{classController_ae0cc6feb81bc46e0859390fd1551ff43a1c6726567b0f23f4431b2b2693b67ec9}} 
-T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Controller@{Controller}}\index{Controller@{Controller}!H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{classController_ae0cc6feb81bc46e0859390fd1551ff43a9380620e3b95492374b3ac3a3e3bd5e7}\label{classController_ae0cc6feb81bc46e0859390fd1551ff43a9380620e3b95492374b3ac3a3e3bd5e7}} 
-H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+V\+O\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+V\+O\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Controller@{Controller}}\index{Controller@{Controller}!T\+V\+O\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+V\+O\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{classController_ae0cc6feb81bc46e0859390fd1551ff43ab7367a898dd3e0befa174fa4e42f1eeb}\label{classController_ae0cc6feb81bc46e0859390fd1551ff43ab7367a898dd3e0befa174fa4e42f1eeb}} 
-T\+V\+O\+C\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+C\+O2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+C\+O2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Controller@{Controller}}\index{Controller@{Controller}!E\+C\+O2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+C\+O2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{classController_ae0cc6feb81bc46e0859390fd1551ff43af162eb21304384728b51aad12ef581c3}\label{classController_ae0cc6feb81bc46e0859390fd1551ff43af162eb21304384728b51aad12ef581c3}} 
-E\+C\+O2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+T\+H\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+T\+H\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Controller@{Controller}}\index{Controller@{Controller}!E\+T\+H\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+T\+H\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{classController_ae0cc6feb81bc46e0859390fd1551ff43a93b6d3178783a23734c076d193fcb1fb}\label{classController_ae0cc6feb81bc46e0859390fd1551ff43a93b6d3178783a23734c076d193fcb1fb}} 
-E\+T\+H\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{H2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Controller@{Controller}}\index{Controller@{Controller}!H2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}}\mbox{\Hypertarget{classController_ae0cc6feb81bc46e0859390fd1551ff43a19170325b57f14dd6d349184ed1379e2}\label{classController_ae0cc6feb81bc46e0859390fd1551ff43a19170325b57f14dd6d349184ed1379e2}} 
-H2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
-\hline
-
-\end{DoxyEnumFields}
-
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classController_a95c56822d667e94b031451729ce069a9}\label{classController_a95c56822d667e94b031451729ce069a9}} 
@@ -132,29 +91,39 @@ H2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
 \subsubsection{\texorpdfstring{Actuator\+Handler()}{ActuatorHandler()}}
 {\footnotesize\ttfamily void Controller\+::\+Actuator\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classController_affbf340fed1aca0172f336bcb2db8c8a}\label{classController_affbf340fed1aca0172f336bcb2db8c8a}} 
-\index{Controller@{Controller}!Message\+Handler@{Message\+Handler}}
-\index{Message\+Handler@{Message\+Handler}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{Message\+Handler()}{MessageHandler()}}
-{\footnotesize\ttfamily void Controller\+::\+Message\+Handler (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{opcode,  }\item[{float}]{value }\end{DoxyParamCaption})}
+Runs each actuator routine by turn. Lighting Heating Airflow Watering -\/
 
+\begin{DoxyReturn}{Returns}
+Zero On Success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classController_ae27c7681db8370782c96769a35e09230}\label{classController_ae27c7681db8370782c96769a35e09230}} 
+\index{Controller@{Controller}!Airflow\+Actuator@{Airflow\+Actuator}}
+\index{Airflow\+Actuator@{Airflow\+Actuator}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Airflow\+Actuator()}{AirflowActuator()}}
+{\footnotesize\ttfamily void Controller\+::\+Airflow\+Actuator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classController_af2f697200bc977e9115aff768d13fd23}\label{classController_af2f697200bc977e9115aff768d13fd23}} 
+\index{Controller@{Controller}!Heat\+Actuator@{Heat\+Actuator}}
+\index{Heat\+Actuator@{Heat\+Actuator}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Heat\+Actuator()}{HeatActuator()}}
+{\footnotesize\ttfamily void Controller\+::\+Heat\+Actuator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classController_ad45f507b92936f2964524270c62c9d07}\label{classController_ad45f507b92936f2964524270c62c9d07}} 
+\index{Controller@{Controller}!Light\+Actuator@{Light\+Actuator}}
+\index{Light\+Actuator@{Light\+Actuator}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Light\+Actuator()}{LightActuator()}}
+{\footnotesize\ttfamily void Controller\+::\+Light\+Actuator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Handle Messages from the web server.
+
+\begin{DoxyReturn}{Returns}
+Zero On Sucess 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classController_a4b765eaaf8f72e964118967f86c265e2}\label{classController_a4b765eaaf8f72e964118967f86c265e2}} 
 \index{Controller@{Controller}!Sampler\+Has\+Data@{Sampler\+Has\+Data}}
 \index{Sampler\+Has\+Data@{Sampler\+Has\+Data}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{Sampler\+Has\+Data()}{SamplerHasData()}}
 {\footnotesize\ttfamily void Controller\+::\+Sampler\+Has\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{structEnvironmentData}{Environment\+Data}}]{new\+Data }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classController_a9d59ef3807f630a52c964a899a7235dd}\label{classController_a9d59ef3807f630a52c964a899a7235dd}} 
-\index{Controller@{Controller}!Send\+Data\+To\+Web\+App@{Send\+Data\+To\+Web\+App}}
-\index{Send\+Data\+To\+Web\+App@{Send\+Data\+To\+Web\+App}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{Send\+Data\+To\+Web\+App()}{SendDataToWebApp()}}
-{\footnotesize\ttfamily void Controller\+::\+Send\+Data\+To\+Web\+App (\begin{DoxyParamCaption}\item[{std\+::string}]{variable\+\_\+type,  }\item[{float}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classController_a64173dd00be020975d7db533cd280c15}\label{classController_a64173dd00be020975d7db533cd280c15}} 
-\index{Controller@{Controller}!Start\+Listener\+Server@{Start\+Listener\+Server}}
-\index{Start\+Listener\+Server@{Start\+Listener\+Server}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{Start\+Listener\+Server()}{StartListenerServer()}}
-{\footnotesize\ttfamily void Controller\+::\+Start\+Listener\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classController_a0eb08a1d38b2c79e2d140476fd097f24}\label{classController_a0eb08a1d38b2c79e2d140476fd097f24}} 
 \index{Controller@{Controller}!Update\+\_\+\+Targets@{Update\+\_\+\+Targets}}
@@ -162,22 +131,70 @@ H2\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE&\\
 \subsubsection{\texorpdfstring{Update\+\_\+\+Targets()}{Update\_Targets()}}
 {\footnotesize\ttfamily int Controller\+::\+Update\+\_\+\+Targets (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{opcode,  }\item[{float}]{vlaue }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{classController_a841b5219b4f48dbfd7b01fab727e7a2c}\label{classController_a841b5219b4f48dbfd7b01fab727e7a2c}} 
+\index{Controller@{Controller}!Update\+G\+P\+I\+O\+States@{Update\+G\+P\+I\+O\+States}}
+\index{Update\+G\+P\+I\+O\+States@{Update\+G\+P\+I\+O\+States}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Update\+G\+P\+I\+O\+States()}{UpdateGPIOStates()}}
+{\footnotesize\ttfamily void Controller\+::\+Update\+G\+P\+I\+O\+States (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classController_a0a17902e4a70fde975c989c5275e8f05}\label{classController_a0a17902e4a70fde975c989c5275e8f05}} 
+\index{Controller@{Controller}!Update\+Handler@{Update\+Handler}}
+\index{Update\+Handler@{Update\+Handler}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Update\+Handler()}{UpdateHandler()}}
+{\footnotesize\ttfamily void Controller\+::\+Update\+Handler (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{opcode,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+Handle Messages from the web server.
+
+
+\begin{DoxyParams}{Parameters}
+{\em opcode} & ID of the operation, this has been defined in C\+O\+N\+T\+R\+O\+L\+\_\+\+O\+P\+\_\+\+C\+O\+D\+ES enumeration. \\
+\hline
+{\em value} & value to assign to the variable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero On Sucess 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classController_a92e03a719890c12f2272b8a6b904d6e1}\label{classController_a92e03a719890c12f2272b8a6b904d6e1}} 
+\index{Controller@{Controller}!Watering\+Actuator@{Watering\+Actuator}}
+\index{Watering\+Actuator@{Watering\+Actuator}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Watering\+Actuator()}{WateringActuator()}}
+{\footnotesize\ttfamily void Controller\+::\+Watering\+Actuator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classController_adb38d16eaea1f98887b3c1fc75ab5bd3}\label{classController_adb38d16eaea1f98887b3c1fc75ab5bd3}} 
-\index{Controller@{Controller}!actuation\+Flags@{actuation\+Flags}}
-\index{actuation\+Flags@{actuation\+Flags}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{actuation\+Flags}{actuationFlags}}
-{\footnotesize\ttfamily \hyperlink{structActuationForceFlags}{Actuation\+Force\+Flags} Controller\+::actuation\+Flags}
+\mbox{\Hypertarget{classController_a5af467109ecf31a0e63213ff9e5d0d72}\label{classController_a5af467109ecf31a0e63213ff9e5d0d72}} 
+\index{Controller@{Controller}!actuation\+Force\+Flags@{actuation\+Force\+Flags}}
+\index{actuation\+Force\+Flags@{actuation\+Force\+Flags}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{actuation\+Force\+Flags}{actuationForceFlags}}
+{\footnotesize\ttfamily \hyperlink{structActuationForceFlags}{Actuation\+Force\+Flags} Controller\+::actuation\+Force\+Flags}
 
-Actuatuion force flags ignoring hu Enviroment Conditions \mbox{\Hypertarget{classController_ac99088334f56588243867ca1c18f9633}\label{classController_ac99088334f56588243867ca1c18f9633}} 
+Actuatuion force flags ignoring hu Enviroment Conditions \mbox{\Hypertarget{classController_ae3d5121f2fa076d362ac5d56feae17d2}\label{classController_ae3d5121f2fa076d362ac5d56feae17d2}} 
+\index{Controller@{Controller}!actuation\+Heuristics\+Flags@{actuation\+Heuristics\+Flags}}
+\index{actuation\+Heuristics\+Flags@{actuation\+Heuristics\+Flags}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{actuation\+Heuristics\+Flags}{actuationHeuristicsFlags}}
+{\footnotesize\ttfamily \hyperlink{structActuationHeuristicsFlags}{Actuation\+Heuristics\+Flags} Controller\+::actuation\+Heuristics\+Flags}
+
+Actuatuion Heuristics flags if this is disabled the actuator doesn\textquotesingle{}t run against hueristics \mbox{\Hypertarget{classController_a23064d241b70e672c4c1d3db9671bd5e}\label{classController_a23064d241b70e672c4c1d3db9671bd5e}} 
+\index{Controller@{Controller}!actuators\+State@{actuators\+State}}
+\index{actuators\+State@{actuators\+State}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{actuators\+State}{actuatorsState}}
+{\footnotesize\ttfamily int Controller\+::actuators\+State\mbox{[}4\mbox{]}}
+
+\mbox{[}0\mbox{]} = Heating state \mbox{[}1\mbox{]} = Lighting state \mbox{[}2\mbox{]} = Airflow state \mbox{[}3\mbox{]} = Watering state \mbox{\Hypertarget{classController_ac99088334f56588243867ca1c18f9633}\label{classController_ac99088334f56588243867ca1c18f9633}} 
 \index{Controller@{Controller}!env\+Data@{env\+Data}}
 \index{env\+Data@{env\+Data}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{env\+Data}{envData}}
 {\footnotesize\ttfamily \hyperlink{structEnvironmentData}{Environment\+Data} Controller\+::env\+Data}
 
-Current Enviroment Conditions Read Froms the sensors \mbox{\Hypertarget{classController_aa3f1d7aae706a5440adf520cbd7fb216}\label{classController_aa3f1d7aae706a5440adf520cbd7fb216}} 
+Current Enviroment Conditions Read Froms the sensors \mbox{\Hypertarget{classController_aa3d6dde5a09dfc1a34bfaee1e7fa3434}\label{classController_aa3d6dde5a09dfc1a34bfaee1e7fa3434}} 
+\index{Controller@{Controller}!gpiodriver@{gpiodriver}}
+\index{gpiodriver@{gpiodriver}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{gpiodriver}{gpiodriver}}
+{\footnotesize\ttfamily \hyperlink{classGPIODriver}{G\+P\+I\+O\+Driver} Controller\+::gpiodriver\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classController_aa3f1d7aae706a5440adf520cbd7fb216}\label{classController_aa3f1d7aae706a5440adf520cbd7fb216}} 
 \index{Controller@{Controller}!relay@{relay}}
 \index{relay@{relay}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{relay}{relay}}

@@ -1,8 +1,10 @@
 <map id="ControllerCallback" name="ControllerCallback">
-<area shape="rect" id="node2" href="$classJSONCGIHandler_1_1POSTCallback.html" title="{JSONCGIHandler::POSTCallback\n||+ postString()\l}" alt="" coords="209,549,431,627"/>
-<area shape="rect" id="node3" href="$classController.html" title="Controller class. " alt="" coords="455,505,617,671"/>
-<area shape="rect" id="node4" href="$structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="221,292,344,369"/>
-<area shape="rect" id="node11" href="$structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="368,292,528,369"/>
-<area shape="rect" id="node7" href="$classRelayBoard.html" title="Relay Board class. " alt="" coords="552,219,699,443"/>
-<area shape="rect" id="node9" href="$structActuationForceFlags.html" title="{ActuationForceFlags\n||}" alt="" coords="723,292,866,369"/>
+<area shape="rect" id="node2" href="$classJSONCGIHandler_1_1POSTCallback.html" title="{JSONCGIHandler::POSTCallback\n||+ postString()\l}" alt="" coords="267,718,489,795"/>
+<area shape="rect" id="node3" href="$classController.html" title="Controller class. " alt="" coords="513,652,667,861"/>
+<area shape="rect" id="node4" href="$classGPIODriver.html" title="GPIO Driver Class. " alt="" coords="5,5,148,171"/>
+<area shape="rect" id="node11" href="$classRelayBoard.html" title="Relay Board class. " alt="" coords="151,336,309,589"/>
+<area shape="rect" id="node5" href="$structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="529,424,651,501"/>
+<area shape="rect" id="node13" href="$structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="675,424,835,501"/>
+<area shape="rect" id="node8" href="$structActuationHeuristicsFlags.html" title="{ActuationHeuristicsFlags\n||}" alt="" coords="889,424,1057,501"/>
+<area shape="rect" id="node12" href="$structActuationForceFlags.html" title="{ActuationForceFlags\n||}" alt="" coords="1096,424,1239,501"/>
 </map>

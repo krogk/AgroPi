@@ -1,6 +1,6 @@
 #define BOOST_TEST_MODULE AgroPiTest
 #include <boost/test/unit_test.hpp>
-
+#include "TestFunctions.h"
 #include "I2CDriver.h"
 #include "VEML7700.h"
 #include "SHT31D.h"
@@ -8,49 +8,6 @@
 #include "Camera.h"
 #include "GPIODriver.h"
 #include "RelayBoard.h"
-
-
-// Define tolerable ranges for sensors reads
-// VEML7700
-#define LUX_MIN 0
-#define LUX_MAX 120000
-#define LUX_MIN_REASONABLE 20
-#define LUX_MAX_REASONABLE 10000
-
-// SHT31D
-#define TEMPERATURE_MIN -40
-#define TEMPERATURE_MAX 125
-#define TEMPERATURE_MIN_REASONABLE 15
-#define TEMPERATURE_MAX_REASONABLE 30
-#define HUMDIITY_MIN 0
-#define HUMIDITY_MAX 100
-#define HUMDIITY_MIN_REASONABLE 45
-#define HUMIDITY_MAX_REASONABLE 65
-
-// SGP30
-#define TVOC_MIN 0
-#define TVOC_MAX 60000
-#define TVOC_MIN_REASONABLE 0
-#define TVOC_MAX_REASONABLE 1000
-
-#define ECO2_MIN 0
-#define ECO2_MAX 60000
-#define ECO2_MIN_REASONABLE 0
-#define ECO2_MAX_REASONABLE 2000
-
-#define ETH_MIN 0
-#define ETH_MAX 60000
-#define ETH_MIN_REASONABLE 0
-#define ETH_MAX_REASONABLE 1000
-
-#define H2_MIN 0
-#define H2_MAX 60000
-#define H2_MIN_REASONABLE 0
-#define H2_MAX_REASONABLE 1000
-
-// RELAY BOARD
-#define RELAY_ON  0
-#define RELAY_OFF 1
 
 
 // Test I2C Driver
@@ -101,8 +58,6 @@ BOOST_AUTO_TEST_CASE(VEML770_LUX_READ)
     VEML7700 lightsensor;
     // Initialize sensor
     lightsensor.Initialize(driver);
-    //BOOST_CHECK_MESSAGE( fd != 0, "File descriptor:  " << fd << "  Incorrect Value" );
-    BOOST_CHECK_MESSAGE( lux > LUX_MIN, "Lux measured by light sensor is: " << lux << " Zero" );
 
     // Take 10 Measurements 1 second apart
     for(int i = 0; i < 10; i++ )
@@ -176,22 +131,36 @@ BOOST_AUTO_TEST_CASE( SGP30_READ )
     I2CDriver driver;
     SGP30 gasSensor;
     uint16_t tvoc = 0, eco2 = 0;
+    uint16_t eth = 0, h2 = 0;
     gasSensor.Initialize(driver);
-    
+
     for(int i = 0; i < 10 ; i++ )
     {
         gasSensor.IAQ_Measure(tvoc,eco2);
-        BOOST_CHECK_MESSAGE( tvoc >= TEMPERATURE_MIN, "TVOC measured by SGP30: " << tvoc << " ppb - Below Minimum" );
-        BOOST_CHECK_MESSAGE( tvoc < TEMPERATURE_MAX, "TVOC measured by SGP30: " << tvoc << " ppb - Above Maximum" );
-        BOOST_CHECK_MESSAGE( tvoc >= TEMPERATURE_MIN_REASONABLE,  "TVOC measured by SGP30: " << tvoc << " ppb - Below Reasonable Threshold" );
-        BOOST_CHECK_MESSAGE( tvoc < TEMPERATURE_MAX_REASONABLE,  "TVOC measured by SGP30: " << tvoc << " ppb - Above Reasonable Threshold" );
+        BOOST_CHECK_MESSAGE( tvoc >= TVOC_MIN, "TVOC measured by SGP30: " << tvoc << " ppb - Below Minimum" );
+        BOOST_CHECK_MESSAGE( tvoc < TVOC_MAX, "TVOC measured by SGP30: " << tvoc << " ppb - Above Maximum" );
+        BOOST_CHECK_MESSAGE( tvoc >= TVOC_MIN_REASONABLE,  "TVOC measured by SGP30: " << tvoc << " ppb - Below Reasonable Threshold" );
+        BOOST_CHECK_MESSAGE( tvoc < TVOC_MAX_REASONABLE,  "TVOC measured by SGP30: " << tvoc << " ppb - Above Reasonable Threshold" );
 
-        BOOST_CHECK_MESSAGE( eco2 >= HUMDIITY_MIN, "ECO2 measured by SGP30: " << eco2 << " ppm - Below Minimum" );
-        BOOST_CHECK_MESSAGE( eco2 < HUMIDITY_MAX, "ECO2 measured by SGP30: " << eco2 << " ppm - Above Maximum" );
-        BOOST_CHECK_MESSAGE( eco2 >= HUMDIITY_MIN_REASONABLE,  "ECO2 measured by SGP30: " << eco2 << " ppm - Below Reasonable Threshold" );
-        BOOST_CHECK_MESSAGE( eco2 < HUMIDITY_MAX_REASONABLE,  "ECO2 measured by SGP30: " << eco2 << " ppm - Above Reasonable Threshold" );
+        BOOST_CHECK_MESSAGE( eco2 >= ECO2_MIN, "ECO2 measured by SGP30: " << eco2 << " ppm - Below Minimum" );
+        BOOST_CHECK_MESSAGE( eco2 < ECO2_MAX, "ECO2 measured by SGP30: " << eco2 << " ppm - Above Maximum" );
+        BOOST_CHECK_MESSAGE( eco2 >= ECO2_MIN_REASONABLE,  "ECO2 measured by SGP30: " << eco2 << " ppm - Below Reasonable Threshold" );
+        BOOST_CHECK_MESSAGE( eco2 < ECO2_MAX_REASONABLE,  "ECO2 measured by SGP30: " << eco2 << " ppm - Above Reasonable Threshold" );
+        
+        gasSensor.IAQ_Measure_Raw(eth, h2);
+        BOOST_CHECK_MESSAGE( eth >= ETH_MIN, "Ethanol measured by SGP30: " << eth << " ppb - Below Minimum" );
+        BOOST_CHECK_MESSAGE( eth < ETH_MAX, "Ethanol measured by SGP30: " << eth << " ppb - Above Maximum" );
+        BOOST_CHECK_MESSAGE( eth >= ETH_MIN_REASONABLE,  "Ethanol measured by SGP30: " << eth << " ppb - Below Reasonable Threshold" );
+        BOOST_CHECK_MESSAGE( eth < ETH_MAX_REASONABLE,  "Ethanol measured by SGP30: " << eth << " ppb - Above Reasonable Threshold" );
+
+        BOOST_CHECK_MESSAGE( h2 >= H2_MIN, "Hydrogen measured by SGP30: " << h2 << " ppm - Below Minimum" );
+        BOOST_CHECK_MESSAGE( h2 < H2_MAX, "Hydrogen measured by SGP30: " << h2 << " ppm - Above Maximum" );
+        BOOST_CHECK_MESSAGE( h2 >= H2_MIN_REASONABLE,  "Hydrogen measured by SGP30: " << h2 << " ppm - Below Reasonable Threshold" );
+        BOOST_CHECK_MESSAGE( h2 < H2_MAX_REASONABLE,  "Hydrogen measured by SGP30: " << h2 << " ppm - Above Reasonable Threshold" );
         tvoc = 0;
         eco2 = 0;
+        eth = 0;
+        h2 = 0;
         sleep(1);
     }
     gasSensor.Close_Device();

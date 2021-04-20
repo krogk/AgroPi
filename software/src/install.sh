@@ -65,7 +65,7 @@ sudo apt install -y default-jdk
 sudo apt install -y libopenjpeg-dev
 
 # Install OpenCV
-echo "Installing OpenCV in /utils..."
+echo "Installing OpenCV in ~ directory..."
 cd ~
 git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
@@ -89,13 +89,15 @@ sudo ldconfig
 
 #sudo nano /etc/dphys-swapfile (Return CONF_SWAPSIZE=2048 back to the default CONF_SWAPSIZE=100)
 #sudo systemctl restart dphys-swapfile
-cd BASEDIR
 
+# Back to working directory
+cd BASEDIR
 
 # Install Web Server Dependencies
 echo "Installing Web Server Depenencies..."
 cd BASEDIR/web
 python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 cd BASEDIR
 
@@ -108,72 +110,9 @@ make test ARGS="-V"
 make
 echo "AgroPi Sucessfully Installed..."
 
-# Create Start.sh & Stop.sh scripts after this point
+# Copy nginx files to 
+cd BASEDIR/src/nginx
+cp nginx-sites-enabled-default /etc/nginx/site-enabled/default
+# Reload nginx
+sudo systemctl reload nginx
 
-
-(ignore '```' dashes these only indicate block of the code)
-
-
-~Getting Required Packages~
-
-	Create Python env
-	source venv/bin/activate
-
-	Installing Server Depencencies
-	pip install -r requirements.txt
-
-	Running Server
-	python ./run.py
-
-~Setting Up Git Account~
-	
-	git config --global user.email "email"
-	git config --global user.name "username"
-	 
-
-~Setting up cmake file for wiringPi~
-create a fille called FindWiringPi.cmake with the following and put it in /usr/share/cmake-3.x/Modules
-
-	
-	find_library(WIRINGPI_LIBRARIES NAMES wiringPi)
-	find_path(WIRINGPI_INCLUDE_DIRS NAMES wiringPi.h)
-
-	include(FindPackageHandleStandardArgs)
-	find_package_handle_standard_args(wiringPi DEFAULT_MSG WIRINGPI_LIBRARIES WIRINGPI_INCLUDE_DIRS)
-	
-
-~Installing Doxygen~ (Prerequisites cmake, python, flex, bison)
-1. Clone Repo
-	```
-	git clone https://github.com/doxygen/doxygen.git
-	cd doxygen
-	```
-2. Make
-	```
-	mkdir build
-	cd build
-	cmake -G "Unix Makefiles" ..
-	make
-	```
-3. Install
-	```
-	sudo make install
-	```
-
-~To Generate doxygen Documentation~
-1. Go to the software folder and run:
-``` 
-doxygen Doxyfile 
-``` 
-
-
-~Building project~
-1. Go to software folder
-2. Run Following set of commands, this creates folder build changes to it and runs CMake file from software folder
-```
-	mkdir build
-	cd build/
-	cmake ..
-	make test ARGS="-V"  
-	make
-```

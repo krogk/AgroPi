@@ -1,13 +1,15 @@
 <map id="Sampler" name="Sampler">
-<area shape="rect" id="node2" href="$classCppTimer.html" title="{CppTimer\n||+ CppTimer()\l+ start()\l+ stop()\l+ ~CppTimer()\l# timerEvent()\l&#45; handler()\l}" alt="" coords="278,718,385,869"/>
-<area shape="rect" id="node7" href="$structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="906,483,1029,560"/>
-<area shape="rect" id="node15" href="$classController.html" title="Controller class. " alt="" coords="887,711,1048,876"/>
-<area shape="rect" id="node10" href="$classVEML7700.html" title="VEML7700 class. " alt="" coords="1571,395,1737,648"/>
-<area shape="rect" id="node14" href="$classSGP30.html" title="SGP30 class. " alt="" coords="1344,439,1500,604"/>
-<area shape="rect" id="node19" href="$structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="669,483,829,560"/>
-<area shape="rect" id="node11" href="$classI2CSensor.html" title="{I2CSensor\n||+ Initialize()\l+ Reset()\l+ Close_Device()\l}" alt="" coords="1867,79,1991,185"/>
-<area shape="rect" id="node20" href="$classSHT31D.html" title="SHT31D class. " alt="" coords="1875,431,2078,611"/>
-<area shape="rect" id="node16" href="$classRelayBoard.html" title="Relay Board class. " alt="" coords="1053,409,1199,633"/>
-<area shape="rect" id="node13" href="$classI2CDriver.html" title="I2C Driver class. " alt="" coords="2015,5,2234,259"/>
-<area shape="rect" id="node17" href="$structActuationForceFlags.html" title="{ActuationForceFlags\n||}" alt="" coords="501,483,644,560"/>
+<area shape="rect" id="node2" href="$classCppTimer.html" title="{CppTimer\n||+ CppTimer()\l+ start()\l+ stop()\l+ ~CppTimer()\l# timerEvent()\l&#45; handler()\l}" alt="" coords="261,769,367,920"/>
+<area shape="rect" id="node7" href="$structEnvironmentData.html" title="{EnvironmentData\n||}" alt="" coords="1673,512,1795,589"/>
+<area shape="rect" id="node15" href="$classController.html" title="Controller class. " alt="" coords="2102,740,2257,949"/>
+<area shape="rect" id="node10" href="$classVEML7700.html" title="VEML7700 class. " alt="" coords="940,424,1107,677"/>
+<area shape="rect" id="node14" href="$classSGP30.html" title="SGP30 class. " alt="" coords="1189,468,1345,633"/>
+<area shape="rect" id="node21" href="$structTargetEnvironmentData.html" title="{TargetEnvironmentData\n||}" alt="" coords="2033,512,2193,589"/>
+<area shape="rect" id="node11" href="$classI2CSensor.html" title="{I2CSensor\n||+ Initialize()\l+ Reset()\l+ Close_Device()\l}" alt="" coords="940,79,1064,185"/>
+<area shape="rect" id="node22" href="$classSHT31D.html" title="SHT31D class. " alt="" coords="587,461,790,641"/>
+<area shape="rect" id="node19" href="$classRelayBoard.html" title="Relay Board class. " alt="" coords="2217,424,2376,677"/>
+<area shape="rect" id="node13" href="$classI2CDriver.html" title="I2C Driver class. " alt="" coords="559,5,778,259"/>
+<area shape="rect" id="node16" href="$classGPIODriver.html" title="GPIO Driver Class. " alt="" coords="2392,49,2535,215"/>
+<area shape="rect" id="node17" href="$structActuationHeuristicsFlags.html" title="{ActuationHeuristicsFlags\n||}" alt="" coords="2613,512,2781,589"/>
+<area shape="rect" id="node20" href="$structActuationForceFlags.html" title="{ActuationForceFlags\n||}" alt="" coords="2805,512,2948,589"/>
 </map>

@@ -64,28 +64,40 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">IntegrationTests.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
-<code>#include &quot;<a class="el" href="I2CDriver_8h_source.html">I2CDriver.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TestFunctions_8h_source.html">TestFunctions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Sampler_8h_source.html">Sampler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Controller_8h_source.html">Controller.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Camera_8h_source.html">Camera.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="VEML7700_8h_source.html">VEML7700.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="SHT31D_8h_source.html">SHT31D.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="SGP30_8h_source.html">SGP30.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Camera_8h_source.html">Camera.h</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for IntegrationTests.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="IntegrationTests_8cpp__incl.png" border="0" usemap="#test_2IntegrationTests_8cpp" alt=""/></div>
 <map name="test_2IntegrationTests_8cpp" id="test_2IntegrationTests_8cpp">
-<area shape="rect" id="node3" href="I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="175,229,264,256"/>
-<area shape="rect" id="node5" href="VEML7700_8h.html" title="VEML7700.h" alt="" coords="448,80,545,107"/>
-<area shape="rect" id="node10" href="SHT31D_8h.html" title="SHT31D.h" alt="" coords="240,80,324,107"/>
-<area shape="rect" id="node11" href="SGP30_8h.html" title="SGP30.h" alt="" coords="349,80,423,107"/>
-<area shape="rect" id="node12" href="Camera_8h.html" title="Camera.h" alt="" coords="569,80,648,107"/>
-<area shape="rect" id="node7" href="I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="341,155,436,181"/>
+<area shape="rect" id="node3" href="TestFunctions_8h.html" title="TestFunctions.h" alt="" coords="259,229,375,256"/>
+<area shape="rect" id="node7" href="Sampler_8h.html" title="Sampler.h" alt="" coords="479,80,560,107"/>
+<area shape="rect" id="node8" href="Controller_8h.html" title="Controller.h" alt="" coords="900,155,989,181"/>
+<area shape="rect" id="node20" href="VEML7700_8h.html" title="VEML7700.h" alt="" coords="600,155,697,181"/>
+<area shape="rect" id="node21" href="SHT31D_8h.html" title="SHT31D.h" alt="" coords="240,155,324,181"/>
+<area shape="rect" id="node22" href="SGP30_8h.html" title="SGP30.h" alt="" coords="501,155,575,181"/>
+<area shape="rect" id="node23" href="Camera_8h.html" title="Camera.h" alt="" coords="1359,155,1437,181"/>
+<area shape="rect" id="node15" href="CppTimer_8h.html" title="CppTimer.h" alt="" coords="722,229,813,256"/>
+<area shape="rect" id="node18" href="I2CDriver_8h.html" title="I2CDriver.h" alt="" coords="173,304,263,331"/>
+<area shape="rect" id="node19" href="I2CSensor_8h.html" title="I2CSensor.h" alt="" coords="451,229,545,256"/>
+<area shape="rect" id="node9" href="typeDefinitions_8h.html" title="typeDefinitions.h" alt="" coords="837,229,957,256"/>
+<area shape="rect" id="node12" href="RelayBoard_8h.html" title="RelayBoard.h" alt="" coords="1183,229,1285,256"/>
+<area shape="rect" id="node13" href="GPIODriver_8h.html" title="GPIODriver.h" alt="" coords="1158,304,1259,331"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -93,15 +105,98 @@ Include dependency graph for IntegrationTests.cpp:</div>
 Macros</h2></td></tr>
 <tr class="memitem:a6b2a3852db8bb19ab6909bac01859985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a6b2a3852db8bb19ab6909bac01859985">BOOST_TEST_MODULE</a>&#160;&#160;&#160;AgroPiIntegrationTest</td></tr>
 <tr class="separator:a6b2a3852db8bb19ab6909bac01859985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eee6e5e06757df3b094cbae3be6d3a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a2eee6e5e06757df3b094cbae3be6d3a8">LIGHT_INTENSITY_UPPER_TARGET_CHANGE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a2eee6e5e06757df3b094cbae3be6d3a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ababe8748e7b9dd8ba2589b9c4512ff42"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#ababe8748e7b9dd8ba2589b9c4512ff42">LIGHT_INTENSITY_LOWER_TARGET_CHANGE</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ababe8748e7b9dd8ba2589b9c4512ff42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95d1f0cd984992c420e65cca43b3ef85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a95d1f0cd984992c420e65cca43b3ef85">TEMPERATURE_UPPER_TARGET_CHANGE</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a95d1f0cd984992c420e65cca43b3ef85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a284872e77fefd7db301ce742b6abfe7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a284872e77fefd7db301ce742b6abfe7e">TEMPERATURE_LOWER_TARGET_CHANGE</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a284872e77fefd7db301ce742b6abfe7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c1097f2c68a74cff0d73e799dc5139b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a8c1097f2c68a74cff0d73e799dc5139b">TVOC_UPPER_TARGET_CHANGE</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a8c1097f2c68a74cff0d73e799dc5139b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf8c17af083fbb8f2fc38720587e01ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#acf8c17af083fbb8f2fc38720587e01ea">TVOC_LOWER_TARGET_CHANGE</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:acf8c17af083fbb8f2fc38720587e01ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f0bbb876cb9ec38df76f61a6d34445"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a00f0bbb876cb9ec38df76f61a6d34445">ECO2_UPPER_TARGET_CHANGE</a>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:a00f0bbb876cb9ec38df76f61a6d34445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5517d2ee897c23317a52edee01a2e6af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a5517d2ee897c23317a52edee01a2e6af">ECO2_LOWER_TARGET_CHANGE</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a5517d2ee897c23317a52edee01a2e6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad74cdb3eeb693f03d250c598e2a26afa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#ad74cdb3eeb693f03d250c598e2a26afa">ETH_UPPER_TARGET_CHANGE</a>&#160;&#160;&#160;9</td></tr>
+<tr class="separator:ad74cdb3eeb693f03d250c598e2a26afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3266c6a8730eca0e217f710828fa6a55"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a3266c6a8730eca0e217f710828fa6a55">ETH_LOWER_TARGET_CHANGE</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a3266c6a8730eca0e217f710828fa6a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1ef2a91e4dfba1fdf5818e38efdacb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#ab1ef2a91e4dfba1fdf5818e38efdacb1">H2_UPPER_TARGET_CHANGE</a>&#160;&#160;&#160;11</td></tr>
+<tr class="separator:ab1ef2a91e4dfba1fdf5818e38efdacb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e1259794f7d0cc90ea3fc2f55eb22f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#ab3e1259794f7d0cc90ea3fc2f55eb22f">H2_LOWER_TARGET_CHANGE</a>&#160;&#160;&#160;12</td></tr>
+<tr class="separator:ab3e1259794f7d0cc90ea3fc2f55eb22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c930cc1194f6bce3f7e8e0821ab9063"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a9c930cc1194f6bce3f7e8e0821ab9063">HUMIDITY_UPPER_TARGET_CHANGE</a>&#160;&#160;&#160;13</td></tr>
+<tr class="separator:a9c930cc1194f6bce3f7e8e0821ab9063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bd8eced41eb825caf60a69e513cd4c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a6bd8eced41eb825caf60a69e513cd4c5">HUMIDITY_LOWER_TARGET_CHANGE</a>&#160;&#160;&#160;14</td></tr>
+<tr class="separator:a6bd8eced41eb825caf60a69e513cd4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6573708cb5f484ec5d2cc29b8d241eb9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a6573708cb5f484ec5d2cc29b8d241eb9">FORCE_HEATING</a>&#160;&#160;&#160;128</td></tr>
+<tr class="separator:a6573708cb5f484ec5d2cc29b8d241eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a843d92cd3d47f29bd1ab4bf5da02a275"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a843d92cd3d47f29bd1ab4bf5da02a275">FORCE_AIRFLOW</a>&#160;&#160;&#160;129</td></tr>
+<tr class="separator:a843d92cd3d47f29bd1ab4bf5da02a275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f8ad6ae0552700d7af001be0f9bd86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a41f8ad6ae0552700d7af001be0f9bd86">FORCE_LIGHTS</a>&#160;&#160;&#160;130</td></tr>
+<tr class="separator:a41f8ad6ae0552700d7af001be0f9bd86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cd1def84b41e666a4b5ef262be3742a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a0cd1def84b41e666a4b5ef262be3742a">FORCE_WATER_PUMP</a>&#160;&#160;&#160;131</td></tr>
+<tr class="separator:a0cd1def84b41e666a4b5ef262be3742a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a363845cd9d06d5840ff32030aac6b8d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a363845cd9d06d5840ff32030aac6b8d9">ENABLE_HEATING_HEURISTIC</a>&#160;&#160;&#160;132</td></tr>
+<tr class="separator:a363845cd9d06d5840ff32030aac6b8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69c3f927967313e7c8e4109ab63226d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a69c3f927967313e7c8e4109ab63226d7">ENABLE_AIRFLOW_HEURISTIC</a>&#160;&#160;&#160;133</td></tr>
+<tr class="separator:a69c3f927967313e7c8e4109ab63226d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3651579273aefdf444a544f8365370f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a3651579273aefdf444a544f8365370f9">ENABLE_LIGHTS_HEURISTIC</a>&#160;&#160;&#160;134</td></tr>
+<tr class="separator:a3651579273aefdf444a544f8365370f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66739f6cbc98b388d35751a7e3412c26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a66739f6cbc98b388d35751a7e3412c26">ENABLE_WATER_PUMP_HEURISTIC</a>&#160;&#160;&#160;135</td></tr>
+<tr class="separator:a66739f6cbc98b388d35751a7e3412c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2554af6a082be1db1d489763b0ffba69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a2554af6a082be1db1d489763b0ffba69">ACTUATOR_ON</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a2554af6a082be1db1d489763b0ffba69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada5fef4085763aa856db5f3d0f648d44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#ada5fef4085763aa856db5f3d0f648d44">ACTUATOR_OFF</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ada5fef4085763aa856db5f3d0f648d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a0ef8d951d1ca5ab3cfaf7ab4c7a6fd80"><td class="memItemLeft" align="right" valign="top">typedef std::chrono::high_resolution_clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a0ef8d951d1ca5ab3cfaf7ab4c7a6fd80">Clock</a></td></tr>
+<tr class="separator:a0ef8d951d1ca5ab3cfaf7ab4c7a6fd80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:adc1d3c8e593faa9c35d22df377ba1a08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#adc1d3c8e593faa9c35d22df377ba1a08">BOOST_AUTO_TEST_CASE</a> (I2C_SAMPLER_READ)</td></tr>
 <tr class="separator:adc1d3c8e593faa9c35d22df377ba1a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad22d36c43a840b4967715d65fd1da45f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#ad22d36c43a840b4967715d65fd1da45f">BOOST_AUTO_TEST_CASE</a> (CONTROLLER_EVENT_HANDLER)</td></tr>
-<tr class="separator:ad22d36c43a840b4967715d65fd1da45f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb3242c69cc2b315f8e5e28c29b04392"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#aeb3242c69cc2b315f8e5e28c29b04392">BOOST_AUTO_TEST_CASE</a> (CONTROLLER_OPERATION_HANDLER_FORCE_FLAGS)</td></tr>
+<tr class="separator:aeb3242c69cc2b315f8e5e28c29b04392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a24bca82ca97d3a5207ef79b387ff47"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntegrationTests_8cpp.html#a5a24bca82ca97d3a5207ef79b387ff47">BOOST_AUTO_TEST_CASE</a> (CONTROLLER_OPERATION_HANDLER_UPDATE_TARGETS)</td></tr>
+<tr class="separator:a5a24bca82ca97d3a5207ef79b387ff47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ada5fef4085763aa856db5f3d0f648d44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada5fef4085763aa856db5f3d0f648d44">&#9670;&nbsp;</a></span>ACTUATOR_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACTUATOR_OFF&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2554af6a082be1db1d489763b0ffba69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2554af6a082be1db1d489763b0ffba69">&#9670;&nbsp;</a></span>ACTUATOR_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACTUATOR_ON&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6b2a3852db8bb19ab6909bac01859985"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b2a3852db8bb19ab6909bac01859985">&#9670;&nbsp;</a></span>BOOST_TEST_MODULE</h2>
 
@@ -116,9 +211,332 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5517d2ee897c23317a52edee01a2e6af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5517d2ee897c23317a52edee01a2e6af">&#9670;&nbsp;</a></span>ECO2_LOWER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ECO2_LOWER_TARGET_CHANGE&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a00f0bbb876cb9ec38df76f61a6d34445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f0bbb876cb9ec38df76f61a6d34445">&#9670;&nbsp;</a></span>ECO2_UPPER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ECO2_UPPER_TARGET_CHANGE&#160;&#160;&#160;7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69c3f927967313e7c8e4109ab63226d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69c3f927967313e7c8e4109ab63226d7">&#9670;&nbsp;</a></span>ENABLE_AIRFLOW_HEURISTIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENABLE_AIRFLOW_HEURISTIC&#160;&#160;&#160;133</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a363845cd9d06d5840ff32030aac6b8d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a363845cd9d06d5840ff32030aac6b8d9">&#9670;&nbsp;</a></span>ENABLE_HEATING_HEURISTIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENABLE_HEATING_HEURISTIC&#160;&#160;&#160;132</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3651579273aefdf444a544f8365370f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3651579273aefdf444a544f8365370f9">&#9670;&nbsp;</a></span>ENABLE_LIGHTS_HEURISTIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENABLE_LIGHTS_HEURISTIC&#160;&#160;&#160;134</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a66739f6cbc98b388d35751a7e3412c26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66739f6cbc98b388d35751a7e3412c26">&#9670;&nbsp;</a></span>ENABLE_WATER_PUMP_HEURISTIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENABLE_WATER_PUMP_HEURISTIC&#160;&#160;&#160;135</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3266c6a8730eca0e217f710828fa6a55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3266c6a8730eca0e217f710828fa6a55">&#9670;&nbsp;</a></span>ETH_LOWER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETH_LOWER_TARGET_CHANGE&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad74cdb3eeb693f03d250c598e2a26afa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad74cdb3eeb693f03d250c598e2a26afa">&#9670;&nbsp;</a></span>ETH_UPPER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETH_UPPER_TARGET_CHANGE&#160;&#160;&#160;9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a843d92cd3d47f29bd1ab4bf5da02a275"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a843d92cd3d47f29bd1ab4bf5da02a275">&#9670;&nbsp;</a></span>FORCE_AIRFLOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FORCE_AIRFLOW&#160;&#160;&#160;129</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6573708cb5f484ec5d2cc29b8d241eb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6573708cb5f484ec5d2cc29b8d241eb9">&#9670;&nbsp;</a></span>FORCE_HEATING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FORCE_HEATING&#160;&#160;&#160;128</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41f8ad6ae0552700d7af001be0f9bd86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f8ad6ae0552700d7af001be0f9bd86">&#9670;&nbsp;</a></span>FORCE_LIGHTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FORCE_LIGHTS&#160;&#160;&#160;130</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0cd1def84b41e666a4b5ef262be3742a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cd1def84b41e666a4b5ef262be3742a">&#9670;&nbsp;</a></span>FORCE_WATER_PUMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FORCE_WATER_PUMP&#160;&#160;&#160;131</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3e1259794f7d0cc90ea3fc2f55eb22f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e1259794f7d0cc90ea3fc2f55eb22f">&#9670;&nbsp;</a></span>H2_LOWER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define H2_LOWER_TARGET_CHANGE&#160;&#160;&#160;12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab1ef2a91e4dfba1fdf5818e38efdacb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1ef2a91e4dfba1fdf5818e38efdacb1">&#9670;&nbsp;</a></span>H2_UPPER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define H2_UPPER_TARGET_CHANGE&#160;&#160;&#160;11</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6bd8eced41eb825caf60a69e513cd4c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bd8eced41eb825caf60a69e513cd4c5">&#9670;&nbsp;</a></span>HUMIDITY_LOWER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HUMIDITY_LOWER_TARGET_CHANGE&#160;&#160;&#160;14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c930cc1194f6bce3f7e8e0821ab9063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c930cc1194f6bce3f7e8e0821ab9063">&#9670;&nbsp;</a></span>HUMIDITY_UPPER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HUMIDITY_UPPER_TARGET_CHANGE&#160;&#160;&#160;13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ababe8748e7b9dd8ba2589b9c4512ff42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ababe8748e7b9dd8ba2589b9c4512ff42">&#9670;&nbsp;</a></span>LIGHT_INTENSITY_LOWER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LIGHT_INTENSITY_LOWER_TARGET_CHANGE&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2eee6e5e06757df3b094cbae3be6d3a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eee6e5e06757df3b094cbae3be6d3a8">&#9670;&nbsp;</a></span>LIGHT_INTENSITY_UPPER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LIGHT_INTENSITY_UPPER_TARGET_CHANGE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a284872e77fefd7db301ce742b6abfe7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a284872e77fefd7db301ce742b6abfe7e">&#9670;&nbsp;</a></span>TEMPERATURE_LOWER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEMPERATURE_LOWER_TARGET_CHANGE&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95d1f0cd984992c420e65cca43b3ef85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d1f0cd984992c420e65cca43b3ef85">&#9670;&nbsp;</a></span>TEMPERATURE_UPPER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEMPERATURE_UPPER_TARGET_CHANGE&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf8c17af083fbb8f2fc38720587e01ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf8c17af083fbb8f2fc38720587e01ea">&#9670;&nbsp;</a></span>TVOC_LOWER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TVOC_LOWER_TARGET_CHANGE&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8c1097f2c68a74cff0d73e799dc5139b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c1097f2c68a74cff0d73e799dc5139b">&#9670;&nbsp;</a></span>TVOC_UPPER_TARGET_CHANGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TVOC_UPPER_TARGET_CHANGE&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a0ef8d951d1ca5ab3cfaf7ab4c7a6fd80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ef8d951d1ca5ab3cfaf7ab4c7a6fd80">&#9670;&nbsp;</a></span>Clock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::chrono::high_resolution_clock <a class="el" href="IntegrationTests_8cpp.html#a0ef8d951d1ca5ab3cfaf7ab4c7a6fd80">Clock</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="adc1d3c8e593faa9c35d22df377ba1a08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc1d3c8e593faa9c35d22df377ba1a08">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adc1d3c8e593faa9c35d22df377ba1a08">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,12 +552,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Test I2C <a class="el" href="classSampler.html" title="Sampler Class. ">Sampler</a></p>
 <p>This Test reads 40 samples (10 Seconds worth) of each enviroment On each new Sample set <a class="el" href="classSampler.html" title="Sampler Class. ">Sampler</a> uses callback which checks whether the conditions are in reasonable range.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>: Change the callback type in sampler to just contain a function, in the main program the functionality will remain unchanged but here it will allow for some testing</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>: Change the callback type in sampler to just contain a function, in the main program the functionality will remain unchanged but here it will allow for some testing</dd></dl>
 
 </div>
 </div>
-<a id="ad22d36c43a840b4967715d65fd1da45f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad22d36c43a840b4967715d65fd1da45f">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[2/2]</span></h2>
+<a id="aeb3242c69cc2b315f8e5e28c29b04392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb3242c69cc2b315f8e5e28c29b04392">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -147,14 +565,38 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype">CONTROLLER_EVENT_HANDLER&#160;</td>
+          <td class="paramtype">CONTROLLER_OPERATION_HANDLER_FORCE_FLAGS&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Test I2C <a class="el" href="classSampler.html" title="Sampler Class. ">Sampler</a></p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>: Change the callback type in sampler to just contain a function, in the main program the functionality will remain unchanged but here it will allow for some testing</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo:</a></b></dt><dd>: Change the callback type in sampler to just contain a function, in the main program the functionality will remain unchanged but here it will allow for some testing</dd></dl>
+<p>actuatorsState [0] = Heating state [1] = Lighting state [2] = Airflow state [3] = Watering state </p>
+
+</div>
+</div>
+<a id="a5a24bca82ca97d3a5207ef79b387ff47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a24bca82ca97d3a5207ef79b387ff47">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">CONTROLLER_OPERATION_HANDLER_UPDATE_TARGETS&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This test esentially tests sampler its callback and functionality of controller actuator handler</p><ol type="1">
+<li>Use <a class="el" href="classSampler.html" title="Sampler Class. ">Sampler</a> to get data Check measurments are within range</li>
+<li>Use callback For actuaction</li>
+<li></li>
+</ol>
 
 </div>
 </div>

@@ -54,9 +54,34 @@ int Sampler::Gather_Env_Data()
 	return 0;
 }
 
+/**
+* Returns the current data from all sensors by turn.
+* Currently used only for integation tests
+*
+* @return Environment data struct
+*/
+EnvironmentData Sampler::GetEnvData()
+{
+	return envData;
+}
+
 
 /**
-* Reads data from all sensors by turn.
+* Use Callback
+* Currently used only for integation test
+*
+*/
+void Sampler::CallbackTest()
+{
+	if (samplerCallback != nullptr) 
+	{
+		samplerCallback->SamplerHasData(envData);
+	}
+}
+
+
+/**
+* Closes each I2C measurement device by turn.
 *
 * @return Zero On Sucess 
 */
@@ -71,48 +96,12 @@ int Sampler::CloseDevices()
 
 
 /**
-* Sends the Env data from all sensors to the web server via http.
-*
-*/
-/*
-void Sampler::SendEnvData()
-{
-	SendDataToWebApp("LIGHT_INTENSITY", envData.LightIntensity);
-	SendDataToWebApp("TEMPERATURE", envData.Temperature);
-	SendDataToWebApp("HUMIDITY", envData.Humidity);
-	SendDataToWebApp("TVOC", envData.TVOC);
-	SendDataToWebApp("ECO2", envData.CO2);
-	SendDataToWebApp("ETHANOL", envData.RawEthanol);
-	SendDataToWebApp("H2", envData.RawH2);
-}
-/*
-
-/**
-* Sends the Env data from all sensors to the web server via http.
-*
-*/
-/*
-void Sampler::SendDataToWebApp(std::string variable_type, float value)
-{
-	httplib::Client cli("http://127.0.0.1:5050");
-	std::string url = "/measurements?type=" + variable_type + "&value=" + std::to_string(value);
-	const char * urlStr = url.c_str();
-	if(auto res = cli.Get(urlStr))
-	{
-		//printf("Response status from web app: %f\n", res->status);
-		//printf("Response body from web app: %f\n", res->body);
-	}
-
-}
-*/
-
-/**
 * Prints data read by sensors by turn.
 *
 * @return Zero On Sucess 
 */
-/*
-int Sampler::Print_Env_Data(){
+int Sampler::Print_Env_Data()
+{
 	printf("\n");
 	printf("Get_ALS_LUX: %f\n",envData.LightIntensity);
 	printf("Temperature: %f\n",envData.Temperature);
@@ -123,4 +112,3 @@ int Sampler::Print_Env_Data(){
 	printf("RawH2: %d ppm\n", envData.RawH2);
 	return 0;
 }
-*/

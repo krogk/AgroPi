@@ -1,12 +1,17 @@
 \hypertarget{IntegrationTests_8cpp}{}\section{test/\+Integration\+Tests.cpp File Reference}
 \label{IntegrationTests_8cpp}\index{test/\+Integration\+Tests.\+cpp@{test/\+Integration\+Tests.\+cpp}}
 {\ttfamily \#include $<$boost/test/unit\+\_\+test.\+hpp$>$}\newline
-{\ttfamily \#include \char`\"{}I2\+C\+Driver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Test\+Functions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sampler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Controller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Camera.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}V\+E\+M\+L7700.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}S\+H\+T31\+D.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}S\+G\+P30.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Camera.\+h\char`\"{}}\newline
-Include dependency graph for Integration\+Tests.\+cpp\+:\nopagebreak
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+Include dependency graph for Integration\+Tests.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,22 +22,230 @@ Include dependency graph for Integration\+Tests.\+cpp\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \#define \hyperlink{IntegrationTests_8cpp_a6b2a3852db8bb19ab6909bac01859985}{B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE}~Agro\+Pi\+Integration\+Test
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a2eee6e5e06757df3b094cbae3be6d3a8}{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~1
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_ababe8748e7b9dd8ba2589b9c4512ff42}{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~2
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a95d1f0cd984992c420e65cca43b3ef85}{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~3
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a284872e77fefd7db301ce742b6abfe7e}{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~4
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a8c1097f2c68a74cff0d73e799dc5139b}{T\+V\+O\+C\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~5
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_acf8c17af083fbb8f2fc38720587e01ea}{T\+V\+O\+C\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~6
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a00f0bbb876cb9ec38df76f61a6d34445}{E\+C\+O2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~7
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a5517d2ee897c23317a52edee01a2e6af}{E\+C\+O2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~8
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_ad74cdb3eeb693f03d250c598e2a26afa}{E\+T\+H\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~9
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a3266c6a8730eca0e217f710828fa6a55}{E\+T\+H\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~10
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_ab1ef2a91e4dfba1fdf5818e38efdacb1}{H2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~11
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_ab3e1259794f7d0cc90ea3fc2f55eb22f}{H2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~12
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a9c930cc1194f6bce3f7e8e0821ab9063}{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~13
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a6bd8eced41eb825caf60a69e513cd4c5}{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}~14
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a6573708cb5f484ec5d2cc29b8d241eb9}{F\+O\+R\+C\+E\+\_\+\+H\+E\+A\+T\+I\+NG}~128
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a843d92cd3d47f29bd1ab4bf5da02a275}{F\+O\+R\+C\+E\+\_\+\+A\+I\+R\+F\+L\+OW}~129
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a41f8ad6ae0552700d7af001be0f9bd86}{F\+O\+R\+C\+E\+\_\+\+L\+I\+G\+H\+TS}~130
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a0cd1def84b41e666a4b5ef262be3742a}{F\+O\+R\+C\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+MP}~131
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a363845cd9d06d5840ff32030aac6b8d9}{E\+N\+A\+B\+L\+E\+\_\+\+H\+E\+A\+T\+I\+N\+G\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}~132
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a69c3f927967313e7c8e4109ab63226d7}{E\+N\+A\+B\+L\+E\+\_\+\+A\+I\+R\+F\+L\+O\+W\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}~133
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a3651579273aefdf444a544f8365370f9}{E\+N\+A\+B\+L\+E\+\_\+\+L\+I\+G\+H\+T\+S\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}~134
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a66739f6cbc98b388d35751a7e3412c26}{E\+N\+A\+B\+L\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+M\+P\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}~135
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_a2554af6a082be1db1d489763b0ffba69}{A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+ON}~0
+\item 
+\#define \hyperlink{IntegrationTests_8cpp_ada5fef4085763aa856db5f3d0f648d44}{A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+O\+FF}~1
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::chrono\+::high\+\_\+resolution\+\_\+clock \hyperlink{IntegrationTests_8cpp_a0ef8d951d1ca5ab3cfaf7ab4c7a6fd80}{Clock}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{IntegrationTests_8cpp_adc1d3c8e593faa9c35d22df377ba1a08}{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE} (I2\+C\+\_\+\+S\+A\+M\+P\+L\+E\+R\+\_\+\+R\+E\+AD)
 \item 
-\hyperlink{IntegrationTests_8cpp_ad22d36c43a840b4967715d65fd1da45f}{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE} (C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+V\+E\+N\+T\+\_\+\+H\+A\+N\+D\+L\+ER)
+\hyperlink{IntegrationTests_8cpp_aeb3242c69cc2b315f8e5e28c29b04392}{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE} (C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+F\+O\+R\+C\+E\+\_\+\+F\+L\+A\+GS)
+\item 
+\hyperlink{IntegrationTests_8cpp_a5a24bca82ca97d3a5207ef79b387ff47}{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE} (C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+T\+A\+R\+G\+E\+TS)
 \end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{IntegrationTests_8cpp_ada5fef4085763aa856db5f3d0f648d44}\label{IntegrationTests_8cpp_ada5fef4085763aa856db5f3d0f648d44}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+O\+FF@{A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+O\+FF}}
+\index{A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+O\+FF@{A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+O\+FF}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+O\+FF}{ACTUATOR\_OFF}}
+{\footnotesize\ttfamily \#define A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+O\+FF~1}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a2554af6a082be1db1d489763b0ffba69}\label{IntegrationTests_8cpp_a2554af6a082be1db1d489763b0ffba69}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+ON@{A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+ON}}
+\index{A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+ON@{A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+ON}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+ON}{ACTUATOR\_ON}}
+{\footnotesize\ttfamily \#define A\+C\+T\+U\+A\+T\+O\+R\+\_\+\+ON~0}
+
 \mbox{\Hypertarget{IntegrationTests_8cpp_a6b2a3852db8bb19ab6909bac01859985}\label{IntegrationTests_8cpp_a6b2a3852db8bb19ab6909bac01859985}} 
 \index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE@{B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE}}
 \index{B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE@{B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
 \subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE}{BOOST\_TEST\_MODULE}}
 {\footnotesize\ttfamily \#define B\+O\+O\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+M\+O\+D\+U\+LE~Agro\+Pi\+Integration\+Test}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a5517d2ee897c23317a52edee01a2e6af}\label{IntegrationTests_8cpp_a5517d2ee897c23317a52edee01a2e6af}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!E\+C\+O2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+C\+O2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{E\+C\+O2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+C\+O2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{E\+C\+O2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{ECO2\_LOWER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define E\+C\+O2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~8}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a00f0bbb876cb9ec38df76f61a6d34445}\label{IntegrationTests_8cpp_a00f0bbb876cb9ec38df76f61a6d34445}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!E\+C\+O2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+C\+O2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{E\+C\+O2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+C\+O2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{E\+C\+O2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{ECO2\_UPPER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define E\+C\+O2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~7}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a69c3f927967313e7c8e4109ab63226d7}\label{IntegrationTests_8cpp_a69c3f927967313e7c8e4109ab63226d7}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!E\+N\+A\+B\+L\+E\+\_\+\+A\+I\+R\+F\+L\+O\+W\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC@{E\+N\+A\+B\+L\+E\+\_\+\+A\+I\+R\+F\+L\+O\+W\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}}
+\index{E\+N\+A\+B\+L\+E\+\_\+\+A\+I\+R\+F\+L\+O\+W\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC@{E\+N\+A\+B\+L\+E\+\_\+\+A\+I\+R\+F\+L\+O\+W\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{E\+N\+A\+B\+L\+E\+\_\+\+A\+I\+R\+F\+L\+O\+W\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}{ENABLE\_AIRFLOW\_HEURISTIC}}
+{\footnotesize\ttfamily \#define E\+N\+A\+B\+L\+E\+\_\+\+A\+I\+R\+F\+L\+O\+W\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC~133}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a363845cd9d06d5840ff32030aac6b8d9}\label{IntegrationTests_8cpp_a363845cd9d06d5840ff32030aac6b8d9}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!E\+N\+A\+B\+L\+E\+\_\+\+H\+E\+A\+T\+I\+N\+G\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC@{E\+N\+A\+B\+L\+E\+\_\+\+H\+E\+A\+T\+I\+N\+G\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}}
+\index{E\+N\+A\+B\+L\+E\+\_\+\+H\+E\+A\+T\+I\+N\+G\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC@{E\+N\+A\+B\+L\+E\+\_\+\+H\+E\+A\+T\+I\+N\+G\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{E\+N\+A\+B\+L\+E\+\_\+\+H\+E\+A\+T\+I\+N\+G\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}{ENABLE\_HEATING\_HEURISTIC}}
+{\footnotesize\ttfamily \#define E\+N\+A\+B\+L\+E\+\_\+\+H\+E\+A\+T\+I\+N\+G\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC~132}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a3651579273aefdf444a544f8365370f9}\label{IntegrationTests_8cpp_a3651579273aefdf444a544f8365370f9}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!E\+N\+A\+B\+L\+E\+\_\+\+L\+I\+G\+H\+T\+S\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC@{E\+N\+A\+B\+L\+E\+\_\+\+L\+I\+G\+H\+T\+S\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}}
+\index{E\+N\+A\+B\+L\+E\+\_\+\+L\+I\+G\+H\+T\+S\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC@{E\+N\+A\+B\+L\+E\+\_\+\+L\+I\+G\+H\+T\+S\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{E\+N\+A\+B\+L\+E\+\_\+\+L\+I\+G\+H\+T\+S\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}{ENABLE\_LIGHTS\_HEURISTIC}}
+{\footnotesize\ttfamily \#define E\+N\+A\+B\+L\+E\+\_\+\+L\+I\+G\+H\+T\+S\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC~134}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a66739f6cbc98b388d35751a7e3412c26}\label{IntegrationTests_8cpp_a66739f6cbc98b388d35751a7e3412c26}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!E\+N\+A\+B\+L\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+M\+P\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC@{E\+N\+A\+B\+L\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+M\+P\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}}
+\index{E\+N\+A\+B\+L\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+M\+P\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC@{E\+N\+A\+B\+L\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+M\+P\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{E\+N\+A\+B\+L\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+M\+P\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC}{ENABLE\_WATER\_PUMP\_HEURISTIC}}
+{\footnotesize\ttfamily \#define E\+N\+A\+B\+L\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+M\+P\+\_\+\+H\+E\+U\+R\+I\+S\+T\+IC~135}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a3266c6a8730eca0e217f710828fa6a55}\label{IntegrationTests_8cpp_a3266c6a8730eca0e217f710828fa6a55}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!E\+T\+H\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+T\+H\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{E\+T\+H\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+T\+H\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{E\+T\+H\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{ETH\_LOWER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define E\+T\+H\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~10}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_ad74cdb3eeb693f03d250c598e2a26afa}\label{IntegrationTests_8cpp_ad74cdb3eeb693f03d250c598e2a26afa}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!E\+T\+H\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+T\+H\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{E\+T\+H\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{E\+T\+H\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{E\+T\+H\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{ETH\_UPPER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define E\+T\+H\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~9}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a843d92cd3d47f29bd1ab4bf5da02a275}\label{IntegrationTests_8cpp_a843d92cd3d47f29bd1ab4bf5da02a275}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!F\+O\+R\+C\+E\+\_\+\+A\+I\+R\+F\+L\+OW@{F\+O\+R\+C\+E\+\_\+\+A\+I\+R\+F\+L\+OW}}
+\index{F\+O\+R\+C\+E\+\_\+\+A\+I\+R\+F\+L\+OW@{F\+O\+R\+C\+E\+\_\+\+A\+I\+R\+F\+L\+OW}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{F\+O\+R\+C\+E\+\_\+\+A\+I\+R\+F\+L\+OW}{FORCE\_AIRFLOW}}
+{\footnotesize\ttfamily \#define F\+O\+R\+C\+E\+\_\+\+A\+I\+R\+F\+L\+OW~129}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a6573708cb5f484ec5d2cc29b8d241eb9}\label{IntegrationTests_8cpp_a6573708cb5f484ec5d2cc29b8d241eb9}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!F\+O\+R\+C\+E\+\_\+\+H\+E\+A\+T\+I\+NG@{F\+O\+R\+C\+E\+\_\+\+H\+E\+A\+T\+I\+NG}}
+\index{F\+O\+R\+C\+E\+\_\+\+H\+E\+A\+T\+I\+NG@{F\+O\+R\+C\+E\+\_\+\+H\+E\+A\+T\+I\+NG}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{F\+O\+R\+C\+E\+\_\+\+H\+E\+A\+T\+I\+NG}{FORCE\_HEATING}}
+{\footnotesize\ttfamily \#define F\+O\+R\+C\+E\+\_\+\+H\+E\+A\+T\+I\+NG~128}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a41f8ad6ae0552700d7af001be0f9bd86}\label{IntegrationTests_8cpp_a41f8ad6ae0552700d7af001be0f9bd86}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!F\+O\+R\+C\+E\+\_\+\+L\+I\+G\+H\+TS@{F\+O\+R\+C\+E\+\_\+\+L\+I\+G\+H\+TS}}
+\index{F\+O\+R\+C\+E\+\_\+\+L\+I\+G\+H\+TS@{F\+O\+R\+C\+E\+\_\+\+L\+I\+G\+H\+TS}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{F\+O\+R\+C\+E\+\_\+\+L\+I\+G\+H\+TS}{FORCE\_LIGHTS}}
+{\footnotesize\ttfamily \#define F\+O\+R\+C\+E\+\_\+\+L\+I\+G\+H\+TS~130}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a0cd1def84b41e666a4b5ef262be3742a}\label{IntegrationTests_8cpp_a0cd1def84b41e666a4b5ef262be3742a}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!F\+O\+R\+C\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+MP@{F\+O\+R\+C\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+MP}}
+\index{F\+O\+R\+C\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+MP@{F\+O\+R\+C\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+MP}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{F\+O\+R\+C\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+MP}{FORCE\_WATER\_PUMP}}
+{\footnotesize\ttfamily \#define F\+O\+R\+C\+E\+\_\+\+W\+A\+T\+E\+R\+\_\+\+P\+U\+MP~131}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_ab3e1259794f7d0cc90ea3fc2f55eb22f}\label{IntegrationTests_8cpp_ab3e1259794f7d0cc90ea3fc2f55eb22f}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!H2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{H2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{H2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{H2\_LOWER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define H2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~12}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_ab1ef2a91e4dfba1fdf5818e38efdacb1}\label{IntegrationTests_8cpp_ab1ef2a91e4dfba1fdf5818e38efdacb1}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!H2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{H2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{H2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{H2\_UPPER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define H2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~11}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a6bd8eced41eb825caf60a69e513cd4c5}\label{IntegrationTests_8cpp_a6bd8eced41eb825caf60a69e513cd4c5}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{HUMIDITY\_LOWER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~14}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a9c930cc1194f6bce3f7e8e0821ab9063}\label{IntegrationTests_8cpp_a9c930cc1194f6bce3f7e8e0821ab9063}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{HUMIDITY\_UPPER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define H\+U\+M\+I\+D\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~13}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_ababe8748e7b9dd8ba2589b9c4512ff42}\label{IntegrationTests_8cpp_ababe8748e7b9dd8ba2589b9c4512ff42}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{LIGHT\_INTENSITY\_LOWER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~2}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a2eee6e5e06757df3b094cbae3be6d3a8}\label{IntegrationTests_8cpp_a2eee6e5e06757df3b094cbae3be6d3a8}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{LIGHT\_INTENSITY\_UPPER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define L\+I\+G\+H\+T\+\_\+\+I\+N\+T\+E\+N\+S\+I\+T\+Y\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~1}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a284872e77fefd7db301ce742b6abfe7e}\label{IntegrationTests_8cpp_a284872e77fefd7db301ce742b6abfe7e}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{TEMPERATURE\_LOWER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~4}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a95d1f0cd984992c420e65cca43b3ef85}\label{IntegrationTests_8cpp_a95d1f0cd984992c420e65cca43b3ef85}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{TEMPERATURE\_UPPER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~3}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_acf8c17af083fbb8f2fc38720587e01ea}\label{IntegrationTests_8cpp_acf8c17af083fbb8f2fc38720587e01ea}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!T\+V\+O\+C\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+V\+O\+C\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{T\+V\+O\+C\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+V\+O\+C\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{T\+V\+O\+C\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{TVOC\_LOWER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define T\+V\+O\+C\+\_\+\+L\+O\+W\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~6}
+
+\mbox{\Hypertarget{IntegrationTests_8cpp_a8c1097f2c68a74cff0d73e799dc5139b}\label{IntegrationTests_8cpp_a8c1097f2c68a74cff0d73e799dc5139b}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!T\+V\+O\+C\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+V\+O\+C\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}}
+\index{T\+V\+O\+C\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE@{T\+V\+O\+C\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{T\+V\+O\+C\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE}{TVOC\_UPPER\_TARGET\_CHANGE}}
+{\footnotesize\ttfamily \#define T\+V\+O\+C\+\_\+\+U\+P\+P\+E\+R\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+C\+H\+A\+N\+GE~5}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{IntegrationTests_8cpp_a0ef8d951d1ca5ab3cfaf7ab4c7a6fd80}\label{IntegrationTests_8cpp_a0ef8d951d1ca5ab3cfaf7ab4c7a6fd80}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!Clock@{Clock}}
+\index{Clock@{Clock}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{Clock}{Clock}}
+{\footnotesize\ttfamily typedef std\+::chrono\+::high\+\_\+resolution\+\_\+clock \hyperlink{IntegrationTests_8cpp_a0ef8d951d1ca5ab3cfaf7ab4c7a6fd80}{Clock}}
 
 
 
@@ -40,7 +253,7 @@ Include dependency graph for Integration\+Tests.\+cpp\+:\nopagebreak
 \mbox{\Hypertarget{IntegrationTests_8cpp_adc1d3c8e593faa9c35d22df377ba1a08}\label{IntegrationTests_8cpp_adc1d3c8e593faa9c35d22df377ba1a08}} 
 \index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}}
 \index{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
-\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+S\+A\+M\+P\+L\+E\+R\+\_\+\+R\+E\+AD}]{ }\end{DoxyParamCaption})}
 
 Test I2C \hyperlink{classSampler}{Sampler}
@@ -48,14 +261,28 @@ Test I2C \hyperlink{classSampler}{Sampler}
 This Test reads 40 samples (10 Seconds worth) of each enviroment On each new Sample set \hyperlink{classSampler}{Sampler} uses callback which checks whether the conditions are in reasonable range.
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000005}{Todo}]\+: Change the callback type in sampler to just contain a function, in the main program the functionality will remain unchanged but here it will allow for some testing\end{DoxyRefDesc}
-\mbox{\Hypertarget{IntegrationTests_8cpp_ad22d36c43a840b4967715d65fd1da45f}\label{IntegrationTests_8cpp_ad22d36c43a840b4967715d65fd1da45f}} 
+\item[\hyperlink{todo__todo000009}{Todo}]\+: Change the callback type in sampler to just contain a function, in the main program the functionality will remain unchanged but here it will allow for some testing\end{DoxyRefDesc}
+\mbox{\Hypertarget{IntegrationTests_8cpp_aeb3242c69cc2b315f8e5e28c29b04392}\label{IntegrationTests_8cpp_aeb3242c69cc2b315f8e5e28c29b04392}} 
 \index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}}
 \index{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
-\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+E\+V\+E\+N\+T\+\_\+\+H\+A\+N\+D\+L\+ER}]{ }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+F\+O\+R\+C\+E\+\_\+\+F\+L\+A\+GS}]{ }\end{DoxyParamCaption})}
 
 Test I2C \hyperlink{classSampler}{Sampler}
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000006}{Todo}]\+: Change the callback type in sampler to just contain a function, in the main program the functionality will remain unchanged but here it will allow for some testing\end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000010}{Todo}]\+: Change the callback type in sampler to just contain a function, in the main program the functionality will remain unchanged but here it will allow for some testing\end{DoxyRefDesc}
+
+
+actuators\+State \mbox{[}0\mbox{]} = Heating state \mbox{[}1\mbox{]} = Lighting state \mbox{[}2\mbox{]} = Airflow state \mbox{[}3\mbox{]} = Watering state \mbox{\Hypertarget{IntegrationTests_8cpp_a5a24bca82ca97d3a5207ef79b387ff47}\label{IntegrationTests_8cpp_a5a24bca82ca97d3a5207ef79b387ff47}} 
+\index{Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}!B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}!Integration\+Tests.\+cpp@{Integration\+Tests.\+cpp}}
+\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{C\+O\+N\+T\+R\+O\+L\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+T\+A\+R\+G\+E\+TS}]{ }\end{DoxyParamCaption})}
+
+This test esentially tests sampler its callback and functionality of controller actuator handler
+\begin{DoxyEnumerate}
+\item Use \hyperlink{classSampler}{Sampler} to get data Check measurments are within range
+\item Use callback For actuaction
+\item 
+\end{DoxyEnumerate}

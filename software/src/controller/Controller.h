@@ -20,6 +20,39 @@
 #include <stdlib.h>
 
 /**
+ * Controll operation codes for update handler
+ * This is public, because it needs to be used in 
+ * integration test.
+ *
+ */
+	enum CONTROL_OP_CODES {
+	LIGHT_INTENSITY_UPPER_TARGET_CHANGE 	= 1,
+	LIGHT_INTENSITY_LOWER_TARGET_CHANGE 	= 2,
+	TEMPERATURE_UPPER_TARGET_CHANGE 			= 3,
+	TEMPERATURE_LOWER_TARGET_CHANGE 			= 4,
+	TVOC_UPPER_TARGET_CHANGE 							= 5,
+	TVOC_LOWER_TARGET_CHANGE 							= 6,
+	ECO2_UPPER_TARGET_CHANGE 						  = 7,
+	ECO2_LOWER_TARGET_CHANGE 						  = 8,
+	ETH_UPPER_TARGET_CHANGE								= 9,
+	ETH_LOWER_TARGET_CHANGE								= 10,
+	H2_UPPER_TARGET_CHANGE								= 11,
+	H2_LOWER_TARGET_CHANGE								= 12,
+	HUMIDITY_UPPER_TARGET_CHANGE          = 13,
+	HUMIDITY_LOWER_TARGET_CHANGE 					= 14,
+
+	FORCE_HEATING													= 128,
+	FORCE_AIRFLOW													= 129,
+	FORCE_LIGHTS													= 130,
+	FORCE_WATER_PUMP											= 131,
+	ENABLE_HEATING_HEURISTIC							= 132,
+	ENABLE_AIRFLOW_HEURISTIC							= 133,
+	ENABLE_LIGHTS_HEURISTIC								= 134,
+	ENABLE_WATER_PUMP_HEURISTIC						= 135
+	};
+
+
+/**
 * @brief Controller class
 * @author Kamil Rog
 *
@@ -73,8 +106,15 @@ public:
 	actuationHeuristicsFlags.Lighting = false;
 	actuationHeuristicsFlags.Airflow = false;
 	actuationHeuristicsFlags.Watering = false;
+
+	actuatorsState[0] = 1;
+	actuatorsState[1] = 1;
+	actuatorsState[2] = 1;
+	actuatorsState[3] = 1;
+
 	}
 
+	// Function for sampler to pass new data to;
 	void SamplerHasData(EnvironmentData newData);
 
 	int Update_Targets(uint8_t opcode, float vlaue);
@@ -85,47 +125,29 @@ public:
 	ActuationForceFlags actuationForceFlags;		/*!< Actuatuion force flags ignoring hu Enviroment Conditions */
 	ActuationHeuristicsFlags  actuationHeuristicsFlags; /*!< Actuatuion Heuristics flags if this is disabled the actuator doesn't run against hueristics */
 
-	enum CONTROL_OP_CODES {
-	LIGHT_INTENSITY_UPPER_TARGET_CHANGE 	= 1,
-	LIGHT_INTENSITY_LOWER_TARGET_CHANGE 	= 2,
-	TEMPERATURE_UPPER_TARGET_CHANGE 			= 3,
-	TEMPERATURE_LOWER_TARGET_CHANGE 			= 4,
-	TVOC_UPPER_TARGET_CHANGE 							= 5,
-	TVOC_LOWER_TARGET_CHANGE 							= 6,
-	ECO2_UPPER_TARGET_CHANGE 						  = 7,
-	ECO2_LOWER_TARGET_CHANGE 						  = 8,
-	ETH_UPPER_TARGET_CHANGE								= 9,
-	ETH_LOWER_TARGET_CHANGE								= 10,
-	H2_UPPER_TARGET_CHANGE								= 11,
-	H2_LOWER_TARGET_CHANGE								= 12,
-	HUMIDITY_UPPER_TARGET_CHANGE          = 13,
-	HUMIDITY_LOWER_TARGET_CHANGE 					= 14,
-
-	FORCE_HEATING													= 128,
-	FORCE_AIRFLOW													= 129,
-	FORCE_LIGHTS													= 130,
-	FORCE_WATER_PUMP											= 131,
-	ENABLE_HEATING_HEURISTIC							= 132,
-	ENABLE_AIRFLOW_HEURISTIC							= 133,
-	ENABLE_LIGHTS_HEURISTIC								= 134,
-	ENABLE_WATER_PUMP_HEURISTIC						= 135
-	};
-
+	void UpdateGPIOStates();
+	/**
+	[0] = Heating state
+	[1] = Lighting state
+	[2] = Airflow state
+	[3] = Watering state
+	*/
+	int actuatorsState[4];
 
 private:
 	void ActuatorHandler();
-	void SendEnvData();
-  void SendDataToWebApp(std::string variable_type, float value);
 
   void LightActuator();
 	void HeatActuator();
 	void AirflowActuator();
 	void WateringActuator();
 
+
 private:
 
 	GPIODriver gpiodriver;
 	RelayBoard relay;
+
 };
 
 #endif

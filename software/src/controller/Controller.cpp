@@ -263,7 +263,13 @@ void Controller::AirflowActuator()
 	}
 }
 
-
+void Controller::UpdateGPIOStates()
+{
+	actuatorsState[0] = relay.GetHeatingState();
+	actuatorsState[1] = relay.GetLightingState();
+	actuatorsState[2] = relay.GetAirflowState();
+	actuatorsState[3] = relay.GetWateringState();
+} 
 
 void Controller::WateringActuator()
 {

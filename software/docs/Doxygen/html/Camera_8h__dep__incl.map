@@ -1,5 +1,6 @@
 <map id="src/controller/peripherials/Camera.h" name="src/controller/peripherials/Camera.h">
 <area shape="rect" id="node2" href="$Camera_8cpp.html" title="src/controller/peripherials\l/Camera.cpp" alt="" coords="5,95,172,136"/>
-<area shape="rect" id="node3" href="$DriverSensorTest_8cpp.html" title="test/DriverSensorTest.cpp" alt="" coords="196,102,371,129"/>
-<area shape="rect" id="node4" href="$IntegrationTests_8cpp.html" title="test/IntegrationTests.cpp" alt="" coords="395,102,561,129"/>
+<area shape="rect" id="node3" href="$ControllerThread_8cpp.html" title="src/threads/ControllerThread.cpp" alt="" coords="196,102,408,129"/>
+<area shape="rect" id="node4" href="$DriverSensorTest_8cpp.html" title="test/DriverSensorTest.cpp" alt="" coords="432,102,607,129"/>
+<area shape="rect" id="node5" href="$IntegrationTests_8cpp.html" title="test/IntegrationTests.cpp" alt="" coords="631,102,797,129"/>
 </map>

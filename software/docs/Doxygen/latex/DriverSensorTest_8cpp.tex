@@ -1,11 +1,14 @@
 \hypertarget{DriverSensorTest_8cpp}{}\section{test/\+Driver\+Sensor\+Test.cpp File Reference}
 \label{DriverSensorTest_8cpp}\index{test/\+Driver\+Sensor\+Test.\+cpp@{test/\+Driver\+Sensor\+Test.\+cpp}}
 {\ttfamily \#include $<$boost/test/unit\+\_\+test.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}Test\+Functions.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}I2\+C\+Driver.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}V\+E\+M\+L7700.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}S\+H\+T31\+D.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}S\+G\+P30.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Camera.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}G\+P\+I\+O\+Driver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Relay\+Board.\+h\char`\"{}}\newline
 Include dependency graph for Driver\+Sensor\+Test.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -28,6 +31,8 @@ Include dependency graph for Driver\+Sensor\+Test.\+cpp\+:\nopagebreak
 \hyperlink{DriverSensorTest_8cpp_a6e0bc08daa4c7be925374adf6192892b}{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE} (S\+H\+T31\+D\+\_\+\+R\+E\+AD)
 \item 
 \hyperlink{DriverSensorTest_8cpp_a836e8b6307e7618e7b0af9763b756327}{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE} (S\+G\+P30\+\_\+\+R\+E\+AD)
+\item 
+\hyperlink{DriverSensorTest_8cpp_a27ada8419fae1bc3bd27f1fdbd337b1e}{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE} (Elego\+Relay\+Board)
 \end{DoxyCompactItemize}
 
 
@@ -44,17 +49,17 @@ Include dependency graph for Driver\+Sensor\+Test.\+cpp\+:\nopagebreak
 \mbox{\Hypertarget{DriverSensorTest_8cpp_a0d54f5e177d12a6c804fa4396c287cae}\label{DriverSensorTest_8cpp_a0d54f5e177d12a6c804fa4396c287cae}} 
 \index{Driver\+Sensor\+Test.\+cpp@{Driver\+Sensor\+Test.\+cpp}!B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}}
 \index{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}!Driver\+Sensor\+Test.\+cpp@{Driver\+Sensor\+Test.\+cpp}}
-\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+P\+L\+A\+I\+N\+\_\+\+W\+R\+I\+T\+E\+\_\+\+R\+E\+AD}]{ }\end{DoxyParamCaption})}
 
 Test I2C Driver
 
 Open File Descriptor and check if it is non-\/zero \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000004}{Todo}]\+: Do a read or write and see check the reply is zero\end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000008}{Todo}]\+: Do a read or write and see check the reply is zero\end{DoxyRefDesc}
 \mbox{\Hypertarget{DriverSensorTest_8cpp_a9425f9271719a44706f22e65ffdf8035}\label{DriverSensorTest_8cpp_a9425f9271719a44706f22e65ffdf8035}} 
 \index{Driver\+Sensor\+Test.\+cpp@{Driver\+Sensor\+Test.\+cpp}!B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}}
 \index{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}!Driver\+Sensor\+Test.\+cpp@{Driver\+Sensor\+Test.\+cpp}}
-\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{V\+E\+M\+L770\+\_\+\+L\+U\+X\+\_\+\+R\+E\+AD}]{ }\end{DoxyParamCaption})}
 
 Test \hyperlink{classVEML7700}{V\+E\+M\+L7700} Sensor Driver
@@ -62,7 +67,7 @@ Test \hyperlink{classVEML7700}{V\+E\+M\+L7700} Sensor Driver
 Open File Descriptor and check if it is non-\/zero Get a reading and make sure it is not below zero(minimum) or above 120k(maximum) and not equal to \mbox{\Hypertarget{DriverSensorTest_8cpp_a6e0bc08daa4c7be925374adf6192892b}\label{DriverSensorTest_8cpp_a6e0bc08daa4c7be925374adf6192892b}} 
 \index{Driver\+Sensor\+Test.\+cpp@{Driver\+Sensor\+Test.\+cpp}!B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}}
 \index{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}!Driver\+Sensor\+Test.\+cpp@{Driver\+Sensor\+Test.\+cpp}}
-\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{S\+H\+T31\+D\+\_\+\+R\+E\+AD}]{ }\end{DoxyParamCaption})}
 
 Test \hyperlink{classSHT31D}{S\+H\+T31D} Sensor Driver
@@ -70,9 +75,15 @@ Test \hyperlink{classSHT31D}{S\+H\+T31D} Sensor Driver
 Open File Descriptor and check if it is non-\/zero Get a remperature reading and make sure it is not below zero(unlikley) or above 50(unlikley) Get a remperature reading and make sure it is not below zero(minimum) or above 100(maxiumum) \mbox{\Hypertarget{DriverSensorTest_8cpp_a836e8b6307e7618e7b0af9763b756327}\label{DriverSensorTest_8cpp_a836e8b6307e7618e7b0af9763b756327}} 
 \index{Driver\+Sensor\+Test.\+cpp@{Driver\+Sensor\+Test.\+cpp}!B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}}
 \index{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}!Driver\+Sensor\+Test.\+cpp@{Driver\+Sensor\+Test.\+cpp}}
-\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{S\+G\+P30\+\_\+\+R\+E\+AD}]{ }\end{DoxyParamCaption})}
 
 Test \hyperlink{classSGP30}{S\+G\+P30} Gas Sensor Driver
 
-Open File Descriptor and check if it is non-\/zero Get a remperature reading and make sure it is not below zero(unlikley) or above 50(unlikley) Get a remperature reading and make sure it is not below zero(minimum) or above 100(maxiumum) 
+Open File Descriptor and check if it is non-\/zero Get a remperature reading and make sure it is not below zero(unlikley) or above 50(unlikley) Get a remperature reading and make sure it is not below zero(minimum) or above 100(maxiumum) \mbox{\Hypertarget{DriverSensorTest_8cpp_a27ada8419fae1bc3bd27f1fdbd337b1e}\label{DriverSensorTest_8cpp_a27ada8419fae1bc3bd27f1fdbd337b1e}} 
+\index{Driver\+Sensor\+Test.\+cpp@{Driver\+Sensor\+Test.\+cpp}!B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE@{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}!Driver\+Sensor\+Test.\+cpp@{Driver\+Sensor\+Test.\+cpp}}
+\subsubsection{\texorpdfstring{B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+S\+E()}{BOOST\_AUTO\_TEST\_CASE()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily B\+O\+O\+S\+T\+\_\+\+A\+U\+T\+O\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE (\begin{DoxyParamCaption}\item[{Elego\+Relay\+Board}]{ }\end{DoxyParamCaption})}
+
+Test Relay Board Turn on 

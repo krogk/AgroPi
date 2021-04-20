@@ -44,6 +44,11 @@ public:
   int Watering(int state);
   int Turn_Relays_Off();
   int Close_Relay_Board();
+
+  int GetWateringState();
+  int GetAirflowState();
+  int GetHeatingState();
+  int GetLightingState();
   
   int m_heaterGPIOState;
   int m_lightsGPIOState;
