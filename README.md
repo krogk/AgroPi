@@ -238,23 +238,19 @@ server {
 
 To run the software:
 
-1. Go to web directory and run server
-```sh
-python ./run.py &
-```
-
-2. Go to build directory and run application
+1. Go to build directory and run application
 ```sh
 ./src/AgroPi 
 ```
 
-3. Wait 15 Seconds for application to set up sensors.
+2. Wait 15 Seconds for application to set up sensors.
 
-4. Connect to webiste in your browser on your phone or pc
+3. Connect to webiste in your browser on your phone or pc
 ```sh
  (Rpi ip adress):80
 ```
-Switch to control pannel, update your target values and enable your actucation heuristics. 
+
+4.Switch to control pannel, update your target values and enable your actucation heuristics.
 
 
 <!-- Contributing -->
