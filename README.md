@@ -167,7 +167,6 @@ Schematics:
 
 [x] Next Software Release (v0.2) - Actuation & Image Processing - Detecting Seedling/Mushroom - 20/04/2021
 * [x] Camera Integrated
-* [-] Sensor Calibration
 * [x] Relay Board Driver
 * [x] Relay Board Integration
 * [x] Web-Server Improvments
@@ -175,6 +174,7 @@ Schematics:
 * [x] Train neuralnet
 * [x] Test on real samples
 
+[] Software Release 3 Planning scheduled for september 2021(v0.3)
 
 <!-- Getting Started -->
 ## Getting Started
