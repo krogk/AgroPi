@@ -152,7 +152,7 @@ Schematics:
 
 <p align="center">
   <a href="https://github.com/krogk/AgroPi">
-    <img src="media/images/logo1.png" alt="Logo">
+    <img src="media/images/shrooms.jpg" alt="Mushrooms">
   </a>
   
   <p align="center">
